@@ -26,7 +26,7 @@
  ]
 }
 </script>
-<script src="region-personalization.js?v=20260929-2" defer></script>\n<script src="dynamic-hero-copy.js?v=20260930-1" defer></script>
+<script src="region-personalization.js?v=20260929-2" defer></script>\n<script src="dynamic-hero-copy.js?v=20260930-2" defer></script>
 <style>
 :root{
  --ink:#1e1b18;--muted:#665f58;--gold:#b78319;--gold2:#d7b15a;--cream:#fbf7ef;--line:#e7ddcf;
@@ -51,9 +51,10 @@ img{max-width:100%;display:block}
 .btn.dark{background:var(--dark);color:#fff}
 .btn.line{border-color:#b9851c;background:#fff;color:#6b4710}
 .btn.kakao{background:var(--kakao);color:#221d13}
-.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#fff 0%,#fffaf0 55%,#efe0c5 100%);border-bottom:1px solid var(--line)}
-.hero:after{content:"";position:absolute;right:0;top:0;width:44%;height:100%;background:linear-gradient(90deg,rgba(255,250,240,.22),rgba(25,20,16,.28)),url("gallery8.jpg") center/cover no-repeat;opacity:.95}
-.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:44px;align-items:center;min-height:590px;padding:64px 0}
+.hero{--hero-bg:url("gallery8.jpg");position:relative;overflow:hidden;background:#f7f1e8;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;background:var(--hero-bg) 72% center/cover no-repeat;transform:scale(1.01)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,241,.98) 0%,rgba(250,247,241,.94) 34%,rgba(250,247,241,.58) 52%,rgba(250,247,241,.10) 72%,rgba(20,17,14,.16) 100%)}
+.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;min-height:650px;padding:70px 0}
 .eyebrow{display:inline-block;padding:8px 14px;border:1px solid #d8bd82;border-radius:999px;background:#fff;color:#79510c;font-size:16px;font-weight:900}
 h1{margin:18px 0 18px;font-size:clamp(44px,4.9vw,68px);line-height:1.16;letter-spacing:-2.6px}
 .goldText{color:#9f700e}
@@ -61,10 +62,10 @@ h1{margin:18px 0 18px;font-size:clamp(44px,4.9vw,68px);line-height:1.16;letter-s
 .heroBtns{display:flex;flex-wrap:wrap;gap:12px}
 .trustRow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;max-width:720px}
 .trust{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:16px;padding:17px;font-size:17px;font-weight:900;box-shadow:0 12px 30px rgba(50,37,23,.08)}
-.heroCard{justify-self:end;width:min(420px,100%);background:rgba(31,26,22,.92);color:#fff;border-radius:24px;padding:32px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
-.heroCard small{font-size:17px;color:#eadfce}
+.heroCard{justify-self:end;width:min(390px,100%);background:rgba(255,255,255,.88);color:var(--ink);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(12px);border-radius:24px;padding:30px;box-shadow:0 24px 60px rgba(0,0,0,.16)}
+.heroCard small{font-size:17px;color:#6b6259}
 .heroCard h2{font-size:30px;margin:5px 0 6px}
-.phone{font-size:46px;color:#e5b744;font-weight:900;line-height:1.2;margin:10px 0 18px;letter-spacing:.5px}
+.phone{font-size:46px;color:#9f700e;font-weight:900;line-height:1.2;margin:10px 0 18px;letter-spacing:.5px}
 .heroCard .btn{width:100%;margin-top:10px;font-size:20px}
 .section{padding:78px 0}
 .soft{background:var(--cream)}
@@ -139,7 +140,8 @@ details p{font-size:17px;color:#5e5750;margin:0 0 20px}
 .mobileBar a:last-child{background:#211b17;color:#fff}
 @media(max-width:1100px){
  .menu,.actions{display:none}
- .hero:after{width:100%;opacity:.22}
+ .hero:before{background-position:64% center}
+ .hero:after{background:linear-gradient(90deg,rgba(250,247,241,.97) 0%,rgba(250,247,241,.88) 52%,rgba(250,247,241,.40) 100%)}
  .heroGrid{grid-template-columns:1fr;min-height:auto;padding:54px 0}
  .heroCard{justify-self:start}
  .products{grid-template-columns:repeat(2,1fr)}
@@ -154,6 +156,8 @@ details p{font-size:17px;color:#5e5750;margin:0 0 20px}
  .top{font-size:14px}
  .navin{min-height:74px}
  .logo img{height:56px}
+ .hero:before{background-position:68% center}
+ .hero:after{background:linear-gradient(180deg,rgba(250,247,241,.90) 0%,rgba(250,247,241,.76) 55%,rgba(250,247,241,.64) 100%)}
  .heroGrid{padding:36px 0 42px}
  h1{font-size:clamp(36px,10vw,46px);letter-spacing:-1.6px}
  .lead{font-size:20px}
