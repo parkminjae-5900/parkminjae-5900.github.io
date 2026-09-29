@@ -189,6 +189,15 @@ input[type=range]{width:100%;accent-color:#b88712}
  .stickySummary{bottom:132px}
 }
 
+
+.staffRealGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0 20px}
+.staffRealCard{background:#fff;border:1px solid #e5dccf;border-radius:12px;overflow:hidden;text-align:center}
+.staffRealCard img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eee}
+.staffRealCard b{display:block;font-size:16px;padding:9px 6px 2px}
+.staffRealCard span{display:block;font-size:13px;color:#756a61;padding:0 6px 9px}
+.staffRealNote{font-size:14px;color:#6d6259;margin-top:8px}
+@media(max-width:760px){.staffRealGrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.staffRealGrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -310,6 +319,14 @@ input[type=range]{width:100%;accent-color:#b88712}
  <h2>상복·의전인력</h2>
  <p class="sub">아래 의전인력은 모든 장례에 기본으로 포함되며, 선택 해제할 수 없는 필수항목입니다.</p>
  <div class="infoBlue">무빈소의 경우 빈소를 차리지 않으므로 빈소용품 일부가 제외될 수 있지만, 장례지도사·입관용품·보조 장례지도사는 필수로 자동 계산됩니다.</div>
+ <div class="staffRealGrid" aria-label="다함상조 실제 의전인력">
+  <div class="staffRealCard"><img src="staff/assets/photos/01.jpg" alt="박민재 대표장례지도사"><b>박민재</b><span>대표장례지도사</span></div>
+  <div class="staffRealCard"><img src="staff/assets/photos/18.jpg" alt="홍경희 의전팀장"><b>홍경희</b><span>의전팀장</span></div>
+  <div class="staffRealCard"><img src="staff/assets/photos/08.jpg" alt="안지아 의전팀장"><b>안지아</b><span>의전팀장</span></div>
+  <div class="staffRealCard"><img src="staff/assets/photos/04.jpg" alt="서진우 교육부장"><b>서진우</b><span>교육부장</span></div>
+  <div class="staffRealCard"><img src="staff/assets/photos/06.jpg" alt="정승철 의전팀장"><b>정승철</b><span>의전팀장</span></div>
+ </div>
+ <div class="staffRealNote">다함상조 직원 디지털 명함에 등록된 실제 원본사진을 그대로 사용합니다.</div>
  <div class="requiredBox">
   <div class="requiredRow"><div><strong>전담 장례지도사</strong><small>의전·입관·발인 진행 · 장례 전반 총괄</small></div><b>400,000원</b></div>
   <div class="requiredRow"><div><strong>입관용품 일체</strong><small>관보·소창·탈지면·알코올 등 입관 기본용품</small></div><b>230,000원</b></div>
