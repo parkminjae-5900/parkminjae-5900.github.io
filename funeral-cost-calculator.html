@@ -198,6 +198,20 @@ input[type=range]{width:100%;accent-color:#b88712}
 .staffRealNote{font-size:14px;color:#6d6259;margin-top:8px}
 @media(max-width:760px){.staffRealGrid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:480px){.staffRealGrid{grid-template-columns:repeat(2,1fr)}}
+
+/* estimator-real-images-20260929 */
+.realVisual{width:100%;display:block;border-radius:12px;border:1px solid #e5dccf;background:#eee;object-fit:cover}
+.suitVisual{max-height:310px;object-position:center}
+.vehicleGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vehicleCard{border:1px solid #e5dccf;border-radius:14px;overflow:hidden;background:#fff}
+.vehicleCard img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#eee}
+.vehicleBody{padding:16px}
+.vehicleBody h3{font-size:22px;margin:0 0 5px}
+.vehicleBody p{font-size:16px;color:#6a6159;margin:0 0 8px}
+.vehicleBody strong{font-size:24px;color:#8c620f}
+.vehicleSelect{display:flex;align-items:center;gap:10px;border:1px solid #ddcfba;border-radius:10px;padding:12px;margin-top:12px;font-weight:900}
+.vehicleSelect input{width:22px;height:22px;accent-color:#b88712}
+@media(max-width:700px){.vehicleGrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -319,6 +333,9 @@ input[type=range]{width:100%;accent-color:#b88712}
  <h2>상복·의전인력</h2>
  <p class="sub">아래 의전인력은 모든 장례에 기본으로 포함되며, 선택 해제할 수 없는 필수항목입니다.</p>
  <div class="infoBlue">무빈소의 경우 빈소를 차리지 않으므로 빈소용품 일부가 제외될 수 있지만, 장례지도사·입관용품·보조 장례지도사는 필수로 자동 계산됩니다.</div>
+ <h2 style="margin-top:24px">상복 실사 이미지</h2>
+ <p class="sub">남·여 상복을 실제 형태로 확인할 수 있습니다.</p>
+ <img id="suitRealImage" class="realVisual suitVisual" alt="다함상조 남녀 상복 실사 이미지">
  <div class="staffRealGrid" aria-label="다함상조 실제 의전인력">
   <div class="staffRealCard"><img src="staff/assets/photos/01.jpg" alt="박민재 대표장례지도사"><b>박민재</b><span>대표장례지도사</span></div>
   <div class="staffRealCard"><img src="staff/assets/photos/18.jpg" alt="홍경희 의전팀장"><b>홍경희</b><span>의전팀장</span></div>
@@ -345,9 +362,29 @@ input[type=range]{width:100%;accent-color:#b88712}
 </section>
 
 <section class="step" data-step="10">
- <h2>차량을 선택해주세요</h2><p class="sub">필요한 차량만 선택하고 실제 운행거리와 지역 조건은 상담에서 최종 확인합니다.</p>
- <label class="checkCard"><input id="limo" type="checkbox" onchange="recalc()"><span><strong>리무진</strong><small>계산 기준 450,000원 · 실제 운행거리/지역에 따라 변동 가능</small></span></label>
- <label class="checkCard"><input id="bus" type="checkbox" onchange="recalc()"><span><strong>장례버스</strong><small>계산 기준 450,000원 · 실제 운행거리/지역에 따라 변동 가능</small></span></label>
+ <h2>차량을 선택해주세요</h2>
+ <p class="sub">실제 차량 이미지를 확인한 뒤 필요한 차량만 선택해주세요. 선택하지 않아도 다음 단계로 진행할 수 있습니다.</p>
+ <div class="vehicleGrid">
+  <article class="vehicleCard">
+   <img id="limoRealImage" alt="다함상조 리무진 실제 차량 이미지">
+   <div class="vehicleBody">
+    <h3>리무진 (1차 장지, 150km)</h3>
+    <p>고인 이송 · 유가족 동승 가능</p>
+    <strong>450,000원</strong>
+    <label class="vehicleSelect"><input id="limo" type="checkbox" onchange="recalc()"> 이 차량 선택하기</label>
+   </div>
+  </article>
+  <article class="vehicleCard">
+   <img id="busRealImage" alt="다함상조 장례버스 실제 차량 이미지">
+   <div class="vehicleBody">
+    <h3>버스 왕복 (150km)</h3>
+    <p>조문객 이동용 · 왕복 기준</p>
+    <strong>450,000원</strong>
+    <label class="vehicleSelect"><input id="bus" type="checkbox" onchange="recalc()"> 이 차량 선택하기</label>
+   </div>
+  </article>
+ </div>
+ <p class="priceNote">※ 초과 1km당 2,000원 추가</p>
  <div class="field" style="margin-top:14px"><label>추가 차량·거리비용 직접 입력 (선택)</label><input id="vehicleExtra" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">총 예상견적 확인하기</button></div>
 </section>
@@ -466,7 +503,11 @@ function setStep(n){
  const pct=Math.round(state.step/11*100);
  document.getElementById("progressPct").textContent=pct+"%";
  document.getElementById("progressBar").style.width=pct+"%";
- document.querySelectorAll("#stepsMini span").forEach((s,i)=>s.classList.toggle("on",i+1===state.step));
+ document.querySelectorAll("#stepsMini span").forEach((s,i)=>{
+ const idx=i+1;
+ s.classList.toggle("on",idx===state.step);
+ s.style.opacity=(state.funeralType==="무빈소" && idx===4)?".35":"1";
+});
 
  const bn=document.getElementById("bottomNext");
  if(bn) bn.textContent=state.step<10?"다음 단계로":state.step===10?"총 예상견적 보기":"이 견적으로 상담받기";
@@ -474,8 +515,14 @@ function setStep(n){
  window.scrollTo({top:document.querySelector(".progressBox").offsetTop,behavior:"smooth"});
  recalc();
 }
-function next(){setStep(state.step+1)}
-function prev(){setStep(state.step-1)}
+function next(){
+ if(state.funeralType==="무빈소" && state.step===3){setStep(5);return;}
+ setStep(state.step+1);
+}
+function prev(){
+ if(state.funeralType==="무빈소" && state.step===5){setStep(3);return;}
+ setStep(state.step-1);
+}
 function bottomNext(){ if(state.step<11) next(); else consult(); }
 function summaryText(){
  const d=calcData();
@@ -517,8 +564,22 @@ async function saveImage(){
  const canvas=await html2canvas(target,{scale:2,backgroundColor:"#fff"});
  const a=document.createElement("a");a.download="다함상조_맞춤장례견적.png";a.href=canvas.toDataURL("image/png");a.click();
 }
+async function loadEstimateImageData(){
+ const items=[
+  ["suitRealImage","assets/estimate/suit.b64"],
+  ["limoRealImage","assets/estimate/limo.b64"],
+  ["busRealImage","assets/estimate/bus.b64"]
+ ];
+ await Promise.all(items.map(async ([id,url])=>{
+  const el=document.getElementById(id); if(!el) return;
+  try{
+   const b64=(await fetch(url,{cache:"no-store"}).then(r=>r.text())).trim();
+   el.src="data:image/jpeg;base64,"+b64;
+  }catch(e){el.alt+=" (이미지 불러오기 실패)";}
+ }));
+}
 const mini=document.getElementById("stepsMini");
 names.forEach((n,i)=>{const s=document.createElement("span");s.textContent=(i+1)+" "+n;s.onclick=()=>setStep(i+1);mini.appendChild(s)});
-setStep(1);renderHalls();recalc();
+setStep(1);renderHalls();recalc();loadEstimateImageData();
 </script>
 </body></html>
