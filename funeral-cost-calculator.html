@@ -124,6 +124,71 @@ input[type=range]{width:100%;accent-color:#b88712}
  .resultActions .btn{width:100%}
  .stickySummary{left:10px;right:10px;bottom:8px;min-width:0}
 }
+
+/* 2026-09-29 screenshot-aligned estimator layout */
+.shell>.wrap{max-width:1380px;padding-right:330px}
+.progressBox .wrap{max-width:1380px}
+.progress{display:none}
+.stepsMini{grid-template-columns:repeat(11,minmax(110px,1fr));overflow-x:auto;padding-bottom:2px}
+.stepsMini span{background:#fff;border-bottom:3px solid #ddd5c8;border-radius:0;padding:11px 6px;font-size:14px;white-space:nowrap}
+.stepsMini span.on{background:#fff;color:#2f6f4e;border-bottom-color:#2f6f4e}
+.panel{border-radius:14px;box-shadow:none;background:#fffefb}
+.option{
+ display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;
+ align-items:center;column-gap:18px;min-height:88px;border:1px solid #e5dccf;border-radius:8px;
+ padding:18px 22px;background:#fff
+}
+.option strong{grid-column:1;grid-row:1;font-size:20px;margin:0}
+.option>span:not(.money){grid-column:1;grid-row:2;font-size:15px;color:#6b6158;margin-top:4px}
+.option .money{grid-column:2;grid-row:1/3;align-self:center;margin:0;font-size:20px;color:#111;font-weight:900}
+.option.selected{border-color:#2f6f4e;background:#f5fbf8;box-shadow:inset 4px 0 0 #2f6f4e}
+.options{grid-template-columns:1fr;gap:0;border:1px solid #e5dccf;border-radius:9px;overflow:hidden}
+.options .option{border:0;border-bottom:1px solid #e5dccf;border-radius:0}
+.options .option:last-child{border-bottom:0}
+.requiredBox{border:1px solid #e5dccf;border-radius:10px;overflow:hidden;background:#fff}
+.requiredRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;padding:20px 22px;border-bottom:1px solid #e5dccf}
+.requiredRow:nth-child(even){background:#f8f4eb}
+.requiredRow:last-child{border-bottom:0}
+.requiredRow strong{font-size:20px}
+.requiredRow small{display:block;font-size:15px;color:#6c6259;margin-top:4px}
+.requiredRow b{font-size:20px;white-space:nowrap}
+.infoBlue{background:#eaf5fb;border:1px solid #b8dce9;border-radius:7px;padding:16px 18px;color:#2b5c6f;margin:14px 0 18px}
+.stickySummary{
+ top:118px;bottom:auto;right:22px;width:280px;min-width:0;border-radius:18px;padding:24px;
+ background:#25292c
+}
+.stickySummary:before{content:"지금까지 내용으로 상담하기";display:block;border:1px solid #777;border-radius:999px;text-align:center;padding:12px 10px;margin-bottom:14px;font-size:17px;font-weight:900;color:#fff}
+.stickySummary small:before{content:"현재 선택 구성";display:block;color:#d8cec3;font-size:14px;margin-bottom:5px}
+.stickySummary b{font-size:30px}
+.stickySummary button{display:none}
+.stickyCount{display:block;color:#d2d2d2;font-size:14px;margin-top:9px}
+.bottomBar{position:fixed;left:0;right:0;bottom:0;z-index:120;background:#fff;border-top:1px solid #ddd;display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:10px;padding:10px max(20px,calc((100% - 1400px)/2));box-shadow:0 -4px 18px rgba(0,0,0,.08)}
+.bottomBar a,.bottomBar button{min-height:58px;border:0;border-radius:12px;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.bottomBar .call{background:#222629;color:#fff}.bottomBar .kakao{background:#fee500;color:#231f17}.bottomBar .next{background:#b08a4d;color:#fff}
+.qtyGrid{grid-template-columns:repeat(3,1fr)}
+.step[data-step="9"] .qtyGrid{margin-top:22px}
+.step[data-step="9"] .sub{margin-bottom:8px}
+@media(max-width:1050px){
+ .shell>.wrap{padding-right:0}
+ .stickySummary{position:fixed;top:auto;right:12px;left:12px;bottom:78px;width:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+ .stickySummary:before,.stickySummary small:before,.stickyCount{display:none}
+ .stickySummary small{font-size:14px}.stickySummary b{font-size:22px}
+ .stepsMini{display:grid}
+}
+@media(max-width:640px){
+ .stepsMini{display:flex;gap:0}
+ .stepsMini span{min-width:106px;font-size:13px}
+ .panel{padding:18px 14px}
+ .option{padding:17px 15px;grid-template-columns:minmax(0,1fr) auto}
+ .option strong{font-size:19px}.option .money{font-size:18px}
+ .requiredRow{padding:17px 15px}.requiredRow strong{font-size:18px}.requiredRow b{font-size:18px}
+ .bottomBar{grid-template-columns:1fr 1fr;padding:8px}
+ .bottomBar .next{grid-column:1/-1}
+ .bottomBar a,.bottomBar button{min-height:54px;font-size:17px}
+ .shell{padding-bottom:190px}
+ .stickySummary{bottom:132px}
+}
+
 </style>
 </head>
 <body>
@@ -242,13 +307,23 @@ input[type=range]{width:100%;accent-color:#b88712}
 </section>
 
 <section class="step" data-step="9">
- <h2>상복과 의전인력을 확인해주세요</h2><p class="sub">필요한 수량만 선택합니다. 아래 단가는 현재 견적 계산용 기준값이며 실제 적용 단가는 최종 상담에서 확인합니다.</p>
- <div class="qtyGrid">
-  <div class="qtyCard"><h3>남자 상복</h3><p>대여 기준 · 계산 기준 50,000원/벌</p><div class="qtyControls"><button onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button onclick="qty('maleSuit',1)">+</button></div></div>
-  <div class="qtyCard"><h3>여자 상복</h3><p>대여 기준 · 계산 기준 20,000원/벌</p><div class="qtyControls"><button onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button onclick="qty('femaleSuit',1)">+</button></div></div>
-  <div class="qtyCard"><h3>접객 도우미</h3><p>1인 기준 · 계산 기준 120,000원</p><div class="qtyControls"><button onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button onclick="qty('helper',1)">+</button></div></div>
+ <h2>상복·의전인력</h2>
+ <p class="sub">아래 의전인력은 모든 장례에 기본으로 포함되며, 선택 해제할 수 없는 필수항목입니다.</p>
+ <div class="infoBlue">무빈소의 경우 빈소를 차리지 않으므로 빈소용품 일부가 제외될 수 있지만, 장례지도사·입관용품·보조 장례지도사는 필수로 자동 계산됩니다.</div>
+ <div class="requiredBox">
+  <div class="requiredRow"><div><strong>전담 장례지도사</strong><small>의전·입관·발인 진행 · 장례 전반 총괄</small></div><b>400,000원</b></div>
+  <div class="requiredRow"><div><strong>입관용품 일체</strong><small>관보·소창·탈지면·알코올 등 입관 기본용품</small></div><b>230,000원</b></div>
+  <div class="requiredRow"><div><strong>보조 장례지도사 (입관식)</strong><small>입관식 보조 인력 · 특수입관 시 추가비용 별도</small></div><b>150,000원</b></div>
  </div>
- <div class="notice" style="margin-top:16px">전담 장례지도사·입관보조·입관용품 등은 상품 및 행사 조건에 따라 달라질 수 있어 이 화면에서는 별도 고정금액으로 강제하지 않습니다.</div>
+ <div class="notice" style="margin-top:16px"><strong>필수 의전인력 합계 780,000원</strong>이 견적에 자동 포함됩니다.</div>
+
+ <h2 style="margin-top:28px">상복 · 접객도우미</h2>
+ <p class="sub">필요한 수량만 추가해주세요.</p>
+ <div class="qtyGrid">
+  <div class="qtyCard"><h3>남자 상복</h3><p>대여 기준 · 50,000원/벌</p><div class="qtyControls"><button onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button onclick="qty('maleSuit',1)">+</button></div></div>
+  <div class="qtyCard"><h3>여자 상복</h3><p>대여 기준 · 20,000원/벌</p><div class="qtyControls"><button onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button onclick="qty('femaleSuit',1)">+</button></div></div>
+  <div class="qtyCard"><h3>접객 도우미</h3><p>1인 계산 기준 · 120,000원</p><div class="qtyControls"><button onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button onclick="qty('helper',1)">+</button></div></div>
+ </div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
@@ -290,7 +365,12 @@ input[type=range]{width:100%;accent-color:#b88712}
 
 </div></div></main>
 
-<div class="stickySummary" id="stickySummary"><button onclick="this.parentElement.classList.add('hide')">×</button><small>현재 선택 예상금액</small><b id="stickyTotal">0원</b></div>
+<div class="stickySummary" id="stickySummary"><small>현재 선택 예상금액</small><b id="stickyTotal">780,000원</b><span class="stickyCount" id="stickyCount">필수 3개 항목 포함</span></div>
+<div class="bottomBar">
+ <a class="call" href="tel:16006131">☎ 전화상담</a>
+ <a class="kakao" href="https://open.kakao.com/o/sz9RE1xi" target="_blank">💬 카카오톡</a>
+ <button class="next" id="bottomNext" onclick="bottomNext()">다음 단계로</button>
+</div>
 
 <script>
 const names=["장례 형태","현재 상황","지역·장례식장","예상 조문객","장법 선택","수의","관","유골함","상복·의전인력","차량","총 예상견적"];
@@ -303,6 +383,7 @@ const hallData={
 };
 const state={step:1,funeralType:"",situation:"",burialType:"",shroud:"",coffin:"",urn:"",shroudPrice:0,coffinPrice:0,urnPrice:0};
 const unit={maleSuit:50000,femaleSuit:20000,helper:120000,limo:450000,bus:450000};
+const requiredPersonnel={director:400000,embalmingSupplies:230000,assistantDirector:150000};
 document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
  const field=b.dataset.field, val=b.dataset.value;
  state[field]=val;
@@ -327,6 +408,9 @@ function calcData(){
  const serviceItems=[];
  const externalItems=[];
  function add(arr,name,amount){if(Number(amount)>0)arr.push([name,Number(amount)])}
+ add(serviceItems,"필수 · 전담 장례지도사",requiredPersonnel.director);
+ add(serviceItems,"필수 · 입관용품 일체",requiredPersonnel.embalmingSupplies);
+ add(serviceItems,"필수 · 보조 장례지도사(입관식)",requiredPersonnel.assistantDirector);
  add(serviceItems,"수의 · "+(state.shroud||"미선택"),state.shroudPrice);
  add(serviceItems,"관 · "+(state.coffin||"미선택"),state.coffinPrice);
  add(serviceItems,"매장용 횡대·부대품",val("crossBarCost"));
@@ -348,6 +432,10 @@ function calcData(){
 function recalc(){
  const d=calcData();
  document.getElementById("stickyTotal").textContent=won(d.total);
+ const selectedCount=3 + ["funeralType","situation","burialType","shroud","coffin","urn"].filter(k=>state[k]).length
+   + ["maleSuit","femaleSuit","helper"].filter(id=>val(id)>0).length
+   + (document.getElementById("limo").checked?1:0)+(document.getElementById("bus").checked?1:0);
+ const sc=document.getElementById("stickyCount"); if(sc) sc.textContent="지금까지 "+selectedCount+"개 항목을 반영했습니다";
  document.getElementById("grandTotal").textContent=won(d.total);
  document.getElementById("serviceTotal").textContent=won(d.service);
  document.getElementById("externalTotal").textContent=won(d.external);
@@ -362,12 +450,16 @@ function setStep(n){
  document.getElementById("progressPct").textContent=pct+"%";
  document.getElementById("progressBar").style.width=pct+"%";
  document.querySelectorAll("#stepsMini span").forEach((s,i)=>s.classList.toggle("on",i+1===state.step));
- document.getElementById("stickySummary").classList.toggle("hide",state.step===11);
+
+ const bn=document.getElementById("bottomNext");
+ if(bn) bn.textContent=state.step<10?"다음 단계로":state.step===10?"총 예상견적 보기":"이 견적으로 상담받기";
+ document.getElementById("stickySummary").classList.toggle("hide",false);
  window.scrollTo({top:document.querySelector(".progressBox").offsetTop,behavior:"smooth"});
  recalc();
 }
 function next(){setStep(state.step+1)}
 function prev(){setStep(state.step-1)}
+function bottomNext(){ if(state.step<11) next(); else consult(); }
 function summaryText(){
  const d=calcData();
  const hall=txt("hallSelect")||"미정";
