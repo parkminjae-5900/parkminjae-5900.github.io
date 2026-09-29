@@ -205,36 +205,39 @@ input[type=range]{width:100%;accent-color:#b88712}
 </section>
 
 <section class="step" data-step="6">
- <h2>수의를 선택해주세요</h2><p class="sub">다함상조 실제 품목 단가는 상담에서 최종 확인합니다. 여기서는 필요한 구성 여부를 선택합니다.</p>
+ <h2>수의를 선택해주세요</h2><p class="sub">공개 가격 기준을 반영했습니다. 등급을 직접 선택하면 견적에 즉시 반영됩니다.</p>
  <div class="options">
-  <button class="option" data-field="shroud" data-value="상품 구성 수의"><strong>상품 구성 수의</strong><span>선택한 장례 구성에 맞춰 안내</span><span class="money">상담 시 단가 확인</span></button>
-  <button class="option" data-field="shroud" data-value="직접 준비"><strong>직접 준비</strong><span>가족이 준비한 수의를 사용</span><span class="money">0원 입력</span></button>
-  <button class="option" data-field="shroud" data-value="미정"><strong>아직 미정</strong><span>입관 전 상담으로 결정</span></button>
+  <button class="option priced" data-field="shroud" data-value="육수자수수의" data-price="350000"><strong>육수자수수의</strong><span>화장 기본형에 많이 사용하는 구성</span><span class="money">350,000원</span></button>
+  <button class="option priced" data-field="shroud" data-value="마사자수의" data-price="500000"><strong>마사자수의</strong><span>상위 구성 수의</span><span class="money">500,000원</span></button>
+  <button class="option priced" data-field="shroud" data-value="명품 안동포수의" data-price="9000000"><strong>명품 안동포수의</strong><span>최상위 수의 구성</span><span class="money">9,000,000원</span></button>
+  <button class="option" data-field="shroud" data-value="직접 준비" data-price="0"><strong>직접 준비</strong><span>가족이 준비한 수의를 사용</span><span class="money">0원</span></button>
  </div>
- <div class="field" style="margin-top:16px"><label>수의 금액을 알고 있다면 입력</label><input id="shroudCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <p class="priceNote">수의 공개 가격 범위는 350,000원~9,000,000원입니다. 중간 등급은 실제 선택 품목에 따라 상담 단계에서 조정합니다.</p>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
 <section class="step" data-step="7">
- <h2>관을 선택해주세요</h2><p class="sub">화장·매장 방식과 장례식장 규격에 맞춰 최종 품목을 정합니다.</p>
+ <h2>관을 선택해주세요</h2><p class="sub">화장·매장 방식에 맞는 관을 선택하면 견적에 즉시 반영됩니다.</p>
  <div class="options">
-  <button class="option" data-field="coffin" data-value="상품 구성 관"><strong>상품 구성 관</strong><span>장례 형태에 맞는 규격관</span><span class="money">상담 시 단가 확인</span></button>
-  <button class="option" data-field="coffin" data-value="직접 준비"><strong>직접 준비</strong><span>가족이 준비한 관 사용 여부 상담</span></button>
-  <button class="option" data-field="coffin" data-value="미정"><strong>아직 미정</strong><span>장법과 시설 조건 확인 후 결정</span></button>
+  <button class="option priced" data-field="coffin" data-value="오동나무 관 18mm" data-price="170000"><strong>오동나무 관 18mm</strong><span>화장·기본 매장 구성</span><span class="money">170,000원</span></button>
+  <button class="option priced" data-field="coffin" data-value="오동나무 특호" data-price="280000"><strong>오동나무 관 특호</strong><span>일반장 화장 상위 구성</span><span class="money">280,000원</span></button>
+  <button class="option priced" data-field="coffin" data-value="화이트 손잡이관" data-price="750000"><strong>화이트 손잡이관</strong><span>고급 화장용 구성</span><span class="money">750,000원</span></button>
+  <button class="option priced" data-field="coffin" data-value="향나무 2단관 45mm" data-price="2700000"><strong>향나무 2단관 45mm</strong><span>고급 매장용 구성</span><span class="money">2,700,000원</span></button>
  </div>
- <div class="field" style="margin-top:16px"><label>관 금액을 알고 있다면 입력</label><input id="coffinCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <p class="priceNote">관 공개 가격 범위는 170,000원~2,700,000원입니다. 매장용 솔송관 등 중간 등급은 상담 시 실제 선택가를 반영합니다.</p>
  <div class="field" id="crossBarField" style="margin-top:14px"><label>매장용 횡대·부대품 예상비용 (선택)</label><input id="crossBarCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
 <section class="step" data-step="8">
- <h2>유골함을 선택해주세요</h2><p class="sub">화장 예정인 경우에만 필요합니다. 품목을 아직 정하지 않았다면 넘어가셔도 됩니다.</p>
+ <h2>유골함을 선택해주세요</h2><p class="sub">화장 예정인 경우 원하는 종류를 선택해주세요. 선택 가격이 견적에 즉시 반영됩니다.</p>
  <div class="options">
-  <button class="option" data-field="urn" data-value="기본 유골함"><strong>기본 유골함</strong><span>일반적인 화장 후 봉안용</span></button>
-  <button class="option" data-field="urn" data-value="진공 유골함"><strong>진공 유골함</strong><span>밀폐형 유골함을 희망하는 경우</span></button>
-  <button class="option" data-field="urn" data-value="미정"><strong>아직 미정</strong><span>장지 유형 확인 후 선택</span></button>
+  <button class="option priced" data-field="urn" data-value="황토백자" data-price="100000"><strong>황토백자</strong><span>기본 화장 구성</span><span class="money">100,000원</span></button>
+  <button class="option" data-field="urn" data-value="봉분실크송학" data-price="0"><strong>봉분실크송학</strong><span>일반장 화장 구성</span><span class="money">상담 시 실제 선택가 반영</span></button>
+  <button class="option" data-field="urn" data-value="본1호" data-price="0"><strong>본1호</strong><span>고급 화장 구성</span><span class="money">상담 시 실제 선택가 반영</span></button>
+  <button class="option priced" data-field="urn" data-value="최상위 유골함" data-price="2000000"><strong>최상위 유골함 기준</strong><span>공개 가격 범위 상단 기준</span><span class="money">2,000,000원</span></button>
  </div>
- <div class="field" style="margin-top:16px"><label>유골함 금액을 알고 있다면 입력</label><input id="urnCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <p class="priceNote">유골함 공개 가격 범위는 100,000원~2,000,000원입니다. 품목별 실제 재질·밀폐방식에 따라 선택가가 달라집니다.</p>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
@@ -298,11 +301,14 @@ const hallData={
  "강원":["춘천안식원","강원대학교병원 장례식장","원주세브란스기독병원 장례식장","강릉아산병원 장례식장"],
  "기타":[]
 };
-const state={step:1,funeralType:"",situation:"",burialType:"",shroud:"",coffin:"",urn:""};
+const state={step:1,funeralType:"",situation:"",burialType:"",shroud:"",coffin:"",urn:"",shroudPrice:0,coffinPrice:0,urnPrice:0};
 const unit={maleSuit:50000,femaleSuit:20000,helper:120000,limo:450000,bus:450000};
 document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
  const field=b.dataset.field, val=b.dataset.value;
  state[field]=val;
+ if(["shroud","coffin","urn"].includes(field)){
+   state[field+"Price"]=Number(b.dataset.price||0);
+ }
  document.querySelectorAll('.option[data-field="'+field+'"]').forEach(x=>x.classList.remove("selected"));
  b.classList.add("selected");
  recalc();
@@ -321,10 +327,10 @@ function calcData(){
  const serviceItems=[];
  const externalItems=[];
  function add(arr,name,amount){if(Number(amount)>0)arr.push([name,Number(amount)])}
- add(serviceItems,"수의",val("shroudCost"));
- add(serviceItems,"관",val("coffinCost"));
+ add(serviceItems,"수의 · "+(state.shroud||"미선택"),state.shroudPrice);
+ add(serviceItems,"관 · "+(state.coffin||"미선택"),state.coffinPrice);
  add(serviceItems,"매장용 횡대·부대품",val("crossBarCost"));
- add(serviceItems,"유골함",val("urnCost"));
+ add(serviceItems,"유골함 · "+(state.urn||"미선택"),state.urnPrice);
  add(serviceItems,"남자 상복 "+val("maleSuit")+"벌",val("maleSuit")*unit.maleSuit);
  add(serviceItems,"여자 상복 "+val("femaleSuit")+"벌",val("femaleSuit")*unit.femaleSuit);
  add(serviceItems,"접객 도우미 "+val("helper")+"인",val("helper")*unit.helper);
