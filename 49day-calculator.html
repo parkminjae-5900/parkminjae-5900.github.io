@@ -1,0 +1,42 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>49재 날짜 계산기 | 초재부터 칠재까지 자동 계산 | 다함상조</title>
+<meta name="description" content="사망일을 입력하면 초재부터 49재까지 7일 간격 날짜를 자동 계산합니다. 일반적으로 사망일을 1일째로 보아 49재는 달력상 사망일 +48일로 계산합니다.">
+<meta name="keywords" content="49재 계산,49재 날짜 계산기,49재 날짜,초재 날짜,칠재 날짜">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="https://www.dahamsangjo.co.kr/49day-calculator.html">
+
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fffdf8;color:#2b241f;font:17px/1.8 'Malgun Gothic','Noto Sans KR',sans-serif}
+a{text-decoration:none;color:inherit}.top,footer{background:#211914;color:#fff;padding:13px 20px}.inner,.wrap{max-width:1080px;margin:auto}
+.top .inner{display:flex;justify-content:space-between;gap:16px}.top a,footer a{color:#f1c05b}
+.hero{background:linear-gradient(135deg,#fff8e9,#ead8bd);padding:56px 20px;text-align:center}.hero h1{font-size:clamp(31px,5vw,48px);line-height:1.25;margin:10px 0}.hero p{max-width:840px;margin:10px auto}
+.wrap{padding:26px 20px}.panel{background:#fff;border:1px solid #eadcc4;border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 10px 28px rgba(54,38,20,.05)}
+.panel h2{color:#603e11;margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.card{background:#fffaf1;border:1px solid #eadcc4;border-radius:13px;padding:18px}
+.btn{display:inline-block;background:#b88712;color:#fff;font-weight:900;padding:12px 18px;border-radius:10px;margin:4px}.dark{background:#211914}
+input,select{width:100%;padding:12px;border:1px solid #d9c6a6;border-radius:10px;font-size:16px;background:#fff}
+label{font-weight:800;display:block;margin:8px 0}.result{background:#211914;color:#fff;border-radius:14px;padding:20px;margin-top:15px}.result strong{color:#f1c05b;font-size:26px}
+table{width:100%;border-collapse:collapse}th,td{border:1px solid #e7dccb;padding:12px;text-align:left;vertical-align:top}th{background:#f5eddf}
+.note{font-size:14px;color:#6f6258}.chips a{display:inline-block;border:1px solid #d9c6a6;border-radius:999px;padding:7px 12px;margin:4px;color:#603e11}
+.step{border-left:4px solid #b88712;padding:5px 0 5px 18px;margin:16px 0}.badge{display:inline-block;background:#b88712;color:#fff;border-radius:999px;padding:5px 11px;font-weight:900}
+@media(max-width:640px){.top .inner{display:block}.btn{display:block;text-align:center}table{font-size:15px}}
+</style>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="다함상조">
+<meta property="og:title" content="49재 날짜 계산기 | 초재부터 칠재까지 자동 계산 | 다함상조">
+<meta property="og:description" content="사망일을 입력하면 초재부터 49재까지 7일 간격 날짜를 자동 계산합니다. 일반적으로 사망일을 1일째로 보아 49재는 달력상 사망일 +48일로 계산합니다.">
+<meta property="og:url" content="https://www.dahamsangjo.co.kr/49day-calculator.html">
+<meta property="og:image" content="https://www.dahamsangjo.co.kr/assets/daham_logo.jpg">
+<meta name="twitter:card" content="summary">
+</head><body><div class="top"><div class="inner"><strong>다함상조 · 24시간 장례서비스</strong><a href="tel:16006131">상담 1600-6131</a></div></div>
+<header class="hero"><span class="badge">자동 계산</span><h1>49재 날짜 계산기</h1><p>사망일을 입력하면 7일마다 초재부터 칠재(49재)까지 자동으로 표시합니다.</p></header>
+<main class="wrap"><section class="panel"><h2>사망일 입력</h2><label>사망일</label><input type="date" id="death" onchange="calc49()"><div id="result49" class="result">날짜를 선택해 주세요.</div><p class="note">일반적인 불교식 계산 관행에 따라 사망일을 1일째로 보고, 초재는 +6일, 49재는 +48일로 계산합니다. 사찰이나 가정의 의례 방식에 따라 일정이 조정될 수 있으므로 실제 봉행일은 해당 사찰과 확인하세요.</p></section>
+<section class="panel"><h2>계산 기준</h2><table><tr><th>재</th><th>기준</th></tr><tr><td>초재</td><td>사망일 포함 7일째</td></tr><tr><td>2재</td><td>14일째</td></tr><tr><td>3재</td><td>21일째</td></tr><tr><td>4재</td><td>28일째</td></tr><tr><td>5재</td><td>35일째</td></tr><tr><td>6재</td><td>42일째</td></tr><tr><td>칠재·49재</td><td>49일째</td></tr></table></section>
+<section class="panel"><h2>장례 후 함께 확인하기</h2><div class="chips"><a href="aftercare.html">사망 후 행정</a><a href="after-death-checklist.html">임종 후 체크리스트</a><a href="funeral-cost-calculator.html">장례비용 계산기</a></div></section></main>
+<script>
+function fmt(d){return new Intl.DateTimeFormat('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'short'}).format(d)}
+function calc49(){
+ const v=document.getElementById('death').value;if(!v)return;
+ const base=new Date(v+'T12:00:00'); const names=['초재','2재','3재','4재','5재','6재','칠재·49재']; let html='<strong>'+fmt(base)+'</strong><br><br>';
+ names.forEach((name,i)=>{const d=new Date(base);d.setDate(d.getDate()+6+7*i);html+=name+' : '+fmt(d)+'<br>';});document.getElementById('result49').innerHTML=html;
+}
+</script><footer><div class="wrap"><strong>다함상조</strong> · 24시간 장례접수 1600-6131 · <a href="/">공식 홈페이지</a></div></footer></body></html>

@@ -26,6 +26,8 @@
       "url": "https://www.dahamsangjo.co.kr/",
       "logo": "https://www.dahamsangjo.co.kr/assets/daham_logo.jpg",
       "telephone": "+82-1600-6131",
+      "address": {"@type": "PostalAddress", "streetAddress": "선릉로86길 38 7037호", "addressLocality": "강남구", "addressRegion": "서울특별시", "addressCountry": "KR"},
+      "employee": {"@type": "Person", "name": "박민재", "jobTitle": "대표 장례지도사", "url": "https://www.dahamsangjo.co.kr/park-minjae.html"},
       "description": "서울·수도권과 전국에서 가족장, 무빈소 장례, 일반장, 프리미엄 장례를 지원하는 후불상조 서비스",
       "areaServed": {"@type": "Country", "name": "대한민국"},
       "contactPoint": {
@@ -184,7 +186,8 @@ h1 .gold-text{color:#a8770c}
 .notice{background:#fff;border:1px solid #eadcc4;border-radius:15px;padding:24px}
 .notice p{margin:7px 0;color:#5d5048}
 .seo-pages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.seo-card{background:#fff;border:1px solid #eadcc4;border-radius:15px;padding:22px;box-shadow:0 12px 28px rgba(54,38,20,.08)}
+.seo-card{display:block;background:#fff;border:1px solid #eadcc4;border-radius:15px;padding:22px;box-shadow:0 12px 28px rgba(54,38,20,.08);transition:.2s ease}
+.seo-card:hover{transform:translateY(-3px);border-color:#d9b451;box-shadow:0 16px 34px rgba(54,38,20,.13)}
 .seo-card h3{margin:0 0 8px;color:#4c321f}
 .seo-card p{margin:0;color:#5d5048}
 .detail-page{display:none;padding:44px 0 70px}
@@ -230,6 +233,8 @@ td:first-child{font-weight:900;background:#faf5ec;width:24%}
   .gallery-item img{height:260px}
 }
 </style>
+
+<meta name="twitter:card" content="summary">
 </head>
 <body>
 
@@ -470,11 +475,25 @@ td:first-child{font-weight:900;background:#faf5ec;width:24%}
   </div>
 </section>
 
+<section class="section" id="service-guides">
+  <div class="wrap">
+    <div class="title"><h2>장례정보 · 지역 장례식장 안내</h2><small>장례가 발생하기 전에도 비용과 절차를 쉽게 확인할 수 있습니다.</small></div>
+    <div class="seo-pages">
+      <a class="seo-card" href="postpaid-price.html"><h3>후불상조 가격 안내</h3><p>후불상조·후불제상조·후불식상조의 상품금액과 별도 비용 확인</p></a>
+      <a class="seo-card" href="funeral-cost-calculator.html"><h3>장례비용 계산기</h3><p>상품·장례식장·음식·화장·장지 비용을 나눠 예상금액 계산</p></a>
+      <a class="seo-card" href="funeral-hospital-guide.html"><h3>지역 장례식장 찾기</h3><p>서울·경기·인천·강원 주요 장례식장별 시설과 상담 안내</p></a>
+      <a class="seo-card" href="after-death-checklist.html"><h3>임종 후 절차 체크리스트</h3><p>사망 직후부터 장례식장 이동·입관·발인까지 순서별 확인</p></a>
+      <a class="seo-card" href="park-minjae.html"><h3>대표 장례지도사 박민재</h3><p>23년 현장 경력과 상담 원칙, 외부 언론 인터뷰 확인</p></a>
+      <a class="seo-card" href="media.html"><h3>언론보도·인터뷰 원문</h3><p>다함상조와 박민재 장례지도사를 다룬 외부 언론 원문</p></a>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="wrap">
     <h2>다함상조</h2>
-    <p>서울 · 수도권 · 전국 후불상조 전문</p>
-    <p>24시간 상담 1600-6131</p>
+    <p>대표 박민재 · 서울특별시 강남구 선릉로86길 38 7037호</p>
+    <p>24시간 상담 1600-6131 · 모바일 상담 010-7638-5900</p>
   </div>
 <section class="seo-links">
 <div class="wrap">
@@ -496,7 +515,6 @@ td:first-child{font-weight:900;background:#faf5ec;width:24%}
 </div>
 </section>  
 </footer>
-<section class="section" id="service-guides"><div class="wrap"><div class="title"><h2>후불상조와 지역 안내</h2><small>상품과 지역별 상담 전에 진행 방식과 비용을 확인하세요.</small></div><div class="seo-pages"><a class="seo-card" href="postpaid.html"><h3>후불상조 안내</h3><p>후불상조·후불제상조·후불식상조 정산 방식과 포함·별도 비용</p></a><a class="seo-card" href="regions.html"><h3>지역별 장례상담</h3><p>서울·인천·경기·철원·춘천 상담 범위와 진행 전 확인사항</p></a><a class="seo-card" href="media.html"><h3>박민재 장례지도사 언론보도</h3><p>외부 언론 인터뷰와 보도 원문</p></a></div></div></section>
 <div class="fixed">
   <a href="tel:16006131">☎ 전화상담</a>
   <a href="https://open.kakao.com/o/sz9RE1xi" target="_blank">💬 카카오톡</a>
