@@ -42,7 +42,7 @@ img{max-width:100%;display:block}
 .top .wrap{min-height:42px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
 .navin{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo img{height:66px;width:auto;mix-blend-mode:multiply}
+.logo img{height:66px;width:auto;display:block;mix-blend-mode:normal;filter:none;opacity:1;transform:none}
 .menu{display:flex;align-items:center;gap:22px;font-size:17px;font-weight:900}
 .menu a:hover{color:var(--gold)}
 .actions{display:flex;gap:10px}
@@ -203,7 +203,7 @@ details p{font-size:17px;color:#5e5750;margin:0 0 20px}
 
 <nav class="nav">
  <div class="wrap navin">
-  <a class="logo" href="/"><img src="assets/daham_logo.jpg?v=20260929-2114" alt="다함상조 공식 로고"></a>
+  <a class="logo" href="/" aria-label="다함상조 홈"><img src="assets/daham_logo.jpg?v=20260929-2114" alt="다함상조 공식 로고" data-official-logo="true"></a>
   <div class="menu">
    <a href="#products">상품·가격</a><a href="funeral-cost-calculator.html">예상견적</a><a href="#cases">진행사례</a>
    <a href="partners.html">전국 협약 장례식장</a><a href="park-minjae.html">대표 장례지도사</a><a href="#faq">자주 묻는 질문</a>
