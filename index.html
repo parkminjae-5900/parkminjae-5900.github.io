@@ -41,24 +41,25 @@ img{max-width:100%;display:block}
 .top{background:var(--dark);color:#fff;font-size:16px;font-weight:800}
 .top .wrap{min-height:42px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.navin{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo img{height:66px;width:auto;display:block;mix-blend-mode:normal;filter:none;opacity:1;transform:none}
+.navin{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;min-width:250px}
+.logo img{height:66px;width:auto;max-width:330px;object-fit:contain;display:block;mix-blend-mode:normal;filter:none;opacity:1;transform:none}
 .menu{display:flex;align-items:center;gap:22px;font-size:17px;font-weight:900}
 .menu a:hover{color:var(--gold)}
 .actions{display:flex;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 24px;border-radius:14px;border:1px solid transparent;font-size:18px;font-weight:900;line-height:1.3}
-.btn.gold{background:linear-gradient(135deg,#ad7a13,#d8ab39);color:#fff}
+.btn.gold{background:linear-gradient(135deg,#9f6e10,#d0a13c);color:#fff;box-shadow:0 12px 28px rgba(159,110,16,.22)}
 .btn.dark{background:var(--dark);color:#fff}
 .btn.line{border-color:#b9851c;background:#fff;color:#6b4710}
 .btn.kakao{background:var(--kakao);color:#221d13}
-.hero{--hero-bg:url("gallery8.jpg");position:relative;overflow:hidden;background:#f7f1e8;border-bottom:1px solid var(--line)}
-.hero:before{content:"";position:absolute;inset:0;background:var(--hero-bg) 72% center/cover no-repeat;transform:scale(1.01)}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,241,.98) 0%,rgba(250,247,241,.94) 34%,rgba(250,247,241,.58) 52%,rgba(250,247,241,.10) 72%,rgba(20,17,14,.16) 100%)}
-.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;min-height:650px;padding:70px 0}
+.hero{--hero-bg:url("gallery8.jpg");position:relative;overflow:hidden;background:#f7f1e8;border-bottom:1px solid var(--line);isolation:isolate}
+.hero:before{content:"";position:absolute;inset:-1px;background:var(--hero-bg) 72% center/cover no-repeat;transform:scale(1.015);z-index:-2;transition:background-image .45s ease,opacity .45s ease}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,241,.98) 0%,rgba(250,247,241,.96) 32%,rgba(250,247,241,.68) 49%,rgba(250,247,241,.18) 70%,rgba(20,17,14,.20) 100%);z-index:-1}
+.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:52px;align-items:center;min-height:660px;padding:72px 0}
 .eyebrow{display:inline-block;padding:8px 14px;border:1px solid #d8bd82;border-radius:999px;background:#fff;color:#79510c;font-size:16px;font-weight:900}
-h1{margin:18px 0 18px;font-size:clamp(44px,4.9vw,68px);line-height:1.16;letter-spacing:-2.6px}
+h1{margin:18px 0 18px;font-size:clamp(45px,5vw,70px);line-height:1.13;letter-spacing:-2.8px;text-wrap:balance}
 .goldText{color:#9f700e}
-.lead{max-width:720px;margin:0 0 28px;color:#514941;font-size:23px;line-height:1.68;font-weight:700}
+.lead{max-width:690px;margin:0 0 28px;color:#403a35;font-size:22px;line-height:1.72;font-weight:700;text-wrap:pretty}
 .heroBtns{display:flex;flex-wrap:wrap;gap:12px}
 .trustRow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;max-width:720px}
 .trust{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:16px;padding:17px;font-size:17px;font-weight:900;box-shadow:0 12px 30px rgba(50,37,23,.08)}
@@ -155,7 +156,8 @@ details p{font-size:17px;color:#5e5750;margin:0 0 20px}
  .top .wrap{min-height:52px;align-items:flex-start;justify-content:center;flex-direction:column;gap:0;padding:6px 0}
  .top{font-size:14px}
  .navin{min-height:74px}
- .logo img{height:56px}
+ .logo{min-width:0}
+ .logo img{height:54px;max-width:250px}
  .hero:before{background-position:68% center}
  .hero:after{background:linear-gradient(180deg,rgba(250,247,241,.90) 0%,rgba(250,247,241,.76) 55%,rgba(250,247,241,.64) 100%)}
  .heroGrid{padding:36px 0 42px}
@@ -223,6 +225,7 @@ details p{font-size:17px;color:#5e5750;margin:0 0 20px}
     <a class="btn line" href="#products">상품·가격 보기</a>
     <a class="btn dark" href="tel:16006131">24시간 전화상담</a>
    </div>
+   <div style="margin-top:14px;font-size:15px;color:#6f675f;font-weight:800">선납금 없음 · 가입 강요 없음 · 전화번호 입력 없이 비용 확인</div>
    <div class="trustRow">
     <div class="trust">✓ 후불제<br>장례 후 정산</div>
     <div class="trust">✓ 23년 현장경력<br>대표 장례지도사</div>
