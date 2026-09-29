@@ -1,41 +1,409 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>장례비용 계산기 | 무빈소·가족장·일반장 예상비용 | 다함상조</title>
-<meta name="description" content="장례비용 계산기. 무빈소 120만원, 가족장 249만원, 일반장 360만원, 프리미엄 499만원을 기준으로 장례식장·음식·화장·장지 등 별도 비용을 입력해 예상 총액을 확인하세요.">
-<meta name="keywords" content="장례비용 계산기,장례비용 계산,3일장 비용,장례식장 비용,장례 견적,후불상조 가격">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="https://www.dahamsangjo.co.kr/funeral-cost-calculator.html">
-<meta property="og:title" content="장례비용 계산기 | 다함상조"><meta property="og:url" content="https://www.dahamsangjo.co.kr/funeral-cost-calculator.html">
-
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>맞춤 장례설계 · 장례비용 견적 | 다함상조</title>
+<meta name="description" content="장례 형태부터 지역·장례식장, 조문객, 화장·매장, 수의·관·유골함, 상복·인력·차량까지 단계별로 선택해 우리 가족 예상 장례비용을 확인하는 다함상조 맞춤 장례설계.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://www.dahamsangjo.co.kr/funeral-cost-calculator.html">
+<meta property="og:title" content="맞춤 장례설계 · 장례비용 견적 | 다함상조">
+<meta property="og:description" content="필요한 항목을 하나씩 선택해 우리 가족 장례비용을 직접 설계해보세요.">
+<meta property="og:url" content="https://www.dahamsangjo.co.kr/funeral-cost-calculator.html">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#fffdf8;color:#2b241f;font:17px/1.8 'Malgun Gothic','Noto Sans KR',sans-serif}
-a{text-decoration:none;color:inherit}.top,footer{background:#211914;color:#fff;padding:13px 20px}.inner,.wrap{max-width:1080px;margin:auto}
-.top .inner{display:flex;justify-content:space-between;gap:16px}.top a,footer a{color:#f1c05b}
-.hero{background:linear-gradient(135deg,#fff8e9,#ead8bd);padding:56px 20px;text-align:center}.hero h1{font-size:clamp(31px,5vw,48px);line-height:1.25;margin:10px 0}.hero p{max-width:840px;margin:10px auto}
-.wrap{padding:26px 20px}.panel{background:#fff;border:1px solid #eadcc4;border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 10px 28px rgba(54,38,20,.05)}
-.panel h2{color:#603e11;margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.card{background:#fffaf1;border:1px solid #eadcc4;border-radius:13px;padding:18px}
-.btn{display:inline-block;background:#b88712;color:#fff;font-weight:900;padding:12px 18px;border-radius:10px;margin:4px}.dark{background:#211914}
-input,select{width:100%;padding:12px;border:1px solid #d9c6a6;border-radius:10px;font-size:16px;background:#fff}
-label{font-weight:800;display:block;margin:8px 0}.result{background:#211914;color:#fff;border-radius:14px;padding:20px;margin-top:15px}.result strong{color:#f1c05b;font-size:26px}
-table{width:100%;border-collapse:collapse}th,td{border:1px solid #e7dccb;padding:12px;text-align:left;vertical-align:top}th{background:#f5eddf}
-.note{font-size:14px;color:#6f6258}.chips a{display:inline-block;border:1px solid #d9c6a6;border-radius:999px;padding:7px 12px;margin:4px;color:#603e11}
-.step{border-left:4px solid #b88712;padding:5px 0 5px 18px;margin:16px 0}.badge{display:inline-block;background:#b88712;color:#fff;border-radius:999px;padding:5px 11px;font-weight:900}
-@media(max-width:640px){.top .inner{display:block}.btn{display:block;text-align:center}table{font-size:15px}}
-</style>
-</head><body><div class="top"><div class="inner"><strong>다함상조 · 24시간 장례서비스</strong><a href="tel:16006131">상담 1600-6131</a></div></div>
-<header class="hero"><span class="badge">무료 예상비용 계산</span><h1>장례비용 계산기</h1><p>상품금액과 장례식장·음식·화장·장지 등 외부 비용을 분리해서 입력하면 예상 총액을 바로 계산합니다.</p></header>
-<main class="wrap"><section class="panel"><h2>1. 상품 선택</h2><label>장례상품</label><select id="product" onchange="calc()"><option value="1200000">무빈소 120만원</option><option value="2490000">가족장 249만원</option><option value="3600000">일반장 360만원</option><option value="4990000">프리미엄 499만원</option></select>
-<div class="grid"><div><label>장례식장·안치실 비용</label><input id="hall" type="number" min="0" value="0" oninput="calc()"></div><div><label>접객 음식비</label><input id="food" type="number" min="0" value="0" oninput="calc()"></div><div><label>화장비</label><input id="cremation" type="number" min="0" value="0" oninput="calc()"></div><div><label>장지·봉안시설 비용</label><input id="grave" type="number" min="0" value="0" oninput="calc()"></div><div><label>추가 차량·거리 비용</label><input id="vehicle" type="number" min="0" value="0" oninput="calc()"></div><div><label>기타 추가비용</label><input id="etc" type="number" min="0" value="0" oninput="calc()"></div></div>
-<div class="result">예상 총 장례비용<br><strong id="total">1,200,000원</strong><div id="breakdown"></div></div>
-<p class="note">이 계산기는 상담 전 예산 파악용입니다. 실제 비용은 장례식장, 지역, 일정, 조문 규모, 선택 품목과 추가 서비스에 따라 달라집니다.</p></section>
-<section class="panel"><h2>비용을 나눠 보는 이유</h2><p>상조 상품 가격과 장례식장·음식·화장·장지 비용을 한 금액으로 섞어 보면 업체별 비교가 어렵습니다. 다함상조는 상품 금액과 외부 시설 비용을 구분해 확인하는 방식을 권장합니다.</p></section>
-<section class="panel"><h2>관련 페이지</h2><div class="chips"><a href="postpaid-price.html">후불제상조 가격</a><a href="nobinso-cost.html">무빈소 장례 비용</a><a href="nobinso-vs-family.html">무빈소 vs 가족장</a><a href="after-death-checklist.html">임종 후 해야 할 일</a></div><a class="btn" href="tel:16006131">실제 견적 상담</a></section></main>
-<script>
-function n(id){return Number(document.getElementById(id).value||0)}
-function won(v){return Math.round(v).toLocaleString('ko-KR')+'원'}
-function calc(){
- const product=n('product'), hall=n('hall'), food=n('food'), cremation=n('cremation'), grave=n('grave'), vehicle=n('vehicle'), etc=n('etc');
- const total=product+hall+food+cremation+grave+vehicle+etc;
- document.getElementById('total').textContent=won(total);
- document.getElementById('breakdown').innerHTML='<small>상품 '+won(product)+' + 외부·추가비용 '+won(total-product)+'</small>';
+:root{--ink:#211b17;--muted:#6a6159;--gold:#b88712;--gold2:#d7b15a;--cream:#fbf7ef;--line:#e7ddcf;--dark:#211914;--ok:#2f6f4e}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:#fffdf9;color:var(--ink);font-family:"Malgun Gothic","Noto Sans KR",Arial,sans-serif;font-size:18px;line-height:1.75;word-break:keep-all}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+.top{background:var(--dark);color:#fff}
+.top .wrap{min-height:48px;display:flex;align-items:center;justify-content:space-between;font-weight:900}
+.top a{color:#f2c65f}
+.header{padding:34px 0 24px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fff,#fbf3df)}
+.header h1{font-size:clamp(34px,5vw,50px);line-height:1.2;margin:5px 0 10px;letter-spacing:-1.7px}
+.header p{font-size:19px;color:#5d544c;margin:0}
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.brand img{width:140px;max-height:62px;object-fit:contain;mix-blend-mode:multiply}
+.shell{padding:28px 0 110px}
+.progressBox{position:sticky;top:0;z-index:40;background:rgba(255,253,249,.96);backdrop-filter:blur(8px);padding:15px 0 12px;border-bottom:1px solid var(--line)}
+.progressTop{display:flex;justify-content:space-between;gap:14px;align-items:center;font-weight:900}
+.progress{height:12px;background:#eee6da;border-radius:999px;overflow:hidden;margin-top:9px}
+.progress i{display:block;height:100%;width:9%;background:linear-gradient(90deg,#a8750e,#d8ac3b);transition:.25s}
+.stepsMini{display:grid;grid-template-columns:repeat(11,1fr);gap:5px;margin-top:12px}
+.stepsMini span{font-size:12px;text-align:center;padding:5px 2px;border-radius:7px;color:#8b8178;background:#f5f0e8}
+.stepsMini span.on{background:#211914;color:#fff;font-weight:900}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 14px 34px rgba(44,34,24,.08);margin-top:24px}
+.step{display:none}
+.step.active{display:block}
+.step h2{font-size:32px;line-height:1.3;margin:0 0 7px;letter-spacing:-1px}
+.step .sub{font-size:18px;color:var(--muted);margin:0 0 22px}
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.option{position:relative;border:2px solid #e9dfd0;border-radius:18px;padding:22px;background:#fff;text-align:left;min-height:132px;transition:.15s}
+.option:hover{border-color:#cfa548;transform:translateY(-1px)}
+.option.selected{border-color:var(--gold);background:#fff8e8;box-shadow:0 0 0 3px rgba(184,135,18,.12)}
+.option strong{display:block;font-size:22px;margin-bottom:8px}
+.option span{font-size:16px;color:#665d56}
+.option .money{display:block;font-size:20px;color:#8c620f;font-weight:900;margin-top:8px}
+.formGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.field label{display:block;font-weight:900;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;min-height:54px;border:1px solid #d9cbb8;border-radius:12px;padding:12px 14px;background:#fff;font-size:18px}
+.field textarea{min-height:100px;resize:vertical}
+.full{grid-column:1/-1}
+.sliderWrap{padding:8px 2px 2px}
+.sliderTitle{display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:20px}
+.sliderTitle output{font-size:26px;color:#9b6c0d}
+input[type=range]{width:100%;accent-color:#b88712}
+.qtyGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.qtyCard{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fffaf2}
+.qtyCard h3{font-size:21px;margin:0 0 5px}
+.qtyCard p{font-size:15px;color:#6a6159;min-height:48px}
+.qtyControls{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px}
+.qtyControls button{height:46px;border:0;border-radius:10px;background:#211914;color:#fff;font-size:24px}
+.qtyControls input{text-align:center;height:46px;border:1px solid #d9cbb8;border-radius:10px;font-weight:900}
+.checkCard{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:16px;padding:18px;margin:10px 0;background:#fff}
+.checkCard input{width:22px;height:22px;margin-top:3px;accent-color:#b88712}
+.checkCard strong{font-size:20px}
+.checkCard small{display:block;color:#6a6159;font-size:15px;margin-top:4px}
+.navBtns{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+.btn{border:0;border-radius:13px;min-height:58px;padding:14px 24px;font-size:19px;font-weight:900;display:inline-flex;align-items:center;justify-content:center}
+.btn.gold{background:linear-gradient(135deg,#aa7610,#d5aa39);color:#fff}
+.btn.dark{background:#211914;color:#fff}
+.btn.line{background:#fff;border:1px solid #b88712;color:#6c480c}
+.navBtns .btn{min-width:150px}
+.summary{background:#211914;color:#fff;border-radius:20px;padding:26px;margin:18px 0}
+.summary .grand{font-size:17px;color:#e8ddd1}
+.summary .grand strong{display:block;font-size:42px;line-height:1.15;color:#f1c85e;margin-top:5px}
+.summarySplit{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}
+.sumBox{background:rgba(255,255,255,.08);border-radius:14px;padding:16px}
+.sumBox span{display:block;color:#d8cec3;font-size:15px}
+.sumBox b{font-size:23px}
+.breakdown{border:1px solid var(--line);border-radius:17px;overflow:hidden}
+.breakRow{display:flex;justify-content:space-between;gap:16px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:16px}
+.breakRow:last-child{border-bottom:0}
+.breakRow b{white-space:nowrap}
+.notice{background:#fff6df;border:1px solid #e6c77d;border-radius:15px;padding:17px;font-size:15px;color:#5e5143}
+.resultActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.consultBox{margin-top:24px;border-top:1px solid var(--line);padding-top:24px}
+.consultBox h3{font-size:26px;margin:0 0 12px}
+.stickySummary{position:fixed;right:18px;bottom:18px;z-index:50;background:#211914;color:#fff;border-radius:16px;padding:15px 18px;box-shadow:0 14px 36px rgba(0,0,0,.24);min-width:250px}
+.stickySummary small{display:block;color:#d8cec3}
+.stickySummary b{font-size:23px;color:#f1c85e}
+.stickySummary button{border:0;background:transparent;color:#fff;font-weight:900;float:right}
+.priceNote{font-size:14px;color:#756a61;margin-top:10px}
+.hide{display:none!important}
+@media(max-width:850px){
+ .stepsMini{display:none}
+ .options{grid-template-columns:1fr 1fr}
+ .qtyGrid{grid-template-columns:1fr 1fr}
 }
-calc();
-</script><footer><div class="wrap"><strong>다함상조</strong> · 24시간 장례접수 1600-6131 · <a href="/">공식 홈페이지</a></div></footer></body></html>
+@media(max-width:640px){
+ body{font-size:18px}
+ .wrap{width:min(100% - 28px,1100px)}
+ .top .wrap{flex-direction:column;align-items:flex-start;justify-content:center;padding:7px 0;font-size:14px}
+ .header{padding:25px 0 19px}
+ .brand img{width:118px}
+ .header h1{font-size:34px}
+ .header p{font-size:18px}
+ .progressBox{top:0}
+ .progressTop{font-size:16px}
+ .panel{padding:22px 17px;border-radius:18px;margin-top:18px}
+ .step h2{font-size:28px}
+ .step .sub{font-size:17px}
+ .options,.formGrid,.qtyGrid,.summarySplit{grid-template-columns:1fr}
+ .option{min-height:0;padding:19px}
+ .option strong{font-size:21px}
+ .full{grid-column:auto}
+ .navBtns{display:grid;grid-template-columns:1fr 1fr}
+ .navBtns .btn{min-width:0;font-size:18px;padding:12px 8px}
+ .summary .grand strong{font-size:36px}
+ .resultActions{display:grid}
+ .resultActions .btn{width:100%}
+ .stickySummary{left:10px;right:10px;bottom:8px;min-width:0}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><strong>다함상조 · 맞춤 장례설계</strong><a href="tel:16006131">24시간 상담 1600-6131</a></div></div>
+<header class="header"><div class="wrap">
+ <div class="brand"><a href="/"><img src="assets/daham_logo.jpg?v=20260929-2114" alt="다함상조 공식 로고"></a><strong>우리 가족 맞춤 장례비용</strong></div>
+ <h1>필요한 항목을 하나씩 선택해<br>직접 장례를 설계해보세요</h1>
+ <p>정해진 패키지만 고르는 방식이 아니라 현재 상황과 가족에게 필요한 항목을 단계별로 확인합니다.</p>
+</div></header>
+
+<div class="progressBox"><div class="wrap">
+ <div class="progressTop"><span id="progressText">1 / 11단계 · 장례 형태</span><span id="progressPct">9%</span></div>
+ <div class="progress"><i id="progressBar"></i></div>
+ <div class="stepsMini" id="stepsMini"></div>
+</div></div>
+
+<main class="shell"><div class="wrap">
+<div class="panel">
+
+<section class="step active" data-step="1">
+ <h2>어떤 형태의 장례를 생각하고 계신가요?</h2><p class="sub">한 가지를 선택해주세요. 아직 정하지 못하셨다면 ‘잘 모르겠어요’를 선택하셔도 됩니다.</p>
+ <div class="options">
+  <button class="option" data-field="funeralType" data-value="3일장"><strong>3일장</strong><span>빈소를 마련하고 가족과 조문객을 맞이하는 일반적인 장례</span></button>
+  <button class="option" data-field="funeralType" data-value="무빈소"><strong>무빈소</strong><span>빈소 운영 없이 안치·입관·발인·화장 중심으로 간소하게 진행</span></button>
+  <button class="option" data-field="funeralType" data-value="미정"><strong>잘 모르겠어요</strong><span>상담하면서 상황에 맞는 장례 형태를 정합니다.</span></button>
+ </div>
+ <div class="navBtns"><span></span><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="2">
+ <h2>현재 상황을 알려주세요</h2><p class="sub">상담 우선순위와 준비 범위를 판단하는 데 사용합니다.</p>
+ <div class="options">
+  <button class="option" data-field="situation" data-value="임종하신 상태"><strong>임종하신 상태입니다</strong><span>즉시 이송·장례식장·화장예약 등 긴급 안내가 필요합니다.</span></button>
+  <button class="option" data-field="situation" data-value="임종 임박"><strong>임종이 며칠 안 남았습니다</strong><span>빈소와 일정, 준비물 등을 미리 검토합니다.</span></button>
+  <button class="option" data-field="situation" data-value="1주~1달"><strong>1주~1달 정도 남았습니다</strong><span>여유 있게 장례식장과 비용을 비교할 수 있습니다.</span></button>
+  <button class="option" data-field="situation" data-value="사전 준비"><strong>미리 알아보는 중입니다</strong><span>급하지 않은 사전상담 기준으로 살펴봅니다.</span></button>
+ </div>
+ <div class="field full" style="margin-top:14px"><label>상황 메모 (선택)</label><textarea id="situationMemo" placeholder="현재 병원, 이동 예정, 가족 상황 등을 적어주세요"></textarea></div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="3">
+ <h2>지역과 장례식장을 알려주세요</h2><p class="sub">아직 정하지 못하셨다면 지역만 선택하거나 그대로 넘어가셔도 됩니다.</p>
+ <div class="formGrid">
+  <div class="field"><label>시/도</label><select id="region1" onchange="renderHalls()"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>강원</option><option>기타</option></select></div>
+  <div class="field"><label>시/군/구 또는 세부지역</label><input id="region2" placeholder="예: 강남구, 수원시, 춘천시"></div>
+  <div class="field full"><label>장례식장</label><select id="hallSelect"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select></div>
+  <div class="field"><label>장례식장 시설 예상비용 (선택)</label><input id="hallCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+  <div class="field"><label>기타 시설비 (선택)</label><input id="hallEtc" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ </div>
+ <p class="priceNote">장례식장 비용은 시설별·빈소별로 달라 직접 확인한 금액을 입력할 수 있도록 구성했습니다.</p>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="4">
+ <h2>예상 조문객 수를 알려주세요</h2><p class="sub">접객 규모와 도우미 인원을 판단하기 위한 참고값입니다.</p>
+ <div class="sliderWrap">
+  <div class="sliderTitle"><span>예상 조문객 수</span><output id="guestOut">50명</output></div>
+  <input id="guests" type="range" min="0" max="500" step="10" value="50" oninput="guestOut.value=this.value+'명';guestNumber.value=this.value">
+ </div>
+ <div class="field" style="margin-top:18px"><label>직접 입력</label><input id="guestNumber" type="number" min="0" value="50" oninput="guests.value=Math.min(500,Number(this.value||0));guestOut.value=this.value+'명'"></div>
+ <div class="field" style="margin-top:18px"><label>예상 음식·접객비 (선택 입력)</label><input id="foodCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <p class="priceNote">조문객 수만으로 음식비를 임의 산정하지 않습니다. 실제 장례식장 식단과 주문량이 정해졌을 때 금액을 입력하세요.</p>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">장법 선택하기</button></div>
+</section>
+
+<section class="step" data-step="5">
+ <h2>화장과 매장 중 어떤 방식으로 진행하시나요?</h2><p class="sub">장법에 따라 유골함 또는 매장 관련 항목이 달라집니다.</p>
+ <div class="options">
+  <button class="option" data-field="burialType" data-value="화장"><strong>화장</strong><span>화장 후 봉안당·자연장·선산 등 2차 장지를 선택합니다.</span></button>
+  <button class="option" data-field="burialType" data-value="매장"><strong>매장</strong><span>묘지 매장을 계획하는 경우 선택합니다.</span></button>
+  <button class="option" data-field="burialType" data-value="미정"><strong>아직 미정</strong><span>상담 후 결정할 수 있습니다.</span></button>
+ </div>
+ <div class="formGrid" style="margin-top:16px">
+  <div class="field"><label>화장시설 이용료 (선택 입력)</label><input id="cremationCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+  <div class="field"><label>장지·봉안시설 예상비용 (선택 입력)</label><input id="burialCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ </div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="6">
+ <h2>수의를 선택해주세요</h2><p class="sub">다함상조 실제 품목 단가는 상담에서 최종 확인합니다. 여기서는 필요한 구성 여부를 선택합니다.</p>
+ <div class="options">
+  <button class="option" data-field="shroud" data-value="상품 구성 수의"><strong>상품 구성 수의</strong><span>선택한 장례 구성에 맞춰 안내</span><span class="money">상담 시 단가 확인</span></button>
+  <button class="option" data-field="shroud" data-value="직접 준비"><strong>직접 준비</strong><span>가족이 준비한 수의를 사용</span><span class="money">0원 입력</span></button>
+  <button class="option" data-field="shroud" data-value="미정"><strong>아직 미정</strong><span>입관 전 상담으로 결정</span></button>
+ </div>
+ <div class="field" style="margin-top:16px"><label>수의 금액을 알고 있다면 입력</label><input id="shroudCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="7">
+ <h2>관을 선택해주세요</h2><p class="sub">화장·매장 방식과 장례식장 규격에 맞춰 최종 품목을 정합니다.</p>
+ <div class="options">
+  <button class="option" data-field="coffin" data-value="상품 구성 관"><strong>상품 구성 관</strong><span>장례 형태에 맞는 규격관</span><span class="money">상담 시 단가 확인</span></button>
+  <button class="option" data-field="coffin" data-value="직접 준비"><strong>직접 준비</strong><span>가족이 준비한 관 사용 여부 상담</span></button>
+  <button class="option" data-field="coffin" data-value="미정"><strong>아직 미정</strong><span>장법과 시설 조건 확인 후 결정</span></button>
+ </div>
+ <div class="field" style="margin-top:16px"><label>관 금액을 알고 있다면 입력</label><input id="coffinCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <div class="field" id="crossBarField" style="margin-top:14px"><label>매장용 횡대·부대품 예상비용 (선택)</label><input id="crossBarCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="8">
+ <h2>유골함을 선택해주세요</h2><p class="sub">화장 예정인 경우에만 필요합니다. 품목을 아직 정하지 않았다면 넘어가셔도 됩니다.</p>
+ <div class="options">
+  <button class="option" data-field="urn" data-value="기본 유골함"><strong>기본 유골함</strong><span>일반적인 화장 후 봉안용</span></button>
+  <button class="option" data-field="urn" data-value="진공 유골함"><strong>진공 유골함</strong><span>밀폐형 유골함을 희망하는 경우</span></button>
+  <button class="option" data-field="urn" data-value="미정"><strong>아직 미정</strong><span>장지 유형 확인 후 선택</span></button>
+ </div>
+ <div class="field" style="margin-top:16px"><label>유골함 금액을 알고 있다면 입력</label><input id="urnCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="9">
+ <h2>상복과 의전인력을 확인해주세요</h2><p class="sub">필요한 수량만 선택합니다. 아래 단가는 현재 견적 계산용 기준값이며 실제 적용 단가는 최종 상담에서 확인합니다.</p>
+ <div class="qtyGrid">
+  <div class="qtyCard"><h3>남자 상복</h3><p>대여 기준 · 계산 기준 50,000원/벌</p><div class="qtyControls"><button onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button onclick="qty('maleSuit',1)">+</button></div></div>
+  <div class="qtyCard"><h3>여자 상복</h3><p>대여 기준 · 계산 기준 20,000원/벌</p><div class="qtyControls"><button onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button onclick="qty('femaleSuit',1)">+</button></div></div>
+  <div class="qtyCard"><h3>접객 도우미</h3><p>1인 기준 · 계산 기준 120,000원</p><div class="qtyControls"><button onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button onclick="qty('helper',1)">+</button></div></div>
+ </div>
+ <div class="notice" style="margin-top:16px">전담 장례지도사·입관보조·입관용품 등은 상품 및 행사 조건에 따라 달라질 수 있어 이 화면에서는 별도 고정금액으로 강제하지 않습니다.</div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
+</section>
+
+<section class="step" data-step="10">
+ <h2>차량을 선택해주세요</h2><p class="sub">필요한 차량만 선택하고 실제 운행거리와 지역 조건은 상담에서 최종 확인합니다.</p>
+ <label class="checkCard"><input id="limo" type="checkbox" onchange="recalc()"><span><strong>리무진</strong><small>계산 기준 450,000원 · 실제 운행거리/지역에 따라 변동 가능</small></span></label>
+ <label class="checkCard"><input id="bus" type="checkbox" onchange="recalc()"><span><strong>장례버스</strong><small>계산 기준 450,000원 · 실제 운행거리/지역에 따라 변동 가능</small></span></label>
+ <div class="field" style="margin-top:14px"><label>추가 차량·거리비용 직접 입력 (선택)</label><input id="vehicleExtra" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">총 예상견적 확인하기</button></div>
+</section>
+
+<section class="step" data-step="11">
+ <h2>우리 가족 장례 총 예상견적</h2><p class="sub">지금까지 선택하거나 직접 입력한 항목을 기준으로 계산한 금액입니다.</p>
+ <div id="estimateCapture">
+  <div class="summary">
+   <div class="grand">우리 가족 총 예상장례비용<strong id="grandTotal">0원</strong></div>
+   <div class="summarySplit"><div class="sumBox"><span>다함상조·선택 품목 예상</span><b id="serviceTotal">0원</b></div><div class="sumBox"><span>장례식장·외부기관 예상</span><b id="externalTotal">0원</b></div></div>
+  </div>
+  <div class="breakdown" id="breakdown"></div>
+  <div class="notice" style="margin-top:15px">이 금액은 상담 전 비교를 위한 예상견적입니다. 장례식장 실제 사용료, 음식 주문량, 화장시설·장지 비용, 운행거리와 선택 품목에 따라 최종 금액이 달라질 수 있습니다.</div>
+ </div>
+ <div class="resultActions">
+  <button class="btn gold" onclick="consult()">이 견적으로 상담받기</button>
+  <button class="btn dark" onclick="saveImage()">견적 이미지로 저장</button>
+  <button class="btn line" onclick="window.print()">인쇄 · PDF 저장</button>
+  <button class="btn line" onclick="copySummary()">견적내용 복사</button>
+ </div>
+ <div class="consultBox">
+  <h3>상담 요청 정보</h3>
+  <div class="formGrid">
+   <div class="field"><label>보호자 성함 (선택)</label><input id="clientName"></div>
+   <div class="field"><label>연락처</label><input id="clientPhone" placeholder="010-0000-0000"></div>
+   <div class="field full"><label>전달할 말씀 (선택)</label><textarea id="clientMemo"></textarea></div>
+  </div>
+  <p class="priceNote">이 정적 홈페이지는 연락처를 서버에 저장하지 않습니다. ‘이 견적으로 상담받기’를 누르면 선택내용을 문자로 전달할 수 있게 준비합니다.</p>
+ </div>
+ <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><a class="btn dark" href="/">홈으로</a></div>
+</section>
+
+</div></div></main>
+
+<div class="stickySummary" id="stickySummary"><button onclick="this.parentElement.classList.add('hide')">×</button><small>현재 선택 예상금액</small><b id="stickyTotal">0원</b></div>
+
+<script>
+const names=["장례 형태","현재 상황","지역·장례식장","예상 조문객","장법 선택","수의","관","유골함","상복·의전인력","차량","총 예상견적"];
+const hallData={
+ "서울":["서울대학교병원 장례식장","신촌세브란스병원 장례식장","강남세브란스병원 장례식장","서울아산병원 장례식장","삼성서울병원 장례식장","이대서울병원 장례식장","서울성모병원 장례식장","경희의료원 장례식장","보라매병원 장례식장","서울의료원 장례식장"],
+ "경기":["분당서울대학교병원 장례식장","분당차병원 장례식장","아주대학교병원 장례식장","일산백병원 장례식장","국민건강보험 일산병원 장례식장","명지병원 장례식장","부천성모병원 장례식장","고려대학교 안산병원 장례식장"],
+ "인천":["인천의료원 장례식장","인천성모병원 장례식장","인하대병원 장례식장"],
+ "강원":["춘천안식원","강원대학교병원 장례식장","원주세브란스기독병원 장례식장","강릉아산병원 장례식장"],
+ "기타":[]
+};
+const state={step:1,funeralType:"",situation:"",burialType:"",shroud:"",coffin:"",urn:""};
+const unit={maleSuit:50000,femaleSuit:20000,helper:120000,limo:450000,bus:450000};
+document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
+ const field=b.dataset.field, val=b.dataset.value;
+ state[field]=val;
+ document.querySelectorAll('.option[data-field="'+field+'"]').forEach(x=>x.classList.remove("selected"));
+ b.classList.add("selected");
+ recalc();
+}));
+function val(id){const e=document.getElementById(id);return e?Number(e.value||0):0}
+function txt(id){const e=document.getElementById(id);return e?e.value.trim():""}
+function won(n){return Math.round(Number(n||0)).toLocaleString("ko-KR")+"원"}
+function qty(id,d){const e=document.getElementById(id);e.value=Math.max(0,Number(e.value||0)+d);recalc()}
+function renderHalls(){
+ const region=document.getElementById("region1").value;
+ const s=document.getElementById("hallSelect");
+ s.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>';
+ (hallData[region]||[]).forEach(n=>{const o=document.createElement("option");o.value=n;o.textContent=n;s.appendChild(o)});
+}
+function calcData(){
+ const serviceItems=[];
+ const externalItems=[];
+ function add(arr,name,amount){if(Number(amount)>0)arr.push([name,Number(amount)])}
+ add(serviceItems,"수의",val("shroudCost"));
+ add(serviceItems,"관",val("coffinCost"));
+ add(serviceItems,"매장용 횡대·부대품",val("crossBarCost"));
+ add(serviceItems,"유골함",val("urnCost"));
+ add(serviceItems,"남자 상복 "+val("maleSuit")+"벌",val("maleSuit")*unit.maleSuit);
+ add(serviceItems,"여자 상복 "+val("femaleSuit")+"벌",val("femaleSuit")*unit.femaleSuit);
+ add(serviceItems,"접객 도우미 "+val("helper")+"인",val("helper")*unit.helper);
+ if(document.getElementById("limo").checked)add(serviceItems,"리무진",unit.limo);
+ if(document.getElementById("bus").checked)add(serviceItems,"장례버스",unit.bus);
+ add(serviceItems,"추가 차량·거리비",val("vehicleExtra"));
+ add(externalItems,"장례식장·안치·시설비",val("hallCost")+val("hallEtc"));
+ add(externalItems,"음식·접객비",val("foodCost"));
+ add(externalItems,"화장시설 이용료",val("cremationCost"));
+ add(externalItems,"장지·봉안시설비",val("burialCost"));
+ const service=serviceItems.reduce((s,x)=>s+x[1],0);
+ const external=externalItems.reduce((s,x)=>s+x[1],0);
+ return {serviceItems,externalItems,service,external,total:service+external};
+}
+function recalc(){
+ const d=calcData();
+ document.getElementById("stickyTotal").textContent=won(d.total);
+ document.getElementById("grandTotal").textContent=won(d.total);
+ document.getElementById("serviceTotal").textContent=won(d.service);
+ document.getElementById("externalTotal").textContent=won(d.external);
+ const rows=[...d.serviceItems.map(x=>["다함상조·선택품목 · "+x[0],x[1]]),...d.externalItems.map(x=>["외부비용 · "+x[0],x[1]])];
+ document.getElementById("breakdown").innerHTML=rows.length?rows.map(x=>'<div class="breakRow"><span>'+x[0]+'</span><b>'+won(x[1])+'</b></div>').join(""):'<div class="breakRow"><span>아직 금액이 입력되지 않았습니다.</span><b>0원</b></div>';
+}
+function setStep(n){
+ state.step=Math.max(1,Math.min(11,n));
+ document.querySelectorAll(".step").forEach(s=>s.classList.toggle("active",Number(s.dataset.step)===state.step));
+ document.getElementById("progressText").textContent=state.step+" / 11단계 · "+names[state.step-1];
+ const pct=Math.round(state.step/11*100);
+ document.getElementById("progressPct").textContent=pct+"%";
+ document.getElementById("progressBar").style.width=pct+"%";
+ document.querySelectorAll("#stepsMini span").forEach((s,i)=>s.classList.toggle("on",i+1===state.step));
+ document.getElementById("stickySummary").classList.toggle("hide",state.step===11);
+ window.scrollTo({top:document.querySelector(".progressBox").offsetTop,behavior:"smooth"});
+ recalc();
+}
+function next(){setStep(state.step+1)}
+function prev(){setStep(state.step-1)}
+function summaryText(){
+ const d=calcData();
+ const hall=txt("hallSelect")||"미정";
+ const region=[txt("region1"),txt("region2")].filter(Boolean).join(" ")||"미정";
+ const guests=val("guestNumber");
+ const lines=[
+ "[다함상조 맞춤 장례견적 상담]",
+ "장례형태: "+(state.funeralType||"미정"),
+ "현재상황: "+(state.situation||"미정"),
+ "지역: "+region,
+ "장례식장: "+hall,
+ "예상 조문객: "+guests+"명",
+ "장법: "+(state.burialType||"미정"),
+ "수의: "+(state.shroud||"미정"),
+ "관: "+(state.coffin||"미정"),
+ "유골함: "+(state.urn||"미정"),
+ "예상 총액: "+won(d.total),
+ "다함상조·선택품목 예상: "+won(d.service),
+ "장례식장·외부기관 예상: "+won(d.external)
+ ];
+ if(txt("clientName"))lines.push("보호자: "+txt("clientName"));
+ if(txt("clientPhone"))lines.push("연락처: "+txt("clientPhone"));
+ if(txt("clientMemo"))lines.push("전달사항: "+txt("clientMemo"));
+ return lines.join("\n");
+}
+async function copySummary(){
+ try{await navigator.clipboard.writeText(summaryText());alert("견적 내용이 복사되었습니다.");}
+ catch(e){prompt("아래 내용을 복사해주세요.",summaryText());}
+}
+function consult(){
+ const body=encodeURIComponent(summaryText());
+ if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){location.href="sms:01076385900?body="+body;}
+ else{copySummary();alert("견적 내용을 복사했습니다. 1600-6131로 전화하시거나 카카오톡 상담에 붙여넣어 주세요.");}
+}
+async function saveImage(){
+ const target=document.getElementById("estimateCapture");
+ if(!window.html2canvas){alert("이미지 저장 기능을 불러오는 중입니다. 잠시 후 다시 눌러주세요.");return;}
+ const canvas=await html2canvas(target,{scale:2,backgroundColor:"#fff"});
+ const a=document.createElement("a");a.download="다함상조_맞춤장례견적.png";a.href=canvas.toDataURL("image/png");a.click();
+}
+const mini=document.getElementById("stepsMini");
+names.forEach((n,i)=>{const s=document.createElement("span");s.textContent=(i+1)+" "+n;s.onclick=()=>setStep(i+1);mini.appendChild(s)});
+setStep(1);renderHalls();recalc();
+</script>
+</body></html>
