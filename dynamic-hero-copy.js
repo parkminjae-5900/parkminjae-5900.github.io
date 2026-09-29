@@ -71,18 +71,27 @@
     return 3;
   }
 
+  var BACKGROUNDS = {
+    1: "gallery3.jpg",
+    2: "gallery5.jpg",
+    3: "gallery7.jpg",
+    4: "gallery8.jpg"
+  };
+
   function applyCopy(copy, version) {
     var eyebrow = document.querySelector("[data-dynamic-hero='eyebrow']");
     var title = document.querySelector("[data-dynamic-hero='title']");
     var sub = document.querySelector("[data-dynamic-hero='sub']");
     var desc = document.querySelector("[data-dynamic-hero='desc']");
     var cta = document.querySelector("[data-dynamic-hero='cta']");
+    var hero = document.querySelector(".hero");
 
     if (eyebrow) eyebrow.textContent = copy.eyebrow;
     if (title) title.textContent = copy.title;
     if (sub) sub.textContent = copy.sub;
     if (desc) desc.textContent = copy.desc;
     if (cta) cta.textContent = copy.cta;
+    if (hero) hero.style.setProperty("--hero-bg", "url('" + BACKGROUNDS[version] + "')");
 
     document.documentElement.setAttribute("data-hero-copy-version", String(version));
 
