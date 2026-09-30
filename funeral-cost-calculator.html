@@ -318,6 +318,19 @@ input[type=range]{width:100%;accent-color:#b88712}
  .nestedHallArea .hallHead{margin-bottom:9px}
  .nestedHallArea .hallSearch{margin-bottom:9px}
 }
+
+.hallInfo{display:block;min-width:0;width:100%}
+.hallBadges{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.hallBadges em{font-style:normal;background:#f5f0e8;border-radius:999px;padding:4px 9px;font-size:13px;font-weight:900;color:#4d443d}
+.hallMetaLine{display:flex;gap:8px;align-items:center;margin-top:9px;font-size:14px}
+.hallMetaLine span{color:#766b62}.hallMetaLine strong{font-size:14px}
+.hallAddress{margin-top:5px;color:#6b625b;font-size:14px;line-height:1.45}
+.hallItem{align-items:flex-start}
+@media(max-width:760px){
+ .hallBadges em{font-size:12px;padding:4px 8px}
+ .hallMetaLine,.hallMetaLine strong,.hallAddress{font-size:13px}
+ .hallItem{padding:15px 12px;min-height:110px}
+}
 </style>
 </head>
 <body>
@@ -651,6 +664,38 @@ const hallData={
  },
  "기타":{}
 };
+const hallMeta={
+ "서울대학교병원 장례식장":{type:"병원",operation:"직영",rooms:"14개",address:"서울특별시 종로구 대학로 101"},
+ "신촌세브란스병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 서대문구 연세로 50-1"},
+ "강남세브란스병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 강남구 언주로 211"},
+ "서울아산병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 송파구 올림픽로43길 88"},
+ "삼성서울병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 강남구 일원로 81"},
+ "이대서울병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 강서구 공항대로 260"},
+ "서울성모병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 서초구 반포대로 222"},
+ "경희의료원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 동대문구 경희대로 23"},
+ "강동경희대학교병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 강동구 동남로 892"},
+ "고려대학교 안암병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 성북구 고려대로 73"},
+ "고려대학교 구로병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"서울특별시 구로구 구로동로 148"},
+ "분당서울대학교병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"경기도 성남시 분당구 구미로173번길 82"},
+ "아주대학교병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"경기도 수원시 영통구 월드컵로 164"},
+ "국민건강보험 일산병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"경기도 고양시 일산동구 일산로 100"},
+ "명지병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"경기도 고양시 덕양구 화수로14번길 55"},
+ "인천의료원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"인천광역시 동구 방축로 217"},
+ "인천성모병원 장례식장":{type:"병원",operation:"직영",rooms:"10개",address:"인천광역시 부평구 동수로 56"},
+ "인하대병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"인천광역시 중구 인항로 27"},
+ "강원대학교병원 장례식장":{type:"병원",operation:"직영",rooms:"6개",address:"강원특별자치도 춘천시 백령로 156"},
+ "원주세브란스기독병원 장례식장":{type:"병원",operation:"직영",rooms:"확인",address:"강원특별자치도 원주시 일산로 20"}
+};
+function inferHallMeta(name,region,sub){
+ const known=hallMeta[name]; if(known) return known;
+ const hospitalLike=/(병원|의료원|의료센터|대학교|대학병원)/.test(name);
+ return {
+   type:hospitalLike?"병원":"전문",
+   operation:"운영형태 확인",
+   rooms:"빈소수 확인",
+   address:(region&&sub)?region+" "+sub+" · 상세주소 확인":"상세주소 확인"
+ };
+}
 const state={step:1,funeralType:"",situation:"",burialType:"",shroud:"",coffin:"",urn:"",shroudPrice:0,coffinPrice:0,urnPrice:0};
 const unit={maleSuit:50000,femaleSuit:20000,helper:120000,limo:450000,bus:450000};
 const requiredPersonnel={director:400000,embalmingSupplies:230000,assistantDirector:150000};
@@ -717,7 +762,13 @@ function renderHallCards(){
  const selected=document.getElementById("hallSelect").value;
  const sel=document.getElementById("hallSelect");
  sel.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>'+items.map(n=>'<option value="'+n+'">'+n+'</option>').join("");
- list.innerHTML=items.map(n=>'<label class="hallItem '+(selected===n?'selected':'')+'"><input type="radio" name="hallCard" '+(selected===n?'checked':'')+' onchange="chooseHall(\''+n.replace(/'/g,"\\'")+'\')"><span><b>'+n+'</b><small>'+region+' '+selectedSubregion+'</small></span></label>').join("");
+ list.innerHTML=items.map(n=>{
+ const m=inferHallMeta(n,region,selectedSubregion);
+ const badges='<div class="hallBadges"><em>'+m.type+'</em><em>'+m.operation+'</em></div>';
+ const rooms='<div class="hallMetaLine"><span>빈소수</span><strong>'+m.rooms+'</strong></div>';
+ const addr='<div class="hallAddress">'+m.address+'</div>';
+ return '<label class="hallItem '+(selected===n?'selected':'')+'"><input type="radio" name="hallCard" '+(selected===n?'checked':'')+' onchange="chooseHall(\''+n.replace(/'/g,"\\'")+'\')"><span class="hallInfo"><b>'+n+'</b>'+badges+rooms+addr+'</span></label>';
+}).join("");
 }
 function chooseHall(name){
  const s=document.getElementById("hallSelect");
