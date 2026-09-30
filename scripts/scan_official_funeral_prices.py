@@ -94,8 +94,17 @@ def candidate_links(html,base):
     return out
 
 def classify(label):
-    for cat,words in CATEGORY_RULES:
-        if any(w in label for w in words):return cat
+    t=clean(label)
+    # Only actual facility-use charges are accepted. Goods, food, ritual tables and transport are excluded.
+    if any(w in t for w in ("장의차량","장의차","버스","리무진","입관부속품","장례용품","판매","기본상","성복상","발인상","제사","과일","음식","식사")):
+        return None
+    if any(w in t for w in ("안치료","안치실 사용료","안치실이용료","안치실 이용료")):return "안치실"
+    if any(w in t for w in ("염습실 사용료","염습실이용료","염습료","입관실 사용료","입관실이용료","입관료")):return "염습/입관"
+    if any(w in t for w in ("영결식장 사용료","영결식장 임대료","예식실 사용료","예식실 임대료")):return "영결식장"
+    if any(w in t for w in ("관리비","청소비","청소료")):return "청소/관리"
+    if any(w in t for w in ("빈소 임대료","빈소 사용료","빈소사용료","분향실료","분향실 사용료","접객실료","접객실 사용료")):return "빈소"
+    # Some official tables use the room name + price without the word 임대료.
+    if ("빈소" in t or "분향실" in t or "접객실" in t) and any(w in t for w in ("요금","가격","시간","24시간","1일")):return "빈소"
     return None
 
 def amount_from_cell(v, require_won=False):
