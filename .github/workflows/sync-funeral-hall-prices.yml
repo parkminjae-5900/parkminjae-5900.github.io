@@ -1,0 +1,62 @@
+name: Sync e하늘 funeral hall prices
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_funeral_hall_prices.py"
+      - ".github/workflows/sync-funeral-hall-prices.yml"
+  schedule:
+    - cron: "35 18 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install scraper dependencies
+        run: pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Fetch e하늘 public funeral-hall prices
+        run: python scripts/update_funeral_hall_prices.py
+      - name: Validate price dataset
+        run: |
+          python - <<'PY'
+          import json
+          p="data/funeral-hall-prices.json"
+          with open(p,encoding="utf-8") as f:d=json.load(f)
+          if int(d.get("schemaVersion",0)) < 2:
+              raise SystemExit("old schema")
+          discovered=int(d.get("discoveredFacilities",0))
+          priced=int(d.get("pricedFacilities",0))
+          if discovered < 50:
+              raise SystemExit(f"too few discovered facilities: {discovered}")
+          if priced < 10:
+              raise SystemExit(f"too few priced facilities: {priced}")
+          bad=[]
+          for rec in d.get("items",[]):
+              for x in rec.get("prices",[]):
+                  try:a=int(x.get("amount",0))
+                  except:a=0
+                  if a <= 0: bad.append((rec.get("facilityName"),x))
+          if bad: raise SystemExit(f"invalid non-positive prices: {bad[:3]}")
+          print(f"validated: discovered={discovered}, priced={priced}")
+          PY
+      - name: Commit refreshed prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/funeral-hall-prices.json
+          if git diff --cached --quiet; then
+            echo "No price changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh e하늘 funeral hall prices"
+          git pull --rebase origin main
+          git push
