@@ -26,7 +26,7 @@ CATEGORY_RULES=[
 PRICE_HEADER=("금액","가격","요금","사용료","임대료","단가")
 MONEY=re.compile(r"(?<!\d)(\d{1,3}(?:,\d{3})+|\d{4,})(?:\s*원)?(?!\d)")
 MONEY_WON=re.compile(r"(?<!\d)(\d{1,3}(?:,\d{3})+|\d{3,})\s*원(?![가-힣])")
-UNIT=re.compile(r"(24시간|1일|일일|시간당|1시간|1회|회당|1실|실당|1구|구당|1대|대당)")\nCONTACT_WORDS=("고객센터","상담문의","대표전화","전화문의","문의전화","전화번호","연락처")\nFEE_WORDS=("금액","가격","요금","사용료","임대료","단가","안치료","염습료","입관료","분향실료","접객실료","관리비","청소료")
+UNIT=re.compile(r"(24시간|1일|일일|시간당|1시간|1회|회당|1실|실당|1구|구당|1대|대당)")
 
 def now():
     return datetime.now(timezone.utc).isoformat()
@@ -93,7 +93,7 @@ def candidate_links(html,base):
         if len(out)>=6:break
     return out
 
-def contact_noise(label):\n    t=clean(label)\n    return any(w in t for w in CONTACT_WORDS) and not any(w in t for w in FEE_WORDS)\n\ndef classify(label):
+def classify(label):
     t=clean(label)
     if t in ("안치실","안치료"):return "안치실"
     if t in ("염습실","입관실","염습료","입관료"):return "염습/입관"
@@ -159,7 +159,7 @@ def text_prices(soup):
     for el in soup.find_all(["li","p","div","span"]):
         t=clean(el.get_text(" ",strip=True))
         if len(t)<4 or len(t)>180 or "원" not in t:continue
-        if contact_noise(t):continue
+        if any(w in t for w in ("상담문의","고객센터","대표전화","전화문의")):continue
         matched=[]
         for cat,words in CATEGORY_RULES:
             if any(w in t for w in words):matched.append(cat)
@@ -215,7 +215,7 @@ def scan_hall(h):
       "prices":best,"verifiedAt":now()
     }
 
-def sanitize_scan_outputs(db,state):\n    # Remove stale crawler false positives before each next batch.\n    # Manually curated records are left untouched.\n    cleaned=[]\n    for rec in db.get("items",[]):\n        if rec.get("sourceName")=="장례식장 공식 홈페이지 공개가격":\n            prices=[p for p in rec.get("prices",[]) if not contact_noise(p.get("label",""))]\n            if not prices:\n                continue\n            rec=dict(rec);rec["prices"]=prices\n        cleaned.append(rec)\n    db["items"]=cleaned\n    for k,v in list(state.get("results",{}).items()):\n        if v.get("status")!="priced":\n            continue\n        prices=[p for p in v.get("prices",[]) if not contact_noise(p.get("label",""))]\n        if prices:\n            v["prices"]=prices\n            continue\n        state["results"][k]={\n          "status":"no_price_found","homepage":v.get("homepage",""),\n          "facilityName":v.get("facilityName",""),"address":v.get("address",""),\n          "index":v.get("index",-1)\n        }\n    return db,state\n\ndef load_json(path,default):
+def load_json(path,default):
     try:return json.loads(path.read_text(encoding="utf-8"))
     except:return default
 
