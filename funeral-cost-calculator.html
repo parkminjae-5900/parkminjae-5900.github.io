@@ -690,9 +690,14 @@ body{padding-bottom:0}
 .urnReferenceNote{border:1px solid #e5dccf;background:#fffaf2;border-radius:12px;padding:14px 16px}
 .urnReferenceNote strong{display:block;font-size:18px;margin-bottom:4px}
 .urnReferenceNote span{display:block;color:#6b6158;font-size:14px}
+.urnCategoryTabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.urnCategoryBtn{border:1px solid #d9d0c3;background:#f7f4ee;color:#61584f;border-radius:999px;padding:10px 14px;font-size:15px;font-weight:900;cursor:pointer}
+.urnCategoryBtn.active{background:#879a2d;color:#fff;border-color:#879a2d;box-shadow:0 5px 14px rgba(135,154,45,.18)}
+.urnCategoryTitle{margin:6px 0 12px;font-size:22px;font-weight:900}
 .urnGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .urnCard.option{display:block!important;padding:0!important;min-height:0!important;overflow:hidden;text-align:left;background:#fff;border:1px solid #e5dccf;border-radius:14px}
 .urnCard.option.selected{border:2px solid #2f6f4e!important;background:#f6fbf8!important;box-shadow:0 0 0 3px rgba(47,111,78,.08)!important}
+.urnCard[hidden]{display:none!important}
 .urnVisual{height:240px;background-image:url('assets/estimate/urn-products.jpg?v=20260930-2');background-repeat:no-repeat;background-size:200% 200%;background-color:#f4f1eb}
 .urnVisual1{background-position:0% 0%}
 .urnVisual2{background-position:100% 0%}
@@ -712,6 +717,8 @@ body{padding-bottom:0}
  .urnCardBody{padding:13px 14px}
  .urnGuide{grid-template-columns:1fr!important;gap:7px}
  .urnReferenceNote{padding:12px}
+ .urnCategoryTabs{gap:6px}
+ .urnCategoryBtn{padding:9px 11px;font-size:14px}
 }
 
 .productChoiceGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -916,65 +923,40 @@ body{padding-bottom:0}
 
 <section class="step" data-step="8">
  <h2>유골함을 선택해주세요</h2>
- <p class="sub">태림원 유골함 카탈로그 구성을 참고해 재질·문양·밀폐방식이 한눈에 보이도록 정리했습니다. 화장 예정인 경우 원하는 종류를 선택해주세요.</p>
-
+ <p class="sub">제품군을 먼저 선택한 뒤 원하는 유골함을 눌러 상세사진과 특징을 확인할 수 있습니다.</p>
  <div class="urnReferenceHead">
-  <img class="productCatalogHero" src="assets/estimate/urn-products.jpg?v=20260930-2" alt="유골함 제품 예시 이미지" decoding="async">
-  <div class="urnReferenceNote">
-   <strong>유골함 선택 포인트</strong>
-   <span>도자기 재질 · 전통문양 · 진공/밀폐 구조 · 봉안당/자연장 용도 등을 확인해 선택합니다.</span>
-  </div>
+  <img class="productCatalogHero" src="assets/estimate/urn-catalog.jpg?v=20260930-3" alt="유골함 제품 카탈로그" decoding="async">
+  <div class="urnReferenceNote"><strong>유골함 종류별 보기</strong><span>분류 버튼을 누르면 해당 제품군만 표시됩니다. 제품을 누르면 상세 팝업에서 확인 후 선택할 수 있습니다.</span></div>
  </div>
-
- <div class="urnGrid">
-  <button class="urnCard option priced" data-field="urn" data-value="황토백자" data-price="100000">
-   <div class="urnVisual urnVisual1"></div>
-   <div class="urnCardBody">
-    <strong>황토백자</strong>
-    <span>기본 화장 구성 · 백자 계열</span>
-    <small>깔끔한 기본형으로 봉안당·봉안묘에 폭넓게 사용</small>
-    <b class="money">100,000원</b>
-   </div>
+ <div class="urnCategoryTabs" id="urnCategoryTabs" aria-label="유골함 종류">
+  <button type="button" class="urnCategoryBtn active" data-urn-category="all">전체</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="밀봉진공함">밀봉진공함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="잠금형 고급진공함">잠금형 고급진공함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="이중진공함">이중진공함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="소망 잠금형 진공함">소망 잠금형 진공함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="명품 진공함">명품 진공함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="황토 진공함">황토 진공함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="일반함">일반함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="특수함">특수함</button>
+  <button type="button" class="urnCategoryBtn" data-urn-category="기타">기타</button>
+ </div>
+ <div class="urnCategoryTitle" id="urnCategoryTitle">전체 유골함</div>
+ <div class="urnGrid" id="urnGrid">
+  <button class="urnCard option" data-popup-product="urn-u01" data-field="urn" data-value="잠금형 삼중 명품자개함" data-price="0" data-urn-category="잠금형 고급진공함">
+   <div class="urnVisual urnVisual4"></div><div class="urnCardBody"><strong>잠금형 삼중 명품자개함</strong><span>잠금형 고급진공함 · 자개 계열</span><small>잠금 구조와 삼중 구조를 적용한 프리미엄 자개함</small><b class="money">상담 시 실제 선택가 반영</b></div>
   </button>
-
-  <button class="urnCard option" data-field="urn" data-value="봉분실크송학" data-price="0">
-   <div class="urnVisual urnVisual2"></div>
-   <div class="urnCardBody">
-    <strong>봉분실크송학</strong>
-    <span>송학·전통문양 계열</span>
-    <small>전통 문양을 선호하는 가족을 위한 구성</small>
-    <b class="money">상담 시 실제 선택가 반영</b>
-   </div>
+  <button class="urnCard option priced" data-popup-product="urn-u02" data-field="urn" data-value="황토백자" data-price="100000" data-urn-category="황토 진공함">
+   <div class="urnVisual urnVisual1"></div><div class="urnCardBody"><strong>황토백자</strong><span>황토 진공함 · 백자 계열</span><small>깔끔한 백자 계열의 기본형 구성</small><b class="money">100,000원</b></div>
   </button>
-
-  <button class="urnCard option" data-field="urn" data-value="본1호" data-price="0">
-   <div class="urnVisual urnVisual3"></div>
-   <div class="urnCardBody">
-    <strong>본1호</strong>
-    <span>고급 도자기 계열</span>
-    <small>고급 마감과 밀폐구조를 적용한 선택형 구성</small>
-    <b class="money">상담 시 실제 선택가 반영</b>
-   </div>
+  <button class="urnCard option" data-popup-product="urn-u03" data-field="urn" data-value="봉분실크송학" data-price="0" data-urn-category="일반함">
+   <div class="urnVisual urnVisual2"></div><div class="urnCardBody"><strong>봉분실크송학</strong><span>일반함 · 송학 전통문양 계열</span><small>전통 송학 문양을 적용한 봉안용 구성</small><b class="money">상담 시 실제 선택가 반영</b></div>
   </button>
-
-  <button class="urnCard option priced" data-field="urn" data-value="최상위 유골함" data-price="2000000">
-   <div class="urnVisual urnVisual4"></div>
-   <div class="urnCardBody">
-    <strong>최상위 유골함 기준</strong>
-    <span>프리미엄 자개·도자기 계열</span>
-    <small>최상위 재질·문양·마감 기준의 프리미엄 구성</small>
-    <b class="money">2,000,000원</b>
-   </div>
+  <button class="urnCard option" data-popup-product="urn-u04" data-field="urn" data-value="본1호" data-price="0" data-urn-category="명품 진공함">
+   <div class="urnVisual urnVisual3"></div><div class="urnCardBody"><strong>본1호</strong><span>명품 진공함 · 고급 도자기 계열</span><small>고급 마감과 밀폐 구조를 적용한 선택형 구성</small><b class="money">상담 시 실제 선택가 반영</b></div>
   </button>
  </div>
-
- <div class="urnGuide">
-  <div><b>재질</b><span>백자 · 도자기 · 자개 등</span></div>
-  <div><b>밀폐</b><span>뚜껑 결합·밀폐 구조 확인</span></div>
-  <div><b>용도</b><span>봉안당 · 봉안묘 · 자연장</span></div>
- </div>
-
- <p class="priceNote">유골함 실제 판매품목·재질·밀폐방식·문양은 공급 시점에 따라 달라질 수 있으며, 최종 선택 시 실물 또는 최신 카탈로그로 다시 확인합니다.</p>
+ <div class="urnGuide"><div><b>재질</b><span>백자 · 도자기 · 자개 등</span></div><div><b>밀폐</b><span>진공 · 이중 · 잠금형 구조 확인</span></div><div><b>용도</b><span>봉안당 · 봉안묘 · 자연장</span></div></div>
+ <p class="priceNote">제품명·재질·밀폐방식·판매가격은 실제 공급 시점의 최신 카탈로그와 실물을 기준으로 최종 확인합니다.</p>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
@@ -1239,6 +1221,14 @@ function inferHallMeta(name,region,sub){
 const state={step:1,funeralType:"",situation:"",burialType:"",shroud:"",coffin:"",urn:"",shroudPrice:0,coffinPrice:0,urnPrice:0};
 const unit={maleSuit:50000,femaleSuit:20000,helper:120000,limo:450000,bus:450000};
 const requiredPersonnel={director:400000,embalmingSupplies:230000,assistantDirector:150000};
+const urnCategoryLabels={"all":"전체 유골함","밀봉진공함":"밀봉진공함","잠금형 고급진공함":"잠금형 고급진공함","이중진공함":"이중진공함","소망 잠금형 진공함":"소망 잠금형 진공함","명품 진공함":"명품 진공함","황토 진공함":"황토 진공함","일반함":"일반함","특수함":"특수함","기타":"기타"};
+function filterUrns(category){
+ document.querySelectorAll(".urnCategoryBtn").forEach(b=>b.classList.toggle("active",b.dataset.urnCategory===category));
+ document.querySelectorAll("#urnGrid .urnCard").forEach(card=>{card.hidden=category!=="all"&&card.dataset.urnCategory!==category;});
+ const title=document.getElementById("urnCategoryTitle");if(title)title.textContent=urnCategoryLabels[category]||category;
+}
+document.querySelectorAll(".urnCategoryBtn").forEach(b=>b.addEventListener("click",()=>filterUrns(b.dataset.urnCategory)));
+filterUrns("all");
 document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
  if(b.dataset.popupProduct){openProductDetail(b.dataset.popupProduct);return;}
  const field=b.dataset.field, val=b.dataset.value;
@@ -1416,9 +1406,13 @@ const productDetails={
  "coffin-f1":{group:"coffin",img:"assets/estimate/products/f1.jpg?v=20260930-1",title:"오동나무 0.6관",desc:"성원장재 제품코드 F1. 오동나무 집성목으로 방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 기본형 관입니다.",price:"170,000원",value:"오동나무 0.6관",amount:170000,specs:[["제품코드","F1"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 185 / 상 48 / 하 42 / 두께 1.8cm"]]},
  "coffin-f2":{group:"coffin",img:"assets/estimate/products/f2.jpg?v=20260930-1",title:"오동나무 0.6 특관",desc:"성원장재 제품코드 F2. 오동나무 집성목 특관으로 일반형보다 길이와 폭이 큰 구성입니다.",price:"상담 시 실제 선택가 반영",value:"오동나무 0.6 특관",amount:0,specs:[["제품코드","F2"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 1.8cm"]]},
  "coffin-f7":{group:"coffin",img:"assets/estimate/products/f7.jpg?v=20260930-1",title:"솔송 평관",desc:"성원장재 제품코드 F7. 솔송 통판으로 강도가 높고 방충효과가 뛰어나며 매장용 관으로 사용되는 제품입니다.",price:"750,000원",value:"솔송 평관",amount:750000,specs:[["제품코드","F7"],["재질","솔송 통판"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 4.5cm"]]},
- "coffin-f10":{group:"coffin",img:"assets/estimate/products/f10.jpg?v=20260930-1",title:"향나무 2단관",desc:"성원장재 제품코드 F10. 향나무 집성목 북미산으로 방충·방습 효과가 뛰어나고 은은한 향과 유려한 색·무늬가 특징인 고급 매장용 관입니다.",price:"2,700,000원",value:"향나무 2단관 45mm",amount:2700000,specs:[["제품코드","F10"],["재질","향나무 집성목"],["원목","북미산"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]}
+ "coffin-f10":{group:"coffin",img:"assets/estimate/products/f10.jpg?v=20260930-1",title:"향나무 2단관",desc:"성원장재 제품코드 F10. 향나무 집성목 북미산으로 방충·방습 효과가 뛰어나고 은은한 향과 유려한 색·무늬가 특징인 고급 매장용 관입니다.",price:"2,700,000원",value:"향나무 2단관 45mm",amount:2700000,specs:[["제품코드","F10"],["재질","향나무 집성목"],["원목","북미산"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]},
+ "urn-u01":{group:"urn",img:"assets/estimate/urn-catalog.jpg?v=20260930-3",title:"잠금형 삼중 명품자개함",desc:"잠금형 고급진공함 계열의 프리미엄 자개함입니다.",price:"상담 시 실제 선택가 반영",value:"잠금형 삼중 명품자개함",amount:0,specs:[["분류","잠금형 고급진공함"],["형태","잠금형 · 삼중 구조"],["마감","자개 계열"],["확인","최신 실물/카탈로그 기준"]]},
+ "urn-u02":{group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-2",title:"황토백자",desc:"백자 계열의 황토 진공함 구성입니다.",price:"100,000원",value:"황토백자",amount:100000,specs:[["분류","황토 진공함"],["재질","백자 계열"],["용도","봉안당 · 봉안묘"],["확인","최신 실물/카탈로그 기준"]]},
+ "urn-u03":{group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-2",title:"봉분실크송학",desc:"송학 전통문양을 적용한 일반함 계열 구성입니다.",price:"상담 시 실제 선택가 반영",value:"봉분실크송학",amount:0,specs:[["분류","일반함"],["문양","송학 전통문양"],["용도","봉안용"],["확인","최신 실물/카탈로그 기준"]]},
+ "urn-u04":{group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-2",title:"본1호",desc:"고급 도자기 마감과 밀폐 구조를 적용한 명품 진공함 계열 구성입니다.",price:"상담 시 실제 선택가 반영",value:"본1호",amount:0,specs:[["분류","명품 진공함"],["재질","고급 도자기 계열"],["구조","밀폐형"],["확인","최신 실물/카탈로그 기준"]]}
 };
-const productOrder={shroud:["shroud-s2","shroud-s7","shroud-s15"],coffin:["coffin-f1","coffin-f2","coffin-f7","coffin-f10"]};
+const productOrder={shroud:["shroud-s2","shroud-s7","shroud-s15"],coffin:["coffin-f1","coffin-f2","coffin-f7","coffin-f10"],urn:["urn-u01","urn-u02","urn-u03","urn-u04"]};
 let currentProductKey="";
 function openProductDetail(key){
  const d=productDetails[key]; if(!d)return;
