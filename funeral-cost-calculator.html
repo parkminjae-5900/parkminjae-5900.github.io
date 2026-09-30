@@ -212,6 +212,62 @@ input[type=range]{width:100%;accent-color:#b88712}
 .vehicleSelect{display:flex;align-items:center;gap:10px;border:1px solid #ddcfba;border-radius:10px;padding:12px;margin-top:12px;font-weight:900}
 .vehicleSelect input{width:22px;height:22px;accent-color:#b88712}
 @media(max-width:700px){.vehicleGrid{grid-template-columns:1fr}}
+
+/* mobile-first region/funeral-hall selector */
+.regionButtons{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:8px 0 18px}
+.regionBtn{min-height:52px;border:1px solid #d9cbb8;border-radius:12px;background:#fff;font-weight:900;font-size:17px;color:#4f463f}
+.regionBtn.active{background:#2f6f4e;color:#fff;border-color:#2f6f4e;box-shadow:0 5px 14px rgba(47,111,78,.18)}
+.hallArea{margin-top:16px}
+.hallHead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:10px}
+.hallHead h3{margin:0;font-size:22px}
+.hallHead span{font-size:14px;color:#776d64}
+.hallSearch{width:100%;min-height:52px;border:1px solid #d9cbb8;border-radius:12px;padding:11px 14px;font-size:17px;margin-bottom:10px}
+.hallList{display:grid;grid-template-columns:1fr 1fr;gap:9px;max-height:390px;overflow:auto;padding-right:3px}
+.hallItem{display:flex;gap:11px;align-items:center;border:1px solid #e5dccf;border-radius:12px;background:#fff;padding:14px;cursor:pointer;min-height:68px}
+.hallItem:hover{border-color:#bd9845}
+.hallItem.selected{border:2px solid #2f6f4e;background:#f4fbf7;padding:13px}
+.hallItem input{width:21px;height:21px;accent-color:#2f6f4e;flex:0 0 auto}
+.hallItem b{display:block;font-size:17px;line-height:1.35}
+.hallItem small{display:block;color:#786e65;font-size:13px;margin-top:3px}
+.hallEmpty{border:1px dashed #d7c9b6;border-radius:12px;padding:18px;text-align:center;color:#7b7168;background:#fffaf2}
+#region1,#hallSelect{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+.realVisual{height:auto!important;max-height:none!important;object-fit:contain!important}
+.suitVisual{max-height:none!important}
+.vehicleCard img{height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;background:#f5f2ec}
+.staffRealCard img{image-rendering:auto}
+@media(max-width:760px){
+ .header{padding:12px 0 10px}
+ .header h1{font-size:25px;margin:3px 0 5px}
+ .header p{font-size:15px;line-height:1.5}
+ .brand{margin-bottom:5px}
+ .brand img{width:96px}
+ .progressBox{padding:8px 0 5px}
+ .progressTop{font-size:14px}
+ .shell{padding-top:8px;padding-bottom:205px}
+ .shell>.wrap{width:100%;padding:0 10px!important}
+ .panel{margin-top:8px;padding:15px 11px;border-radius:12px}
+ .step h2{font-size:24px}
+ .step .sub{font-size:16px;margin-bottom:14px}
+ .regionButtons{grid-template-columns:repeat(3,1fr);gap:7px}
+ .regionBtn{font-size:16px;min-height:50px}
+ .hallList{grid-template-columns:1fr;max-height:none;overflow:visible}
+ .hallItem{min-height:64px;padding:13px}
+ .hallHead{display:block}
+ .hallHead span{display:block;margin-top:3px}
+ .vehicleGrid{grid-template-columns:1fr!important;gap:12px}
+ .vehicleCard{border-radius:12px}
+ .vehicleBody{padding:14px}
+ .vehicleBody h3{font-size:20px}
+ .vehicleBody strong{font-size:22px}
+ .realVisual{width:100%;border-radius:10px}
+ .staffRealGrid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+ .staffRealCard img{aspect-ratio:4/5;object-fit:cover}
+ .qtyGrid{grid-template-columns:1fr!important}
+ .bottomBar{grid-template-columns:1fr 1fr;padding:7px 8px}
+ .bottomBar .next{grid-column:1/-1}
+ .stickySummary{left:9px;right:9px;bottom:128px}
+}
+
 </style>
 </head>
 <body>
@@ -254,15 +310,33 @@ input[type=range]{width:100%;accent-color:#b88712}
 </section>
 
 <section class="step" data-step="3">
- <h2>지역과 장례식장을 알려주세요</h2><p class="sub">아직 정하지 못하셨다면 지역만 선택하거나 그대로 넘어가셔도 됩니다.</p>
- <div class="formGrid">
-  <div class="field"><label>시/도</label><select id="region1" onchange="renderHalls()"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>강원</option><option>기타</option></select></div>
-  <div class="field"><label>시/군/구 또는 세부지역</label><input id="region2" placeholder="예: 강남구, 수원시, 춘천시"></div>
-  <div class="field full"><label>장례식장</label><select id="hallSelect"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select></div>
+ <h2>지역·장례식장 선택</h2>
+ <p class="sub">지역을 먼저 누르면 해당 지역 장례식장 목록이 바로 아래에 표시됩니다.</p>
+
+ <select id="region1" aria-label="선택 지역"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>강원</option><option>기타</option></select>
+ <select id="hallSelect" aria-label="선택 장례식장"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select>
+
+ <div class="regionButtons" id="regionButtons">
+  <button type="button" class="regionBtn" data-region="서울" onclick="selectRegion('서울')">서울</button>
+  <button type="button" class="regionBtn" data-region="경기" onclick="selectRegion('경기')">경기</button>
+  <button type="button" class="regionBtn" data-region="인천" onclick="selectRegion('인천')">인천</button>
+  <button type="button" class="regionBtn" data-region="강원" onclick="selectRegion('강원')">강원</button>
+  <button type="button" class="regionBtn" data-region="기타" onclick="selectRegion('기타')">기타지역</button>
+ </div>
+
+ <div class="field"><label>시/군/구 또는 세부지역</label><input id="region2" placeholder="예: 강남구, 수원시, 춘천시"></div>
+
+ <div class="hallArea">
+  <div class="hallHead"><h3 id="hallListTitle">장례식장 목록</h3><span id="hallCount">지역을 선택해주세요</span></div>
+  <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름 검색" oninput="renderHallCards()">
+  <div id="hallList" class="hallList"><div class="hallEmpty">위에서 지역을 먼저 선택해주세요.</div></div>
+ </div>
+
+ <div class="formGrid" style="margin-top:18px">
   <div class="field"><label>장례식장 시설 예상비용 (선택)</label><input id="hallCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
   <div class="field"><label>기타 시설비 (선택)</label><input id="hallEtc" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
  </div>
- <p class="priceNote">장례식장 비용은 시설별·빈소별로 달라 직접 확인한 금액을 입력할 수 있도록 구성했습니다.</p>
+ <p class="priceNote">목록에 없으면 ‘기타지역’을 선택한 뒤 세부지역과 장례식장명을 상담 시 알려주시면 됩니다.</p>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
@@ -429,8 +503,17 @@ input[type=range]{width:100%;accent-color:#b88712}
 <script>
 const names=["장례 형태","현재 상황","지역·장례식장","예상 조문객","장법 선택","수의","관","유골함","상복·의전인력","차량","총 예상견적"];
 const hallData={
- "서울":["서울대학교병원 장례식장","신촌세브란스병원 장례식장","강남세브란스병원 장례식장","서울아산병원 장례식장","삼성서울병원 장례식장","이대서울병원 장례식장","서울성모병원 장례식장","경희의료원 장례식장","보라매병원 장례식장","서울의료원 장례식장"],
- "경기":["분당서울대학교병원 장례식장","분당차병원 장례식장","아주대학교병원 장례식장","일산백병원 장례식장","국민건강보험 일산병원 장례식장","명지병원 장례식장","부천성모병원 장례식장","고려대학교 안산병원 장례식장"],
+ "서울":[
+  "서울대학교병원 장례식장","신촌세브란스병원 장례식장","강남세브란스병원 장례식장","서울아산병원 장례식장",
+  "삼성서울병원 장례식장","이대서울병원 장례식장","서울성모병원 장례식장","경희의료원 장례식장",
+  "강동경희대학교병원 장례식장","보라매병원 장례식장","서울의료원 장례식장","국립중앙의료원 장례식장",
+  "중앙대학교병원 장례식장","건국대학교병원 장례식장","고려대학교 안암병원 장례식장","고려대학교 구로병원 장례식장"
+ ],
+ "경기":[
+  "분당서울대학교병원 장례식장","분당차병원 장례식장","아주대학교병원 장례식장","일산백병원 장례식장",
+  "국민건강보험 일산병원 장례식장","명지병원 장례식장","부천성모병원 장례식장","고려대학교 안산병원 장례식장",
+  "경기도의료원 의정부병원 장례식장"
+ ],
  "인천":["인천의료원 장례식장","인천성모병원 장례식장","인하대병원 장례식장"],
  "강원":["춘천안식원","강원대학교병원 장례식장","원주세브란스기독병원 장례식장","강릉아산병원 장례식장"],
  "기타":[]
@@ -452,11 +535,47 @@ function val(id){const e=document.getElementById(id);return e?Number(e.value||0)
 function txt(id){const e=document.getElementById(id);return e?e.value.trim():""}
 function won(n){return Math.round(Number(n||0)).toLocaleString("ko-KR")+"원"}
 function qty(id,d){const e=document.getElementById(id);e.value=Math.max(0,Number(e.value||0)+d);recalc()}
+function selectRegion(region){
+ const s=document.getElementById("region1");
+ s.value=region;
+ document.querySelectorAll(".regionBtn").forEach(b=>b.classList.toggle("active",b.dataset.region===region));
+ document.getElementById("hallSearch").value="";
+ document.getElementById("hallSelect").value="";
+ renderHalls();
+ recalc();
+}
 function renderHalls(){
  const region=document.getElementById("region1").value;
  const s=document.getElementById("hallSelect");
  s.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>';
  (hallData[region]||[]).forEach(n=>{const o=document.createElement("option");o.value=n;o.textContent=n;s.appendChild(o)});
+ renderHallCards();
+}
+function renderHallCards(){
+ const region=document.getElementById("region1").value;
+ const q=(document.getElementById("hallSearch")?.value||"").trim().toLowerCase();
+ const list=document.getElementById("hallList");
+ const title=document.getElementById("hallListTitle");
+ const count=document.getElementById("hallCount");
+ if(!list) return;
+ if(!region){
+   title.textContent="장례식장 목록"; count.textContent="지역을 선택해주세요";
+   list.innerHTML='<div class="hallEmpty">위에서 지역을 먼저 선택해주세요.</div>'; return;
+ }
+ title.textContent=region+" 장례식장";
+ let items=(hallData[region]||[]).filter(n=>!q||n.toLowerCase().includes(q));
+ count.textContent=items.length+"곳";
+ if(region==="기타"){
+   list.innerHTML='<div class="hallEmpty">세부지역을 입력해 주세요. 상담 시 가장 가까운 장례식장을 함께 안내합니다.</div>'; return;
+ }
+ if(!items.length){list.innerHTML='<div class="hallEmpty">검색 결과가 없습니다.</div>';return;}
+ const selected=document.getElementById("hallSelect").value;
+ list.innerHTML=items.map(n=>'<label class="hallItem '+(selected===n?'selected':'')+'"><input type="radio" name="hallCard" '+(selected===n?'checked':'')+' onchange="chooseHall(\''+n.replace(/'/g,"\\'")+'\')"><span><b>'+n+'</b><small>'+region+' 지역 장례식장</small></span></label>').join("");
+}
+function chooseHall(name){
+ document.getElementById("hallSelect").value=name;
+ renderHallCards();
+ recalc();
 }
 function calcData(){
  const serviceItems=[];
@@ -535,7 +654,7 @@ function summaryText(){
  "현재상황: "+(state.situation||"미정"),
  "지역: "+region,
  "장례식장: "+hall,
- "예상 조문객: "+guests+"명",
+ "예상 조문객: "+(state.funeralType==="무빈소"?"해당없음":guests+"명"),
  "장법: "+(state.burialType||"미정"),
  "수의: "+(state.shroud||"미정"),
  "관: "+(state.coffin||"미정"),
