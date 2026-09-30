@@ -639,6 +639,29 @@ body{padding-bottom:0}
   .vehicleBody strong{font-size:26px!important}
   .stickySummary b{font-size:22px!important}
 }
+
+/* final vehicle image QA */
+#limoRealImage,#busRealImage{
+ width:100%!important;
+ height:auto!important;
+ max-width:100%!important;
+ max-height:none!important;
+ object-fit:contain!important;
+ filter:none!important;
+ opacity:1!important;
+ transform:none!important;
+ image-rendering:auto!important;
+ background:#fff!important;
+}
+.vehicleCard{overflow:hidden!important}
+@media(max-width:760px){
+ #limoRealImage,#busRealImage{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+ }
+}
 </style>
 </head>
 <body>
@@ -837,7 +860,7 @@ body{padding-bottom:0}
  <p class="sub">실제 차량 이미지를 확인한 뒤 필요한 차량만 선택해주세요. 선택하지 않아도 다음 단계로 진행할 수 있습니다.</p>
  <div class="vehicleGrid">
   <article class="vehicleCard">
-   <img id="limoRealImage" alt="다함상조 리무진 실제 차량 이미지">
+   <img id="limoRealImage" src="assets/estimate/limo-final.jpg?v=20260930-7" alt="다함상조 리무진 실제 차량 이미지" decoding="async">
    <div class="vehicleBody">
     <h3>리무진 (1차 장지, 150km)</h3>
     <p>고인 이송 · 유가족 동승 가능</p>
@@ -846,7 +869,7 @@ body{padding-bottom:0}
    </div>
   </article>
   <article class="vehicleCard">
-   <img id="busRealImage" alt="다함상조 장례버스 실제 차량 이미지">
+   <img id="busRealImage" src="assets/estimate/bus-final.jpg?v=20260930-7" alt="다함상조 장례버스 실제 차량 이미지" decoding="async">
    <div class="vehicleBody">
     <h3>버스 왕복 (150km)</h3>
     <p>조문객 이동용 · 왕복 기준</p>
@@ -1269,19 +1292,7 @@ async function saveImage(){
  const canvas=await html2canvas(target,{scale:2,backgroundColor:"#fff"});
  const a=document.createElement("a");a.download="다함상조_맞춤장례견적.png";a.href=canvas.toDataURL("image/png");a.click();
 }
-async function loadEstimateImageData(){
- const items=[
-  ["limoRealImage","assets/estimate/limo.b64"],
-  ["busRealImage","assets/estimate/bus.b64"]
- ];
- await Promise.all(items.map(async ([id,url])=>{
-  const el=document.getElementById(id); if(!el) return;
-  try{
-   const b64=(await fetch(url,{cache:"no-store"}).then(r=>r.text())).trim();
-   el.src="data:image/jpeg;base64,"+b64;
-  }catch(e){el.alt+=" (이미지 불러오기 실패)";}
- }));
-}
+async function loadEstimateImageData(){ return; }
 const mini=document.getElementById("stepsMini");
 names.forEach((n,i)=>{const s=document.createElement("span");s.textContent=(i+1)+" "+n;s.onclick=()=>setStep(i+1);mini.appendChild(s)});
 setStep(1);renderHalls();recalc();loadEstimateImageData();
