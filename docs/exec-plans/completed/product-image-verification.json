@@ -113,5 +113,68 @@
   "watermark_coverage_passed": true,
   "original_logo_asset_unchanged": true,
   "showroom_banners_reviewed": 3,
-  "review_status": "ChatGPT review pending; no merge"
+  "review_status": "Code/browser review passed; merge/deployment pending",
+  "additional_viewport_review": [
+    {
+      "width": 320,
+      "height": 568,
+      "step": 6
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "step": 7
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "step": 8
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "step": 6
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "step": 7
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "step": 8
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "step": 6
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "step": 7
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "step": 8
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "step": 6
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "step": 7
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "step": 8
+    }
+  ],
+  "nationwide_estimate_regression_passed": true
 }

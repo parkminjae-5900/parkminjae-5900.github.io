@@ -1,7 +1,7 @@
 # Codex Task: 수의·관·유골함 이미지 전면 수정
 
 ## Current state
-Implemented on `codex/product-images-20260930`; PR is awaiting ChatGPT review before merge. All 115 products use individual local photos shared between cards and dialogs. The original requirements below remain the acceptance criteria.
+Implemented on `codex/product-images-20260930`; PR #2 has passed code and browser review; merge remains pending. All 115 products use individual local photos shared between cards and dialogs. The original requirements below remain the acceptance criteria.
 
 ## Requirements
 Match S1–S15, F1–F10 and all 90 urns by product code; normalize visible subject scale and whitespace; preserve names, prices, estimator behavior and official logo. Inspect every image and every selection at the requested responsive widths.
@@ -29,7 +29,7 @@ Historical product labels differ from current supplier labels; product codes, ex
 - [x] Desktop verification
 - [x] Mobile verification
 - [x] Regression check
-- [ ] Final review — ChatGPT PR review pending; do not merge.
+- [x] Final review — code and browser checks passed; no merge performed.
 
 ## Discoveries
 - S2 was a 93-byte invalid image. A valid 109,054-byte historical source was recovered from commit `51f3d22`; final single-photo asset is 79,603 bytes.
@@ -43,7 +43,7 @@ Historical product labels differ from current supplier labels; product codes, ex
 - PR #2 initially conflicted with the newer nationwide facility estimate changes on main (`5fa7102`). Main was incorporated into this work branch; both new facility/print rules and catalog/branding rules were retained. Main itself was not merged into or deployed by this task. Full catalog regression was repeated on the combined page.
 
 ## Decisions
-Use JPEGs on white canvases: shrouds 700×1000, coffins 1000×500 and urns 600×600. Fit the detected subject within about 90% of the canvas, preserving aspect ratio. Use contain presentation, a scrollable viewport-sized dialog, scroll reset on opening and keyboard focus restoration. The active plan stays active until external PR review finishes.
+Use JPEGs on white canvases: shrouds 700×1000, coffins 1000×500 and urns 600×600. Fit the detected subject within about 90% of the canvas, preserving aspect ratio. Use contain presentation, a scrollable viewport-sized dialog, scroll reset on opening and keyboard focus restoration. The completed review plan is archived under completed/; merge requires a separate user instruction.
 
 The user's subsequent authorized request adds three photorealistic category showroom banners using marble, warm indirect lighting and wood slats. AI images are category atmosphere examples, never SKU replacements. Generated banners contain no invented logo; the exact approved `assets/daham_logo.jpg` is overlaid separately with a sign shadow. Every photograph on this estimator, including dynamically opened detail photographs, receives a separate logo watermark without changing source pixels or product shape. Official logo file remains unchanged. Scope is this requested estimator page; unrelated site pages were not edited.
 
@@ -57,7 +57,7 @@ The user's subsequent authorized request adds three photorealistic category show
 - After incorporating latest main, repeated the full 575 catalog flows successfully. Ran main's `tests/nationwide-estimate.cjs` using installed Edge on the local static server: 390/1440px, 17 regions, hall unit-price quantities, cremation cost, burial exclusion, stale facility reset, negative input clamp, source/missing-cost summaries, A4 PDF and connection-failure fallback all passed. The main `nationwide-prices.js` file is unchanged by this task.
 
 ## Remaining limitations
-ChatGPT PR review remains pending. Some distinct shroud/coffin specifications share the original supplier photo as documented above; their material difference cannot be verified from photography alone.
+Code and browser review completed on 2026-09-30. Merge/deployment has not been performed. Some distinct shroud/coffin specifications share the original supplier photo as documented above; their material difference cannot be verified from photography alone.
 
 ## Goal
 다함상조 장례비용 견적 페이지의 수의, 관, 유골함 이미지를 실제 상품 중심으로 선명하고 일관되게 표시하고, 선택 카드와 상세 팝업 모두 모바일/PC에서 정상 작동하게 한다.
@@ -137,3 +137,6 @@ ChatGPT PR review remains pending. Some distinct shroud/coffin specifications sh
 - Update this plan with findings and verification results.
 - Do not merge to main.
 - Open a pull request to main after validation so ChatGPT can review the diff before merge.
+
+## Requested PR review
+User explicitly requested immediate review of PR #2. Re-inspected the diff and all 90 labeled urn images, re-ran the 575-flow browser suite and the nationwide estimate suite. Additional 320×568, 360×640, 844×390 and 1440×900 tests passed for popup bounds, image decoding, previous/next wrap and reachable selection. No new actionable defects found. Original logo asset and calculation function sources remain unchanged versus main. This was a code/browser review by the implementing assistant, not an independent human sign-off.
