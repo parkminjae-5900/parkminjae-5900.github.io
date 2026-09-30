@@ -77,13 +77,19 @@ def materialize_source():
     # data.go.kr often builds file-download calls in script rather than href attributes.
     r=fetch(PAGE)
     text=r.text
+    # expose hidden attachment IDs and ajax endpoints for data.go.kr's JS-driven downloader
+    soup=BeautifulSoup(text,"html.parser")
+    for inp in soup.find_all("input"):
+        iid=inp.get("id","") or inp.get("name","")
+        if "atch" in iid.lower() or "file" in iid.lower():
+            print("DATA_GO_INPUT",iid,inp.get("value",""),file=sys.stderr)
     pats=[
-        r"fn_fileDown[^\n]{0,500}",
-        r"fileDownload[^\n]{0,500}",
-        r"atchFile[^\n]{0,500}",
-        r"download[^\n]{0,500}",
-        r"장례식장가격정보[^\n]{0,500}",
-        r"20230601[^\n]{0,500}"
+        r".{0,300}limitAtchFileId.{0,700}",
+        r".{0,300}atchFileId.{0,700}",
+        r".{0,300}fileDownload.{0,700}",
+        r".{0,300}download.{0,700}",
+        r".{0,300}장례식장가격정보.{0,700}",
+        r".{0,300}20230601.{0,700}"
     ]
     debug=[]
     for pat in pats:
