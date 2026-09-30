@@ -1127,6 +1127,7 @@ body{padding-bottom:0}
 .catalogHero .catalogHeroSign{width:36%!important;left:32%;top:10%}
 .step[data-step="6"] .catalogHero .catalogHeroSign{width:30%!important;left:35%;top:3%}
 .productDetailImageWrap>.photoBrand{width:100%}
+#urnProductGrid .urnProductCard[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -2040,7 +2041,7 @@ function urnCategoryMatch(productCategory,filter){
 function renderUrnCatalog(cat="전체"){
  const grid=document.getElementById("urnProductGrid"); if(!grid)return;
  grid.querySelectorAll(".urnProductCard").forEach(card=>{
-  card.style.display=urnCategoryMatch(card.dataset.urnCategory||"",cat)?"block":"none";
+  card.hidden=!urnCategoryMatch(card.dataset.urnCategory||"",cat);
  });
 }
 document.addEventListener("click",e=>{

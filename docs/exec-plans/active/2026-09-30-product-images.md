@@ -39,6 +39,7 @@ Historical product labels differ from current supplier labels; product codes, ex
 - 86 urns were extracted from the manufacturer's sheets at the user-supplied `http://www.xn--4y2b62voyh.kr/product/product01-01/` site. Four TA-1 through TA-4 images were matched by exact code at `https://hankook-sj.com/`. Full source URLs and crop rectangles are in `product-image-sources.json`.
 - Historical CCG-1 corresponds to the catalog's CG-1; EFM-1/EFM-2 correspond to EM-1/EM-2. Existing public names/codes and prices remain compatible; code aliases were used only to find source photography.
 - Visual inspection caught wrong sheet assignments and stray catalog price/size text; these were corrected before the final full test run.
+- Category-filter regression exposed legacy `display:block!important` overriding inline hiding. Filtering now uses the native hidden attribute with a scoped CSS rule; every category count is covered by the browser test.
 
 ## Decisions
 Use JPEGs on white canvases: shrouds 700×1000, coffins 1000×500 and urns 600×600. Fit the detected subject within about 90% of the canvas, preserving aspect ratio. Use contain presentation, a scrollable viewport-sized dialog, scroll reset on opening and keyboard focus restoration. The active plan stays active until external PR review finishes.
