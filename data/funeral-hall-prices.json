@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-09-30T05:58:45.365584+00:00",
+  "updatedAt": "2026-09-30T06:01:46.297748+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -108,6 +108,93 @@
       ]
     },
     {
+      "facilityName": "경기도의료원 안성병원장례식장",
+      "address": "경기도 안성시 남파로 95 (당왕동, 경기도의료원안성병원)",
+      "verifiedAt": "2026-09-30T05:59:03.810407+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.medical.or.kr/ansung/contentsInfo.do?brd_mgrno=0&menu_no=988",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 ",
+          "amount": 3500,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관부속품 판매",
+          "amount": 45000,
+          "unit": ""
+        },
+        {
+          "category": "주차",
+          "label": "장의차량 - 장지, 차량종류, 가격, 비고, 선택 장지 차량종류 가격 비고 선택 화장장(관내,용인) 대형(40인승) 400,000원 톨게이트비, 주차비 별도 대형(40인승)",
+          "amount": 400000,
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "경기도의료원 이천병원장례식장",
+      "address": "경기도 이천시 경충대로 2742 (관고동)",
+      "verifiedAt": "2026-09-30T06:00:49.344907+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.medical.or.kr/icheon/contentsInfo.do?brd_mgrno=0&menu_no=925",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "기본상 빈소 차림시 처음으로 올리는 주,포,과일",
+          "amount": 150000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "발인상 상여가 빈소에서 떠나기 전에 마지막으로 빈소에서 올리는 제사",
+          "amount": 250000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "성복상 초상이 나서 입관후 처음으로 상복을 입을 때에 차리는 제사",
+          "amount": 250000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관부속품 턱끈,하대,습신,지메 등",
+          "amount": 45000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "명정, 관보, 결관보, 보공, 한지, 습신, 입관부속, 위생용품, 상복등 1상가 평균 약 250,000 원",
+          "amount": 250000,
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "경기도의료원 포천병원장례식장",
+      "address": "경기도 포천시 포천로 1648 (신읍동)",
+      "verifiedAt": "2026-09-30T06:01:38.117563+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.medical.or.kr/pocheon/contentsInfo.do?brd_mgrno=0&menu_no=1016",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 ",
+          "amount": 84000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
       "facilityName": "교원예움 강원장례식장",
       "address": "강원도 춘천시 동내면 순환대로 877 (거두리)",
       "verifiedAt": "2026-09-30T05:53:51.667792+00:00",
@@ -144,6 +231,41 @@
           "category": "빈소",
           "label": "구분 크기 / 수용인원 구성 가격 202호 50평 / 40명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 30,000원 (기준 1시간) 501호 40평 / 30명 25,000원 (기준 1시간)",
           "amount": 30000,
+          "unit": "1시간"
+        }
+      ]
+    },
+    {
+      "facilityName": "교원예움 평택장례식장",
+      "address": "경기도 평택시 신평로 205, (구)평택장례문화원  (군문동)",
+      "verifiedAt": "2026-09-30T06:01:05.937632+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실 300,000원",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 8,000원",
+          "amount": 8000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
+          "amount": 55000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
+          "amount": 45000,
           "unit": "1시간"
         }
       ]
@@ -290,6 +412,123 @@
           "label": "관리비 8~14호실",
           "amount": 30000,
           "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "안양장례식장",
+      "address": "경기도 안양시 동안구 엘에스로144번길 190 (호계동)",
+      "verifiedAt": "2026-09-30T05:59:12.920821+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.xn--9n2b47q9zbmiv5gca.kr/s2/s2_2.php",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "빈소 임대료 VIP실",
+          "amount": 2352000,
+          "unit": ""
+        },
+        {
+          "category": "안치실",
+          "label": "안치료 안치실",
+          "amount": 144000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 사용료 염습실/입관실",
+          "amount": 400000,
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "안양메트로병원장례식장",
+      "address": "경기도 안양시 만안구 명학로33번길 8 (안양동, 메트로병원)",
+      "verifiedAt": "2026-09-30T05:59:09.095299+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.xn--9n2b1b96f31dg5k8ydvoan6f1scca2922a.com/facility/funeral",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "1층 VIP실 면적 379.5㎡ (115평) 요금 83,000원/시간 빈소, 접객실 무료 KT-WIFI 제공 유가족 휴게실 샤워실, 화장실, 냉난방기, 온돌",
+          "amount": 83000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "2층 특1호실 면적 240.9㎡ (73평) 요금 70,000원/시간 빈소, 접객실 무료 KT-WIFI 제공 유가족 휴게실 샤워실, 화장실, 냉난방기, 온돌",
+          "amount": 70000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "2층 특2호실 면적 240.9㎡ (73평) 요금 70,000원/시간 빈소, 접객실 무료 KT-WIFI 제공 유가족 휴게실 샤워실, 화장실, 냉난방기, 온돌",
+          "amount": 70000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "3층 1, 2호실 면적 165㎡ (50평) 요금 45,000원/시간 빈소, 접객실 무료 KT-WIFI 제공 유가족 휴게실 샤워실, 화장실, 냉난방기, 온돌",
+          "amount": 45000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "3층 3호실 면적 165㎡ (50평) 요금 45,000원/시간 빈소, 접객실 무료 KT-WIFI 제공 유가족 휴게실 샤워실, 화장실, 냉난방기, 온돌",
+          "amount": 45000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "별관 특실 면적 214.5㎡ (65평) 요금 70,000원/시간 빈소, 접객실 무료 KT-WIFI 제공 유가족 휴게실 샤워실, 화장실, 냉난방기, 온돌",
+          "amount": 70000,
+          "unit": ""
+        },
+        {
+          "category": "안치실",
+          "label": "안치료 7,000원",
+          "amount": 7000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실 사용료 (1회) 400,000원",
+          "amount": 400000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "연세대학교 용인장례식장",
+      "address": "경기도 용인시 기흥구 동백죽전대로 363 (중동)",
+      "verifiedAt": "2026-09-30T06:00:09.652223+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://yongin.yonseifuneral.com/bm/bm_3.asp",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 ",
+          "amount": 4500,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "빈소임대료 입식",
+          "amount": 142000,
+          "unit": ""
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장사용료 ",
+          "amount": 200000,
+          "unit": "1회"
         }
       ]
     },
