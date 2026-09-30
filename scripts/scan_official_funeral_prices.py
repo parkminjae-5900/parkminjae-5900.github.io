@@ -25,7 +25,7 @@ CATEGORY_RULES=[
 ]
 PRICE_HEADER=("금액","가격","요금","사용료","임대료","단가")
 MONEY=re.compile(r"(?<!\d)(\d{1,3}(?:,\d{3})+|\d{4,})(?:\s*원)?(?!\d)")
-MONEY_WON=re.compile(r"(?<!\\d)(\\d{1,3}(?:,\\d{3})+|\\d{3,})\\s*원(?![가-힣])")
+MONEY_WON=re.compile(r"(?<!\d)(\d{1,3}(?:,\d{3})+|\d{3,})\s*원(?![가-힣])")
 UNIT=re.compile(r"(24시간|1일|일일|시간당|1시간|1회|회당|1실|실당|1구|구당|1대|대당)")
 
 def now():
@@ -103,7 +103,7 @@ def amount_from_cell(v, require_won=False):
     m=MONEY_WON.search(s) if ("원" in s or require_won) else None
     if not m and not require_won:
         # Numeric-only cells are allowed when the column header explicitly says price.
-        if re.fullmatch(r"[\\d,.\\s]+",s):
+        if re.fullmatch(r"[\d,.\s]+",s):
             m=MONEY.search(s)
     if not m:return 0
     try:n=int(m.group(1).replace(",",""))
@@ -131,7 +131,7 @@ def table_prices(soup):
                 if i>=len(cells):continue
                 c=cells[i]
                 # Even in an explicit price column, reject prose/phone-number cells.
-                if "원" not in c and not re.fullmatch(r"[\\d,.\\s]+",c):continue
+                if "원" not in c and not re.fullmatch(r"[\d,.\s]+",c):continue
                 a=amount_from_cell(c, require_won=(not price_cols))
                 if a:amt=a;used=c;break
             if not amt:continue
