@@ -25,7 +25,7 @@
     });
   }
   function sourceText() {
-    const h=selectedRows().map(r=>r.sourceName+" / 자료 기준 "+r.sourceDate+" / 조회 "+(r.verifiedAt||"미확인"));
+    const h=(manualHall?[]:selectedRows()).map(r=>r.sourceName+" / 자료 기준 "+r.sourceDate+" / 조회 "+(r.verifiedAt||"미확인"));
     if(manualHall)h.push("장례식장 직접 입력: "+$("hall-manual-source").value);
     if(state.burialType!=="매장"&&selectedCrem&&!manualCrem)h.push(selectedCrem.name+" / "+crem.sourceName+" / 자료 기준 "+crem.sourceDate+" / "+$("crem-rate").selectedOptions[0]?.textContent);
     if(state.burialType!=="매장"&&manualCrem)h.push("화장료 직접 입력: "+$("crem-manual-source").value);
@@ -33,13 +33,16 @@
   }
   function warnings() {
     const w=[];
+    if(!state.funeralType)w.push("장례형태 미선택");
+    if(!state.burialType||state.burialType==="미정")w.push("화장·매장 방식 미확정");
+    if(!manualHall&&selectedRows().filter(r=>group(r)==="room").length>1)w.push("복수 빈소 선택: 이용 기간 중복 여부 확인");
     if(loading)w.push("전국 요금자료를 불러오는 중입니다.");
     if(failed)w.push("일부 요금자료 연결 실패. 직접 입력 또는 시설 확인이 필요합니다.");
     if(!selectedName&&!txt("region2"))w.push("장례식장 미정");
     if(!manualHall&&!selectedRows().length)w.push("시설 요금 미선택: 빈소·안치·입관 등 필요한 항목 확인");
-    if(selectedRows().some(r=>r.sourceGrade==="A"))w.push("공식 홈페이지 게시 요금: 시행일·과금 단위·추가 비용 확인 필요");
-    if(selectedRows().some(r=>r.sourceGrade!=="A"))w.push("2023년 공시 또는 2차 자료: 현재 시설 요금 재확인 필요");
-    if(selectedRows().some(r=>qtyFor(r).unit==="단위 확인 필요"))w.push("원문에 없는 과금 단위: 시설 확인 후 수량·단위 입력");
+    if(!manualHall&&selectedRows().some(r=>r.sourceGrade==="A"))w.push("공식 홈페이지 게시 요금: 시행일·과금 단위·추가 비용 확인 필요");
+    if(!manualHall&&selectedRows().some(r=>r.sourceGrade!=="A"))w.push("2023년 공시 또는 2차 자료: 현재 시설 요금 재확인 필요");
+    if(!manualHall&&selectedRows().some(r=>qtyFor(r).unit==="단위 확인 필요"))w.push("원문에 없는 과금 단위: 시설 확인 후 수량·단위 입력");
     if(manualHall&&!number($("hallCost").value))w.push("장례식장 직접 입력 금액 미확인: 빈 값·0원은 무료 확정 아님");
     if(manualHall&&!$("hall-manual-source").value.trim())w.push("장례식장 직접 입력 요금의 확인 근거 미입력");
     if(state.burialType!=="매장") {
