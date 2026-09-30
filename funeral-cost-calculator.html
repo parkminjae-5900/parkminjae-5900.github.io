@@ -959,6 +959,128 @@ body{padding-bottom:0}
  #productDetailImage{max-height:56vh!important}
 }
 </style>
+
+<style id="dahamLuxuryCatalog20260930">
+/* 다함상조 수의·관 프리미엄 쇼룸 카드 */
+.step[data-step="6"] .productChoiceGrid,
+.step[data-step="7"] .productChoiceGrid{
+ display:grid!important;
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:20px!important;
+ align-items:stretch!important;
+}
+.step[data-step="6"] .productChoice.option,
+.step[data-step="7"] .productChoice.option{
+ display:flex!important;
+ flex-direction:column!important;
+ min-width:0!important;
+ height:100%!important;
+ padding:0!important;
+ overflow:hidden!important;
+ text-align:left!important;
+ border:1px solid #ded4c5!important;
+ border-radius:20px!important;
+ background:linear-gradient(180deg,#fff 0%,#fffdf8 100%)!important;
+ box-shadow:0 12px 32px rgba(54,42,24,.08)!important;
+ transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important;
+}
+.step[data-step="6"] .productChoice.option:hover,
+.step[data-step="7"] .productChoice.option:hover{
+ transform:translateY(-4px)!important;
+ border-color:#c7a45c!important;
+ box-shadow:0 18px 42px rgba(75,54,20,.14)!important;
+}
+.step[data-step="6"] .productChoice.option.selected,
+.step[data-step="7"] .productChoice.option.selected{
+ border:2px solid #a98238!important;
+ box-shadow:0 0 0 3px rgba(169,130,56,.10),0 18px 42px rgba(75,54,20,.12)!important;
+}
+.step[data-step="6"] .productSprite,
+.step[data-step="7"] .productSprite,
+.step[data-step="6"] .productChoice img,
+.step[data-step="7"] .productChoice img{
+ width:100%!important;
+ height:280px!important;
+ min-height:280px!important;
+ aspect-ratio:auto!important;
+ object-fit:contain!important;
+ object-position:center!important;
+ background-color:#f7f3eb!important;
+ background-repeat:no-repeat!important;
+ border:0!important;
+ border-bottom:1px solid #eee5d8!important;
+}
+.step[data-step="6"] .productChoice>div,
+.step[data-step="7"] .productChoice>div{
+ display:flex!important;
+ flex-direction:column!important;
+ flex:1 1 auto!important;
+ padding:18px 18px 20px!important;
+ background:#fff!important;
+}
+.step[data-step="6"] .productChoice>div strong,
+.step[data-step="7"] .productChoice>div strong{
+ font-family:"Noto Serif KR","Batang","Malgun Gothic",serif!important;
+ font-size:21px!important;
+ line-height:1.35!important;
+ letter-spacing:-.02em!important;
+ color:#211b17!important;
+ margin:0 0 8px!important;
+}
+.step[data-step="6"] .productChoice>div span,
+.step[data-step="7"] .productChoice>div span{
+ font-size:14px!important;
+ color:#74695f!important;
+ line-height:1.55!important;
+ min-height:44px!important;
+}
+.step[data-step="6"] .productChoice>div .money,
+.step[data-step="7"] .productChoice>div .money{
+ display:block!important;
+ margin-top:auto!important;
+ padding-top:14px!important;
+ font-size:22px!important;
+ line-height:1.2!important;
+ font-weight:900!important;
+ color:#8b6115!important;
+ letter-spacing:-.02em!important;
+}
+.step[data-step="6"] .productChoice>div small,
+.step[data-step="7"] .productChoice>div small{
+ display:inline-flex!important;
+ align-self:flex-start!important;
+ margin-top:10px!important;
+ padding:5px 9px!important;
+ border:1px solid #d8c5a0!important;
+ border-radius:999px!important;
+ color:#70541f!important;
+ background:#fffaf0!important;
+ font-size:12px!important;
+ font-weight:900!important;
+}
+.productDetailCard{width:min(900px,96vw)!important;border:1px solid rgba(211,190,148,.7)!important}
+.productDetailImageWrap{background:linear-gradient(180deg,#f9f6f0,#fff)!important;padding:18px!important}
+#productDetailImage{width:100%!important;max-height:66vh!important;object-fit:contain!important;background:#f7f3eb!important;border-radius:16px!important}
+.productDetailBody{padding:24px 28px 30px!important}
+.productDetailBody h3{font-family:"Noto Serif KR","Batang","Malgun Gothic",serif!important;font-size:31px!important}
+.productDetailPrice{color:#8b6115!important}
+@media(max-width:980px){
+ .step[data-step="6"] .productChoiceGrid,
+ .step[data-step="7"] .productChoiceGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:620px){
+ .step[data-step="6"] .productChoiceGrid,
+ .step[data-step="7"] .productChoiceGrid{grid-template-columns:1fr!important;gap:14px!important}
+ .step[data-step="6"] .productChoice.option,
+ .step[data-step="7"] .productChoice.option{display:block!important}
+ .step[data-step="6"] .productSprite,
+ .step[data-step="7"] .productSprite,
+ .step[data-step="6"] .productChoice img,
+ .step[data-step="7"] .productChoice img{height:300px!important;min-height:300px!important}
+ .step[data-step="6"] .productChoice>div,
+ .step[data-step="7"] .productChoice>div{padding:16px 17px 18px!important}
+}
+</style>
 </head>
 <body>
 <div class="top"><div class="wrap"><strong>다함상조 · 맞춤 장례설계</strong><a href="tel:16006131">24시간 상담 1600-6131</a></div></div>
@@ -1913,4 +2035,5 @@ urnProducts20260930.forEach(x=>{
 productOrder.urn=urnProducts20260930.map(x=>x.key);
 </script>
 <!-- deploy-refresh: 2026-09-30 16:21 KST | S1-S15 F1-F10 + Taerim urn catalog verified -->
+<!-- PRICE-SOURCE-20260930: 하늘끝라이프 공개 페이지에서 검증된 수의 350,000~9,000,000원, 관 170,000~2,700,000원 범위의 정확히 대응되는 품목만 반영. 미확인 개별가는 임의 추정하지 않음. -->
 </body></html>
