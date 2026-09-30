@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-30T12:16:00+09:00",
+  "source": {
+    "name": "보건복지부 e하늘 장사정보서비스",
+    "url": "https://www.15774129.go.kr/portal/esky/fnlfac/fac_list.do?facilitygroupcd=TBC0700001&menuId=M0001000100000000",
+    "note": "공개가격이 검증된 시설만 items에 저장. 임의 추정 금액 금지."
+  },
+  "matchPriority": [
+    "facilityId",
+    "address",
+    "facilityName+sigungu",
+    "telephone"
+  ],
+  "items": []
+}
