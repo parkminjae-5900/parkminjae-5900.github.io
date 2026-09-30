@@ -98,7 +98,7 @@ function render(){
   const official='https://www.15774129.go.kr/portal/esky/fnlfac/fac_list.do?facilitygroupcd=TBC0700001&menuId=M0001000100000000';
   let priceHtml='';
   if(prices.length){
-    priceHtml='<div class="pricegrid">'+prices.map(x=>'<div class="priceitem"><b>'+esc(x.label||x.category||'시설비')+'</b>'+money(x.amount)+(x.unit?' / '+esc(x.unit):'')+'</div>').join('')+'</div><div class="source">확인일 '+esc(p.verifiedAt||'미기재')+' · '+esc(p.sourceName||'e하늘 장사정보서비스')+'</div>';
+    priceHtml='<div class="pricegrid">'+prices.map(x=>'<div class="priceitem"><b>'+esc(x.label||x.category||'시설비')+'</b>'+money(x.amount)+(x.unit?' / '+esc(x.unit):'')+'</div>').join('')+'</div><div class="source">확인일 '+esc(p.verifiedAt||'미기재')+' · '+esc(p.sourceName||'e하늘 장사정보서비스')+(p.sourceGrade?' · 출처등급 '+esc(p.sourceGrade):'')+(p.sourceNote?' · '+esc(p.sourceNote):'')+'</div>'+(p.sourceUrl?'<a class="official" target="_blank" rel="noopener" href="'+esc(p.sourceUrl)+'">가격 출처 확인 →</a>':'');
   }else if(cats){
     const keys=['R','A','E','M','F','S','P'].filter(k=>cats[k]);
     priceHtml='<div class="pricegrid">'+keys.map(k=>'<div class="priceitem"><b>'+CAT_LABEL[k]+'</b>'+rangeText(cats[k])+'</div>').join('')+'</div>'+
