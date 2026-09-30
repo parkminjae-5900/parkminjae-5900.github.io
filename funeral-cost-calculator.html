@@ -310,6 +310,14 @@ input[type=range]{width:100%;accent-color:#b88712}
 @media(max-width:430px){
  .subregionButtons{grid-template-columns:repeat(2,1fr)}
 }
+
+.nestedHallArea{margin-top:12px;border-top:1px solid #e5dccf;border-left:0;border-right:0;border-bottom:0;border-radius:0;padding:14px 0 0;background:transparent}
+.subregionArea:has(.subregionBtn.active){border-color:#c9b17a}
+@media(max-width:760px){
+ .nestedHallArea{margin-top:10px;padding-top:12px}
+ .nestedHallArea .hallHead{margin-bottom:9px}
+ .nestedHallArea .hallSearch{margin-bottom:9px}
+}
 </style>
 </head>
 <body>
@@ -369,15 +377,15 @@ input[type=range]{width:100%;accent-color:#b88712}
  <div class="subregionArea" id="subregionArea">
   <div class="hallHead"><div><h3>시·군·구 세부지역</h3><p>세부지역을 먼저 선택해주세요.</p></div><span id="subregionCount"></span></div>
   <div id="subregionButtons" class="subregionButtons"><div class="hallEmpty">광역지역을 먼저 선택해주세요.</div></div>
- </div>
 
- <div class="hallArea" id="hallArea">
-  <div class="hallHead">
-   <div><h3 id="hallListTitle">장례식장 목록</h3><p id="selectedRegionText">시·군·구를 선택하면 해당 지역 장례식장이 표시됩니다.</p></div>
-   <span id="hallCount"></span>
+  <div class="hallArea nestedHallArea" id="hallArea">
+   <div class="hallHead">
+    <div><h3 id="hallListTitle">장례식장 목록</h3><p id="selectedRegionText">시·군·구를 선택하면 바로 아래에 장례식장이 펼쳐집니다.</p></div>
+    <span id="hallCount"></span>
+   </div>
+   <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름으로 검색" oninput="renderHallCards()">
+   <div id="hallList" class="hallList"><div class="hallEmpty">시·군·구를 먼저 선택해주세요.</div></div>
   </div>
-  <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름으로 검색" oninput="renderHallCards()">
-  <div id="hallList" class="hallList"><div class="hallEmpty">시·군·구를 먼저 선택해주세요.</div></div>
  </div>
 
  <div class="field regionDetailField" style="margin-top:16px"><label>직접 입력 (목록에 없는 경우)</label><input id="region2" placeholder="예: 강남구 ○○장례식장"></div>
@@ -688,7 +696,7 @@ function selectSubregion(sub){
  document.getElementById("hallSelect").value="";
  document.getElementById("hallSearch").value="";
  renderHallCards();
- setTimeout(()=>document.getElementById("hallArea")?.scrollIntoView({behavior:"smooth",block:"start"}),40);
+
 }
 function renderHalls(){renderSubregions();renderHallCards();}
 function renderHallCards(){
