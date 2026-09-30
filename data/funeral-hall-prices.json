@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-09-30T11:30:06.885439+00:00",
+  "updatedAt": "2026-09-30T11:35:05.379494+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -241,6 +241,29 @@
       ]
     },
     {
+      "facilityName": "교원예움 서서울장례식장",
+      "address": "서울특별시 영등포구 선유로 101,교원예움서서울장례식장 (양평동1가)",
+      "verifiedAt": "2026-09-30T11:32:03.916118+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
+          "amount": 55000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
+          "amount": 45000,
+          "unit": "1시간"
+        }
+      ]
+    },
+    {
       "facilityName": "교원예움 평택장례식장",
       "address": "경기도 평택시 신평로 205, (구)평택장례문화원  (군문동)",
       "verifiedAt": "2026-09-30T06:01:05.937632+00:00",
@@ -341,6 +364,23 @@
           "label": "안치료 100,000원 / 1일",
           "amount": 4167,
           "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "길병원장례식장",
+      "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
+      "verifiedAt": "2026-09-30T11:33:58.615450+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://funeral.gilhospital.com/-3",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 120,000",
+          "amount": 120000,
+          "unit": ""
         }
       ]
     },
@@ -671,6 +711,122 @@
           "label": "안치료 ",
           "amount": 4500,
           "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "울산국화원장례식장",
+      "address": "울산광역시 남구 산업로 88 (상개동)",
+      "verifiedAt": "2026-09-30T11:32:57.141295+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://www.ulsanfh.com/sub/sub02_05.php",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 120,000원 기준: 1일",
+          "amount": 120000,
+          "unit": "1일"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실 200,000원 기준: 1회",
+          "amount": 200000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "관리비 100,000원 기준: 1일",
+          "amount": 100000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "울산대학교병원장례식장",
+      "address": "울산광역시 동구 대학병원로 32 (전하동, 울산대학교병원)",
+      "verifiedAt": "2026-09-30T11:33:07.133423+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://ufh.uuh.ulsan.kr/ufh/?pCode=MN0000012",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 230,000원",
+          "amount": 230000,
+          "unit": "시간당"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 사용료 80,000원",
+          "amount": 80000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "수수료 입관실 사용료",
+          "amount": 200000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료 240,000원",
+          "amount": 240000,
+          "unit": "시간당"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 사용료 100,000원",
+          "amount": 100000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "수수료 입관실 사용료",
+          "amount": 300000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "울산영락원",
+      "address": "울산광역시 남구 산업로517번길 10 (여천동, 울산영락원장례식장)",
+      "verifiedAt": "2026-09-30T11:33:02.652669+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://www.ulsanfuneral.com/sub31.asp",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "청소/관리",
+          "label": "관리비 일반실,특실 40,000원 / VIP실 50,000원 / VVIP실 60,000원",
+          "amount": 40000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "울산하늘공원 장례식장",
+      "address": "울산광역시 울주군 삼동면 보삼길 550 (조일리)",
+      "verifiedAt": "2026-09-30T11:33:19.820850+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.uic.or.kr/skypark/funeral/funeral09.do",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "빈소 (24시간 기준) 148 ㎡ (45 평 ) (201~204 호)",
+          "amount": 112000,
+          "unit": "24시간"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 (24시간 기준) 148 ㎡ (45 평 ) (201~204 호)",
+          "amount": 224000,
+          "unit": "24시간"
         }
       ]
     },
