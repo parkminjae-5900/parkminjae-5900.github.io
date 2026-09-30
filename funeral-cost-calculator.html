@@ -268,6 +268,33 @@ input[type=range]{width:100%;accent-color:#b88712}
  .stickySummary{left:9px;right:9px;bottom:128px}
 }
 
+
+/* region-hall instant vertical list */
+.regionQuick{margin:4px 0 10px}
+.regionQuick label{display:block;font-weight:900;margin-bottom:7px}
+.regionSearch{width:100%;min-height:56px;border:2px solid #d9cbb8;border-radius:13px;padding:12px 15px;font-size:18px;background:#fff}
+.regionSearch:focus{outline:none;border-color:#2f6f4e;box-shadow:0 0 0 3px rgba(47,111,78,.12)}
+.hallArea{margin-top:14px;border:1px solid #e5dccf;border-radius:14px;background:#fff;padding:14px}
+.hallHead{align-items:center}
+.hallHead p{margin:3px 0 0;color:#776d64;font-size:14px}
+.hallList{grid-template-columns:1fr!important;max-height:520px!important;overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:thin;padding:2px 4px 2px 0}
+.hallList::-webkit-scrollbar{width:8px}
+.hallList::-webkit-scrollbar-thumb{background:#cfc5b7;border-radius:999px}
+.hallItem{background:#fff;transition:.14s ease}
+.hallItem.selected{position:relative}
+.hallItem.selected:after{content:"선택됨";margin-left:auto;color:#2f6f4e;font-weight:900;font-size:14px}
+@media(max-width:760px){
+ .regionQuick{position:sticky;top:88px;z-index:16;background:#fffdf9;padding:6px 0 4px}
+ .regionSearch{min-height:54px;font-size:17px}
+ .regionButtons{display:flex!important;overflow-x:auto;gap:7px;padding-bottom:5px;scrollbar-width:none}
+ .regionButtons::-webkit-scrollbar{display:none}
+ .regionBtn{min-width:84px;flex:0 0 auto}
+ .hallArea{padding:10px;margin-top:10px}
+ .hallList{max-height:62vh!important;overflow-y:auto!important}
+ .hallItem{min-height:72px;padding:14px 12px}
+ .hallItem b{font-size:17px}
+ .regionDetailField{margin-top:12px!important}
+}
 </style>
 </head>
 <body>
@@ -311,10 +338,15 @@ input[type=range]{width:100%;accent-color:#b88712}
 
 <section class="step" data-step="3">
  <h2>지역·장례식장 선택</h2>
- <p class="sub">지역을 먼저 누르면 해당 지역 장례식장 목록이 바로 아래에 표시됩니다.</p>
+ <p class="sub">맨 위에서 지역을 선택하면 해당 지역 장례식장 목록이 즉시 아래에 열립니다. 목록은 세로로 스크롤해서 선택할 수 있습니다.</p>
 
  <select id="region1" aria-label="선택 지역"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>강원</option><option>기타</option></select>
  <select id="hallSelect" aria-label="선택 장례식장"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select>
+
+ <div class="regionQuick">
+  <label for="regionSearch">지역 검색</label>
+  <input id="regionSearch" class="regionSearch" placeholder="예: 서울, 경기, 인천, 강원" oninput="filterRegionButtons()">
+ </div>
 
  <div class="regionButtons" id="regionButtons">
   <button type="button" class="regionBtn" data-region="서울" onclick="selectRegion('서울')">서울</button>
@@ -324,13 +356,16 @@ input[type=range]{width:100%;accent-color:#b88712}
   <button type="button" class="regionBtn" data-region="기타" onclick="selectRegion('기타')">기타지역</button>
  </div>
 
- <div class="field"><label>시/군/구 또는 세부지역</label><input id="region2" placeholder="예: 강남구, 수원시, 춘천시"></div>
-
- <div class="hallArea">
-  <div class="hallHead"><h3 id="hallListTitle">장례식장 목록</h3><span id="hallCount">지역을 선택해주세요</span></div>
-  <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름 검색" oninput="renderHallCards()">
+ <div class="hallArea" id="hallArea">
+  <div class="hallHead">
+   <div><h3 id="hallListTitle">장례식장 목록</h3><p id="selectedRegionText">지역을 선택하면 바로 표시됩니다.</p></div>
+   <span id="hallCount">지역을 선택해주세요</span>
+  </div>
+  <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름으로 검색" oninput="renderHallCards()">
   <div id="hallList" class="hallList"><div class="hallEmpty">위에서 지역을 먼저 선택해주세요.</div></div>
  </div>
+
+ <div class="field regionDetailField" style="margin-top:16px"><label>시/군/구 또는 세부지역 (선택)</label><input id="region2" placeholder="예: 강남구, 수원시, 춘천시"></div>
 
  <div class="formGrid" style="margin-top:18px">
   <div class="field"><label>장례식장 시설 예상비용 (선택)</label><input id="hallCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
@@ -539,10 +574,20 @@ function selectRegion(region){
  const s=document.getElementById("region1");
  s.value=region;
  document.querySelectorAll(".regionBtn").forEach(b=>b.classList.toggle("active",b.dataset.region===region));
+ const rs=document.getElementById("regionSearch"); if(rs) rs.value=region;
  document.getElementById("hallSearch").value="";
  document.getElementById("hallSelect").value="";
+ const t=document.getElementById("selectedRegionText"); if(t) t.textContent=region+" 지역 장례식장을 아래에서 선택하세요.";
  renderHalls();
  recalc();
+ setTimeout(()=>{document.getElementById("hallArea")?.scrollIntoView({behavior:"smooth",block:"start"});},60);
+}
+function filterRegionButtons(){
+ const q=(document.getElementById("regionSearch")?.value||"").trim().toLowerCase();
+ document.querySelectorAll(".regionBtn").forEach(b=>{
+   const name=(b.dataset.region||"").toLowerCase();
+   b.style.display=(!q || name.includes(q) || (q==="서울시"&&name==="서울") || (q==="경기도"&&name==="경기") || (q==="인천시"&&name==="인천") || (q==="강원도"&&name==="강원"))?"":"none";
+ });
 }
 function renderHalls(){
  const region=document.getElementById("region1").value;
