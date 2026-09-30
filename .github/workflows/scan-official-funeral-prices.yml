@@ -1,0 +1,61 @@
+name: Scan official funeral hall prices
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/scan_official_funeral_prices.py"
+      - ".github/workflows/scan-official-funeral-prices.yml"
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: official-funeral-price-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Scan official funeral hall sites
+        env:
+          PRICE_SCAN_BATCH: "45"
+        run: python scripts/scan_official_funeral_prices.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          for p in ["data/funeral-hall-prices.json","data/official-price-scan-state.json","data/official-price-scan-report.json"]:
+              if not pathlib.Path(p).exists():
+                  raise SystemExit(f"missing {p}")
+          with open("data/funeral-hall-prices.json",encoding="utf-8") as f:d=json.load(f)
+          for rec in d.get("items",[]):
+              for x in rec.get("prices",[]):
+                  a=int(x.get("amount",0))
+                  if a < 1000 or a > 20000000:
+                      raise SystemExit(f"invalid amount {a}: {rec.get('facilityName')}")
+          print("validated",len(d.get("items",[])),"override facilities")
+          PY
+      - name: Commit scan state and verified prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/funeral-hall-prices.json data/official-price-scan-state.json data/official-price-scan-report.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "chore: scan official funeral hall prices"
+          git pull --rebase origin main
+          git push
