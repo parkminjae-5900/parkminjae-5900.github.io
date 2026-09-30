@@ -58,7 +58,7 @@
 
   <section class="section">
     <h2>표시되는 정보</h2>
-    <p>장례식장명, 주소, 전화번호, 운영형태, 공설·사설 구분, 주차 관련 수치, 안치 관련 수치, 빈소 관련 수치, 식당·매점·주차시설·유가족대기실·장애인편의시설 설치 여부를 제공합니다.</p>
+    <p>장례식장명, 주소, 전화번호, 운영형태, 공설·사설 구분, 주차대수, 안치가능구수, 빈소수, 식당·매점·주차시설·유가족대기실·장애인편의시설 설치 여부를 제공합니다.</p>
     <div class="notice"><b>안내:</b> 공공데이터는 실제 현장 상황과 갱신 시점 차이가 있을 수 있습니다. 빈소 이용 가능 여부, 실제 주차 가능 대수, 시설 운영 여부와 비용은 이용 전 해당 장례식장 또는 다함상조 상담을 통해 다시 확인해 주세요.</div>
   </section>
 </main>
@@ -93,9 +93,9 @@ function render(list){
       <div class="addr">${esc(h.addr||'주소 정보 없음')}</div>
       <div class="info">
         <div><b>전화</b><br>${esc(h.telno||'-')}</div>
-        <div><b>주차 관련 수치</b><br>${n(h.tpkct)}</div>
-        <div><b>안치 관련 수치</b><br>${n(h.mtaCnt)}</div>
-        <div><b>빈소 관련 수치</b><br>${n(h.ehrCnt)}</div>
+        <div><b>주차대수</b><br>${n(h.tpkct)}</div>
+        <div><b>안치가능구수</b><br>${n(h.mtaCnt)}</div>
+        <div><b>빈소수</b><br>${n(h.ehrCnt)}</div>
         <div><b>식당</b><br>${esc(yn(h.diningFclt))}</div>
         <div><b>매점</b><br>${esc(yn(h.store))}</div>
         <div><b>주차시설</b><br>${esc(yn(h.pklt))}</div>
@@ -140,7 +140,8 @@ fetch('/data/funeral-halls.json?v=20260930')
     allHalls=Array.isArray(data)?data:(data.items||[]);
     if(!allHalls.length) throw new Error('EMPTY');
     fillSido();
-    statusBox.textContent='시·도를 선택해 주세요.';
+    const total = allHalls.length.toLocaleString('ko-KR');
+    statusBox.textContent='전국 '+total+'개 장례식장 데이터가 준비되었습니다. 시·도를 선택해 주세요.';
   })
   .catch(()=>{
     statusBox.classList.add('error');
