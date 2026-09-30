@@ -356,6 +356,52 @@ input[type=range]{width:100%;accent-color:#b88712}
  .qtyThumb{height:auto;max-height:none;object-fit:contain;border-radius:10px}
  .qtyCard{padding:14px}
 }
+
+/* Step 9/10 final responsive layout */
+.step9Main{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"required suit" "helper suit";gap:18px;align-items:start}
+.step9Required{grid-area:required}.step9Suit{grid-area:suit}.step9Helper{grid-area:helper}
+.sectionTitle{font-size:22px;line-height:1.35;margin:0 0 10px}
+.step9HeroImage{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border:1px solid #e5dccf;border-radius:10px;background:#fff}
+.helperFeature{display:grid;grid-template-columns:44% 1fr;border:1px solid #e5dccf;border-radius:10px;overflow:hidden;background:#fff}
+.helperFeature .helperHero{border:0;border-radius:0;height:100%;object-fit:cover}
+.helperCopy{padding:18px;display:flex;flex-direction:column;justify-content:center}
+.helperCopy strong{font-size:21px}.helperCopy span{font-size:15px;color:#6a6159;margin-top:7px}
+.compactQty{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:16px;align-items:center;border:1px solid #e5dccf;border-radius:10px;background:#fff;padding:15px 16px;margin-top:10px}
+.compactQtyText strong{display:block;font-size:18px}
+.compactQtyText span{display:block;font-size:14px;color:#6a6159;margin-top:3px}
+.compactQtyText b{display:block;font-size:16px;margin-top:5px}
+.compactQtyText small{display:block;color:#887b70;margin-top:4px}
+.compactQty .qtyControls{grid-template-columns:42px 46px 42px;justify-content:end}
+.compactQty .qtyControls button{height:42px}.compactQty .qtyControls input{height:42px}
+.mandatoryTotal{margin-top:10px}
+.step[data-step="10"] .vehicleGrid{align-items:start}
+.step[data-step="10"] .vehicleCard img{width:100%;height:auto;object-fit:contain;image-rendering:auto}
+@media(max-width:760px){
+ .step9Main{display:flex;flex-direction:column;gap:16px}
+ .step9Required{order:1;width:100%}
+ .step9Suit{order:2;width:100%}
+ .step9Helper{order:3;width:100%}
+ .sectionTitle{font-size:20px}
+ .step9HeroImage{width:100%;height:auto!important;max-height:none!important;object-fit:contain!important}
+ .helperFeature{display:block}
+ .helperFeature .helperHero{width:100%;height:auto!important;object-fit:contain!important}
+ .helperCopy{padding:14px}
+ .compactQty{grid-template-columns:1fr auto;gap:10px;padding:13px 12px}
+ .compactQtyText strong{font-size:17px}
+ .compactQtyText span,.compactQtyText small{font-size:13px}
+ .compactQty .qtyControls{grid-template-columns:38px 42px 38px}
+ .compactQty .qtyControls button,.compactQty .qtyControls input{height:40px}
+ .step[data-step="10"] .vehicleGrid{display:grid!important;grid-template-columns:1fr!important;gap:14px}
+ .step[data-step="10"] .vehicleCard{width:100%}
+ .step[data-step="10"] .vehicleCard img{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+ .step[data-step="10"] .vehicleBody{padding:14px}
+ .step[data-step="10"] .vehicleSelect{min-height:54px}
+ .bottomBar{grid-template-columns:.95fr 1.05fr 1.15fr!important;gap:6px;padding:7px 7px!important}
+ .bottomBar .next{grid-column:auto!important}
+ .bottomBar a,.bottomBar button{min-height:54px!important;font-size:14px!important;padding:7px 5px!important;white-space:nowrap}
+ .stickySummary{bottom:76px!important}
+ .shell{padding-bottom:150px!important}
+}
 </style>
 </head>
 <body>
@@ -505,38 +551,47 @@ input[type=range]{width:100%;accent-color:#b88712}
 </section>
 
 <section class="step" data-step="9">
- <h2>상복·의전인력</h2>
- <p class="sub">아래 의전인력은 모든 장례에 기본으로 포함되며, 선택 해제할 수 없는 필수항목입니다.</p>
- <div class="infoBlue">무빈소의 경우 빈소를 차리지 않으므로 빈소용품 일부가 제외될 수 있지만, 장례지도사·입관용품·보조 장례지도사는 필수로 자동 계산됩니다.</div>
- <h2 style="margin-top:24px">상복 실사 이미지</h2>
- <p class="sub">남·여 상복을 실제 형태로 확인할 수 있습니다.</p>
- <img id="suitRealImage" class="realVisual suitVisual" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/suit.png?raw=1&v=20260930-3" alt="다함상조 남녀 상복 실사 이미지">
- <div class="staffRealGrid" aria-label="다함상조 실제 의전인력">
-  <div class="staffRealCard"><img src="staff/assets/photos/01.jpg" alt="박민재 대표장례지도사"><b>박민재</b><span>대표장례지도사</span></div>
-  <div class="staffRealCard"><img src="staff/assets/photos/18.jpg" alt="홍경희 의전팀장"><b>홍경희</b><span>의전팀장</span></div>
-  <div class="staffRealCard"><img src="staff/assets/photos/08.jpg" alt="안지아 의전팀장"><b>안지아</b><span>의전팀장</span></div>
-  <div class="staffRealCard"><img src="staff/assets/photos/04.jpg" alt="서진우 교육부장"><b>서진우</b><span>교육부장</span></div>
-  <div class="staffRealCard"><img src="staff/assets/photos/06.jpg" alt="정승철 의전팀장"><b>정승철</b><span>의전팀장</span></div>
- </div>
- <div class="staffRealNote">다함상조 직원 디지털 명함에 등록된 실제 원본사진을 그대로 사용합니다.</div>
- <div class="requiredBox">
-  <div class="requiredRow"><div><strong>전담 장례지도사</strong><small>의전·입관·발인 진행 · 장례 전반 총괄</small></div><b>400,000원</b></div>
-  <div class="requiredRow"><div><strong>입관용품 일체</strong><small>관보·소창·탈지면·알코올 등 입관 기본용품</small></div><b>230,000원</b></div>
-  <div class="requiredRow"><div><strong>보조 장례지도사 (입관식)</strong><small>입관식 보조 인력 · 특수입관 시 추가비용 별도</small></div><b>150,000원</b></div>
- </div>
- <div class="notice" style="margin-top:16px"><strong>필수 의전인력 합계 780,000원</strong>이 견적에 자동 포함됩니다.</div>
+ <h2>상복과 의전인력을 확인해주세요</h2>
+ <p class="sub">필수 의전인력은 자동 포함되며, 상복과 접객도우미는 필요한 수량만 선택하시면 됩니다.</p>
+ <div class="infoBlue">상복과 의전인력은 고인을 마지막으로 정중히 모시는 데 필요한 서비스입니다. 가족 구성원과 장례식장 규모에 맞춰 필요한 수량을 선택해주세요.</div>
 
- <h2 style="margin-top:28px">접객도우미 실사 이미지</h2>
- <p class="sub">장례식장 접객실에서 근무하는 접객관리 인력 예시입니다.</p>
- <img id="helperRealImage" class="realVisual helperVisual" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/helper.png?raw=1&v=20260930-3" alt="다함상조 접객관리 도우미 실사 이미지">
+ <div class="step9Main">
+  <div class="step9Required">
+   <h3 class="sectionTitle">필수 의전인력 및 용품</h3>
+   <div class="requiredBox">
+    <div class="requiredRow"><div><strong>전담 장례지도사 (의전/입관 · 2일)</strong><small>장례 전 과정의 진행과 의전을 담당하는 전문 장례지도사</small></div><b>400,000원</b></div>
+    <div class="requiredRow"><div><strong>입관용품 일체</strong><small>관보·소창·탈지면·알코올 등 입관 기본용품 일체</small></div><b>230,000원</b></div>
+    <div class="requiredRow"><div><strong>보조 장례지도사 (입관식)</strong><small>입관식 진행 보조 및 제례 지원</small></div><b>150,000원</b></div>
+   </div>
+   <div class="notice mandatoryTotal"><strong>필수 의전인력 합계 780,000원</strong>이 견적에 자동 포함됩니다.</div>
+  </div>
 
- <h2 style="margin-top:28px">상복 · 접객도우미</h2>
- <p class="sub">필요한 수량만 추가해주세요.</p>
- <div class="qtyGrid">
-  <div class="qtyCard"><img class="qtyThumb" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/suit.png?raw=1&v=20260930-3" alt="다함상조 남자 상복"><h3>남자 상복</h3><p>대여 기준 · 50,000원/벌</p><div class="qtyControls"><button onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button onclick="qty('maleSuit',1)">+</button></div></div>
-  <div class="qtyCard"><img class="qtyThumb" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/suit.png?raw=1&v=20260930-3" alt="다함상조 여자 상복"><h3>여자 상복</h3><p>대여 기준 · 20,000원/벌</p><div class="qtyControls"><button onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button onclick="qty('femaleSuit',1)">+</button></div></div>
-  <div class="qtyCard helperQtyCard"><img class="qtyThumb" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/helper.png?raw=1&v=20260930-3" alt="다함상조 접객도우미"><h3>접객 도우미</h3><p>1인 계산 기준 · 120,000원</p><div class="qtyControls"><button onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button onclick="qty('helper',1)">+</button></div></div>
+  <div class="step9Suit">
+   <h3 class="sectionTitle">상복 (직계 가족 대여)</h3>
+   <img class="step9HeroImage" src="assets/estimate/suit-sharp.png?v=20260930-5" onerror="this.onerror=null;this.src='assets/estimate/suit.png?v=20260930-5';" alt="다함상조 남녀 상복">
+   <div class="compactQty">
+    <div class="compactQtyText"><strong>남자 상복 (대여)</strong><span>양복·와이셔츠·넥타이·완장 포함</span><b>50,000원 / 1벌</b></div>
+    <div class="qtyControls"><button type="button" onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button type="button" onclick="qty('maleSuit',1)">+</button></div>
+   </div>
+   <div class="compactQty">
+    <div class="compactQtyText"><strong>여자 상복 (대여)</strong><span>개량한복·저고리·치마·머리핀 포함</span><b>20,000원 / 1벌</b></div>
+    <div class="qtyControls"><button type="button" onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button type="button" onclick="qty('femaleSuit',1)">+</button></div>
+   </div>
+  </div>
+
+  <div class="step9Helper">
+   <h3 class="sectionTitle">접객 도우미 (선택)</h3>
+   <div class="helperFeature">
+    <img class="step9HeroImage helperHero" src="assets/estimate/helper-sharp.png?v=20260930-5" onerror="this.onerror=null;this.src='assets/estimate/helper.png?v=20260930-5';" alt="다함상조 접객 도우미">
+    <div class="helperCopy"><strong>접객 도우미</strong><span>빈소 접객 및 상주·유가족 안내를 지원합니다. 필요한 인원만 선택해주세요.</span></div>
+   </div>
+   <div class="compactQty">
+    <div class="compactQtyText"><strong>장례도우미 (관리사)</strong><span>1인 / 10시간 기준 · 접객·상주지원 및 빈소 운영 지원</span><b>120,000원 / 1명</b><small>※ 추가 1시간 15,000원 (22시 이후 30,000원)</small></div>
+    <div class="qtyControls"><button type="button" onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button type="button" onclick="qty('helper',1)">+</button></div>
+   </div>
+  </div>
  </div>
+
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
