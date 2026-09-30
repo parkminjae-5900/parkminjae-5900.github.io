@@ -836,7 +836,10 @@ body{padding-bottom:0}
 .urnProductCard .urnThumb:after{content:attr(data-cat);position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.92);border:1px solid #e3d8ca;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:900;color:#5f564d}
 .urnProductCard strong{display:block;font-size:17px;line-height:1.35;margin-bottom:4px}
 .urnProductCard .urnCode{display:block;font-size:12px;color:#81766c;margin-bottom:6px}
-.urnProductCard .urnPrice{display:block;font-size:20px;color:#8c620f;font-weight:900}
+.urnProductCard .urnOriginalPrice{display:block;font-size:14px;color:#8a8178;text-decoration:line-through;text-decoration-color:#d22b2b;text-decoration-thickness:2px;margin-top:4px}
+.urnProductCard .urnPrice{display:block;font-size:20px;color:#b42318;font-weight:900;margin-top:2px}
+.urnProductCard .urnDiscountLabel{display:block;font-size:12px;color:#2f6f4e;font-weight:900;margin-top:3px}
+.urnProductCard .urnDiscountBadge{display:inline-block;background:#b42318;color:#fff;border-radius:999px;padding:2px 7px;font-size:11px;font-weight:900;margin-left:6px;vertical-align:1px}
 @media(max-width:900px){.urnProductGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.urnProductGrid{grid-template-columns:1fr 1fr;gap:9px}.urnProductCard{padding:10px}.urnProductCard .urnThumb{height:118px}.urnProductCard strong{font-size:15px}.urnProductCard .urnPrice{font-size:17px}.urnCat{font-size:13px;padding:8px 10px}}
 </style>
@@ -1664,7 +1667,7 @@ function urnWon(n){return Number(n).toLocaleString("ko-KR")+"원"}
 function renderUrnCatalog(cat="전체"){
  const grid=document.getElementById("urnProductGrid"); if(!grid)return;
  const items=urnProducts20260930.filter(x=>cat==="전체"||x.category===cat);
- grid.innerHTML=items.map(x=>'<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+x.price+'"><div class="urnThumb" data-cat="'+x.category+'"></div><strong>'+x.name+'</strong><span class="urnCode">'+x.code+'</span><b class="urnPrice">'+urnWon(x.price)+'</b></button>').join("");
+ grid.innerHTML=items.map(x=>{const discounted=Math.round(x.price*0.8);return '<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+discounted+'"><div class="urnThumb" data-cat="'+x.category+'"></div><strong>'+x.name+'<span class="urnDiscountBadge">20% 할인</span></strong><span class="urnCode">'+x.code+'</span><span class="urnOriginalPrice">판매가 '+urnWon(x.price)+'</span><b class="urnPrice">'+urnWon(discounted)+'</b><span class="urnDiscountLabel">다함상조 진행 시 할인 가격</span></button>'}).join("");
  grid.querySelectorAll(".urnProductCard").forEach(b=>b.addEventListener("click",()=>openProductDetail(b.dataset.popupProduct)));
 }
 document.addEventListener("click",e=>{
@@ -1674,7 +1677,8 @@ document.addEventListener("click",e=>{
 document.addEventListener("DOMContentLoaded",()=>renderUrnCatalog("전체"));
 
 urnProducts20260930.forEach(x=>{
- productDetails[x.key]={group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-3",title:x.name,desc:x.category+" 제품입니다. 제품 코드 "+x.code+" · 표시 가격 "+urnWon(x.price),price:urnWon(x.price),value:x.name,amount:x.price,specs:[["분류",x.category],["제품코드",x.code],["가격",urnWon(x.price)]]};
+ const discounted=Math.round(x.price*0.8);
+ productDetails[x.key]={group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-3",title:x.name,desc:x.category+" 제품입니다. 제품 코드 "+x.code+" · 판매가 "+urnWon(x.price)+"에서 20% 할인 적용",price:urnWon(discounted)+" · 다함상조 진행 시 할인 가격",value:x.name,amount:discounted,specs:[["분류",x.category],["제품코드",x.code],["판매가",urnWon(x.price)+" (20% 할인 전)"],["다함상조 진행가",urnWon(discounted)]]};
 });
 productOrder.urn=urnProducts20260930.map(x=>x.key);
 </script>
