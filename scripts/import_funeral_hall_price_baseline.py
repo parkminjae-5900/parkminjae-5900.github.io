@@ -74,6 +74,27 @@ def materialize_source():
                     return b,name
         except Exception as e:
             errors.append(f"{u}: {e}")
+    # data.go.kr often builds file-download calls in script rather than href attributes.
+    r=fetch(PAGE)
+    text=r.text
+    pats=[
+        r"fn_fileDown[^\n]{0,500}",
+        r"fileDownload[^\n]{0,500}",
+        r"atchFile[^\n]{0,500}",
+        r"download[^\n]{0,500}",
+        r"장례식장가격정보[^\n]{0,500}",
+        r"20230601[^\n]{0,500}"
+    ]
+    debug=[]
+    for pat in pats:
+        for m in re.finditer(pat,text,re.I):
+            frag=m.group(0)
+            if frag not in debug: debug.append(frag[:1000])
+            if len(debug)>=20: break
+        if len(debug)>=20: break
+    print("DATA_GO_DEBUG_START",file=sys.stderr)
+    for x in debug: print(x,file=sys.stderr)
+    print("DATA_GO_DEBUG_END",file=sys.stderr)
     raise RuntimeError("official price file download link not resolved; candidates="+str(len(urls))+" errors="+str(errors[:3]))
 
 def decode_csv(b):
