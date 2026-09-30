@@ -427,6 +427,30 @@ input[type=range]{width:100%;accent-color:#b88712}
 .hallItem{cursor:pointer;user-select:none}
 .hallItem input[type="radio"]{pointer-events:none}
 .hallItem.selected{border:2px solid #2f6f4e!important;background:#f1faf5!important;box-shadow:0 0 0 2px rgba(47,111,78,.08)}
+
+.requiredClick{cursor:pointer;transition:.15s ease}
+.requiredClick:hover,.requiredClick:focus{outline:none;background:#f7fbf8!important;box-shadow:inset 4px 0 0 #2f6f4e}
+.requiredClick:after{content:"상세보기";font-size:12px;font-weight:900;color:#2f6f4e;border:1px solid #b9d3c5;border-radius:999px;padding:4px 8px;margin-left:8px;align-self:center}
+.serviceModal{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;padding:20px}
+.serviceModal.open{display:flex}
+.serviceModalCard{position:relative;width:min(760px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:18px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.serviceModalClose{position:absolute;right:14px;top:10px;width:44px;height:44px;border:0;background:#f3eee5;border-radius:50%;font-size:30px;line-height:1;color:#333}
+.serviceModalCard h3{margin:0 50px 18px 0;font-size:28px}
+.modalGrid{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+.modalPhoto{width:100%;height:auto;display:block;border-radius:12px;border:1px solid #e3d8c8;background:#f5f2ec}
+.modalCopy h4{font-size:23px;margin:0 0 8px}
+.modalCopy p{margin:6px 0;color:#5f574f}
+.modalList{margin:14px 0 0;padding-left:20px}
+.modalList li{margin:7px 0}
+.modalFullImage{width:100%;height:auto;display:block;border-radius:12px;border:1px solid #e3d8c8}
+@media(max-width:760px){
+ .serviceModal{padding:12px}
+ .serviceModalCard{padding:20px 14px 16px;border-radius:14px;max-height:92vh}
+ .serviceModalCard h3{font-size:23px}
+ .modalGrid{grid-template-columns:1fr;gap:14px}
+ .modalPhoto{max-height:none;object-fit:contain}
+ .requiredClick:after{display:none}
+}
 </style>
 </head>
 <body>
@@ -584,9 +608,9 @@ input[type=range]{width:100%;accent-color:#b88712}
   <div class="step9Required">
    <h3 class="sectionTitle">필수 의전인력 및 용품</h3>
    <div class="requiredBox">
-    <div class="requiredRow"><div><strong>전담 장례지도사 (의전/입관 · 2일)</strong><small>장례 전 과정의 진행과 의전을 담당하는 전문 장례지도사</small></div><b>400,000원</b></div>
-    <div class="requiredRow"><div><strong>입관용품 일체</strong><small>관보·소창·탈지면·알코올 등 입관 기본용품 일체</small></div><b>230,000원</b></div>
-    <div class="requiredRow"><div><strong>보조 장례지도사 (입관식)</strong><small>입관식 진행 보조 및 제례 지원</small></div><b>150,000원</b></div>
+    <div class="requiredRow requiredClick" role="button" tabindex="0" onclick="openRequiredModal('director')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRequiredModal('director')}"><div><strong>전담 장례지도사 (의전/입관 · 2일)</strong><small>장례 전 과정의 진행과 의전을 담당하는 전문 장례지도사 · 클릭해서 자세히 보기</small></div><b>400,000원</b></div>
+    <div class="requiredRow requiredClick" role="button" tabindex="0" onclick="openRequiredModal('supplies')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRequiredModal('supplies')}"><div><strong>입관용품 일체</strong><small>관보·소창·탈지면·알코올 등 입관 기본용품 일체 · 클릭해서 구성 보기</small></div><b>230,000원</b></div>
+    <div class="requiredRow requiredClick" role="button" tabindex="0" onclick="openRequiredModal('assistant')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRequiredModal('assistant')}"><div><strong>보조 장례지도사 (입관식)</strong><small>입관식 진행 보조 및 제례 지원 · 클릭해서 진행 모습 보기</small></div><b>150,000원</b></div>
    </div>
    <div class="notice mandatoryTotal"><strong>필수 의전인력 합계 780,000원</strong>이 견적에 자동 포함됩니다.</div>
   </div>
@@ -677,6 +701,14 @@ input[type=range]{width:100%;accent-color:#b88712}
 </section>
 
 </div></div></main>
+
+<div class="serviceModal" id="requiredModal" aria-hidden="true" onclick="if(event.target===this)closeRequiredModal()">
+ <div class="serviceModalCard" role="dialog" aria-modal="true" aria-labelledby="requiredModalTitle">
+  <button type="button" class="serviceModalClose" aria-label="닫기" onclick="closeRequiredModal()">×</button>
+  <h3 id="requiredModalTitle"></h3>
+  <div id="requiredModalBody"></div>
+ </div>
+</div>
 
 <div class="stickySummary" id="stickySummary"><small>현재 선택 예상금액</small><b id="stickyTotal">780,000원</b><span class="stickyCount" id="stickyCount">필수 3개 항목 포함</span></div>
 <div class="bottomBar">
@@ -973,6 +1005,34 @@ function prev(){
  setStep(state.step-1);
 }
 function bottomNext(){ if(state.step<11) next(); else consult(); }
+
+function openRequiredModal(type){
+ const modal=document.getElementById("requiredModal");
+ const title=document.getElementById("requiredModalTitle");
+ const body=document.getElementById("requiredModalBody");
+ if(!modal||!title||!body) return;
+ if(type==="director"){
+  title.textContent="전담 장례지도사 · 박민재 대표장례지도사";
+  body.innerHTML='<div class="modalGrid"><img class="modalPhoto" src="staff/assets/photos/01.jpg" alt="박민재 대표장례지도사"><div class="modalCopy"><h4>박민재 대표장례지도사</h4><p><strong>경력 23년</strong> · 수도권·강원권 의전 총괄</p><ul class="modalList"><li>장례 시작부터 발인까지 전담 의전</li><li>2017~2024 순직경찰관 의전관 담당</li><li>국가장·회사장·VIP 장례 의전 경험</li><li>입관·발인·유가족 안내 전 과정 지원</li></ul></div></div>';
+ }else if(type==="supplies"){
+  title.textContent="입관용품 일체";
+  body.innerHTML='<img class="modalFullImage" src="assets/estimate/supplies-popup.jpg?v=20260930-1" alt="입관용품 구성 이미지"><div class="modalCopy"><p>입관에 필요한 기본 용품을 한 번에 준비합니다.</p><ul class="modalList"><li>관보·소창</li><li>탈지면·면봉</li><li>알코올·소독 및 위생용품</li><li>염지 및 입관 보조용품</li><li>기타 입관 진행에 필요한 기본 소모품</li></ul></div>';
+ }else{
+  title.textContent="보조 장례지도사 · 2인 입관 진행";
+  body.innerHTML='<img class="modalFullImage" src="assets/estimate/assistant-popup.jpg?v=20260930-1" alt="장례지도사 2인 입관 진행 이미지"><div class="modalCopy"><p>입관식에는 전담 장례지도사와 보조 장례지도사가 함께 참여해 고인을 정중하고 안정적으로 모십니다.</p><ul class="modalList"><li>2인 협업으로 입관 절차 진행</li><li>고인 위생처리 및 수습 보조</li><li>입관식과 제례 진행 지원</li><li>유가족 동선과 예식 진행 보조</li></ul></div>';
+ }
+ modal.classList.add("open");
+ modal.setAttribute("aria-hidden","false");
+ document.body.style.overflow="hidden";
+}
+function closeRequiredModal(){
+ const modal=document.getElementById("requiredModal");
+ if(!modal) return;
+ modal.classList.remove("open");
+ modal.setAttribute("aria-hidden","true");
+ document.body.style.overflow="";
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeRequiredModal();});
 function summaryText(){
  const d=calcData();
  const hall=txt("hallSelect")||"미정";
