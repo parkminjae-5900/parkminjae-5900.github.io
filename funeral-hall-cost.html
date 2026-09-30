@@ -35,7 +35,7 @@ let halls=[], priceMap={}, baselineMap={};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const norm=s=>String(s||'').replace(/\s+/g,'').replace(/[()\-]/g,'').toLowerCase();
-const canonName=s=>norm(s).replace(/^(복|의|재|사|주|유한|의료법인|사회복지법인)+/,'').replace(/장례식장$/,'').replace(/병원장례식장$/,'병원');
+const canonName=s=>norm(s).replace(/^(의료법인|사회복지법인|재단법인|학교법인|사단법인|주식회사|유한회사)/,'').replace(/장례식장$/,'');
 const keyOf=h=>[h.ctpv,h.sigungu,h.fcltNm,h.addr].map(norm).join('|');
 
 async function loadBaseline(){
