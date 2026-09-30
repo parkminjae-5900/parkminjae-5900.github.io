@@ -1,0 +1,25 @@
+name: Verify nationwide estimate
+on:
+  push:
+    branches: [feat/full-funeral-estimate]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  estimate-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix /tmp/estimate-qa playwright
+      - run: /tmp/estimate-qa/node_modules/.bin/playwright install --with-deps chromium
+      - run: |
+          python3 -m http.server 8765 > /tmp/estimate-http.log 2>&1 &
+          NODE_PATH=/tmp/estimate-qa/node_modules node tests/nationwide-estimate.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nationwide-estimate-qa
+          path: qa-output/
