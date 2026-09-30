@@ -97,9 +97,13 @@ def classify(label):
         if any(w in label for w in words):return cat
     return None
 
-def amount_from_cell(v):
+def amount_from_cell(v, require_won=False):
     s=clean(v)
-    m=MONEY.search(s)
+    m=MONEY_WON.search(s) if ("원" in s or require_won) else None
+    if not m and not require_won:
+        # Numeric-only cells are allowed when the column header explicitly says price.
+        if re.fullmatch(r"[\\d,.\\s]+",s):
+            m=MONEY.search(s)
     if not m:return 0
     try:n=int(m.group(1).replace(",",""))
     except:return 0
@@ -125,9 +129,9 @@ def table_prices(soup):
             for i in candidates:
                 if i>=len(cells):continue
                 c=cells[i]
-                # require currency marker when header does not explicitly indicate price
-                if not price_cols and "원" not in c:continue
-                a=amount_from_cell(c)
+                # Even in an explicit price column, reject prose/phone-number cells.
+                if "원" not in c and not re.fullmatch(r"[\\d,.\\s]+",c):continue
+                a=amount_from_cell(c, require_won=(not price_cols))
                 if a:amt=a;used=c;break
             if not amt:continue
             unit=""
@@ -143,8 +147,10 @@ def text_prices(soup):
         if len(t)<4 or len(t)>240 or "원" not in t:continue
         cat=classify(t)
         if not cat:continue
-        a=amount_from_cell(t)
-        if not a:continue
+        m=MONEY_WON.search(t)
+        if not m:continue
+        a=int(m.group(1).replace(",",""))
+        if a<1000 or a>20000000:continue
         m=UNIT.search(t)
         out.append({"category":cat,"label":t[:160],"amount":a,"unit":m.group(1) if m else ""})
     return out
