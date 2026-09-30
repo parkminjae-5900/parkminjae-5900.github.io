@@ -451,6 +451,194 @@ input[type=range]{width:100%;accent-color:#b88712}
  .modalPhoto{max-height:none;object-fit:contain}
  .requiredClick:after{display:none}
 }
+
+/* 2026-09-30 mobile estimator stabilization */
+html,body{max-width:100%;overflow-x:hidden}
+body{padding-bottom:0}
+.panel,.step,.vehicleGrid,.vehicleCard,.vehicleBody,.bottomBar,.stickySummary{box-sizing:border-box}
+@media(max-width:760px){
+  body{overflow-x:hidden!important}
+  .wrap,.shell>.wrap,.progressBox .wrap{
+    width:100%!important;
+    max-width:100%!important;
+    padding-left:10px!important;
+    padding-right:10px!important;
+    margin:0!important;
+  }
+  .header .wrap{padding-left:14px!important;padding-right:14px!important}
+  .panel{
+    width:100%!important;
+    max-width:100%!important;
+    margin:8px 0 0!important;
+    padding:14px 10px!important;
+    border-radius:12px!important;
+    overflow:hidden!important;
+  }
+  .step{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .step h2{font-size:25px!important;line-height:1.28!important}
+  .step .sub{font-size:15px!important;line-height:1.55!important}
+  
+  .progressBox{
+    position:sticky!important;
+    top:0!important;
+    padding:8px 0 4px!important;
+    overflow:hidden!important;
+  }
+  .progressTop{padding:0 2px!important}
+  .stepsMini{
+    display:flex!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    width:100%!important;
+    max-width:100%!important;
+    gap:0!important;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:1px!important;
+  }
+  .stepsMini::-webkit-scrollbar{display:none}
+  .stepsMini span{
+    flex:0 0 auto!important;
+    min-width:118px!important;
+    max-width:none!important;
+    font-size:13px!important;
+    padding:9px 8px!important;
+    scroll-snap-align:start;
+    white-space:nowrap!important;
+  }
+  .stepsMini span.on{
+    font-weight:900!important;
+    color:#2f6f4e!important;
+    border-bottom:3px solid #b08a4d!important;
+  }
+
+  .vehicleGrid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .vehicleCard{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    border-radius:14px!important;
+    overflow:hidden!important;
+  }
+  .vehicleCard img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    filter:none!important;
+    image-rendering:auto!important;
+  }
+  .vehicleBody{
+    width:100%!important;
+    max-width:100%!important;
+    padding:14px 12px!important;
+  }
+  .vehicleBody h3{font-size:21px!important;line-height:1.3!important}
+  .vehicleBody p{font-size:15px!important}
+  .vehicleBody strong{font-size:28px!important;line-height:1.15!important}
+  .vehicleSelect{
+    width:100%!important;
+    min-height:54px!important;
+    padding:11px 12px!important;
+    margin-top:12px!important;
+    font-size:17px!important;
+    border-radius:11px!important;
+  }
+  .vehicleSelect input{
+    width:24px!important;height:24px!important;flex:0 0 auto!important
+  }
+
+  /* One compact fixed footer stack on mobile */
+  .stickySummary{
+    position:fixed!important;
+    left:8px!important;
+    right:8px!important;
+    bottom:74px!important;
+    top:auto!important;
+    width:auto!important;
+    min-width:0!important;
+    height:62px!important;
+    padding:10px 14px!important;
+    border-radius:16px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:10px!important;
+    z-index:119!important;
+  }
+  .stickySummary:before,.stickySummary small:before,.stickyCount{display:none!important}
+  .stickySummary small{
+    display:block!important;
+    margin:0!important;
+    font-size:13px!important;
+    color:#ddd!important;
+    line-height:1.25!important;
+  }
+  .stickySummary b{
+    font-size:24px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+
+  .bottomBar{
+    position:fixed!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    z-index:120!important;
+    grid-template-columns:1fr 1fr 1.2fr!important;
+    gap:6px!important;
+    padding:7px 8px calc(7px + env(safe-area-inset-bottom))!important;
+    background:#fff!important;
+  }
+  .bottomBar .next{grid-column:auto!important}
+  .bottomBar a,.bottomBar button{
+    min-width:0!important;
+    min-height:58px!important;
+    padding:8px 5px!important;
+    border-radius:10px!important;
+    font-size:15px!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+  }
+  .shell{
+    padding-top:6px!important;
+    padding-bottom:164px!important;
+  }
+
+  .navBtns{
+    grid-template-columns:1fr 1.7fr!important;
+    gap:10px!important;
+    margin-top:18px!important;
+  }
+  .navBtns .btn{
+    min-width:0!important;
+    width:100%!important;
+    min-height:54px!important;
+    font-size:16px!important;
+    padding:10px 8px!important;
+  }
+
+  .priceNote{font-size:14px!important}
+}
+@media(max-width:420px){
+  .bottomBar a,.bottomBar button{font-size:14px!important}
+  .stepsMini span{min-width:108px!important;font-size:12px!important}
+  .vehicleBody strong{font-size:26px!important}
+  .stickySummary b{font-size:22px!important}
+}
 </style>
 </head>
 <body>
@@ -977,6 +1165,13 @@ function recalc(){
  const rows=[...d.serviceItems.map(x=>["다함상조·선택품목 · "+x[0],x[1]]),...d.externalItems.map(x=>["외부비용 · "+x[0],x[1]])];
  document.getElementById("breakdown").innerHTML=rows.length?rows.map(x=>'<div class="breakRow"><span>'+x[0]+'</span><b>'+won(x[1])+'</b></div>').join(""):'<div class="breakRow"><span>아직 금액이 입력되지 않았습니다.</span><b>0원</b></div>';
 }
+function centerActiveStepTab(){
+ const box=document.getElementById("stepsMini");
+ const active=box?.querySelector("span.on");
+ if(!box||!active||window.innerWidth>760) return;
+ const left=active.offsetLeft-(box.clientWidth-active.clientWidth)/2;
+ box.scrollTo({left:Math.max(0,left),behavior:"smooth"});
+}
 function setStep(n){
  state.step=Math.max(1,Math.min(11,n));
  document.querySelectorAll(".step").forEach(s=>s.classList.toggle("active",Number(s.dataset.step)===state.step));
@@ -993,6 +1188,7 @@ function setStep(n){
  const bn=document.getElementById("bottomNext");
  if(bn) bn.textContent=state.step<10?"다음 단계로":state.step===10?"총 예상견적 보기":"이 견적으로 상담받기";
  document.getElementById("stickySummary").classList.toggle("hide",false);
+ centerActiveStepTab();
  window.scrollTo({top:document.querySelector(".progressBox").offsetTop,behavior:"smooth"});
  recalc();
 }
