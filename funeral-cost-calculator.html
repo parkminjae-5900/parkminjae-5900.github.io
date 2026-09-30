@@ -916,6 +916,49 @@ body{padding-bottom:0}
  #productDetailImage{max-height:56vh!important}
 }
 </style>
+<style id="catalogImageFix20260930b">
+.productChoice.option{overflow:hidden!important}
+.productSprite{display:block!important;background-repeat:no-repeat!important;background-color:#fff!important;background-origin:border-box!important}
+.shroudSprite{width:100%!important;height:auto!important;aspect-ratio:4/5;background-image:url('assets/estimate/products/shroud-all.jpg?v=20260930-1645')!important;background-size:500% 300%!important}
+.coffinSprite{width:100%!important;height:auto!important;aspect-ratio:25/14;background-image:url('assets/estimate/products/coffin-all.jpg?v=20260930-1645')!important;background-size:500% 200%!important}
+.shroudSprite.sprite-1,.coffinSprite.sprite-1{background-position:0% 0%!important}
+.shroudSprite.sprite-2,.coffinSprite.sprite-2{background-position:25% 0%!important}
+.shroudSprite.sprite-3,.coffinSprite.sprite-3{background-position:50% 0%!important}
+.shroudSprite.sprite-4,.coffinSprite.sprite-4{background-position:75% 0%!important}
+.shroudSprite.sprite-5,.coffinSprite.sprite-5{background-position:100% 0%!important}
+.shroudSprite.sprite-6{background-position:0% 50%!important}.coffinSprite.sprite-6{background-position:0% 100%!important}
+.shroudSprite.sprite-7{background-position:25% 50%!important}.coffinSprite.sprite-7{background-position:25% 100%!important}
+.shroudSprite.sprite-8{background-position:50% 50%!important}.coffinSprite.sprite-8{background-position:50% 100%!important}
+.shroudSprite.sprite-9{background-position:75% 50%!important}.coffinSprite.sprite-9{background-position:75% 100%!important}
+.shroudSprite.sprite-10{background-position:100% 50%!important}.coffinSprite.sprite-10{background-position:100% 100%!important}
+.shroudSprite.sprite-11{background-position:0% 100%!important}
+.shroudSprite.sprite-12{background-position:25% 100%!important}
+.shroudSprite.sprite-13{background-position:50% 100%!important}
+.shroudSprite.sprite-14{background-position:75% 100%!important}
+.shroudSprite.sprite-15{background-position:100% 100%!important}
+
+.urnProductGrid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+.urnProductCard{padding:0!important;overflow:hidden!important;display:block!important}
+.urnProductCard .urnThumb{
+ width:100%!important;height:auto!important;aspect-ratio:1/1!important;
+ background-image:url('assets/estimate/products/urn-taerimwon.jpg?v=20260930-1645')!important;
+ background-size:1000% 900%!important;background-repeat:no-repeat!important;background-color:#fff!important;
+ border-bottom:1px solid #eee6da!important
+}
+.urnProductCard .urnThumb:after{display:none!important}
+
+.productDetailImageWrap{background:#fff!important;display:flex!important;align-items:center!important;justify-content:center!important}
+#productDetailImage{width:100%!important;height:auto!important;max-height:62vh!important;object-fit:contain!important;background:#fff!important}
+@media(max-width:900px){.urnProductGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){
+ .productChoiceGrid{grid-template-columns:1fr!important}
+ .productChoice.option{display:block!important}
+ .shroudSprite,.coffinSprite{width:100%!important}
+ .urnProductGrid{grid-template-columns:1fr!important}
+ .urnProductCard .urnThumb{aspect-ratio:1/1!important}
+ #productDetailImage{max-height:56vh!important}
+}
+</style>
 </head>
 <body>
 <div class="top"><div class="wrap"><strong>다함상조 · 맞춤 장례설계</strong><a href="tel:16006131">24시간 상담 1600-6131</a></div></div>
@@ -1030,63 +1073,63 @@ body{padding-bottom:0}
  <h2>수의를 선택해주세요</h2>
  <p class="sub">수의 상품만 표시합니다. S1부터 S15까지 상품을 누르면 큰 이미지와 상세정보를 확인할 수 있습니다.</p>
  <div class="productChoiceGrid">  <button class="productChoice option" data-popup-product="shroud-s1" data-field="shroud" data-value="육수청홍수의" data-price="0">
-   <img src="assets/estimate/products/s1.jpg?v=20260930-1630" alt="육수청홍수의">
+   <div class="productSprite shroudSprite sprite-1" role="img" aria-label="육수청홍수의"></div>
    <div><strong>육수청홍수의</strong><span>면 76% · 폴리 24%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s2" data-field="shroud" data-value="육수금장자수" data-price="350000">
-   <img src="assets/estimate/products/s2.jpg?v=20260930-1630" alt="육수금장자수">
+   <div class="productSprite shroudSprite sprite-2" role="img" aria-label="육수금장자수"></div>
    <div><strong>육수금장자수</strong><span>혼방사</span><b class="money">350,000원</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s3" data-field="shroud" data-value="면금장수의" data-price="0">
-   <img src="assets/estimate/products/s3.jpg?v=20260930-1630" alt="면금장수의">
+   <div class="productSprite shroudSprite sprite-3" role="img" aria-label="면금장수의"></div>
    <div><strong>면금장수의</strong><span>면 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s4" data-field="shroud" data-value="저마인견수의" data-price="0">
-   <img src="assets/estimate/products/s4.jpg?v=20260930-1630" alt="저마인견수의">
+   <div class="productSprite shroudSprite sprite-4" role="img" aria-label="저마인견수의"></div>
    <div><strong>저마인견수의</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s5" data-field="shroud" data-value="저마자수수의" data-price="0">
-   <img src="assets/estimate/products/s5.jpg?v=20260930-1630" alt="저마자수수의">
+   <div class="productSprite shroudSprite sprite-5" role="img" aria-label="저마자수수의"></div>
    <div><strong>저마자수수의</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s6" data-field="shroud" data-value="저마금장자수" data-price="0">
-   <img src="assets/estimate/products/s6.jpg?v=20260930-1630" alt="저마금장자수">
+   <div class="productSprite shroudSprite sprite-6" role="img" aria-label="저마금장자수"></div>
    <div><strong>저마금장자수</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s7" data-field="shroud" data-value="대마 10수수의" data-price="0">
-   <img src="assets/estimate/products/s7.jpg?v=20260930-1630" alt="대마 10수수의">
+   <div class="productSprite shroudSprite sprite-7" role="img" aria-label="대마 10수수의"></div>
    <div><strong>대마 10수수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s8" data-field="shroud" data-value="대마금장수의" data-price="0">
-   <img src="assets/estimate/products/s8.jpg?v=20260930-1630" alt="대마금장수의">
+   <div class="productSprite shroudSprite sprite-8" role="img" aria-label="대마금장수의"></div>
    <div><strong>대마금장수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s9" data-field="shroud" data-value="백대마수의" data-price="0">
-   <img src="assets/estimate/products/s9.jpg?v=20260930-1630" alt="백대마수의">
+   <div class="productSprite shroudSprite sprite-9" role="img" aria-label="백대마수의"></div>
    <div><strong>백대마수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s10" data-field="shroud" data-value="운남대마수의" data-price="0">
-   <img src="assets/estimate/products/s10.jpg?v=20260930-1630" alt="운남대마수의">
+   <div class="productSprite shroudSprite sprite-10" role="img" aria-label="운남대마수의"></div>
    <div><strong>운남대마수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s11" data-field="shroud" data-value="인견 수의" data-price="0">
-   <img src="assets/estimate/products/s11.jpg?v=20260930-1630" alt="인견 수의">
+   <div class="productSprite shroudSprite sprite-11" role="img" aria-label="인견 수의"></div>
    <div><strong>인견 수의</strong><span>인견 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s12" data-field="shroud" data-value="종이 수의" data-price="0">
-   <img src="assets/estimate/products/s12.jpg?v=20260930-1630" alt="종이 수의">
+   <div class="productSprite shroudSprite sprite-12" role="img" aria-label="종이 수의"></div>
    <div><strong>종이 수의</strong><span>펄프 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s13" data-field="shroud" data-value="강서대마" data-price="0">
-   <img src="assets/estimate/products/s13.jpg?v=20260930-1630" alt="강서대마">
+   <div class="productSprite shroudSprite sprite-13" role="img" aria-label="강서대마"></div>
    <div><strong>강서대마</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s14" data-field="shroud" data-value="남해포대용" data-price="0">
-   <img src="assets/estimate/products/s14.jpg?v=20260930-1630" alt="남해포대용">
+   <div class="productSprite shroudSprite sprite-14" role="img" aria-label="남해포대용"></div>
    <div><strong>남해포대용</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="shroud-s15" data-field="shroud" data-value="안동포대용" data-price="9000000">
-   <img src="assets/estimate/products/s15.jpg?v=20260930-1630" alt="안동포대용">
+   <div class="productSprite shroudSprite sprite-15" role="img" aria-label="안동포대용"></div>
    <div><strong>안동포대용</strong><span>대마 100%</span><b class="money">9,000,000원</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option noImageChoice" data-field="shroud" data-value="직접 준비" data-price="0"><div><strong>직접 준비</strong><span>가족이 준비한 수의를 사용합니다.</span><b class="money">0원</b></div></button>
@@ -1098,43 +1141,43 @@ body{padding-bottom:0}
  <h2>관을 선택해주세요</h2>
  <p class="sub">관 상품만 표시합니다. F1부터 F10까지 상품을 누르면 큰 이미지와 재질·규격을 확인할 수 있습니다.</p>
  <div class="productChoiceGrid">  <button class="productChoice option" data-popup-product="coffin-f1" data-field="coffin" data-value="오동나무 0.6관" data-price="170000">
-   <img src="assets/estimate/products/f1.jpg?v=20260930-1630" alt="오동나무 0.6관">
+   <div class="productSprite coffinSprite sprite-1" role="img" aria-label="오동나무 0.6관"></div>
    <div><strong>오동나무 0.6관</strong><span>오동나무 집성목 · 두께 1.8cm</span><b class="money">170,000원</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f2" data-field="coffin" data-value="오동나무 0.6 특관" data-price="0">
-   <img src="assets/estimate/products/f2.jpg?v=20260930-1630" alt="오동나무 0.6 특관">
+   <div class="productSprite coffinSprite sprite-2" role="img" aria-label="오동나무 0.6 특관"></div>
    <div><strong>오동나무 0.6 특관</strong><span>오동나무 집성목 · 두께 1.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f3" data-field="coffin" data-value="오동나무 1.0관" data-price="0">
-   <img src="assets/estimate/products/f3.jpg?v=20260930-1630" alt="오동나무 1.0관">
+   <div class="productSprite coffinSprite sprite-3" role="img" aria-label="오동나무 1.0관"></div>
    <div><strong>오동나무 1.0관</strong><span>오동나무 집성목 · 두께 2.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f4" data-field="coffin" data-value="오동나무 1.0 특관" data-price="0">
-   <img src="assets/estimate/products/f4.jpg?v=20260930-1630" alt="오동나무 1.0 특관">
+   <div class="productSprite coffinSprite sprite-4" role="img" aria-label="오동나무 1.0 특관"></div>
    <div><strong>오동나무 1.0 특관</strong><span>오동나무 집성목 · 두께 2.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f5" data-field="coffin" data-value="오동나무 1.5관" data-price="0">
-   <img src="assets/estimate/products/f5.jpg?v=20260930-1630" alt="오동나무 1.5관">
+   <div class="productSprite coffinSprite sprite-5" role="img" aria-label="오동나무 1.5관"></div>
    <div><strong>오동나무 1.5관</strong><span>오동나무 집성목 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f6" data-field="coffin" data-value="오동나무 1.5 2단관" data-price="0">
-   <img src="assets/estimate/products/f6.jpg?v=20260930-1630" alt="오동나무 1.5 2단관">
+   <div class="productSprite coffinSprite sprite-6" role="img" aria-label="오동나무 1.5 2단관"></div>
    <div><strong>오동나무 1.5 2단관</strong><span>오동나무 집성목 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f7" data-field="coffin" data-value="솔송 평관" data-price="0">
-   <img src="assets/estimate/products/f7.jpg?v=20260930-1630" alt="솔송 평관">
+   <div class="productSprite coffinSprite sprite-7" role="img" aria-label="솔송 평관"></div>
    <div><strong>솔송 평관</strong><span>솔송 통판 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f8" data-field="coffin" data-value="솔송 2단관" data-price="0">
-   <img src="assets/estimate/products/f8.jpg?v=20260930-1630" alt="솔송 2단관">
+   <div class="productSprite coffinSprite sprite-8" role="img" aria-label="솔송 2단관"></div>
    <div><strong>솔송 2단관</strong><span>솔송 통판 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f9" data-field="coffin" data-value="향나무 평관" data-price="0">
-   <img src="assets/estimate/products/f9.jpg?v=20260930-1630" alt="향나무 평관">
+   <div class="productSprite coffinSprite sprite-9" role="img" aria-label="향나무 평관"></div>
    <div><strong>향나무 평관</strong><span>향나무 집성목 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
   </button>
   <button class="productChoice option" data-popup-product="coffin-f10" data-field="coffin" data-value="향나무 2단관" data-price="2700000">
-   <img src="assets/estimate/products/f10.jpg?v=20260930-1630" alt="향나무 2단관">
+   <div class="productSprite coffinSprite sprite-10" role="img" aria-label="향나무 2단관"></div>
    <div><strong>향나무 2단관</strong><span>향나무 집성목 · 두께 4.5cm</span><b class="money">2,700,000원</b><small>눌러서 상세보기</small></div>
   </button></div>
  <div class="field" id="crossBarField" style="margin-top:14px"><label>매장용 횡대·부대품 예상비용 (선택)</label><input id="crossBarCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
@@ -1607,17 +1650,42 @@ function bottomNext(){ if(state.step<11) next(); else consult(); }
 const productDetails={"shroud-s1":{"group":"shroud","img":"assets/estimate/products/s1.jpg?v=20260930-1630","title":"육수청홍수의","desc":"면 76% · 폴리 24% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"육수청홍수의","amount":0,"specs":[["제품코드","S1"],["재질","면 76% · 폴리 24%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s2":{"group":"shroud","img":"assets/estimate/products/s2.jpg?v=20260930-1630","title":"육수금장자수","desc":"혼방사 수의입니다.","price":"350,000원","value":"육수금장자수","amount":350000,"specs":[["제품코드","S2"],["재질","혼방사"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s3":{"group":"shroud","img":"assets/estimate/products/s3.jpg?v=20260930-1630","title":"면금장수의","desc":"면 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"면금장수의","amount":0,"specs":[["제품코드","S3"],["재질","면 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s4":{"group":"shroud","img":"assets/estimate/products/s4.jpg?v=20260930-1630","title":"저마인견수의","desc":"저마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"저마인견수의","amount":0,"specs":[["제품코드","S4"],["재질","저마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s5":{"group":"shroud","img":"assets/estimate/products/s5.jpg?v=20260930-1630","title":"저마자수수의","desc":"저마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"저마자수수의","amount":0,"specs":[["제품코드","S5"],["재질","저마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s6":{"group":"shroud","img":"assets/estimate/products/s6.jpg?v=20260930-1630","title":"저마금장자수","desc":"저마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"저마금장자수","amount":0,"specs":[["제품코드","S6"],["재질","저마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s7":{"group":"shroud","img":"assets/estimate/products/s7.jpg?v=20260930-1630","title":"대마 10수수의","desc":"대마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"대마 10수수의","amount":0,"specs":[["제품코드","S7"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s8":{"group":"shroud","img":"assets/estimate/products/s8.jpg?v=20260930-1630","title":"대마금장수의","desc":"대마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"대마금장수의","amount":0,"specs":[["제품코드","S8"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s9":{"group":"shroud","img":"assets/estimate/products/s9.jpg?v=20260930-1630","title":"백대마수의","desc":"대마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"백대마수의","amount":0,"specs":[["제품코드","S9"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s10":{"group":"shroud","img":"assets/estimate/products/s10.jpg?v=20260930-1630","title":"운남대마수의","desc":"대마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"운남대마수의","amount":0,"specs":[["제품코드","S10"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},"shroud-s11":{"group":"shroud","img":"assets/estimate/products/s11.jpg?v=20260930-1630","title":"인견 수의","desc":"인견 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"인견 수의","amount":0,"specs":[["제품코드","S11"],["재질","인견 100%"],["원사제조","한국"],["가공지/봉제","한국 / 한국"]]},"shroud-s12":{"group":"shroud","img":"assets/estimate/products/s12.jpg?v=20260930-1630","title":"종이 수의","desc":"펄프 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"종이 수의","amount":0,"specs":[["제품코드","S12"],["재질","펄프 100%"],["원사제조","베트남"],["가공지/봉제","베트남 / 베트남"]]},"shroud-s13":{"group":"shroud","img":"assets/estimate/products/s13.jpg?v=20260930-1630","title":"강서대마","desc":"대마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"강서대마","amount":0,"specs":[["제품코드","S13"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 한국"]]},"shroud-s14":{"group":"shroud","img":"assets/estimate/products/s14.jpg?v=20260930-1630","title":"남해포대용","desc":"대마 100% 수의입니다.","price":"상담 시 실제 선택가 반영","value":"남해포대용","amount":0,"specs":[["제품코드","S14"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 한국"]]},"shroud-s15":{"group":"shroud","img":"assets/estimate/products/s15.jpg?v=20260930-1630","title":"안동포대용","desc":"대마 100% 수의입니다.","price":"9,000,000원","value":"안동포대용","amount":9000000,"specs":[["제품코드","S15"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 한국"]]},"coffin-f1":{"group":"coffin","img":"assets/estimate/products/f1.jpg?v=20260930-1630","title":"오동나무 0.6관","desc":"방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 오동나무 관입니다.","price":"170,000원","value":"오동나무 0.6관","amount":170000,"specs":[["제품코드","F1"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 185 / 상 48 / 하 42 / 두께 1.8cm"]]},"coffin-f2":{"group":"coffin","img":"assets/estimate/products/f2.jpg?v=20260930-1630","title":"오동나무 0.6 특관","desc":"방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 오동나무 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 0.6 특관","amount":0,"specs":[["제품코드","F2"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 1.8cm"]]},"coffin-f3":{"group":"coffin","img":"assets/estimate/products/f3.jpg?v=20260930-1630","title":"오동나무 1.0관","desc":"방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 오동나무 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.0관","amount":0,"specs":[["제품코드","F3"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 185 / 상 48 / 하 42 / 두께 2.8cm"]]},"coffin-f4":{"group":"coffin","img":"assets/estimate/products/f4.jpg?v=20260930-1630","title":"오동나무 1.0 특관","desc":"방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 오동나무 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.0 특관","amount":0,"specs":[["제품코드","F4"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 2.8cm"]]},"coffin-f5":{"group":"coffin","img":"assets/estimate/products/f5.jpg?v=20260930-1630","title":"오동나무 1.5관","desc":"방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 오동나무 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.5관","amount":0,"specs":[["제품코드","F5"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 4.5cm"]]},"coffin-f6":{"group":"coffin","img":"assets/estimate/products/f6.jpg?v=20260930-1630","title":"오동나무 1.5 2단관","desc":"방충·방습 기능이 뛰어나고 가벼우며 변형이 적은 오동나무 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.5 2단관","amount":0,"specs":[["제품코드","F6"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]},"coffin-f7":{"group":"coffin","img":"assets/estimate/products/f7.jpg?v=20260930-1630","title":"솔송 평관","desc":"강도가 높고 방충효과가 뛰어나 매장용으로 사용되는 관입니다.","price":"상담 시 실제 선택가 반영","value":"솔송 평관","amount":0,"specs":[["제품코드","F7"],["재질","솔송 통판"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 4.5cm"]]},"coffin-f8":{"group":"coffin","img":"assets/estimate/products/f8.jpg?v=20260930-1630","title":"솔송 2단관","desc":"수축·팽창이 적고 강도가 높은 매장용 관입니다.","price":"상담 시 실제 선택가 반영","value":"솔송 2단관","amount":0,"specs":[["제품코드","F8"],["재질","솔송 통판"],["원목","중국"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]},"coffin-f9":{"group":"coffin","img":"assets/estimate/products/f9.jpg?v=20260930-1630","title":"향나무 평관","desc":"방충·방습 효과가 뛰어나고 은은한 향과 유려한 무늬가 특징입니다.","price":"상담 시 실제 선택가 반영","value":"향나무 평관","amount":0,"specs":[["제품코드","F9"],["재질","향나무 집성목"],["원목","북미산"],["규격","길이 195 / 상 51 / 하 45 / 두께 4.5cm"]]},"coffin-f10":{"group":"coffin","img":"assets/estimate/products/f10.jpg?v=20260930-1630","title":"향나무 2단관","desc":"방충·방습 효과가 뛰어나고 은은한 향과 유려한 무늬가 특징입니다.","price":"2,700,000원","value":"향나무 2단관","amount":2700000,"specs":[["제품코드","F10"],["재질","향나무 집성목"],["원목","북미산"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]}};
 const productOrder={shroud:["shroud-s1","shroud-s2","shroud-s3","shroud-s4","shroud-s5","shroud-s6","shroud-s7","shroud-s8","shroud-s9","shroud-s10","shroud-s11","shroud-s12","shroud-s13","shroud-s14","shroud-s15"],coffin:["coffin-f1","coffin-f2","coffin-f3","coffin-f4","coffin-f5","coffin-f6","coffin-f7","coffin-f8","coffin-f9","coffin-f10"]};
 let currentProductKey="";
+function spriteIndexFromKey(key){
+ const m=key.match(/-(?:s|f)(\d+)$/);
+ return m?Number(m[1]):0;
+}
+function cropSpriteToImage(imgEl,srcUrl,cols,rows,index){
+ const src=new Image();
+ src.onload=()=>{
+   const idx=index-1;
+   const col=idx%cols,row=Math.floor(idx/cols);
+   const tw=src.naturalWidth/cols,th=src.naturalHeight/rows;
+   const cv=document.createElement("canvas");
+   const out=900;cv.width=out;cv.height=out;
+   const ctx=cv.getContext("2d");
+   ctx.fillStyle="#fff";ctx.fillRect(0,0,out,out);
+   const scale=Math.min(out/tw,out/th);
+   const dw=tw*scale,dh=th*scale,dx=(out-dw)/2,dy=(out-dh)/2;
+   ctx.drawImage(src,col*tw,row*th,tw,th,dx,dy,dw,dh);
+   imgEl.src=cv.toDataURL("image/jpeg",0.94);
+ };
+ src.onerror=()=>{imgEl.alt="상품 이미지를 불러오지 못했습니다.";};
+ src.src=srcUrl;
+}
 function openProductDetail(key){
  const d=productDetails[key]; if(!d)return;
  currentProductKey=key;
  const img=document.getElementById("productDetailImage");
  img.alt=d.title;
  img.removeAttribute("src");
- img.style.aspectRatio="";
- if(d.group==="urn" && Number.isInteger(d.spriteIndex)){
-   setUrnModalSprite(img,d.spriteIndex);
+ if(d.group==="shroud"){
+   cropSpriteToImage(img,"assets/estimate/products/shroud-all.jpg?v=20260930-1645",5,3,spriteIndexFromKey(key));
+ }else if(d.group==="coffin"){
+   cropSpriteToImage(img,"assets/estimate/products/coffin-all.jpg?v=20260930-1645",5,2,spriteIndexFromKey(key));
+ }else if(d.group==="urn" && Number.isInteger(d.spriteIndex)){
+   cropSpriteToImage(img,"assets/estimate/products/urn-taerimwon.jpg?v=20260930-1645",10,9,d.spriteIndex+1);
  }else{
-   img.src=d.img;
+   img.src=d.img||"";
  }
  document.getElementById("productDetailTitle").textContent=d.title;
  document.getElementById("productDetailDesc").textContent=d.desc;
@@ -1625,25 +1693,7 @@ function openProductDetail(key){
  document.getElementById("productDetailSpecs").innerHTML=d.specs.map(x=>'<div><b>'+x[0]+'</b>'+x[1]+'</div>').join("");
  document.getElementById("productDetailSelect").onclick=()=>selectProductDetail(key);
  const modal=document.getElementById("productDetailModal");
- modal.classList.add("open");
- modal.setAttribute("aria-hidden","false");
- document.body.style.overflow="hidden";
-}
-function setUrnModalSprite(imgEl,idx){
- const src=new Image();
- src.onload=()=>{
-   const cols=10,rows=9;
-   const tileW=src.naturalWidth/cols,tileH=src.naturalHeight/rows;
-   const col=idx%cols,row=Math.floor(idx/cols);
-   const cv=document.createElement("canvas");
-   cv.width=900; cv.height=900;
-   const ctx=cv.getContext("2d");
-   ctx.fillStyle="#fff"; ctx.fillRect(0,0,cv.width,cv.height);
-   ctx.drawImage(src,col*tileW,row*tileH,tileW,tileH,0,0,cv.width,cv.height);
-   imgEl.src=cv.toDataURL("image/jpeg",0.94);
- };
- src.onerror=()=>{imgEl.alt=d?.title||"유골함 이미지";};
- src.src=urnSpriteUrl;
+ modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
 }
 function closeProductDetail(){const m=document.getElementById("productDetailModal");if(!m)return;m.classList.remove("open");m.setAttribute("aria-hidden","true");document.body.style.overflow="";}
 function moveProductDetail(dir){
@@ -1831,14 +1881,7 @@ const urnProducts20260930=[
  .sort((a,b)=>b.price-a.price||a.name.localeCompare(b.name,"ko"));
 
 function urnWon(n){return Number(n).toLocaleString("ko-KR")+"원"}
-function ensureUrnSpriteStyle(){
- let st=document.getElementById("urnSpriteRuntimeStyle");
- if(st)return;
- st=document.createElement("style");
- st.id="urnSpriteRuntimeStyle";
- st.textContent=".urnThumb{background-image:url('"+urnSpriteUrl+"')}";
- document.head.appendChild(st);
-}
+function ensureUrnSpriteStyle(){ return; }
 function renderUrnCatalog(cat="전체"){
  ensureUrnSpriteStyle();
  const grid=document.getElementById("urnProductGrid"); if(!grid)return;
@@ -1848,7 +1891,7 @@ function renderUrnCatalog(cat="전체"){
    const idx=urnSpriteIndex[x.code];
    const col=idx%10,row=Math.floor(idx/10),px=(col*100/9),py=(row*100/8);
    return '<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+discounted+'">'+
-   '<div class="urnThumb" data-cat="'+x.category+'" style="background-size:1000% 900%;background-position:'+px+'% '+py+'%"></div>'+
+   '<div class="urnThumb" data-cat="'+x.category+'" style="background-image:url('assets/estimate/products/urn-taerimwon.jpg?v=20260930-1645');background-size:1000% 900%;background-position:'+px+'% '+py+'%"></div>'+
    '<strong>'+x.name+'<span class="urnDiscountBadge">20% 할인</span></strong>'+
    '<span class="urnCode">'+x.code+'</span>'+
    '<span class="urnOriginalPrice">판매가 '+urnWon(x.price)+'</span>'+
