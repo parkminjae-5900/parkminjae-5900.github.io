@@ -45,6 +45,7 @@
     if(state.burialType!=="매장") {
       if(!manualCrem&&!$("crem-rate").value)w.push("화장시설·적용요금 미선택");
       if(!manualCrem&&$("crem-rate").value)w.push("화장료는 2023년 참고값: 현재 요금과 거주기간·감면 자격 확인 필요");
+      if(!$("crem-residence").value.trim())w.push("고인의 거주지·거주기간 미입력");
       if(!$("crem-qualified").checked)w.push("고인의 거주지·거주기간·감면 증빙 확인 필요");
       if(manualCrem&&!number($("cremationCost").value))w.push("직접 입력 화장료 미확인: 빈 값·0원은 무료 확정 아님");
       if(manualCrem&&!$("crem-manual-source").value.trim())w.push("화장료 직접 입력 근거 미입력");
@@ -59,6 +60,7 @@
     const n=txt("hallSelect");
     if(n===selectedName&&!force)return;
     const keepManual=manualHall&&n===selectedName;
+    if(n!==selectedName)$("hall-manual-source").value="";
     selectedName=n;if(!keepManual){manualHall=false;$("hall-manual").checked=false;$("hallCost").value="";}
     const matches=facilityRecords.filter(f=>norm(f.fcltNm)===norm(n));
     const street=a=>norm(String(a||"").split("(")[0]);
@@ -82,7 +84,7 @@
   }
   function updateCrem() {
     selectedCrem=crem?.facilities.find(f=>f.name===$("crem-facility").value)||null;
-    $("cremationCost").value="";manualCrem=false;$("crem-manual").checked=false;$("crem-qualified").checked=false;
+    $("cremationCost").value="";$("crem-manual-source").value="";manualCrem=false;$("crem-manual").checked=false;$("crem-qualified").checked=false;
     $("crem-rate").innerHTML='<option value="">고인의 조건에 맞는 요금 선택</option>'+(selectedCrem?.prices||[]).map((r,i)=>'<option value="'+i+'">'+safe(r.category+" · "+r.label+" · "+r.detail)+" · "+money(r.amount)+'</option>').join("");
     $("crem-address").textContent=selectedCrem?[selectedCrem.address,selectedCrem.phone,"시설정보·요금 자료 기준: "+crem.sourceDate].filter(Boolean).join(" · "):"";
     $("cremationCost").readOnly=true;recalc();
