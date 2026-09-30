@@ -795,6 +795,12 @@ body{padding-bottom:0}
  .productChoice>div span{font-size:12px!important}
  .productChoice>div .money{font-size:16px!important}
 }
+
+.fullCatalogGrid{align-items:stretch}
+@media(max-width:760px){
+ .fullCatalogGrid .productChoice.option{grid-template-columns:132px 1fr!important}
+ .fullCatalogGrid .productChoice img{width:132px;height:132px;object-fit:contain;background:#fff}
+}
 </style>
 </head>
 <body>
@@ -908,53 +914,23 @@ body{padding-bottom:0}
 
 <section class="step" data-step="6">
  <h2>수의를 선택해주세요</h2>
- <p class="sub">수의 이미지만 먼저 확인하고, 상품을 누르면 큰 이미지와 재질·제조 정보를 자세히 볼 수 있습니다.</p>
- <div class="productChoiceGrid"><button class="productChoice option" data-popup-product="shroud-s1" data-field="shroud" data-value="육수청홍수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-1" aria-label="육수청홍수의 이미지"></div>
-   <div><strong>육수청홍수의</strong><span>면 76% · 폴리 24%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s2" data-field="shroud" data-value="육수금장자수" data-price="350000">
-   <div class="productSprite shroudSprite sprite-2" aria-label="육수금장자수 이미지"></div>
-   <div><strong>육수금장자수</strong><span>혼방사</span><b class="money">350,000원</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s3" data-field="shroud" data-value="면금장수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-3" aria-label="면금장수의 이미지"></div>
-   <div><strong>면금장수의</strong><span>면 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s4" data-field="shroud" data-value="저마인견수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-4" aria-label="저마인견수의 이미지"></div>
-   <div><strong>저마인견수의</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s5" data-field="shroud" data-value="저마자수수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-5" aria-label="저마자수수의 이미지"></div>
-   <div><strong>저마자수수의</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s6" data-field="shroud" data-value="저마금장자수" data-price="0">
-   <div class="productSprite shroudSprite sprite-6" aria-label="저마금장자수 이미지"></div>
-   <div><strong>저마금장자수</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s7" data-field="shroud" data-value="대마 10수수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-7" aria-label="대마 10수수의 이미지"></div>
-   <div><strong>대마 10수수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s8" data-field="shroud" data-value="대마금장수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-8" aria-label="대마금장수의 이미지"></div>
-   <div><strong>대마금장수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s9" data-field="shroud" data-value="백대마수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-9" aria-label="백대마수의 이미지"></div>
-   <div><strong>백대마수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s10" data-field="shroud" data-value="운남대마수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-10" aria-label="운남대마수의 이미지"></div>
-   <div><strong>운남대마수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s11" data-field="shroud" data-value="인견 수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-11" aria-label="인견 수의 이미지"></div>
-   <div><strong>인견 수의</strong><span>인견 100% · 국내 가공/봉제</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s12" data-field="shroud" data-value="종이 수의" data-price="0">
-   <div class="productSprite shroudSprite sprite-12" aria-label="종이 수의 이미지"></div>
-   <div><strong>종이 수의</strong><span>펄프 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s13" data-field="shroud" data-value="강서대마" data-price="0">
-   <div class="productSprite shroudSprite sprite-13" aria-label="강서대마 이미지"></div>
-   <div><strong>강서대마</strong><span>대마 100% · 한국 봉제</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s14" data-field="shroud" data-value="남해포대용" data-price="0">
-   <div class="productSprite shroudSprite sprite-14" aria-label="남해포대용 이미지"></div>
-   <div><strong>남해포대용</strong><span>대마 100% · 한국 봉제</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="shroud-s15" data-field="shroud" data-value="안동포대용" data-price="9000000">
-   <div class="productSprite shroudSprite sprite-15" aria-label="안동포대용 이미지"></div>
-   <div><strong>안동포대용</strong><span>대마 100% · 한국 봉제</span><b class="money">9,000,000원</b><small>눌러서 상세보기</small></div>
-  </button>
+ <p class="sub">수의 S1~S15 전체 제품을 확인할 수 있습니다. 상품을 누르면 수의 사진만 크게 표시되고, 상세 정보 확인 후 선택할 수 있습니다.</p>
+ <div class="productChoiceGrid fullCatalogGrid">
+ <button class="productChoice option" data-popup-product="shroud-s1" data-field="shroud" data-value="육수청홍수의" data-price="0"><img src="assets/estimate/products/s1.jpg?v=20260930-3" alt="육수청홍수의"><div><strong>육수청홍수의</strong><span>면 76% · 폴리 24%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s2" data-field="shroud" data-value="육수금장자수" data-price="350000"><img src="assets/estimate/products/s2.jpg?v=20260930-3" alt="육수금장자수"><div><strong>육수금장자수</strong><span>혼방사</span><b class="money">350,000원</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s3" data-field="shroud" data-value="면금장수의" data-price="0"><img src="assets/estimate/products/s3.jpg?v=20260930-3" alt="면금장수의"><div><strong>면금장수의</strong><span>면 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s4" data-field="shroud" data-value="저마인견수의" data-price="0"><img src="assets/estimate/products/s4.jpg?v=20260930-3" alt="저마인견수의"><div><strong>저마인견수의</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s5" data-field="shroud" data-value="저마자수수의" data-price="0"><img src="assets/estimate/products/s5.jpg?v=20260930-3" alt="저마자수수의"><div><strong>저마자수수의</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s6" data-field="shroud" data-value="저마금장자수" data-price="0"><img src="assets/estimate/products/s6.jpg?v=20260930-3" alt="저마금장자수"><div><strong>저마금장자수</strong><span>저마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s7" data-field="shroud" data-value="대마 10수수의" data-price="0"><img src="assets/estimate/products/s7.jpg?v=20260930-3" alt="대마 10수수의"><div><strong>대마 10수수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s8" data-field="shroud" data-value="대마금장수의" data-price="0"><img src="assets/estimate/products/s8.jpg?v=20260930-3" alt="대마금장수의"><div><strong>대마금장수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s9" data-field="shroud" data-value="백대마수의" data-price="0"><img src="assets/estimate/products/s9.jpg?v=20260930-3" alt="백대마수의"><div><strong>백대마수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s10" data-field="shroud" data-value="운남대마수의" data-price="0"><img src="assets/estimate/products/s10.jpg?v=20260930-3" alt="운남대마수의"><div><strong>운남대마수의</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s11" data-field="shroud" data-value="인견 수의" data-price="0"><img src="assets/estimate/products/s11.jpg?v=20260930-3" alt="인견 수의"><div><strong>인견 수의</strong><span>인견 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s12" data-field="shroud" data-value="종이 수의" data-price="0"><img src="assets/estimate/products/s12.jpg?v=20260930-3" alt="종이 수의"><div><strong>종이 수의</strong><span>펄프 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s13" data-field="shroud" data-value="강서대마" data-price="0"><img src="assets/estimate/products/s13.jpg?v=20260930-3" alt="강서대마"><div><strong>강서대마</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s14" data-field="shroud" data-value="남해포대용" data-price="0"><img src="assets/estimate/products/s14.jpg?v=20260930-3" alt="남해포대용"><div><strong>남해포대용</strong><span>대마 100%</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="shroud-s15" data-field="shroud" data-value="안동포대용" data-price="9000000"><img src="assets/estimate/products/s15.jpg?v=20260930-3" alt="안동포대용"><div><strong>안동포대용</strong><span>대마 100%</span><b class="money">9,000,000원</b><small>눌러서 상세보기</small></div></button>
   <button class="productChoice option noImageChoice" data-field="shroud" data-value="직접 준비" data-price="0"><div><strong>직접 준비</strong><span>가족이 준비한 수의를 사용합니다.</span><b class="money">0원</b></div></button>
  </div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
@@ -962,38 +938,19 @@ body{padding-bottom:0}
 
 <section class="step" data-step="7">
  <h2>관을 선택해주세요</h2>
- <p class="sub">관 이미지만 먼저 확인하고, 상품을 누르면 큰 이미지와 재질·규격·특징을 자세히 볼 수 있습니다.</p>
- <div class="productChoiceGrid"><button class="productChoice option" data-popup-product="coffin-f1" data-field="coffin" data-value="오동나무 0.6관" data-price="170000">
-   <div class="productSprite coffinSprite sprite-1" aria-label="오동나무 0.6관 이미지"></div>
-   <div><strong>오동나무 0.6관</strong><span>오동나무 집성목 · 185×48/42 · 두께 1.8cm</span><b class="money">170,000원</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f2" data-field="coffin" data-value="오동나무 0.6 특관" data-price="0">
-   <div class="productSprite coffinSprite sprite-2" aria-label="오동나무 0.6 특관 이미지"></div>
-   <div><strong>오동나무 0.6 특관</strong><span>오동나무 집성목 · 194×51/45 · 두께 1.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f3" data-field="coffin" data-value="오동나무 1.0관" data-price="0">
-   <div class="productSprite coffinSprite sprite-3" aria-label="오동나무 1.0관 이미지"></div>
-   <div><strong>오동나무 1.0관</strong><span>오동나무 집성목 · 185×48/42 · 두께 2.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f4" data-field="coffin" data-value="오동나무 1.0 특관" data-price="0">
-   <div class="productSprite coffinSprite sprite-4" aria-label="오동나무 1.0 특관 이미지"></div>
-   <div><strong>오동나무 1.0 특관</strong><span>오동나무 집성목 · 194×51/45 · 두께 2.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f5" data-field="coffin" data-value="오동나무 1.5관" data-price="0">
-   <div class="productSprite coffinSprite sprite-5" aria-label="오동나무 1.5관 이미지"></div>
-   <div><strong>오동나무 1.5관</strong><span>오동나무 집성목 · 194×51/45 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f6" data-field="coffin" data-value="오동나무 1.5 2단관" data-price="0">
-   <div class="productSprite coffinSprite sprite-6" aria-label="오동나무 1.5 2단관 이미지"></div>
-   <div><strong>오동나무 1.5 2단관</strong><span>오동나무 집성목 · 194×54/48 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f7" data-field="coffin" data-value="솔송 평관" data-price="750000">
-   <div class="productSprite coffinSprite sprite-7" aria-label="솔송 평관 이미지"></div>
-   <div><strong>솔송 평관</strong><span>솔송 통판 · 194×51/45 · 두께 4.5cm</span><b class="money">750,000원</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f8" data-field="coffin" data-value="솔송 2단관" data-price="0">
-   <div class="productSprite coffinSprite sprite-8" aria-label="솔송 2단관 이미지"></div>
-   <div><strong>솔송 2단관</strong><span>솔송 통판 · 194×54/48 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f9" data-field="coffin" data-value="향나무 평관" data-price="0">
-   <div class="productSprite coffinSprite sprite-9" aria-label="향나무 평관 이미지"></div>
-   <div><strong>향나무 평관</strong><span>향나무 집성목 · 북미산 · 195×51/45 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div>
-  </button><button class="productChoice option" data-popup-product="coffin-f10" data-field="coffin" data-value="향나무 2단관" data-price="2700000">
-   <div class="productSprite coffinSprite sprite-10" aria-label="향나무 2단관 이미지"></div>
-   <div><strong>향나무 2단관</strong><span>향나무 집성목 · 북미산 · 194×54/48 · 두께 4.5cm</span><b class="money">2,700,000원</b><small>눌러서 상세보기</small></div>
-  </button></div>
+ <p class="sub">관 F1~F10 전체 제품을 확인할 수 있습니다. 상품을 누르면 관 사진만 크게 표시되고, 재질·규격을 확인한 뒤 선택할 수 있습니다.</p>
+ <div class="productChoiceGrid fullCatalogGrid">
+ <button class="productChoice option" data-popup-product="coffin-f1" data-field="coffin" data-value="오동나무 0.6관" data-price="170000"><img src="assets/estimate/products/f1.jpg?v=20260930-3" alt="오동나무 0.6관"><div><strong>오동나무 0.6관</strong><span>오동나무 집성목 · 두께 1.8cm</span><b class="money">170,000원</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f2" data-field="coffin" data-value="오동나무 0.6 특관" data-price="0"><img src="assets/estimate/products/f2.jpg?v=20260930-3" alt="오동나무 0.6 특관"><div><strong>오동나무 0.6 특관</strong><span>오동나무 집성목 · 두께 1.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f3" data-field="coffin" data-value="오동나무 1.0관" data-price="0"><img src="assets/estimate/products/f3.jpg?v=20260930-3" alt="오동나무 1.0관"><div><strong>오동나무 1.0관</strong><span>오동나무 집성목 · 두께 2.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f4" data-field="coffin" data-value="오동나무 1.0 특관" data-price="0"><img src="assets/estimate/products/f4.jpg?v=20260930-3" alt="오동나무 1.0 특관"><div><strong>오동나무 1.0 특관</strong><span>오동나무 집성목 · 두께 2.8cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f5" data-field="coffin" data-value="오동나무 1.5관" data-price="0"><img src="assets/estimate/products/f5.jpg?v=20260930-3" alt="오동나무 1.5관"><div><strong>오동나무 1.5관</strong><span>오동나무 집성목 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f6" data-field="coffin" data-value="오동나무 1.5 2단관" data-price="0"><img src="assets/estimate/products/f6.jpg?v=20260930-3" alt="오동나무 1.5 2단관"><div><strong>오동나무 1.5 2단관</strong><span>오동나무 집성목 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f7" data-field="coffin" data-value="솔송 평관" data-price="750000"><img src="assets/estimate/products/f7.jpg?v=20260930-3" alt="솔송 평관"><div><strong>솔송 평관</strong><span>솔송 통판 · 두께 4.5cm</span><b class="money">750,000원</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f8" data-field="coffin" data-value="솔송 2단관" data-price="0"><img src="assets/estimate/products/f8.jpg?v=20260930-3" alt="솔송 2단관"><div><strong>솔송 2단관</strong><span>솔송 통판 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f9" data-field="coffin" data-value="향나무 평관" data-price="0"><img src="assets/estimate/products/f9.jpg?v=20260930-3" alt="향나무 평관"><div><strong>향나무 평관</strong><span>향나무 집성목 · 두께 4.5cm</span><b class="money">상담 시 실제 선택가 반영</b><small>눌러서 상세보기</small></div></button>
+<button class="productChoice option" data-popup-product="coffin-f10" data-field="coffin" data-value="향나무 2단관" data-price="2700000"><img src="assets/estimate/products/f10.jpg?v=20260930-3" alt="향나무 2단관"><div><strong>향나무 2단관</strong><span>향나무 집성목 · 두께 4.5cm</span><b class="money">2,700,000원</b><small>눌러서 상세보기</small></div></button>
+ </div>
  <div class="field" id="crossBarField" style="margin-top:14px"><label>매장용 횡대·부대품 예상비용 (선택)</label><input id="crossBarCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
@@ -1476,38 +1433,8 @@ function prev(){
 }
 function bottomNext(){ if(state.step<11) next(); else consult(); }
 
-const productDetails={
- "shroud-s1":{group:"shroud",sprite:"shroud",index:1,title:"육수청홍수의",desc:"육수청홍수의 상세정보",price:"상담 시 실제 선택가 반영",value:"육수청홍수의",amount:0,specs:[["제품코드","S1"],["재질","면 76% · 폴리 24%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s2":{group:"shroud",sprite:"shroud",index:2,title:"육수금장자수",desc:"육수금장자수 상세정보",price:"350,000원",value:"육수금장자수",amount:350000,specs:[["제품코드","S2"],["재질","혼방사"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s3":{group:"shroud",sprite:"shroud",index:3,title:"면금장수의",desc:"면금장수의 상세정보",price:"상담 시 실제 선택가 반영",value:"면금장수의",amount:0,specs:[["제품코드","S3"],["재질","면 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s4":{group:"shroud",sprite:"shroud",index:4,title:"저마인견수의",desc:"저마인견수의 상세정보",price:"상담 시 실제 선택가 반영",value:"저마인견수의",amount:0,specs:[["제품코드","S4"],["재질","저마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s5":{group:"shroud",sprite:"shroud",index:5,title:"저마자수수의",desc:"저마자수수의 상세정보",price:"상담 시 실제 선택가 반영",value:"저마자수수의",amount:0,specs:[["제품코드","S5"],["재질","저마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s6":{group:"shroud",sprite:"shroud",index:6,title:"저마금장자수",desc:"저마금장자수 상세정보",price:"상담 시 실제 선택가 반영",value:"저마금장자수",amount:0,specs:[["제품코드","S6"],["재질","저마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s7":{group:"shroud",sprite:"shroud",index:7,title:"대마 10수수의",desc:"대마 10수수의 상세정보",price:"상담 시 실제 선택가 반영",value:"대마 10수수의",amount:0,specs:[["제품코드","S7"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s8":{group:"shroud",sprite:"shroud",index:8,title:"대마금장수의",desc:"대마금장수의 상세정보",price:"상담 시 실제 선택가 반영",value:"대마금장수의",amount:0,specs:[["제품코드","S8"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s9":{group:"shroud",sprite:"shroud",index:9,title:"백대마수의",desc:"백대마수의 상세정보",price:"상담 시 실제 선택가 반영",value:"백대마수의",amount:0,specs:[["제품코드","S9"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s10":{group:"shroud",sprite:"shroud",index:10,title:"운남대마수의",desc:"운남대마수의 상세정보",price:"상담 시 실제 선택가 반영",value:"운남대마수의",amount:0,specs:[["제품코드","S10"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 중국"]]},
- "shroud-s11":{group:"shroud",sprite:"shroud",index:11,title:"인견 수의",desc:"인견 수의 상세정보",price:"상담 시 실제 선택가 반영",value:"인견 수의",amount:0,specs:[["제품코드","S11"],["재질","인견 100%"],["원사제조","한국"],["가공지/봉제","한국 / 한국"]]},
- "shroud-s12":{group:"shroud",sprite:"shroud",index:12,title:"종이 수의",desc:"종이 수의 상세정보",price:"상담 시 실제 선택가 반영",value:"종이 수의",amount:0,specs:[["제품코드","S12"],["재질","펄프 100%"],["원사제조","베트남"],["가공지/봉제","베트남 / 베트남"]]},
- "shroud-s13":{group:"shroud",sprite:"shroud",index:13,title:"강서대마",desc:"강서대마 상세정보",price:"상담 시 실제 선택가 반영",value:"강서대마",amount:0,specs:[["제품코드","S13"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 한국"]]},
- "shroud-s14":{group:"shroud",sprite:"shroud",index:14,title:"남해포대용",desc:"남해포대용 상세정보",price:"상담 시 실제 선택가 반영",value:"남해포대용",amount:0,specs:[["제품코드","S14"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 한국"]]},
- "shroud-s15":{group:"shroud",sprite:"shroud",index:15,title:"안동포대용",desc:"안동포대용 상세정보",price:"9,000,000원",value:"안동포대용",amount:9000000,specs:[["제품코드","S15"],["재질","대마 100%"],["원사제조","중국"],["가공지/봉제","중국 / 한국"]]},
- "coffin-f1":{group:"coffin",sprite:"coffin",index:1,title:"오동나무 0.6관",desc:"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.",price:"170,000원",value:"오동나무 0.6관",amount:170000,specs:[["제품코드","F1"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 185 / 상 48 / 하 42 / 두께 1.8cm"]]},
- "coffin-f2":{group:"coffin",sprite:"coffin",index:2,title:"오동나무 0.6 특관",desc:"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.",price:"상담 시 실제 선택가 반영",value:"오동나무 0.6 특관",amount:0,specs:[["제품코드","F2"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 1.8cm"]]},
- "coffin-f3":{group:"coffin",sprite:"coffin",index:3,title:"오동나무 1.0관",desc:"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.",price:"상담 시 실제 선택가 반영",value:"오동나무 1.0관",amount:0,specs:[["제품코드","F3"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 185 / 상 48 / 하 42 / 두께 2.8cm"]]},
- "coffin-f4":{group:"coffin",sprite:"coffin",index:4,title:"오동나무 1.0 특관",desc:"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.",price:"상담 시 실제 선택가 반영",value:"오동나무 1.0 특관",amount:0,specs:[["제품코드","F4"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 2.8cm"]]},
- "coffin-f5":{group:"coffin",sprite:"coffin",index:5,title:"오동나무 1.5관",desc:"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.",price:"상담 시 실제 선택가 반영",value:"오동나무 1.5관",amount:0,specs:[["제품코드","F5"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 4.5cm"]]},
- "coffin-f6":{group:"coffin",sprite:"coffin",index:6,title:"오동나무 1.5 2단관",desc:"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.",price:"상담 시 실제 선택가 반영",value:"오동나무 1.5 2단관",amount:0,specs:[["제품코드","F6"],["재질","오동나무 집성목"],["원목","중국"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]},
- "coffin-f7":{group:"coffin",sprite:"coffin",index:7,title:"솔송 평관",desc:"강도가 높고 방충효과가 뛰어나며 매장용 관으로 사용됩니다.",price:"750,000원",value:"솔송 평관",amount:750000,specs:[["제품코드","F7"],["재질","솔송 통판"],["원목","중국"],["규격","길이 194 / 상 51 / 하 45 / 두께 4.5cm"]]},
- "coffin-f8":{group:"coffin",sprite:"coffin",index:8,title:"솔송 2단관",desc:"수축·팽창이 적고 강도가 높으며 매장용 관으로 사용됩니다.",price:"상담 시 실제 선택가 반영",value:"솔송 2단관",amount:0,specs:[["제품코드","F8"],["재질","솔송 통판"],["원목","중국"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]},
- "coffin-f9":{group:"coffin",sprite:"coffin",index:9,title:"향나무 평관",desc:"방충·방습 효과가 뛰어나며 은은한 향과 유려한 색·무늬가 특징입니다.",price:"상담 시 실제 선택가 반영",value:"향나무 평관",amount:0,specs:[["제품코드","F9"],["재질","향나무 집성목"],["원목","북미산"],["규격","길이 195 / 상 51 / 하 45 / 두께 4.5cm"]]},
- "coffin-f10":{group:"coffin",sprite:"coffin",index:10,title:"향나무 2단관",desc:"방충·방습 효과가 뛰어나며 은은한 향과 유려한 색·무늬가 특징입니다.",price:"2,700,000원",value:"향나무 2단관",amount:2700000,specs:[["제품코드","F10"],["재질","향나무 집성목"],["원목","북미산"],["규격","길이 194 / 상 54 / 하 48 / 두께 4.5cm"]]},
- "urn-u01":{group:"urn",img:"assets/estimate/urn-catalog.jpg?v=20260930-3",title:"잠금형 삼중 명품자개함",desc:"잠금형 고급진공함 계열의 프리미엄 자개함입니다.",price:"상담 시 실제 선택가 반영",value:"잠금형 삼중 명품자개함",amount:0,specs:[["분류","잠금형 고급진공함"],["형태","잠금형 · 삼중 구조"],["마감","자개 계열"],["확인","최신 실물/카탈로그 기준"]]},
- "urn-u02":{group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-2",title:"황토백자",desc:"백자 계열의 황토 진공함 구성입니다.",price:"100,000원",value:"황토백자",amount:100000,specs:[["분류","황토 진공함"],["재질","백자 계열"],["용도","봉안당 · 봉안묘"],["확인","최신 실물/카탈로그 기준"]]},
- "urn-u03":{group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-2",title:"봉분실크송학",desc:"송학 전통문양을 적용한 일반함 계열 구성입니다.",price:"상담 시 실제 선택가 반영",value:"봉분실크송학",amount:0,specs:[["분류","일반함"],["문양","송학 전통문양"],["용도","봉안용"],["확인","최신 실물/카탈로그 기준"]]},
- "urn-u04":{group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-2",title:"본1호",desc:"고급 도자기 마감과 밀폐 구조를 적용한 명품 진공함 계열 구성입니다.",price:"상담 시 실제 선택가 반영",value:"본1호",amount:0,specs:[["분류","명품 진공함"],["재질","고급 도자기 계열"],["구조","밀폐형"],["확인","최신 실물/카탈로그 기준"]]}
-};
-const productOrder={shroud:["shroud-s1","shroud-s2","shroud-s3","shroud-s4","shroud-s5","shroud-s6","shroud-s7","shroud-s8","shroud-s9","shroud-s10","shroud-s11","shroud-s12","shroud-s13","shroud-s14","shroud-s15"],coffin:["coffin-f1","coffin-f2","coffin-f3","coffin-f4","coffin-f5","coffin-f6","coffin-f7","coffin-f8","coffin-f9","coffin-f10"],urn:["urn-u01","urn-u02","urn-u03","urn-u04"]};
+const productDetails={"shroud-s1":{"group":"shroud","img":"assets/estimate/products/s1.jpg?v=20260930-3","title":"육수청홍수의","desc":"면 76%, 폴리 24%","price":"상담 시 실제 선택가 반영","value":"육수청홍수의","amount":0,"specs":[["제품코드","S1"],["재질","면 76% · 폴리 24%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s2":{"group":"shroud","img":"assets/estimate/products/s2.jpg?v=20260930-3","title":"육수금장자수","desc":"혼방사","price":"350,000원","value":"육수금장자수","amount":350000,"specs":[["제품코드","S2"],["재질","혼방사"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s3":{"group":"shroud","img":"assets/estimate/products/s3.jpg?v=20260930-3","title":"면금장수의","desc":"면 100%","price":"상담 시 실제 선택가 반영","value":"면금장수의","amount":0,"specs":[["제품코드","S3"],["재질","면 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s4":{"group":"shroud","img":"assets/estimate/products/s4.jpg?v=20260930-3","title":"저마인견수의","desc":"저마 100%","price":"상담 시 실제 선택가 반영","value":"저마인견수의","amount":0,"specs":[["제품코드","S4"],["재질","저마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s5":{"group":"shroud","img":"assets/estimate/products/s5.jpg?v=20260930-3","title":"저마자수수의","desc":"저마 100%","price":"상담 시 실제 선택가 반영","value":"저마자수수의","amount":0,"specs":[["제품코드","S5"],["재질","저마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s6":{"group":"shroud","img":"assets/estimate/products/s6.jpg?v=20260930-3","title":"저마금장자수","desc":"저마 100%","price":"상담 시 실제 선택가 반영","value":"저마금장자수","amount":0,"specs":[["제품코드","S6"],["재질","저마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s7":{"group":"shroud","img":"assets/estimate/products/s7.jpg?v=20260930-3","title":"대마 10수수의","desc":"대마 100%","price":"상담 시 실제 선택가 반영","value":"대마 10수수의","amount":0,"specs":[["제품코드","S7"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s8":{"group":"shroud","img":"assets/estimate/products/s8.jpg?v=20260930-3","title":"대마금장수의","desc":"대마 100%","price":"상담 시 실제 선택가 반영","value":"대마금장수의","amount":0,"specs":[["제품코드","S8"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s9":{"group":"shroud","img":"assets/estimate/products/s9.jpg?v=20260930-3","title":"백대마수의","desc":"대마 100%","price":"상담 시 실제 선택가 반영","value":"백대마수의","amount":0,"specs":[["제품코드","S9"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s10":{"group":"shroud","img":"assets/estimate/products/s10.jpg?v=20260930-3","title":"운남대마수의","desc":"대마 100%","price":"상담 시 실제 선택가 반영","value":"운남대마수의","amount":0,"specs":[["제품코드","S10"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 중국"]]},"shroud-s11":{"group":"shroud","img":"assets/estimate/products/s11.jpg?v=20260930-3","title":"인견 수의","desc":"인견 100%","price":"상담 시 실제 선택가 반영","value":"인견 수의","amount":0,"specs":[["제품코드","S11"],["재질","인견 100%"],["원사제조","한국"],["가공지 / 제품봉제","한국 / 한국"]]},"shroud-s12":{"group":"shroud","img":"assets/estimate/products/s12.jpg?v=20260930-3","title":"종이 수의","desc":"펄프 100%","price":"상담 시 실제 선택가 반영","value":"종이 수의","amount":0,"specs":[["제품코드","S12"],["재질","펄프 100%"],["원사제조","베트남"],["가공지 / 제품봉제","베트남 / 베트남"]]},"shroud-s13":{"group":"shroud","img":"assets/estimate/products/s13.jpg?v=20260930-3","title":"강서대마","desc":"대마 100%","price":"상담 시 실제 선택가 반영","value":"강서대마","amount":0,"specs":[["제품코드","S13"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 한국"]]},"shroud-s14":{"group":"shroud","img":"assets/estimate/products/s14.jpg?v=20260930-3","title":"남해포대용","desc":"대마 100%","price":"상담 시 실제 선택가 반영","value":"남해포대용","amount":0,"specs":[["제품코드","S14"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 한국"]]},"shroud-s15":{"group":"shroud","img":"assets/estimate/products/s15.jpg?v=20260930-3","title":"안동포대용","desc":"대마 100%","price":"9,000,000원","value":"안동포대용","amount":9000000,"specs":[["제품코드","S15"],["재질","대마 100%"],["원사제조","중국"],["가공지 / 제품봉제","중국 / 한국"]]},"coffin-f1":{"group":"coffin","img":"assets/estimate/products/f1.jpg?v=20260930-3","title":"오동나무 0.6관","desc":"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.","price":"170,000원","value":"오동나무 0.6관","amount":170000,"specs":[["제품코드","F1"],["재질","오동나무 집성목"],["원목","중국"],["규격","185 × 상48 × 하42 × 두께1.8cm"]]},"coffin-f2":{"group":"coffin","img":"assets/estimate/products/f2.jpg?v=20260930-3","title":"오동나무 0.6 특관","desc":"오동나무 집성목 특관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 0.6 특관","amount":0,"specs":[["제품코드","F2"],["재질","오동나무 집성목"],["원목","중국"],["규격","194 × 상51 × 하45 × 두께1.8cm"]]},"coffin-f3":{"group":"coffin","img":"assets/estimate/products/f3.jpg?v=20260930-3","title":"오동나무 1.0관","desc":"방충·방습 기능이 뛰어나며 가볍고 변형이 적습니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.0관","amount":0,"specs":[["제품코드","F3"],["재질","오동나무 집성목"],["원목","중국"],["규격","185 × 상48 × 하42 × 두께2.8cm"]]},"coffin-f4":{"group":"coffin","img":"assets/estimate/products/f4.jpg?v=20260930-3","title":"오동나무 1.0 특관","desc":"오동나무 집성목 상위 규격 특관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.0 특관","amount":0,"specs":[["제품코드","F4"],["재질","오동나무 집성목"],["원목","중국"],["규격","194 × 상51 × 하45 × 두께2.8cm"]]},"coffin-f5":{"group":"coffin","img":"assets/estimate/products/f5.jpg?v=20260930-3","title":"오동나무 1.5관","desc":"두께 4.5cm 오동나무 집성목 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.5관","amount":0,"specs":[["제품코드","F5"],["재질","오동나무 집성목"],["원목","중국"],["규격","194 × 상51 × 하45 × 두께4.5cm"]]},"coffin-f6":{"group":"coffin","img":"assets/estimate/products/f6.jpg?v=20260930-3","title":"오동나무 1.5 2단관","desc":"2단 마감의 오동나무 집성목 관입니다.","price":"상담 시 실제 선택가 반영","value":"오동나무 1.5 2단관","amount":0,"specs":[["제품코드","F6"],["재질","오동나무 집성목"],["원목","중국"],["규격","194 × 상54 × 하48 × 두께4.5cm"]]},"coffin-f7":{"group":"coffin","img":"assets/estimate/products/f7.jpg?v=20260930-3","title":"솔송 평관","desc":"강도가 높고 방충효과가 뛰어나며 매장용 관으로 사용됩니다.","price":"750,000원","value":"솔송 평관","amount":750000,"specs":[["제품코드","F7"],["재질","솔송 통판"],["원목","중국"],["규격","194 × 상51 × 하45 × 두께4.5cm"]]},"coffin-f8":{"group":"coffin","img":"assets/estimate/products/f8.jpg?v=20260930-3","title":"솔송 2단관","desc":"수축·팽창이 적고 강도가 높은 2단관입니다.","price":"상담 시 실제 선택가 반영","value":"솔송 2단관","amount":0,"specs":[["제품코드","F8"],["재질","솔송 통판"],["원목","중국"],["규격","194 × 상54 × 하48 × 두께4.5cm"]]},"coffin-f9":{"group":"coffin","img":"assets/estimate/products/f9.jpg?v=20260930-3","title":"향나무 평관","desc":"방충·방습 효과가 뛰어나며 은은한 향과 유려한 무늬가 특징입니다.","price":"상담 시 실제 선택가 반영","value":"향나무 평관","amount":0,"specs":[["제품코드","F9"],["재질","향나무 집성목"],["원목","북미산"],["규격","195 × 상51 × 하45 × 두께4.5cm"]]},"coffin-f10":{"group":"coffin","img":"assets/estimate/products/f10.jpg?v=20260930-3","title":"향나무 2단관","desc":"방충·방습 효과가 뛰어난 최고급 매장용 2단관입니다.","price":"2,700,000원","value":"향나무 2단관","amount":2700000,"specs":[["제품코드","F10"],["재질","향나무 집성목"],["원목","북미산"],["규격","194 × 상54 × 하48 × 두께4.5cm"]]}};
+const productOrder={shroud:["shroud-s1","shroud-s2","shroud-s3","shroud-s4","shroud-s5","shroud-s6","shroud-s7","shroud-s8","shroud-s9","shroud-s10","shroud-s11","shroud-s12","shroud-s13","shroud-s14","shroud-s15"],coffin:["coffin-f1","coffin-f2","coffin-f3","coffin-f4","coffin-f5","coffin-f6","coffin-f7","coffin-f8","coffin-f9","coffin-f10"]};
 let currentProductKey="";
 function openProductDetail(key){
  const d=productDetails[key]; if(!d)return;
