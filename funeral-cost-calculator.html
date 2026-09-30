@@ -836,6 +836,10 @@ body{padding-bottom:0}
 .productChoice img{object-fit:contain!important;object-position:center!important;background:#fff!important;filter:none!important}
 .productDetailImageWrap{background:#fff!important}
 #productDetailImage{background-color:#fff!important;background-repeat:no-repeat!important}
+/* urn large popup 20260930-1613 */
+.productDetailCard{width:min(860px,96vw)!important}
+#productDetailImage{min-height:420px;background-color:#fff!important}
+@media(max-width:600px){#productDetailImage{min-height:320px}}
 </style>
 
 <style id="urnCatalog20260930">
@@ -844,19 +848,19 @@ body{padding-bottom:0}
 .urnCat.active{background:#2f6f4e;color:#fff;border-color:#2f6f4e}
 .urnSortNote{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#f7f2e9;border:1px solid #e5dccf;border-radius:12px;padding:11px 14px;margin:0 0 14px}
 .urnSortNote b{font-size:16px}.urnSortNote span{font-size:13px;color:#756b62}
-.urnProductGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.urnProductCard{border:1px solid #e4dacb;background:#fff;border-radius:14px;padding:14px;text-align:left;cursor:pointer;transition:.15s}
+.urnProductGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.urnProductCard{border:1px solid #e4dacb;background:#fff;border-radius:15px;padding:0;text-align:left;cursor:pointer;overflow:hidden;transition:.15s;min-width:0}
 .urnProductCard:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
 .urnProductCard.selected{border:2px solid #2f6f4e;background:#f5fbf8}
-.urnProductCard .urnThumb{height:150px;border-radius:10px;background:#f5f2ec url('assets/estimate/urn-products.jpg?v=20260930-3') center/cover no-repeat;margin-bottom:10px;position:relative;overflow:hidden}
+.urnProductCard .urnThumb{width:100%;height:300px;border-radius:0;background-color:#f5f2ec;background-repeat:no-repeat;position:relative;overflow:hidden;border:0;border-bottom:1px solid #eee6da}
 .urnProductCard .urnThumb:after{content:attr(data-cat);position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.92);border:1px solid #e3d8ca;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:900;color:#5f564d}
-.urnProductCard strong{display:block;font-size:17px;line-height:1.35;margin-bottom:4px}
-.urnProductCard .urnCode{display:block;font-size:12px;color:#81766c;margin-bottom:6px}
-.urnProductCard .urnOriginalPrice{display:block;font-size:14px;color:#8a8178;text-decoration:line-through;text-decoration-color:#d22b2b;text-decoration-thickness:2px;margin-top:4px}
-.urnProductCard .urnPrice{display:block;font-size:20px;color:#b42318;font-weight:900;margin-top:2px}
-.urnProductCard .urnDiscountLabel{display:block;font-size:12px;color:#2f6f4e;font-weight:900;margin-top:3px}
+.urnProductCard strong{display:block;font-size:19px;line-height:1.35;margin:0;padding:15px 15px 4px;word-break:keep-all}
+.urnProductCard .urnCode{display:block;font-size:13px;color:#81766c;padding:0 15px 5px}
+.urnProductCard .urnOriginalPrice{display:block;font-size:14px;color:#8a8178;text-decoration:line-through;text-decoration-color:#d22b2b;text-decoration-thickness:2px;margin:3px 15px 0}
+.urnProductCard .urnPrice{display:block;font-size:24px;color:#b42318;font-weight:900;margin:2px 15px 0}
+.urnProductCard .urnDiscountLabel{display:block;font-size:13px;color:#2f6f4e;font-weight:900;margin:3px 15px 16px}
 .urnProductCard .urnDiscountBadge{display:inline-block;background:#b42318;color:#fff;border-radius:999px;padding:2px 7px;font-size:11px;font-weight:900;margin-left:6px;vertical-align:1px}
-@media(max-width:900px){.urnProductGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.urnProductGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.urnProductCard .urnThumb{height:250px}}
 @media(max-width:560px){.urnProductGrid{grid-template-columns:1fr 1fr;gap:9px}.urnProductCard{padding:10px}.urnProductCard .urnThumb{height:118px}.urnProductCard strong{font-size:15px}.urnProductCard .urnPrice{font-size:17px}.urnCat{font-size:13px;padding:8px 10px}}
 </style>
 </head>
@@ -1780,10 +1784,30 @@ const urnProducts20260930=[
  .sort((a,b)=>b.price-a.price||a.name.localeCompare(b.name,"ko"));
 
 function urnWon(n){return Number(n).toLocaleString("ko-KR")+"원"}
+function ensureUrnSpriteStyle(){
+ let st=document.getElementById("urnSpriteRuntimeStyle");
+ if(st)return;
+ st=document.createElement("style");
+ st.id="urnSpriteRuntimeStyle";
+ st.textContent=".urnThumb{background-image:url("+urnSpriteData+")}";
+ document.head.appendChild(st);
+}
 function renderUrnCatalog(cat="전체"){
+ ensureUrnSpriteStyle();
  const grid=document.getElementById("urnProductGrid"); if(!grid)return;
  const items=urnProducts20260930.filter(x=>cat==="전체"||x.category===cat);
- grid.innerHTML=items.map(x=>{const discounted=Math.round(x.price*0.8),idx=urnSpriteIndex[x.code],col=idx%10,row=Math.floor(idx/10),px=(col*100/9),py=(row*100/8),bg='background-image:url('+urnSpriteData+');background-size:1000% 900%;background-position:'+px+'% '+py+'%;';return '<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+discounted+'"><div class="urnThumb" data-cat="'+x.category+'" style="'+bg+'"></div><strong>'+x.name+'<span class="urnDiscountBadge">20% 할인</span></strong><span class="urnCode">'+x.code+'</span><span class="urnOriginalPrice">판매가 '+urnWon(x.price)+'</span><b class="urnPrice">'+urnWon(discounted)+'</b><span class="urnDiscountLabel">다함상조 진행 시 할인 가격</span></button>'}).join("");
+ grid.innerHTML=items.map(x=>{
+   const discounted=Math.round(x.price*0.8);
+   const idx=urnSpriteIndex[x.code];
+   const col=idx%10,row=Math.floor(idx/10),px=(col*100/9),py=(row*100/8);
+   return '<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+discounted+'">'+
+   '<div class="urnThumb" data-cat="'+x.category+'" style="background-size:1000% 900%;background-position:'+px+'% '+py+'%"></div>'+
+   '<strong>'+x.name+'<span class="urnDiscountBadge">20% 할인</span></strong>'+
+   '<span class="urnCode">'+x.code+'</span>'+
+   '<span class="urnOriginalPrice">판매가 '+urnWon(x.price)+'</span>'+
+   '<b class="urnPrice">'+urnWon(discounted)+'</b>'+
+   '<span class="urnDiscountLabel">다함상조 진행 시 할인 가격</span></button>';
+ }).join("");
  grid.querySelectorAll(".urnProductCard").forEach(b=>b.addEventListener("click",()=>openProductDetail(b.dataset.popupProduct)));
 }
 document.addEventListener("click",e=>{
