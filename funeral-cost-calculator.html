@@ -331,6 +331,16 @@ input[type=range]{width:100%;accent-color:#b88712}
  .hallMetaLine,.hallMetaLine strong,.hallAddress{font-size:13px}
  .hallItem{padding:15px 12px;min-height:110px}
 }
+
+.subregionField select{width:100%;min-height:56px;border:2px solid #d9cbb8;border-radius:13px;padding:12px 14px;background:#fff;font-size:18px;font-weight:800}
+.subregionField select:focus{outline:none;border-color:#2f6f4e;box-shadow:0 0 0 3px rgba(47,111,78,.12)}
+.nestedHallArea{margin-top:8px!important;border:1px solid #e5dccf!important;border-radius:12px!important;padding:12px!important;background:#fff!important}
+@media(max-width:760px){
+ .subregionField{margin-top:10px!important}
+ .subregionField select{min-height:54px;font-size:17px}
+ .nestedHallArea{margin-top:6px!important;padding:9px!important}
+ .hallList{max-height:none!important;overflow:visible!important}
+}
 </style>
 </head>
 <body>
@@ -374,7 +384,7 @@ input[type=range]{width:100%;accent-color:#b88712}
 
 <section class="step" data-step="3">
  <h2>지역·장례식장 선택</h2>
- <p class="sub">광역지역을 고른 뒤 시·군·구를 선택하면 해당 지역 장례식장이 각각 선택창으로 표시됩니다.</p>
+ <p class="sub">광역지역을 선택한 뒤 시·군·구 또는 세부지역을 고르면, 바로 그 항목 밑에 해당 장례식장 목록이 펼쳐집니다.</p>
 
  <select id="region1" aria-label="선택 지역"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>강원</option><option>기타</option></select>
  <select id="hallSelect" aria-label="선택 장례식장"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select>
@@ -387,21 +397,26 @@ input[type=range]{width:100%;accent-color:#b88712}
   <button type="button" class="regionBtn" data-region="기타" onclick="selectRegion('기타')">기타지역</button>
  </div>
 
- <div class="subregionArea" id="subregionArea">
-  <div class="hallHead"><div><h3>시·군·구 세부지역</h3><p>세부지역을 먼저 선택해주세요.</p></div><span id="subregionCount"></span></div>
-  <div id="subregionButtons" class="subregionButtons"><div class="hallEmpty">광역지역을 먼저 선택해주세요.</div></div>
-
-  <div class="hallArea nestedHallArea" id="hallArea">
-   <div class="hallHead">
-    <div><h3 id="hallListTitle">장례식장 목록</h3><p id="selectedRegionText">시·군·구를 선택하면 바로 아래에 장례식장이 펼쳐집니다.</p></div>
-    <span id="hallCount"></span>
-   </div>
-   <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름으로 검색" oninput="renderHallCards()">
-   <div id="hallList" class="hallList"><div class="hallEmpty">시·군·구를 먼저 선택해주세요.</div></div>
-  </div>
+ <div class="field subregionField" style="margin-top:14px">
+  <label for="subregionSelect">시·군·구 또는 세부지역</label>
+  <select id="subregionSelect" onchange="selectSubregion(this.value)">
+   <option value="">먼저 광역지역을 선택해주세요</option>
+  </select>
  </div>
 
- <div class="field regionDetailField" style="margin-top:16px"><label>직접 입력 (목록에 없는 경우)</label><input id="region2" placeholder="예: 강남구 ○○장례식장"></div>
+ <div class="hallArea nestedHallArea" id="hallArea">
+  <div class="hallHead">
+   <div><h3 id="hallListTitle">장례식장 목록</h3><p id="selectedRegionText">시·군·구를 선택하면 바로 아래에 장례식장이 펼쳐집니다.</p></div>
+   <span id="hallCount"></span>
+  </div>
+  <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름으로 검색" oninput="renderHallCards()">
+  <div id="hallList" class="hallList"><div class="hallEmpty">시·군·구 또는 세부지역을 먼저 선택해주세요.</div></div>
+ </div>
+
+ <div class="field regionDetailField" style="margin-top:16px">
+  <label>목록에 없는 장례식장 직접 입력</label>
+  <input id="region2" placeholder="예: ○○병원 장례식장">
+ </div>
 
  <div class="formGrid" style="margin-top:18px">
   <div class="field"><label>장례식장 시설 예상비용 (선택)</label><input id="hallCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
@@ -718,32 +733,36 @@ function selectRegion(region){
  document.querySelectorAll(".regionBtn").forEach(b=>b.classList.toggle("active",b.dataset.region===region));
  document.getElementById("hallSelect").value="";
  document.getElementById("hallSearch").value="";
- renderSubregions();
+ selectedSubregion="";
+ renderSubregionSelect();
  renderHallCards();
  recalc();
- setTimeout(()=>document.getElementById("subregionArea")?.scrollIntoView({behavior:"smooth",block:"start"}),40);
 }
 let selectedSubregion="";
-function renderSubregions(){
+function renderSubregionSelect(){
  const region=document.getElementById("region1").value;
- const box=document.getElementById("subregionButtons");
- const count=document.getElementById("subregionCount");
- selectedSubregion="";
- if(!region){box.innerHTML='<div class="hallEmpty">광역지역을 먼저 선택해주세요.</div>';count.textContent="";return;}
+ const select=document.getElementById("subregionSelect");
  const subs=Object.keys(hallData[region]||{});
- count.textContent=subs.length?subs.length+"개 지역":"";
- if(!subs.length){box.innerHTML='<div class="hallEmpty">세부지역을 직접 입력해주세요.</div>';return;}
- box.innerHTML=subs.map(s=>'<button type="button" class="subregionBtn" data-subregion="'+s+'" onclick="selectSubregion(\''+s.replace(/'/g,"\\'")+'\')">'+s+'</button>').join("");
+ if(!region){
+   select.innerHTML='<option value="">먼저 광역지역을 선택해주세요</option>';
+   select.disabled=true;
+   return;
+ }
+ select.disabled=false;
+ select.innerHTML='<option value="">시·군·구 또는 세부지역 선택</option>'+subs.map(s=>'<option value="'+s+'">'+s+'</option>').join("");
+ if(!subs.length){
+   select.innerHTML='<option value="">직접 입력해주세요</option>';
+   select.disabled=true;
+ }
 }
 function selectSubregion(sub){
- selectedSubregion=sub;
- document.querySelectorAll(".subregionBtn").forEach(b=>b.classList.toggle("active",b.dataset.subregion===sub));
+ selectedSubregion=sub||"";
  document.getElementById("hallSelect").value="";
  document.getElementById("hallSearch").value="";
  renderHallCards();
-
+ recalc();
 }
-function renderHalls(){renderSubregions();renderHallCards();}
+function renderHalls(){renderSubregionSelect();renderHallCards();}
 function renderHallCards(){
  const region=document.getElementById("region1").value;
  const q=(document.getElementById("hallSearch")?.value||"").trim().toLowerCase();
@@ -752,23 +771,29 @@ function renderHallCards(){
  const count=document.getElementById("hallCount");
  const txtEl=document.getElementById("selectedRegionText");
  if(!list) return;
- if(!region){title.textContent="장례식장 목록";count.textContent="";txtEl.textContent="광역지역을 먼저 선택해주세요.";list.innerHTML='<div class="hallEmpty">광역지역을 먼저 선택해주세요.</div>';return;}
- if(!selectedSubregion){title.textContent=region+" 장례식장";count.textContent="";txtEl.textContent="시·군·구를 선택하면 장례식장이 표시됩니다.";list.innerHTML='<div class="hallEmpty">위에서 시·군·구 세부지역을 선택해주세요.</div>';return;}
+ if(!region){
+   title.textContent="장례식장 목록"; count.textContent=""; txtEl.textContent="광역지역을 먼저 선택해주세요.";
+   list.innerHTML='<div class="hallEmpty">광역지역을 먼저 선택해주세요.</div>'; return;
+ }
+ if(!selectedSubregion){
+   title.textContent=region+" 장례식장"; count.textContent=""; txtEl.textContent="시·군·구 또는 세부지역을 선택하면 바로 아래에 펼쳐집니다.";
+   list.innerHTML='<div class="hallEmpty">바로 위 시·군·구 또는 세부지역을 선택해주세요.</div>'; return;
+ }
  title.textContent=selectedSubregion+" 장례식장";
  txtEl.textContent=region+" "+selectedSubregion+" 지역";
  let items=(hallData[region]?.[selectedSubregion]||[]).filter(n=>!q||n.toLowerCase().includes(q));
  count.textContent=items.length+"곳";
- if(!items.length){list.innerHTML='<div class="hallEmpty">등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.</div>';return;}
- const selected=document.getElementById("hallSelect").value;
  const sel=document.getElementById("hallSelect");
  sel.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>'+items.map(n=>'<option value="'+n+'">'+n+'</option>').join("");
+ if(!items.length){list.innerHTML='<div class="hallEmpty">등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.</div>';return;}
+ const selected=sel.value;
  list.innerHTML=items.map(n=>{
- const m=inferHallMeta(n,region,selectedSubregion);
- const badges='<div class="hallBadges"><em>'+m.type+'</em><em>'+m.operation+'</em></div>';
- const rooms='<div class="hallMetaLine"><span>빈소수</span><strong>'+m.rooms+'</strong></div>';
- const addr='<div class="hallAddress">'+m.address+'</div>';
- return '<label class="hallItem '+(selected===n?'selected':'')+'"><input type="radio" name="hallCard" '+(selected===n?'checked':'')+' onchange="chooseHall(\''+n.replace(/'/g,"\\'")+'\')"><span class="hallInfo"><b>'+n+'</b>'+badges+rooms+addr+'</span></label>';
-}).join("");
+   const m=inferHallMeta(n,region,selectedSubregion);
+   const badges='<div class="hallBadges"><em>'+m.type+'</em><em>'+m.operation+'</em></div>';
+   const rooms='<div class="hallMetaLine"><span>빈소수</span><strong>'+m.rooms+'</strong></div>';
+   const addr='<div class="hallAddress">'+m.address+'</div>';
+   return '<label class="hallItem '+(selected===n?'selected':'')+'"><input type="radio" name="hallCard" '+(selected===n?'checked':'')+' onchange="chooseHall(\''+n.replace(/'/g,"\\'")+'\')"><span class="hallInfo"><b>'+n+'</b>'+badges+rooms+addr+'</span></label>';
+ }).join("");
 }
 function chooseHall(name){
  const s=document.getElementById("hallSelect");
