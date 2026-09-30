@@ -95,6 +95,10 @@ def candidate_links(html,base):
 
 def classify(label):
     t=clean(label)
+    if t in ("안치실","안치료"):return "안치실"
+    if t in ("염습실","입관실","염습료","입관료"):return "염습/입관"
+    if t in ("영결식장","예식실"):return "영결식장"
+    if t in ("빈소","분향실","접객실"):return "빈소"
     # Only actual facility-use charges are accepted. Goods, food, ritual tables and transport are excluded.
     if any(w in t for w in ("장의차량","장의차","버스","리무진","입관부속품","장례용품","판매","기본상","성복상","발인상","제사","과일","음식","식사")):
         return None
