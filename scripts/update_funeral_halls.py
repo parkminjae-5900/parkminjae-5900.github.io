@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import json, os, urllib.parse, urllib.request, urllib.error, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
 ENDPOINT = "https://apis.data.go.kr/1352000/ODMS_DATA_04_1"
@@ -15,13 +15,20 @@ FIELDS = ["ctpv","sigungu","fcltNm","addr","telno","fxno","homepageUrl","tpkct",
 
 def fetch_page(region, page_no):
     params = {
-        "serviceKey": KEY, "pageNo": str(page_no), "numOfRows": str(PAGE_SIZE),
+        "pageNo": str(page_no), "numOfRows": str(PAGE_SIZE),
         "apiType": "XML", "ctpv": region
     }
-    url = ENDPOINT + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent":"dahamsangjo-funeral-hall-sync/1.1"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        root = ET.fromstring(r.read())
+    # data.go.kr keys may be supplied already URL-encoded. Do not encode serviceKey twice.
+    query = "serviceKey=" + KEY.strip() + "&" + urllib.parse.urlencode(params)
+    url = ENDPOINT + "?" + query
+    req = urllib.request.Request(url, headers={"User-Agent":"dahamsangjo-funeral-hall-sync/1.2"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            raw = r.read()
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8","replace")
+        raise RuntimeError(f"HTTP {e.code}: {body[:500]}")
+    root = ET.fromstring(raw)
     code = (root.findtext("./header/resultCode") or "").strip()
     if code != "00":
         raise RuntimeError(f"{region}: API resultCode={code} msg={root.findtext('./header/resultMsg')}")
