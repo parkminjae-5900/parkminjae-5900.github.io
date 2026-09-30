@@ -2,7 +2,7 @@
 import json, os, urllib.parse, urllib.request, urllib.error, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
-ENDPOINT = "https://apis.data.go.kr/1352000/ODMS_DATA_04_1"
+ENDPOINT = "https://apis.data.go.kr/1352000/ODMS_DATA_04_1/callData04_1Api"
 KEY = os.environ["FUNERAL_API_KEY"]
 PAGE_SIZE = 100
 REGIONS = [
