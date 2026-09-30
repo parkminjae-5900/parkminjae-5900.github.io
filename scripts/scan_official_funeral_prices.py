@@ -40,7 +40,7 @@ def canon_name(s):
     x=norm(s)
     for p in ("의료법인","사회복지법인","재단법인","학교법인","사단법인","주식회사","유한회사"):
         if x.startswith(p): x=x[len(p):]
-    if x.endswith("장례식장"): x=x[:-5]
+    if x.endswith("장례식장"): x=x[:-4]
     return x
 
 def normalize_url(u):
