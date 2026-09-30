@@ -341,6 +341,11 @@ input[type=range]{width:100%;accent-color:#b88712}
  .nestedHallArea{margin-top:6px!important;padding:9px!important}
  .hallList{max-height:none!important;overflow:visible!important}
 }
+
+.helperVisual{width:100%;height:auto;object-fit:contain;max-height:none;margin-bottom:12px}
+@media(max-width:760px){
+ #suitRealImage,#helperRealImage{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;border-radius:10px}
+}
 </style>
 </head>
 <body>
@@ -495,7 +500,7 @@ input[type=range]{width:100%;accent-color:#b88712}
  <div class="infoBlue">무빈소의 경우 빈소를 차리지 않으므로 빈소용품 일부가 제외될 수 있지만, 장례지도사·입관용품·보조 장례지도사는 필수로 자동 계산됩니다.</div>
  <h2 style="margin-top:24px">상복 실사 이미지</h2>
  <p class="sub">남·여 상복을 실제 형태로 확인할 수 있습니다.</p>
- <img id="suitRealImage" class="realVisual suitVisual" alt="다함상조 남녀 상복 실사 이미지">
+ <img id="suitRealImage" class="realVisual suitVisual" src="assets/estimate/suit.png?v=20260930-2" alt="다함상조 남녀 상복 실사 이미지">
  <div class="staffRealGrid" aria-label="다함상조 실제 의전인력">
   <div class="staffRealCard"><img src="staff/assets/photos/01.jpg" alt="박민재 대표장례지도사"><b>박민재</b><span>대표장례지도사</span></div>
   <div class="staffRealCard"><img src="staff/assets/photos/18.jpg" alt="홍경희 의전팀장"><b>홍경희</b><span>의전팀장</span></div>
@@ -510,6 +515,10 @@ input[type=range]{width:100%;accent-color:#b88712}
   <div class="requiredRow"><div><strong>보조 장례지도사 (입관식)</strong><small>입관식 보조 인력 · 특수입관 시 추가비용 별도</small></div><b>150,000원</b></div>
  </div>
  <div class="notice" style="margin-top:16px"><strong>필수 의전인력 합계 780,000원</strong>이 견적에 자동 포함됩니다.</div>
+
+ <h2 style="margin-top:28px">접객도우미 실사 이미지</h2>
+ <p class="sub">장례식장 접객실에서 근무하는 접객관리 인력 예시입니다.</p>
+ <img id="helperRealImage" class="realVisual helperVisual" src="assets/estimate/helper.png?v=20260930-2" alt="다함상조 접객관리 도우미 실사 이미지">
 
  <h2 style="margin-top:28px">상복 · 접객도우미</h2>
  <p class="sub">필요한 수량만 추가해주세요.</p>
@@ -911,7 +920,6 @@ async function saveImage(){
 }
 async function loadEstimateImageData(){
  const items=[
-  ["suitRealImage","assets/estimate/suit.b64"],
   ["limoRealImage","assets/estimate/limo.b64"],
   ["busRealImage","assets/estimate/bus.b64"]
  ];
