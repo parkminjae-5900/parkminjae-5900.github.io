@@ -93,11 +93,16 @@ def materialize_source():
     ]
     debug=[]
     for pat in pats:
-        for m in re.finditer(pat,text,re.I):
+        for m in re.finditer(pat,text,re.I|re.S):
             frag=m.group(0)
-            if frag not in debug: debug.append(frag[:1000])
+            if frag not in debug: debug.append(frag[:1600])
             if len(debug)>=20: break
         if len(debug)>=20: break
+    for needle in ["limitAtchFileId","atchFileId","limitFileDetailSn"]:
+        pos=text.find(needle)
+        if pos>=0:
+            frag=text[max(0,pos-1800):min(len(text),pos+2600)]
+            if frag not in debug: debug.append(frag)
     print("DATA_GO_DEBUG_START",file=sys.stderr)
     for x in debug: print(x,file=sys.stderr)
     print("DATA_GO_DEBUG_END",file=sys.stderr)
