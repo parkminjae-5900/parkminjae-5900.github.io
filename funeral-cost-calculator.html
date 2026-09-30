@@ -941,7 +941,7 @@ body{padding-bottom:0}
 .urnProductCard{padding:0!important;overflow:hidden!important;display:block!important}
 .urnProductCard .urnThumb{
  width:100%!important;height:auto!important;aspect-ratio:1/1!important;
- background-image:url('assets/estimate/products/urn-taerimwon.jpg?v=20260930-1645')!important;
+ background-image:url('assets/estimate/products/urn-taerimwon.jpg?v=20260930-1722')!important;
  background-size:1000% 900%!important;background-repeat:no-repeat!important;background-color:#fff!important;
  border-bottom:1px solid #eee6da!important
 }
@@ -1805,7 +1805,7 @@ function openProductDetail(key){
  }else if(d.group==="coffin"){
    cropSpriteToImage(img,"assets/estimate/products/coffin-all.jpg?v=20260930-1645",5,2,spriteIndexFromKey(key));
  }else if(d.group==="urn" && Number.isInteger(d.spriteIndex)){
-   cropSpriteToImage(img,"assets/estimate/products/urn-taerimwon.jpg?v=20260930-1645",10,9,d.spriteIndex+1);
+   cropSpriteToImage(img,"assets/estimate/products/urn-taerimwon.jpg?v=20260930-1722",10,9,d.spriteIndex+1);
  }else{
    img.src=d.img||"";
  }
@@ -1905,7 +1905,7 @@ setStep(1);renderHalls();recalc();loadEstimateImageData();
 </script>
 
 <script id="urnCatalogData20260930">
-const urnSpriteUrl="assets/estimate/products/urn-taerimwon.jpg?v=20260930-1630";
+const urnSpriteUrl="assets/estimate/products/urn-taerimwon.jpg?v=20260930-1722";
 const sourceOrder=["BOG-1 9030","BOS-1 9030","ARG-1 8728","ARG-2 8728","ARS-1 8728","ARS-2 8728","TA-1 6522","TA-2 6522","TA-3 6522","TA-4 6522","ARJ-1 6723","ARJ-2 6723","ARJ-3 6723","ARJ-4 6723","ARJ-5 6723","ARJ-6 6723","ARJ-7 6723","ARJ-8 6723","BOB-4 7025","BOB-5 7025","BOB-3 7025","BOB-10 7025","BOB-1 7025","BOB-2 7025","BOB-6 7025","BOB-7 7025","BOB-8 7025","HU-1 9728","HU-2 9728","HU-3 9728","AN-1 9728","HU-10 9728","HUL-1 9728","CCG-1 9728","HUF-1 9728","AN-3 8025","HUG-14 11535","HUG-16 11535","ARG-1 9332","ARF-2 9332","ARS-3 9332","EH-4 6619","EH-5 6619","EH-6 6619","EG-1 6619","EB-2 6619","EC-3 6619","EFM-1 5916","EMR-1 7929","EFM-2 5916","SM-1 5317","SM-2 5317","SM-3 5317","SM-4 5317","SM-5 5317","SM-6 5317","SM-7 5317","DW-1 5012","DW-2 5012","DH-4 5012","DH-1 4911","DH-5 5012","DW-3 5012","DW-4 5012","DW-5 5012","HO-4 4010","HO-5 4010","HO-6 4010","HO-7 4010","HO-1 4010","HO-2 4010","HO-3 4010","WT-2 3609","WT-1 3609","DR-2 2406","DR-1 1505","DR-3 2406","DR-4 2406","DR-5 2406","DR-6 2406","HG-3 8228","HG-4 8228","HG-5 8228","HG-1 5317","HG-2 5718","JN-1 1505","EB-1 4515","EB-2 4515","WH-1 1505","HT-1 1505"];
 const urnSpriteIndex=Object.fromEntries(sourceOrder.map((x,i)=>[x,i]));
 const urnProducts20260930=[
@@ -2013,7 +2013,7 @@ function renderUrnCatalog(cat="전체"){
    const idx=urnSpriteIndex[x.code];
    const col=idx%10,row=Math.floor(idx/10),px=(col*100/9),py=(row*100/8);
    return '<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+discounted+'">'+
-   '<div class="urnThumb" data-cat="'+x.category+'" style="background-image:url('assets/estimate/products/urn-taerimwon.jpg?v=20260930-1645');background-size:1000% 900%;background-position:'+px+'% '+py+'%"></div>'+
+   '<div class="urnThumb" data-cat="'+x.category+'" style="background-image:url('assets/estimate/products/urn-taerimwon.jpg?v=20260930-1722');background-size:1000% 900%;background-position:'+px+'% '+py+'%"></div>'+
    '<strong>'+x.name+'<span class="urnDiscountBadge">20% 할인</span></strong>'+
    '<span class="urnCode">'+x.code+'</span>'+
    '<span class="urnOriginalPrice">판매가 '+urnWon(x.price)+'</span>'+
