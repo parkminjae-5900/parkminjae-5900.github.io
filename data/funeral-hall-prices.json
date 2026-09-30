@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-09-30T12:07:54.066Z",
+  "updatedAt": "2026-09-30T12:08:31.766Z",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -298,29 +298,41 @@
     {
       "facilityName": "경찰병원장례식장",
       "address": "서울특별시 송파구 송이로 123 (가락동, 국립경찰병원)",
-      "verifiedAt": "2026-09-30T11:29:36.641674+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.nph.go.kr/nph/main/contents.do?menuNo=200120",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 72,000원 / 24시간 (1시간당 3,000원)",
+          "label": "안치료",
           "amount": 72000,
           "unit": "24시간"
         },
         {
+          "category": "안치실",
+          "label": "안치료(시간당)",
+          "amount": 3000,
+          "unit": "1시간"
+        },
+        {
           "category": "영결식장",
-          "label": "영결식장 사용료 100,000원 / 30분 180,000원 / 1시간",
+          "label": "영결식장 사용료",
           "amount": 100000,
+          "unit": "30분"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 사용료",
+          "amount": 180000,
           "unit": "1시간"
         },
         {
           "category": "염습/입관",
-          "label": "염습료 350,000원",
+          "label": "염습료",
           "amount": 350000,
-          "unit": ""
+          "unit": "1회"
         }
       ]
     },
@@ -751,22 +763,22 @@
     {
       "facilityName": "기장병원장례식장",
       "address": "부산광역시 기장군 기장읍 대청로72번길 6 (청강리, 기장병원)",
-      "verifiedAt": "2026-09-30T09:23:33.204817+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.gjhp.kr/location01_05.php",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "빈소",
-          "label": "빈소 임대료 (접객실 포함) 1호실",
+          "label": "빈소 임대료(접객실 포함) 1호실",
           "amount": 400000,
           "unit": "1일"
         },
         {
           "category": "안치실",
-          "label": "안치료 100,000원 / 1일",
-          "amount": 4167,
+          "label": "안치료",
+          "amount": 100000,
           "unit": "1일"
         }
       ]
@@ -854,35 +866,71 @@
     {
       "facilityName": "서산의료원상례원",
       "address": "충청남도 서산시 중앙로 149 (석림동)",
-      "verifiedAt": "2026-09-30T11:43:16.049808+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "http://seosanmc.or.kr/funeral/content/38",
+      "sourceUrl": "https://seosanmc.or.kr/funeral/content/38",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 2,500원",
+          "label": "안치료",
           "amount": 2500,
-          "unit": ""
+          "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "분향 및 접객실료 특실(국화1호) - 67평",
+          "label": "특실(국화1호) 67평",
           "amount": 30000,
-          "unit": ""
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "국화2호 55평",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "특실(백합1호) 67평",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "백합2호 55평",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "수국실(별실) 50평",
+          "amount": 20000,
+          "unit": "1시간"
         },
         {
           "category": "염습/입관",
-          "label": "염습실 및 염습료 초염비(수세료)",
-          "amount": 100000,
-          "unit": ""
-        },
-        {
-          "category": "염습/입관",
-          "label": "염습실 사용료 200,000원",
+          "label": "염습실 사용료",
           "amount": 200000,
-          "unit": ""
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습 및 사용료",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "특별 염습(사고사)",
+          "amount": 400000,
+          "unit": "1회"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 사용료",
+          "amount": 50000,
+          "unit": "1회"
         }
       ]
     },
@@ -1127,16 +1175,28 @@
     {
       "facilityName": "울산영락원",
       "address": "울산광역시 남구 산업로517번길 10 (여천동, 울산영락원장례식장)",
-      "verifiedAt": "2026-09-30T11:33:02.652669+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.ulsanfuneral.com/sub31.asp",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "청소/관리",
-          "label": "관리비 일반실,특실 40,000원 / VIP실 50,000원 / VVIP실 60,000원",
+          "label": "관리비 일반실·특실",
           "amount": 40000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "관리비 VIP실",
+          "amount": 50000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "관리비 VVIP실",
+          "amount": 60000,
           "unit": "1회"
         }
       ]
@@ -1144,23 +1204,83 @@
     {
       "facilityName": "울산하늘공원 장례식장",
       "address": "울산광역시 울주군 삼동면 보삼길 550 (조일리)",
-      "verifiedAt": "2026-09-30T11:33:19.820850+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.uic.or.kr/skypark/funeral/funeral09.do",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "빈소",
-          "label": "빈소 (24시간 기준) 148 ㎡ (45 평 ) (201~204 호)",
+          "label": "빈소 45평(201~204호) 관내",
           "amount": 112000,
           "unit": "24시간"
         },
         {
           "category": "빈소",
-          "label": "빈소 (24시간 기준) 148 ㎡ (45 평 ) (201~204 호)",
+          "label": "빈소 55평(205호) 관내",
+          "amount": 137000,
+          "unit": "24시간"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 45평(201~204호) 관외",
           "amount": 224000,
           "unit": "24시간"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 55평(205호) 관외",
+          "amount": 274000,
+          "unit": "24시간"
+        },
+        {
+          "category": "청소/관리",
+          "label": "가족휴게실 관내",
+          "amount": 30000,
+          "unit": "24시간"
+        },
+        {
+          "category": "청소/관리",
+          "label": "가족휴게실 관외",
+          "amount": 60000,
+          "unit": "24시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 관내",
+          "amount": 40000,
+          "unit": "24시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 관외",
+          "amount": 80000,
+          "unit": "24시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 관내",
+          "amount": 30000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 관외",
+          "amount": 60000,
+          "unit": "1회"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 관내",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 관외",
+          "amount": 80000,
+          "unit": "1시간"
         }
       ]
     },
@@ -1336,17 +1456,41 @@
     {
       "facilityName": "한일병원장례식장",
       "address": "서울특별시 도봉구 우이천로 308한일병원장례식장 (쌍문동)",
-      "verifiedAt": "2026-09-30T11:28:58.375228+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.hanilmed.net/portal/contents.do?menuNo=81101073",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
+          "category": "빈소",
+          "label": "1호실",
+          "amount": 60000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "2호실",
+          "amount": 35000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "3·5호실",
+          "amount": 48000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "6·7호실",
+          "amount": 55000,
+          "unit": "1시간"
+        },
+        {
           "category": "안치실",
-          "label": "안치실 ",
+          "label": "안치실",
           "amount": 6000,
-          "unit": "1실"
+          "unit": "1시간"
         }
       ]
     },
