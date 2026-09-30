@@ -402,6 +402,27 @@ input[type=range]{width:100%;accent-color:#b88712}
  .stickySummary{bottom:76px!important}
  .shell{padding-bottom:150px!important}
 }
+
+/* final sharp estimator visuals */
+.step9HeroImage,.helperHero,.vehicleCard img{
+ filter:none!important;
+ image-rendering:auto!important;
+ -webkit-font-smoothing:antialiased;
+ transform:none!important;
+}
+.step9HeroImage{background:#f7f3ec}
+@media(max-width:760px){
+ .step[data-step="9"] .infoBlue{font-size:14px;padding:12px}
+ .step[data-step="9"] .requiredRow{grid-template-columns:1fr auto;gap:10px}
+ .step[data-step="9"] .requiredRow small{font-size:13px}
+ .step[data-step="9"] .compactQty{grid-template-columns:1fr auto}
+ .step[data-step="9"] .compactQty .qtyControls{grid-template-columns:40px 40px 40px}
+ .step[data-step="10"] .vehicleGrid{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+ .step[data-step="10"] .vehicleCard{width:100%}
+ .step[data-step="10"] .vehicleCard img{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+ .step[data-step="10"] .vehicleBody{padding:15px 13px}
+ .step[data-step="10"] .vehicleSelect{min-height:56px;font-size:17px}
+}
 </style>
 </head>
 <body>
@@ -568,7 +589,7 @@ input[type=range]{width:100%;accent-color:#b88712}
 
   <div class="step9Suit">
    <h3 class="sectionTitle">상복 (직계 가족 대여)</h3>
-   <img class="step9HeroImage" src="assets/estimate/suit-sharp.png?v=20260930-5" onerror="this.onerror=null;this.src='assets/estimate/suit.png?v=20260930-5';" alt="다함상조 남녀 상복">
+   <img class="step9HeroImage" src="assets/estimate/suit-final.jpg?v=20260930-6" alt="다함상조 남녀 상복" decoding="async">
    <div class="compactQty">
     <div class="compactQtyText"><strong>남자 상복 (대여)</strong><span>양복·와이셔츠·넥타이·완장 포함</span><b>50,000원 / 1벌</b></div>
     <div class="qtyControls"><button type="button" onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button type="button" onclick="qty('maleSuit',1)">+</button></div>
@@ -582,7 +603,7 @@ input[type=range]{width:100%;accent-color:#b88712}
   <div class="step9Helper">
    <h3 class="sectionTitle">접객 도우미 (선택)</h3>
    <div class="helperFeature">
-    <img class="step9HeroImage helperHero" src="assets/estimate/helper-sharp.png?v=20260930-5" onerror="this.onerror=null;this.src='assets/estimate/helper.png?v=20260930-5';" alt="다함상조 접객 도우미">
+    <img class="step9HeroImage helperHero" src="assets/estimate/helper-final.jpg?v=20260930-6" alt="다함상조 접객 도우미" decoding="async">
     <div class="helperCopy"><strong>접객 도우미</strong><span>빈소 접객 및 상주·유가족 안내를 지원합니다. 필요한 인원만 선택해주세요.</span></div>
    </div>
    <div class="compactQty">
