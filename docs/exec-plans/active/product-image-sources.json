@@ -1,0 +1,882 @@
+{
+  "BOG-1 9030": {
+    "asset": "urn-bog-1-9030.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-01-02-1.jpg",
+    "crop": [
+      150,
+      125,
+      590,
+      580
+    ]
+  },
+  "BOS-1 9030": {
+    "asset": "urn-bos-1-9030.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-01-02-1.jpg",
+    "crop": [
+      635,
+      125,
+      1010,
+      580
+    ]
+  },
+  "ARG-1 8728": {
+    "asset": "urn-arg-1-8728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-01-02-1.jpg",
+    "crop": [
+      150,
+      660,
+      590,
+      1120
+    ]
+  },
+  "ARG-2 8728": {
+    "asset": "urn-arg-2-8728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-01-02-1.jpg",
+    "crop": [
+      635,
+      660,
+      1010,
+      1120
+    ]
+  },
+  "ARS-1 8728": {
+    "asset": "urn-ars-1-8728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-01-02-1.jpg",
+    "crop": [
+      150,
+      1210,
+      590,
+      1660
+    ]
+  },
+  "ARS-2 8728": {
+    "asset": "urn-ars-2-8728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-01-02-1.jpg",
+    "crop": [
+      635,
+      1210,
+      1010,
+      1660
+    ]
+  },
+  "ARJ-1 6723": {
+    "asset": "urn-arj-1-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      225,
+      65,
+      625,
+      490
+    ]
+  },
+  "ARJ-2 6723": {
+    "asset": "urn-arj-2-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      700,
+      65,
+      1100,
+      490
+    ]
+  },
+  "ARJ-3 6723": {
+    "asset": "urn-arj-3-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      70,
+      595,
+      460,
+      1020
+    ]
+  },
+  "ARJ-4 6723": {
+    "asset": "urn-arj-4-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      465,
+      595,
+      845,
+      1020
+    ]
+  },
+  "ARJ-5 6723": {
+    "asset": "urn-arj-5-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      850,
+      595,
+      1230,
+      1020
+    ]
+  },
+  "ARJ-6 6723": {
+    "asset": "urn-arj-6-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      70,
+      1140,
+      460,
+      1565
+    ]
+  },
+  "ARJ-7 6723": {
+    "asset": "urn-arj-7-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      465,
+      1140,
+      845,
+      1565
+    ]
+  },
+  "ARJ-8 6723": {
+    "asset": "urn-arj-8-6723.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-03-02.jpg",
+    "crop": [
+      850,
+      1140,
+      1230,
+      1565
+    ]
+  },
+  "HU-1 9728": {
+    "asset": "urn-hu-1-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      70,
+      65,
+      460,
+      480
+    ]
+  },
+  "HU-2 9728": {
+    "asset": "urn-hu-2-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      465,
+      65,
+      845,
+      480
+    ]
+  },
+  "HU-3 9728": {
+    "asset": "urn-hu-3-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      850,
+      65,
+      1230,
+      480
+    ]
+  },
+  "AN-1 9728": {
+    "asset": "urn-an-1-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      70,
+      600,
+      460,
+      1000
+    ]
+  },
+  "HU-10 9728": {
+    "asset": "urn-hu-10-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      465,
+      600,
+      845,
+      1000
+    ]
+  },
+  "HUL-1 9728": {
+    "asset": "urn-hul-1-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      850,
+      600,
+      1230,
+      1000
+    ]
+  },
+  "CCG-1 9728": {
+    "asset": "urn-ccg-1-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      70,
+      1120,
+      460,
+      1520
+    ]
+  },
+  "HUF-1 9728": {
+    "asset": "urn-huf-1-9728.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      465,
+      1120,
+      845,
+      1520
+    ]
+  },
+  "AN-3 8025": {
+    "asset": "urn-an-3-8025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-05-02.jpg",
+    "crop": [
+      850,
+      1120,
+      1230,
+      1520
+    ]
+  },
+  "BOB-4 7025": {
+    "asset": "urn-bob-4-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      70,
+      55,
+      460,
+      465
+    ]
+  },
+  "BOB-5 7025": {
+    "asset": "urn-bob-5-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      465,
+      55,
+      845,
+      465
+    ]
+  },
+  "BOB-3 7025": {
+    "asset": "urn-bob-3-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      850,
+      55,
+      1230,
+      465
+    ]
+  },
+  "BOB-10 7025": {
+    "asset": "urn-bob-10-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      70,
+      590,
+      460,
+      995
+    ]
+  },
+  "BOB-1 7025": {
+    "asset": "urn-bob-1-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      465,
+      590,
+      845,
+      995
+    ]
+  },
+  "BOB-2 7025": {
+    "asset": "urn-bob-2-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      850,
+      590,
+      1230,
+      995
+    ]
+  },
+  "BOB-6 7025": {
+    "asset": "urn-bob-6-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      70,
+      1110,
+      460,
+      1525
+    ]
+  },
+  "BOB-7 7025": {
+    "asset": "urn-bob-7-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      465,
+      1110,
+      845,
+      1525
+    ]
+  },
+  "BOB-8 7025": {
+    "asset": "urn-bob-8-7025.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product01-04-02.jpg",
+    "crop": [
+      850,
+      1110,
+      1230,
+      1525
+    ]
+  },
+  "HUG-14 11535": {
+    "asset": "urn-hug-14-11535.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product03-01-02.jpg",
+    "crop": [
+      190,
+      195,
+      585,
+      605
+    ]
+  },
+  "HUG-16 11535": {
+    "asset": "urn-hug-16-11535.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product03-01-02.jpg",
+    "crop": [
+      665,
+      195,
+      1050,
+      605
+    ]
+  },
+  "ARG-1 9332": {
+    "asset": "urn-arg-1-9332.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product03-01-02.jpg",
+    "crop": [
+      70,
+      950,
+      460,
+      1365
+    ]
+  },
+  "ARF-2 9332": {
+    "asset": "urn-arf-2-9332.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product03-01-02.jpg",
+    "crop": [
+      465,
+      950,
+      845,
+      1365
+    ]
+  },
+  "ARS-3 9332": {
+    "asset": "urn-ars-3-9332.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product03-01-02.jpg",
+    "crop": [
+      850,
+      950,
+      1230,
+      1365
+    ]
+  },
+  "HG-3 8228": {
+    "asset": "urn-hg-3-8228.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      300,
+      120,
+      465,
+      485
+    ]
+  },
+  "HG-4 8228": {
+    "asset": "urn-hg-4-8228.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      650,
+      120,
+      820,
+      485
+    ]
+  },
+  "HG-5 8228": {
+    "asset": "urn-hg-5-8228.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      1005,
+      120,
+      1175,
+      485
+    ]
+  },
+  "HG-1 5317": {
+    "asset": "urn-hg-1-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      150,
+      625,
+      470,
+      975
+    ]
+  },
+  "HG-2 5718": {
+    "asset": "urn-hg-2-5718.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      500,
+      625,
+      820,
+      975
+    ]
+  },
+  "JN-1 1505": {
+    "asset": "urn-jn-1-1505.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      865,
+      695,
+      1140,
+      975
+    ]
+  },
+  "EB-1 4515": {
+    "asset": "urn-eb-1-4515.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      145,
+      1140,
+      395,
+      1420
+    ]
+  },
+  "EB-2 4515": {
+    "asset": "urn-eb-2-4515.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      420,
+      1140,
+      665,
+      1420
+    ]
+  },
+  "WH-1 1505": {
+    "asset": "urn-wh-1-1505.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      680,
+      1140,
+      925,
+      1420
+    ]
+  },
+  "HT-1 1505": {
+    "asset": "urn-ht-1-1505.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product10-02.jpg",
+    "crop": [
+      930,
+      1140,
+      1175,
+      1420
+    ]
+  },
+  "SM-1 5317": {
+    "asset": "urn-sm-1-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      260,
+      110,
+      610,
+      490
+    ]
+  },
+  "SM-2 5317": {
+    "asset": "urn-sm-2-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      715,
+      110,
+      1070,
+      490
+    ]
+  },
+  "SM-3 5317": {
+    "asset": "urn-sm-3-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      260,
+      600,
+      610,
+      980
+    ]
+  },
+  "SM-4 5317": {
+    "asset": "urn-sm-4-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      715,
+      600,
+      1070,
+      980
+    ]
+  },
+  "SM-5 5317": {
+    "asset": "urn-sm-5-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      70,
+      1100,
+      460,
+      1475
+    ]
+  },
+  "SM-6 5317": {
+    "asset": "urn-sm-6-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      465,
+      1100,
+      845,
+      1475
+    ]
+  },
+  "SM-7 5317": {
+    "asset": "urn-sm-7-5317.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product05-02.jpg",
+    "crop": [
+      850,
+      1100,
+      1230,
+      1475
+    ]
+  },
+  "DW-1 5012": {
+    "asset": "urn-dw-1-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      285,
+      120,
+      625,
+      495
+    ]
+  },
+  "DW-2 5012": {
+    "asset": "urn-dw-2-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      650,
+      120,
+      990,
+      495
+    ]
+  },
+  "DH-4 5012": {
+    "asset": "urn-dh-4-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      70,
+      610,
+      460,
+      990
+    ]
+  },
+  "DH-1 4911": {
+    "asset": "urn-dh-1-4911.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      465,
+      610,
+      845,
+      990
+    ]
+  },
+  "DH-5 5012": {
+    "asset": "urn-dh-5-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      850,
+      610,
+      1230,
+      990
+    ]
+  },
+  "DW-3 5012": {
+    "asset": "urn-dw-3-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      70,
+      1090,
+      460,
+      1470
+    ]
+  },
+  "DW-4 5012": {
+    "asset": "urn-dw-4-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      465,
+      1090,
+      845,
+      1470
+    ]
+  },
+  "DW-5 5012": {
+    "asset": "urn-dw-5-5012.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product06-02.jpg",
+    "crop": [
+      850,
+      1090,
+      1230,
+      1470
+    ]
+  },
+  "HO-4 4010": {
+    "asset": "urn-ho-4-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      265,
+      325,
+      610,
+      700
+    ]
+  },
+  "HO-5 4010": {
+    "asset": "urn-ho-5-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      665,
+      325,
+      1020,
+      700
+    ]
+  },
+  "HO-6 4010": {
+    "asset": "urn-ho-6-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      110,
+      795,
+      455,
+      1170
+    ]
+  },
+  "HO-7 4010": {
+    "asset": "urn-ho-7-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      840,
+      795,
+      1200,
+      1170
+    ]
+  },
+  "HO-1 4010": {
+    "asset": "urn-ho-1-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      70,
+      1290,
+      460,
+      1670
+    ]
+  },
+  "HO-2 4010": {
+    "asset": "urn-ho-2-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      465,
+      1290,
+      845,
+      1670
+    ]
+  },
+  "HO-3 4010": {
+    "asset": "urn-ho-3-4010.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product08-01.jpg",
+    "crop": [
+      850,
+      1290,
+      1230,
+      1670
+    ]
+  },
+  "EH-4 6619": {
+    "asset": "urn-eh-4-6619.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      70,
+      165,
+      460,
+      545
+    ]
+  },
+  "EH-5 6619": {
+    "asset": "urn-eh-5-6619.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      465,
+      165,
+      845,
+      545
+    ]
+  },
+  "EH-6 6619": {
+    "asset": "urn-eh-6-6619.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      850,
+      165,
+      1230,
+      545
+    ]
+  },
+  "EG-1 6619": {
+    "asset": "urn-eg-1-6619.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      70,
+      635,
+      460,
+      1015
+    ]
+  },
+  "EB-2 6619": {
+    "asset": "urn-eb-2-6619.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      465,
+      635,
+      845,
+      1015
+    ]
+  },
+  "EC-3 6619": {
+    "asset": "urn-ec-3-6619.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      850,
+      635,
+      1230,
+      1015
+    ]
+  },
+  "EFM-1 5916": {
+    "asset": "urn-efm-1-5916.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      70,
+      1210,
+      460,
+      1580
+    ]
+  },
+  "EMR-1 7929": {
+    "asset": "urn-emr-1-7929.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      465,
+      1210,
+      845,
+      1580
+    ]
+  },
+  "EFM-2 5916": {
+    "asset": "urn-efm-2-5916.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product04-02.jpg",
+    "crop": [
+      850,
+      1210,
+      1230,
+      1580
+    ]
+  },
+  "WT-2 3609": {
+    "asset": "urn-wt-2-3609.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      265,
+      320,
+      615,
+      690
+    ]
+  },
+  "WT-1 3609": {
+    "asset": "urn-wt-1-3609.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      695,
+      320,
+      1040,
+      690
+    ]
+  },
+  "DR-2 2406": {
+    "asset": "urn-dr-2-2406.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      70,
+      785,
+      460,
+      1165
+    ]
+  },
+  "DR-1 1505": {
+    "asset": "urn-dr-1-1505.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      465,
+      785,
+      845,
+      1165
+    ]
+  },
+  "DR-3 2406": {
+    "asset": "urn-dr-3-2406.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      850,
+      785,
+      1230,
+      1165
+    ]
+  },
+  "DR-4 2406": {
+    "asset": "urn-dr-4-2406.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      70,
+      1280,
+      460,
+      1650
+    ]
+  },
+  "DR-5 2406": {
+    "asset": "urn-dr-5-2406.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      465,
+      1280,
+      845,
+      1650
+    ]
+  },
+  "DR-6 2406": {
+    "asset": "urn-dr-6-2406.jpg",
+    "source": "http://www.xn--4y2b62voyh.kr/wp-content/uploads/2024/10/product09-01.jpg",
+    "crop": [
+      850,
+      1280,
+      1230,
+      1650
+    ]
+  },
+  "TA-1 6522": {
+    "asset": "urn-ta-1-6522.jpg",
+    "source": "https://hankook-sj.com/wp-content/uploads/2025/12/%ED%83%9C%EB%A6%BC%EC%A1%B0%EA%B0%81%EC%9D%BC%EB%B0%98-1.png",
+    "match": "exact product name"
+  },
+  "TA-2 6522": {
+    "asset": "urn-ta-2-6522.jpg",
+    "source": "https://hankook-sj.com/wp-content/uploads/2025/12/%ED%83%9C%EB%A6%BC%EC%A1%B0%EA%B0%81%EA%B8%B0%EB%8F%85%EA%B5%90-1.png",
+    "match": "exact product name"
+  },
+  "TA-3 6522": {
+    "asset": "urn-ta-3-6522.jpg",
+    "source": "https://hankook-sj.com/wp-content/uploads/2025/12/%ED%83%9C%EB%A6%BC%EC%A1%B0%EA%B0%81%EB%B6%88%EA%B5%90-1.png",
+    "match": "exact product name"
+  },
+  "TA-4 6522": {
+    "asset": "urn-ta-4-6522.jpg",
+    "source": "https://hankook-sj.com/wp-content/uploads/2025/12/%ED%83%9C%EB%A6%BC%EC%A1%B0%EA%B0%81%EC%B2%9C%EC%A3%BC%EA%B5%90-1.png",
+    "match": "exact product name"
+  }
+}

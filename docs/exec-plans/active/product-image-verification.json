@@ -1,0 +1,34 @@
+{
+  "products": 115,
+  "urns": 90,
+  "calculation_source_unchanged": true,
+  "logo_markup_unchanged": true,
+  "supplier_public_text_absent": true,
+  "images_decoded": 115,
+  "duplicate_pairs": [
+    {
+      "pair": [
+        "f1",
+        "f2"
+      ],
+      "same_photo": true,
+      "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
+    },
+    {
+      "pair": [
+        "f3",
+        "f5"
+      ],
+      "same_photo": true,
+      "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
+    },
+    {
+      "pair": [
+        "s6",
+        "s8"
+      ],
+      "same_photo": true,
+      "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
+    }
+  ]
+}
