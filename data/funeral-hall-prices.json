@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-09-30T12:08:31.766Z",
+  "updatedAt": "2026-09-30T12:32:45.286864+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -1022,6 +1022,23 @@
       ]
     },
     {
+      "facilityName": "성남시의료원장례식장",
+      "address": "경기도 성남시 수정구 수정로171번길 10 (태평동, 성남시의료원)",
+      "verifiedAt": "2026-09-30T12:31:51.367999+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://funeral.scmc.kr/sub/sub2_2.html",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 사용료 60,000원",
+          "amount": 2500,
+          "unit": ""
+        }
+      ]
+    },
+    {
       "facilityName": "안동전문장례식장",
       "address": "경상북도 안동시 강남로 5 안동전문장례식장 (수상동)",
       "verifiedAt": "2026-09-30T07:48:30.043004+00:00",
@@ -1034,6 +1051,35 @@
           "category": "염습/입관",
           "label": "염습료 300,000원",
           "amount": 300000,
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "안양장례식장",
+      "address": "경기도 안양시 동안구 엘에스로144번길 190 (호계동)",
+      "verifiedAt": "2026-09-30T05:59:12.920821+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.xn--9n2b47q9zbmiv5gca.kr/s2/s2_2.php",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "빈소 임대료 VIP실",
+          "amount": 2352000,
+          "unit": ""
+        },
+        {
+          "category": "안치실",
+          "label": "안치료 안치실",
+          "amount": 144000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 사용료 염습실/입관실",
+          "amount": 400000,
           "unit": ""
         }
       ]
@@ -1094,35 +1140,6 @@
           "label": "입관실 사용료 (1회) 400,000원",
           "amount": 400000,
           "unit": "1회"
-        }
-      ]
-    },
-    {
-      "facilityName": "안양장례식장",
-      "address": "경기도 안양시 동안구 엘에스로144번길 190 (호계동)",
-      "verifiedAt": "2026-09-30T05:59:12.920821+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.xn--9n2b47q9zbmiv5gca.kr/s2/s2_2.php",
-      "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
-      "prices": [
-        {
-          "category": "빈소",
-          "label": "빈소 임대료 VIP실",
-          "amount": 2352000,
-          "unit": ""
-        },
-        {
-          "category": "안치실",
-          "label": "안치료 안치실",
-          "amount": 144000,
-          "unit": ""
-        },
-        {
-          "category": "염습/입관",
-          "label": "염습실 사용료 염습실/입관실",
-          "amount": 400000,
-          "unit": ""
         }
       ]
     },
@@ -1450,6 +1467,23 @@
           "label": "안치료 : 60,000원 / 1일",
           "amount": 60000,
           "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "평창장례식장",
+      "address": "강원도 평창군 평창읍 종부로 61 (종부리, 평창군보건의료원)",
+      "verifiedAt": "2026-09-30T12:30:54.092321+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.pcfmc.or.kr/facilities08",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "염습/입관",
+          "label": "염습료(1회) 100,000원",
+          "amount": 100000,
+          "unit": "1회"
         }
       ]
     },
