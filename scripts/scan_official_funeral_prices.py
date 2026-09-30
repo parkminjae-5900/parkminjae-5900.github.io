@@ -11,7 +11,7 @@ OVERRIDES=Path("data/funeral-hall-prices.json")
 STATE=Path("data/official-price-scan-state.json")
 REPORT=Path("data/official-price-scan-report.json")
 BATCH=int(os.environ.get("PRICE_SCAN_BATCH","45"))
-TIMEOUT=12
+TIMEOUT=6
 UA="Mozilla/5.0 (compatible; DahamSangjoPriceVerifier/1.0; +https://www.dahamsangjo.co.kr/)"
 
 KEYWORDS=("장례","빈소","안치","염습","입관","시설","이용","요금","비용","가격","사용료","영결")
@@ -89,7 +89,7 @@ def candidate_links(html,base):
         key=u.split("#")[0]
         if key in seen:continue
         seen.add(key);out.append(key)
-        if len(out)>=10:break
+        if len(out)>=6:break
     return out
 
 def classify(label):
@@ -184,7 +184,7 @@ def scan_hall(h):
         core=sum(1 for x in prices if x["category"] in ("빈소","안치실","염습/입관","영결식장","청소/관리"))
         if core and len(prices)>len(best):
             best,besturl=prices,u
-        time.sleep(.18)
+        time.sleep(.08)
     if not best:return {"status":"no_price_found","homepage":home}
     return {
       "status":"priced","homepage":home,"sourceUrl":besturl,
