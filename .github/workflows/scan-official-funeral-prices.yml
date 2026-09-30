@@ -20,18 +20,32 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Rebase onto latest scan state
+        run: git pull --rebase origin main
       - name: Install dependencies
         run: pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Validate compressed baseline payload
+        run: |
+          python - <<'PY'
+          import base64,gzip,json,pathlib
+          b64=''.join(pathlib.Path(f"data/facility-price-mm-{i:02d}.b64").read_text().strip() for i in range(1,7))
+          d=json.loads(gzip.decompress(base64.b64decode(b64)))
+          if d.get("v")!=6 or int(d.get("h",0))<1000:
+              raise SystemExit("baseline payload validation failed")
+          print("baseline validated",d["h"],"facilities",d.get("r"),"rows")
+          PY
       - name: Scan official funeral hall sites
         env:
           PRICE_SCAN_BATCH: "45"
-        run: python scripts/scan_official_funeral_prices.py
+        run: |
+          python scripts/scan_official_funeral_prices.py
+          python scripts/scan_official_funeral_prices.py
       - name: Validate outputs
         run: |
           python - <<'PY'
