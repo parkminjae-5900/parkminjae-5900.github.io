@@ -145,15 +145,19 @@ def text_prices(soup):
     out=[]
     for el in soup.find_all(["li","p","div","span"]):
         t=clean(el.get_text(" ",strip=True))
-        if len(t)<4 or len(t)>240 or "원" not in t:continue
-        cat=classify(t)
-        if not cat:continue
-        m=MONEY_WON.search(t)
-        if not m:continue
-        a=int(m.group(1).replace(",",""))
+        if len(t)<4 or len(t)>180 or "원" not in t:continue
+        if any(w in t for w in ("상담문의","고객센터","대표전화","전화문의")):continue
+        matched=[]
+        for cat,words in CATEGORY_RULES:
+            if any(w in t for w in words):matched.append(cat)
+        matched=list(dict.fromkeys(matched))
+        if len(matched)!=1:continue
+        monies=MONEY_WON.findall(t)
+        if len(monies)!=1:continue
+        a=int(monies[0].replace(",",""))
         if a<1000 or a>20000000:continue
         m=UNIT.search(t)
-        out.append({"category":cat,"label":t[:160],"amount":a,"unit":m.group(1) if m else ""})
+        out.append({"category":matched[0],"label":t[:160],"amount":a,"unit":m.group(1) if m else ""})
     return out
 
 def dedupe(prices):
