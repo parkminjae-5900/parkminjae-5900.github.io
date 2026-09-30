@@ -2,6 +2,11 @@ name: Sync nationwide funeral halls
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_funeral_halls.py"
+      - ".github/workflows/sync-funeral-halls.yml"
   schedule:
     - cron: "15 18 * * *"
 
@@ -20,6 +25,17 @@ jobs:
         env:
           FUNERAL_API_KEY: ${{ secrets.FUNERAL_API_KEY }}
         run: python scripts/update_funeral_halls.py
+      - name: Validate fetched dataset
+        run: |
+          python - <<'PY'
+          import json
+          with open("data/funeral-halls.json", encoding="utf-8") as f:
+              d=json.load(f)
+          count=int(d.get("count",0))
+          if count < 100:
+              raise SystemExit(f"Dataset validation failed: only {count} records")
+          print(f"Validated {count} funeral halls")
+          PY
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
