@@ -662,6 +662,28 @@ body{padding-bottom:0}
   object-fit:contain!important;
  }
 }
+
+.productVisualBlock{margin:0 0 18px}
+.productCatalogHero{
+ display:block;
+ width:100%;
+ height:auto;
+ max-width:100%;
+ border:1px solid #e5dccf;
+ border-radius:14px;
+ background:#fff;
+ object-fit:contain;
+ filter:none!important;
+ image-rendering:auto!important;
+}
+.productVisualBlock small{display:block;margin-top:7px;color:#776d64;font-size:13px;line-height:1.45}
+@media(max-width:760px){
+ .productVisualBlock{margin-bottom:14px}
+ .productCatalogHero{width:100%!important;height:auto!important;border-radius:11px}
+ .step[data-step="6"] .options,
+ .step[data-step="7"] .options,
+ .step[data-step="8"] .options{grid-template-columns:1fr!important}
+}
 </style>
 </head>
 <body>
@@ -775,6 +797,7 @@ body{padding-bottom:0}
 
 <section class="step" data-step="6">
  <h2>수의를 선택해주세요</h2><p class="sub">공개 가격 기준을 반영했습니다. 등급을 직접 선택하면 견적에 즉시 반영됩니다.</p>
+ <div class="productVisualBlock"><img class="productCatalogHero" src="assets/estimate/shroud-products.jpg?v=20260930-1" alt="다함상조 수의 제품 이미지" decoding="async"><small>수의 제품 예시 이미지 · 실제 제공 색상과 자수는 선택 품목에 따라 달라질 수 있습니다.</small></div>
  <div class="options">
   <button class="option priced" data-field="shroud" data-value="육수자수수의" data-price="350000"><strong>육수자수수의</strong><span>화장 기본형에 많이 사용하는 구성</span><span class="money">350,000원</span></button>
   <button class="option priced" data-field="shroud" data-value="마사자수의" data-price="0"><strong>마사자수의</strong><span>상위 구성 수의</span><span class="money">상담 시 실제 선택가 반영</span></button>
@@ -787,6 +810,7 @@ body{padding-bottom:0}
 
 <section class="step" data-step="7">
  <h2>관을 선택해주세요</h2><p class="sub">화장·매장 방식에 맞는 관을 선택하면 견적에 즉시 반영됩니다.</p>
+ <div class="productVisualBlock"><img class="productCatalogHero" src="assets/estimate/coffin-products.jpg?v=20260930-1" alt="다함상조 관 제품 이미지" decoding="async"><small>관 제품 예시 이미지 · 목재와 마감은 선택 등급에 따라 달라질 수 있습니다.</small></div>
  <div class="options">
   <button class="option priced" data-field="coffin" data-value="오동나무 관 18mm" data-price="170000"><strong>오동나무 관 18mm</strong><span>화장·기본 매장 구성</span><span class="money">170,000원</span></button>
   <button class="option priced" data-field="coffin" data-value="오동나무 특호" data-price="0"><strong>오동나무 관 특호</strong><span>일반장 화장 상위 구성</span><span class="money">상담 시 실제 선택가 반영</span></button>
@@ -800,6 +824,7 @@ body{padding-bottom:0}
 
 <section class="step" data-step="8">
  <h2>유골함을 선택해주세요</h2><p class="sub">화장 예정인 경우 원하는 종류를 선택해주세요. 선택 가격이 견적에 즉시 반영됩니다.</p>
+ <div class="productVisualBlock"><img class="productCatalogHero" src="assets/estimate/urn-products.jpg?v=20260930-1" alt="다함상조 유골함 제품 이미지" decoding="async"><small>유골함 제품 예시 이미지 · 재질·밀폐 방식·문양은 선택 품목에 따라 달라질 수 있습니다.</small></div>
  <div class="options">
   <button class="option priced" data-field="urn" data-value="황토백자" data-price="100000"><strong>황토백자</strong><span>기본 화장 구성</span><span class="money">100,000원</span></button>
   <button class="option" data-field="urn" data-value="봉분실크송학" data-price="0"><strong>봉분실크송학</strong><span>일반장 화장 구성</span><span class="money">상담 시 실제 선택가 반영</span></button>
