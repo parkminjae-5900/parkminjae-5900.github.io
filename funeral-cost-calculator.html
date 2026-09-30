@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>맞춤 장례설계 · 장례비용 견적 | 다함상조</title>
 <meta name="description" content="장례 형태부터 지역·장례식장, 조문객, 화장·매장, 수의·관·유골함, 상복·인력·차량까지 단계별로 선택해 우리 가족 예상 장례비용을 확인하는 다함상조 맞춤 장례설계.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
@@ -346,6 +349,13 @@ input[type=range]{width:100%;accent-color:#b88712}
 @media(max-width:760px){
  #suitRealImage,#helperRealImage{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;border-radius:10px}
 }
+
+.qtyThumb{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:12px;background:#eee}
+.helperQtyCard .qtyThumb{object-position:center 38%}
+@media(max-width:760px){
+ .qtyThumb{height:auto;max-height:none;object-fit:contain;border-radius:10px}
+ .qtyCard{padding:14px}
+}
 </style>
 </head>
 <body>
@@ -500,7 +510,7 @@ input[type=range]{width:100%;accent-color:#b88712}
  <div class="infoBlue">무빈소의 경우 빈소를 차리지 않으므로 빈소용품 일부가 제외될 수 있지만, 장례지도사·입관용품·보조 장례지도사는 필수로 자동 계산됩니다.</div>
  <h2 style="margin-top:24px">상복 실사 이미지</h2>
  <p class="sub">남·여 상복을 실제 형태로 확인할 수 있습니다.</p>
- <img id="suitRealImage" class="realVisual suitVisual" src="assets/estimate/suit.png?v=20260930-2" alt="다함상조 남녀 상복 실사 이미지">
+ <img id="suitRealImage" class="realVisual suitVisual" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/suit.png?raw=1&v=20260930-3" alt="다함상조 남녀 상복 실사 이미지">
  <div class="staffRealGrid" aria-label="다함상조 실제 의전인력">
   <div class="staffRealCard"><img src="staff/assets/photos/01.jpg" alt="박민재 대표장례지도사"><b>박민재</b><span>대표장례지도사</span></div>
   <div class="staffRealCard"><img src="staff/assets/photos/18.jpg" alt="홍경희 의전팀장"><b>홍경희</b><span>의전팀장</span></div>
@@ -518,14 +528,14 @@ input[type=range]{width:100%;accent-color:#b88712}
 
  <h2 style="margin-top:28px">접객도우미 실사 이미지</h2>
  <p class="sub">장례식장 접객실에서 근무하는 접객관리 인력 예시입니다.</p>
- <img id="helperRealImage" class="realVisual helperVisual" src="assets/estimate/helper.png?v=20260930-2" alt="다함상조 접객관리 도우미 실사 이미지">
+ <img id="helperRealImage" class="realVisual helperVisual" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/helper.png?raw=1&v=20260930-3" alt="다함상조 접객관리 도우미 실사 이미지">
 
  <h2 style="margin-top:28px">상복 · 접객도우미</h2>
  <p class="sub">필요한 수량만 추가해주세요.</p>
  <div class="qtyGrid">
-  <div class="qtyCard"><h3>남자 상복</h3><p>대여 기준 · 50,000원/벌</p><div class="qtyControls"><button onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button onclick="qty('maleSuit',1)">+</button></div></div>
-  <div class="qtyCard"><h3>여자 상복</h3><p>대여 기준 · 20,000원/벌</p><div class="qtyControls"><button onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button onclick="qty('femaleSuit',1)">+</button></div></div>
-  <div class="qtyCard"><h3>접객 도우미</h3><p>1인 계산 기준 · 120,000원</p><div class="qtyControls"><button onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button onclick="qty('helper',1)">+</button></div></div>
+  <div class="qtyCard"><img class="qtyThumb" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/suit.png?raw=1&v=20260930-3" alt="다함상조 남자 상복"><h3>남자 상복</h3><p>대여 기준 · 50,000원/벌</p><div class="qtyControls"><button onclick="qty('maleSuit',-1)">−</button><input id="maleSuit" value="0" readonly><button onclick="qty('maleSuit',1)">+</button></div></div>
+  <div class="qtyCard"><img class="qtyThumb" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/suit.png?raw=1&v=20260930-3" alt="다함상조 여자 상복"><h3>여자 상복</h3><p>대여 기준 · 20,000원/벌</p><div class="qtyControls"><button onclick="qty('femaleSuit',-1)">−</button><input id="femaleSuit" value="0" readonly><button onclick="qty('femaleSuit',1)">+</button></div></div>
+  <div class="qtyCard helperQtyCard"><img class="qtyThumb" src="https://raw.githubusercontent.com/parkminjae-5900/parkminjae-5900.github.io/main/assets/estimate/helper.png?raw=1&v=20260930-3" alt="다함상조 접객도우미"><h3>접객 도우미</h3><p>1인 계산 기준 · 120,000원</p><div class="qtyControls"><button onclick="qty('helper',-1)">−</button><input id="helper" value="0" readonly><button onclick="qty('helper',1)">+</button></div></div>
  </div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
