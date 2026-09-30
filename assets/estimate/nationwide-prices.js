@@ -27,13 +27,13 @@
   function sourceText() {
     const h=(manualHall?[]:selectedRows()).map(r=>r.sourceName+" / 자료 기준 "+r.sourceDate+" / 조회 "+(r.verifiedAt||"미확인"));
     if(manualHall)h.push("장례식장 직접 입력: "+$("hall-manual-source").value);
-    if(state.burialType!=="매장"&&selectedCrem&&!manualCrem)h.push(selectedCrem.name+" / "+crem.sourceName+" / 자료 기준 "+crem.sourceDate+" / "+$("crem-rate").selectedOptions[0]?.textContent);
+    if(state.burialType!=="매장"&&selectedCrem&&!manualCrem&&$("crem-rate").value!=="")h.push(selectedCrem.name+" / "+crem.sourceName+" / 자료 기준 "+crem.sourceDate+" / "+$("crem-rate").selectedOptions[0]?.textContent);
     if(state.burialType!=="매장"&&manualCrem)h.push("화장료 직접 입력: "+$("crem-manual-source").value);
     return [...new Set(h)].join("\n");
   }
   function warnings() {
     const w=[];
-    if(!state.funeralType)w.push("장례형태 미선택");
+    if(!state.funeralType||state.funeralType==="미정")w.push("장례형태 미선택");
     if(!state.burialType||state.burialType==="미정")w.push("화장·매장 방식 미확정");
     if(!manualHall&&selectedRows().filter(r=>group(r)==="room").length>1)w.push("복수 빈소 선택: 이용 기간 중복 여부 확인");
     if(loading)w.push("전국 요금자료를 불러오는 중입니다.");
