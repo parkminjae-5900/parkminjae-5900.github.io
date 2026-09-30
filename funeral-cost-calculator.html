@@ -821,6 +821,25 @@ body{padding-bottom:0}
   #productDetailImage{width:100%!important;height:auto!important;max-height:56vh!important}
 }
 </style>
+
+<style id="urnCatalog20260930">
+.urnCategoryBar{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.urnCat{border:1px solid #ddd2c2;background:#fff;border-radius:999px;padding:9px 13px;font-size:14px;font-weight:900;color:#564d45;cursor:pointer}
+.urnCat.active{background:#2f6f4e;color:#fff;border-color:#2f6f4e}
+.urnSortNote{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#f7f2e9;border:1px solid #e5dccf;border-radius:12px;padding:11px 14px;margin:0 0 14px}
+.urnSortNote b{font-size:16px}.urnSortNote span{font-size:13px;color:#756b62}
+.urnProductGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.urnProductCard{border:1px solid #e4dacb;background:#fff;border-radius:14px;padding:14px;text-align:left;cursor:pointer;transition:.15s}
+.urnProductCard:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.urnProductCard.selected{border:2px solid #2f6f4e;background:#f5fbf8}
+.urnProductCard .urnThumb{height:150px;border-radius:10px;background:#f5f2ec url('assets/estimate/urn-products.jpg?v=20260930-3') center/cover no-repeat;margin-bottom:10px;position:relative;overflow:hidden}
+.urnProductCard .urnThumb:after{content:attr(data-cat);position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.92);border:1px solid #e3d8ca;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:900;color:#5f564d}
+.urnProductCard strong{display:block;font-size:17px;line-height:1.35;margin-bottom:4px}
+.urnProductCard .urnCode{display:block;font-size:12px;color:#81766c;margin-bottom:6px}
+.urnProductCard .urnPrice{display:block;font-size:20px;color:#8c620f;font-weight:900}
+@media(max-width:900px){.urnProductGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.urnProductGrid{grid-template-columns:1fr 1fr;gap:9px}.urnProductCard{padding:10px}.urnProductCard .urnThumb{height:118px}.urnProductCard strong{font-size:15px}.urnProductCard .urnPrice{font-size:17px}.urnCat{font-size:13px;padding:8px 10px}}
+</style>
 </head>
 <body>
 <div class="top"><div class="wrap"><strong>다함상조 · 맞춤 장례설계</strong><a href="tel:16006131">24시간 상담 1600-6131</a></div></div>
@@ -976,40 +995,25 @@ body{padding-bottom:0}
 
 <section class="step" data-step="8">
  <h2>유골함을 선택해주세요</h2>
- <p class="sub">제품군을 먼저 선택한 뒤 원하는 유골함을 눌러 상세사진과 특징을 확인할 수 있습니다.</p>
- <div class="urnReferenceHead">
-  <img class="productCatalogHero" src="assets/estimate/urn-catalog.jpg?v=20260930-3" alt="유골함 제품 카탈로그" decoding="async">
-  <div class="urnReferenceNote"><strong>유골함 종류별 보기</strong><span>분류 버튼을 누르면 해당 제품군만 표시됩니다. 제품을 누르면 상세 팝업에서 확인 후 선택할 수 있습니다.</span></div>
+ <p class="sub">제품을 가격 높은 순으로 정렬했습니다. 분류 버튼을 누르면 해당 종류만 볼 수 있고, 제품을 누르면 상세 팝업에서 제품명·코드·가격을 확인할 수 있습니다.</p>
+
+ <div class="urnCategoryBar" id="urnCategoryBar">
+  <button type="button" class="urnCat active" data-urn-cat="전체">전체</button>
+  <button type="button" class="urnCat" data-urn-cat="잠금형 고급진공함">잠금형 고급진공함</button>
+  <button type="button" class="urnCat" data-urn-cat="밀봉진공함">밀봉진공함</button>
+  <button type="button" class="urnCat" data-urn-cat="이중진공함">이중진공함</button>
+  <button type="button" class="urnCat" data-urn-cat="소망 잠금형 진공함">소망 잠금형 진공함</button>
+  <button type="button" class="urnCat" data-urn-cat="명품 진공함">명품 진공함</button>
+  <button type="button" class="urnCat" data-urn-cat="황토 진공함">황토 진공함</button>
+  <button type="button" class="urnCat" data-urn-cat="일반함">일반함</button>
+  <button type="button" class="urnCat" data-urn-cat="특수함">특수함</button>
+  <button type="button" class="urnCat" data-urn-cat="기타">기타</button>
  </div>
- <div class="urnCategoryTabs" id="urnCategoryTabs" aria-label="유골함 종류">
-  <button type="button" class="urnCategoryBtn active" data-urn-category="all">전체</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="밀봉진공함">밀봉진공함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="잠금형 고급진공함">잠금형 고급진공함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="이중진공함">이중진공함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="소망 잠금형 진공함">소망 잠금형 진공함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="명품 진공함">명품 진공함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="황토 진공함">황토 진공함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="일반함">일반함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="특수함">특수함</button>
-  <button type="button" class="urnCategoryBtn" data-urn-category="기타">기타</button>
- </div>
- <div class="urnCategoryTitle" id="urnCategoryTitle">전체 유골함</div>
- <div class="urnGrid" id="urnGrid">
-  <button class="urnCard option" data-popup-product="urn-u01" data-field="urn" data-value="잠금형 삼중 명품자개함" data-price="0" data-urn-category="잠금형 고급진공함">
-   <div class="urnVisual urnVisual4"></div><div class="urnCardBody"><strong>잠금형 삼중 명품자개함</strong><span>잠금형 고급진공함 · 자개 계열</span><small>잠금 구조와 삼중 구조를 적용한 프리미엄 자개함</small><b class="money">상담 시 실제 선택가 반영</b></div>
-  </button>
-  <button class="urnCard option priced" data-popup-product="urn-u02" data-field="urn" data-value="황토백자" data-price="100000" data-urn-category="황토 진공함">
-   <div class="urnVisual urnVisual1"></div><div class="urnCardBody"><strong>황토백자</strong><span>황토 진공함 · 백자 계열</span><small>깔끔한 백자 계열의 기본형 구성</small><b class="money">100,000원</b></div>
-  </button>
-  <button class="urnCard option" data-popup-product="urn-u03" data-field="urn" data-value="봉분실크송학" data-price="0" data-urn-category="일반함">
-   <div class="urnVisual urnVisual2"></div><div class="urnCardBody"><strong>봉분실크송학</strong><span>일반함 · 송학 전통문양 계열</span><small>전통 송학 문양을 적용한 봉안용 구성</small><b class="money">상담 시 실제 선택가 반영</b></div>
-  </button>
-  <button class="urnCard option" data-popup-product="urn-u04" data-field="urn" data-value="본1호" data-price="0" data-urn-category="명품 진공함">
-   <div class="urnVisual urnVisual3"></div><div class="urnCardBody"><strong>본1호</strong><span>명품 진공함 · 고급 도자기 계열</span><small>고급 마감과 밀폐 구조를 적용한 선택형 구성</small><b class="money">상담 시 실제 선택가 반영</b></div>
-  </button>
- </div>
- <div class="urnGuide"><div><b>재질</b><span>백자 · 도자기 · 자개 등</span></div><div><b>밀폐</b><span>진공 · 이중 · 잠금형 구조 확인</span></div><div><b>용도</b><span>봉안당 · 봉안묘 · 자연장</span></div></div>
- <p class="priceNote">제품명·재질·밀폐방식·판매가격은 실제 공급 시점의 최신 카탈로그와 실물을 기준으로 최종 확인합니다.</p>
+
+ <div class="urnSortNote"><b>가격 내림차순</b><span>고가 제품부터 순서대로 표시됩니다.</span></div>
+ <div class="urnProductGrid" id="urnProductGrid"></div>
+
+ <p class="priceNote">※ 실제 공급 가능 여부와 최종 제품 사양은 행사 시점 재고 및 공급 상황에 따라 달라질 수 있습니다.</p>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
 </section>
 
@@ -1562,5 +1566,116 @@ async function loadEstimateImageData(){ return; }
 const mini=document.getElementById("stepsMini");
 names.forEach((n,i)=>{const s=document.createElement("span");s.textContent=(i+1)+" "+n;s.onclick=()=>setStep(i+1);mini.appendChild(s)});
 setStep(1);renderHalls();recalc();loadEstimateImageData();
+</script>
+
+<script id="urnCatalogData20260930">
+const urnProducts20260930=[
+["잠금형 삼중 명품자개함","휴안화이트자개","HUG-14 11535",1500000],
+["잠금형 삼중 명품자개함","휴안골드자개","HUG-16 11535",1500000],
+["밀봉진공함","휴안문","HU-1 9728",1250000],
+["밀봉진공함","휴안한학","HU-2 9728",1250000],
+["밀봉진공함","휴안명상","HU-3 9728",1250000],
+["밀봉진공함","안함궁","AN-1 9728",1250000],
+["밀봉진공함","휴안십장생","HU-10 9728",1250000],
+["밀봉진공함","휴안사랑","HUL-1 9728",1250000],
+["밀봉진공함","휴안전통일반","CCG-1 9728",1250000],
+["밀봉진공함","휴안화조","HUF-1 9728",1250000],
+["밀봉진공함","봉분은하수","BOG-1 9030",1200000],
+["밀봉진공함","봉분십이궁","BOS-1 9030",1200000],
+["밀봉진공함","아름은하수","ARG-1 8728",1150000],
+["밀봉진공함","아름선은하수","ARG-2 8728",1150000],
+["밀봉진공함","아름십이궁","ARS-1 8728",1150000],
+["밀봉진공함","아름선십이궁","ARS-2 8728",1150000],
+["특수함","아일렛사각함","HG-3 8228",1100000],
+["특수함","천하사각함","HG-4 8228",1100000],
+["특수함","운꽃사각함","HG-5 8228",1100000],
+["밀봉진공함","안함백자","AN-3 8025",1050000],
+["이중진공함","이중밀봉백자개","EMR-1 7929",1000000],
+["밀봉진공함","봉분골드엠버","BOB-4 7025",950000],
+["밀봉진공함","봉분골드천상","BOB-5 7025",950000],
+["밀봉진공함","봉분골드궁","BOB-3 7025",950000],
+["밀봉진공함","봉분골드그린","BOB-10 7025",950000],
+["밀봉진공함","봉분골드송학","BOB-1 7025",950000],
+["밀봉진공함","봉분골드난","BOB-2 7025",950000],
+["밀봉진공함","봉분골드기독교","BOB-6 7025",950000],
+["밀봉진공함","봉분골드불교","BOB-7 7025",950000],
+["밀봉진공함","봉분골드천주교","BOB-8 7025",950000],
+["밀봉진공함","아름주얼송학","ARJ-1 6723",900000],
+["밀봉진공함","아름주얼난","ARJ-2 6723",900000],
+["밀봉진공함","아름주얼궁","ARJ-3 6723",900000],
+["밀봉진공함","아름주얼명상","ARJ-4 6723",900000],
+["밀봉진공함","아름주얼천상","ARJ-5 6723",900000],
+["밀봉진공함","아름주얼선궁","ARJ-6 6723",900000],
+["밀봉진공함","아름주얼선명상","ARJ-7 6723",900000],
+["밀봉진공함","아름주얼선천상","ARJ-8 6723",900000],
+["밀봉진공함","태림조각일반","TA-1 6522",870000],
+["밀봉진공함","태림조각기독교","TA-2 6522",870000],
+["밀봉진공함","태림조각불교","TA-3 6522",870000],
+["밀봉진공함","태림조각천주교","TA-4 6522",870000],
+["이중진공함","이중칼라송학","EH-4 6619",850000],
+["이중진공함","이중칼라난","EH-5 6619",850000],
+["이중진공함","이중진주운학","EH-6 6619",850000],
+["이중진공함","이중기독교","EG-1 6619",850000],
+["이중진공함","이중불교","EB-2 6619",850000],
+["이중진공함","이중천주교","EC-3 6619",850000],
+["이중진공함","이중밀봉송학","EFM-1 5916",750000],
+["이중진공함","이중밀봉백자","EFM-2 5916",750000],
+["특수함","실버십장생밀봉함","HG-2 5718",750000],
+["소망 잠금형 진공함","소망핑크","SM-1 5317",700000],
+["소망 잠금형 진공함","소망블루","SM-2 5317",700000],
+["소망 잠금형 진공함","소망금송학","SM-3 5317",700000],
+["소망 잠금형 진공함","소망금난","SM-4 5317",700000],
+["소망 잠금형 진공함","소망기독교","SM-5 5317",700000],
+["소망 잠금형 진공함","소망불교","SM-6 5317",700000],
+["소망 잠금형 진공함","소망천주교","SM-7 5317",700000],
+["특수함","금대합골함","HG-1 5317",700000],
+["명품 진공함","도원칼라송학","DW-1 5012",620000],
+["명품 진공함","도원칼라난","DW-2 5012",620000],
+["명품 진공함","도화청화","DH-4 5012",620000],
+["명품 진공함","도화홍꽃","DH-5 5012",620000],
+["명품 진공함","도원기독교","DW-3 5012",620000],
+["명품 진공함","도원불교","DW-4 5012",620000],
+["명품 진공함","도원천주교","DW-5 5012",620000],
+["명품 진공함","도화백자","DH-1 4911",600000],
+["특수함","난","EB-1 4515",600000],
+["특수함","송학","EB-2 4515",600000],
+["황토 진공함","황토송학","HO-4 4010",500000],
+["황토 진공함","황토난","HO-5 4010",500000],
+["황토 진공함","황토청화","HO-6 4010",500000],
+["황토 진공함","황토홍화","HO-7 4010",500000],
+["황토 진공함","황토기독교","HO-1 4010",500000],
+["황토 진공함","황토불교","HO-2 4010",500000],
+["황토 진공함","황토천주교","HO-3 4010",500000],
+["일반함","원통송학","WT-2 3609",450000],
+["일반함","원통난","WT-1 3609",450000],
+["일반함","다림송학","DR-2 2406",300000],
+["일반함","다림난","DR-3 2406",300000],
+["일반함","다림기독교","DR-4 2406",300000],
+["일반함","다림불교","DR-5 2406",300000],
+["일반함","다림천주교","DR-6 2406",300000],
+["일반함","다림무지","DR-1 1505",200000],
+["특수함","인체세라믹함","JN-1 1505",200000],
+["특수함","윤학유골함","WH-1 1505",200000],
+["특수함","황토수목함","HT-1 1505",200000]
+].map((x,i)=>({category:x[0],name:x[1],code:x[2],price:x[3],key:"urn-"+String(i+1).padStart(3,"0")}))
+ .sort((a,b)=>b.price-a.price||a.name.localeCompare(b.name,"ko"));
+
+function urnWon(n){return Number(n).toLocaleString("ko-KR")+"원"}
+function renderUrnCatalog(cat="전체"){
+ const grid=document.getElementById("urnProductGrid"); if(!grid)return;
+ const items=urnProducts20260930.filter(x=>cat==="전체"||x.category===cat);
+ grid.innerHTML=items.map(x=>'<button type="button" class="urnProductCard option" data-popup-product="'+x.key+'" data-field="urn" data-value="'+x.name+'" data-price="'+x.price+'"><div class="urnThumb" data-cat="'+x.category+'"></div><strong>'+x.name+'</strong><span class="urnCode">'+x.code+'</span><b class="urnPrice">'+urnWon(x.price)+'</b></button>').join("");
+ grid.querySelectorAll(".urnProductCard").forEach(b=>b.addEventListener("click",()=>openProductDetail(b.dataset.popupProduct)));
+}
+document.addEventListener("click",e=>{
+ const b=e.target.closest(".urnCat"); if(!b)return;
+ document.querySelectorAll(".urnCat").forEach(x=>x.classList.remove("active")); b.classList.add("active"); renderUrnCatalog(b.dataset.urnCat);
+});
+document.addEventListener("DOMContentLoaded",()=>renderUrnCatalog("전체"));
+
+urnProducts20260930.forEach(x=>{
+ productDetails[x.key]={group:"urn",img:"assets/estimate/urn-products.jpg?v=20260930-3",title:x.name,desc:x.category+" 제품입니다. 제품 코드 "+x.code+" · 표시 가격 "+urnWon(x.price),price:urnWon(x.price),value:x.name,amount:x.price,specs:[["분류",x.category],["제품코드",x.code],["가격",urnWon(x.price)]]};
+});
+productOrder.urn=urnProducts20260930.map(x=>x.key);
 </script>
 </body></html>
