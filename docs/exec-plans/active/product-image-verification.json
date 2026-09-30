@@ -30,5 +30,88 @@
       "same_photo": true,
       "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
     }
-  ]
+  ],
+  "responsive_tests": [
+    {
+      "width": 360,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 360,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 360,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 390,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 390,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 390,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 430,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 430,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 430,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 768,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 768,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 768,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 1280,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 1280,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 1280,
+      "step": 8,
+      "count": 90
+    }
+  ],
+  "real_selection_flows": 575,
+  "category_filters_passed": true,
+  "watermark_coverage_passed": true,
+  "original_logo_asset_unchanged": true,
+  "showroom_banners_reviewed": 3,
+  "review_status": "ChatGPT review pending; no merge"
 }
