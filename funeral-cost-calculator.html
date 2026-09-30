@@ -423,6 +423,10 @@ input[type=range]{width:100%;accent-color:#b88712}
  .step[data-step="10"] .vehicleBody{padding:15px 13px}
  .step[data-step="10"] .vehicleSelect{min-height:56px;font-size:17px}
 }
+
+.hallItem{cursor:pointer;user-select:none}
+.hallItem input[type="radio"]{pointer-events:none}
+.hallItem.selected{border:2px solid #2f6f4e!important;background:#f1faf5!important;box-shadow:0 0 0 2px rgba(47,111,78,.08)}
 </style>
 </head>
 <body>
@@ -827,6 +831,7 @@ function selectRegion(region){
  document.getElementById("region1").value=region;
  document.querySelectorAll(".regionBtn").forEach(b=>b.classList.toggle("active",b.dataset.region===region));
  document.getElementById("hallSelect").value="";
+ selectedHall="";
  document.getElementById("hallSearch").value="";
  selectedSubregion="";
  renderSubregionSelect();
@@ -834,6 +839,7 @@ function selectRegion(region){
  recalc();
 }
 let selectedSubregion="";
+let selectedHall="";
 function renderSubregionSelect(){
  const region=document.getElementById("region1").value;
  const select=document.getElementById("subregionSelect");
@@ -852,6 +858,7 @@ function renderSubregionSelect(){
 }
 function selectSubregion(sub){
  selectedSubregion=sub||"";
+ selectedHall="";
  document.getElementById("hallSelect").value="";
  document.getElementById("hallSearch").value="";
  renderHallCards();
@@ -879,9 +886,10 @@ function renderHallCards(){
  let items=(hallData[region]?.[selectedSubregion]||[]).filter(n=>!q||n.toLowerCase().includes(q));
  count.textContent=items.length+"곳";
  const sel=document.getElementById("hallSelect");
+ const selected=selectedHall;
  sel.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>'+items.map(n=>'<option value="'+n+'">'+n+'</option>').join("");
+ if(selected && items.includes(selected)) sel.value=selected;
  if(!items.length){list.innerHTML='<div class="hallEmpty">등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.</div>';return;}
- const selected=sel.value;
  list.innerHTML=items.map(n=>{
    const m=inferHallMeta(n,region,selectedSubregion);
    const badges='<div class="hallBadges"><em>'+m.type+'</em><em>'+m.operation+'</em></div>';
@@ -891,6 +899,7 @@ function renderHallCards(){
  }).join("");
 }
 function chooseHall(name){
+ selectedHall=name;
  const s=document.getElementById("hallSelect");
  let found=[...s.options].some(o=>o.value===name);
  if(!found){const o=document.createElement("option");o.value=name;o.textContent=name;s.appendChild(o);}
