@@ -1129,7 +1129,8 @@ body{padding-bottom:0}
 .productDetailImageWrap>.photoBrand{width:100%}
 #urnProductGrid .urnProductCard[hidden]{display:none!important}
 </style>
-</head>
+
+<style>@media(max-width:760px){.regionButtons{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}.regionBtn{min-width:0;font-size:15px}}.facility-price{border:1px solid #d8d8d8;border-radius:12px;padding:16px;margin:12px 0}.facility-price p{font-size:14px;overflow-wrap:anywhere}.facility-price input[type=checkbox]{width:22px;height:22px}.facility-price input{max-width:100%}#estimate-pending{margin-top:16px}#estimate-pending ul{padding-left:24px}#crem-address{overflow-wrap:anywhere}@media print{@page{size:A4;margin:12mm}body{background:#fff;font-size:12pt;overflow:visible!important}.top,.header,.progressBox,.bottomBar,.stickySummary,.navBtns,.resultActions,.consultBox{display:none!important}.shell{padding:0}.panel{border:0;box-shadow:none;padding:0;overflow:visible!important}.wrap{width:100%}.step{display:none!important}.step[data-step="11"]{display:block!important}#estimateCapture{display:block}#estimate-source{font-size:12px}.summary,.grand,.grand strong,.sumBox,.sumBox span,.sumBox b{background:#fff!important;color:#111!important}.summary{padding:12px!important;border:1px solid #aaa}.grand strong{font-size:28px!important}.notice{break-inside:avoid}}</style></head>
 <body>
 <div class="top"><div class="wrap"><strong>다함상조 · 맞춤 장례설계</strong><a href="tel:16006131">24시간 상담 1600-6131</a></div></div>
 <header class="header"><div class="wrap">
@@ -1173,16 +1174,11 @@ body{padding-bottom:0}
  <h2>지역·장례식장 선택</h2>
  <p class="sub">광역지역을 선택한 뒤 시·군·구 또는 세부지역을 고르면, 바로 그 항목 밑에 해당 장례식장 목록이 펼쳐집니다.</p>
 
- <select id="region1" aria-label="선택 지역"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>강원</option><option>기타</option></select>
+ <select id="region1" aria-label="선택 지역"><option value="">선택해주세요</option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select>
  <select id="hallSelect" aria-label="선택 장례식장"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select>
 
  <div class="regionButtons" id="regionButtons">
-  <button type="button" class="regionBtn" data-region="서울" onclick="selectRegion('서울')">서울</button>
-  <button type="button" class="regionBtn" data-region="경기" onclick="selectRegion('경기')">경기</button>
-  <button type="button" class="regionBtn" data-region="인천" onclick="selectRegion('인천')">인천</button>
-  <button type="button" class="regionBtn" data-region="강원" onclick="selectRegion('강원')">강원</button>
-  <button type="button" class="regionBtn" data-region="기타" onclick="selectRegion('기타')">기타지역</button>
- </div>
+<button type="button" class="regionBtn" data-region="서울" onclick="selectRegion('서울')">서울</button><button type="button" class="regionBtn" data-region="부산" onclick="selectRegion('부산')">부산</button><button type="button" class="regionBtn" data-region="대구" onclick="selectRegion('대구')">대구</button><button type="button" class="regionBtn" data-region="인천" onclick="selectRegion('인천')">인천</button><button type="button" class="regionBtn" data-region="광주" onclick="selectRegion('광주')">광주</button><button type="button" class="regionBtn" data-region="대전" onclick="selectRegion('대전')">대전</button><button type="button" class="regionBtn" data-region="울산" onclick="selectRegion('울산')">울산</button><button type="button" class="regionBtn" data-region="세종" onclick="selectRegion('세종')">세종</button><button type="button" class="regionBtn" data-region="경기" onclick="selectRegion('경기')">경기</button><button type="button" class="regionBtn" data-region="강원" onclick="selectRegion('강원')">강원</button><button type="button" class="regionBtn" data-region="충북" onclick="selectRegion('충북')">충북</button><button type="button" class="regionBtn" data-region="충남" onclick="selectRegion('충남')">충남</button><button type="button" class="regionBtn" data-region="전북" onclick="selectRegion('전북')">전북</button><button type="button" class="regionBtn" data-region="전남" onclick="selectRegion('전남')">전남</button><button type="button" class="regionBtn" data-region="경북" onclick="selectRegion('경북')">경북</button><button type="button" class="regionBtn" data-region="경남" onclick="selectRegion('경남')">경남</button><button type="button" class="regionBtn" data-region="제주" onclick="selectRegion('제주')">제주</button> </div>
 
  <div class="field subregionField" style="margin-top:14px">
   <label for="subregionSelect">시·군·구 또는 세부지역</label>
@@ -1205,8 +1201,14 @@ body{padding-bottom:0}
   <input id="region2" placeholder="예: ○○병원 장례식장">
  </div>
 
+<div class="notice" id="nationwide-status" role="status">전국 요금자료를 불러오는 중입니다.</div>
+<h3>시설 요금을 견적에 담기</h3><p>빈소·접객실·안치실·입관실 중 실제 사용할 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요. 최소 사용시간·일수 올림·할인은 시설 규정 확인 후 수량에 반영합니다.</p>
+<div class="formGrid"><div class="field"><label for="facility-hours">예상 이용시간</label><input id="facility-hours" type="number" min="0" value="48"></div><div class="field"><label for="facility-days">청구 일수</label><input id="facility-days" type="number" min="0" step="0.5" value="2"></div></div>
+<div id="facility-prices"></div>
+<label><input id="hall-manual" type="checkbox"> 시설에 확인한 총액 직접 입력</label>
+<div class="field"><label for="hall-manual-source">확인 근거·확인일 (직접 입력 시)</label><input id="hall-manual-source" placeholder="예: 시설 담당자 안내 · 2026-09-30"></div>
  <div class="formGrid" style="margin-top:18px">
-  <div class="field"><label>장례식장 시설 예상비용 (선택)</label><input id="hallCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+  <div class="field"><label>장례식장 시설 예상비용 (선택)</label><input id="hallCost" readonly type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
   <div class="field"><label>기타 시설비 (선택)</label><input id="hallEtc" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
  </div>
  <p class="priceNote">목록에 없는 시설은 직접 입력하시면 상담 시 확인해드립니다.</p>
@@ -1232,8 +1234,16 @@ body{padding-bottom:0}
   <button class="option" data-field="burialType" data-value="매장"><strong>매장</strong><span>묘지 매장을 계획하는 경우 선택합니다.</span></button>
   <button class="option" data-field="burialType" data-value="미정"><strong>아직 미정</strong><span>상담 후 결정할 수 있습니다.</span></button>
  </div>
+<h3>화장시설 및 적용요금</h3><p>고인의 주민등록상 거주지·거주기간과 시설별 자격을 확인하세요. 관내·관외·준관내·연접·감면은 시설 규정에 따라 다릅니다. 아래 공시 요금은 2023년 참고자료입니다.</p>
+<div class="field"><label for="crem-residence">고인의 주민등록상 거주지·거주기간</label><input id="crem-residence" placeholder="예: 서울 강남구 · 2년"></div>
+<div class="field"><label for="crem-search">화장시설 이름 또는 지역 검색</label><input id="crem-search" placeholder="지역 또는 시설명"></div>
+<div class="formGrid"><div class="field"><label for="crem-facility">화장시설</label><select id="crem-facility"><option value="">자료를 불러오는 중입니다</option></select></div><div class="field"><label for="crem-rate">대상·거주지·감면 구분</label><select id="crem-rate"><option value="">시설을 먼저 선택하세요</option></select></div></div>
+<p id="crem-address"></p>
+<label><input type="checkbox" id="crem-qualified"> 시설에 적용요금·거주기간·감면 증빙을 확인했습니다.</label><br>
+<label><input type="checkbox" id="crem-manual"> 현재 시설 확인 요금 직접 입력</label>
+<div class="field"><label for="crem-manual-source">확인 근거·확인일 (직접 입력 시)</label><input id="crem-manual-source" placeholder="공식 요금표 주소 또는 시설 담당자 확인일"></div>
  <div class="formGrid" style="margin-top:16px">
-  <div class="field"><label>화장시설 이용료 (선택 입력)</label><input id="cremationCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
+  <div class="field"><label>화장시설 이용료 (선택 입력)</label><input id="cremationCost" readonly type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
   <div class="field"><label>장지·봉안시설 예상비용 (선택 입력)</label><input id="burialCost" type="number" min="0" step="10000" value="0" oninput="recalc()"></div>
  </div>
  <div class="navBtns"><button class="btn line" onclick="prev()">이전</button><button class="btn gold" onclick="next()">다음 단계로</button></div>
@@ -1456,14 +1466,15 @@ body{padding-bottom:0}
 
 <section class="step" data-step="11">
  <h2>우리 가족 장례 총 예상견적</h2><p class="sub">지금까지 선택하거나 직접 입력한 항목을 기준으로 계산한 금액입니다.</p>
- <div id="estimateCapture">
+ <div id="estimateCapture"><p id="estimate-context"></p><p id="estimate-readiness" role="status"></p>
   <div class="summary">
-   <div class="grand">우리 가족 총 예상장례비용<strong id="grandTotal">0원</strong></div>
+   <div class="grand">입력된 비용 소계<strong id="grandTotal">0원</strong></div>
    <div class="summarySplit"><div class="sumBox"><span>다함상조·선택 품목 예상</span><b id="serviceTotal">0원</b></div><div class="sumBox"><span>장례식장·외부기관 예상</span><b id="externalTotal">0원</b></div></div>
   </div>
-  <div class="breakdown" id="breakdown"></div>
+  <div class="breakdown" id="breakdown"></div><div class="notice" id="estimate-pending"></div><h3>요금 출처·기준일</h3><pre id="estimate-source" style="white-space:pre-wrap;overflow-wrap:anywhere;font:inherit"></pre>
   <div class="notice" style="margin-top:15px">이 금액은 상담 전 비교를 위한 예상견적입니다. 장례식장 실제 사용료, 음식 주문량, 화장시설·장지 비용, 운행거리와 선택 품목에 따라 최종 금액이 달라질 수 있습니다.</div>
  </div>
+<label><input type="checkbox" id="food-not-used"> 음식·접객비 미사용</label><br><label><input type="checkbox" id="burial-not-used"> 장지·봉안비 미사용 또는 별도 견적</label><br><label><input type="checkbox" id="extra-reviewed"> 제단·영정·앰블·추가거리·추가 주문을 확인했습니다.</label>
  <div class="resultActions">
   <button class="btn gold" onclick="consult()">이 견적으로 상담받기</button>
   <button class="btn dark" onclick="saveImage()">견적 이미지로 저장</button>
@@ -1661,7 +1672,7 @@ document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
  b.classList.add("selected");
  recalc();
 }));
-function val(id){const e=document.getElementById(id);return e?Number(e.value||0):0}
+function val(id){const e=document.getElementById(id);const n=Number(e?.value||0);return Number.isFinite(n)?Math.max(0,n):0}
 function txt(id){const e=document.getElementById(id);return e?e.value.trim():""}
 function won(n){return Math.round(Number(n||0)).toLocaleString("ko-KR")+"원"}
 function qty(id,d){const e=document.getElementById(id);e.value=Math.max(0,Number(e.value||0)+d);recalc()}
@@ -2083,4 +2094,6 @@ function brandPhotography(){
 brandPhotography();
 new MutationObserver(brandPhotography).observe(document.body,{childList:true,subtree:true});
 </script>
+
+<script src="assets/estimate/nationwide-prices.js?v=20260930-1"></script>
 </body></html>

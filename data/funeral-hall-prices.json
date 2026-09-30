@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-09-30T09:23:36.786397+00:00",
+  "updatedAt": "2026-09-30T12:32:45.286864+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -108,59 +108,301 @@
       ]
     },
     {
-      "facilityName": "경기도의료원 안성병원장례식장",
-      "address": "경기도 안성시 남파로 95 (당왕동, 경기도의료원안성병원)",
-      "verifiedAt": "2026-09-30T05:59:03.810407+00:00",
+      "facilityName": "건국대학교병원장례식장",
+      "address": "서울특별시 광진구 능동로 120-1 (화양동)",
+      "verifiedAt": "2026-09-30T11:28:26.753676+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.medical.or.kr/ansung/contentsInfo.do?brd_mgrno=0&menu_no=988",
+      "sourceUrl": "https://www.kuh.ac.kr/funeral/guide/use.do",
       "sourceGrade": "A",
       "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 ",
+          "label": "안치료 79,200원/1일",
+          "amount": 79200,
+          "unit": "1일"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 300,000원/1회",
+          "amount": 300000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "경기도의료원 안성병원장례식장",
+      "address": "경기도 안성시 남파로 95 (당왕동, 경기도의료원안성병원)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.medical.or.kr/ansung/contentsInfo.do?brd_mgrno=0&menu_no=988",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목과 금액이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "특실(1,2호)",
+          "amount": 35000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "대실",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "일반실(5,6,7호)",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "일반소형(8호)",
+          "amount": 15000,
+          "unit": "1시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료",
           "amount": 3500,
-          "unit": ""
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습비(입관비)",
+          "amount": 300000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "경기도의료원 이천병원장례식장",
+      "address": "경기도 이천시 경충대로 2742 (관고동)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.medical.or.kr/icheon/contentsInfo.do?brd_mgrno=0&menu_no=925",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목과 금액이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "매화1호실",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "매화2호실",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "매화3호실",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "매화5호실(추모실)",
+          "amount": 13000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "국화6호실",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "국화7호실",
+          "amount": 18000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "국화8호실",
+          "amount": 20000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "목련(특)호실",
+          "amount": 60000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 사용료",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "입관실 청소비",
+          "amount": 100000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "경기도의료원 포천병원장례식장",
+      "address": "경기도 포천시 포천로 1648 (신읍동)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.medical.or.kr/pocheon/contentsInfo.do?brd_mgrno=0&menu_no=1016",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목과 금액이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "특실 100평",
+          "amount": 840000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "1호실 30평",
+          "amount": 360000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "3호실 50평",
+          "amount": 504000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "4호실 40평",
+          "amount": 432000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "5호실 30평",
+          "amount": 360000,
+          "unit": "1일"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 84000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "경찰병원장례식장",
+      "address": "서울특별시 송파구 송이로 123 (가락동, 국립경찰병원)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.nph.go.kr/nph/main/contents.do?menuNo=200120",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료",
+          "amount": 72000,
+          "unit": "24시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료(시간당)",
+          "amount": 3000,
+          "unit": "1시간"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 사용료",
+          "amount": 100000,
+          "unit": "30분"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 사용료",
+          "amount": 180000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료",
+          "amount": 350000,
+          "unit": "1회"
         }
       ]
     },
     {
       "facilityName": "교원예움 강원장례식장",
       "address": "강원도 춘천시 동내면 순환대로 877 (거두리)",
-      "verifiedAt": "2026-09-30T05:53:51.667792+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1000",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1004",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지 가격표에서 확인된 시설비만 유지. 비가격 숫자 오탐 제거 완료.",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
-          "category": "염습/입관",
-          "label": "입관실/염습실 400,000원",
-          "amount": 400000,
-          "unit": "1회"
-        },
-        {
-          "category": "안치실",
-          "label": "안치실 6000원",
-          "amount": 6000,
+          "category": "빈소",
+          "label": "201호 빈소",
+          "amount": 65000,
           "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "구분 크기 / 수용인원 구성 가격 301호 130평 / 120명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 75,000원 (기준 1시간)",
-          "amount": 75000,
+          "label": "302호 빈소",
+          "amount": 55000,
           "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "구분 크기 / 수용인원 구성 가격 201호 80평 / 70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 402호 70평 / 60명 40,000원 (기준 1시간) 401호 60평 / 50명 35,000원 (기준 1시간)",
+          "label": "304호 빈소",
           "amount": 45000,
           "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "구분 크기 / 수용인원 구성 가격 202호 50평 / 40명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 30,000원 (기준 1시간) 501호 40평 / 30명 25,000원 (기준 1시간)",
+          "label": "202호 빈소",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "301호 빈소",
+          "amount": 35000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "303호 빈소",
           "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "101호 빈소",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "102호 빈소",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 3000,
           "unit": "1시간"
         }
       ]
@@ -168,103 +410,352 @@
     {
       "facilityName": "교원예움 김해장례식장",
       "address": "경상남도 김해시 삼안로8번길 24 (지내동)",
-      "verifiedAt": "2026-09-30T06:17:11.430354+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1005",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "빈소",
-          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
-          "amount": 55000,
+          "label": "501호 빈소",
+          "amount": 54000,
           "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
+          "label": "201·202·301·302호 빈소",
+          "amount": 27000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "101호 빈소",
+          "amount": 14500,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 96000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "교원예움 서서울장례식장",
+      "address": "서울특별시 영등포구 선유로 101,교원예움서서울장례식장 (양평동1가)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1000",
+      "sourceGrade": "A",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "301호 빈소",
+          "amount": 75000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "201호 빈소",
           "amount": 45000,
           "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "402호 빈소",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "401호 빈소",
+          "amount": 35000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "202호 빈소",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "501호 빈소",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 400000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 6000,
+          "unit": "1시간"
+        }
+      ]
+    },
+    {
+      "facilityName": "교원예움 아산장례식장",
+      "address": "충청남도 아산시 신정로 713 (방축동62-7, 방축동 42-1)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1003",
+      "sourceGrade": "A",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "VIP 2·3·4호실 빈소",
+          "amount": 41000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "특1호실 빈소",
+          "amount": 29000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "특5·6호실 빈소",
+          "amount": 34000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 120000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "교원예움 충주시민장례식장",
+      "address": "충청북도 충주시 두루봉길 8 (목행동)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1008",
+      "sourceGrade": "A",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "101호 빈소",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "102호 빈소",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "103호 빈소",
+          "amount": 33000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "201호 빈소",
+          "amount": 29000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "202호 빈소",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "203호 빈소",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 250000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 84000,
+          "unit": "1일"
         }
       ]
     },
     {
       "facilityName": "교원예움 평택장례식장",
       "address": "경기도 평택시 신평로 205, (구)평택장례문화원  (군문동)",
-      "verifiedAt": "2026-09-30T06:01:05.937632+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1002",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
+          "category": "빈소",
+          "label": "202호 빈소",
+          "amount": 50000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "203호 빈소",
+          "amount": 41000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "101호·102호 빈소",
+          "amount": 36000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "201호·204호 빈소",
+          "amount": 28000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "301호·302호 빈소",
+          "amount": 23000,
+          "unit": "1시간"
+        },
+        {
           "category": "염습/입관",
-          "label": "입관실/염습실 300,000원",
-          "amount": 300000,
+          "label": "입관실/염습실",
+          "amount": 400000,
           "unit": "1회"
         },
         {
           "category": "안치실",
-          "label": "안치실 8,000원",
-          "amount": 8000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
-          "amount": 55000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
-          "amount": 45000,
-          "unit": "1시간"
+          "label": "안치실",
+          "amount": 120000,
+          "unit": "1일"
         }
       ]
     },
     {
       "facilityName": "교원예움 포항국화원장례식장",
       "address": "경상북도 포항시 남구 희망대로 644 (대잠동)",
-      "verifiedAt": "2026-09-30T07:49:23.632710+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1006",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "빈소",
-          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
-          "amount": 55000,
+          "label": "MVG실 빈소",
+          "amount": 100000,
           "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
-          "amount": 45000,
+          "label": "특7·8·9호 빈소",
+          "amount": 27500,
           "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "VIP1호 빈소",
+          "amount": 37500,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "VIP2호 빈소",
+          "amount": 47500,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "VIP3호 빈소",
+          "amount": 51250,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "VIP5호 빈소",
+          "amount": 42500,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "VIP6호 빈소",
+          "amount": 52500,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 200000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 50000,
+          "unit": "1일"
         }
       ]
     },
     {
       "facilityName": "교원예움 화성장례식장",
       "address": "경기도 화성시 마도면 쌍송북로 111 (두곡리)",
-      "verifiedAt": "2026-09-30T06:16:40.280627+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "교원예움 공식 지점 시설정보",
       "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 지점 페이지의 시설사용료 표에서 시설명·금액·기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "빈소",
-          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
+          "label": "201호·301호 빈소",
           "amount": 55000,
           "unit": "1시간"
         },
         {
           "category": "빈소",
-          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
+          "label": "202호·302호 빈소",
           "amount": 45000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실/염습실",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 8000,
           "unit": "1시간"
         }
       ]
@@ -272,23 +763,40 @@
     {
       "facilityName": "기장병원장례식장",
       "address": "부산광역시 기장군 기장읍 대청로72번길 6 (청강리, 기장병원)",
-      "verifiedAt": "2026-09-30T09:23:33.204817+00:00",
+      "verifiedAt": "2026-09-30",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.gjhp.kr/location01_05.php",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
         {
           "category": "빈소",
-          "label": "빈소 임대료 (접객실 포함) 1호실",
+          "label": "빈소 임대료(접객실 포함) 1호실",
           "amount": 400000,
           "unit": "1일"
         },
         {
           "category": "안치실",
-          "label": "안치료 100,000원 / 1일",
-          "amount": 4167,
+          "label": "안치료",
+          "amount": 100000,
           "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "길병원장례식장",
+      "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
+      "verifiedAt": "2026-09-30T11:33:58.615450+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://funeral.gilhospital.com/-3",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 120,000",
+          "amount": 120000,
+          "unit": ""
         }
       ]
     },
@@ -356,65 +864,78 @@
       ]
     },
     {
-      "facilityName": "삼성서울병원장례식장",
-      "verifiedAt": "2026-07-10",
-      "sourceName": "바리길 공개단가표(고시일 2026-07-10 표기)",
-      "sourceUrl": "https://barigil.com/jangnye/samseongseoulbyeongwonjangryesikjang",
-      "sourceGrade": "B",
-      "sourceNote": "장례식장 공식 페이지가 아닌 2차 가격 미러. 실제 이용 전 공식 확인 필요.",
+      "facilityName": "서산의료원상례원",
+      "address": "충청남도 서산시 중앙로 149 (석림동)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://seosanmc.or.kr/funeral/content/38",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
       "prices": [
-        {
-          "category": "빈소",
-          "label": "장례식장 임대료 119.0㎡",
-          "amount": 756000,
-          "unit": "1실/24시간"
-        },
-        {
-          "category": "빈소",
-          "label": "장례식장 임대료 196.8㎡",
-          "amount": 1608000,
-          "unit": "1실/24시간"
-        },
-        {
-          "category": "빈소",
-          "label": "장례식장 임대료 213.6㎡ A형",
-          "amount": 1752000,
-          "unit": "1실/24시간"
-        },
-        {
-          "category": "빈소",
-          "label": "장례식장 임대료 213.6㎡ B형",
-          "amount": 1848000,
-          "unit": "1실/24시간"
-        },
-        {
-          "category": "빈소",
-          "label": "장례식장 임대료 270.6㎡",
-          "amount": 2304000,
-          "unit": "1실/24시간"
-        },
-        {
-          "category": "빈소",
-          "label": "장례식장 임대료 562.0㎡",
-          "amount": 4872000,
-          "unit": "1실/24시간"
-        },
         {
           "category": "안치실",
           "label": "안치료",
-          "amount": 96000,
-          "unit": "1실/24시간"
+          "amount": 2500,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "특실(국화1호) 67평",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "국화2호 55평",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "특실(백합1호) 67평",
+          "amount": 30000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "백합2호 55평",
+          "amount": 25000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "수국실(별실) 50평",
+          "amount": 20000,
+          "unit": "1시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 사용료",
+          "amount": 200000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습 및 사용료",
+          "amount": 300000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "특별 염습(사고사)",
+          "amount": 400000,
+          "unit": "1회"
         },
         {
           "category": "영결식장",
-          "label": "영결식장 임대료",
-          "amount": 300000,
-          "unit": "1실/1시간"
+          "label": "영결식장 사용료",
+          "amount": 50000,
+          "unit": "1회"
         }
       ]
     },
     {
-      "facilityName": "서울대학교병원 장례식장",
+      "facilityName": "서울대학교병원장례식장",
       "verifiedAt": "2026-09-30",
       "sourceName": "서울대학교병원 장례식장 공식 이용요금",
       "sourceUrl": "https://funeral.snuh.org/info/price.do",
@@ -497,6 +1018,23 @@
           "label": "관리비 8~14호실",
           "amount": 30000,
           "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "성남시의료원장례식장",
+      "address": "경기도 성남시 수정구 수정로171번길 10 (태평동, 성남시의료원)",
+      "verifiedAt": "2026-09-30T12:31:51.367999+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://funeral.scmc.kr/sub/sub2_2.html",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 사용료 60,000원",
+          "amount": 2500,
+          "unit": ""
         }
       ]
     },
@@ -623,6 +1161,147 @@
       ]
     },
     {
+      "facilityName": "울산국화원장례식장",
+      "address": "울산광역시 남구 산업로 88 (상개동)",
+      "verifiedAt": "2026-09-30T11:32:57.141295+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://www.ulsanfh.com/sub/sub02_05.php",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 120,000원 기준: 1일",
+          "amount": 120000,
+          "unit": "1일"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관실 200,000원 기준: 1회",
+          "amount": 200000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "관리비 100,000원 기준: 1일",
+          "amount": 100000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "울산영락원",
+      "address": "울산광역시 남구 산업로517번길 10 (여천동, 울산영락원장례식장)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://www.ulsanfuneral.com/sub31.asp",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "청소/관리",
+          "label": "관리비 일반실·특실",
+          "amount": 40000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "관리비 VIP실",
+          "amount": 50000,
+          "unit": "1회"
+        },
+        {
+          "category": "청소/관리",
+          "label": "관리비 VVIP실",
+          "amount": 60000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "울산하늘공원 장례식장",
+      "address": "울산광역시 울주군 삼동면 보삼길 550 (조일리)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.uic.or.kr/skypark/funeral/funeral09.do",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "빈소 45평(201~204호) 관내",
+          "amount": 112000,
+          "unit": "24시간"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 55평(205호) 관내",
+          "amount": 137000,
+          "unit": "24시간"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 45평(201~204호) 관외",
+          "amount": 224000,
+          "unit": "24시간"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 55평(205호) 관외",
+          "amount": 274000,
+          "unit": "24시간"
+        },
+        {
+          "category": "청소/관리",
+          "label": "가족휴게실 관내",
+          "amount": 30000,
+          "unit": "24시간"
+        },
+        {
+          "category": "청소/관리",
+          "label": "가족휴게실 관외",
+          "amount": 60000,
+          "unit": "24시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 관내",
+          "amount": 40000,
+          "unit": "24시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 관외",
+          "amount": 80000,
+          "unit": "24시간"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 관내",
+          "amount": 30000,
+          "unit": "1회"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 관외",
+          "amount": 60000,
+          "unit": "1회"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 관내",
+          "amount": 40000,
+          "unit": "1시간"
+        },
+        {
+          "category": "영결식장",
+          "label": "영결식장 관외",
+          "amount": 80000,
+          "unit": "1시간"
+        }
+      ]
+    },
+    {
       "facilityName": "원주의료원장례식장",
       "address": "강원특별자치도 원주시 서원대로 387 (개운동, 강원도원주의료원)",
       "verifiedAt": "2026-09-30T05:53:42.906507+00:00",
@@ -646,6 +1325,89 @@
       ]
     },
     {
+      "facilityName": "이대서울병원장례식장",
+      "address": "서울특별시 강서구 공항대로 260 (마곡동, 이화의대부속서울병원)",
+      "verifiedAt": "2026-09-30T11:28:23.315227+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://seoul.eumc.ac.kr/funeral/guide/facility.do",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "분향실 분향실 상주실 접객실 위치 : 병원 지하 2층 평형 : 151.4㎡ (45평형) 빈소 : 11호,12호,13호,14호,15호,16호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,080,000 원",
+          "amount": 1080000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "위치 : 병원 지하 2층 평형 : 151.4㎡ (45평형) 빈소 : 11호,12호,13호,14호,15호,16호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,080,000 원",
+          "amount": 1080000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "분향실 분향실 상주실 접객실 위치 : 병원 지하 2층 평형 : 165.9㎡ (50평형) 빈소 : 7호, 8호, 9호, 10호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,296,000 원",
+          "amount": 1296000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "위치 : 병원 지하 2층 평형 : 165.9㎡ (50평형) 빈소 : 7호, 8호, 9호, 10호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,296,000 원",
+          "amount": 1296000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "분향실 상주실 접객실 접견실 위치 : 병원 지하 2층 평형 : 284㎡ (85평형) 빈소 : 특실6 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,400,000 원",
+          "amount": 2400000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "위치 : 병원 지하 2층 평형 : 284㎡ (85평형) 빈소 : 특실6 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,400,000 원",
+          "amount": 2400000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "분향실 분향실 상주실 접객실 접견실 접견실 위치 : 병원 지하 2층 평형 : 305.7㎡ (95평형) 빈소 : 특실5 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
+          "amount": 2592000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "위치 : 병원 지하 2층 평형 : 305.7㎡ (95평형) 빈소 : 특실5 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
+          "amount": 2592000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "분향실 분향실 상주실 접객실 접견실 접견실 위치 : 병원 지하 2층 평형 : 306.2㎡ (95평형) 빈소 : 특실3 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
+          "amount": 2592000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "위치 : 병원 지하 2층 평형 : 306.2㎡ (95평형) 빈소 : 특실3 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
+          "amount": 2592000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "분향실 분향실 상주실 접객실 접견실1 접견실2 라운지 위치 : 병원 지하 2층 평형 : 495㎡ (150평형) 빈소 : 특실1, 특실2 구성 : 라운지, 접수대, 접객실, 분향실, 접견실1, 접견실2, 상주실, 화장실, 주방 빈소 임대료(1일) : 4,080,000 원",
+          "amount": 4080000,
+          "unit": "1일"
+        },
+        {
+          "category": "빈소",
+          "label": "위치 : 병원 지하 2층 평형 : 495㎡ (150평형) 빈소 : 특실1, 특실2 구성 : 라운지, 접수대, 접객실, 분향실, 접견실1, 접견실2, 상주실, 화장실, 주방 빈소 임대료(1일) : 4,080,000 원",
+          "amount": 4080000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
       "facilityName": "진부장례식장",
       "address": "강원도 평창군 진부면 오대천로 1958-21 (하진부리)",
       "verifiedAt": "2026-09-30T05:53:58.925679+00:00",
@@ -664,6 +1426,121 @@
           "category": "염습/입관",
           "label": "염습료(1회) 100,000원",
           "amount": 100000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "청주시장례식장",
+      "address": "충청북도 청주시 상당구 목련로 731 (월오동)",
+      "verifiedAt": "2026-09-30T11:49:51.091556+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://xn--9n2b17qea800cca76r89j.com/bbs/content.php?co_id=59",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 ",
+          "amount": 30000,
+          "unit": ""
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 ",
+          "amount": 50000,
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "충주병원장례식장(주)",
+      "address": "충청북도 충주시 중심1길 12 (문화동)",
+      "verifiedAt": "2026-09-30T11:50:29.376752+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "http://www.chungjufuneral.net/?page_id=13802",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 : 60,000원 / 1일",
+          "amount": 60000,
+          "unit": "1일"
+        }
+      ]
+    },
+    {
+      "facilityName": "평창장례식장",
+      "address": "강원도 평창군 평창읍 종부로 61 (종부리, 평창군보건의료원)",
+      "verifiedAt": "2026-09-30T12:30:54.092321+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.pcfmc.or.kr/facilities08",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "염습/입관",
+          "label": "염습료(1회) 100,000원",
+          "amount": 100000,
+          "unit": "1회"
+        }
+      ]
+    },
+    {
+      "facilityName": "한일병원장례식장",
+      "address": "서울특별시 도봉구 우이천로 308한일병원장례식장 (쌍문동)",
+      "verifiedAt": "2026-09-30",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.hanilmed.net/portal/contents.do?menuNo=81101073",
+      "sourceGrade": "A",
+      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "1호실",
+          "amount": 60000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "2호실",
+          "amount": 35000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "3·5호실",
+          "amount": 48000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "6·7호실",
+          "amount": 55000,
+          "unit": "1시간"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 6000,
+          "unit": "1시간"
+        }
+      ]
+    },
+    {
+      "facilityName": "한중프라임장례식장",
+      "address": "부산광역시 북구 낙동대로 1596 (구포동)",
+      "verifiedAt": "2026-09-30T11:27:40.970814+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.funein.com/hjprime/room_intro/",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "염습/입관",
+          "label": "입관실 사용료 200,000원 (1회)",
+          "amount": 200000,
           "unit": "1회"
         }
       ]
