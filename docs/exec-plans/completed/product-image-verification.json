@@ -1,0 +1,180 @@
+{
+  "products": 115,
+  "urns": 90,
+  "calculation_source_unchanged": true,
+  "logo_markup_unchanged": true,
+  "supplier_public_text_absent": true,
+  "images_decoded": 115,
+  "duplicate_pairs": [
+    {
+      "pair": [
+        "f1",
+        "f2"
+      ],
+      "same_photo": true,
+      "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
+    },
+    {
+      "pair": [
+        "f3",
+        "f5"
+      ],
+      "same_photo": true,
+      "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
+    },
+    {
+      "pair": [
+        "s6",
+        "s8"
+      ],
+      "same_photo": true,
+      "reason": "Supplied original catalog also uses the same product photo; product specifications remain separate."
+    }
+  ],
+  "responsive_tests": [
+    {
+      "width": 360,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 360,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 360,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 390,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 390,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 390,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 430,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 430,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 430,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 768,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 768,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 768,
+      "step": 8,
+      "count": 90
+    },
+    {
+      "width": 1280,
+      "step": 6,
+      "count": 15
+    },
+    {
+      "width": 1280,
+      "step": 7,
+      "count": 10
+    },
+    {
+      "width": 1280,
+      "step": 8,
+      "count": 90
+    }
+  ],
+  "real_selection_flows": 575,
+  "category_filters_passed": true,
+  "watermark_coverage_passed": true,
+  "original_logo_asset_unchanged": true,
+  "showroom_banners_reviewed": 3,
+  "review_status": "Code/browser review passed; merge/deployment pending",
+  "additional_viewport_review": [
+    {
+      "width": 320,
+      "height": 568,
+      "step": 6
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "step": 7
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "step": 8
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "step": 6
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "step": 7
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "step": 8
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "step": 6
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "step": 7
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "step": 8
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "step": 6
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "step": 7
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "step": 8
+    }
+  ],
+  "nationwide_estimate_regression_passed": true
+}
