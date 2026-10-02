@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-01T21:52:07.443731+00:00",
-  "cursor": 675,
+  "updatedAt": "2026-10-02T01:43:53.113954+00:00",
+  "cursor": 765,
   "completedCycles": 1,
   "total": 1080,
   "scannedUnique": 1080,
@@ -10,437 +10,309 @@
     "no_homepage": 666,
     "priced": 37
   },
-  "overrideCount": 37,
+  "overrideCount": 38,
   "lastBatch": [
     {
       "status": "unreachable",
-      "homepage": "https://paikfuneral.co.kr",
-      "facilityName": "해운대백병원장례식장",
-      "address": "부산광역시 해운대구 해운대로 875 (좌동, 인제대학교해운대백병원)",
-      "index": 630
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.samsunghospital.com/funeral",
-      "facilityName": "삼성서울병원장례식장",
-      "address": "서울특별시 강남구 일원로 81 (일원동, 삼성의료원)",
-      "index": 631
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://gangnam.yonseifuneral.com/index.asp",
-      "facilityName": "연세대학교 강남장례식장",
-      "address": "서울특별시 강남구 언주로 211 (도곡동, 강남세브란스병원)",
-      "index": 632
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://funeral.khuhs.or.kr",
-      "facilityName": "강동경희대학교병원장례식장",
-      "address": "서울특별시 강동구 동남로 892 (상일동, 강동경희대학교병원)",
-      "index": 633
+      "homepage": "http://insejongkr/",
+      "facilityName": "(주)세종병원장례식장",
+      "address": "인천광역시 계양구 계양문화로 20 (작전동, 인천세종병원)",
+      "index": 720
     },
     {
       "status": "unreachable",
-      "homepage": "https://kangdong.hallym.or.kr/hallymuniv_sub.asp?left_menu=left_mguide",
-      "facilityName": "강동성심병원장례식장",
-      "address": "서울특별시 강동구 진황도로 86 (길동, 강동성심병원복합시설)",
-      "index": 634
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "서울현대요양병원장례식장",
-      "address": "서울특별시 강동구 올림픽로 684 (천호동, 친구병원)",
-      "index": 635
+      "homepage": "https://www.boramnewm.com/",
+      "facilityName": "보람새천년장례식장",
+      "address": "인천광역시 계양구 아나지로 541 (서운동)",
+      "index": 721
     },
     {
       "status": "no_price_found",
-      "homepage": "https://seoul.bohun.or.kr",
-      "facilityName": "한국보훈복지의료공단중앙보훈병원",
-      "address": "서울특별시 강동구 진황도로61길 53 (둔촌동, 중앙보훈병원)",
-      "index": 636
+      "homepage": "https://shillakwon.com",
+      "facilityName": "쉴낙원 인천장례식장",
+      "address": "인천광역시 계양구 아나지로 552 (서운동)",
+      "index": 722
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.gyeyang.org/",
+      "facilityName": "청기와장례식장(계양점)",
+      "address": "인천광역시 계양구 아나지로 559 (서운동)",
+      "index": 723
     },
     {
       "status": "no_homepage",
-      "facilityName": "대한병원장례식장",
-      "address": "서울특별시 강북구 도봉로 301 (수유동)",
-      "index": 637
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.goodfuneral.co.kr",
-      "facilityName": "서울좋은병원장례식장",
-      "address": "서울특별시 강북구 도봉로 114 (미아동)",
-      "index": 638
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "강서개화장례식장",
-      "address": "서울특별시 강서구 양천로 35 (방화동)",
-      "index": 639
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://ksfuneral.modoo.at",
-      "facilityName": "강서장례식장",
-      "address": "서울특별시 강서구 화곡로 163 (화곡동)",
-      "index": 640
+      "facilityName": "한림병원장례식장",
+      "address": "인천광역시 계양구 장제로 722,한림병원 2,3관 지하2층 (작전동)",
+      "index": 724
     },
     {
       "status": "priced",
-      "homepage": "https://seoul.eumc.ac.kr/funeral/main.do",
-      "sourceUrl": "https://seoul.eumc.ac.kr/funeral/guide/facility.do",
-      "prices": [
-        {
-          "category": "빈소",
-          "label": "분향실 분향실 상주실 접객실 위치 : 병원 지하 2층 평형 : 151.4㎡ (45평형) 빈소 : 11호,12호,13호,14호,15호,16호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,080,000 원",
-          "amount": 1080000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "위치 : 병원 지하 2층 평형 : 151.4㎡ (45평형) 빈소 : 11호,12호,13호,14호,15호,16호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,080,000 원",
-          "amount": 1080000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "분향실 분향실 상주실 접객실 위치 : 병원 지하 2층 평형 : 165.9㎡ (50평형) 빈소 : 7호, 8호, 9호, 10호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,296,000 원",
-          "amount": 1296000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "위치 : 병원 지하 2층 평형 : 165.9㎡ (50평형) 빈소 : 7호, 8호, 9호, 10호 구성 : 접수대, 접객실, 분향실, 상주실, 화장실, 주방 빈소 임대료(1일) : 1,296,000 원",
-          "amount": 1296000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "분향실 상주실 접객실 접견실 위치 : 병원 지하 2층 평형 : 284㎡ (85평형) 빈소 : 특실6 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,400,000 원",
-          "amount": 2400000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "위치 : 병원 지하 2층 평형 : 284㎡ (85평형) 빈소 : 특실6 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,400,000 원",
-          "amount": 2400000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "분향실 분향실 상주실 접객실 접견실 접견실 위치 : 병원 지하 2층 평형 : 305.7㎡ (95평형) 빈소 : 특실5 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
-          "amount": 2592000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "위치 : 병원 지하 2층 평형 : 305.7㎡ (95평형) 빈소 : 특실5 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
-          "amount": 2592000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "분향실 분향실 상주실 접객실 접견실 접견실 위치 : 병원 지하 2층 평형 : 306.2㎡ (95평형) 빈소 : 특실3 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
-          "amount": 2592000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "위치 : 병원 지하 2층 평형 : 306.2㎡ (95평형) 빈소 : 특실3 구성 : 접수대, 접객실, 분향실, 접견실, 상주실, 화장실, 주방 빈소 임대료(1일) : 2,592,000 원",
-          "amount": 2592000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "분향실 분향실 상주실 접객실 접견실1 접견실2 라운지 위치 : 병원 지하 2층 평형 : 495㎡ (150평형) 빈소 : 특실1, 특실2 구성 : 라운지, 접수대, 접객실, 분향실, 접견실1, 접견실2, 상주실, 화장실, 주방 빈소 임대료(1일) : 4,080,000 원",
-          "amount": 4080000,
-          "unit": "1일"
-        },
-        {
-          "category": "빈소",
-          "label": "위치 : 병원 지하 2층 평형 : 495㎡ (150평형) 빈소 : 특실1, 특실2 구성 : 라운지, 접수대, 접객실, 분향실, 접견실1, 접견실2, 상주실, 화장실, 주방 빈소 임대료(1일) : 4,080,000 원",
-          "amount": 4080000,
-          "unit": "1일"
-        }
-      ],
-      "verifiedAt": "2026-10-01T21:50:27.565591+00:00",
-      "facilityName": "이대서울병원장례식장",
-      "address": "서울특별시 강서구 공항대로 260 (마곡동, 이화의대부속서울병원)",
-      "index": 641
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "주식회사정겨운(우신장례식장)",
-      "address": "서울특별시 관악구 시흥대로 572 지하층 우신장례식장 (신림동, 한성빌딩)",
-      "index": 642
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.kuh.ac.kr/funeral/main.do",
-      "sourceUrl": "https://www.kuh.ac.kr/funeral/guide/use.do",
+      "homepage": "https://funeral.gilhospital.com",
+      "sourceUrl": "https://funeral.gilhospital.com/-3",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 79,200원/1일",
-          "amount": 79200,
-          "unit": "1일"
-        },
-        {
-          "category": "염습/입관",
-          "label": "염습료 300,000원/1회",
-          "amount": 300000,
-          "unit": "1회"
-        }
-      ],
-      "verifiedAt": "2026-10-01T21:50:30.603036+00:00",
-      "facilityName": "건국대학교병원장례식장",
-      "address": "서울특별시 광진구 능동로 120-1 (화양동)",
-      "index": 643
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.e-hyemin.co.kr",
-      "facilityName": "혜민병원장례식장",
-      "address": "서울특별시 광진구 자양로 85 (자양동)",
-      "index": 644
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.funeral.or.kr",
-      "facilityName": "고려대구로병원장례식장",
-      "address": "서울특별시 구로구 구로동로 148 (구로동, 고려대부속구로병원)",
-      "index": 645
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "구로성심병원장례식장",
-      "address": "서울특별시 구로구 경인로 427 (고척동)",
-      "index": 646
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "쉴낙원 서울제중장례식장",
-      "address": "서울특별시 구로구 새말로 60 (구로동, 제중요양병원)",
-      "index": 647
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나눔길사회적협동조합",
-      "address": "서울특별시 금천구 가산디지털2로 165 (가산동, 백상스타타워2차)",
-      "index": 648
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://4444.ne.kr",
-      "facilityName": "독산장례식장",
-      "address": "서울특별시 금천구 시흥대로116길 5 (독산동)",
-      "index": 649
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://seoulfuneral.com/",
-      "facilityName": "쉴낙원 서울장례식장",
-      "address": "서울특별시 금천구 서부샛길 732 (가산동, 서울장례식장)",
-      "index": 650
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://funeral.eulji.or.kr/",
-      "facilityName": "노원을지대학교병원장례식장",
-      "address": "서울특별시 노원구 한글비석로 68 (하계동, 을지병원)",
-      "index": 651
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://thejoeunfuneral.modoo.at",
-      "facilityName": "더조은장례식장",
-      "address": "서울특별시 노원구 화랑로 323 지하1층, 지하3층 (월계동)",
-      "index": 652
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.kcch.re.kr/funeral",
-      "facilityName": "원자력병원장례식장",
-      "address": "서울특별시 노원구 노원로 75 (공릉동, 한국원자력의학원)",
-      "index": 653
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "인제대학교상계백병원장례식장",
-      "address": "서울특별시 노원구 동일로 1342 (상계동, 상계백병원)",
-      "index": 654
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://sungsimfuneral.com/",
-      "facilityName": "태릉성심장례식장",
-      "address": "서울특별시 노원구 화랑로 425-8 (공릉동)",
-      "index": 655
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.hanilmed.net",
-      "sourceUrl": "https://www.hanilmed.net/portal/contents.do?menuNo=81101073",
-      "prices": [
-        {
-          "category": "안치실",
-          "label": "안치실 ",
-          "amount": 6000,
-          "unit": "1실"
-        }
-      ],
-      "verifiedAt": "2026-10-01T21:50:58.959809+00:00",
-      "facilityName": "한일병원장례식장",
-      "address": "서울특별시 도봉구 우이천로 308한일병원장례식장 (쌍문동)",
-      "index": 656
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.kmcf.co.kr/",
-      "facilityName": "경희의료원장례식장",
-      "address": "서울특별시 동대문구 경희대로 23,경희의료원장례식장 (회기동, 경희의료원)",
-      "index": 657
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.memorial-hall.co.kr",
-      "facilityName": "삼육서울병원 추모관(구위생병원)",
-      "address": "서울특별시 동대문구 망우로 82 (휘경동)",
-      "index": 658
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.dbhosp.go.kr/info/info_09.jsp",
-      "facilityName": "서울특별시 동부병원 장례식장",
-      "address": "서울특별시 동대문구 무학로 124 (용두동, 시립동부병원)",
-      "index": 659
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://koreafuneral.igweb.kr",
-      "facilityName": "코리아병원장례식장",
-      "address": "서울특별시 동대문구 장한로 143 (장안동)",
-      "index": 660
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://funeral.brmh.org",
-      "facilityName": "서울특별시보라매병원장례식장",
-      "address": "서울특별시 동작구 보라매로5길 20 (신대방동, 서울특별시보라매병원)",
-      "index": 661
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://ch.caumc.or.kr/funeral/",
-      "facilityName": "중앙대학교병원장례식장",
-      "address": "서울특별시 동작구 흑석로 102 (흑석동, 중앙대학교병원)",
-      "index": 662
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.dshospital.co.kr",
-      "facilityName": "동신병원장례식장",
-      "address": "서울특별시 서대문구 연희로 272 (홍은동)",
-      "index": 663
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.yonseifuneral.com",
-      "facilityName": "연세대학교 신촌장례식장",
-      "address": "서울특별시 서대문구 연세로 50-1 (신촌동, 연세의료원)",
-      "index": 664
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://kfh.catholicfuneral.co.kr",
-      "facilityName": "서울성모장례식장",
-      "address": "서울특별시 서초구 반포대로 222 (반포동, 가톨릭대학교성의교정)",
-      "index": 665
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://hyfuneral.com",
-      "facilityName": "한양대학병원장례식장",
-      "address": "서울특별시 성동구 왕십리로 222-1 (사근동, 한양대학부속병원)",
-      "index": 666
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.funeral.or.kr",
-      "facilityName": "고려대학교안암병원장례식장",
-      "address": "서울특별시 성북구 안암동5가  126-1 고대안암병원장례식장",
-      "index": 667
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.newtownfuneral.co.kr",
-      "facilityName": "뉴타운장례식장",
-      "address": "서울특별시 성북구 종암로 199 (하월곡동)",
-      "index": 668
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.nph.go.kr/nph/main/contents.do?menuNo=200030",
-      "sourceUrl": "https://www.nph.go.kr/nph/main/contents.do?menuNo=200120",
-      "prices": [
-        {
-          "category": "안치실",
-          "label": "안치료 72,000원 / 24시간 (1시간당 3,000원)",
-          "amount": 72000,
-          "unit": "24시간"
-        },
-        {
-          "category": "영결식장",
-          "label": "영결식장 사용료 100,000원 / 30분 180,000원 / 1시간",
-          "amount": 100000,
-          "unit": "1시간"
-        },
-        {
-          "category": "염습/입관",
-          "label": "염습료 350,000원",
-          "amount": 350000,
+          "label": "안치료 120,000",
+          "amount": 120000,
           "unit": ""
         }
       ],
-      "verifiedAt": "2026-10-01T21:51:37.360606+00:00",
-      "facilityName": "경찰병원장례식장",
-      "address": "서울특별시 송파구 송이로 123 (가락동, 국립경찰병원)",
-      "index": 669
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://funeral.amc.seoul.kr",
-      "facilityName": "서울아산병원 장례식장",
-      "address": "서울특별시 송파구 올림픽로43길 88 (풍납동, 서울아산병원)",
-      "index": 670
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://WWW.mediheal.co.kr/hall",
-      "facilityName": "메디힐병원장례식장",
-      "address": "서울특별시 양천구 남부순환로 331 (신월동)",
-      "index": 671
+      "verifiedAt": "2026-10-02T01:42:58.968111+00:00",
+      "facilityName": "길병원장례식장",
+      "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
+      "index": 725
     },
     {
       "status": "no_homepage",
-      "facilityName": "양천효병원장례식장",
-      "address": "서울특별시 양천구 오목로 121 (신정동)",
-      "index": 672
+      "facilityName": "남동스카이장례식장",
+      "address": "인천광역시 남동구 앵고개로697번길 41 (고잔동, 남동스카이장례식장)",
+      "index": 726
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://icfp1925.quv.kr",
+      "facilityName": "인천가족공원장례식장",
+      "address": "인천광역시 남동구 만월북로 115 (간석동, 인천가족공원장례식장)",
+      "index": 727
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "인천힘찬종합병원장례식장",
+      "address": "인천광역시 남동구 논현로 72,지하1층 (논현동, 힘찬종합병원)",
+      "index": 728
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.icmc.or.kr",
+      "facilityName": "인천광역시의료원 장례식장",
+      "address": "인천광역시 동구 방축로 217 (송림동, 인천광역시의료원)",
+      "index": 729
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.bluefuneral.com",
+      "facilityName": "청기와장례식장(송림점)",
+      "address": "인천광역시 동구 방축로177번길 23 (송림동)",
+      "index": 730
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://sungincheon-funeralhall.com",
+      "facilityName": "(유)성인천장례식장",
+      "address": "인천광역시 미추홀구 석정로 6 (숭의동, 인천한방병원)",
+      "index": 731
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "금강장례식장",
+      "address": "인천광역시 미추홀구 인주대로 452 (주안동, 금강요양병원,새한장례식장)",
+      "index": 732
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "송도하나장례문화원",
+      "address": "인천광역시 미추홀구 아암대로253번길 36 (학익동 587-78) 송도하나요양병원 - 송도하나장례문화원",
+      "index": 733
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.saranghospital.com",
+      "facilityName": "인천사랑병원장례식장",
+      "address": "인천광역시 미추홀구 미추홀대로 726 (주안동, 인천사랑병원)",
+      "index": 734
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "학교법인영산학원시민장례식장",
+      "address": "인천광역시 미추홀구 석정로64번길 22 (숭의동, 시민장례식장)",
+      "index": 735
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.eumc.ac.kr/mokdong",
-      "facilityName": "이대목동병원장례식장",
-      "address": "서울특별시 양천구 안양천로 1071 (목동, 이화여대목동병원)",
-      "index": 673
+      "homepage": "https://www.kcomwel.or.kr/incheon/intr/fune.jsp",
+      "facilityName": "근로복지공단 인천병원장례식장",
+      "address": "인천광역시 부평구 무네미로 446 (구산동, 인천중앙병원)",
+      "index": 736
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://serimfh.com/",
+      "facilityName": "에스엘 부평지점 세림병원 장례식장",
+      "address": "인천광역시 부평구 부평대로 175 (청천동, 부평세림병원)",
+      "index": 737
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://icfh.catholicfuneral.co.kr/cmm/main/mainPage.do",
+      "facilityName": "인천성모장례식장",
+      "address": "인천광역시 부평구 동수로 56 (부평동, 가톨릭대학교인천성모병원)",
+      "index": 738
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.hihfuneral.or.kr",
-      "facilityName": "홍익병원장례식장",
-      "address": "서울특별시 양천구 등촌로 22 (목동)",
-      "index": 674
+      "homepage": "https://www.tophospital.co.kr:33365/home/guide/funeral.asp",
+      "facilityName": "검단탑병원장례식장",
+      "address": "인천광역시 서구 청마로19번길 5 (당하동)",
+      "index": 739
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://kjfh.catholicfuneral.co.kr",
+      "facilityName": "국제성모장례식장",
+      "address": "인천광역시 서구 심곡로100번길 25 (심곡동, 인천국제성모병원)",
+      "index": 740
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "보람인천장례식장",
+      "address": "인천광역시 서구 경명대로 468 (경서동)",
+      "index": 741
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "온누리장례식장",
+      "address": "인천광역시 서구 완정로 199 지하1층 (왕길동)",
+      "index": 742
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "인천연세병원장례식장",
+      "address": "인천광역시 서구 승학로 320지하장례식장 (연희동, 연세병원)",
+      "index": 743
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.ysf.kr",
+      "facilityName": "더연수장례식장",
+      "address": "인천광역시 연수구 벚꽃로 122 (연수동)",
+      "index": 744
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.rchfuneral.co.kr",
+      "facilityName": "인천적십자병원장례식장",
+      "address": "인천광역시 연수구 원인재로 263 (연수동,인천적십자병원장례식장)",
+      "index": 745
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "예지장례식장",
+      "address": "인천광역시 중구 개항로 82.2층예지장례식장 (경동, 예지요양병원)",
+      "index": 746
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.goich.co.kr",
+      "facilityName": "인천기독병원장례식장",
+      "address": "인천광역시 중구 답동로30번길 10 (율목동, 인천기독병원)",
+      "index": 747
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://yonwwf75.wixsite.com/mysite",
+      "facilityName": "인천삼성장례문화원",
+      "address": "인천광역시 중구 우현로62번길 34-1 (경동)",
+      "index": 748
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.inha.com/site/funeral/main",
+      "facilityName": "인하대병원장례식장",
+      "address": "인천광역시 중구 인항로 27 (신흥동3가, 인하대학병원)",
+      "index": 749
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "강진군산림조합추모관장례식장",
+      "address": "전라남도 강진군 강진읍 해강로 1437 (서성리)",
+      "index": 750
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "강진영락장례식장",
+      "address": "전라남도 강진군 강진읍 보은로 200 (동성리)",
+      "index": 751
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "강진의료원장례식장",
+      "address": "전라남도 강진군 강진읍 탐진로 5 (서성리, 강진의료원)",
+      "index": 752
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "강진장례식장",
+      "address": "전라남도 강진군 강진읍 청자로 75-9 (목리)",
+      "index": 753
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "마량장례식장",
+      "address": "전라남도 강진군 마량면 청자로 2340 (마량리)",
+      "index": 754
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "거금장례식장",
+      "address": "전라남도 고흥군 금산면 거금일주로 2901 (석정리)",
+      "index": 755
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.061-833-4445.kti114.net",
+      "facilityName": "고흥봉황장례식장",
+      "address": "전라남도 고흥군 고흥읍 신호산장길 3 (호형리)",
+      "index": 756
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "녹동농협 장례식장",
+      "address": "전라남도 고흥군 도양읍 거금로 80 (봉암리)",
+      "index": 757
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "녹동현대병원장례식장",
+      "address": "전라남도 고흥군 도양읍 차경구렁목길 209 (용정리, 녹동현대병원장례식장)",
+      "index": 758
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.ok114.co.kr/0618324000",
+      "facilityName": "우주장례식장",
+      "address": "전라남도 고흥군 고흥읍 봉동주공길 56-16 (호형리)",
+      "index": 759
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "유한회사보람",
+      "address": "전라남도 고흥군 고흥읍 고흥로 1935 (남계리)",
+      "index": 760
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "곡성섬진장례식장",
+      "address": "전라남도 곡성군 곡성읍 곡성로 935 (읍내리)",
+      "index": 761
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "곡성옥과장례식장",
+      "address": "전라남도 곡성군 겸면 곡순로 2088 (가정리)",
+      "index": 762
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "곡성장례식장",
+      "address": "전라남도 곡성군 곡성읍 중앙로 26-8 (죽동리)",
+      "index": 763
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "석곡농협장례식장",
+      "address": "전라남도 곡성군 석곡면 주석로 657-5 (석곡리)",
+      "index": 764
     }
   ]
 }
