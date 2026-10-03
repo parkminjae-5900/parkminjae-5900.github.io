@@ -1908,6 +1908,7 @@ function summaryText(){
  const guests=val("guestNumber");
  const lines=[
  "[다함상조 맞춤 장례견적 상담]",
+ ...(document.body.dataset.seoPackage?[("유입 선택상품: "+document.body.dataset.seoPackage)]:[]),
  "장례형태: "+(state.funeralType||"미정"),
  "현재상황: "+(state.situation||"미정"),
  "지역: "+region,
@@ -1942,9 +1943,70 @@ async function saveImage(){
  const a=document.createElement("a");a.download="다함상조_맞춤장례견적.png";a.href=canvas.toDataURL("image/png");a.click();
 }
 async function loadEstimateImageData(){ return; }
+function applySeoPrefill(){
+ const p=new URLSearchParams(location.search);
+ if(p.get("source")!=="seo-funnel") return;
+ const rawType=(p.get("funeralType")||"").trim();
+ const type=rawType==="무빈소"?"무빈소":(rawType?"3일장":"");
+ if(type){
+   state.funeralType=type;
+   document.querySelectorAll('.option[data-field="funeralType"]').forEach(b=>b.classList.toggle("selected",b.dataset.value===type));
+ }
+ const guests=Math.max(0,Number(p.get("guests")||0));
+ if(Number.isFinite(guests)){
+   const g=document.getElementById("guestNumber"),r=document.getElementById("guests"),o=document.getElementById("guestOut");
+   if(g)g.value=guests;if(r)r.value=Math.min(500,guests);if(o)o.value=guests+"명";
+ }
+ const hallParam=(p.get("hall")||"").trim();
+ const areaParam=(p.get("area")||"").trim();
+ let found=null;
+ if(hallParam){
+   Object.entries(hallData).some(([region,subs])=>Object.entries(subs).some(([sub,names])=>{
+     const name=names.find(n=>n===hallParam||n.includes(hallParam)||hallParam.includes(n.replace(/\s*장례식장$/,"")));
+     if(name){found={region,sub,name};return true}return false;
+   }));
+ }
+ if(found){
+   selectRegion(found.region);
+   selectedSubregion=found.sub;
+   const ss=document.getElementById("subregionSelect");if(ss)ss.value=found.sub;
+   renderHallCards();
+   chooseHall(found.name);
+ }else if(areaParam){
+   const broad={
+     "강남":"서울","강서":"서울","서초":"서울","서대문":"서울","성북":"서울","송파":"서울","서울":"서울",
+     "수원":"경기","성남":"경기","고양":"경기","부천":"경기","안산":"경기","의정부":"경기","경기":"경기",
+     "인천 중구":"인천","인천 서구":"인천","인천":"인천",
+     "춘천":"강원","강원":"강원"
+   }[areaParam]||"";
+   if(broad){
+     selectRegion(broad);
+     const subs=Object.keys(hallData[broad]||{});
+     const match=subs.find(s=>s.includes(areaParam)||areaParam.includes(s.replace(/[시군구]$/,"")));
+     if(match){selectedSubregion=match;const ss=document.getElementById("subregionSelect");if(ss)ss.value=match;renderHallCards();}
+   }
+ }
+ const pkg=p.get("package")||"";
+ const from=p.get("from")||"";
+ if(pkg||areaParam||hallParam){
+   const box=document.createElement("div");
+   box.className="notice";
+   box.style.marginBottom="14px";
+   const labels={nobinso:"무빈소 120",flower199:"꽃나라 199",star299:"별나라 299"};
+   if(labels[pkg]) document.body.dataset.seoPackage=labels[pkg];
+   box.innerHTML="<strong>검색 페이지에서 선택한 조건을 불러왔습니다.</strong><br>"+[
+     labels[pkg]?"상품 "+labels[pkg]:"",
+     areaParam?"지역 "+areaParam:"",
+     hallParam?"장례식장 "+hallParam:""
+   ].filter(Boolean).join(" · ")+"<br><small>각 단계에서 변경할 수 있으며, 확인되지 않은 외부비용은 자동으로 임의 계산하지 않습니다.</small>";
+   const panel=document.querySelector(".panel");if(panel)panel.prepend(box);
+   window.dataLayer=window.dataLayer||[];
+   window.dataLayer.push({event:"seo_funnel_estimator_prefill",package_key:pkg,area:areaParam,funeral_hall:hallParam,source_page:from});
+ }
+}
 const mini=document.getElementById("stepsMini");
 names.forEach((n,i)=>{const s=document.createElement("span");s.textContent=(i+1)+" "+n;s.onclick=()=>setStep(i+1);mini.appendChild(s)});
-setStep(1);renderHalls();recalc();loadEstimateImageData();
+setStep(1);renderHalls();applySeoPrefill();recalc();loadEstimateImageData();
 </script>
 
 <script id="urnCatalogData20260930">
