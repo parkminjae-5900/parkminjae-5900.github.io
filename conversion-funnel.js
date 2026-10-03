@@ -5,8 +5,9 @@ var PHONE="16006131";
 var KAKAO="https://open.kakao.com/o/sz9RE1xi";
 var PACKAGES=[
  {key:"nobinso",label:"무빈소 120",type:"무빈소",price:1200000,note:"빈소 없이 화장 중심으로 간소하게"},
- {key:"flower199",label:"꽃나라 199",type:"가족장",price:1990000,note:"가족·가까운 친지 중심"},
- {key:"star299",label:"별나라 299",type:"일반장",price:2990000,note:"일반 3일장 중심 구성"}
+ {key:"family249",label:"가족장 249",type:"가족장",price:2490000,note:"가족·가까운 친지 중심"},
+ {key:"general360",label:"일반장 360",type:"일반장",price:3600000,note:"일반적인 3일장 중심 구성"},
+ {key:"premium499",label:"프리미엄 499",type:"일반장",price:4990000,note:"의전과 용품 구성을 강화한 맞춤 장례"}
 ];
 function clean(v){return String(v||"").replace(/\s+/g," ").trim()}
 function text(sel){var e=document.querySelector(sel);return e?clean(e.textContent):""}
@@ -21,8 +22,8 @@ function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_p
 function defaultPackageKey(){
  var p=location.pathname.toLowerCase();
  if(p.includes("nobinso"))return"nobinso";
- if(p.includes("family"))return"flower199";
- return"flower199";
+ if(p.includes("family"))return"family249";
+ return"family249";
 }
 function selected(){var r=document.querySelector('input[name="dahamSeoPackage"]:checked'),g=document.getElementById("dahamSeoGuests");return{key:r?r.value:defaultPackageKey(),guests:g?Math.max(0,Number(g.value||0)):50}}
 function pkg(k){return PACKAGES.find(function(x){return x.key===k})||PACKAGES[1]}

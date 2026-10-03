@@ -16,12 +16,16 @@ for(const file of funnelTargets){
 }
 for(const file of ["index.html","cost.html","family.html","postpaid-price.html"]){
   const c=fs.readFileSync(path.join(root,file),"utf8");
-  for(const old of ["249만원","360만원","499만원","가족장 249","일반장 360","프리미엄 499"]){
-    if(c.includes(old)) errors.push(file+": 과거 상품가격 표현 남음 - "+old);
+  for(const wrong of ["꽃나라 199","별나라 299","199만원","299만원"]){
+    if(c.includes(wrong)) errors.push(file+": 다함상조 잘못된 상품가격 표현 남음 - "+wrong);
   }
 }
+for(const required of ["무빈소 120만원","249만원","360만원","499만원"]){
+  const home=fs.readFileSync(path.join(root,"index.html"),"utf8");
+  if(!home.includes(required)) errors.push("index.html 기준가격 누락: "+required);
+}
 const funnel=fs.readFileSync(path.join(root,"conversion-funnel.js"),"utf8");
-for(const required of ["무빈소 120","꽃나라 199","별나라 299","seo_funnel_view","seo_funnel_calculator_click","seo_funnel_kakao_click"]){
+for(const required of ["무빈소 120","가족장 249","일반장 360","프리미엄 499","seo_funnel_view","seo_funnel_calculator_click","seo_funnel_kakao_click"]){
   if(!funnel.includes(required)) errors.push("conversion-funnel.js 필수요소 누락: "+required);
 }
 const calc=fs.readFileSync(path.join(root,"funeral-cost-calculator.html"),"utf8");
