@@ -72,10 +72,10 @@
     const oldNames=Object.keys(catalog?.halls||{}).filter(k=>norm(k)===norm(n));
     rows=[];
     // Duplicate names remain unresolved rather than silently combining different facilities.
-    if(actual.length===1&&!sharedUrl)rows=actual[0].prices.filter(r=>(r.category!=="염습/입관"||/입관실/.test(r.label))&&(r.label.match(/\d{1,3}(?:,\d{3})+\s*원/g)||[]).length<2).map(r=>({...r,sourceGrade:actual[0].sourceGrade,sourceName:actual[0].sourceName,sourceDate:"시행일 확인 필요",verifiedAt:actual[0].verifiedAt,sourceUrl:actual[0].sourceUrl}));
+    if(actual.length===1&&!sharedUrl)rows=actual[0].prices.filter(r=>(r.category!=="염습/입관"||/입관실/.test(r.label))&&!(state.funeralType==="무빈소"&&group(r)==="room")&&(r.label.match(/\d{1,3}(?:,\d{3})+\s*원/g)||[]).length<2).map(r=>({...r,sourceGrade:actual[0].sourceGrade,sourceName:actual[0].sourceName,sourceDate:"시행일 확인 필요",verifiedAt:actual[0].verifiedAt,sourceUrl:actual[0].sourceUrl}));
     if(oldNames.length===1&&matches.length===1){
       const categories=new Set(rows.map(group));
-      for(const r of catalog.halls[oldNames[0]])if(!categories.has(group(r)))rows.push({...r,sourceGrade:"C",sourceName:catalog.sourceName,sourceDate:catalog.sourceDate,sourceUrl:catalog.sourceUrl});
+      for(const r of catalog.halls[oldNames[0]])if(!(state.funeralType==="무빈소"&&group(r)==="room")&&!categories.has(group(r)))rows.push({...r,sourceGrade:"C",sourceName:catalog.sourceName,sourceDate:catalog.sourceDate,sourceUrl:catalog.sourceUrl});
     }
     $("facility-prices").innerHTML=rows.length?rows.map((r,i)=>{
       const q=qtyFor(r);
@@ -128,10 +128,11 @@
     const all=(crem?.facilities||[]).filter(f=>!q||[f.name,f.province,f.district,f.address].join(" ").includes(q)||f.name===keep);
     $("crem-facility").innerHTML='<option value="">화장시설 선택</option>'+all.map(f=>'<option>'+safe(f.name)+'</option>').join("");$("crem-facility").value=keep;
   });
-  Promise.allSettled(["data/funeral-halls.json","data/funeral-hall-price-baseline.json","data/funeral-hall-prices.json","data/cremation-prices.json"].map(async u=>{const r=await fetch(u,{cache:"no-store",signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error(u);return r.json();})).then(results=>{
+  Promise.allSettled(["data/funeral-halls.json","data/funeral-hall-price-baseline.json","data/funeral-hall-prices.json","data/cremation-prices.json","data/mubinso-eligible-halls.json"].map(async u=>{const r=await fetch(u,{cache:"no-store",signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error(u);return r.json();})).then(results=>{
     failed=results.some(r=>r.status==="rejected");
     const data=results.map(r=>r.status==="fulfilled"?r.value:null);
     [ ,catalog,latest,crem]=data;
+    window.dahamMubinsoData=data[4]||{items:[]};
     if(data[0]?.items){
       Object.keys(hallData).forEach(k=>delete hallData[k]);
       const aliases={"서울특별시":"서울","부산광역시":"부산","대구광역시":"대구","인천광역시":"인천","광주광역시":"광주","대전광역시":"대전","울산광역시":"울산","세종특별자치시":"세종","경기도":"경기","강원특별자치도":"강원","충청북도":"충북","충청남도":"충남","전북특별자치도":"전북","전라남도":"전남","경상북도":"경북","경상남도":"경남","제주특별자치도":"제주"};
@@ -141,7 +142,7 @@
       renderHalls();
     }
     $("crem-facility").innerHTML='<option value="">화장시설 선택</option>'+(crem?.facilities||[]).map(f=>'<option>'+safe(f.name)+'</option>').join("");
-    $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 가격은 원문 기준일 확인";
+    $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 무빈소는 확인된 시설만 표시 · 가격은 원문 기준일 확인";
     loading=false;updateHall(true);recalc();
   });
   recalc();
