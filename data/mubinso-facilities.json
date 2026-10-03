@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-03",
+  "note": "전체 전국 가능시설 DB가 아닌 근거 있는 사례 허용목록. 가격/빈소수로 가능 여부를 추론하지 않음.",
+  "items": [
+    {
+      "facilityName": "부천시민장례식장",
+      "address": "경기도 부천시 원미구 장말로372번길 15 (심곡동)",
+      "status": "confirmed",
+      "sourceKind": "user-provided-past-case",
+      "sourceDate": null,
+      "note": "사용자 제공 무빈소 진행 가능 사례. 현재 운영 및 예약은 별도 확인."
+    },
+    {
+      "facilityName": "신화장례식장",
+      "address": "서울특별시 영등포구 영중로 100 (영등포동7가, 신화요양병원)",
+      "status": "confirmed",
+      "sourceKind": "user-provided-past-case",
+      "sourceDate": null,
+      "note": "사용자 제공 무빈소 진행 가능 사례. 현재 운영 및 예약은 별도 확인."
+    }
+  ]
+}

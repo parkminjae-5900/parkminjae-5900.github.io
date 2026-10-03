@@ -1130,7 +1130,7 @@ body{padding-bottom:0}
 #urnProductGrid .urnProductCard[hidden]{display:none!important}
 </style>
 
-<style>@media(max-width:760px){.regionButtons{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}.regionBtn{min-width:0;font-size:15px}}.facility-price{border:1px solid #d8d8d8;border-radius:12px;padding:16px;margin:12px 0}.facility-price p{font-size:14px;overflow-wrap:anywhere}.facility-price input[type=checkbox]{width:22px;height:22px}.facility-price input{max-width:100%}#estimate-pending{margin-top:16px}#estimate-pending ul{padding-left:24px}#crem-address{overflow-wrap:anywhere}@media print{@page{size:A4;margin:12mm}body{background:#fff;font-size:12pt;overflow:visible!important}.top,.header,.progressBox,.bottomBar,.stickySummary,.navBtns,.resultActions,.consultBox{display:none!important}.shell{padding:0}.panel{border:0;box-shadow:none;padding:0;overflow:visible!important}.wrap{width:100%}.step{display:none!important}.step[data-step="11"]{display:block!important}#estimateCapture{display:block}#estimate-source{font-size:12px}.summary,.grand,.grand strong,.sumBox,.sumBox span,.sumBox b{background:#fff!important;color:#111!important}.summary{padding:12px!important;border:1px solid #aaa}.grand strong{font-size:28px!important}.notice{break-inside:avoid}}</style></head>
+<style>#mubinso-facility-note[hidden],.regionDetailField[hidden]{display:none!important}@media(max-width:760px){.regionButtons{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}.regionBtn{min-width:0;font-size:15px}}.facility-price{border:1px solid #d8d8d8;border-radius:12px;padding:16px;margin:12px 0}.facility-price p{font-size:14px;overflow-wrap:anywhere}.facility-price input[type=checkbox]{width:22px;height:22px}.facility-price input{max-width:100%}#estimate-pending{margin-top:16px}#estimate-pending ul{padding-left:24px}#crem-address{overflow-wrap:anywhere}@media print{@page{size:A4;margin:12mm}body{background:#fff;font-size:12pt;overflow:visible!important}.top,.header,.progressBox,.bottomBar,.stickySummary,.navBtns,.resultActions,.consultBox{display:none!important}.shell{padding:0}.panel{border:0;box-shadow:none;padding:0;overflow:visible!important}.wrap{width:100%}.step{display:none!important}.step[data-step="11"]{display:block!important}#estimateCapture{display:block}#estimate-source{font-size:12px}.summary,.grand,.grand strong,.sumBox,.sumBox span,.sumBox b{background:#fff!important;color:#111!important}.summary{padding:12px!important;border:1px solid #aaa}.grand strong{font-size:28px!important}.notice{break-inside:avoid}}</style></head>
 <body>
 <div class="top"><div class="wrap"><strong>다함상조 · 맞춤 장례설계</strong><a href="tel:16006131">24시간 상담 1600-6131</a></div></div>
 <header class="header"><div class="wrap">
@@ -1196,13 +1196,14 @@ body{padding-bottom:0}
   <div id="hallList" class="hallList"><div class="hallEmpty">시·군·구 또는 세부지역을 먼저 선택해주세요.</div></div>
  </div>
 
+ <p id="mubinso-facility-note" class="notice" hidden></p>
  <div class="field regionDetailField" style="margin-top:16px">
   <label>목록에 없는 장례식장 직접 입력</label>
   <input id="region2" placeholder="예: ○○병원 장례식장">
  </div>
 
 <div class="notice" id="nationwide-status" role="status">전국 요금자료를 불러오는 중입니다.</div>
-<h3>시설 요금을 견적에 담기</h3><p>빈소·접객실·안치실·입관실 중 실제 사용할 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요. 최소 사용시간·일수 올림·할인은 시설 규정 확인 후 수량에 반영합니다.</p>
+<h3 id="facility-price-heading">시설 요금을 견적에 담기</h3><p id="facility-price-help">빈소·접객실·안치실·입관실 중 실제 사용할 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요. 최소 사용시간·일수 올림·할인은 시설 규정 확인 후 수량에 반영합니다.</p>
 <div class="formGrid"><div class="field"><label for="facility-hours">예상 이용시간</label><input id="facility-hours" type="number" min="0" value="48"></div><div class="field"><label for="facility-days">청구 일수</label><input id="facility-days" type="number" min="0" step="0.5" value="2"></div></div>
 <div id="facility-prices"></div>
 <label><input id="hall-manual" type="checkbox"> 시설에 확인한 총액 직접 입력</label>
@@ -1714,6 +1715,7 @@ function selectSubregion(sub){
  recalc();
 }
 function renderHalls(){renderSubregionSelect();renderHallCards();}
+function isEstimateHallAllowed(name){return state.funeralType!=="무빈소" || (typeof window.isConfirmedMubinsoHall==="function" && window.isConfirmedMubinsoHall(name));}
 function renderHallCards(){
  const region=document.getElementById("region1").value;
  const q=(document.getElementById("hallSearch")?.value||"").trim().toLowerCase();
@@ -1732,13 +1734,13 @@ function renderHallCards(){
  }
  title.textContent=selectedSubregion+" 장례식장";
  txtEl.textContent=region+" "+selectedSubregion+" 지역";
- let items=(hallData[region]?.[selectedSubregion]||[]).filter(n=>!q||n.toLowerCase().includes(q));
+ let items=(hallData[region]?.[selectedSubregion]||[]).filter(n=>isEstimateHallAllowed(n)&&(!q||n.toLowerCase().includes(q)));
  count.textContent=items.length+"곳";
  const sel=document.getElementById("hallSelect");
  const selected=selectedHall;
  sel.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>'+items.map(n=>'<option value="'+n+'">'+n+'</option>').join("");
  if(selected && items.includes(selected)) sel.value=selected;
- if(!items.length){list.innerHTML='<div class="hallEmpty">등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.</div>';return;}
+ if(!items.length){list.innerHTML='<div class="hallEmpty">'+(state.funeralType==="무빈소"?"이 지역에는 등록된 무빈소 진행 가능 사례 시설이 없습니다. 상담으로 확인해주세요.":"등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.")+'</div>';return;}
  list.innerHTML=items.map(n=>{
    const m=inferHallMeta(n,region,selectedSubregion);
    const badges='<div class="hallBadges"><em>'+m.type+'</em><em>'+m.operation+'</em></div>';
@@ -1748,6 +1750,7 @@ function renderHallCards(){
  }).join("");
 }
 function chooseHall(name){
+ if(!isEstimateHallAllowed(name))return;
  selectedHall=name;
  const s=document.getElementById("hallSelect");
  let found=[...s.options].some(o=>o.value===name);
@@ -2095,5 +2098,5 @@ brandPhotography();
 new MutationObserver(brandPhotography).observe(document.body,{childList:true,subtree:true});
 </script>
 
-<script src="assets/estimate/nationwide-prices.js?v=20260930-1"></script>
+<script src="assets/estimate/nationwide-prices.js?v=20261003-1"></script>
 </body></html>

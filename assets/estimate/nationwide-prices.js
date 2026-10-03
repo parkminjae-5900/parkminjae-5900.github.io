@@ -7,8 +7,29 @@
   const money = v => Math.round(v).toLocaleString("ko-KR")+"원";
   const number = v => Number.isFinite(Number(v)) ? Math.max(0,Number(v)) : 0;
   let facilityRecords=[], catalog=null, latest=null, crem=null, rows=[], selectedName=null, selectedCrem=null;
-  let loading=true, failed=false, manualHall=false, manualCrem=false;
-  const selectedRows=()=>rows.filter((r,i)=>$("facility-row-"+i)?.checked);
+  let loading=true, failed=false, manualHall=false, manualCrem=false, mubinso=null;
+  let currentFuneralType=state.funeralType;
+  const isMubinso=()=>state.funeralType==="무빈소";
+  const roomCharge=r=>/빈소|분향|접객|영결식장/.test([r.category,r.label,r.detail].join(" "));
+  window.isConfirmedMubinsoHall=function(name){
+    if(!Array.isArray(mubinso?.items)||!facilityRecords.length)return false;
+    const matches=facilityRecords.filter(f=>norm(f.fcltNm)===norm(name));
+    return matches.length===1&&mubinso.items.some(f=>f.status==="confirmed"&&norm(f.facilityName)===norm(name)&&norm(f.address)===norm(matches[0].addr));
+  };
+  function syncFuneralType(){
+    if(currentFuneralType===state.funeralType)return;
+    currentFuneralType=state.funeralType;
+    selectedHall="";selectedName=null;rows=[];manualHall=false;
+    ["hallSelect","hallCost","hallEtc","hall-manual-source","region2","foodCost"].forEach(id=>$(id).value="");
+    $("hall-manual").checked=false;$("hallCost").readOnly=true;
+    $("region2").closest(".regionDetailField").hidden=isMubinso();
+    $("mubinso-facility-note").hidden=!isMubinso();
+    $("mubinso-facility-note").textContent="등록된 무빈소 진행 가능 사례 시설만 표시합니다. 현재 운영·예약 가능 여부는 상담 후 확인됩니다.";
+    $("facility-price-heading").textContent=isMubinso()?"안치·입관 등 시설 요금을 견적에 담기":"시설 요금을 견적에 담기";
+    $("facility-price-help").textContent=isMubinso()?"빈소·분향실·접객실 요금은 제외됩니다. 실제 사용할 안치·입관 등의 항목과 최소 사용시간을 확인하세요.":"빈소·접객실·안치실·입관실 중 실제 사용할 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요. 최소 사용시간·일수 올림·할인은 시설 규정 확인 후 수량에 반영합니다.";
+    renderHallCards();
+  }
+  const selectedRows=()=>rows.filter((r,i)=>$("facility-row-"+i)?.checked&&(!isMubinso()||!roomCharge(r)));
   function group(r){const t=r.category||"";if(/빈소|접객|분향/.test(t))return "room";if(/안치/.test(t))return "morgue";if(/입관|염습/.test(t))return "preparation";return t;}
   function qtyFor(r) {
     const t=(r.unit||"")+" "+(r.detail||"");
@@ -18,6 +39,7 @@
     return {qty:1,unit:"단위 확인 필요"};
   }
   function hallLines() {
+    if(isMubinso()&&!window.isConfirmedMubinsoHall(selectedName))return [];
     if(manualHall) return [["장례식장 직접 입력 · "+(selectedName||txt("region2")||"미정"),number($("hallCost").value)]];
     return selectedRows().map(r => {
       const i=rows.indexOf(r), q=number($("facility-qty-"+i).value);
@@ -39,7 +61,7 @@
     if(loading)w.push("전국 요금자료를 불러오는 중입니다.");
     if(failed)w.push("일부 요금자료 연결 실패. 직접 입력 또는 시설 확인이 필요합니다.");
     if(!selectedName&&!txt("region2"))w.push("장례식장 미정");
-    if(!manualHall&&!selectedRows().length)w.push("시설 요금 미선택: 빈소·안치·입관 등 필요한 항목 확인");
+    if(!manualHall&&!selectedRows().length)w.push(isMubinso()?"시설 요금 미선택: 안치·입관 등 필요한 항목 확인":"시설 요금 미선택: 빈소·안치·입관 등 필요한 항목 확인");
     if(!manualHall&&selectedRows().some(r=>r.sourceGrade==="A"))w.push("공식 홈페이지 게시 요금: 시행일·과금 단위·추가 비용 확인 필요");
     if(!manualHall&&selectedRows().some(r=>r.sourceGrade!=="A"))w.push("2023년 공시 또는 2차 자료: 현재 시설 요금 재확인 필요");
     if(!manualHall&&selectedRows().some(r=>qtyFor(r).unit==="단위 확인 필요"))w.push("원문에 없는 과금 단위: 시설 확인 후 수량·단위 입력");
@@ -60,7 +82,8 @@
     return [...new Set(w)];
   }
   function updateHall(force=false) {
-    const n=txt("hallSelect");
+    let n=txt("hallSelect");
+    if(isMubinso()&&!window.isConfirmedMubinsoHall(n)){n="";selectedHall="";$("hallSelect").value="";}
     if(n===selectedName&&!force)return;
     const keepManual=manualHall&&n===selectedName;
     if(n!==selectedName)$("hall-manual-source").value="";
@@ -77,6 +100,7 @@
       const categories=new Set(rows.map(group));
       for(const r of catalog.halls[oldNames[0]])if(!categories.has(group(r)))rows.push({...r,sourceGrade:"C",sourceName:catalog.sourceName,sourceDate:catalog.sourceDate,sourceUrl:catalog.sourceUrl});
     }
+    if(isMubinso())rows=rows.filter(r=>!roomCharge(r));
     $("facility-prices").innerHTML=rows.length?rows.map((r,i)=>{
       const q=qtyFor(r);
       return '<div class="facility-price"><label><input type="checkbox" id="facility-row-'+i+'"> <strong>'+safe(r.category+' · '+r.label)+'</strong><br>'+safe(r.detail||r.unit||"과금 단위 확인 필요")+' · '+money(r.amount)+'</label><p>'+safe(r.sourceName)+' · '+safe(r.sourceDate)+' · 조회 '+safe(r.verifiedAt||"현재 미확인")+' <a href="'+safe(/^https?:\/\//.test(r.sourceUrl||"")?r.sourceUrl:"#")+'" target="_blank" rel="noopener">원문</a></p><div class="formGrid"><div class="field"><label for="facility-qty-'+i+'">사용 수량</label><input id="facility-qty-'+i+'" type="number" min="0" step="0.5" value="'+q.qty+'"></div><div class="field"><label for="facility-unit-'+i+'">과금 단위</label><input id="facility-unit-'+i+'" value="'+q.unit+'"></div></div></div>';
@@ -103,6 +127,7 @@
     d.external=d.externalItems.reduce((s,r)=>s+r[1],0);d.total=d.service+d.external;return d;
   };
   recalc=function() {
+    syncFuneralType();
     originalRecalc();
     const w=warnings();
     $("estimate-readiness").textContent=w.length?"입력된 항목 소계 · 미확인 비용 "+w.length+"건":"입력 항목 기준 예상금액 · 최종 시설 확인 필요";
@@ -121,18 +146,19 @@
   ["facility-hours","facility-days"].forEach(id=>$(id).addEventListener("input",()=>{rows.forEach((r,i)=>{$("facility-qty-"+i).value=qtyFor(r).qty;});if(!manualHall)$("hallCost").value=hallLines().reduce((s,r)=>s+r[1],0);recalc();}));
   ["hall-manual-source","crem-manual-source","crem-qualified","food-not-used","burial-not-used","extra-reviewed","crem-residence"].forEach(id=>$(id).addEventListener("input",recalc));
   const originalRender=renderHallCards;
-  renderHallCards=function(){originalRender();const el=$("hallSelect");if(selectedHall){if(![...el.options].some(o=>o.value===selectedHall)){const o=document.createElement("option");o.value=selectedHall;o.textContent=selectedHall;el.append(o);}el.value=selectedHall;}updateHall();};
+  renderHallCards=function(){originalRender();const el=$("hallSelect");if(selectedHall&&isEstimateHallAllowed(selectedHall)){if(![...el.options].some(o=>o.value===selectedHall)){const o=document.createElement("option");o.value=selectedHall;o.textContent=selectedHall;el.append(o);}el.value=selectedHall;}updateHall();};
   $("subregionSelect").addEventListener("change",()=>{rows=[];selectedName=null;updateHall();});
   $("crem-search").addEventListener("input",()=> {
     const q=$("crem-search").value.trim(),keep=$("crem-facility").value;
     const all=(crem?.facilities||[]).filter(f=>!q||[f.name,f.province,f.district,f.address].join(" ").includes(q)||f.name===keep);
     $("crem-facility").innerHTML='<option value="">화장시설 선택</option>'+all.map(f=>'<option>'+safe(f.name)+'</option>').join("");$("crem-facility").value=keep;
   });
-  Promise.allSettled(["data/funeral-halls.json","data/funeral-hall-price-baseline.json","data/funeral-hall-prices.json","data/cremation-prices.json"].map(async u=>{const r=await fetch(u,{cache:"no-store",signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error(u);return r.json();})).then(results=>{
+  Promise.allSettled(["data/funeral-halls.json","data/funeral-hall-price-baseline.json","data/funeral-hall-prices.json","data/cremation-prices.json","data/mubinso-facilities.json"].map(async u=>{const r=await fetch(u,{cache:"no-store",signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error(u);return r.json();})).then(results=>{
     failed=results.some(r=>r.status==="rejected");
     const data=results.map(r=>r.status==="fulfilled"?r.value:null);
-    [ ,catalog,latest,crem]=data;
-    if(data[0]?.items){
+    [ ,catalog,latest,crem,mubinso]=data;
+    if(!Array.isArray(data[0]?.items)||!Array.isArray(mubinso?.items))failed=true;
+    if(Array.isArray(data[0]?.items)){
       Object.keys(hallData).forEach(k=>delete hallData[k]);
       const aliases={"서울특별시":"서울","부산광역시":"부산","대구광역시":"대구","인천광역시":"인천","광주광역시":"광주","대전광역시":"대전","울산광역시":"울산","세종특별자치시":"세종","경기도":"경기","강원특별자치도":"강원","충청북도":"충북","충청남도":"충남","전북특별자치도":"전북","전라남도":"전남","경상북도":"경북","경상남도":"경남","제주특별자치도":"제주"};
       facilityRecords=data[0].items;
