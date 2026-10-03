@@ -2,6 +2,7 @@
 "use strict";
 if(window.__DAHAM_SEO_FUNNEL__)return;window.__DAHAM_SEO_FUNNEL__=true;
 var PHONE="16006131";
+var KAKAO="https://open.kakao.com/o/sz9RE1xi";
 var PACKAGES=[
  {key:"nobinso",label:"무빈소 120",type:"무빈소",price:1200000,note:"빈소 없이 화장 중심으로 간소하게"},
  {key:"flower199",label:"꽃나라 199",type:"가족장",price:1990000,note:"가족·가까운 친지 중심"},
@@ -17,11 +18,18 @@ function area(){
 function hall(){var h=text("h1"),m=h.match(/([^·|]{2,35}(?:병원|의료원|장례식장))/);return m?clean(m[1]):""}
 function pageType(){var p=location.pathname;if(/area-/.test(p))return"region";if(/-funeral\.html$/.test(p))return"funeral_hall";if(/cost|price|nobinso|family/.test(p))return"cost_intent";return"home"}
 function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_path:location.pathname,page_type:pageType(),area:area(),funeral_hall:hall()};Object.assign(d,x||{});window.dataLayer.push(d)}
-function selected(){var r=document.querySelector('input[name="dahamSeoPackage"]:checked'),g=document.getElementById("dahamSeoGuests");return{key:r?r.value:"flower199",guests:g?Math.max(0,Number(g.value||0)):50}}
+function defaultPackageKey(){
+ var p=location.pathname.toLowerCase();
+ if(p.includes("nobinso"))return"nobinso";
+ if(p.includes("family"))return"flower199";
+ return"flower199";
+}
+function selected(){var r=document.querySelector('input[name="dahamSeoPackage"]:checked'),g=document.getElementById("dahamSeoGuests");return{key:r?r.value:defaultPackageKey(),guests:g?Math.max(0,Number(g.value||0)):50}}
 function pkg(k){return PACKAGES.find(function(x){return x.key===k})||PACKAGES[1]}
 function params(o){var p=new URLSearchParams();Object.keys(o).forEach(function(k){if(o[k]!==""&&o[k]!=null)p.set(k,o[k])});return p.toString()}
 function goCalc(){var s=selected(),p=pkg(s.key);push("seo_funnel_calculator_click",{package_key:p.key,guest_count:s.guests});location.href="funeral-cost-calculator.html?"+params({source:"seo-funnel",area:area(),hall:hall(),funeralType:p.type,package:p.key,guests:p.type==="무빈소"?0:s.guests,from:location.pathname})}
 function call(){var s=selected();push("seo_funnel_call_click",{package_key:s.key,guest_count:s.guests});location.href="tel:"+PHONE}
+function kakao(){var s=selected();push("seo_funnel_kakao_click",{package_key:s.key,guest_count:s.guests});window.open(KAKAO,"_blank","noopener")}
 async function copy(){
  var s=selected(),p=pkg(s.key),lines=["[다함상조 홈페이지 상담]","지역: "+(area()||"미정"),"장례식장: "+(hall()||"미정"),"선택상품: "+p.label,"예상 조문객: "+(p.type==="무빈소"?"해당없음":s.guests+"명"),"요청: 장례식장·접객·화장·장지 포함 실제 예상비용 확인"];
  try{await navigator.clipboard.writeText(lines.join("\n"));alert("상담 내용이 복사되었습니다. 전화상담 시 그대로 전달해 주세요.")}catch(e){prompt("아래 내용을 복사해 주세요.",lines.join("\n"))}
@@ -34,9 +42,9 @@ function style(){
 }
 function mount(){
  if(document.getElementById("dahamSeoFunnel"))return;style();
- var r=document.createElement("section");r.id="dahamSeoFunnel";r.className="dahamSeoFunnel";r.innerHTML='<div class="dahamSeoFunnelCard"><b style="color:#8b6212">검색에서 실제 장례접수까지</b><h2>상품가격만 보지 말고 실제 장례비까지 확인하세요</h2><p class="dahamSeoLead">지역·장례식장·조문객 규모를 이어서 계산해 실제 예상비용을 확인할 수 있습니다.</p><p><strong>현재 기준</strong> · '+(area()||"지역 미지정")+(hall()?" · "+hall():"")+'</p><div class="dahamSeoPkgGrid">'+PACKAGES.map(function(p,i){return'<label class="dahamSeoPkg"><input type="radio" name="dahamSeoPackage" value="'+p.key+'" '+(i===1?"checked":"")+'><b>'+p.label+'</b><small>'+p.note+'</small></label>'}).join("")+'</div><div class="dahamSeoRow"><div class="dahamSeoField"><label for="dahamSeoGuests">예상 조문객</label><input id="dahamSeoGuests" type="number" min="0" max="1000" step="10" value="50"></div><div class="dahamSeoField"><label>계산 기준</label><div>외부비용은 확인된 데이터만 사용하고 최종 견적에서 계산합니다.</div></div></div><div class="dahamSeoActions"><button class="dahamSeoCalc" type="button">실제 장례비 계산하기</button><button class="dahamSeoCall" type="button">☎ 24시간 전화</button><button class="dahamSeoCopy" type="button">상담내용 복사</button></div><p class="dahamSeoFine">※ 장례식장·음식·화장장·장지 비용은 시설과 이용 조건에 따라 달라집니다.</p></div>';
+ var r=document.createElement("section");r.id="dahamSeoFunnel";r.className="dahamSeoFunnel";r.innerHTML='<div class="dahamSeoFunnelCard"><b style="color:#8b6212">검색에서 실제 장례접수까지</b><h2>상품가격만 보지 말고 실제 장례비까지 확인하세요</h2><p class="dahamSeoLead">지역·장례식장·조문객 규모를 이어서 계산해 실제 예상비용을 확인할 수 있습니다.</p><p><strong>현재 기준</strong> · '+(area()||"지역 미지정")+(hall()?" · "+hall():"")+'</p><div class="dahamSeoPkgGrid">'+PACKAGES.map(function(p){return'<label class="dahamSeoPkg"><input type="radio" name="dahamSeoPackage" value="'+p.key+'" '+(p.key===defaultPackageKey()?"checked":"")+'><b>'+p.label+'</b><small>'+p.note+'</small></label>'}).join("")+'</div><div class="dahamSeoRow"><div class="dahamSeoField"><label for="dahamSeoGuests">예상 조문객</label><input id="dahamSeoGuests" type="number" min="0" max="1000" step="10" value="'+(defaultPackageKey()==="nobinso"?"0":"50")+'"></div><div class="dahamSeoField"><label>계산 기준</label><div>외부비용은 확인된 데이터만 사용하고 최종 견적에서 계산합니다.</div></div></div><div class="dahamSeoActions"><button class="dahamSeoCalc" type="button">실제 장례비 계산하기</button><button class="dahamSeoCall" type="button">☎ 24시간 전화</button><button class="dahamSeoCopy" type="button">💬 카카오톡 상담</button></div><p class="dahamSeoFine">※ 장례식장·음식·화장장·장지 비용은 시설과 이용 조건에 따라 달라집니다.</p></div>';
  var a=document.querySelector("main")||document.querySelector(".section")||document.querySelector("footer");if(a&&a.parentNode)a.parentNode.insertBefore(r,a);else document.body.appendChild(r);
- r.querySelector(".dahamSeoCalc").onclick=goCalc;r.querySelector(".dahamSeoCall").onclick=call;r.querySelector(".dahamSeoCopy").onclick=copy;
+ r.querySelector(".dahamSeoCalc").onclick=goCalc;r.querySelector(".dahamSeoCall").onclick=call;r.querySelector(".dahamSeoCopy").onclick=kakao;
  r.querySelectorAll('input[name="dahamSeoPackage"]').forEach(function(el){el.onchange=function(){var s=selected(),p=pkg(s.key),g=document.getElementById("dahamSeoGuests");g.disabled=p.type==="무빈소";if(p.type==="무빈소")g.value=0;else if(Number(g.value)===0)g.value=50;push("seo_funnel_package_select",{package_key:p.key})}});
  push("seo_funnel_view")
 }
