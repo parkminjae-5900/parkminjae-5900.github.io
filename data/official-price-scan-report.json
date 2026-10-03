@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-03T12:32:40.761470+00:00",
-  "cursor": 225,
+  "updatedAt": "2026-10-03T17:18:00.897577+00:00",
+  "cursor": 315,
   "completedCycles": 2,
   "total": 1080,
   "scannedUnique": 1080,
@@ -13,329 +13,291 @@
   "overrideCount": 39,
   "lastBatch": [
     {
-      "status": "unreachable",
-      "homepage": "https://www.tranquil-forest.or.kr/useinfo/useinfo_0301.php",
-      "facilityName": "용인평온의숲 장례식장",
-      "address": "경기도 용인시 처인구 이동면 평온의숲로 77 (어비리, 용인평온의숲)",
-      "index": 180
+      "status": "no_homepage",
+      "facilityName": "한솔장례식장",
+      "address": "경상남도 밀양시 창밀로 3528 (내이동)",
+      "index": 270
     },
     {
       "status": "no_homepage",
-      "facilityName": "다사랑중앙병원장례식장",
-      "address": "경기도 의왕시 등칙골1길 22 (오전동)",
-      "index": 181
+      "facilityName": "행복한병원장례식장",
+      "address": "경상남도 밀양시 하남읍 수산중앙로 56-2 (수산리)",
+      "index": 271
     },
     {
       "status": "no_homepage",
-      "facilityName": "시티병원장례식장",
-      "address": "경기도 의왕시 오전천로 29 (오전동)",
-      "index": 182
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.medical.or.kr/uijeongbu/index.do",
-      "facilityName": "경기도의료원 의정부병원장례식장",
-      "address": "경기도 의정부시 흥선로 142 (의정부동, 경기도의정부의료원)",
-      "index": 183
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "백병원장례식장",
-      "address": "경기도 의정부시 금신로 322 (신곡동)",
-      "index": 184
+      "facilityName": "희윤요양병원 장례식장",
+      "address": "경상남도 밀양시 부북면 춘화로 60 (용지리)",
+      "index": 272
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.boramuijeongbu.com",
-      "facilityName": "보람의정부장례식장",
-      "address": "경기도 의정부시 추동로 253, B1층 (신곡동)",
-      "index": 185
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "연세장례식장",
-      "address": "경기도 의정부시 호국로 1342 지하1층,2층 (의정부동)",
-      "index": 186
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "의정부시민장례식장",
-      "address": "경기도 의정부시 호국로 1342.9,10층 (의정부동, 의정부요양병원)",
-      "index": 187
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "의정부을지대학교병원",
-      "address": "경기도 의정부시 동일로 712,평온관 (금오동, 을지대학교의정부캠퍼스및부속병원)",
-      "index": 188
+      "homepage": "https://youthsacheon.com/funeral_main.html",
+      "facilityName": "사천공설장례식장",
+      "address": "경상남도 사천시 해안관광로 208-66 (송포동, 사천시누리원화장장)",
+      "index": 273
     },
     {
       "status": "unreachable",
-      "homepage": "https://ujbfuneral.dqbuilder.com",
-      "facilityName": "의정부장례예식장",
-      "address": "경기도 의정부시 체육로 113-18 (녹양동)",
-      "index": 189
+      "homepage": "https://sacheon.nonghyupi.com/xe/index.php?mid=m5_1",
+      "facilityName": "사천시농협장례식장",
+      "address": "경상남도 사천시 사천읍 구암두문로 146-12 (구암리)",
+      "index": 274
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.happy4000.com",
+      "facilityName": "사천중앙요양병원장례식장",
+      "address": "경상남도 사천시 사천읍 옥산로 127 (선인리, 사천중앙병원)",
+      "index": 275
     },
     {
       "status": "no_homepage",
-      "facilityName": "중앙병원장례식장",
-      "address": "경기도 의정부시 평화로 609 (의정부동)",
-      "index": 190
+      "facilityName": "삼천포서울병원장례식장",
+      "address": "경상남도 사천시 남일로 33 (동금동)",
+      "index": 276
     },
     {
       "status": "no_homepage",
-      "facilityName": "추병원장례식장",
-      "address": "경기도 의정부시 평화로 650 (의정부동)",
-      "index": 191
+      "facilityName": "삼천포장례식장",
+      "address": "경상남도 사천시 진삼로 217-13 (송포동)",
+      "index": 277
     },
     {
-      "status": "priced",
-      "homepage": "https://www.medical.or.kr/icheon/contentsInfo.do?brd_mgrno=0",
-      "sourceUrl": "https://www.medical.or.kr/icheon/contentsInfo.do?brd_mgrno=0&menu_no=925",
-      "prices": [
-        {
-          "category": "염습/입관",
-          "label": "명정, 관보, 결관보, 보공, 한지, 습신, 입관부속, 위생용품, 상복등 1상가 평균 약 250,000 원",
-          "amount": 250000,
-          "unit": ""
-        }
-      ],
-      "verifiedAt": "2026-10-03T12:31:58.873116+00:00",
-      "facilityName": "경기도의료원 이천병원장례식장",
-      "address": "경기도 이천시 경충대로 2742 (관고동)",
-      "index": 192
+      "status": "no_homepage",
+      "facilityName": "시민장례식장",
+      "address": "경상남도 사천시 송포공단길 31시민장례식장 (송포동)",
+      "index": 278
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "에스엠(SM)상조온요양병원장례식장",
+      "address": "경상남도 사천시 사천읍 구암두문로 154-28 (구암리, 온요양병원)",
+      "index": 279
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "우리장례식장",
+      "address": "경상남도 사천시 송포공단길 53 (송포동, 우리장례식장)",
+      "index": 280
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "추모원장례식장",
+      "address": "경상남도 사천시 서포면 서포로 786 (외구리)",
+      "index": 281
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "한마음병원장례식장",
+      "address": "경상남도 사천시 향촌4길 127 (향촌동, 한마음병원)",
+      "index": 282
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "(주)원지산청장례식장",
+      "address": "경상남도 산청군 신안면 지리산대로 3657 (하정리)",
+      "index": 283
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "산청경호장례식장",
+      "address": "경상남도 산청군 산청읍 중앙로 93-8 (지리)",
+      "index": 284
     },
     {
       "status": "unreachable",
-      "homepage": "https://ssgl.com0014.co.kr",
-      "facilityName": "송산장례식장",
-      "address": "경기도 이천시 장호원읍 서동대로 8579 (송산리)",
-      "index": 193
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "장호원장례식장",
-      "address": "경기도 이천시 장호원읍 샘재로145번길 41 (장호원리, 장호원성모요양병원)",
-      "index": 194
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "하늘공원장례식장",
-      "address": "경기도 이천시 대월면 경충대로 1557 (장평리, 하늘공원장례식장)",
-      "index": 195
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://blog.naver.com/hyoja4411",
-      "facilityName": "효자원장례식장",
-      "address": "경기도 이천시 백사면 지읍로 169 (조읍리)",
-      "index": 196
+      "homepage": "https://www.pnuyh.co.kr",
+      "facilityName": "보람상조개발(주)양산부산대병원장례식장",
+      "address": "경상남도 양산시 물금읍 금오로 20 (양산부산대학교병원 장례식장)",
+      "index": 285
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.medical.or.kr/_pj_gpmc/",
-      "facilityName": "경기도의료원 파주병원장례식장",
-      "address": "경기도 파주시 중앙로 207 (금촌동)",
-      "index": 197
+      "homepage": "https://www.nwshos.co.kr",
+      "facilityName": "새웅상요양병원장례식장",
+      "address": "경상남도 양산시 서창동1길 7 (삼호동)",
+      "index": 286
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.shillakwon.com/",
+      "facilityName": "쉴낙원양산시민장례식장",
+      "address": "경상남도 양산시 상북면 와곡1길 26 (소토리)",
+      "index": 287
     },
     {
       "status": "no_homepage",
-      "facilityName": "광탄현대병원장례식장",
-      "address": "경기도 파주시 광탄면 큰여울길 20-16 (신산리, 광탄병원)",
-      "index": 198
+      "facilityName": "신세계병원장례식장",
+      "address": "경상남도 양산시 월라2길 45 (덕계동)",
+      "index": 288
     },
     {
       "status": "no_homepage",
-      "facilityName": "교하장례식장",
-      "address": "경기도 파주시 하지석길 45, B1층 (교하동)",
-      "index": 199
+      "facilityName": "양산서울요양병원장례식장",
+      "address": "경상남도 양산시 삼성7길 11-14,양산서울요양병원장례식장 (북정동)",
+      "index": 289
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.medi-yin.co.kr",
-      "facilityName": "메디인병원장례식장",
-      "address": "경기도 파주시 금릉역로 190 (금촌동)",
-      "index": 200
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "문산장례문화원",
-      "address": "경기도 파주시 문산읍 통일로 1677 (문산리, 문산장례문화원)",
-      "index": 201
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "쉴낙원 파주운정장례식장",
-      "address": "경기도 파주시 하늘채길 35, (하지석동, 쉴낙원 파주운정장례식장)",
-      "index": 202
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "예담장례식장",
-      "address": "경기도 파주시 문산읍 화석정로 31 (선유리)",
-      "index": 203
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://hanbit4444.tistory.com/1",
-      "facilityName": "파주 한빛병원 장례식장",
-      "address": "경기도 파주시 탄현면 평화로574번길 17 (갈현리, 파주성모병원)",
-      "index": 204
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "파주보람장례식장",
-      "address": "경기도 파주시 월롱면 통일로 715-2 (영태리)",
-      "index": 205
+      "homepage": "https://dysnong.nonghyupi.com/xe/index.php?mid=page_aFYT03",
+      "facilityName": "양산장례식장",
+      "address": "경상남도 양산시 동면 남양산길 73, 양산장례식장",
+      "index": 290
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.pjsh.co.kr",
-      "facilityName": "한사랑요양병원장례식장",
-      "address": "경기도 파주시 파주읍 통일로 1568 (봉서리)",
-      "index": 206
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.kyowonyeum.co.kr",
-      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
-      "prices": [
-        {
-          "category": "빈소",
-          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
-          "amount": 55000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
-          "amount": 45000,
-          "unit": "1시간"
-        }
-      ],
-      "verifiedAt": "2026-10-03T12:32:16.695958+00:00",
-      "facilityName": "교원예움 평택장례식장",
-      "address": "경기도 평택시 신평로 205, (구)평택장례문화원  (군문동)",
-      "index": 207
+      "homepage": "https://www.hihosp.com",
+      "facilityName": "혜인요양병원장례식장",
+      "address": "경상남도 양산시 웅상대로 955지하1층장례식장 (평산동, 토해인병원)",
+      "index": 291
     },
     {
       "status": "no_homepage",
-      "facilityName": "금성장례식장",
-      "address": "경기도 평택시 진위면 남부대로 655 (동천리)",
-      "index": 208
+      "facilityName": "부성장례식장",
+      "address": "경상남도 의령군 유곡면 의합대로 1648 (세간리)",
+      "index": 292
     },
     {
       "status": "no_homepage",
-      "facilityName": "농협연합장례식장",
-      "address": "경기도 평택시 오성면 서동대로 2427-28 (안화리)",
-      "index": 209
+      "facilityName": "의령사랑병원장례식장",
+      "address": "경상남도 의령군 의령읍 의합대로 105-8 (무전리)",
+      "index": 293
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "의령전문장례식장",
+      "address": "경상남도 의령군 용덕면 의합대로 510 (정동리)",
+      "index": 294
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "자굴산장례식장",
+      "address": "경상남도 의령군 가례면 홍의로 312 (가례리)",
+      "index": 295
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.서정리장례식장.com",
-      "facilityName": "서정리장례식장",
-      "address": "경기도 평택시 정암로 78-14 (이충동)",
-      "index": 210
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "송탄장례식장",
-      "address": "경기도 평택시 오리곡길 30 (독곡동)",
-      "index": 211
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "송탄중앙병원장례식장",
-      "address": "경기도 평택시 오좌동길 17-16 (독곡동, 송탄중앙병원)",
-      "index": 212
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://anjungfuneralparlor.modoo.at/",
-      "facilityName": "안중장례문화센타",
-      "address": "경기도 평택시 안중읍 서동대로 1931-11 (금곡리, 안중백병원)",
-      "index": 213
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "제일장례식장",
-      "address": "경기도 평택시 삼봉로 30 (독곡동)",
-      "index": 214
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.centralfh.com/",
-      "facilityName": "중앙장례식장",
-      "address": "경기도 평택시 경기대로 931 (장당동)",
-      "index": 215
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "평택이편안장례문화원",
-      "address": "경기도 평택시 안중읍 서동대로 1831-16 (금곡리, 평택의료시설)",
-      "index": 216
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.medical.or.kr/pocheon/contentsInfo.do?brd_mgrno=0&menu_no=1016",
-      "sourceUrl": "https://www.medical.or.kr/pocheon/contentsInfo.do?brd_mgrno=0&menu_no=1016",
-      "prices": [
-        {
-          "category": "안치실",
-          "label": "안치실 ",
-          "amount": 84000,
-          "unit": "1일"
-        }
-      ],
-      "verifiedAt": "2026-10-03T12:32:35.913103+00:00",
-      "facilityName": "경기도의료원 포천병원장례식장",
-      "address": "경기도 포천시 포천로 1648 (신읍동)",
-      "index": 217
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "관인농협장례식장",
-      "address": "경기도 포천시 관인면 창동로 1875 (탄동리)",
-      "index": 218
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "금강산장례문화원",
-      "address": "경기도 포천시 일동면 금강로 4641 (수입리)",
-      "index": 219
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "메디힐장례식장",
-      "address": "경기도 포천시 신북면 청신로 2139 (기저리)",
-      "index": 220
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "영북농협장례식장",
-      "address": "경기도 포천시 영북면 호국로 3761 (문암리)",
-      "index": 221
+      "homepage": "https://www.jinjuhanbit.com",
+      "facilityName": "(주)한빛장례식장",
+      "address": "경상남도 진주시 대신로 120(상평동)",
+      "index": 296
     },
     {
       "status": "unreachable",
-      "homepage": "https://woori0444.co.kr",
-      "facilityName": "우리병원장례식장",
-      "address": "경기도 포천시 소흘읍 호국로 661 (송우리)",
-      "index": 222
+      "homepage": "https://www.gnuh.co.kr/funeral/main/main.do?rbsIdx=1",
+      "facilityName": "경상국립대학교병원장례식장",
+      "address": "경상남도 진주시 강남로 79 (칠암동, 경상대학교병원)",
+      "index": 297
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.pocheongt.kr",
-      "facilityName": "포천장례문화원(주)",
-      "address": "경기도 포천시 호국로 908-13 (설운동)",
-      "index": 223
+      "homepage": "https://www.happyjinju.com/",
+      "facilityName": "센텀장례식장",
+      "address": "경상남도 진주시 진주대로941번길 8 (강남동)",
+      "index": 298
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "엠마우스병원 장례식장",
+      "address": "경상남도 진주시 남강로 25 (평거동)",
+      "index": 299
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "유한회사 진주중앙장례식장",
+      "address": "경상남도 진주시 촉석로 178 (중안동)",
+      "index": 300
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "제일병원장례식장",
+      "address": "경상남도 진주시 진주대로 885 (강남동, 제일병원)",
+      "index": 301
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.huic.co.kr/www/contents.do?key=103",
-      "facilityName": "하남시 마루공원(장례식장)",
-      "address": "경기도 하남시 하남대로545번길 22-30 (천현동, 종합공설장사시설)",
-      "index": 224
+      "homepage": "https://jinjufuneral.com",
+      "facilityName": "진주시민장례식장 (주)휴드림",
+      "address": "경상남도 진주시 문산읍 문산순환로 13 (소문리, 진주시민장례식장)",
+      "index": 302
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.jinjujangrye.co.kr",
+      "facilityName": "진주장례식장",
+      "address": "경상남도 진주시 남강로 1721 (초전동)",
+      "index": 303
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "한일병원장례식장",
+      "address": "경상남도 진주시 범골로 17, 1층 ( 춤무공동 ,한일병원지하) (충무공동)",
+      "index": 304
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "경남요양병원장례식장",
+      "address": "경상남도 창녕군 남지읍 남지중앙로 45 (남지리)",
+      "index": 305
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "남지요양병원장례식장",
+      "address": "경상남도 창녕군 남지읍 동포로 15 (남지리, 낙천병원)",
+      "index": 306
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영산요양병원장례식장",
+      "address": "경상남도 창녕군 영산면 영산도천로 430 (죽사리)",
+      "index": 307
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://cfmc.kr/sub.html?code=03_04&Radd=03_04",
+      "facilityName": "창녕군공설장례식장",
+      "address": "경상남도 창녕군 창녕읍 탐하로 201 (술정리)",
+      "index": 308
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "창녕전문장례식장",
+      "address": "경상남도 창녕군 창녕읍 창녕대로 120 (탐하리)",
+      "index": 309
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "한성병원장례식장",
+      "address": "경상남도 창녕군 창녕읍 교리1길 2 (교리)",
+      "index": 310
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.mmc.or.kr/funeral",
+      "facilityName": "경상남도 마산의료원 장례식장",
+      "address": "경상남도 창원시 마산합포구 3.15대로 231 (마산의료원 장례식장)",
+      "index": 311
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://wwwcwsisulorkr/_sangbok/indexphp",
+      "facilityName": "창원시립상복공원장례식장",
+      "address": "경상남도 창원시 성산구 공단로474번길 160 (상복동)",
+      "index": 312
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.smgysh.co.kr/",
+      "facilityName": "에스엠지연세병원장례식장",
+      "address": "경상남도 창원시 마산합포구 3.15대로 76 (월남동2가)",
+      "index": 313
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "동마산장례식장",
+      "address": "경상남도 창원시 마산회원구 3.15대로 681지하2층 (석전동, 동마산병원)",
+      "index": 314
     }
   ]
 }
