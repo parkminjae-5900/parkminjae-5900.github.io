@@ -1908,6 +1908,7 @@ function summaryText(){
  const guests=val("guestNumber");
  const lines=[
  "[다함상조 맞춤 장례견적 상담]",
+ ...(document.body.dataset.seoPackage?[("유입 선택상품: "+document.body.dataset.seoPackage)]:[]),
  "장례형태: "+(state.funeralType||"미정"),
  "현재상황: "+(state.situation||"미정"),
  "지역: "+region,
@@ -1992,6 +1993,7 @@ function applySeoPrefill(){
    box.className="notice";
    box.style.marginBottom="14px";
    const labels={nobinso:"무빈소 120",flower199:"꽃나라 199",star299:"별나라 299"};
+   if(labels[pkg]) document.body.dataset.seoPackage=labels[pkg];
    box.innerHTML="<strong>검색 페이지에서 선택한 조건을 불러왔습니다.</strong><br>"+[
      labels[pkg]?"상품 "+labels[pkg]:"",
      areaParam?"지역 "+areaParam:"",
