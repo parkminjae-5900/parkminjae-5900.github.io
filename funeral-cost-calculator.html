@@ -1172,7 +1172,7 @@ body{padding-bottom:0}
 
 <section class="step" data-step="3">
  <h2>지역·장례식장 선택</h2>
- <p class="sub">광역지역을 선택한 뒤 시·군·구 또는 세부지역을 고르면, 바로 그 항목 밑에 해당 장례식장 목록이 펼쳐집니다.</p>
+ <p class="sub">지역을 선택하면 해당 지역 장례식장을 확인할 수 있습니다. 무빈소는 가능 여부를 확인한 시설만 보여드립니다.</p>
 
  <select id="region1" aria-label="선택 지역"><option value="">선택해주세요</option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select>
  <select id="hallSelect" aria-label="선택 장례식장"><option value="">아직 정하지 못했어요 · 상담 후 결정</option></select>
@@ -1192,6 +1192,7 @@ body{padding-bottom:0}
    <div><h3 id="hallListTitle">장례식장 목록</h3><p id="selectedRegionText">시·군·구를 선택하면 바로 아래에 장례식장이 펼쳐집니다.</p></div>
    <span id="hallCount"></span>
   </div>
+  <div id="mubinsoNotice" class="notice" hidden role="status"></div>
   <input id="hallSearch" class="hallSearch" placeholder="장례식장 이름으로 검색" oninput="renderHallCards()">
   <div id="hallList" class="hallList"><div class="hallEmpty">시·군·구 또는 세부지역을 먼저 선택해주세요.</div></div>
  </div>
@@ -1202,7 +1203,7 @@ body{padding-bottom:0}
  </div>
 
 <div class="notice" id="nationwide-status" role="status">전국 요금자료를 불러오는 중입니다.</div>
-<h3>시설 요금을 견적에 담기</h3><p>빈소·접객실·안치실·입관실 중 실제 사용할 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요. 최소 사용시간·일수 올림·할인은 시설 규정 확인 후 수량에 반영합니다.</p>
+<h3>시설 요금을 견적에 담기</h3><p id="facilityPriceGuide">빈소·접객실·안치실·입관실 중 실제 사용할 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요. 최소 사용시간·일수 올림·할인은 시설 규정 확인 후 수량에 반영합니다.</p><p id="facilityA4Guide" class="priceNote">장례식장을 하나씩 선택한 뒤 마지막 단계에서 해당 시설 기준 견적을 인쇄·PDF 저장할 수 있습니다.</p>
 <div class="formGrid"><div class="field"><label for="facility-hours">예상 이용시간</label><input id="facility-hours" type="number" min="0" value="48"></div><div class="field"><label for="facility-days">청구 일수</label><input id="facility-days" type="number" min="0" step="0.5" value="2"></div></div>
 <div id="facility-prices"></div>
 <label><input id="hall-manual" type="checkbox"> 시설에 확인한 총액 직접 입력</label>
@@ -1670,6 +1671,11 @@ document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{
  }
  document.querySelectorAll('.option[data-field="'+field+'"]').forEach(x=>x.classList.remove("selected"));
  b.classList.add("selected");
+ if(field==="funeralType"){
+   const guide=document.getElementById("facilityPriceGuide");
+   if(guide)guide.textContent=val==="무빈소"?"무빈소는 빈소·분향실료를 제외하고 안치·입관 등 실제 필요한 항목만 견적에 반영합니다.":"실제 이용할 시설 항목만 선택하세요. 빈소와 접객실이 합쳐진 요금은 중복 선택하지 마세요.";
+   renderHallCards();
+ }
  recalc();
 }));
 function val(id){const e=document.getElementById(id);const n=Number(e?.value||0);return Number.isFinite(n)?Math.max(0,n):0}
@@ -1689,6 +1695,11 @@ function selectRegion(region){
 }
 let selectedSubregion="";
 let selectedHall="";
+const normalizeHallKey=value=>String(value||"").replace(/[^가-힣a-zA-Z0-9]/g,"").toLowerCase();
+function confirmedMubinsoHall(name,region,subregion){
+ const records=window.dahamMubinsoData?.items||[];
+ return records.some(record=>record?.confirmed===true&&normalizeHallKey(record.facilityName)===normalizeHallKey(name)&&(!record.region||normalizeHallKey(record.region)===normalizeHallKey(region))&&(!record.district||normalizeHallKey(record.district)===normalizeHallKey(subregion)));
+}
 function renderSubregionSelect(){
  const region=document.getElementById("region1").value;
  const select=document.getElementById("subregionSelect");
@@ -1732,13 +1743,25 @@ function renderHallCards(){
  }
  title.textContent=selectedSubregion+" 장례식장";
  txtEl.textContent=region+" "+selectedSubregion+" 지역";
+ const mubinsoMode=state.funeralType==="무빈소";
+ const notice=document.getElementById("mubinsoNotice");
+ if(notice){
+   notice.hidden=!mubinsoMode;
+   notice.textContent=mubinsoMode?"무빈소 가능 여부를 확인한 장례식장만 표시합니다. 시설별 A4 견적은 장례식장을 선택해 마지막 단계에서 저장하세요.":"";
+ }
  let items=(hallData[region]?.[selectedSubregion]||[]).filter(n=>!q||n.toLowerCase().includes(q));
+ if(mubinsoMode)items=items.filter(n=>confirmedMubinsoHall(n,region,selectedSubregion));
  count.textContent=items.length+"곳";
  const sel=document.getElementById("hallSelect");
  const selected=selectedHall;
  sel.innerHTML='<option value="">아직 정하지 못했어요 · 상담 후 결정</option>'+items.map(n=>'<option value="'+n+'">'+n+'</option>').join("");
  if(selected && items.includes(selected)) sel.value=selected;
- if(!items.length){list.innerHTML='<div class="hallEmpty">등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.</div>';return;}
+ if(!items.length){
+   list.innerHTML=mubinsoMode
+     ? '<div class="hallEmpty"><strong>이 지역에 등록된 무빈소 확인 시설이 없습니다.</strong><br>가능 여부를 확인해드릴 수 있도록 24시간 상담으로 연결해드립니다.<br><a href="tel:16006131">☎ 1600-6131 전화 상담</a></div>'
+     : '<div class="hallEmpty">등록된 장례식장이 없습니다. 직접 입력하거나 상담으로 확인해주세요.</div>';
+   return;
+ }
  list.innerHTML=items.map(n=>{
    const m=inferHallMeta(n,region,selectedSubregion);
    const badges='<div class="hallBadges"><em>'+m.type+'</em><em>'+m.operation+'</em></div>';
