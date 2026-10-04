@@ -40,14 +40,14 @@
     if(failed)w.push("일부 요금자료 연결 실패. 직접 입력 또는 시설 확인이 필요합니다.");
     if(!selectedName&&!txt("region2"))w.push("장례식장 미정");
     if(!manualHall&&!selectedRows().length)w.push("시설 요금 미선택: 빈소·안치·입관 등 필요한 항목 확인");
-    if(!manualHall&&selectedRows().some(r=>r.sourceGrade==="A"))w.push("공식 홈페이지 게시 요금: 시행일·과금 단위·추가 비용 확인 필요");
-    if(!manualHall&&selectedRows().some(r=>r.sourceGrade!=="A"))w.push("2023년 공시 또는 2차 자료: 현재 시설 요금 재확인 필요");
+    if(!manualHall&&selectedRows().some(r=>r.sourceGrade==="A"))w.push("공식 홈페이지 게시 자료 기준: 시행일·과금 단위·추가 비용·현행 적용 여부 확인 필요");
+    if(!manualHall&&selectedRows().some(r=>r.sourceGrade!=="A"))w.push("과거 공시 또는 2차 자료: 현재 시설 요금·시행일·자격을 해당 시설에 재확인 필요");
     if(!manualHall&&selectedRows().some(r=>qtyFor(r).unit==="단위 확인 필요"))w.push("원문에 없는 과금 단위: 시설 확인 후 수량·단위 입력");
     if(manualHall&&!number($("hallCost").value))w.push("장례식장 직접 입력 금액 미확인: 빈 값·0원은 무료 확정 아님");
     if(manualHall&&!$("hall-manual-source").value.trim())w.push("장례식장 직접 입력 요금의 확인 근거 미입력");
     if(state.burialType!=="매장") {
       if(!manualCrem&&!$("crem-rate").value)w.push("화장시설·적용요금 미선택");
-      if(!manualCrem&&$("crem-rate").value)w.push("화장료는 2023년 참고값: 현재 요금과 거주기간·감면 자격 확인 필요");
+      if(!manualCrem&&$("crem-rate").value)w.push("선택한 화장료는 과거 공개자료 기준이며 현재 요금이 아닐 수 있습니다. 시설에 요금·거주기간·감면 자격을 재확인하세요.");
       if(!$("crem-residence").value.trim())w.push("고인의 거주지·거주기간 미입력");
       if(!$("crem-qualified").checked)w.push("고인의 거주지·거주기간·감면 증빙 확인 필요");
       if(manualCrem&&!number($("cremationCost").value))w.push("직접 입력 화장료 미확인: 빈 값·0원은 무료 확정 아님");
@@ -171,7 +171,7 @@
       renderHalls();
     }
     $("crem-facility").innerHTML='<option value="">화장시설 선택</option>'+(crem?.facilities||[]).map(f=>'<option>'+safe(f.name)+'</option>').join("");
-    $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 무빈소는 확인된 시설만 표시 · 가격은 원문 기준일 확인";
+    $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 요금은 출처 기준일이 있는 참고자료 · 예약 전 현행 조건 확인";
     loading=false;updateHall(true);if($("crem-residence").value.trim())matchResidence();recalc();
   });
   recalc();
