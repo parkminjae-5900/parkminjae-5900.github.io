@@ -196,6 +196,7 @@ const bodyBeforeAllCrem=customerQuoteBody;customerQuoteBody=function(){return bo
 const region=document.getElementById('region'),venue=document.getElementById('case');
 const wrap=document.createElement('div');wrap.id='cityFilterWrap';wrap.hidden=true;wrap.innerHTML='<label for="cityFilter">경기 시·군 선택</label><select id="cityFilter"><option value="">전체 시·군</option></select>';region.parentElement.after(wrap);
 const city=document.getElementById('cityFilter');let lastGroup='';
+const selectionFields=region.closest('.fields');selectionFields.insertBefore(document.getElementById('nohallSelectorWrap'),venue.parentElement);selectionFields.after(document.getElementById('extraFeePanel'));
 const cityOf=c=>String(c['지역']||'').replace(/^경기\s*[·ㆍ]?\s*/,'').trim().split(/\s+/)[0];
 const nohallRegion=c=>/^서울/.test(c['지역'])?'서울':/^인천/.test(c['지역'])?'인천':'경기';
 const nohallCity=c=>/[시군]$/.test(c['지역'])?c['지역']:c['지역']+'시';
