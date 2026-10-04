@@ -1,0 +1,1 @@
+{"id": "./", "description": "다함상조 장례 예상 견적 · 상품 및 식장 비용 비교 · 견적 이미지 공유", "name": "다함상조 장례 견적", "short_name": "다함상조", "start_url": "./index.html", "scope": "./", "display": "standalone", "background_color": "#eef2f5", "theme_color": "#063457", "lang": "ko", "icons": [{"src": "logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any"}]}
