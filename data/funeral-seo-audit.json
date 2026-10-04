@@ -22,5 +22,20 @@
     "seo": "고유 title/description/canonical/내부링크/사이트맵",
     "geo": "지역-구/시-동-시설 엔터티 문맥",
     "aeo": "짧은 직접답변·FAQ·비용공식·검증일·출처상태"
+  },
+  "final_verification": {
+    "verified_at": "2026-10-05",
+    "combo_files": 1020,
+    "unique_combo_paths": 1020,
+    "sample_pages_checked": 3,
+    "sample_noindex_pass": true,
+    "sample_canonical_pass": true,
+    "sample_jsonld_pass": true,
+    "homepage_internal_links_pass": true,
+    "nobinso_internal_links_pass": true,
+    "regional_hub_links_pass": true,
+    "sitemap_hubs_only_pass": true,
+    "sitemap_combo_pages_excluded": true,
+    "status": "PASS"
   }
 }
