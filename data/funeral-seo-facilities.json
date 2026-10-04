@@ -1,0 +1,571 @@
+{
+  "version": "2026-10-05-v1",
+  "source_file": "장례식장_조건표_정리.xlsx",
+  "excluded": [
+    {
+      "facility": "강남성심병원",
+      "reason": "상조 이용 불가"
+    }
+  ],
+  "facilities": [
+    {
+      "id": "f001",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "영등",
+      "facility": "한강성심병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f002",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "양평",
+      "facility": "교원예음서서울",
+      "warning": null,
+      "last_modified": "26.03.31",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f003",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "대림",
+      "facility": "서울복지장례",
+      "warning": null,
+      "last_modified": "26.07.20",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f004",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "신길",
+      "facility": "성애병원",
+      "warning": null,
+      "last_modified": "26.05.22",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f005",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "영등",
+      "facility": "신화요양병원",
+      "warning": null,
+      "last_modified": "26.01.16",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f006",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "여의",
+      "facility": "여의도성모",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f007",
+      "group": "서울 영등포",
+      "district": "영등포",
+      "dong": "영등",
+      "facility": "영등포병원",
+      "warning": null,
+      "last_modified": "26.07.04",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f008",
+      "group": "인천",
+      "district": "강화",
+      "dong": "강화",
+      "facility": "강화병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f009",
+      "group": "인천",
+      "district": "강화",
+      "dong": "강화",
+      "facility": "강화장례",
+      "warning": "작업심함",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f010",
+      "group": "인천",
+      "district": "강화",
+      "dong": "강화",
+      "facility": "비에스병원",
+      "warning": null,
+      "last_modified": "26.03.14",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f011",
+      "group": "인천",
+      "district": "강화",
+      "dong": "강화",
+      "facility": "서해장례문화",
+      "warning": "작업심함",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f012",
+      "group": "인천",
+      "district": "강화",
+      "dong": "창리",
+      "facility": "참사랑병원",
+      "warning": "작업심함",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f013",
+      "group": "인천",
+      "district": "계양",
+      "dong": "서운",
+      "facility": "새천년보람",
+      "warning": null,
+      "last_modified": "26.03.31",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f014",
+      "group": "인천",
+      "district": "계양",
+      "dong": "작전",
+      "facility": "인천세종병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f015",
+      "group": "인천",
+      "district": "계양",
+      "dong": "서운",
+      "facility": "쉴낙원인천",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f016",
+      "group": "인천",
+      "district": "계양",
+      "dong": "작전",
+      "facility": "한림병원",
+      "warning": null,
+      "last_modified": "26.03.31",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f017",
+      "group": "인천",
+      "district": "계양",
+      "dong": "서운",
+      "facility": "계양장기와",
+      "warning": null,
+      "last_modified": "26.04.25",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f018",
+      "group": "인천",
+      "district": "남동",
+      "dong": "간석",
+      "facility": "간석장례식장",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f019",
+      "group": "인천",
+      "district": "남동",
+      "dong": "간석",
+      "facility": "가족공원장례",
+      "warning": "주차협소",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f020",
+      "group": "인천",
+      "district": "남동",
+      "dong": "고잔",
+      "facility": "스카이장례원",
+      "warning": null,
+      "last_modified": "26.07.04",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f021",
+      "group": "인천",
+      "district": "남동",
+      "dong": "논현",
+      "facility": "힘찬병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f022",
+      "group": "인천",
+      "district": "남동",
+      "dong": "구월",
+      "facility": "길병원",
+      "warning": "강매",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f023",
+      "group": "인천",
+      "district": "미추홀",
+      "dong": "주안",
+      "facility": "금강장례식장",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f024",
+      "group": "인천",
+      "district": "미추홀",
+      "dong": "주안",
+      "facility": "인천사랑병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f025",
+      "group": "인천",
+      "district": "미추홀",
+      "dong": "숭의",
+      "facility": "성인천장례",
+      "warning": null,
+      "last_modified": "26.08.04",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f026",
+      "group": "인천",
+      "district": "미추홀",
+      "dong": "학익",
+      "facility": "송도하나장례",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f027",
+      "group": "인천",
+      "district": "미추홀",
+      "dong": "숭의",
+      "facility": "인천시민장례",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f028",
+      "group": "인천",
+      "district": "동구",
+      "dong": "송림",
+      "facility": "인천의료원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f029",
+      "group": "인천",
+      "district": "동구",
+      "dong": "송림",
+      "facility": "청기와장례",
+      "warning": null,
+      "last_modified": "26.04.25",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f030",
+      "group": "인천",
+      "district": "부평",
+      "dong": "청천",
+      "facility": "세림병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f031",
+      "group": "인천",
+      "district": "부평",
+      "dong": "부평",
+      "facility": "인천성모병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f032",
+      "group": "인천",
+      "district": "부평",
+      "dong": "구산",
+      "facility": "인천병원(공단)",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f033",
+      "group": "인천",
+      "district": "서구",
+      "dong": "심곡",
+      "facility": "국제성모병원",
+      "warning": null,
+      "last_modified": "26.01.05",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f034",
+      "group": "인천",
+      "district": "서구",
+      "dong": "경서",
+      "facility": "보람인천장례",
+      "warning": null,
+      "last_modified": "26.08.04",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f035",
+      "group": "인천",
+      "district": "서구",
+      "dong": "연희",
+      "facility": "연세병원장례",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f036",
+      "group": "인천",
+      "district": "서구",
+      "dong": "왕길",
+      "facility": "온누리장례",
+      "warning": "시설열악",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f037",
+      "group": "인천",
+      "district": "서구",
+      "dong": "당하",
+      "facility": "검단탑병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f038",
+      "group": "인천",
+      "district": "연수",
+      "dong": "연수",
+      "facility": "연수장례식장",
+      "warning": null,
+      "last_modified": "26.02.15",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f039",
+      "group": "인천",
+      "district": "연수",
+      "dong": "연수",
+      "facility": "인천적십자병원",
+      "warning": null,
+      "last_modified": "25.12.28",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f040",
+      "group": "인천",
+      "district": "중구",
+      "dong": "율목",
+      "facility": "인천기독병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f041",
+      "group": "인천",
+      "district": "중구",
+      "dong": "경동",
+      "facility": "예지장례식장",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f042",
+      "group": "인천",
+      "district": "중구",
+      "dong": "경동",
+      "facility": "삼성장례문화",
+      "warning": "작업심함",
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f043",
+      "group": "인천",
+      "district": "중구",
+      "dong": "신흥",
+      "facility": "인하대병원",
+      "warning": null,
+      "last_modified": "26.01.05",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f044",
+      "group": "부천",
+      "district": "부천",
+      "dong": "소사",
+      "facility": "부천성모병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f045",
+      "group": "부천",
+      "district": "부천",
+      "dong": "소사",
+      "facility": "부천세종병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f046",
+      "group": "부천",
+      "district": "부천",
+      "dong": "송내",
+      "facility": "휴앤유병원",
+      "warning": null,
+      "last_modified": "26.07.09",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f047",
+      "group": "부천",
+      "district": "부천",
+      "dong": "원미 심곡",
+      "facility": "다니엘병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f048",
+      "group": "부천",
+      "district": "부천",
+      "dong": "원미 심곡",
+      "facility": "대성병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f049",
+      "group": "부천",
+      "district": "부천",
+      "dong": "원미 춘의",
+      "facility": "부천장례식장",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f050",
+      "group": "부천",
+      "district": "부천",
+      "dong": "원미 중동",
+      "facility": "순천향병원",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    },
+    {
+      "id": "f051",
+      "group": "부천",
+      "district": "부천",
+      "dong": "원미 심곡",
+      "facility": "부천시민장례",
+      "warning": null,
+      "last_modified": "25.12.00",
+      "verification": "source-table-matched"
+    }
+  ],
+  "visitor_bands": [
+    {
+      "code": "v0",
+      "label": "무빈소·조문객 없음",
+      "desc": "일반 조문용 빈소를 운영하지 않는 경우"
+    },
+    {
+      "code": "v20",
+      "label": "20명 이하",
+      "desc": "가족·가까운 지인 중심의 소규모 조문"
+    },
+    {
+      "code": "v50",
+      "label": "21~50명",
+      "desc": "소규모 가족장·가까운 친지 중심"
+    },
+    {
+      "code": "v100",
+      "label": "51~100명",
+      "desc": "일반 가족장 규모"
+    },
+    {
+      "code": "v200",
+      "label": "101명 이상",
+      "desc": "조문객이 많은 장례"
+    }
+  ],
+  "products": [
+    {
+      "code": "p120",
+      "label": "무빈소120",
+      "price": 1200000
+    },
+    {
+      "code": "p249",
+      "label": "249",
+      "price": 2490000
+    },
+    {
+      "code": "p360",
+      "label": "360",
+      "price": 3600000
+    },
+    {
+      "code": "p499",
+      "label": "499",
+      "price": 4990000
+    }
+  ]
+}
