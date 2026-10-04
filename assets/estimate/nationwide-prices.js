@@ -171,7 +171,7 @@
       renderHalls();
     }
     $("crem-facility").innerHTML='<option value="">화장시설 선택</option>'+(crem?.facilities||[]).map(f=>'<option>'+safe(f.name)+'</option>').join("");
-    $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 요금은 출처 기준일이 있는 참고자료 · 예약 전 현행 조건 확인";
+    $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 가격은 출처 기준일이 있는 참고자료 · 예약 전 현행 조건 확인";
     loading=false;updateHall(true);if($("crem-residence").value.trim())matchResidence();recalc();
   });
   recalc();
