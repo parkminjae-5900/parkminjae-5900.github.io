@@ -1,0 +1,26 @@
+{
+  "version": "2026-10-05-v1",
+  "expected": 1020,
+  "actual": 1020,
+  "counts": {
+    "facilities": 51,
+    "yeongdeungpo": 7,
+    "incheon": 36,
+    "bucheon": 8,
+    "visitor_bands": 5,
+    "products": 4
+  },
+  "gates": {
+    "source_match": true,
+    "unique_combination_key": true,
+    "preverification_noindex": true,
+    "facility_current_operation_required": true,
+    "facility_price_official_source_required": true,
+    "unique_content_required_for_index": true
+  },
+  "seo_geo_aeo": {
+    "seo": "고유 title/description/canonical/내부링크/사이트맵",
+    "geo": "지역-구/시-동-시설 엔터티 문맥",
+    "aeo": "짧은 직접답변·FAQ·비용공식·검증일·출처상태"
+  }
+}
