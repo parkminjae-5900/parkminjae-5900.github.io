@@ -191,4 +191,20 @@ const bodyBeforeAllCrem=customerQuoteBody;customerQuoteBody=function(){return bo
 </script>
 
 
+<script>
+(()=>{
+const region=document.getElementById('region'),venue=document.getElementById('case');
+const wrap=document.createElement('div');wrap.id='cityFilterWrap';wrap.hidden=true;wrap.innerHTML='<label for="cityFilter">경기 시·군 선택</label><select id="cityFilter"><option value="">전체 시·군</option></select>';region.parentElement.after(wrap);
+const city=document.getElementById('cityFilter');let lastGroup='';
+const cityOf=c=>String(c['지역']||'').replace(/^경기\s*[·ㆍ]?\s*/,'').trim().split(/\s+/)[0];
+const nohallRegion=c=>/^서울/.test(c['지역'])?'서울':/^인천/.test(c['지역'])?'인천':'경기';
+const nohallCity=c=>/[시군]$/.test(c['지역'])?c['지역']:c['지역']+'시';
+function syncCities(){const nohall=selectedProduct==='nohall',group=region.value+'|'+nohall;wrap.hidden=region.value!=='경기';const available=nohall?nohallCosts.filter(c=>nohallRegion(c)==='경기').map(nohallCity):cases.filter(c=>c['지역'].startsWith('경기')).map(cityOf);const cities=[...new Set(available)].filter(Boolean).sort((a,b)=>a.localeCompare(b,'ko'));const changed=group!==lastGroup;const keep=!changed?city.value:'';lastGroup=group;city.replaceChildren(new Option('전체 시·군',''),...cities.map(c=>new Option(c,c)));city.value=cities.includes(keep)?keep:'';return changed;}
+function filterNoHall(){const select=document.getElementById('nohallVenue'),old=select.value;select.replaceChildren(new Option('식장을 선택해 주세요',''));nohallCosts.forEach((c,i)=>{if((region.value==='전체'||nohallRegion(c)===region.value)&&(!city.value||nohallCity(c)===city.value))select.add(new Option(c['지역']+' · '+c['장례식장']+(c['조건']?' / '+c['조건']:'')+' · '+money(c['다함설정사용료']),String(i)))});select.value=[...select.options].some(o=>o.value===old)?old:'';}
+fillCases=function(){syncCities();const old=venue.value;const available=cases.filter(c=>(region.value==='전체'||c['지역'].startsWith(region.value))&&(!city.value||cityOf(c)===city.value));venue.replaceChildren(...available.map(c=>new Option(c['장례식장']+' · '+c['빈소조건']+' · 목록 '+c.id,c.id)));if(available.some(c=>c.id===old))venue.value=old;else if(region.value==='전체'&&available.some(c=>c.id==='367'))venue.value='367';if(selectedProduct==='nohall')filterNoHall();render();};
+const oldRender=render;render=function(){const changed=syncCities();if(changed&&selectedProduct!=='nohall'){fillCases();return;}if(selectedProduct==='nohall')filterNoHall();oldRender();};
+city.addEventListener('change',fillCases);fillCases();
+})();
+</script>
+<style>#cityFilterWrap[hidden]{display:none!important}</style>
 <script>document.querySelectorAll("a").forEach(a=>{if(/\.(csv|pdf)(?:$|[?#])/i.test(a.getAttribute("href")||"")){a.hidden=true;a.style.display="none"}});</script></body></html>
