@@ -56,7 +56,7 @@
     if(state.funeralType!=="무빈소"&&!$("food-not-used").checked&&!number($("foodCost").value))w.push("음식·접객비 미입력");
     if(!$("burial-not-used").checked&&!number($("burialCost").value))w.push("장지·봉안·자연장 비용 미입력");
     for(const k of ["shroud","coffin","urn"].filter(k=>k!=="urn"||state.burialType!=="매장"))if(!state[k]||state[k+"Price"]===0)w.push(({shroud:"수의",coffin:"관",urn:"유골함"})[k]+" 선택가 미확인: 0원 확정 아님");
-    if(!$("extra-reviewed").checked)w.push("제단·영정·이송·거리·추가 주문 검토 필요");
+    if(state.funeralType!=="무빈소"&&!$("extra-reviewed").checked)w.push("제단·영정·이송·거리·추가 주문 검토 필요");
     return [...new Set(w)];
   }
   function updateHall(force=false) {
