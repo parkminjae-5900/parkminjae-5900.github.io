@@ -112,11 +112,7 @@
     const service = document.body.dataset.regionService;
     const copy = PAGE_COPY[service];
     if (!copy || !region) return;
-    document.title = copy.title(region);
-    updateMeta('meta[name="description"]', copy.description(region));
-    updateMeta('meta[name="keywords"]', copy.keywords(region));
-    updateMeta('meta[property="og:title"]', copy.title(region));
-    updateMeta('meta[property="og:description"]', copy.description(region));
+    // 공통 대표주소의 검색 정보는 유지하고 본문 지역 안내만 개인화합니다.
     const values = {
       'region-badge': copy.badge(region),
       'region-title': copy.heading(region),

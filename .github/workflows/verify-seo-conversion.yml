@@ -12,3 +12,4 @@ jobs:
         with:
           node-version: "20"
       - run: node scripts/verify-seo-conversion.mjs
+      - run: node scripts/verify-search-content.mjs
