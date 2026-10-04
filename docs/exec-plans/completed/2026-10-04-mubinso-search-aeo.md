@@ -43,12 +43,12 @@
 
 ## Progress
 - [x] Investigation
-- [ ] Implementation
-- [ ] Automated verification
-- [ ] Desktop verification
-- [ ] Mobile verification
-- [ ] Regression check
-- [ ] Final review
+- [x] Implementation
+- [x] Automated verification
+- [x] Desktop verification
+- [x] Mobile source/layout review (existing responsive rules; browser viewport emulation unavailable)
+- [x] Regression check
+- [x] Final review
 
 ## Discoveries
 - `data/mubinso-eligible-halls.json` has no verified records, while a separate list contains configured values with inconsistent confirmation/source fields.
@@ -61,7 +61,11 @@
 - Publish a crawlable explicit robots allowance for OAI-SearchBot; structured data supplements visible content only.
 
 ## Final verification
-Pending.
+- GitHub Actions `Verify SEO conversion funnel` passed on commits `cd6550b`, `738663e`, and `638e6df`.
+- GitHub Pages deployment completed successfully for the site changes.
+- Static QA passed for edited JavaScript syntax, title/description/H1/canonical presence, FAQ JSON-LD parsing, visible FAQ presence, local links, crawler rules, and the six touched sitemap dates.
+- Live desktop pages verified: `nobinso.html`, `nobinso-cost.html`, `area-ansan-funeral.html`, `area-suwon-funeral.html`, `area-funeral-seo-hub.html`, and the estimate calculator.
+- Calculator flow verified through region/candidate selection; candidate count and reference-price disclaimers render, including selected estimate source. Browser document width (1348px) stayed within viewport (1363px); browser console showed only extension-origin errors, none from site scripts.
 
 ## Remaining limitations
-Ranking outcomes, AI answer citations, and third-party facility fees cannot be guaranteed by code changes; human source/date validation is required for each facility price.
+Ranking outcomes, AI answer citations, and third-party facility fees cannot be guaranteed by code changes; human source/date validation is required for each facility price. Full 390px mobile interaction testing was not available in the connected browser. Changed content is within existing responsive layouts, and source media-query rules remain in place.
