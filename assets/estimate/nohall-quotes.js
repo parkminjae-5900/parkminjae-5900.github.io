@@ -17,10 +17,10 @@ renderHallCards=function(){
  $('region2').closest('.field').hidden=true;
  const items=data.filter(r=>regionOf(r)===$('region1').value&&districtOf(r)===selectedSubregion&&r['장례식장'].includes($('hallSearch').value.trim()));
  if(!items.some(r=>r['장례식장']===selectedHall)){chosen=null;selectedHall='';$('hallSelect').value='';}
- $('hallListTitle').textContent='무빈소 진행 상담 대상 장례식장';$('hallCount').textContent=items.length+'곳';$('selectedRegionText').textContent='다함상조 보유 참고자료 기준 · 금액과 운영 여부는 예약 전 확인';
+ $('hallListTitle').textContent='무빈소 진행 상담 대상 장례식장';$('hallCount').textContent=items.length+'개 후보';$('selectedRegionText').textContent='다함상조 보유 참고자료 기준 · 금액과 운영 여부는 예약 전 확인';
  $('hallSelect').innerHTML='<option value="">식장 선택</option>'+items.map(r=>'<option>'+r['장례식장']+'</option>').join('');$('hallSelect').value=selectedHall;
  $('hallList').replaceChildren();
- if(!items.length){const p=document.createElement('p');p.textContent=selectedSubregion?'이 지역의 무빈소 식장은 제공 자료에 없습니다. 상담으로 확인해 주세요.':'지역을 선택하면 다함상조 보유 참고자료의 상담 대상 식장이 표시됩니다. 실제 이용 가능 여부는 예약 전 확인해 주세요.';$('hallList').append(p);}
+ if(!items.length){const p=document.createElement('p');p.textContent=selectedSubregion?'이 지역에는 현재 다함상조 참고자료에 기재된 후보가 없습니다. 상담 시 최신 운영 여부를 확인해 주세요.':'지역을 선택하면 다함상조 보유 참고자료의 상담 대상 식장이 표시됩니다. 실제 이용 가능 여부는 예약 전 확인해 주세요.';$('hallList').append(p);}
  items.forEach(r=>{const button=document.createElement('button');button.type='button';button.className='hallItem'+(selectedHall===r['장례식장']?' selected':'');button.style.width='100%';button.textContent=r['장례식장']+' · 참고금액 '+won(r['다함설정사용료']);button.onclick=()=>{chosen=r;selectedHall=r['장례식장'];$('hallSelect').value=selectedHall;renderHallCards();recalc()};$('hallList').append(button)});
 };
 calcData=function(){const d=oldCalc();if(state.funeralType!=='무빈소')return d;d.externalItems=d.externalItems.filter(x=>/(화장|장지|봉안)/.test(x[0]));if(chosen)d.externalItems.unshift(['무빈소 장례식장 참고 금액 · 시설 확인 필요',chosen['다함설정사용료']]);d.external=d.externalItems.reduce((s,x)=>s+x[1],0);d.total=d.service+d.external;return d;};
