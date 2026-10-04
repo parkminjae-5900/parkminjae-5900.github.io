@@ -1,0 +1,8 @@
+.daham-answer{box-sizing:border-box;width:min(1100px,calc(100% - 32px));margin:28px auto;padding:24px 28px;background:#fff9ed;border:1px solid #dcc9a5;border-left:5px solid #9b6c0c;border-radius:16px;color:#2b241f;line-height:1.8;overflow-wrap:anywhere}
+main>.daham-answer{width:100%}
+.daham-answer h2{font-size:clamp(23px,3vw,30px);line-height:1.4;margin:0 0 12px;color:#603e11}
+.daham-answer p{margin:10px 0;font-size:18px}
+.daham-answer a,.daham-breadcrumb a{text-decoration:underline;text-underline-offset:3px;color:#694709}
+.daham-breadcrumb{font-size:16px;line-height:1.8;margin:8px 0 20px;overflow-wrap:anywhere}
+.daham-answer a:focus-visible,.daham-breadcrumb a:focus-visible{outline:3px solid #79510c;outline-offset:4px}
+@media(max-width:650px){.daham-answer{padding:20px 18px}.daham-answer p{font-size:17px}}
