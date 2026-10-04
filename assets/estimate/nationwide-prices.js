@@ -85,6 +85,35 @@
     $("hallCost").readOnly=!manualHall;
     recalc();
   }
+  const residenceNote=document.createElement('p');residenceNote.id='crem-residence-match';residenceNote.setAttribute('role','status');residenceNote.style.cssText='color:#063457;font-size:15px;line-height:1.6';
+  $('crem-residence').after(residenceNote);
+  $('crem-residence').placeholder='예: 서울 / 부천 / 경기 수원 / 춘천 (거주기간은 별도 확인)';
+  const provinceAliases={서울특별시:'서울',부산광역시:'부산',대구광역시:'대구',인천광역시:'인천',광주광역시:'광주',대전광역시:'대전',울산광역시:'울산',세종특별자치시:'세종',경기도:'경기',강원도:'강원',강원특별자치도:'강원',충청북도:'충북',충청남도:'충남',전라북도:'전북',전북특별자치도:'전북',전라남도:'전남',경상북도:'경북',경상남도:'경남',제주특별자치도:'제주'};
+  const placeKey=s=>String(s||'').replace(/특별자치도|특별자치시|특별시|광역시/g,'').replace(/[시군구]$/,'');
+  function matchResidence(){
+    const text=$('crem-residence').value.trim();
+    if(!crem){residenceNote.textContent=text?'시설 자료를 불러온 뒤 자동 연결합니다.':'';return;}
+    if(!text){residenceNote.textContent='';$('crem-facility').replaceChildren(new Option('화장시설 선택',''),...crem.facilities.map(f=>new Option(f.name,f.name)));updateCrem();return;}
+    const tokens=text.split(/[\s,·/]+/).filter(Boolean);
+    const places=tokens.filter(t=>!/\d|개월|거주|이상|미만/.test(t)).map(placeKey);
+    const has=k=>places.some(t=>t===k||t.startsWith(k)&&/^[가-힣]+(?:시|군|구|읍|면|동)/.test(tokens.find(x=>placeKey(x)===t)||''));
+    let candidates=[];
+    const joint=[['서울','서울시립승화원'],['고양','서울시립승화원'],['파주','서울시립승화원'],['화성','화성함백산추모공원(화장)'],['부천','화성함백산추모공원(화장)'],['안산','화성함백산추모공원(화장)'],['안양','화성함백산추모공원(화장)'],['시흥','화성함백산추모공원(화장)'],['광명','화성함백산추모공원(화장)'],['군포','화성함백산추모공원(화장)'],['안성','용인 평온의 숲(나래원)'],['홍천','춘천안식원']];
+    const j=joint.find(([area])=>has(area));
+    if(j)candidates=crem.facilities.filter(f=>f.name===j[1]);
+    else candidates=crem.facilities.filter(f=>places.some(t=>t===placeKey(f.district.split(' ')[0])));
+    if(!candidates.length)candidates=crem.facilities.filter(f=>places.some(t=>t===(provinceAliases[f.province]||placeKey(f.province))||t===placeKey(f.province)));
+    // 광주 alone could mean either 광주광역시 or 경기도 광주시.
+    if(text==='광주'||text==='광주시'){candidates=[];residenceNote.textContent='광주광역시인지 경기도 광주시인지 함께 입력해 주세요.';}
+    else residenceNote.textContent=candidates.length===1?'거주지 기준 추천: '+candidates[0].name+' · 거주기간·연령·감면 증빙 확인 후 요금을 선택하세요.':candidates.length>1?'이 지역의 시설이 여러 곳입니다. 아래에서 원하는 화장시설을 선택하세요.':'연결할 시설을 찾지 못했습니다. 시·군·구를 함께 입력하거나 화장시설을 직접 선택해 주세요.';
+    $('crem-search').value='';
+    const shown=candidates.length?candidates:crem.facilities;
+    $('crem-facility').replaceChildren(new Option('화장시설 선택',''),...shown.map(f=>new Option(f.name,f.name)));
+    $('crem-facility').value=candidates.length===1?candidates[0].name:'';
+    updateCrem();
+  }
+  $('crem-residence').addEventListener('input',matchResidence);
+
   function updateCrem() {
     selectedCrem=crem?.facilities.find(f=>f.name===$("crem-facility").value)||null;
     $("cremationCost").value="";$("crem-manual-source").value="";manualCrem=false;$("crem-manual").checked=false;$("crem-qualified").checked=false;
@@ -143,7 +172,7 @@
     }
     $("crem-facility").innerHTML='<option value="">화장시설 선택</option>'+(crem?.facilities||[]).map(f=>'<option>'+safe(f.name)+'</option>').join("");
     $("nationwide-status").textContent=failed?"일부 자료 연결 실패 · 시설 확인 후 직접 입력 가능":"전국 시설목록 연결 · 무빈소는 확인된 시설만 표시 · 가격은 원문 기준일 확인";
-    loading=false;updateHall(true);recalc();
+    loading=false;updateHall(true);if($("crem-residence").value.trim())matchResidence();recalc();
   });
   recalc();
 })();
