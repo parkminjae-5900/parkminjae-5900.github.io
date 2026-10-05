@@ -37,9 +37,8 @@ def image_for(prov, sigungu, path, idx):
     # Small deterministic crop/tonal variation keeps each regional asset distinct while preserving the scene.
     if idx%3==1: im=im.crop((12,0,1188,675)).resize((1200,675))
     elif idx%3==2: im=ImageEnhance.Color(im).enhance(0.92)
-    d=ImageDraw.Draw(im,'RGBA'); d.rectangle((0,520,1200,675),fill=(25,18,13,185))
-    title=f'{prov} 장례안내'; sub='가족장 · 무빈소 · 장례비용 | AI 연출 이미지'
-    d.text((48,548),title,font=font(38),fill='white'); d.text((48,606),sub,font=font(23),fill=(242,220,177))
+    # Keep the representative image free of rasterized Korean text.
+    # The page title and caption are rendered as HTML, preventing missing-glyph boxes.
     im.save(dest,'JPEG',quality=88,optimize=True)
     return f'{BASE}assets/regional/{dest.name}'
 
