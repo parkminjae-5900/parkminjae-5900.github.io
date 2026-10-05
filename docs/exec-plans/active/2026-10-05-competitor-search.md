@@ -22,15 +22,15 @@ Search rank and consultation performance are not available; current GSC Wizard h
 - [x] Investigation
 - [x] Implementation
 - [x] Automated verification
-- [ ] Desktop verification
+- [x] Desktop verification
 - [ ] Mobile verification
 - [x] Regression check
-- [ ] Final review
+- [x] Final review
 ## Discoveries
 Ajd official pure plan separates monthly payments and event balance. General keywords found through public search are evidence of discoverability, not Naver/Google position. Direct engine-result fetches failed. Main repository confirmed by CNAME. Ansan image deployed in commit 428b8335f0bab1483817bb6edb06df90787aa240.
 ## Decisions
 Strengthen existing pages rather than create near-duplicates. Treat site-wide analytics and competitor conversions as unknown. Keep external contact user-triggered.
 ## Final verification
-verify-seo-conversion.mjs PASS (71 funnel pages); verify-search-content.mjs PASS (91 public pages, 92 sitemap URLs, 20 FAQ answers); node --check PASS; inline script syntax PASS on 4 changed pages; four default-package routing cases PASS; git diff --check PASS. Ansan live image loaded and desktop width 1363 had no overflow. Full changed-page desktop checks pending deployment. Mobile browser verification remains unavailable.
+verify-seo-conversion.mjs PASS (71 funnel pages); verify-search-content.mjs PASS (91 public pages, 92 sitemap URLs, 20 FAQ answers); node --check PASS; inline script syntax PASS on 4 changed pages; four default-package routing cases PASS; git diff --check PASS. Ansan live image loaded and desktop width 1363 had no overflow. GitHub Pages deployment and SEO workflow success for commit 2fb3975decba24c6b90b138c1e7f33d5e8003054. Live Ansan default nobinso and disabled guests verified; live comparison section and quote-app real phone link verified. Desktop width 1363 had no overflow on inspected routes. Captured console errors were browser-extension messages, not site scripts. Mobile browser verification remains unavailable.
 ## Remaining limitations
 Search-result position, competitor ad spend and actual consultation conversions unavailable. Facilities require current confirmation. No autonomous position guarantee possible.
