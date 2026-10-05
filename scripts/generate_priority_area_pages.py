@@ -39,7 +39,10 @@ for sigungu, label, slug in AREAS:
             f'<div><dt>주차</dt><dd>{parking_text}</dd></div><div><dt>연락처</dt><dd>{esc(item.get("telno"))}</dd></div></dl></article>'
         )
     facility_html = "".join(cards) or '<p class="notice">현재 공공데이터에서 해당 지역 시설을 찾지 못했습니다. 상담 시 최신 운영 시설을 확인합니다.</p>'
-    page = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    page = f'''<!doctype html><html lang="ko"><head>
+<link rel="shortcut icon" href="https://www.dahamsangjo.co.kr/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.dahamsangjo.co.kr/favicon.png" type="image/png" sizes="192x192">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{label} 장례식장·가족장·무빈소 장례비용 | 다함상조</title>
 <meta name="description" content="{label} 장례식장 {len(rows)}곳의 위치·빈소·안치·주차·연락처와 가족장 249만원, 무빈소 120만원 상품 및 별도 장례비용 확인 방법을 안내합니다.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="{BASE}area-{slug}-funeral.html">
