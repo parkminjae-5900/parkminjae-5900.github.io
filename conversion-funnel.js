@@ -20,6 +20,8 @@ function hall(){var h=text("h1"),m=h.match(/([^·|]{2,35}(?:병원|의료원|장
 function pageType(){var p=location.pathname;if(/area-/.test(p))return"region";if(/-funeral\.html$/.test(p))return"funeral_hall";if(/cost|price|nobinso|family/.test(p))return"cost_intent";return"home"}
 function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_path:location.pathname,page_type:pageType(),area:area(),funeral_hall:hall()};Object.assign(d,x||{});window.dataLayer.push(d)}
 function defaultPackageKey(){
+ var explicit=document.body.getAttribute("data-default-package");
+ if(PACKAGES.some(function(x){return x.key===explicit}))return explicit;
  var p=location.pathname.toLowerCase();
  if(p.includes("nobinso"))return"nobinso";
  if(p.includes("family"))return"family249";
@@ -47,6 +49,8 @@ function mount(){
  var main=document.querySelector("main"),a=document.querySelector(".finalCta")||document.querySelector("footer")||document.querySelector(".footer");if(main)main.appendChild(r);else if(a&&a.parentNode)a.parentNode.insertBefore(r,a);else document.body.appendChild(r);
  r.querySelector(".dahamSeoCalc").onclick=goCalc;r.querySelector(".dahamSeoCall").onclick=call;r.querySelector(".dahamSeoCopy").onclick=kakao;
  r.querySelectorAll('input[name="dahamSeoPackage"]').forEach(function(el){el.onchange=function(){var s=selected(),p=pkg(s.key),g=document.getElementById("dahamSeoGuests");g.disabled=p.type==="무빈소";if(p.type==="무빈소")g.value=0;else if(Number(g.value)===0)g.value=50;push("seo_funnel_package_select",{package_key:p.key})}});
+ var initialGuests=document.getElementById("dahamSeoGuests");
+ initialGuests.disabled=pkg(selected().key).type==="무빈소";
  push("seo_funnel_view")
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount);else mount();
