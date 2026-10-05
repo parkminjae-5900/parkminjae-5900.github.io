@@ -34,3 +34,12 @@ Strengthen existing pages rather than create near-duplicates. Treat site-wide an
 verify-seo-conversion.mjs PASS (71 funnel pages); verify-search-content.mjs PASS (91 public pages, 92 sitemap URLs, 20 FAQ answers); node --check PASS; inline script syntax PASS on 4 changed pages; four default-package routing cases PASS; git diff --check PASS. Ansan live image loaded and desktop width 1363 had no overflow. GitHub Pages deployment and SEO workflow success for commit 2fb3975decba24c6b90b138c1e7f33d5e8003054. Live Ansan default nobinso and disabled guests verified; live comparison section and quote-app real phone link verified. Desktop width 1363 had no overflow on inspected routes. Captured console errors were browser-extension messages, not site scripts. Mobile browser verification remains unavailable.
 ## Remaining limitations
 Search-result position, competitor ad spend and actual consultation conversions unavailable. Facilities require current confirmation. No autonomous position guarantee possible.
+
+## 2026-10-05 regional expansion follow-up
+- Generated 241 data-backed province/sigungu pages from `data/funeral-halls.json` and added the routes to `sitemap.xml`.
+- Added 17 province representative JPG assets derived from a fictional AI-composite funeral-hall scene; every image is captioned as AI-generated and not an actual facility photo.
+- Added a 241-link nationwide sigungu index to `area-funeral-seo-hub.html`.
+- Patched the existing Songpa page with a page-specific `og:image` and visible representative image so the query shown in the user screenshot has a thumbnail candidate.
+- Verification: `verify-search-content.mjs` PASS (332 public pages, 333 sitemap URLs), `verify-seo-conversion.mjs` PASS, `git diff --check` PASS, Pages build/deployment success for commit `909c5a52cb6b834347b26f0263d3b42f2938c519`.
+- Live HTTP checks: Songpa HTML 200, sample regional HTML 200, Seoul regional JPG 200; both sampled pages expose `og:image` and one visible image.
+- Limitation: Naver controls final crawl, thumbnail selection, and ordering; no ranking or adjacent placement is guaranteed. Mobile visual resize remains an external browser limitation.
