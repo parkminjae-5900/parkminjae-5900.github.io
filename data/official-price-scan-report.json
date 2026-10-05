@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-04T23:08:39.838746+00:00",
-  "cursor": 945,
+  "updatedAt": "2026-10-05T01:59:51.820639+00:00",
+  "cursor": 1035,
   "completedCycles": 2,
   "total": 1080,
   "scannedUnique": 1080,
   "statusCounts": {
-    "unreachable": 145,
-    "no_price_found": 232,
+    "unreachable": 144,
+    "no_price_found": 233,
     "no_homepage": 666,
     "priced": 37
   },
@@ -14,282 +14,305 @@
   "lastBatch": [
     {
       "status": "no_homepage",
-      "facilityName": "순창현대장례식장",
-      "address": "전라북도 순창군 순창읍 교성로 141-21 (가남리)",
-      "index": 900
+      "facilityName": "동서천 장례식장",
+      "address": "충청남도 서천군 기산면 충절로 1035-4 (광암리)",
+      "index": 990
     },
     {
       "status": "no_homepage",
-      "facilityName": "봉동호스피스장례식장",
-      "address": "전라북도 완주군 용진읍 완주로 807 (신지리)",
-      "index": 901
+      "facilityName": "서천장례식장",
+      "address": "충청남도 서천군 종천면 충서로 179 (화산리)",
+      "index": 991
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "서천한국장례식장",
+      "address": "충청남도 서천군 마서면 어리길 205-7 (어리)",
+      "index": 992
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "서해병원장례식장",
+      "address": "충청남도 서천군 서천읍 서천로 184 (사곡리)",
+      "index": 993
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "장례식장상예원",
+      "address": "충청남도 서천군 장항읍 장항산단로 344 (옥산리)",
+      "index": 994
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "참사랑장례식장",
+      "address": "충청남도 서천군 장항읍 장항로91번길 40 (화천리)",
+      "index": 995
+    },
+    {
+      "status": "priced",
+      "homepage": "https://www.kyowonyeum.co.kr",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
+          "amount": 55000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
+          "amount": 45000,
+          "unit": "1시간"
+        }
+      ],
+      "verifiedAt": "2026-10-05T01:58:42.866865+00:00",
+      "facilityName": "교원예움 아산장례식장",
+      "address": "충청남도 아산시 신정로 713 (방축동62-7, 방축동 42-1)",
+      "index": 996
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.baebangfh.com",
+      "facilityName": "배방장례식장",
+      "address": "충청남도 아산시 배방읍 갈산교로 38 (구령리)",
+      "index": 997
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.asanyuri.co.kr/",
+      "facilityName": "아산유리요양병원 장례식장",
+      "address": "충청남도 아산시 도고면 도고면로 179,아산유리요양병원 (기곡리)",
+      "index": 998
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "아산충무병원 국화원",
+      "address": "충청남도 아산시 문화로 381 (모종동)",
+      "index": 999
     },
     {
       "status": "unreachable",
-      "homepage": "https://0632614443.kt114.net",
-      "facilityName": "삼봉장례식장",
-      "address": "전라북도 완주군 삼례읍 과학로 466 (신탁리)",
-      "index": 902
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "한길장례식장",
-      "address": "전라북도 완주군 봉동읍 낙평남북로 104-17 (낙평리)",
-      "index": 903
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(유)동이리장례식장",
-      "address": "전라북도 익산시 서동로 5 (인화동2가)",
-      "index": 904
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(유)우석개발",
-      "address": "전라북도 익산시 목천로 118 (목천동)",
-      "index": 905
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(유)익산팔봉장례식장",
-      "address": "전라북도 익산시 무왕로 1671 (덕기동, 익산팔봉장례식장)",
-      "index": 906
+      "homepage": "http://onyangfuneralhallcom/",
+      "facilityName": "온양장례식장",
+      "address": "충청남도 아산시 곡교천로 171 (온천동)",
+      "index": 1000
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.iksanhp.com/funeral",
-      "facilityName": "(유)태영장례 익산병원장례식장",
-      "address": "전라북도 익산시 무왕로 969익산병원장례식장 (신동, 익산병원)",
-      "index": 907
+      "homepage": "https://jeil.ff.or.kr",
+      "facilityName": "제일장례식장",
+      "address": "충청남도 아산시 시민로 40 (신인동, 장례문화원)",
+      "index": 1001
     },
     {
       "status": "no_homepage",
-      "facilityName": "(유)한솔장례식장",
-      "address": "전라북도 익산시 무왕로 1471-22 (팔봉동)",
-      "index": 908
+      "facilityName": "한국병원장례식장",
+      "address": "충청남도 아산시 번영로230번길 13 (모종동)",
+      "index": 1002
     },
     {
       "status": "no_homepage",
-      "facilityName": "모현장례문화원",
-      "address": "전라북도 익산시 오산면 무왕로2길 321-20 (장신리)",
-      "index": 909
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "백제장례예식장",
-      "address": "전라북도 익산시 함열읍 익산대로 1493 (석매리)",
-      "index": 910
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "실로암사랑요양병원장례식장",
-      "address": "전라북도 익산시 선화로 389 (영등동)",
-      "index": 911
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "원광대학교병원장례문화원(천도장례식장)",
-      "address": "전라북도 익산시 무왕로 895 (신동) 원광대학교병원 장례식장",
-      "index": 912
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "함열장례식장",
-      "address": "전라북도 익산시 함열읍 정동1길 6-9 (와리)",
-      "index": 913
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "오수장례식장",
-      "address": "전라북도 임실군 오수면 춘향로 1483 (금암리)",
-      "index": 914
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "임실 중앙장례식장",
-      "address": "전라북도 임실군 임실읍 호국로 1767 (이도리)",
-      "index": 915
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "임실군보건의료원장례식장",
-      "address": "전라북도 임실군 임실읍 호국로 1680 (이도리)",
-      "index": 916
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "장계 공설장례식장",
-      "address": "전라북도 장수군 장계면 진장로 1876 (무농리)",
-      "index": 917
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "장수군보건의료원장례식장",
-      "address": "전라북도 장수군 장수읍 장천로 247 (장수리, 장수보건의료원)",
-      "index": 918
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "효천장례원",
-      "address": "전북특별자치도 전주시 완산구 삼천동3가 943-5",
-      "index": 919
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(유)현대장례식장",
-      "address": "전라북도 전주시 덕진구 초포다리로 64 (호성동1가)",
-      "index": 920
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(주)금성장례식장",
-      "address": "전라북도 전주시 덕진구 가리내로 670 (송천동2가)",
-      "index": 921
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "대송장례식장",
-      "address": "전라북도 전주시 덕진구 동부대로 1015 (송천동2가)",
-      "index": 922
+      "facilityName": "고덕장례문화원",
+      "address": "충청남도 예산군 고덕면 예덕로 592 (대천리)",
+      "index": 1003
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.dongjj.com",
-      "facilityName": "동전주 장례문화원",
-      "address": "전북특별자치도 전주시 덕진구 금상길 69 (금상동)",
-      "index": 923
+      "homepage": "https://www.facebook.com/예산명지병원장례식장-1059326250788771",
+      "facilityName": "예산명지병원장례식장",
+      "address": "충청남도 예산군 예산읍 신례원로 26 (관작리)",
+      "index": 1004
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "예산장례식장",
+      "address": "충청남도 예산군 오가면 오가중앙로 81-17 (역탑리)",
+      "index": 1005
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "예산종합병원장례식장",
+      "address": "충청남도 예산군 예산읍 금오대로 94 (산성리)",
+      "index": 1006
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "예산중앙장례식장",
+      "address": "충청남도 예산군 예산읍 마상길 11 (주교리)",
+      "index": 1007
     },
     {
       "status": "unreachable",
-      "homepage": "https://전주삼성장례문화원com",
-      "facilityName": "삼성장례문화원",
-      "address": "전라북도 전주시 덕진구 동부대로 937 (호성동2가)",
-      "index": 924
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://blog.naver.com/grandcity4444",
-      "facilityName": "시티장례문화원",
-      "address": "전라북도 전주시 완산구 콩쥐팥쥐로 1614 (상림동)",
-      "index": 925
+      "homepage": "https://cheongdamfc.com/",
+      "facilityName": "청담장례문화원",
+      "address": "충청남도 예산군 예산읍 차동로 1451 (대회리)",
+      "index": 1008
     },
     {
       "status": "no_homepage",
-      "facilityName": "온고을장례식장",
-      "address": "전라북도 전주시 덕진구 온고을로 438-2 (만성동)",
-      "index": 926
+      "facilityName": "남천안장례식장",
+      "address": "충청남도 천안시 동남구 천안대로 215   남천안장례식장 (삼룡동, 천안효요양병원)",
+      "index": 1009
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.dkuh.co.kr/funerals",
+      "facilityName": "단국대학교병원 천안장례식장",
+      "address": "충청남도 천안시 동남구 망향로 201 (안서동)",
+      "index": 1010
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "로고스요양병원 장례식장",
+      "address": "충청남도 천안시 동남구 청수로 123-10 (구성동)",
+      "index": 1011
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "보람상조리더스(주)천안국빈장례식장",
+      "address": "충청남도 천안시 동남구 풍세로 835, 천안국빈장례식장 (용곡동, 청담웨딩홀)",
+      "index": 1012
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.schmc.ac.kr/cheonan/kor/hospitalguide/funeralHall.do",
+      "facilityName": "순천향천안장례식장",
+      "address": "충청남도 천안시 동남구 순천향6길 30 (봉명동, 순천향대학교천안병원)",
+      "index": 1013
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "천안삼거리국화원장례식장",
+      "address": "충청남도 천안시 동남구 충절로 575 (삼룡동, 천안삼거리장례식장)",
+      "index": 1014
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.camc.or.kr",
+      "facilityName": "천안의료원장례식장",
+      "address": "충청남도 천안시 동남구 충절로 537 (삼룡동)",
+      "index": 1015
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "천안하늘공원장례식장",
+      "address": "충청남도 천안시 동남구 만남로 114 (신부동)",
+      "index": 1016
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.cuh.co.kr/cuh/funeral/index.jsp",
-      "facilityName": "전북대학교병원장례식장",
-      "address": "전라북도 전주시 덕진구 건지로 20 (금암동, 전북대학병원)",
-      "index": 927
+      "homepage": "https://www.seongwol.com/shop_main/main_body.htm",
+      "facilityName": "성월장례문화원",
+      "address": "충청남도 천안시 서북구 성환읍 천안대로 2096 (성월리)",
+      "index": 1017
     },
     {
       "status": "no_homepage",
-      "facilityName": "전주고려병원장례식장",
-      "address": "전라북도 전주시 덕진구 안덕원로 367 (산정동)",
-      "index": 928
+      "facilityName": "천안장례식장",
+      "address": "충청남도 천안시 서북구 성거읍 모전1길 213 (모전리)",
+      "index": 1018
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "천안충무병원 국화원장례식장",
+      "address": "충청남도 천안시 서북구 다가말3길 8 (쌍용동)",
+      "index": 1019
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "정산미당장례식장",
+      "address": "충청남도 청양군 장평면 충의로 797 (미당리)",
+      "index": 1020
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "청양농협 장례식장",
+      "address": "충청남도 청양군 청양읍 충절로 1379 (학당리, 청양장례식장)",
+      "index": 1021
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "청양훈병원장례식장",
+      "address": "충청남도 청양군 청양읍 칠갑산로 157 (송방리)",
+      "index": 1022
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "(주)안면도장례식장",
+      "address": "충청남도 태안군 안면읍 안면대로 2642(정당리)",
+      "index": 1023
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.jesushospital.com",
-      "facilityName": "(유)예수병원장례식장",
-      "address": "전라북도 전주시 완산구 서원로 365 (중화산동1가, 예수병원)",
-      "index": 929
+      "homepage": "https://www.taean.go.kr/prog/deceased/life/sub02_12_04/list.do",
+      "facilityName": "태안군보건의료원 상례원",
+      "address": "충청남도 태안군 태안읍 서해로 1952-16 (평천리, 태안군보건의료원)",
+      "index": 1024
     },
     {
       "status": "no_homepage",
-      "facilityName": "(주)모악장례문화원",
-      "address": "전라북도 전주시 완산구 우림로 1109 (삼천동2가)",
-      "index": 930
+      "facilityName": "신광천장례식장",
+      "address": "충청남도 홍성군 은하면 충서로 93 (장척리)",
+      "index": 1025
     },
     {
       "status": "no_homepage",
-      "facilityName": "뉴타운장례식장",
-      "address": "전라북도 전주시 완산구 노송광장로 60 (서노송동)",
-      "index": 931
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "대한장례식장",
-      "address": "전라북도 전주시 완산구 구이로 2050. 대한장례식장 (평화동3가)",
-      "index": 932
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "엠마오사랑병원장례식장",
-      "address": "전라북도 전주시 완산구 서원로 402-35 (중화산동1가)",
-      "index": 933
+      "facilityName": "장곡농협홍주장례식장",
+      "address": "충청남도 홍성군 구항면 충서로966번길 32 (청광리)",
+      "index": 1026
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.전주시민장례문화원.com",
-      "facilityName": "전주시민장례문화원",
-      "address": "전라북도 전주시 완산구 유연로 27 (효자동3가)",
-      "index": 934
+      "homepage": "https://www.hsmc.or.kr",
+      "facilityName": "홍성의료원장례식장",
+      "address": "충청남도 홍성군 홍성읍 조양로 224 (고암리)",
+      "index": 1027
     },
     {
       "status": "no_homepage",
-      "facilityName": "효사랑장례문화원",
-      "address": "전라북도 전주시 완산구 용머리로 77 (효자동1가, 효사랑가족요양병원)",
-      "index": 935
+      "facilityName": "홍성장례식장",
+      "address": "충청남도 홍성군 금마면 금마로 254 (덕정리)",
+      "index": 1028
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://choomo.hongseong.go.kr",
+      "facilityName": "홍성추모공원 장례식장",
+      "address": "충청남도 홍성군 금마면 금마로516번길 85 (봉서리)",
+      "index": 1029
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "괴산동부장례식장",
+      "address": "충청북도 괴산군 괴산읍 괴강로 144 (동부리)",
+      "index": 1030
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.goesansungmoh.co.kr/guide6.php",
+      "facilityName": "괴산성모병원장례식장",
+      "address": "충청북도 괴산군 괴산읍 임꺽정로 116 (서부리)",
+      "index": 1031
     },
     {
       "status": "no_price_found",
-      "homepage": "https://blog.naver.com/snail3388",
-      "facilityName": "효자장례타운",
-      "address": "전라북도 전주시 완산구 콩쥐팥쥐로 1705-36 (효자동3가)",
-      "index": 936
+      "homepage": "https://www.괴산장례식장.kr",
+      "facilityName": "괴산장례식장",
+      "address": "충청북도 괴산군 괴산읍 읍내로 35-4 (대사리)",
+      "index": 1032
     },
     {
       "status": "no_homepage",
-      "facilityName": "신태인장례식장",
-      "address": "전라북도 정읍시 신태인읍 신태인공단길 16 (백산리)",
-      "index": 937
+      "facilityName": "단양군립노인요양병원장례식장",
+      "address": "충청북도 단양군 단양읍 별곡6길 10 (별곡리, 단양군노인요양전문병원)",
+      "index": 1033
     },
     {
       "status": "no_homepage",
-      "facilityName": "유림장례식장",
-      "address": "전라북도 정읍시 명덕로 54 (연지동, 유림웨딩홀)",
-      "index": 938
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정다운장례문화원",
-      "address": "전라북도 정읍시 관통로 27 (시기동, 정다운병원)",
-      "index": 939
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정읍사랑병원장례식장",
-      "address": "전라북도 정읍시 상동중앙로 94 (상동)",
-      "index": 940
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정읍아산병원장례식장",
-      "address": "전라북도 정읍시 충정로 606-22 (용계동)",
-      "index": 941
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정읍장례문화원",
-      "address": "전라북도 정읍시 벚꽃로 131 (연지동)",
-      "index": 942
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정읍장례식장",
-      "address": "전라북도 정읍시 고부면 영원로 222-15 (만수리)",
-      "index": 943
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정읍호남장례식장",
-      "address": "전라북도 정읍시 정읍남로 1252 (시기동)",
-      "index": 944
+      "facilityName": "단양장례식장",
+      "address": "충청북도 단양군 단양읍 수양개유적로 6 (상진리, 단양장례식장)",
+      "index": 1034
     }
   ]
 }
