@@ -14,8 +14,32 @@
   gtag("js",new Date());
   gtag("config",id,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});
 
+  function attribution(){
+    try{
+      const q=new URLSearchParams(location.search);
+      const keys=["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","n_media","n_query","n_rank","n_ad_group"];
+      const firstKey="daham_first_touch";
+      let first={};
+      try{first=JSON.parse(localStorage.getItem(firstKey)||"{}")||{};}catch(e){}
+      if(!first.landing_page){
+        first={landing_page:location.pathname+location.search,referrer:document.referrer||"",first_seen_at:new Date().toISOString()};
+        keys.forEach(function(k){const v=q.get(k);if(v)first[k]=v;});
+        try{localStorage.setItem(firstKey,JSON.stringify(first));}catch(e){}
+      }
+      let leadId="";
+      try{leadId=localStorage.getItem("daham_lead_id")||"";}catch(e){}
+      if(!leadId){
+        leadId="L-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
+        try{localStorage.setItem("daham_lead_id",leadId);}catch(e){}
+      }
+      const out={lead_id:leadId,landing_page:first.landing_page||"",first_referrer:first.referrer||""};
+      keys.forEach(function(k){const v=q.get(k)||first[k];if(v)out[k]=v;});
+      return out;
+    }catch(e){return {};}
+  }
+
   function send(name,params){
-    try{gtag("event",name,Object.assign({page_path:location.pathname,page_title:document.title},params||{}));}catch(e){}
+    try{gtag("event",name,Object.assign({page_path:location.pathname,page_title:document.title},attribution(),params||{}));}catch(e){}
   }
 
   document.addEventListener("click",function(e){
