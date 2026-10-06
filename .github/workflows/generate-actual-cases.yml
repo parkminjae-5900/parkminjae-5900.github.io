@@ -1,0 +1,47 @@
+name: Generate actual funeral case pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/actual-cases/**"
+      - "scripts/generate_actual_cases.py"
+      - ".github/workflows/generate-actual-cases.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate privacy-safe actual case pages
+        run: python scripts/generate_actual_cases.py
+      - name: Validate public output
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          d=json.loads(pathlib.Path("data/actual-cases/public.json").read_text(encoding="utf-8"))
+          for c in d["cases"]:
+              p=pathlib.Path(f"actual-case-{c['id']}.html")
+              if not p.exists(): raise SystemExit(f"Missing generated page: {p}")
+          print("Actual-case validation OK:", len(d["cases"]))
+          PY
+      - name: Commit generated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add actual-cases.html actual-case-*.html data/actual-cases/public.json sitemap.xml 2>/dev/null || true
+          git add -u actual-cases.html 'actual-case-*.html' data/actual-cases/public.json sitemap.xml 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git commit -m "chore: regenerate actual funeral case pages"
+          git pull --rebase origin main
+          git push
