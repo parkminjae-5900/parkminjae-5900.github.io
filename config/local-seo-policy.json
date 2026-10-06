@@ -1,0 +1,39 @@
+{
+  "version": "2026-10-06",
+  "source_of_truth": {
+    "legal_dong": "https://www.code.go.kr/stdcode/regCodeL.do",
+    "rule": "현존 법정동 코드만 사용. 폐지 코드와 개편 전 명칭은 신규 SEO URL 생성에서 제외한다."
+  },
+  "hierarchy": ["시도","시군구","읍면동","장례식장","장례방식","비용의도"],
+  "service_intents": ["무빈소장례","가족장","후불상조","장례비용","장례견적"],
+  "index_rules": {
+    "minimum_unique_signals": 3,
+    "required_any": [
+      "해당 읍면동 또는 인접권 장례식장",
+      "시설별 공개 가격 또는 검증된 현장 가격",
+      "화장시설 또는 이동권역",
+      "실제/검증 견적 사례",
+      "지역 고유 FAQ"
+    ],
+    "thin_page_action": "noindex,follow",
+    "duplicate_action": "상위 시군구 canonical 또는 생성 제외"
+  },
+  "url_pattern": {
+    "sigungu": "/area-{region-slug}-funeral.html",
+    "dong": "/local/{sigungu-slug}/{dong-slug}/",
+    "facility": "/local/{sigungu-slug}/{dong-slug}/{facility-slug}/"
+  },
+  "title_pattern": "{시군구} {읍면동} 무빈소·가족장 장례비용 | 가까운 장례식장·예상견적 | 다함상조",
+  "h1_pattern": "{읍면동}에서 장례를 준비할 때 가까운 장례식장과 예상비용",
+  "content_blocks": [
+    "30초 핵심답변",
+    "해당 동 및 인접권 장례식장",
+    "무빈소/가족장 선택",
+    "상품가와 시설비 분리",
+    "화장시설/이동권역",
+    "실제 또는 검증 견적",
+    "지역 FAQ",
+    "시군구 상위페이지와 인접동 내부링크",
+    "상담/견적 CTA"
+  ]
+}
