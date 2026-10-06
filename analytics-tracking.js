@@ -2,15 +2,17 @@
   const cfg=window.DAHAM_ANALYTICS||{};
   const id=(cfg.ga4MeasurementId||"").trim();
   if(!cfg.enabled||!/^G-[A-Z0-9]+$/i.test(id)) return;
+  if(window.__DAHAM_GA4_INITIALIZED__) return;
+  window.__DAHAM_GA4_INITIALIZED__=true;
   window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag=window.gtag||gtag;
+  window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+  const gtag=window.gtag;
   const s=document.createElement("script");
   s.async=true;
   s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(id);
   document.head.appendChild(s);
   gtag("js",new Date());
-  gtag("config",id,{send_page_view:true});
+  gtag("config",id,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});
 
   function send(name,params){
     try{gtag("event",name,Object.assign({page_path:location.pathname,page_title:document.title},params||{}));}catch(e){}
