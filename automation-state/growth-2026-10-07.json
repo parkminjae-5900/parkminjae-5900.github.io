@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-07T07:00:00+09:00",
+  "ga4": {
+    "property_id": "557803440",
+    "rows_last_7d": 0
+  },
+  "search_console": [
+    {
+      "query": "인하대병원장례식장",
+      "page": "/inha-funeral.html",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 51
+    },
+    {
+      "query": "무빈소 가족장",
+      "page": "/nobinso-vs-family.html",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 47
+    },
+    {
+      "query": "인천의료원장례식장",
+      "page": "/incheon-medical-center-funeral.html",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 45
+    }
+  ],
+  "google_ads": {
+    "connected": false
+  },
+  "next": [
+    "verify GA4 first event",
+    "strengthen internal links to 3 GSC pages",
+    "preserve lead_id attribution"
+  ]
+}
