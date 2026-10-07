@@ -60,25 +60,44 @@
     "실제 행사"
   ],
   "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
-  "last_checked_at_kst": "2026-10-08T03:49:19+09:00",
+  "last_checked_at_kst": "2026-10-08T04:09:57+09:00",
   "latest_run": {
-    "status": "보강 우선순위 확정",
+    "status": "변경 없음",
+    "checked_at_kst": "2026-10-08T04:09:57+09:00",
+    "primary_team": "성장마케팅부 검색최적화팀",
+    "cross_review_team": "데이터견적부 장례견적팀",
+    "deployment_support": "서비스개발부",
+    "target_urls": [
+      "/bucheon-hueandyou-funeral.html",
+      "/incheon-sejong-funeral.html",
+      "/area-incheon-funeral.html",
+      "/incheon-medical-center-funeral.html",
+      "/inha-funeral.html",
+      "/hangang-hallym-funeral.html"
+    ],
     "performed": [
-      "GitHub 업무카드·키워드 클러스터 및 최신 main 상태 재확인",
-      "Windsor GA4·Search Console 연결 및 필드 재확인",
-      "휴앤유·인천 대상 최근 28일과 직전 28일 대기 보고서 동일 조건 재조회",
-      "주 도메인 전체의 최근 28일·직전 28일 GSC 상위 검색어·페이지 비교",
-      "GA4 Organic Search 랜딩페이지와 견적·상담 CTA 이벤트 비교",
-      "공개 검색에서 인천의료원·인하대·휴앤유 경쟁 노출 구조 점검"
+      "GitHub 업무카드·키워드 클러스터·최신 main 커밋 재확인",
+      "Windsor GA4·Search Console 연결 및 유효 필드 재확인",
+      "최근 28일·직전 28일 GSC 검색어·페이지 보고서 동일 조건 재조회",
+      "GA4 Organic Search 랜딩페이지, 견적·상담·전화 CTA, 휴앤유 유입 재조회",
+      "공개 검색에서 휴앤유·인천 대상 URL 노출 재점검"
     ],
     "evidence": {
-      "repository_head": "1780efb67494954834869ee50d09d08bf4df701d",
-      "repository_change_scope": "직전 실행 이후 신규 코드 커밋 없음; 관리 페이지 직접 변경 없음",
-      "verified_repository_state": {
-        "seo_validation": "success - GitHub Actions run 37660057597",
-        "pages_deployment": "success - GitHub Actions run 37660057628"
+      "repository_head_before_run": "4107fbd0b95b2fdd81dc39b0af07bef9f4e59bc0",
+      "repository_change_scope": "직전 점검 이후 신규 코드·관리 페이지 커밋 없음",
+      "previous_verified_repository_state": {
+        "seo_validation": "success - GitHub Actions run 37670276301",
+        "pages_deployment": "success - GitHub Actions run 37670276143"
       },
       "search_console_recent_28d": [
+        {
+          "query": "무빈소 가족장",
+          "page": "/nobinso-vs-family.html",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "average_position": 47
+        },
         {
           "query": "인천의료원장례식장",
           "page": "/incheon-medical-center-funeral.html",
@@ -94,111 +113,99 @@
           "impressions": 1,
           "ctr": 0,
           "average_position": 51
-        },
-        {
-          "query": "한강성심병원 장례식장",
-          "page": "/hangang-hallym-funeral.html",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "average_position": 29
-        },
-        {
-          "query": "무빈소 가족장",
-          "page": "/nobinso-vs-family.html",
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0,
-          "average_position": 47
         }
       ],
       "search_console_previous_28d": "반환 행 없음",
+      "search_console_recheck_note": "직전 조회의 한강성심병원 장례식장 1회 노출 행은 동일 조건 재조회에서 반환되지 않음. 표본이 1회뿐이므로 성과 하락이 아닌 소표본 변동으로 처리",
+      "ga4_organic_search": {
+        "recent_28d": "반환 행 없음",
+        "previous_28d": "반환 행 없음",
+        "interpretation": "0으로 확정하지 않고 미확인·반환 행 없음으로 기록"
+      },
       "ga4_hueandyou_recent_28d": {
         "page": "/bucheon-hueandyou-funeral.html",
         "sessions": 1,
         "active_users": 1,
         "source_medium": "(direct) / (none)",
+        "channel": "Direct",
         "page_views": 1,
-        "funeral_home_page_view": 1,
-        "seo_funnel_view": 1,
+        "session_start": 1,
         "key_events": 0,
-        "interpretation": "자연검색 유입이 아닌 직접 유입으로 확인되어 SEO 전환 성과로 집계하지 않음"
-      },
-      "ga4_organic_search": {
-        "recent_28d": "반환 행 없음",
-        "previous_28d": "반환 행 없음",
-        "interpretation": "0으로 확정하지 않고 미확인·반환 행 없음으로 기록"
+        "interpretation": "자연검색 성과가 아님"
       },
       "ga4_cta_recent_28d": [
         {
           "event": "estimate_click",
           "count": 1,
           "page": "/family.html",
-          "channel": "Cross-network"
+          "channel": "Cross-network",
+          "key_events": 0
         },
         {
           "event": "estimate_click",
           "count": 1,
           "page": "/funeral-cost-calculator.html",
-          "channel": "Cross-network"
+          "channel": "Cross-network",
+          "key_events": 0
         },
         {
           "event": "consult_click",
           "count": 1,
           "page": "/funeral-cost-calculator.html",
-          "channel": "Cross-network"
+          "channel": "Cross-network",
+          "key_events": 0
         },
         {
           "event": "seo_funnel_calculator_click",
           "count": 1,
           "page": "/postpaid-price.html",
-          "channel": "Cross-network"
+          "channel": "Cross-network",
+          "key_events": 0
         }
       ],
       "ga4_cta_previous_28d": "반환 행 없음",
       "public_search": [
-        "인하대병원장례식장 공개 검색은 에노스·바리길·삼고·고이 등 비용·후기·견적 페이지가 강하게 노출",
-        "인천의료원장례식장 공개 검색은 삼고의 비용·가족장·후기·비교 페이지가 다수 노출",
-        "휴앤유추모관 전용 다함 페이지의 공개 검색 신규 노출은 미확인"
+        "다함 휴앤유 전용 URL의 공개 검색 신규 노출은 재확인되지 않음",
+        "휴앤유 검색 결과는 장례시설이 아닌 휴앤유병원 비급여 정보가 노출되어 명칭 혼동 위험이 지속",
+        "인천의료원·인하대 페이지는 Search Console의 1회 노출 표본 외 추가 공개 노출 변화 미확인"
       ],
-      "run_record_commit": "84a057d7f7fa529c1b9b86bdaeebef5dc8471294",
-      "run_record_seo_validation": "success - GitHub Actions run 37670070581",
-      "run_record_pages_deployment": "success - GitHub Actions run 37670070029"
+      "management_page_changes": "없음",
+      "run_record_commit": "기록 커밋 생성 후 갱신 예정",
+      "run_record_validation": "기록 커밋 생성 후 확인 예정"
     },
     "analytics": {
-      "ga4_service": "Windsor 연결 정상",
-      "search_console": "Windsor 연결 정상",
-      "report_status": "이전 queued 보고서 실제 데이터 반환 완료",
+      "ga4_service": "Windsor 연결 정상 - 다함상조 557803440",
+      "search_console": "Windsor 연결 정상 - https://www.dahamsangjo.co.kr/ 및 /jangjunmo/",
+      "report_status": "동일 조건 보고서 즉시 반환",
       "comparison_periods": {
         "recent": "2026-09-10~2026-10-07",
         "previous": "2026-08-13~2026-09-09"
       },
-      "caveat": "Search Console 표본은 검색어별 노출 1회로 매우 작아 순위 상승을 확정하지 않음. GA4 휴앤유 1세션은 Direct이며 Organic Search 성과가 아님."
+      "caveat": "GSC 노출은 검색어별 1회 수준이며, GA4 Organic Search는 반환 행이 없어 유의미한 변화 판정 불가"
     },
     "conversion_change": {
-      "impressions": "신규 반환 4회(검색어별 1회); 직전 기간 반환 행 없음",
+      "impressions": "직전과 실질 변화 없음; 이번 재조회 3행 각 1회",
       "clicks": "0",
       "ctr": "0%",
-      "average_position": "29~51위 범위; 표본 4행",
+      "average_position": "45~51위(현재 반환 3행); 통계적 판단 불가",
       "organic_sessions": "반환 행 없음(0 확정 아님)",
-      "estimate_entry": "Cross-network estimate_click 2회 + seo_funnel_calculator_click 1회",
-      "consultation_click": "Cross-network consult_click 1회",
+      "estimate_entry": "Cross-network estimate_click 2회 + seo_funnel_calculator_click 1회, 직전과 동일",
+      "consultation_click": "Cross-network consult_click 1회, 직전과 동일",
       "phone_click": "반환 행 없음",
       "actual_inquiry": "미확인",
       "actual_event": "미확인"
     },
     "findings": [
-      "인천의료원장례식장과 인하대병원장례식장이 Search Console에 처음 반환되어 인천 우선 보강 후보로 승격",
-      "한강성심병원 장례식장 검색어가 평균 29위로 이번 표본 중 가장 높은 위치",
-      "휴앤유 페이지의 GA4 1세션은 Direct 유입으로 SEO 노출·클릭 성과로 계산할 수 없음",
-      "견적·상담 CTA 4건은 Cross-network에서 발생했으며 실제 문의·행사 전환 증거는 아직 없음",
-      "표본이 매우 작아 새 페이지 생성이나 가격·총액 변경을 정당화하지 않음"
+      "직전 점검 이후 의미 있는 신규 노출·클릭·Organic 유입·CTA 변화 없음",
+      "한강성심병원 1회 노출 행의 미반환은 소표본 변동으로 보고 우선순위를 변경하지 않음",
+      "휴앤유 Direct 1세션과 Cross-network CTA 4건은 SEO 전환으로 집계하지 않음",
+      "신규 페이지·가격표·견적 데이터 변경을 정당화할 근거 없음"
     ],
     "priority_actions": [
-      "1순위: /incheon-medical-center-funeral.html와 /inha-funeral.html의 제목·도입부·내부링크·참고견적 CTA를 기존 페이지 안에서 점검하고 추가 표본 축적",
-      "2순위: /hangang-hallym-funeral.html 평균 29위 검색어의 제목·FAQ·내부링크 정합성 점검",
-      "3순위: Cross-network 견적·상담 클릭이 실제 문의로 이어지는지 리드/상담 데이터와 분리 대조",
-      "휴앤유는 신규 페이지를 만들지 않고 공개 검색 노출과 Organic Search가 확인될 때까지 기존 허브 유지"
+      "기존 우선순위 유지: /incheon-medical-center-funeral.html 및 /inha-funeral.html의 제목·도입부·내부링크·참고견적 CTA 점검",
+      "한강성심병원 검색어는 추가 노출 표본이 쌓일 때까지 관찰",
+      "Cross-network CTA와 실제 문의·행사 데이터를 분리 대조",
+      "휴앤유는 기존 허브 유지, 공식 신명칭·최신 시설요금 근거 확보 전 신규 페이지·가격 변경 금지"
     ],
     "blockers": [
       "GSC 표본이 검색어별 노출 1회로 통계적 판단에 부족",
