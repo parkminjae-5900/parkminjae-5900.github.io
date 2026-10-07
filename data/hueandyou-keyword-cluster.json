@@ -176,16 +176,28 @@
       "prior_management_chain": "참고용 비활성"
     }
   },
-  "last_reviewed_at_kst": "2026-10-08T01:34:00+09:00",
+  "last_reviewed_at_kst": "2026-10-08T06:32:35+09:00",
   "latest_observation": {
-    "status": "변경 없음",
+    "status": "가격 검증 안전성 강화·SEO 성과 변화 없음",
     "added_terms": [],
-    "routing": "기존 허브·비용·무빈소·가족장 페이지 유지; 신규 얇은 페이지 생성 없음",
+    "routing": "기존 허브·비용·무빈소·가족장 페이지 유지; 공식 가격 원천 없는 시설은 신규 가격 승격 및 얇은 페이지 생성 없음",
     "evidence": [
-      "공개 검색에서 휴앤유 전용 URL의 신규 노출 변화 미확인",
-      "최신 저장소 변경은 quote-app 범위이며 휴앤유 관리 자산 직접 변경 없음",
-      "대표 직속 조직개편에 따라 owner-search 담당 오유진·김서준 및 박민재 대표 직보 체계 반영"
+      "공식 가격 스캔 1,080개 시설 완료 상태에서 가격 발견 37건 중 승격 가능 21건·거절 16건을 분리 집계",
+      "휴앤유병원장례식장과 부천 세종병원장례식장은 공식 홈페이지 가격 원천 미확인(no_homepage)으로 가격 데이터 승격 없음",
+      "지점 코드 불일치·가격 범주 축소·가격 레코드 축소를 자동 거절하는 promotion guard v2와 회귀 테스트 6건 반영",
+      "공개 검색에서 휴앤유 전용 다함 URL의 신규 노출 변화 미확인"
     ],
-    "analytics": "미확인 - GA4 자체 종료가 아니라 GSC Wizard/외부 분석 연결 구독 종료로 조회 불가; 0으로 처리하지 않음"
+    "analytics": "Windsor GA4 다함상조 및 Search Console 주 도메인·장준모 연결 정상. 최근 28일 GSC 3개 검색어 각 1회 노출·클릭 0, GA4 Organic Search 반환 행 없음, Cross-network CTA 4건은 직전과 동일.",
+    "price_safety": {
+      "scan_updated_at_utc": "2026-10-07T20:38:00.801957+00:00",
+      "total_facilities": 1080,
+      "discovered_price_records": 37,
+      "promotion_eligible": 21,
+      "promotion_rejected": 16,
+      "current_overrides": 39,
+      "hueandyou": "no_homepage - 공식 가격 미승격",
+      "bucheon_sejong": "no_homepage - 공식 가격 미승격",
+      "rule": "가격 발견과 고객 화면 승격을 분리하며 공식 시설 동일성·범주 완전성 검증을 통과한 자료만 승격"
+    }
   }
 }
