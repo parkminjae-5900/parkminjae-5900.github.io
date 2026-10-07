@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-10-07T12:31:55.550574+00:00",
+  "updatedAt": "2026-10-07T12:35:00.000000+00:00",
   "cursor": 855,
   "completedCycles": 3,
-  "total": 966,
-  "scannedUnique": 966,
+  "total": 1080,
+  "scannedUnique": 1080,
   "statusCounts": {
-    "unreachable": 128,
-    "no_price_found": 205,
-    "no_homepage": 597,
-    "priced": 36
+    "unreachable": 151,
+    "no_price_found": 226,
+    "no_homepage": 666,
+    "priced": 37
   },
   "staleResultsPruned": 0,
   "overrideCount": 39,
   "overrideIdentityCounts": {
-    "currentExact": 37,
-    "currentNameOnly": 1,
-    "notInCurrentSource": 1
+    "currentExact": 39,
+    "currentNameOnly": 0,
+    "notInCurrentSource": 0
   },
   "lastBatch": [
     {

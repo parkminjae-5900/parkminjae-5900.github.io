@@ -262,11 +262,18 @@ def load_json(path,default):
     except:return default
 
 def main():
-    halls=load_json(HALLS,{}).get("items",[])
+    hall_doc=load_json(HALLS,{})
+    halls=hall_doc.get("items",[])
     db=load_json(OVERRIDES,{"schemaVersion":4,"items":[]})
     state=load_json(STATE,{"cursor":0,"completedCycles":0,"results":{}})
     cursor=int(state.get("cursor",0))
     if not halls:raise SystemExit("no halls")
+    region_count=len(hall_doc.get("regions",{}))
+    declared_count=int(hall_doc.get("count",0) or 0)
+    if region_count!=17 or declared_count!=len(halls) or len(halls)<1000:
+        raise SystemExit(
+            f"incomplete funeral-hall source: regions={region_count}, declared={declared_count}, items={len(halls)}"
+        )
 
     def record_key(x):
         return norm(x.get("facilityName",""))+"|"+norm(x.get("address",""))
