@@ -63,5 +63,9 @@ export default {
       return reply(200,{ok:true,requestId:item.requestId},origin);
     } catch (_) {return reply(503,{ok:false},origin);}
   },
-  async scheduled(_controller,env) {await env.DB.prepare('DELETE FROM requests WHERE expires_at <= ?').bind(Date.now()).run();}
+  async scheduled(_controller,env) {
+    const result=await env.DB.prepare('DELETE FROM requests WHERE expires_at <= ?').bind(Date.now()).run();
+    const deleted=Number(result?.meta?.changes ?? result?.changes ?? 0);
+    console.log(JSON.stringify({event:'expired_requests_cleanup',deleted:Number.isFinite(deleted)?deleted:0}));
+  }
 };
