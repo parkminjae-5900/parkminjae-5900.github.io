@@ -12,6 +12,8 @@ const errors=[];
 for(const file of funnelTargets){
   const c=fs.readFileSync(path.join(root,file),"utf8");
   if(!c.includes("conversion-funnel.js")) errors.push(file+": conversion-funnel.js 누락");
+  if(!c.includes("analytics-config.js")) errors.push(file+": analytics-config.js 누락");
+  if(!c.includes("analytics-tracking.js")) errors.push(file+": analytics-tracking.js 누락");
   if(!/<link\s+rel=["']canonical["'][^>]*>/i.test(c)) errors.push(file+": canonical 누락");
 }
 for(const file of ["index.html","cost.html","family.html","postpaid-price.html"]){
