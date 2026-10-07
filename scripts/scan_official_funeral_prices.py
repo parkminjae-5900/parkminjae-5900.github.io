@@ -2,7 +2,7 @@
 import json, os, re, time, hashlib
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qs
 import requests
 from bs4 import BeautifulSoup
 
@@ -57,6 +57,45 @@ def host(u):
 def same_host(a,b):
     ha,hb=host(a),host(b)
     return bool(ha and hb and (ha==hb or ha.endswith("."+hb) or hb.endswith("."+ha)))
+
+def query_value(u,key):
+    try:
+        vals=parse_qs(urlparse(u).query).get(key,[])
+        return clean(vals[0]) if vals else ""
+    except:
+        return ""
+
+def same_address(a,b):
+    return bool(a and b and norm(a)==norm(b))
+
+def category_coverage(prices):
+    return set(x.get("category","") for x in (prices or []) if x.get("category"))
+
+def identity_guard(rec,old,homepage):
+    """Return (ok, reason). Protect curated A records and multi-branch official sites."""
+    if old and old.get("sourceGrade")=="A":
+        if not same_address(rec.get("address",""),old.get("address","")):
+            return False,"address_mismatch_with_existing_A"
+
+    source_code=query_value(rec.get("sourceUrl",""),"fnrCd")
+    if source_code:
+        home_code=query_value(homepage or "","fnrCd")
+        old_code=query_value((old or {}).get("sourceUrl",""),"fnrCd")
+        expected=home_code or old_code
+        if not expected:
+            return False,"branch_code_unverifiable"
+        if expected!=source_code:
+            return False,"branch_code_mismatch"
+
+    if old and old.get("sourceGrade")=="A":
+        old_cov=category_coverage(old.get("prices",[]))
+        new_cov=category_coverage(rec.get("prices",[]))
+        if not old_cov.issubset(new_cov):
+            return False,"category_coverage_regression"
+        if len(rec.get("prices",[])) < len(old.get("prices",[])):
+            return False,"price_record_regression"
+
+    return True,"verified"
 
 def session():
     s=requests.Session()
@@ -250,8 +289,10 @@ def main():
               "prices":res["prices"]
             }
             old=byname.get(norm(rec["facilityName"]))
-            # Preserve manually curated A record if it is same or newer verified date with richer data.
-            if not old or old.get("sourceGrade")!="A" or len(rec["prices"])>len(old.get("prices",[])):
+            ok,reason=identity_guard(rec,old,res.get("homepage",""))
+            res["promotion"]={"eligible":ok,"reason":reason}
+            # Never replace a curated A record unless facility identity and data completeness are verified.
+            if ok and (not old or old.get("sourceGrade")!="A" or len(rec["prices"])>=len(old.get("prices",[]))):
                 byname[norm(rec["facilityName"])]=rec
         print(idx,h.get("fcltNm"),res["status"],len(res.get("prices",[])))
 
