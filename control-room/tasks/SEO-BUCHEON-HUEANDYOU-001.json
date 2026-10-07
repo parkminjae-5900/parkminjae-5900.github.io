@@ -3,9 +3,9 @@
   "title": "부천 휴앤유 검색점유 클러스터",
   "status": "진행",
   "priority": "P0",
-  "owner_department": "성장마케팅부",
-  "primary_team": "검색최적화팀",
-  "accountable": "정도윤 부장",
+  "owner_department": "대표 별도지시관리팀",
+  "primary_team": "홈페이지 SEO·GEO·AEO",
+  "accountable": "박민재 대표",
   "reviewers": [
     {
       "department": "데이터견적부",
@@ -27,14 +27,8 @@
     }
   ],
   "management_chain": [
-    "검색최적화팀 제작",
-    "정도윤 부장 1차 검토",
-    "데이터견적부 교차검수",
-    "서비스개발부 반영",
-    "운영품질부 독립검수",
-    "이서진 통합운영본부장 통합",
-    "서도현 총괄상무 승인",
-    "박민재 대표 보고"
+    "오유진·김서준 수행",
+    "박민재 대표 직접 지시·보고"
   ],
   "scope": [
     "휴앤유추모관 신명칭 중심 허브 유지",
@@ -66,32 +60,30 @@
     "실제 행사"
   ],
   "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
-  "last_checked_at_kst": "2026-10-07T23:32:00+09:00",
+  "last_checked_at_kst": "2026-10-08T01:34:00+09:00",
   "latest_run": {
     "status": "보완 필요",
     "performed": [
-      "기준 업무카드·키워드 클러스터 일치 확인",
-      "관리 대상 7개 페이지의 canonical·robots·내부링크·구조화데이터·참고견적 고지 점검",
-      "공개 페이지 정상 응답 확인",
-      "공개 검색 경쟁 표현을 기존 비용 의도군에 통합",
-      "최신 GitHub SEO 검증·Pages 배포 성공 확인"
+      "기준 업무카드·키워드 클러스터 상태 재확인",
+      "2026-10-08 대표 직속 조직개편을 홈페이지 SEO·GEO·AEO 업무의 우선 지시·보고 체계로 반영",
+      "GA4 서비스 상태와 GSC Wizard 외부 분석 연결 상태를 분리해 정정",
+      "최신 저장소 변경의 휴앤유 SEO 자산 영향 검토",
+      "공개 검색 결과와 최신 GitHub SEO 검증·Pages 배포 상태 확인"
     ],
     "evidence": {
-      "live_page": "https://www.dahamsangjo.co.kr/bucheon-hueandyou-funeral.html 정상 로드",
-      "public_search": [
-        "https://enosh.or.kr/place/145 - 빈소·위치·비용 및 무빈소 가능 표현",
-        "https://barigil.com/jangnye/hyuaenyubyeongwonjangryesikjang - 빈소료·식대 단가표·공개 단가 표현",
-        "https://15774129.go.kr/portal/esky/fnlfac/fac_list.do?menuId=M0001000100000000 - 공식 장사시설 원천"
-      ],
-      "repository_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
-      "verified_base_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
-      "seo_validation": "success - GitHub Actions run 37637536560",
-      "pages_deployment": "success - GitHub Actions run 37637536541"
+      "repository_head": "8a9fc38fb894e16c0bbf757b8f14b5f35aa3216e",
+      "repository_change_scope": "quote-app 설치 중단·복제 금지 고지 변경으로 휴앤유 관리 자산 직접 변경 없음",
+      "security_commit": "80afa8326fdc98e54e58c0a77b0d4fcfa319b859 - 분석 데이터 최소화·DOM XSS·사례 개인정보·비밀정보 검사 강화",
+      "public_search": "2026-10-08 01:34 KST 기준 site:dahamsangjo.co.kr 휴앤유추모관/휴앤유병원장례식장 비용 검색에서 전용 관리 URL 노출 미확인; 메인 도메인만 확인",
+      "seo_validation": "success - GitHub Actions run 37651630812",
+      "pages_deployment": "success - GitHub Actions run 37651629362"
     },
     "analytics": {
+      "ga4_service": "종료 아님",
+      "gsc_wizard_access": "구독 종료로 조회 불가",
       "gsc": "미확인",
-      "ga4": "미확인",
-      "reason": "GSC Wizard 체험 종료로 연결 데이터 조회 불가. 0으로 간주하지 않음."
+      "ga4_metrics": "미확인",
+      "reason": "GA4 자체가 종료된 것이 아니라 GSC Wizard/외부 분석 연결 구독이 종료되어 최신 연결 데이터를 조회할 수 없음. 모든 수치는 0이 아닌 미확인으로 유지."
     },
     "conversion_change": {
       "impressions": "미확인",
@@ -104,25 +96,50 @@
       "actual_event": "미확인"
     },
     "findings": [
-      "신규 얇은 페이지를 만들 필요 없음",
-      "추가 고의도 표현은 기존 비용 페이지와 허브에 흡수",
+      "최신 저장소 변경은 quote-app 범위로 휴앤유 관리 페이지의 검색의도·내부링크·구조화데이터에 직접 영향 없음",
+      "공개 검색에서 휴앤유 전용 URL의 신규 노출 변화 미확인",
+      "신규 얇은 페이지를 만들 근거 없음; 기존 비용·무빈소·가족장 허브 보강 우선",
       "신명칭 재개관 사실과 최신 시설요금은 독립 공식 근거가 확보될 때까지 운영 시점 재확인 문구 유지"
     ],
     "next_actions": [
-      "GSC/GA4 접근 복구 후 휴앤유 쿼리·페이지·전환을 단계별 재확인",
-      "최신 시설요금 공식 원천이 확보되면 /hueandyou-cost.html의 단가표와 참고견적 갱신",
+      "대표 직속 검색지시 API 접근 복구 후 owner-search 대상 지시만 확인·처리",
+      "GSC Wizard 또는 대체 승인 연결 복구 후 휴앤유 쿼리·페이지·전환 단계별 재확인",
+      "최신 시설요금 공식 원천 확보 시 /hueandyou-cost.html 단가표와 참고견적 갱신",
       "신규 페이지보다 기존 비용·무빈소·가족장 페이지의 고유 근거 보강 우선"
     ],
     "blockers": [
-      "GSC Wizard 구독 종료",
+      "GSC Wizard 외부 분석 연결 구독 종료(GA4 자체 종료 아님)",
       "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
-      "리뉴얼 이후 최신 시설요금 공식표 미확인"
+      "리뉴얼 이후 최신 시설요금 공식표 미확인",
+      "관제실 API는 실행 환경의 네트워크 승인 미부여 및 브라우저 로그인 필요로 조회·저장 미완료"
     ],
+    "owner_direct_assignment": {
+      "department": "대표 별도지시관리팀",
+      "assignees": [
+        "오유진",
+        "김서준"
+      ],
+      "recipient_key": "owner-search",
+      "source": "2026-10-08 대표 직속 조직 개편",
+      "directive_check": "미확인 - 관제실 API 접근 차단"
+    },
     "control_room_log": {
-      "id": "seo-bucheon-20261007-233200-3992f42a",
+      "id": "seo-bucheon-20261008-013407-8a9fc38f",
       "status": "기록 실패",
-      "reason": "관제실 /api/maintenance 연결이 실행 환경에서 응답 없이 종료됨",
-      "separation": "SEO 작업·GitHub 검증·Pages 배포는 성공했으며 관제실 기록 실패와 분리"
+      "reason": "관제실 /api/directives 및 /api/maintenance에 대한 비대화형 API 연결이 네트워크 승인 단계에서 중단됐고 브라우저는 로그인 화면으로 전환됨",
+      "separation": "저장소·공개검색·GitHub Actions 검증과 관제실 API 기록 실패를 분리"
     }
+  },
+  "direct_assignees": [
+    "오유진",
+    "김서준"
+  ],
+  "owner_direct_override": {
+    "effective_at_kst": "2026-10-08T00:00:00+09:00",
+    "recipient_key": "owner-search",
+    "scope": "홈페이지 SEO·GEO·AEO",
+    "reporting": "박민재 대표 직보",
+    "rule": "상무·본부장·부장의 새 지시·재배정을 받지 않으며 대표의 기존 승인 업무와 직접 지시만 수행",
+    "prior_management_chain": "업무 근거·검수 이력 참고용이며 현행 지시·보고 체계로 사용하지 않음"
   }
 }
