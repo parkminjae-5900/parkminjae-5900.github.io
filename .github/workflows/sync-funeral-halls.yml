@@ -32,9 +32,15 @@ jobs:
           with open("data/funeral-halls.json", encoding="utf-8") as f:
               d=json.load(f)
           count=int(d.get("count",0))
-          if count < 100:
+          items=d.get("items",[])
+          regions=d.get("regions",{})
+          if count != len(items):
+              raise SystemExit(f"Dataset validation failed: count={count}, items={len(items)}")
+          if len(regions) != 17:
+              raise SystemExit(f"Dataset validation failed: only {len(regions)} regions")
+          if count < 1000:
               raise SystemExit(f"Dataset validation failed: only {count} records")
-          print(f"Validated {count} funeral halls")
+          print(f"Validated {count} funeral halls across {len(regions)} regions")
           PY
       - name: Commit refreshed data
         run: |
