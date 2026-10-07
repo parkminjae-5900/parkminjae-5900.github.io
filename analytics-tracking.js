@@ -59,7 +59,7 @@
     const f=e.target;
     if(!(f instanceof HTMLFormElement)) return;
     const sig=((f.id||"")+" "+(f.className||"")+" "+(f.getAttribute("action")||"")).toLowerCase();
-    if(/consult|상담/.test(sig)) send("consult_submit");
+    if(/consult|상담/.test(sig) && !f.hasAttribute("data-confirmed-conversion")) send("consult_submit_attempt");
     if(/quote|estimate|견적/.test(sig)) send("estimate_submit");
   },true);
 

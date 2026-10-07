@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>전화 상담 신청 | 다함상조</title>
+<meta name="description" content="연락받을 번호와 시간을 남겨 다함상조 전화 상담을 신청하세요. 긴급 장례 상담은 1600-6131.">
+<link rel="canonical" href="https://www.dahamsangjo.co.kr/consult-request.html">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="/consult-request.css">
+<script src="/analytics-config.js?v=20261007-ga4" defer></script>
+<script src="/analytics-tracking.js?v=20261007-intake" defer></script>
+<script src="/consult-request-config.js" defer></script>
+<script src="/consult-request.js" defer></script>
+</head>
+<body>
+<header><a href="/" aria-label="다함상조 홈페이지"><img src="/assets/daham_logo.jpg" alt="다함상조"></a><a href="tel:16006131">긴급 상담 1600-6131</a></header>
+<main>
+<section class="intro"><p class="eyebrow">다함상조 전화 상담 신청</p><h1>연락받을 번호를<br>남겨 주세요.</h1><p>신청을 확인한 뒤 전화로 상담해 드립니다.<br>긴급한 장례 상담은 바로 전화해 주세요.</p><a class="phone" href="tel:16006131">지금 전화하기 · 1600-6131</a></section>
+<section class="card" aria-labelledby="form-title">
+<h2 id="form-title">전화 상담 신청</h2>
+<p class="note">연락처 외의 항목은 선택 사항입니다.</p>
+<p id="availability" class="notice" role="status">온라인 접수 가능 여부를 확인하고 있습니다.</p>
+<noscript><p class="notice">온라인 접수에는 자바스크립트가 필요합니다. 전화 1600-6131로 문의해 주세요.</p></noscript>
+<form id="callback-request" data-confirmed-conversion="true">
+<fieldset id="request-fields" disabled>
+<label for="callback-name">성함 <span>(선택)</span></label>
+<input id="callback-name" name="name" autocomplete="name" maxlength="30" placeholder="성함 또는 호칭">
+<label for="callback-phone">연락처 <span class="required">필수</span></label>
+<input id="callback-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+() \-]{8,20}" required placeholder="010-0000-0000" aria-describedby="phone-hint">
+<p id="phone-hint" class="hint">연락받으실 국내 전화번호를 입력해 주세요.</p>
+<label for="callback-time">연락받기 편한 시간 <span>(선택)</span></label>
+<select id="callback-time" name="contactTime"><option value="any">시간 무관</option><option value="daytime">오전 9시–오후 6시</option><option value="evening">오후 6시–오후 9시</option></select>
+<p class="hint">희망 시간이며, 연락 시간을 보장하지는 않습니다.</p>
+<details><summary>개인정보 수집·이용 안내</summary><div class="privacy"><p>수집·이용자: 다함상조</p><p>목적: 상담 신청 확인과 전화 회신</p><p>필수 항목: 연락처 · 선택 항목: 성함, 희망 연락 시간</p><p>보유 기간: 접수일로부터 30일 후 삭제</p><p>동의를 거부하실 수 있으며, 거부 시 온라인 접수가 제한됩니다. 전화 상담은 이용하실 수 있습니다.</p></div></details>
+<label class="consent"><input name="consent" type="checkbox" required><span>개인정보 수집·이용에 동의합니다. (필수)</span></label>
+<div id="security-check"></div>
+<button id="request-submit" type="submit">전화 상담 신청하기</button>
+</fieldset>
+</form>
+<div id="request-result" role="status" aria-live="polite" tabindex="-1"></div>
+<div class="other"><a href="https://open.kakao.com/o/sz9RE1xi" target="_blank" rel="noopener">카카오톡으로 문의</a><a href="/consult.html">상담 내용 미리 정리하기</a></div>
+</section>
+</main>
+<footer>다함상조 · 대표 박민재 · 1600-6131<br>서울특별시 강남구 선릉로86길 38 7037호</footer>
+</body></html>
