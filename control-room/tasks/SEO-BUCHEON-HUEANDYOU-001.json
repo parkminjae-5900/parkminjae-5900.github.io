@@ -75,8 +75,14 @@
       "repository_change_scope": "quote-app 설치 중단·복제 금지 고지 변경으로 휴앤유 관리 자산 직접 변경 없음",
       "security_commit": "80afa8326fdc98e54e58c0a77b0d4fcfa319b859 - 분석 데이터 최소화·DOM XSS·사례 개인정보·비밀정보 검사 강화",
       "public_search": "2026-10-08 01:34 KST 기준 site:dahamsangjo.co.kr 휴앤유추모관/휴앤유병원장례식장 비용 검색에서 전용 관리 URL 노출 미확인; 메인 도메인만 확인",
-      "seo_validation": "success - GitHub Actions run 37651630812",
-      "pages_deployment": "success - GitHub Actions run 37651629362"
+      "seo_validation": "success - GitHub Actions run 37653635566",
+      "pages_deployment": "success - GitHub Actions run 37653635764",
+      "repository_commit": "41c2f84636d388cbc919bbc9669becc95372bbf0",
+      "verified_base_commit": "41c2f84636d388cbc919bbc9669becc95372bbf0",
+      "change_commits": [
+        "c319437396bf426a16c262c089226580fbb4c96f - 업무카드 조직개편·GA4 연결상태 정정",
+        "41c2f84636d388cbc919bbc9669becc95372bbf0 - 키워드 클러스터 조직개편·분석상태 정정"
+      ]
     },
     "analytics": {
       "ga4_service": "종료 아님",
