@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-07T07:08:25.476474+00:00",
-  "cursor": 675,
+  "updatedAt": "2026-10-07T07:14:20.932481+00:00",
+  "cursor": 765,
   "completedCycles": 3,
   "total": 966,
   "scannedUnique": 1080,
@@ -13,282 +13,284 @@
   "overrideCount": 39,
   "lastBatch": [
     {
+      "status": "no_homepage",
+      "facilityName": "여천전남병원장례식장",
+      "address": "전라남도 여수시 무선로 95 (선원동)",
+      "index": 720
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "호남장례식장",
+      "address": "전라남도 여수시 신월로 438 (신월동)",
+      "index": 721
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "법성장례식장",
+      "address": "전라남도 영광군 법성면 연우로 72 (법성리)",
+      "index": 722
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영광농협장례식장(영광낙원장례식장)",
+      "address": "전라남도 영광군 영광읍 영대로 213 (월평리)",
+      "index": 723
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영광장례식장",
+      "address": "전라남도 영광군 영광읍 영대로 238 (무령리)",
+      "index": 724
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영광종합병원장례식장",
+      "address": "전라남도 영광군 영광읍 와룡로 3 (단주리)",
+      "index": 725
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "옥당장례식장",
+      "address": "전라남도 영광군 영광읍 천년로 1371-20 (신하리)",
+      "index": 726
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "제일장례식장",
+      "address": "전라남도 영광군 영광읍 옥당로 308-3 (월평리)",
+      "index": 727
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "낙원장례식장",
+      "address": "전라남도 영암군 미암면 잿등로 276 (채지리)",
+      "index": 728
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영암농협장례식장",
+      "address": "전라남도 영암군 영암읍 낭주로 49 (춘양리)",
+      "index": 729
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영암장례식장",
+      "address": "전라남도 영암군 영암읍 낭주로 49-1 (춘양리, 영암장례식장)",
+      "index": 730
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "영암효병원장례식장",
+      "address": "전라남도 영암군 덕진면 예향로 1764 (덕진리, 효병원)",
+      "index": 731
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "제일장례문화원",
+      "address": "전라남도 영암군 영암읍 예향로 1688 (망호리)",
+      "index": 732
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "고금번영회장례식장",
+      "address": "전라남도 완도군 고금면 고금동로 117 (덕암리)",
+      "index": 733
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "노화장례문화센터",
+      "address": "전라남도 완도군 노화읍 노화로 789 (이포리)",
+      "index": 734
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "삼성장례식장",
+      "address": "전라남도 완도군 완도읍 농공단지1길 24 (가용리)",
+      "index": 735
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "완도대성병원장례식장",
+      "address": "전라남도 완도군 완도읍 청해진동로 63 (가용리)",
+      "index": 736
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "완도장례식장",
+      "address": "전라남도 완도군 완도읍 장보고대로 15 (가용리)",
+      "index": 737
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "산림조합 장성장례식장",
+      "address": "전라남도 장성군 장성읍 역전로 155 (기산리)",
+      "index": 738
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "장성병원장례식장",
+      "address": "전라남도 장성군 장성읍 역전로 171 (영천리)",
+      "index": 739
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "관산장례식장",
+      "address": "전라남도 장흥군 관산읍 죽교상하발로 13 (죽교리)",
+      "index": 740
+    },
+    {
       "status": "no_price_found",
-      "homepage": "https://www.ysf.kr",
-      "facilityName": "더연수장례식장",
-      "address": "인천광역시 연수구 벚꽃로 122 (연수동)",
-      "index": 630
+      "homepage": "https://www.jhwh.co.kr",
+      "facilityName": "관산정남진장례식장",
+      "address": "전라남도 장흥군 관산읍 관산로 133 (남송리)",
+      "index": 741
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "대덕회진장례식장",
+      "address": "전라남도 장흥군 대덕읍 가학회진로 35-85(가학리)",
+      "index": 742
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.rchfuneral.co.kr",
-      "facilityName": "인천적십자병원장례식장",
-      "address": "인천광역시 연수구 원인재로 263 (연수동,인천적십자병원장례식장)",
-      "index": 631
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "예지장례식장",
-      "address": "인천광역시 중구 개항로 82.2층예지장례식장 (경동, 예지요양병원)",
-      "index": 632
+      "homepage": "https://jhghp.co.kr",
+      "facilityName": "장흥병원장례식장",
+      "address": "전라남도 장흥군 장흥읍 흥성로 74 (건산리)",
+      "index": 743
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.goich.co.kr",
-      "facilityName": "인천기독병원장례식장",
-      "address": "인천광역시 중구 답동로30번길 10 (율목동, 인천기독병원)",
-      "index": 633
+      "homepage": "https://www.jhwh.co.kr",
+      "facilityName": "장흥우리병원중앙장례식장",
+      "address": "전라남도 장흥군 장흥읍 남부관광로 6 (건산리)",
+      "index": 744
     },
     {
       "status": "no_price_found",
-      "homepage": "https://yonwwf75.wixsite.com/mysite",
-      "facilityName": "인천삼성장례문화원",
-      "address": "인천광역시 중구 우현로62번길 34-1 (경동)",
-      "index": 634
+      "homepage": "https://jindo.nfcf.or.kr",
+      "facilityName": "진도군산림조합직영추모관장례식장",
+      "address": "전라남도 진도군 진도읍 진도대로 7143-10 (쌍정리)",
+      "index": 745
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "진도전남병원장례식장",
+      "address": "전라남도 진도군 진도읍 남문길 12-11 (남동리, 진도전남병원)",
+      "index": 746
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "문장장례식장",
+      "address": "전라남도 함평군 해보면 밀재로 1350 (문장리)",
+      "index": 747
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "함평농협장례식장",
+      "address": "전라남도 함평군 함평읍 남일길 238-71 (대덕리)",
+      "index": 748
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "함평장례식장",
+      "address": "전라남도 함평군 함평읍 중앙길 124 (기각리)",
+      "index": 749
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.inha.com/site/funeral/main",
-      "facilityName": "인하대병원장례식장",
-      "address": "인천광역시 중구 인항로 27 (신흥동3가, 인하대학병원)",
-      "index": 635
+      "homepage": "https://blog.naver.com/woosuyoung-",
+      "facilityName": "우수영장례식장",
+      "address": "전라남도 해남군 문내면 관광레저로 534-5, 우수영장례식장",
+      "index": 750
     },
     {
       "status": "no_homepage",
-      "facilityName": "강진군산림조합추모관장례식장",
-      "address": "전라남도 강진군 강진읍 해강로 1437 (서성리)",
-      "index": 636
+      "facilityName": "해남국제장례식장",
+      "address": "전라남도 해남군 해남읍 남부순환로 321-37 (용정리)",
+      "index": 751
     },
     {
       "status": "no_homepage",
-      "facilityName": "강진영락장례식장",
-      "address": "전라남도 강진군 강진읍 보은로 200 (동성리)",
-      "index": 637
+      "facilityName": "해남군산림조합장례식장",
+      "address": "전라남도 해남군 해남읍 신안길 2-22 (고도리)",
+      "index": 752
     },
     {
       "status": "no_homepage",
-      "facilityName": "강진의료원장례식장",
-      "address": "전라남도 강진군 강진읍 탐진로 5 (서성리, 강진의료원)",
-      "index": 638
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "강진장례식장",
-      "address": "전라남도 강진군 강진읍 청자로 75-9 (목리)",
-      "index": 639
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "마량장례식장",
-      "address": "전라남도 강진군 마량면 청자로 2340 (마량리)",
-      "index": 640
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "거금장례식장",
-      "address": "전라남도 고흥군 금산면 거금일주로 2901 (석정리)",
-      "index": 641
-    },
-    {
-      "status": "no_price_found",
-      "homepage": "https://www.061-833-4445.kti114.net",
-      "facilityName": "고흥봉황장례식장",
-      "address": "전라남도 고흥군 고흥읍 신호산장길 3 (호형리)",
-      "index": 642
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "녹동농협 장례식장",
-      "address": "전라남도 고흥군 도양읍 거금로 80 (봉암리)",
-      "index": 643
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "녹동현대병원장례식장",
-      "address": "전라남도 고흥군 도양읍 차경구렁목길 209 (용정리, 녹동현대병원장례식장)",
-      "index": 644
+      "facilityName": "해남우리병원장례식장",
+      "address": "전라남도 해남군 옥천면 해남로 597 (영신리)",
+      "index": 753
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.ok114.co.kr/0618324000",
-      "facilityName": "우주장례식장",
-      "address": "전라남도 고흥군 고흥읍 봉동주공길 56-16 (호형리)",
-      "index": 645
+      "homepage": "https://www.hfh.kr",
+      "facilityName": "해남종합병원장례식장",
+      "address": "전라남도 해남군 해남읍 해남로 45 (해리, 해남종합병원)",
+      "index": 754
     },
     {
       "status": "no_homepage",
-      "facilityName": "유한회사보람",
-      "address": "전라남도 고흥군 고흥읍 고흥로 1935 (남계리)",
-      "index": 646
+      "facilityName": "해남현대장례식장",
+      "address": "전라남도 해남군 해남읍 남부순환로 345 (용정리)",
+      "index": 755
     },
     {
       "status": "no_homepage",
-      "facilityName": "곡성섬진장례식장",
-      "address": "전라남도 곡성군 곡성읍 곡성로 935 (읍내리)",
-      "index": 647
+      "facilityName": "(주)제이엔에이실업",
+      "address": "전라남도 화순군 화순읍 중앙로 8 (교리)",
+      "index": 756
     },
     {
       "status": "no_homepage",
-      "facilityName": "곡성옥과장례식장",
-      "address": "전라남도 곡성군 겸면 곡순로 2088 (가정리)",
-      "index": 648
+      "facilityName": "고려장례식장",
+      "address": "전라남도 화순군 화순읍 충의로 109 (광덕리)",
+      "index": 757
     },
     {
       "status": "no_homepage",
-      "facilityName": "곡성장례식장",
-      "address": "전라남도 곡성군 곡성읍 중앙로 26-8 (죽동리)",
-      "index": 649
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "석곡농협장례식장",
-      "address": "전라남도 곡성군 석곡면 주석로 657-5 (석곡리)",
-      "index": 650
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "우리장례식장",
-      "address": "전라남도 곡성군 옥과면 천변로 83 (율사리)",
-      "index": 651
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(주)광양장례식장",
-      "address": "전라남도 광양시 광양읍 해광로 897 (덕례리)",
-      "index": 652
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "가야장례식장",
-      "address": "전라남도 광양시 광양읍 인덕로 1183 (구산리)",
-      "index": 653
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "광양백운장례식장",
-      "address": "전라남도 광양시 광양읍 제철로26번길 19(목성리) (광양경찰서앞)",
-      "index": 654
+      "facilityName": "화순장례식장",
+      "address": "전라남도 화순군 화순읍 충의로 167 (일심리)",
+      "index": 758
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.gsh119.co.kr",
-      "facilityName": "광양서울병원장례식장",
-      "address": "전라남도 광양시 진등길 93 (마동, 광양서울병원)",
-      "index": 655
+      "homepage": "https://www.cnuhh.com/",
+      "facilityName": "화순전남대학교병원장례식장",
+      "address": "전라남도 화순군 화순읍 서양로 322 (일심리, 화순전남대학교병원)",
+      "index": 759
     },
     {
       "status": "no_homepage",
-      "facilityName": "동광양장례식장",
-      "address": "전라남도 광양시 불로로 30-1 (성황동)",
-      "index": 656
+      "facilityName": "고인돌장례식장",
+      "address": "전라북도 고창군 고창읍 녹두로 1295(읍내리, 고인돌장례식장)",
+      "index": 760
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://urijang9800",
+      "facilityName": "고창우리장례식장",
+      "address": "전라북도 고창군 고창읍 녹두로 1313-6 (읍내리)",
+      "index": 761
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.newgochang.co.kr",
+      "facilityName": "새고창장례식장",
+      "address": "전라북도 고창군 고창읍 고인돌대로 1763 (읍내리)",
+      "index": 762
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://hd-life.co.kr",
+      "facilityName": "흥덕장례식장",
+      "address": "전라북도 고창군 흥덕면 고인돌대로 2582-7 (흥덕리)",
+      "index": 763
     },
     {
       "status": "no_homepage",
-      "facilityName": "옥곡장례식장",
-      "address": "전라남도 광양시 옥곡면 강변로 448 (신금리)",
-      "index": 657
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(주)구례장례식장",
-      "address": "전라남도 구례군 구례읍 용방로 15 (백련리)",
-      "index": 658
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "구례병원장례식장",
-      "address": "전라남도 구례군 구례읍 동편제길 4 (봉북리)",
-      "index": 659
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "새미소요양병원장례식장",
-      "address": "전라남도 구례군 구례읍 구례로 28 (신월리, 지리산요양병원)",
-      "index": 660
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "(주)예담 활주로장례식장",
-      "address": "전라남도 나주시 산포면 산남로 137(등정리)",
-      "index": 661
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "㈜영산포한우리장례식장",
-      "address": "전라남도 나주시 왕곡면 영산포로 30-11 (장산리)",
-      "index": 662
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주애향장례식장",
-      "address": "전라남도 나주시 청동길 147 (청동)",
-      "index": 663
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주예림장례식장",
-      "address": "전라남도 나주시 예향로 3795 (이창동)",
-      "index": 664
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주장례식장",
-      "address": "전라남도 나주시 건재로 85 (대호동)",
-      "index": 665
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주종합병원장례식장",
-      "address": "전라남도 나주시 영산로 5419 (성북동)",
-      "index": 666
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주중앙요양병원장례식장",
-      "address": "전라남도 나주시 영산로 5406 (성북동)",
-      "index": 667
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주한국병원장례식장",
-      "address": "전라남도 나주시 동점문길 7 (성북동)",
-      "index": 668
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "나주효사랑요양병원장례식장",
-      "address": "전라남도 나주시 금천면 영산로 5891-9 (촌곡리)",
-      "index": 669
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "빛가람종합병원장례식장",
-      "address": "전라남도 나주시 정보화길 49 (빛가람동)",
-      "index": 670
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "영산포농협장례식장",
-      "address": "전라남도 나주시 영산포로 30-50 (이창동)",
-      "index": 671
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "영산포제일병원장례식장",
-      "address": "전라남도 나주시 대기2길 12 (이창동)",
-      "index": 672
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "담양동산병원장례식장",
-      "address": "전라남도 담양군 담양읍 죽향대로 1203 (백동리)",
-      "index": 673
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "담양제일장례식장",
-      "address": "전라남도 담양군 담양읍 추성로 1198 (양각리)",
-      "index": 674
+      "facilityName": "(유)은파장례문화원",
+      "address": "전라북도 군산시 미성로 512 (미룡동)",
+      "index": 764
     }
   ]
 }
