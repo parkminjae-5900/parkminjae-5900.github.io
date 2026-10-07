@@ -313,6 +313,26 @@ def main():
                 byname[key_rec]=rec
         print(idx,h.get("fcltNm"),res["status"],len(res.get("prices",[])))
 
+    # Older priced scan rows predate promotion metadata. Re-evaluate them from the
+    # saved facility identity and official source URL so discovery and promotion
+    # are never reported as the same metric.
+    for res in results.values():
+        if res.get("status")!="priced" or isinstance(res.get("promotion"),dict):
+            continue
+        rec={
+          "facilityName":res.get("facilityName",""),
+          "address":res.get("address",""),
+          "verifiedAt":res.get("verifiedAt",""),
+          "sourceName":"장례식장 공식 홈페이지 공개가격",
+          "sourceUrl":res.get("sourceUrl",""),
+          "sourceGrade":"A",
+          "sourceNote":"공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+          "prices":res.get("prices",[])
+        }
+        old=byname.get(record_key(rec))
+        ok,reason=identity_guard(rec,old,res.get("homepage",""))
+        res["promotion"]={"eligible":ok,"reason":reason}
+
     newcursor=(cursor+len(batch))%n
     cycles=int(state.get("completedCycles",0))+(1 if cursor+len(batch)>=n else 0)
     state.update({"cursor":newcursor,"completedCycles":cycles,"updatedAt":now(),"results":results,
@@ -326,6 +346,24 @@ def main():
 
     counts={}
     for v in state["results"].values():counts[v.get("status","unknown")]=counts.get(v.get("status","unknown"),0)+1
+    promotion_counts={"eligible":0,"rejected":0,"unchecked":0}
+    promotion_reasons={}
+    priced_record_keys=set()
+    for v in state["results"].values():
+        if v.get("status")!="priced":
+            continue
+        priced_record_keys.add(record_key(v))
+        promotion=v.get("promotion")
+        if not isinstance(promotion,dict):
+            promotion_counts["unchecked"]+=1
+            reason="not_evaluated"
+        elif promotion.get("eligible") is True:
+            promotion_counts["eligible"]+=1
+            reason=promotion.get("reason") or "verified"
+        else:
+            promotion_counts["rejected"]+=1
+            reason=promotion.get("reason") or "rejected"
+        promotion_reasons[reason]=promotion_reasons.get(reason,0)+1
     current_record_keys={record_key({"facilityName":h.get("fcltNm",""),"address":h.get("addr","")}) for h in halls}
     current_name_counts={}
     for h in halls:
@@ -338,9 +376,15 @@ def main():
         and current_name_counts.get(norm(x.get("facilityName","")),0)==1
     )
     override_not_in_source=len(merged)-override_current_exact-override_current_name_only
+    override_record_keys={record_key(x) for x in merged}
+    priced_override_overlap_count=len(priced_record_keys & override_record_keys)
     report={"updatedAt":now(),"cursor":newcursor,"completedCycles":cycles,"total":n,
             "scannedUnique":len(state["results"]),"statusCounts":counts,
             "staleResultsPruned":stale_results_pruned,
+            "pricedPromotionCounts":promotion_counts,
+            "pricedPromotionReasons":promotion_reasons,
+            "pricedOverrideOverlapCount":priced_override_overlap_count,
+            "pricedMetricNote":"statusCounts.priced is the discovery count; only pricedPromotionCounts.eligible qualifies for automatic override promotion.",
             "overrideCount":len(merged),
             "overrideIdentityCounts":{
                 "currentExact":override_current_exact,
