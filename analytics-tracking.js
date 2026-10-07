@@ -62,8 +62,18 @@
     if(/quote|estimate|견적/.test(sig)) send("estimate_submit");
   },true);
 
-  if(location.pathname.startsWith("/jangjunmo/")) send("jangjunmo_view");
-  if(/mubinso|nobinso|무빈소/i.test(location.pathname+" "+document.title)) send("mubinso_page_view");
-  if(/family|가족장/i.test(location.pathname+" "+document.title)) send("family_funeral_page_view");
-  if(/funeral|장례식장/i.test(location.pathname+" "+document.title)) send("funeral_home_page_view");
+  const path=location.pathname.toLowerCase();
+  if(path.startsWith("/jangjunmo/")) send("jangjunmo_view");
+
+  const isMubinsoPage=/mubinso|nobinso/.test(path);
+  const isFamilyPage=/family/.test(path);
+  const isRegionPage=/^\/area-[^/]+-funeral\.html$/.test(path);
+  const isSpecificFuneralHome=
+    (!isRegionPage && /-funeral\.html$/.test(path) && !/-funeral-halls\.html$/.test(path)) ||
+    /^\/jangjunmo\/funeral-home\/[^/]+\/?$/.test(path);
+
+  if(isMubinsoPage) send("mubinso_page_view");
+  if(isFamilyPage) send("family_funeral_page_view");
+  if(isRegionPage) send("region_page_view");
+  if(isSpecificFuneralHome) send("funeral_home_page_view");
 })();
