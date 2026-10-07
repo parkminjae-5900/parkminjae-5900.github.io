@@ -19,15 +19,14 @@ function area(){
 function hall(){var h=text("h1"),m=h.match(/([^·|]{2,35}(?:병원|의료원|장례식장))/);return m?clean(m[1]):""}
 function pageType(){var p=location.pathname;if(/area-/.test(p))return"region";if(/-funeral\.html$/.test(p))return"funeral_hall";if(/cost|price|nobinso|family/.test(p))return"cost_intent";return"home"}
 function attribution(){
- var q=new URLSearchParams(location.search),keys=["utm_source","utm_medium","utm_campaign","utm_term","utm_content","n_media","n_query","n_rank","n_ad_group"];
+ var q=new URLSearchParams(location.search),keys=["utm_source","utm_medium","utm_campaign","utm_content","gclid","n_media","n_rank","n_ad_group"];
  function safeValue(key,value){var v=String(value||"").trim().slice(0,150);if(!v)return"";if(/[\r\n<>]/.test(v)||/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(v)||/\d{6}-[1-8]\d{6}/.test(v)||/(?:01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(v))return"";if(key==="gclid")return/^[A-Za-z0-9._~-]+$/.test(v)?v:"";return v.replace(/[^0-9A-Za-z가-힣._~ -]/g,"")}
- function safeReferrer(value){try{var u=new URL(value);return(u.origin+u.pathname).slice(0,300)}catch(e){return""}}
+ function safeReferrer(value){try{return new URL(value).origin.slice(0,150)}catch(e){return""}}
  function safePath(value){try{return new URL(value,location.origin).pathname.slice(0,300)}catch(e){return location.pathname}}
  var landingPath=safePath(sessionStorage.getItem("daham_landing_path")||location.pathname);
  try{sessionStorage.setItem("daham_landing_path",landingPath)}catch(e){}
- var a={landing_path:landingPath,referrer:safeReferrer(document.referrer),search_query:""};
+ var a={landing_path:landingPath,referrer_origin:safeReferrer(document.referrer)};
  keys.forEach(function(k){var v=safeValue(k,q.get(k));if(v)a[k]=v});
- a.search_query=safeValue("search_query",q.get("n_query")||q.get("utm_term")||q.get("query"));
  return a
 }
 function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_path:location.pathname,page_type:pageType(),area:area(),funeral_hall:hall()};Object.assign(d,attribution(),x||{});try{if(typeof window.dahamTrack==="function")window.dahamTrack(ev,d);else if(typeof window.gtag==="function")window.gtag("event",ev,d);else window.dataLayer.push(d)}catch(e){window.dataLayer.push(d)}}
@@ -42,7 +41,7 @@ function defaultPackageKey(){
 function selected(){var r=document.querySelector('input[name="dahamSeoPackage"]:checked'),g=document.getElementById("dahamSeoGuests");return{key:r?r.value:defaultPackageKey(),guests:g?Math.max(0,Number(g.value||0)):50}}
 function pkg(k){return PACKAGES.find(function(x){return x.key===k})||PACKAGES[1]}
 function params(o){var p=new URLSearchParams();Object.keys(o).forEach(function(k){if(o[k]!==""&&o[k]!=null)p.set(k,o[k])});return p.toString()}
-function goCalc(){var s=selected(),p=pkg(s.key);push("seo_funnel_calculator_click",{package_key:p.key,guest_count:s.guests});var a=attribution();location.href="funeral-cost-calculator.html?"+params(Object.assign({source:"seo-funnel",area:area(),hall:hall(),funeralType:p.type,package:p.key,guests:p.type==="무빈소"?0:s.guests,from:location.pathname},a))}
+function goCalc(){var s=selected(),p=pkg(s.key);push("seo_funnel_calculator_click",{package_key:p.key,guest_count:s.guests});location.href="funeral-cost-calculator.html?"+params({source:"seo-funnel",area:area(),hall:hall(),funeralType:p.type,package:p.key,guests:p.type==="무빈소"?0:s.guests,from:location.pathname})}
 function call(){var s=selected();push("seo_funnel_call_click",{package_key:s.key,guest_count:s.guests});location.href="tel:"+PHONE}
 function kakao(){var s=selected();push("seo_funnel_kakao_click",{package_key:s.key,guest_count:s.guests});window.open(KAKAO,"_blank","noopener")}
 async function copy(){
