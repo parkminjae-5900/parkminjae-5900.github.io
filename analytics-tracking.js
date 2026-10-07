@@ -28,14 +28,20 @@
       function safeReferrer(value){
         try{const u=new URL(value);return (u.origin+u.pathname).slice(0,300);}catch(e){return "";}
       }
+      function safePath(value){
+        try{return new URL(value,location.origin).pathname.slice(0,300);}catch(e){return location.pathname;}
+      }
       const firstKey="daham_first_touch";
       let first={};
       try{first=JSON.parse(localStorage.getItem(firstKey)||"{}")||{};}catch(e){}
       if(!first.landing_page){
         first={landing_page:location.pathname,referrer:safeReferrer(document.referrer),first_seen_at:new Date().toISOString()};
         keys.forEach(function(k){const v=safeValue(k,q.get(k));if(v)first[k]=v;});
-        try{localStorage.setItem(firstKey,JSON.stringify(first));}catch(e){}
       }
+      first.landing_page=safePath(first.landing_page);
+      first.referrer=safeReferrer(first.referrer);
+      keys.forEach(function(k){const v=safeValue(k,first[k]);if(v)first[k]=v;else delete first[k];});
+      try{localStorage.setItem(firstKey,JSON.stringify(first));}catch(e){}
       let leadId="";
       try{leadId=localStorage.getItem("daham_lead_id")||"";}catch(e){}
       if(!leadId){
