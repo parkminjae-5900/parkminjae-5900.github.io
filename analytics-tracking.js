@@ -18,12 +18,22 @@
     try{
       const q=new URLSearchParams(location.search);
       const keys=["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","n_media","n_query","n_rank","n_ad_group"];
+      function safeValue(key,value){
+        let v=String(value||"").trim().slice(0,150);
+        if(!v) return "";
+        if(/[\r\n<>]/.test(v)||/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(v)||/\d{6}-[1-8]\d{6}/.test(v)||/(?:01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(v)) return "";
+        if(key==="gclid") return /^[A-Za-z0-9._~-]+$/.test(v)?v:"";
+        return v.replace(/[^0-9A-Za-z가-힣._~ -]/g,"");
+      }
+      function safeReferrer(value){
+        try{const u=new URL(value);return (u.origin+u.pathname).slice(0,300);}catch(e){return "";}
+      }
       const firstKey="daham_first_touch";
       let first={};
       try{first=JSON.parse(localStorage.getItem(firstKey)||"{}")||{};}catch(e){}
       if(!first.landing_page){
-        first={landing_page:location.pathname+location.search,referrer:document.referrer||"",first_seen_at:new Date().toISOString()};
-        keys.forEach(function(k){const v=q.get(k);if(v)first[k]=v;});
+        first={landing_page:location.pathname,referrer:safeReferrer(document.referrer),first_seen_at:new Date().toISOString()};
+        keys.forEach(function(k){const v=safeValue(k,q.get(k));if(v)first[k]=v;});
         try{localStorage.setItem(firstKey,JSON.stringify(first));}catch(e){}
       }
       let leadId="";
@@ -33,7 +43,7 @@
         try{localStorage.setItem("daham_lead_id",leadId);}catch(e){}
       }
       const out={lead_id:leadId,landing_page:first.landing_page||"",first_referrer:first.referrer||""};
-      keys.forEach(function(k){const v=q.get(k)||first[k];if(v)out[k]=v;});
+      keys.forEach(function(k){const v=safeValue(k,q.get(k)||first[k]);if(v)out[k]=v;});
       return out;
     }catch(e){return {};}
   }
