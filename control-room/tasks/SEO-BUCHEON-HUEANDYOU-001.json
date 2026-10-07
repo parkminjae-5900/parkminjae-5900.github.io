@@ -160,7 +160,10 @@
         "인하대병원장례식장 공개 검색은 에노스·바리길·삼고·고이 등 비용·후기·견적 페이지가 강하게 노출",
         "인천의료원장례식장 공개 검색은 삼고의 비용·가족장·후기·비교 페이지가 다수 노출",
         "휴앤유추모관 전용 다함 페이지의 공개 검색 신규 노출은 미확인"
-      ]
+      ],
+      "run_record_commit": "84a057d7f7fa529c1b9b86bdaeebef5dc8471294",
+      "run_record_seo_validation": "success - GitHub Actions run 37670070581",
+      "run_record_pages_deployment": "success - GitHub Actions run 37670070029"
     },
     "analytics": {
       "ga4_service": "Windsor 연결 정상",
