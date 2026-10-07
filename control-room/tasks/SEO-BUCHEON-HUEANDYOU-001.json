@@ -170,8 +170,11 @@
         "인천의료원·인하대 페이지는 Search Console의 1회 노출 표본 외 추가 공개 노출 변화 미확인"
       ],
       "management_page_changes": "없음",
-      "run_record_commit": "기록 커밋 생성 후 갱신 예정",
-      "run_record_validation": "기록 커밋 생성 후 확인 예정"
+      "run_record_commit": "3aaf82b9c502c8207640ab6d4a6d14ce04c9ae76",
+      "run_record_validation": {
+        "seo_validation": "success - GitHub Actions run 37672753883",
+        "pages_deployment": "success - GitHub Actions run 37672752514"
+      }
     },
     "analytics": {
       "ga4_service": "Windsor 연결 정상 - 다함상조 557803440",
