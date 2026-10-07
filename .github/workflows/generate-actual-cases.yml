@@ -15,10 +15,10 @@ on:
       - ".github/workflows/generate-actual-cases.yml"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  generate:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,8 +37,21 @@ jobs:
               if not p.exists(): raise SystemExit(f"Missing generated page: {p}")
           print("Actual-case validation OK:", len(d["cases"]))
           PY
+
+  publish:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate privacy-safe actual case pages
+        run: python scripts/generate_actual_cases.py
       - name: Commit generated pages
-        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
