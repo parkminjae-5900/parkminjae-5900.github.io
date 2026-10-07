@@ -98,5 +98,73 @@
     "100명",
     "200명"
   ],
-  "generation_rule": "entity_alias × geo(optional) × intent × modifier(optional). 검색 페이지는 고유 정보가 있는 고의도 조합만 index; 나머지는 허브 본문/FAQ/검색어 사전으로 흡수"
+  "generation_rule": "entity_alias × geo(optional) × intent × modifier(optional). 검색 페이지는 고유 정보가 있는 고의도 조합만 index; 나머지는 허브 본문/FAQ/검색어 사전으로 흡수",
+  "control_room_task": {
+    "id": "SEO-BUCHEON-HUEANDYOU-001",
+    "title": "부천 휴앤유 검색점유 클러스터",
+    "status": "진행",
+    "priority": "P0",
+    "owner_department": "성장마케팅부",
+    "primary_team": "검색최적화팀",
+    "accountable": "정도윤 부장",
+    "reviewers": [
+      {
+        "department": "데이터견적부",
+        "team": "장례시설데이터팀",
+        "lead": "윤서연 부장",
+        "scope": "시설명·주소·가격·무빈소 가능 여부 검증"
+      },
+      {
+        "department": "서비스개발부",
+        "team": "홈페이지팀",
+        "lead": "강현준 부장",
+        "scope": "페이지·내부링크·사이트맵·구조화데이터 반영"
+      },
+      {
+        "department": "운영품질부",
+        "team": "근거·개인정보검수팀",
+        "lead": "차유정 부장",
+        "scope": "최신성·허위표기·중복·완료증거 검수"
+      }
+    ],
+    "management_chain": [
+      "검색최적화팀 제작",
+      "정도윤 부장 1차 검토",
+      "데이터견적부 교차검수",
+      "서비스개발부 반영",
+      "운영품질부 독립검수",
+      "이서진 통합운영본부장 통합",
+      "서도현 총괄상무 승인",
+      "박민재 대표 보고"
+    ],
+    "scope": [
+      "휴앤유추모관 신명칭 중심 허브 유지",
+      "휴앤유병원장례식장·휴앤유장례식장 등 구명칭/변형 검색어 흡수",
+      "휴앤유병원·휴앤유요양병원 등 혼동 검색어는 공식명칭으로 오인되지 않게 구분",
+      "비용·무빈소·가족장·주소/주차·화장/장지 하위 페이지 관리",
+      "부천·소사구·송내동 및 인접동 검색의도 확장",
+      "GSC 노출/클릭/평균순위 기준 확장·통합·보강",
+      "중복/얇은 페이지 noindex/canonical 검수"
+    ],
+    "assets": [
+      "/bucheon-hueandyou-funeral.html",
+      "/hueandyou-cost.html",
+      "/hueandyou-mubinso.html",
+      "/hueandyou-family.html",
+      "/hueandyou-access.html",
+      "/hueandyou-cremation.html",
+      "/data/hueandyou-keyword-cluster.json"
+    ],
+    "kpis": [
+      "노출수",
+      "클릭수",
+      "평균순위",
+      "비브랜드→브랜드 유입",
+      "견적진입",
+      "상담클릭",
+      "실제 문의",
+      "실제 행사"
+    ],
+    "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록."
+  }
 }
