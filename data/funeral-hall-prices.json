@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-07T00:43:35.108291+00:00",
+  "updatedAt": "2026-10-07T07:08:25.472404+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -786,7 +786,7 @@
     {
       "facilityName": "길병원장례식장",
       "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
-      "verifiedAt": "2026-09-30T11:33:58.615450+00:00",
+      "verifiedAt": "2026-10-07T07:07:15.216343+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://funeral.gilhospital.com/-3",
       "sourceGrade": "A",
@@ -1198,7 +1198,7 @@
     {
       "facilityName": "울산국화원장례식장",
       "address": "울산광역시 남구 산업로 88 (상개동)",
-      "verifiedAt": "2026-09-30T11:32:57.141295+00:00",
+      "verifiedAt": "2026-10-07T07:06:07.478103+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.ulsanfh.com/sub/sub02_05.php",
       "sourceGrade": "A",
@@ -1227,7 +1227,7 @@
     {
       "facilityName": "울산대학교병원장례식장",
       "address": "울산광역시 동구 대학병원로 32 (전하동, 울산대학교병원)",
-      "verifiedAt": "2026-10-02T01:42:06.822812+00:00",
+      "verifiedAt": "2026-10-07T07:06:15.823916+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://ufh.uuh.ulsan.kr/ufh/?pCode=MN0000012",
       "sourceGrade": "A",
