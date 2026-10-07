@@ -4,6 +4,8 @@ import { extname } from "node:path";
 
 const blockedTrackedFiles = [
   /(^|\/)\.env(?:\.|$)/i,
+  /(^|\/)\.envrc$/i,
+  /(^|\/)\.npmrc$/i,
   /\.(?:pem|key|p12|pfx)$/i,
   /(^|\/)(?:credentials|service-account)(?:\.|\/)/i,
 ];
@@ -15,9 +17,13 @@ const textExtensions = new Set([
 
 const secretPatterns = [
   ["AWS access key", new RegExp("AK" + "IA[0-9A-Z]{16}", "g")],
+  ["AWS temporary access key", new RegExp("AS" + "IA[0-9A-Z]{16}", "g")],
   ["GitHub token", new RegExp("gh" + "[pousr]_[A-Za-z0-9_]{30,}", "g")],
+  ["GitHub fine-grained token", new RegExp("github" + "_pat_[A-Za-z0-9_]{30,}", "g")],
+  ["OpenAI API key", new RegExp("sk" + "-(?:proj-)?[A-Za-z0-9_-]{30,}", "g")],
   ["Google API key", new RegExp("AI" + "za[0-9A-Za-z_-]{35}", "g")],
   ["Slack webhook", new RegExp("hooks\\.slack\\.com/services/[A-Za-z0-9/_-]{20,}", "g")],
+  ["Slack token", new RegExp("xox" + "[baprs]-[A-Za-z0-9-]{10,}", "g")],
   ["Telegram bot token", new RegExp("[0-9]{8,10}:[A-Za-z0-9_-]{30,}", "g")],
   ["private key", new RegExp("BEGIN (?:RSA |EC |OPENSSH )?PRIVATE " + "KEY", "g")],
   ["hard-coded bearer token", new RegExp("Bearer\\s+[A-Za-z0-9._~-]{30,}", "g")],
