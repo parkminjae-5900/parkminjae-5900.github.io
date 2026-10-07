@@ -89,16 +89,19 @@
         "Search Console 직전 28일 6c344f7593c1216a882a8161c2a8a8da - queued",
         "GA4 최근 28일 e5f9ab73975a7816937a275c248e5eb5 - queued",
         "GA4 직전 28일 ca1ab716b9d72818b4c73cf887068c94 - queued"
-      ]
+      ],
+      "run_record_commit": "9f9dec0d3680165940ba0b90be168eb9a5257332",
+      "run_record_seo_validation": "success - GitHub Actions run 37659841036",
+      "run_record_pages_deployment": "success - GitHub Actions run 37659839735"
     },
     "analytics": {
       "ga4_service": "정상 연결 확인",
       "search_console": "정상 연결 확인",
       "gsc_wizard_access": "구독 종료로 별도 도구 조회 불가",
-      "windsor_report_status": "최근 28일·직전 28일 4개 보고서 queued",
+      "windsor_report_status": "4개 보고서 모두 queued, 약 535초 이상 대기",
       "gsc_metrics": "미확인",
       "ga4_metrics": "미확인",
-      "reason": "Windsor 연결은 확인됐으나 결과 행이 아직 대기열에서 반환되지 않음. 수치를 0으로 처리하지 않음."
+      "reason": "Windsor 연결은 확인됐으나 결과 행이 약 535초 이상 queued 상태로 반환되지 않음. 수치를 0으로 처리하지 않음."
     },
     "conversion_change": {
       "impressions": "미확인",
@@ -123,7 +126,7 @@
       "신규 페이지보다 기존 휴앤유·인천 견적 흐름의 실제 전환 증거 보강 우선"
     ],
     "blockers": [
-      "Windsor 4개 비교 보고서가 queued로 결과 행 미반환",
+      "Windsor 4개 비교 보고서가 약 535초 이상 queued로 결과 행 미반환",
       "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
       "리뉴얼 이후 최신 시설요금 공식표 미확인"
     ],
