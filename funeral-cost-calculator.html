@@ -1990,7 +1990,7 @@ function applySeoPrefill(){
  const safeTrackingValue=v=>{
    v=String(v||"").trim().slice(0,150);
    if(/[\r\n<>]/.test(v)||/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(v)||/\d{6}-[1-8]\d{6}/.test(v)||/(?:01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(v))return"";
-   return v.replace(/[^0-9A-Za-z가-힣._~\/-]/g,"");
+   return v.replace(/[^0-9A-Za-z가-힣._~ /-]/g,"");
  };
  const hallParam=(p.get("hall")||"").trim().slice(0,100);
  const areaParam=(p.get("area")||"").trim().slice(0,60);
