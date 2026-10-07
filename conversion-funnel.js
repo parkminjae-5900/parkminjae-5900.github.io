@@ -20,10 +20,14 @@ function hall(){var h=text("h1"),m=h.match(/([^·|]{2,35}(?:병원|의료원|장
 function pageType(){var p=location.pathname;if(/area-/.test(p))return"region";if(/-funeral\.html$/.test(p))return"funeral_hall";if(/cost|price|nobinso|family/.test(p))return"cost_intent";return"home"}
 function attribution(){
  var q=new URLSearchParams(location.search),keys=["utm_source","utm_medium","utm_campaign","utm_term","utm_content","n_media","n_query","n_rank","n_ad_group"];
- var a={landing_path:sessionStorage.getItem("daham_landing_path")||location.pathname,referrer:document.referrer||"",search_query:""};
- if(!sessionStorage.getItem("daham_landing_path"))sessionStorage.setItem("daham_landing_path",location.pathname+location.search);
- keys.forEach(function(k){var v=q.get(k);if(v)a[k]=v});
- a.search_query=q.get("n_query")||q.get("utm_term")||q.get("query")||"";
+ function safeValue(key,value){var v=String(value||"").trim().slice(0,150);if(!v)return"";if(/[\r\n<>]/.test(v)||/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(v)||/\d{6}-[1-8]\d{6}/.test(v)||/(?:01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(v))return"";if(key==="gclid")return/^[A-Za-z0-9._~-]+$/.test(v)?v:"";return v.replace(/[^0-9A-Za-z가-힣._~ -]/g,"")}
+ function safeReferrer(value){try{var u=new URL(value);return(u.origin+u.pathname).slice(0,300)}catch(e){return""}}
+ function safePath(value){try{return new URL(value,location.origin).pathname.slice(0,300)}catch(e){return location.pathname}}
+ var landingPath=safePath(sessionStorage.getItem("daham_landing_path")||location.pathname);
+ try{sessionStorage.setItem("daham_landing_path",landingPath)}catch(e){}
+ var a={landing_path:landingPath,referrer:safeReferrer(document.referrer),search_query:""};
+ keys.forEach(function(k){var v=safeValue(k,q.get(k));if(v)a[k]=v});
+ a.search_query=safeValue("search_query",q.get("n_query")||q.get("utm_term")||q.get("query"));
  return a
 }
 function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_path:location.pathname,page_type:pageType(),area:area(),funeral_hall:hall()};Object.assign(d,attribution(),x||{});try{if(typeof window.dahamTrack==="function")window.dahamTrack(ev,d);else if(typeof window.gtag==="function")window.gtag("event",ev,d);else window.dataLayer.push(d)}catch(e){window.dataLayer.push(d)}}

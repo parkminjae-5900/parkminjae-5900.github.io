@@ -33,6 +33,8 @@ def validate(d):
     if pub.get("publish"):
         if not pub.get("privacy_reviewed"): raise SystemExit(f"{d['id']}: publish requires privacy_reviewed")
         if not pub.get("costs_verified"): raise SystemExit(f"{d['id']}: publish requires costs_verified")
+        if d.get("photos") and not pub.get("explicit_photo_permission"):
+            raise SystemExit(f"{d['id']}: photos require explicit_photo_permission")
         for ph in d.get("photos",[]):
             if not ph.get("privacy_checked"): raise SystemExit(f"{d['id']}: photo privacy check missing")
         if d.get("receipt_public_image") and not pub.get("privacy_reviewed"):
@@ -41,6 +43,14 @@ def validate(d):
     raw=json.dumps(d,ensure_ascii=False).lower()
     for key in banned:
         if f'"{key}"' in raw: raise SystemExit(f"{d['id']}: forbidden public field {key}")
+    pii_patterns={
+        "email": r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",
+        "phone": r"(?:01[016789]|0[2-6][1-5]?)[-. ]?\d{3,4}[-. ]?\d{4}",
+        "resident registration number": r"\d{6}-[1-8]\d{6}",
+        "payment or account number": r"(?<!\d)(?:\d{4}[- ]?){3}\d{4}(?!\d)|(?<!\d)\d{10,14}(?!\d)",
+    }
+    for label,pattern in pii_patterns.items():
+        if re.search(pattern,raw,re.I): raise SystemExit(f"{d['id']}: possible {label} in public case data")
 
 def page_url(case):
     return f"{ORIGIN}{CASE_PREFIX}{case['id']}.html"
