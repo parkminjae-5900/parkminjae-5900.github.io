@@ -265,7 +265,9 @@ def main():
     cursor=int(state.get("cursor",0))
     if not halls:raise SystemExit("no halls")
 
-    byname={norm(x.get("facilityName","")):x for x in db.get("items",[]) if x.get("facilityName")}
+    def record_key(x):
+        return norm(x.get("facilityName",""))+"|"+norm(x.get("address",""))
+    byname={record_key(x):x for x in db.get("items",[]) if x.get("facilityName")}
     results=state.get("results",{})
     batch=[]
     n=len(halls)
@@ -288,12 +290,13 @@ def main():
               "sourceNote":"공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
               "prices":res["prices"]
             }
-            old=byname.get(norm(rec["facilityName"]))
+            key_rec=record_key(rec)
+            old=byname.get(key_rec)
             ok,reason=identity_guard(rec,old,res.get("homepage",""))
             res["promotion"]={"eligible":ok,"reason":reason}
             # Never replace a curated A record unless facility identity and data completeness are verified.
             if ok and (not old or old.get("sourceGrade")!="A" or len(rec["prices"])>=len(old.get("prices",[]))):
-                byname[norm(rec["facilityName"])]=rec
+                byname[key_rec]=rec
         print(idx,h.get("fcltNm"),res["status"],len(res.get("prices",[])))
 
     newcursor=(cursor+len(batch))%n
