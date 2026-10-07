@@ -7,6 +7,7 @@ const root=process.cwd(),origin='https://www.dahamsangjo.co.kr/';
 const files=fs.readdirSync(root).filter(f=>f.endsWith('.html')&&!f.startsWith('google'));
 const sitemap=fs.readFileSync('sitemap.xml','utf8');
 const locations=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
+const retiredAliases=new Map([['area-incheon-junggu-funeral.html','area-incheon-jemulpo-funeral.html']]);
 assert.equal(new Set(locations).size,locations.length,'Duplicate sitemap URLs');
 const titles=new Set(),descriptions=new Set();let faqCount=0;
 for(const file of files){
@@ -18,8 +19,20 @@ for(const file of files){
   assert.ok(description&&!descriptions.has(description),file+': missing or duplicate description');descriptions.add(description);
   assert.equal([...html.matchAll(/<h1\b/gi)].length,1,file+': H1 count');
   const canonicals=[...html.matchAll(/<link rel="canonical" href="([^"]+)"/g)];
-  assert.equal(canonicals.length,1,file+': canonical count');assert.equal(canonicals[0][1],url,file+': canonical URL');
-  assert.ok(locations.includes(url),file+': sitemap URL missing');
+  assert.equal(canonicals.length,1,file+': canonical count');
+  const retiredTarget=retiredAliases.get(file);
+  if(retiredTarget){
+    assert.equal(canonicals[0][1],origin+retiredTarget,file+': retired canonical URL');
+    const robots=html.match(/<meta name="robots" content="([^"]+)"/)?.[1]||'';
+    const robotTokens=robots.split(',').map(x=>x.trim());
+    assert.ok(robotTokens.includes('noindex'),file+': retired page must be noindex');
+    assert.ok(!robotTokens.includes('index'),file+': retired page must not contain index');
+    assert.ok(robotTokens.includes('follow'),file+': retired page must remain follow');
+    assert.ok(!locations.includes(url),file+': retired page must stay out of sitemap');
+  }else{
+    assert.equal(canonicals[0][1],url,file+': canonical URL');
+    assert.ok(locations.includes(url),file+': sitemap URL missing');
+  }
   assert.ok(!/\\n<script/.test(html),file+': literal newline in head');
   const body=plain(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,''));
   function walk(o){
@@ -39,6 +52,11 @@ for(const file of files){
     assert.ok(fs.existsSync(path.join(root,pathname.replace(/^\//,''))),file+': missing local path '+ref);
   }
   if(targets.includes(file)) assert.ok(html.includes(renderData(file,html)),file+': run node scripts/sync-search-data.mjs --write');
+}
+for(const [alias,target] of retiredAliases){
+  assert.ok(fs.existsSync(path.join(root,alias)),alias+': retired alias missing');
+  assert.ok(fs.existsSync(path.join(root,target)),target+': retired target missing');
+  assert.ok(locations.includes(origin+target),target+': retired target missing from sitemap');
 }
 for(const location of locations){
   assert.ok(location.startsWith(origin),'Sitemap points off site');
