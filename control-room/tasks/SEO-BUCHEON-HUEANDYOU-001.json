@@ -194,8 +194,11 @@
         "인천의료원 공개 검색은 경쟁사의 비용·가족장 페이지가 계속 노출"
       ],
       "management_page_changes": "구 중구 랜딩 noindex/canonical 마이그레이션, 사이트맵 제거, 검증 스크립트 보강",
-      "run_record_commit": "이번 실행 기록 커밋 생성 후 갱신 예정",
-      "run_record_validation": "이번 실행 기록 커밋 생성 후 확인 예정"
+      "run_record_commit": "9bdb1d8b8f99bb305cfa9a271e21803d63cd5674",
+      "run_record_validation": {
+        "seo_validation": "success - GitHub Actions run 37695222169",
+        "pages_deployment": "success - GitHub Actions run 37695221356"
+      }
     },
     "analytics": {
       "ga4_service": "Windsor 연결 정상 - 다함상조 557803440",
