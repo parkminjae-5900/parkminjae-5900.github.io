@@ -52,7 +52,8 @@
     "/hueandyou-family.html",
     "/hueandyou-access.html",
     "/hueandyou-cremation.html",
-    "/data/hueandyou-keyword-cluster.json"
+    "/data/hueandyou-keyword-cluster.json",
+    "/area-bucheon-funeral.html"
   ],
   "kpis": [
     "노출수",
@@ -64,5 +65,58 @@
     "실제 문의",
     "실제 행사"
   ],
-  "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록."
+  "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
+  "last_checked_at_kst": "2026-10-07T23:32:00+09:00",
+  "latest_run": {
+    "status": "보완 필요",
+    "performed": [
+      "기준 업무카드·키워드 클러스터 일치 확인",
+      "관리 대상 7개 페이지의 canonical·robots·내부링크·구조화데이터·참고견적 고지 점검",
+      "공개 페이지 정상 응답 확인",
+      "공개 검색 경쟁 표현을 기존 비용 의도군에 통합",
+      "최신 GitHub SEO 검증·Pages 배포 성공 확인"
+    ],
+    "evidence": {
+      "live_page": "https://www.dahamsangjo.co.kr/bucheon-hueandyou-funeral.html 정상 로드",
+      "public_search": [
+        "https://enosh.or.kr/place/145 - 빈소·위치·비용 및 무빈소 가능 표현",
+        "https://barigil.com/jangnye/hyuaenyubyeongwonjangryesikjang - 빈소료·식대 단가표·공개 단가 표현",
+        "https://15774129.go.kr/portal/esky/fnlfac/fac_list.do?menuId=M0001000100000000 - 공식 장사시설 원천"
+      ],
+      "repository_commit": "0c662ebfa9d9b9f1e379ab426d2021cc9ed8cf20",
+      "verified_base_commit": "3ce3a48626190b89e826fd61490e236a42f00d95",
+      "seo_validation": "success - GitHub Actions run 37636879908",
+      "pages_deployment": "success - GitHub Actions run 37636879205"
+    },
+    "analytics": {
+      "gsc": "미확인",
+      "ga4": "미확인",
+      "reason": "GSC Wizard 체험 종료로 연결 데이터 조회 불가. 0으로 간주하지 않음."
+    },
+    "conversion_change": {
+      "impressions": "미확인",
+      "clicks": "미확인",
+      "ctr": "미확인",
+      "average_position": "미확인",
+      "estimate_entry": "미확인",
+      "consultation_click": "미확인",
+      "actual_inquiry": "미확인",
+      "actual_event": "미확인"
+    },
+    "findings": [
+      "신규 얇은 페이지를 만들 필요 없음",
+      "추가 고의도 표현은 기존 비용 페이지와 허브에 흡수",
+      "신명칭 재개관 사실과 최신 시설요금은 독립 공식 근거가 확보될 때까지 운영 시점 재확인 문구 유지"
+    ],
+    "next_actions": [
+      "GSC/GA4 접근 복구 후 휴앤유 쿼리·페이지·전환을 단계별 재확인",
+      "최신 시설요금 공식 원천이 확보되면 /hueandyou-cost.html의 단가표와 참고견적 갱신",
+      "신규 페이지보다 기존 비용·무빈소·가족장 페이지의 고유 근거 보강 우선"
+    ],
+    "blockers": [
+      "GSC Wizard 구독 종료",
+      "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
+      "리뉴얼 이후 최신 시설요금 공식표 미확인"
+    ]
+  }
 }
