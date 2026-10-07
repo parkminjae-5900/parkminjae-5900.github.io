@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-07T14:29:56.810241+00:00",
+  "updatedAt": "2026-10-07T20:33:13.959208+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -9,7 +9,7 @@
     {
       "facilityName": "강원특별자치도 영월의료원장례식장",
       "address": "강원특별자치도 영월군 영월읍 중앙1로 59 (영흥리, 영월의료원)",
-      "verifiedAt": "2026-09-30T05:53:34.431243+00:00",
+      "verifiedAt": "2026-10-07T20:32:56.428955+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.youngwol.org/bbs/board.php?bo_table=funeral_01",
       "sourceGrade": "A",
@@ -1387,11 +1387,11 @@
     {
       "facilityName": "원주의료원장례식장",
       "address": "강원특별자치도 원주시 서원대로 387 (개운동, 강원도원주의료원)",
-      "verifiedAt": "2026-09-30T05:53:42.906507+00:00",
+      "verifiedAt": "2026-10-07T20:33:05.164915+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.kwmc.or.kr/use_guide/funeral.html",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 직접 확인된 시설비 항목만 유지. 전화번호 등 오탐 제거 완료.",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
       "prices": [
         {
           "category": "안치실",
@@ -1516,7 +1516,7 @@
     {
       "facilityName": "청주시장례식장",
       "address": "충청북도 청주시 상당구 목련로 731 (월오동)",
-      "verifiedAt": "2026-09-30T11:49:51.091556+00:00",
+      "verifiedAt": "2026-10-07T20:31:32.417661+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://xn--9n2b17qea800cca76r89j.com/bbs/content.php?co_id=59",
       "sourceGrade": "A",
@@ -1539,7 +1539,7 @@
     {
       "facilityName": "충주병원장례식장(주)",
       "address": "충청북도 충주시 중심1길 12 (문화동)",
-      "verifiedAt": "2026-09-30T11:50:29.376752+00:00",
+      "verifiedAt": "2026-10-07T20:32:00.009061+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.chungjufuneral.net/?page_id=13802",
       "sourceGrade": "A",
