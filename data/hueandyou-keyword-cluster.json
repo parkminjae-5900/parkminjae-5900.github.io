@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-07",
+  "version": "2026-10-08",
   "entity": {
     "canonical_name": "휴앤유추모관",
     "former_names": [
@@ -109,9 +109,9 @@
     "title": "부천 휴앤유 검색점유 클러스터",
     "status": "진행",
     "priority": "P0",
-    "owner_department": "성장마케팅부",
-    "primary_team": "검색최적화팀",
-    "accountable": "정도윤 부장",
+    "owner_department": "대표 별도지시관리팀",
+    "primary_team": "홈페이지 SEO·GEO·AEO",
+    "accountable": "박민재 대표",
     "reviewers": [
       {
         "department": "데이터견적부",
@@ -133,14 +133,8 @@
       }
     ],
     "management_chain": [
-      "검색최적화팀 제작",
-      "정도윤 부장 1차 검토",
-      "데이터견적부 교차검수",
-      "서비스개발부 반영",
-      "운영품질부 독립검수",
-      "이서진 통합운영본부장 통합",
-      "서도현 총괄상무 승인",
-      "박민재 대표 보고"
+      "오유진·김서준 수행",
+      "박민재 대표 직접 지시·보고"
     ],
     "scope": [
       "휴앤유추모관 신명칭 중심 허브 유지",
@@ -170,23 +164,28 @@
       "실제 문의",
       "실제 행사"
     ],
-    "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록."
+    "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
+    "direct_assignees": [
+      "오유진",
+      "김서준"
+    ],
+    "owner_direct_override": {
+      "effective_at_kst": "2026-10-08T00:00:00+09:00",
+      "recipient_key": "owner-search",
+      "reporting": "박민재 대표 직보",
+      "prior_management_chain": "참고용 비활성"
+    }
   },
-  "last_reviewed_at_kst": "2026-10-07T23:32:00+09:00",
+  "last_reviewed_at_kst": "2026-10-08T01:34:00+09:00",
   "latest_observation": {
-    "status": "보강",
-    "added_terms": [
-      "빈소료",
-      "식대 단가",
-      "단가표",
-      "공개 단가",
-      "장례식장 기본비용"
-    ],
-    "routing": "신규 페이지 생성 없이 /hueandyou-cost.html 및 기존 허브의 비용 검색의도로 흡수",
+    "status": "변경 없음",
+    "added_terms": [],
+    "routing": "기존 허브·비용·무빈소·가족장 페이지 유지; 신규 얇은 페이지 생성 없음",
     "evidence": [
-      "공개 검색에서 경쟁 페이지가 '빈소료·식대 단가표·공개 단가·기본 지출' 표현을 사용",
-      "기존 클러스터의 비용·식대·빈소비용 의미군과 겹치므로 별도 페이지보다 기존 비용 페이지 보강이 적절"
+      "공개 검색에서 휴앤유 전용 URL의 신규 노출 변화 미확인",
+      "최신 저장소 변경은 quote-app 범위이며 휴앤유 관리 자산 직접 변경 없음",
+      "대표 직속 조직개편에 따라 owner-search 담당 오유진·김서준 및 박민재 대표 직보 체계 반영"
     ],
-    "analytics": "미확인 - GSC Wizard 구독 종료로 조회 불가; 0으로 처리하지 않음"
+    "analytics": "미확인 - GA4 자체 종료가 아니라 GSC Wizard/외부 분석 연결 구독 종료로 조회 불가; 0으로 처리하지 않음"
   }
 }
