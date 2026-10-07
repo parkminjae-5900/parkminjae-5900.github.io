@@ -1,0 +1,128 @@
+{
+  "id": "SEO-BUCHEON-HUEANDYOU-001",
+  "title": "부천 휴앤유 검색점유 클러스터",
+  "status": "진행",
+  "priority": "P0",
+  "owner_department": "성장마케팅부",
+  "primary_team": "검색최적화팀",
+  "accountable": "정도윤 부장",
+  "reviewers": [
+    {
+      "department": "데이터견적부",
+      "team": "장례시설데이터팀",
+      "lead": "윤서연 부장",
+      "scope": "시설명·주소·가격·무빈소 가능 여부 검증"
+    },
+    {
+      "department": "서비스개발부",
+      "team": "홈페이지팀",
+      "lead": "강현준 부장",
+      "scope": "페이지·내부링크·사이트맵·구조화데이터 반영"
+    },
+    {
+      "department": "운영품질부",
+      "team": "근거·개인정보검수팀",
+      "lead": "차유정 부장",
+      "scope": "최신성·허위표기·중복·완료증거 검수"
+    }
+  ],
+  "management_chain": [
+    "검색최적화팀 제작",
+    "정도윤 부장 1차 검토",
+    "데이터견적부 교차검수",
+    "서비스개발부 반영",
+    "운영품질부 독립검수",
+    "이서진 통합운영본부장 통합",
+    "서도현 총괄상무 승인",
+    "박민재 대표 보고"
+  ],
+  "scope": [
+    "휴앤유추모관 신명칭 중심 허브 유지",
+    "휴앤유병원장례식장·휴앤유장례식장 등 구명칭/변형 검색어 흡수",
+    "휴앤유병원·휴앤유요양병원 등 혼동 검색어는 공식명칭으로 오인되지 않게 구분",
+    "비용·무빈소·가족장·주소/주차·화장/장지 하위 페이지 관리",
+    "부천·소사구·송내동 및 인접동 검색의도 확장",
+    "GSC 노출/클릭/평균순위 기준 확장·통합·보강",
+    "중복/얇은 페이지 noindex/canonical 검수"
+  ],
+  "assets": [
+    "/bucheon-hueandyou-funeral.html",
+    "/hueandyou-cost.html",
+    "/hueandyou-mubinso.html",
+    "/hueandyou-family.html",
+    "/hueandyou-access.html",
+    "/hueandyou-cremation.html",
+    "/data/hueandyou-keyword-cluster.json",
+    "/area-bucheon-funeral.html"
+  ],
+  "kpis": [
+    "노출수",
+    "클릭수",
+    "평균순위",
+    "비브랜드→브랜드 유입",
+    "견적진입",
+    "상담클릭",
+    "실제 문의",
+    "실제 행사"
+  ],
+  "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
+  "last_checked_at_kst": "2026-10-07T23:32:00+09:00",
+  "latest_run": {
+    "status": "보완 필요",
+    "performed": [
+      "기준 업무카드·키워드 클러스터 일치 확인",
+      "관리 대상 7개 페이지의 canonical·robots·내부링크·구조화데이터·참고견적 고지 점검",
+      "공개 페이지 정상 응답 확인",
+      "공개 검색 경쟁 표현을 기존 비용 의도군에 통합",
+      "최신 GitHub SEO 검증·Pages 배포 성공 확인"
+    ],
+    "evidence": {
+      "live_page": "https://www.dahamsangjo.co.kr/bucheon-hueandyou-funeral.html 정상 로드",
+      "public_search": [
+        "https://enosh.or.kr/place/145 - 빈소·위치·비용 및 무빈소 가능 표현",
+        "https://barigil.com/jangnye/hyuaenyubyeongwonjangryesikjang - 빈소료·식대 단가표·공개 단가 표현",
+        "https://15774129.go.kr/portal/esky/fnlfac/fac_list.do?menuId=M0001000100000000 - 공식 장사시설 원천"
+      ],
+      "repository_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
+      "verified_base_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
+      "seo_validation": "success - GitHub Actions run 37637536560",
+      "pages_deployment": "success - GitHub Actions run 37637536541"
+    },
+    "analytics": {
+      "gsc": "미확인",
+      "ga4": "미확인",
+      "reason": "GSC Wizard 체험 종료로 연결 데이터 조회 불가. 0으로 간주하지 않음."
+    },
+    "conversion_change": {
+      "impressions": "미확인",
+      "clicks": "미확인",
+      "ctr": "미확인",
+      "average_position": "미확인",
+      "estimate_entry": "미확인",
+      "consultation_click": "미확인",
+      "actual_inquiry": "미확인",
+      "actual_event": "미확인"
+    },
+    "findings": [
+      "신규 얇은 페이지를 만들 필요 없음",
+      "추가 고의도 표현은 기존 비용 페이지와 허브에 흡수",
+      "신명칭 재개관 사실과 최신 시설요금은 독립 공식 근거가 확보될 때까지 운영 시점 재확인 문구 유지"
+    ],
+    "next_actions": [
+      "GSC/GA4 접근 복구 후 휴앤유 쿼리·페이지·전환을 단계별 재확인",
+      "최신 시설요금 공식 원천이 확보되면 /hueandyou-cost.html의 단가표와 참고견적 갱신",
+      "신규 페이지보다 기존 비용·무빈소·가족장 페이지의 고유 근거 보강 우선"
+    ],
+    "blockers": [
+      "GSC Wizard 구독 종료",
+      "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
+      "리뉴얼 이후 최신 시설요금 공식표 미확인"
+    ],
+    "control_room_log": {
+      "id": "seo-bucheon-20261007-233200-3992f42a",
+      "status": "기록 실패",
+      "reason": "관제실 /api/maintenance 연결이 실행 환경에서 응답 없이 종료됨",
+      "separation": "SEO 작업·GitHub 검증·Pages 배포는 성공했으며 관제실 기록 실패와 분리"
+    }
+  }
+}
