@@ -83,10 +83,10 @@
         "https://barigil.com/jangnye/hyuaenyubyeongwonjangryesikjang - 빈소료·식대 단가표·공개 단가 표현",
         "https://15774129.go.kr/portal/esky/fnlfac/fac_list.do?menuId=M0001000100000000 - 공식 장사시설 원천"
       ],
-      "repository_commit": "0c662ebfa9d9b9f1e379ab426d2021cc9ed8cf20",
-      "verified_base_commit": "3ce3a48626190b89e826fd61490e236a42f00d95",
-      "seo_validation": "success - GitHub Actions run 37636879908",
-      "pages_deployment": "success - GitHub Actions run 37636879205"
+      "repository_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
+      "verified_base_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
+      "seo_validation": "success - GitHub Actions run 37637536560",
+      "pages_deployment": "success - GitHub Actions run 37637536541"
     },
     "analytics": {
       "gsc": "미확인",
@@ -117,6 +117,12 @@
       "GSC Wizard 구독 종료",
       "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
       "리뉴얼 이후 최신 시설요금 공식표 미확인"
-    ]
+    ],
+    "control_room_log": {
+      "id": "seo-bucheon-20261007-233200-3992f42a",
+      "status": "기록 실패",
+      "reason": "관제실 /api/maintenance 연결이 실행 환경에서 응답 없이 종료됨",
+      "separation": "SEO 작업·GitHub 검증·Pages 배포는 성공했으며 관제실 기록 실패와 분리"
+    }
   }
 }
