@@ -55,6 +55,8 @@ def request_region(region):
 def main():
     all_items=[]
     counts={}
+    completed=[]
+    incomplete=[]
     for aliases in REGIONS:
         rows=[]
         chosen=None
@@ -66,18 +68,26 @@ def main():
                 last_error=e
                 print(f"WARN {region}: {e}")
                 continue
-            if candidate:
+            if candidate and len(candidate)==total:
                 rows=candidate
                 chosen=region
-                if len(rows) != total:
-                    print(f"WARN {region}: fetched {len(rows)} / totalCount {total}")
                 break
+            if candidate:
+                last_error=RuntimeError(f"{region}: fetched {len(candidate)} / totalCount {total}")
+                incomplete.append(str(last_error))
+                print(f"WARN {last_error}")
         if chosen:
             counts[chosen]=len(rows)
+            completed.append(aliases[0])
             all_items.extend(rows)
             print(f"OK {chosen}: {len(rows)}")
         else:
+            incomplete.append(f"{aliases[0]}: {last_error}")
             print(f"WARN no data for {aliases}: {last_error}")
+
+    missing=[aliases[0] for aliases in REGIONS if aliases[0] not in completed]
+    if missing or incomplete:
+        raise SystemExit(f"incomplete nationwide snapshot; missing={missing}; details={incomplete}")
 
     dedup={}
     for x in all_items:
