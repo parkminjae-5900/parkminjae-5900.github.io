@@ -2,7 +2,7 @@
 import json, os, re, time, hashlib
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qs
 import requests
 from bs4 import BeautifulSoup
 
@@ -58,6 +58,19 @@ def same_host(a,b):
     ha,hb=host(a),host(b)
     return bool(ha and hb and (ha==hb or ha.endswith("."+hb) or hb.endswith("."+ha)))
 
+def identity_key(name,address):
+    return canon_name(name)+"|"+norm(address)
+
+def branch_token(u):
+    try:
+        q=parse_qs(urlparse(clean(u)).query)
+    except Exception:
+        return ""
+    for k,vals in q.items():
+        lk=k.lower()
+        if lk in ("fnrcd","branchid","siteid","facilityid","fcltcd") and vals and clean(vals[0]):
+            return lk+"="+clean(vals[0])
+    return ""
 def session():
     s=requests.Session()
     s.headers.update({"User-Agent":UA,"Accept-Language":"ko-KR,ko;q=0.9,en;q=0.5"})
@@ -226,8 +239,22 @@ def main():
     cursor=int(state.get("cursor",0))
     if not halls:raise SystemExit("no halls")
 
-    byname={norm(x.get("facilityName","")):x for x in db.get("items",[]) if x.get("facilityName")}
-    results=state.get("results",{})
+    byidentity={
+        identity_key(x.get("facilityName",""),x.get("address","")):x
+        for x in db.get("items",[])
+        if x.get("facilityName") and x.get("address")
+    }
+    host_counts={}
+    for x in halls:
+        hst=host(normalize_url(x.get("homepageUrl","")))
+        if hst:host_counts[hst]=host_counts.get(hst,0)+1
+
+    valid_keys={
+        hashlib.sha1((x.get("fcltNm","")+"|"+x.get("addr","")).encode()).hexdigest()[:16]
+        for x in halls
+    }
+    # Keep scan history aligned with the current facility source list.
+    results={k:v for k,v in state.get("results",{}).items() if k in valid_keys}
     batch=[]
     n=len(halls)
     for j in range(min(BATCH,n)):
@@ -236,7 +263,6 @@ def main():
         key=hashlib.sha1((h.get("fcltNm","")+"|"+h.get("addr","")).encode()).hexdigest()[:16]
         res=scan_hall(h)
         res.update({"facilityName":h.get("fcltNm",""),"address":h.get("addr",""),"index":idx})
-        results[key]=res
         batch.append(res)
         if res["status"]=="priced":
             rec={
@@ -249,22 +275,55 @@ def main():
               "sourceNote":"공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
               "prices":res["prices"]
             }
-            old=byname.get(norm(rec["facilityName"]))
-            # Preserve manually curated A record if it is same or newer verified date with richer data.
-            if not old or old.get("sourceGrade")!="A" or len(rec["prices"])>len(old.get("prices",[])):
-                byname[norm(rec["facilityName"])]=rec
-        print(idx,h.get("fcltNm"),res["status"],len(res.get("prices",[])))
+            ident=identity_key(rec["facilityName"],rec["address"])
+            old=byidentity.get(ident)
+            hst=host(normalize_url(h.get("homepageUrl","")))
+            shared_host=bool(hst and host_counts.get(hst,0)>1)
+            new_token=branch_token(rec.get("sourceUrl",""))
+            old_token=branch_token((old or {}).get("sourceUrl",""))
+            identity_ok=True
+            reject_reason=""
+
+            # Shared provider sites can expose another branch's price page.
+            # Promote only when an existing exact facility+address A record proves
+            # the same stable branch token (for example fnrCd).
+            if shared_host:
+                if not old or old.get("sourceGrade")!="A":
+                    identity_ok=False
+                    reject_reason="shared_host_requires_existing_exact_a_identity"
+                elif not old_token or not new_token or old_token!=new_token:
+                    identity_ok=False
+                    reject_reason="shared_host_branch_token_mismatch"
+
+            if identity_ok:
+                if not old:
+                    byidentity[ident]=rec
+                    res["promotionStatus"]="added"
+                elif old.get("sourceGrade")!="A":
+                    byidentity[ident]=rec
+                    res["promotionStatus"]="replaced_non_a"
+                elif len(rec["prices"])>len(old.get("prices",[])):
+                    byidentity[ident]=rec
+                    res["promotionStatus"]="replaced_richer_exact_identity"
+                else:
+                    res["promotionStatus"]="preserved_existing_a"
+            else:
+                res["promotionStatus"]="rejected"
+                res["promotionReason"]=reject_reason
+                if old_token:res["expectedBranchToken"]=old_token
+                if new_token:res["observedBranchToken"]=new_token
+
+        results[key]=res
+        print(idx,h.get("fcltNm"),res["status"],len(res.get("prices",[])),res.get("promotionStatus",""))
 
     newcursor=(cursor+len(batch))%n
+
     cycles=int(state.get("completedCycles",0))+(1 if cursor+len(batch)>=n else 0)
     state.update({"cursor":newcursor,"completedCycles":cycles,"updatedAt":now(),"results":results,"totalFacilities":n})
-    # keep scan history bounded to all current facilities
-    if len(results)>n*2:
-        items=sorted(results.items(),key=lambda kv:kv[1].get("index",0))
-        state["results"]=dict(items[-n:])
 
-    merged=sorted(byname.values(),key=lambda x:canon_name(x.get("facilityName","")))
-    db.update({"schemaVersion":5,"updatedAt":now(),"items":merged,
+    merged=sorted(byidentity.values(),key=lambda x:(canon_name(x.get("facilityName","")),norm(x.get("address",""))))
+
+    db.update({"schemaVersion":6,"updatedAt":now(),"items":merged,
                "source":{"name":"최신 공식 홈페이지 가격 우선 DB","note":"A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."}})
     OVERRIDES.write_text(json.dumps(db,ensure_ascii=False,indent=2),encoding="utf-8")
     STATE.write_text(json.dumps(state,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
