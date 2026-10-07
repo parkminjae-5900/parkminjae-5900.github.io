@@ -60,10 +60,10 @@
     "실제 행사"
   ],
   "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
-  "last_checked_at_kst": "2026-10-08T06:32:35+09:00",
+  "last_checked_at_kst": "2026-10-08T07:16:01+09:00",
   "latest_run": {
-    "status": "가격 검증 안전성 강화·SEO 성과 변화 없음",
-    "checked_at_kst": "2026-10-08T06:32:35+09:00",
+    "status": "인천 구행정구역 중복 색인 정리 완료",
+    "checked_at_kst": "2026-10-08T07:16:01+09:00",
     "primary_team": "성장마케팅부 검색최적화팀",
     "cross_review_team": "데이터견적부 장례견적팀",
     "deployment_support": "서비스개발부",
@@ -71,93 +71,50 @@
       "/bucheon-hueandyou-funeral.html",
       "/incheon-sejong-funeral.html",
       "/area-incheon-funeral.html",
+      "/area-incheon-junggu-funeral.html",
+      "/area-incheon-jemulpo-funeral.html",
+      "/area-incheon-yeongjong-funeral.html",
       "/incheon-medical-center-funeral.html",
-      "/inha-funeral.html",
-      "/hangang-hallym-funeral.html"
+      "/inha-funeral.html"
     ],
     "performed": [
       "GitHub 업무카드·키워드 클러스터·최신 main 커밋 재확인",
-      "공식 장례식장 가격 스캔과 가격 승격 검증 강화 PR 변경 범위 검수",
-      "휴앤유·부천 세종병원·인천·영등포·송파·강남 가격 데이터 영향 확인",
+      "인천 중구 구행정구역 랜딩의 noindex·canonical·사이트맵·내부 이동 구조 검수",
+      "제물포구·영종구 대상 페이지 존재·index·canonical·사이트맵 포함 여부 확인",
+      "GitHub SEO 검증과 Pages 배포 성공 확인",
       "Windsor GA4·Search Console 연결 및 유효 필드 재확인",
       "최근 28일·직전 28일 GSC 검색어·페이지 동일 조건 재조회",
       "GA4 Organic Search 랜딩페이지, 견적·상담·전화 CTA, 휴앤유 유입 재조회",
-      "공개 검색에서 휴앤유·인천의료원 대상 노출 재점검",
-      "키워드 클러스터 기준파일의 오래된 분석 연결 설명과 가격 검증 상태 갱신"
+      "공개 검색에서 구 인천 중구·제물포구·영종구 및 인천의료원 노출 점검"
     ],
     "evidence": {
-      "repository_head_before_run": "f99cd78b2ee4181bb9287ea977c80e5de2a953d0",
-      "repository_changes": [
-        {
-          "commit": "2ee59706133d7097c351242df5b62eb479f13028",
-          "summary": "가격 발견과 고객 화면 승격을 분리하고 지점코드·범주완전성·레코드축소 검증 및 회귀 테스트 6건 추가",
-          "scan_workflow": "success - GitHub Actions run 37682580863",
-          "seo_validation": "success - GitHub Actions run 37682580750",
-          "pages_deployment": "success - GitHub Actions run 37682580619"
-        },
-        {
-          "commit": "1a3b4ed612b9ed80090e3cf54cfb82be166fbd8f",
-          "summary": "강화된 검증 규칙으로 공식 가격 스캔 실행",
-          "scan_workflow": "success - GitHub Actions run 37683172064",
-          "pages_deployment": "success - GitHub Actions run 37682878521"
-        },
-        {
-          "commit": "f99cd78b2ee4181bb9287ea977c80e5de2a953d0",
-          "summary": "부천 구간을 포함한 다음 배치 스캔 결과 기록",
-          "pages_deployment": "success - GitHub Actions run 37683497623"
-        }
-      ],
-      "official_price_scan": {
-        "updated_at_utc": "2026-10-07T20:38:00.801957+00:00",
-        "total_facilities": 1080,
-        "scanned_unique": 1080,
-        "status_counts": {
-          "unreachable": 153,
-          "no_price_found": 224,
-          "no_homepage": 666,
-          "priced": 37
-        },
-        "promotion_counts": {
-          "eligible": 21,
-          "rejected": 16,
-          "unchecked": 0
-        },
-        "rejection_reasons": {
-          "branch_code_mismatch": 7,
-          "category_coverage_regression": 7,
-          "price_record_regression": 2
-        },
-        "override_count": 39,
-        "rule": "priced 37건은 발견 수치이며 고객 화면 승격 가능 수치는 21건으로 별도 관리"
+      "repository_head_before_run": "6f645e49125b874305723989a3046a353e6ba337",
+      "repository_change": {
+        "commit": "6f645e49125b874305723989a3046a353e6ba337",
+        "pull_request": 19,
+        "summary": "구 인천 중구 랜딩을 마이그레이션 안내 페이지로 전환하고 제물포구 canonical·noindex, sitemap 제거, 회귀검증 추가",
+        "seo_validation": "success - GitHub Actions run 37690668713",
+        "pages_deployment": "success - GitHub Actions run 37690668542"
       },
-      "target_price_findings": [
-        {
-          "facility": "휴앤유병원장례식장",
-          "address": "경기도 부천시 소사구 심곡로10번길 63 (송내동)",
-          "scan_status": "no_homepage",
-          "price_promotion": "없음"
+      "migration_validation": {
+        "retired_url": "/area-incheon-junggu-funeral.html",
+        "robots": "noindex,follow",
+        "canonical": "https://www.dahamsangjo.co.kr/area-incheon-jemulpo-funeral.html",
+        "sitemap_retired_url_present": false,
+        "jemulpo": {
+          "exists": true,
+          "robots": "index,follow",
+          "self_canonical": true,
+          "sitemap_present": true
         },
-        {
-          "facility": "세종병원장례식장",
-          "address": "경기도 부천시 소사구 호현로489번길 28 (소사본동, 세종병원)",
-          "scan_status": "no_homepage",
-          "price_promotion": "없음"
+        "yeongjong": {
+          "exists": true,
+          "robots": "index,follow",
+          "self_canonical": true,
+          "sitemap_present": true
         },
-        {
-          "facility": "길병원장례식장",
-          "region": "인천",
-          "source_grade": "A",
-          "price_scope": "안치료 1개 항목",
-          "interpretation": "일부 항목만 확인되어 전체 견적으로 확대 해석하지 않음"
-        },
-        {
-          "facility": "교원예움 서서울장례식장",
-          "region": "영등포",
-          "source_grade": "A",
-          "price_scope": "빈소·입관실·안치실 공식 항목 유지"
-        }
-      ],
-      "keyword_cluster_commit": "eb23b6da804ca87cd3cebee5d96a1183b1b0d181",
+        "user_routing": "구 중구 방문자는 제물포구와 영종구 안내를 선택 가능"
+      },
       "search_console_recent_28d": [
         {
           "query": "무빈소 가족장",
@@ -231,18 +188,14 @@
           "key_events": 0
         }
       ],
-      "ga4_cta_previous_28d": "반환 행 없음",
       "public_search": [
-        "다함 휴앤유 전용 URL의 공개 검색 신규 노출 미확인",
-        "휴앤유 검색 결과는 휴앤유병원 비급여 정보가 노출되어 명칭 혼동 위험 지속",
+        "제물포구·영종구 다함 전용 URL은 배포 직후 공개 검색에서 아직 확인되지 않음",
+        "다함 메인 도메인은 공개 검색에서 확인",
         "인천의료원 공개 검색은 경쟁사의 비용·가족장 페이지가 계속 노출"
       ],
-      "management_page_changes": "없음",
-      "run_record_commit": "f86e61aeb3737a15a6c36d43ecd2dd74e2031f08",
-      "run_record_validation": {
-        "seo_validation": "success - GitHub Actions run 37690362284",
-        "pages_deployment": "success - GitHub Actions run 37690361568"
-      }
+      "management_page_changes": "구 중구 랜딩 noindex/canonical 마이그레이션, 사이트맵 제거, 검증 스크립트 보강",
+      "run_record_commit": "이번 실행 기록 커밋 생성 후 갱신 예정",
+      "run_record_validation": "이번 실행 기록 커밋 생성 후 확인 예정"
     },
     "analytics": {
       "ga4_service": "Windsor 연결 정상 - 다함상조 557803440",
@@ -252,7 +205,7 @@
         "recent": "2026-09-10~2026-10-07",
         "previous": "2026-08-13~2026-09-09"
       },
-      "caveat": "GSC 노출은 검색어별 1회 수준이며 GA4 Organic Search는 반환 행이 없어 유의미한 SEO 성과 변화 판정 불가"
+      "caveat": "새 지역 URL의 공개 검색·GSC 반영은 아직 확인되지 않았으며 기존 노출 표본도 검색어별 1회 수준"
     },
     "conversion_change": {
       "impressions": "직전과 동일; 3개 검색어 각 1회",
@@ -267,24 +220,25 @@
       "actual_event": "미확인"
     },
     "findings": [
-      "SEO 노출·클릭·Organic 유입·CTA 수치는 직전과 동일",
-      "가격 발견 37건 전체를 고객 화면에 승격하지 않고 공식 시설 동일성·가격 범주 완전성 검증을 통과한 21건만 승격 후보로 분리",
-      "휴앤유와 부천 세종병원은 공식 홈페이지 가격 원천 미확인으로 가격 데이터 변경 없음",
-      "인천 길병원장례식장 공식 가격은 안치료 단일 항목만 확인돼 전체 장례견적으로 확대 사용하지 않음",
-      "신규 페이지 생성이나 고객 화면 가격 변경은 수행하지 않음"
+      "구 인천 중구 랜딩의 중복 색인 위험을 제거하고 제물포구·영종구 현행 행정구역 안내로 연결",
+      "구 URL은 삭제하지 않아 기존 방문자와 외부 링크를 보존하면서 검색 색인만 제외",
+      "제물포구·영종구 페이지는 각각 self-canonical·index·사이트맵 포함 상태",
+      "배포·SEO 검증은 성공했지만 신규 검색 노출은 아직 확인되지 않아 성과 완료로 표시하지 않음",
+      "GSC·GA4 성과와 CTA는 직전 점검과 동일"
     ],
     "priority_actions": [
-      "휴앤유와 부천 세종병원은 공식 시설 홈페이지 또는 e하늘·공공데이터 가격 원천 확보 전 가격 승격 금지",
-      "인천 길병원장례식장은 빈소·입관·식대 등 추가 공식 항목 확보 전 단일 안치료를 전체 견적으로 사용하지 않음",
-      "기존 우선순위 유지: /incheon-medical-center-funeral.html 및 /inha-funeral.html의 제목·도입부·내부링크·참고견적 CTA 점검",
+      "Search Console에서 구 중구 URL 제외와 제물포구·영종구 색인 반영 여부 관찰",
+      "제물포구·영종구 실제 장례식장·가격·화장 동선·FAQ 근거를 보강해 얇은 지역 페이지 위험 축소",
+      "기존 1순위 /incheon-medical-center-funeral.html 및 /inha-funeral.html의 내부링크를 제물포구 허브와 정합화",
       "Cross-network CTA와 실제 문의·행사 데이터를 분리 대조",
       "휴앤유는 기존 허브 유지, 공식 신명칭·최신 시설요금 근거 확보 전 신규 페이지·가격 변경 금지"
     ],
     "blockers": [
-      "휴앤유·부천 세종병원 공식 홈페이지 가격 원천 미확인",
+      "제물포구·영종구 신규 검색 노출·색인 반영 미확인",
       "GSC 표본이 검색어별 노출 1회로 통계적 판단에 부족",
       "GA4 Organic Search 보고서 반환 행 없음",
-      "실제 문의·실제 행사 연결 데이터 미확인"
+      "실제 문의·실제 행사 연결 데이터 미확인",
+      "휴앤유·부천 세종병원 공식 홈페이지 가격 원천 미확인"
     ]
   },
   "direct_assignees": [
