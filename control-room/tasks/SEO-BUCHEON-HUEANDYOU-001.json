@@ -60,36 +60,45 @@
     "실제 행사"
   ],
   "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
-  "last_checked_at_kst": "2026-10-08T01:34:00+09:00",
+  "last_checked_at_kst": "2026-10-08T02:23:51+09:00",
   "latest_run": {
     "status": "보완 필요",
     "performed": [
-      "기준 업무카드·키워드 클러스터 상태 재확인",
-      "2026-10-08 대표 직속 조직개편을 홈페이지 SEO·GEO·AEO 업무의 우선 지시·보고 체계로 반영",
-      "GA4 서비스 상태와 GSC Wizard 외부 분석 연결 상태를 분리해 정정",
-      "최신 저장소 변경의 휴앤유 SEO 자산 영향 검토",
-      "공개 검색 결과와 최신 GitHub SEO 검증·Pages 배포 상태 확인"
+      "기준 업무카드·키워드 클러스터 및 최신 main 커밋 재확인",
+      "대표 직속 owner-search 대기 지시 2건만 확인하고 현재 검색업무 범위의 실제 점검 결과를 PATCH·재조회 검증",
+      "Windsor에서 GA4 다함상조 속성과 Search Console 주 도메인 연결 확인",
+      "휴앤유·인천 대상 최근 28일과 직전 28일 GSC·GA4 비교 보고서 4건 요청",
+      "GitHub SEO 검증·Pages 배포 성공 상태 확인",
+      "관제실 maintenance 기록 POST 후 GET 재조회 검증"
     ],
     "evidence": {
-      "repository_head": "8a9fc38fb894e16c0bbf757b8f14b5f35aa3216e",
-      "repository_change_scope": "quote-app 설치 중단·복제 금지 고지 변경으로 휴앤유 관리 자산 직접 변경 없음",
-      "security_commit": "80afa8326fdc98e54e58c0a77b0d4fcfa319b859 - 분석 데이터 최소화·DOM XSS·사례 개인정보·비밀정보 검사 강화",
-      "public_search": "2026-10-08 01:34 KST 기준 site:dahamsangjo.co.kr 휴앤유추모관/휴앤유병원장례식장 비용 검색에서 전용 관리 URL 노출 미확인; 메인 도메인만 확인",
-      "seo_validation": "success - GitHub Actions run 37653635566",
-      "pages_deployment": "success - GitHub Actions run 37653635764",
-      "repository_commit": "41c2f84636d388cbc919bbc9669becc95372bbf0",
-      "verified_base_commit": "41c2f84636d388cbc919bbc9669becc95372bbf0",
-      "change_commits": [
-        "c319437396bf426a16c262c089226580fbb4c96f - 업무카드 조직개편·GA4 연결상태 정정",
-        "41c2f84636d388cbc919bbc9669becc95372bbf0 - 키워드 클러스터 조직개편·분석상태 정정"
+      "repository_head": "4fbad58f2d2f54e195cfa3b51d358d499f5fcdef",
+      "repository_change_scope": "직전 실행 이후 신규 코드 커밋 없음; 휴앤유·인천 관리 자산 직접 변경 없음",
+      "seo_validation": "success - GitHub Actions run 37654556919",
+      "pages_deployment": "success - GitHub Actions run 37654556207",
+      "owner_directives": [
+        "9c3ab9c2-a294-4831-a104-23eccefd4bbb-owner-search - 검수 상태 저장·재조회 확인",
+        "funeral-prompt-seo-20261007-owner-search - 검수 상태 저장·재조회 확인"
+      ],
+      "analytics_connections": [
+        "Windsor GA4 557803440 다함상조 연결 확인",
+        "Windsor Search Console https://www.dahamsangjo.co.kr/ 연결 확인"
+      ],
+      "analytics_jobs": [
+        "Search Console 최근 28일 8810bf5e622323e7e2dc3cf60bff0fc7 - queued",
+        "Search Console 직전 28일 6c344f7593c1216a882a8161c2a8a8da - queued",
+        "GA4 최근 28일 e5f9ab73975a7816937a275c248e5eb5 - queued",
+        "GA4 직전 28일 ca1ab716b9d72818b4c73cf887068c94 - queued"
       ]
     },
     "analytics": {
-      "ga4_service": "종료 아님",
-      "gsc_wizard_access": "구독 종료로 조회 불가",
-      "gsc": "미확인",
+      "ga4_service": "정상 연결 확인",
+      "search_console": "정상 연결 확인",
+      "gsc_wizard_access": "구독 종료로 별도 도구 조회 불가",
+      "windsor_report_status": "최근 28일·직전 28일 4개 보고서 queued",
+      "gsc_metrics": "미확인",
       "ga4_metrics": "미확인",
-      "reason": "GA4 자체가 종료된 것이 아니라 GSC Wizard/외부 분석 연결 구독이 종료되어 최신 연결 데이터를 조회할 수 없음. 모든 수치는 0이 아닌 미확인으로 유지."
+      "reason": "Windsor 연결은 확인됐으나 결과 행이 아직 대기열에서 반환되지 않음. 수치를 0으로 처리하지 않음."
     },
     "conversion_change": {
       "impressions": "미확인",
@@ -102,22 +111,21 @@
       "actual_event": "미확인"
     },
     "findings": [
-      "최신 저장소 변경은 quote-app 범위로 휴앤유 관리 페이지의 검색의도·내부링크·구조화데이터에 직접 영향 없음",
-      "공개 검색에서 휴앤유 전용 URL의 신규 노출 변화 미확인",
-      "신규 얇은 페이지를 만들 근거 없음; 기존 비용·무빈소·가족장 허브 보강 우선",
-      "신명칭 재개관 사실과 최신 시설요금은 독립 공식 근거가 확보될 때까지 운영 시점 재확인 문구 유지"
+      "직전 실행 이후 휴앤유·인천 SEO 페이지의 신규 코드 변경 없음",
+      "owner-search 직접 지시 2건은 실제 저장·재조회 검증 완료했으나 성과 데이터가 없어 완료가 아닌 검수 상태 유지",
+      "GA4와 Search Console 연결은 정상이며 GSC Wizard 구독 종료와 구분",
+      "신규 얇은 페이지나 미검증 가격 변경 근거 없음"
     ],
     "next_actions": [
-      "대표 직속 검색지시 API 접근 복구 후 owner-search 대상 지시만 확인·처리",
-      "GSC Wizard 또는 대체 승인 연결 복구 후 휴앤유 쿼리·페이지·전환 단계별 재확인",
-      "최신 시설요금 공식 원천 확보 시 /hueandyou-cost.html 단가표와 참고견적 갱신",
-      "신규 페이지보다 기존 비용·무빈소·가족장 페이지의 고유 근거 보강 우선"
+      "동일 Windsor 보고서 작업을 재조회해 완료된 결과부터 최근 28일 대비 직전 28일 비교",
+      "휴앤유·인천별 노출·클릭·CTR·평균순위와 견적진입·상담클릭을 분리 기록",
+      "최신 시설요금 공식 원천 확보 시 기존 비용 페이지의 참고견적만 갱신",
+      "신규 페이지보다 기존 휴앤유·인천 견적 흐름의 실제 전환 증거 보강 우선"
     ],
     "blockers": [
-      "GSC Wizard 외부 분석 연결 구독 종료(GA4 자체 종료 아님)",
+      "Windsor 4개 비교 보고서가 queued로 결과 행 미반환",
       "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
-      "리뉴얼 이후 최신 시설요금 공식표 미확인",
-      "관제실 API는 실행 환경의 네트워크 승인 미부여 및 브라우저 로그인 필요로 조회·저장 미완료"
+      "리뉴얼 이후 최신 시설요금 공식표 미확인"
     ],
     "owner_direct_assignment": {
       "department": "대표 별도지시관리팀",
@@ -126,14 +134,16 @@
         "김서준"
       ],
       "recipient_key": "owner-search",
-      "source": "2026-10-08 대표 직속 조직 개편",
-      "directive_check": "미확인 - 관제실 API 접근 차단"
+      "directive_check": "완료 - owner-search 2건 확인·PATCH·재조회 검증",
+      "completion_claim": "성과 데이터 미확인으로 검수 상태 유지"
     },
     "control_room_log": {
-      "id": "seo-bucheon-20261008-013407-8a9fc38f",
-      "status": "기록 실패",
-      "reason": "관제실 /api/directives 및 /api/maintenance에 대한 비대화형 API 연결이 네트워크 승인 단계에서 중단됐고 브라우저는 로그인 화면으로 전환됨",
-      "separation": "저장소·공개검색·GitHub Actions 검증과 관제실 API 기록 실패를 분리"
+      "id": "seo-bucheon-20261008-022351-4fbad58f",
+      "status": "보완 필요",
+      "saved": true,
+      "verified": true,
+      "reason": "GA4·Search Console 연결은 정상이나 4개 비교 보고서가 queued",
+      "separation": "관제실 기록 성공, SEO 성과 수치는 별도 미확인"
     }
   },
   "direct_assignees": [
