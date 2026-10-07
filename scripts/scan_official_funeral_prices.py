@@ -44,6 +44,9 @@ def canon_name(s):
     if x.endswith("장례식장"): x=x[:-4]
     return x
 
+def source_identity(name,address):
+    return hashlib.sha1((str(name or "")+"|"+str(address or "")).encode()).hexdigest()[:16]
+
 def normalize_url(u):
     u=clean(u)
     if not u:return ""
@@ -271,10 +274,14 @@ def main():
     results=state.get("results",{})
     batch=[]
     n=len(halls)
+    current_source_ids={source_identity(h.get("fcltNm",""),h.get("addr","")) for h in halls}
+    previous_result_count=len(results)
+    results={k:v for k,v in results.items() if k in current_source_ids}
+    stale_results_pruned=previous_result_count-len(results)
     for j in range(min(BATCH,n)):
         idx=(cursor+j)%n
         h=halls[idx]
-        key=hashlib.sha1((h.get("fcltNm","")+"|"+h.get("addr","")).encode()).hexdigest()[:16]
+        key=source_identity(h.get("fcltNm",""),h.get("addr",""))
         res=scan_hall(h)
         res.update({"facilityName":h.get("fcltNm",""),"address":h.get("addr",""),"index":idx})
         results[key]=res
@@ -301,11 +308,8 @@ def main():
 
     newcursor=(cursor+len(batch))%n
     cycles=int(state.get("completedCycles",0))+(1 if cursor+len(batch)>=n else 0)
-    state.update({"cursor":newcursor,"completedCycles":cycles,"updatedAt":now(),"results":results,"totalFacilities":n})
-    # keep scan history bounded to all current facilities
-    if len(results)>n*2:
-        items=sorted(results.items(),key=lambda kv:kv[1].get("index",0))
-        state["results"]=dict(items[-n:])
+    state.update({"cursor":newcursor,"completedCycles":cycles,"updatedAt":now(),"results":results,
+                  "totalFacilities":n,"staleResultsPruned":stale_results_pruned})
 
     merged=sorted(byname.values(),key=lambda x:canon_name(x.get("facilityName","")))
     db.update({"schemaVersion":5,"updatedAt":now(),"items":merged,
@@ -315,9 +319,28 @@ def main():
 
     counts={}
     for v in state["results"].values():counts[v.get("status","unknown")]=counts.get(v.get("status","unknown"),0)+1
+    current_record_keys={record_key({"facilityName":h.get("fcltNm",""),"address":h.get("addr","")}) for h in halls}
+    current_name_counts={}
+    for h in halls:
+        name_key=norm(h.get("fcltNm",""))
+        current_name_counts[name_key]=current_name_counts.get(name_key,0)+1
+    override_current_exact=sum(1 for x in merged if record_key(x) in current_record_keys)
+    override_current_name_only=sum(
+        1 for x in merged
+        if record_key(x) not in current_record_keys
+        and current_name_counts.get(norm(x.get("facilityName","")),0)==1
+    )
+    override_not_in_source=len(merged)-override_current_exact-override_current_name_only
     report={"updatedAt":now(),"cursor":newcursor,"completedCycles":cycles,"total":n,
             "scannedUnique":len(state["results"]),"statusCounts":counts,
-            "overrideCount":len(merged),"lastBatch":batch}
+            "staleResultsPruned":stale_results_pruned,
+            "overrideCount":len(merged),
+            "overrideIdentityCounts":{
+                "currentExact":override_current_exact,
+                "currentNameOnly":override_current_name_only,
+                "notInCurrentSource":override_not_in_source
+            },
+            "lastBatch":batch}
     REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps({k:report[k] for k in ("cursor","completedCycles","scannedUnique","statusCounts","overrideCount")},ensure_ascii=False))
 
