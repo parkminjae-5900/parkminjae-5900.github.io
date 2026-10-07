@@ -26,7 +26,7 @@ function attribution(){
  a.search_query=q.get("n_query")||q.get("utm_term")||q.get("query")||"";
  return a
 }
-function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_path:location.pathname,page_type:pageType(),area:area(),funeral_hall:hall()};Object.assign(d,attribution(),x||{});window.dataLayer.push(d)}
+function push(ev,x){window.dataLayer=window.dataLayer||[];var d={event:ev,page_path:location.pathname,page_type:pageType(),area:area(),funeral_hall:hall()};Object.assign(d,attribution(),x||{});try{if(typeof window.dahamTrack==="function")window.dahamTrack(ev,d);else if(typeof window.gtag==="function")window.gtag("event",ev,d);else window.dataLayer.push(d)}catch(e){window.dataLayer.push(d)}}
 function defaultPackageKey(){
  var explicit=document.body.getAttribute("data-default-package");
  if(PACKAGES.some(function(x){return x.key===explicit}))return explicit;
