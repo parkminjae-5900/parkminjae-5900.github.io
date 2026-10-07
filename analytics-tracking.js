@@ -41,6 +41,7 @@
   function send(name,params){
     try{gtag("event",name,Object.assign({page_path:location.pathname,page_title:document.title},attribution(),params||{}));}catch(e){}
   }
+  window.dahamTrack=function(name,params){send(name,params);};
 
   document.addEventListener("click",function(e){
     const a=e.target.closest("a,button");
