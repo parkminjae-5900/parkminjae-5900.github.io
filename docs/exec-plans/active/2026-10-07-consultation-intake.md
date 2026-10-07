@@ -23,14 +23,14 @@ Static Pages cannot receive submissions. Cloudflare account, D1/Turnstile config
 - [x] Automated verification
 - [ ] Desktop verification
 - [ ] Mobile verification
-- [ ] Regression check
+- [x] Regression check
 - [ ] Final review
 ## Discoveries
 phone_click and kakao_click already implemented. Existing consult_submit fires before successful storage.
 ## Decisions
 Use distinct new page; preserve existing working helper. Minimal non-sensitive context; no free-text bereavement details.
 ## Final verification
-Node tests: 5 passed (persistence, idempotency, validation, abuse verification, authenticated reads, expiry, client failure/success and analytics privacy). JavaScript syntax passed. SEO conversion and search-content checks passed after adding the sitemap URL. Existing product-catalog browser script could not run because its required Edge executable is unavailable. Desktop/mobile rendered UI and live endpoint verification remain open; no production change. Static project has no package/build/typecheck command.
+Node tests: 7 passed (persistence, idempotency, validation, abuse verification, authenticated reads, 205-row cursor pagination, configuration health, expiry, client failure/success and analytics privacy). JavaScript syntax passed for intake, worker and shared analytics. SEO conversion and search-content checks passed (385 public pages, 414 sitemap URLs). Local asset/semantic checks passed. No browser executable is available, so desktop/mobile rendered UI and live endpoint verification remain open; no production change. Static project has no package/build/typecheck command.
 
 User additionally requested subsequent steps run in sequence after 상무 approval. Approver identity and approval channel unresolved; no messages or automation created.
 ## Remaining limitations
@@ -38,3 +38,6 @@ Live backend setup, live end-to-end verification and deployment.
 
 ## AI executive review — 2026-10-07
 Read-only independent review returned HOLD for publication. Locally corrected cursor pagination for the 200-row operator list, storage/config readiness check, and retry copy scoped to the current screen. Five tests still pass; new pagination/rendered checks remain required. Outstanding: cleanup monitoring/backup policy, attribution URL/referrer privacy audit, operator workflow, production storage configuration and desktop/mobile/live verification. This review is not actual-person approval. Actual executive identity/channel remains unresolved. Automatic approval review rejected remote push; no alternate publication route attempted. No automation created.
+
+## Automation continuation — 2026-10-07
+Latest PR check reports mergeable against current main. Shared analytics now disables the automatic unsanitized page view, sends path and referrer origin only, removes search-term fields, drops arbitrary event values and never sends raw link text, telephone values or URL queries. The SEO funnel no longer propagates inbound attribution into the calculator URL. Worker cleanup now emits a PII-free deletion count with observability enabled in the example. Added health, 205-row pagination and analytics leakage tests; all 7 tests pass. Operator alert recipient, D1 recovery/backup retention decision, production resources, desktop/mobile browser rendering and live submission remain external gates.
