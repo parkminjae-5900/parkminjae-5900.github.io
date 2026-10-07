@@ -193,8 +193,11 @@
         "공개 검색 구조 변화 없음"
       ],
       "management_page_changes": "없음",
-      "run_record_commit": "pending",
-      "run_record_validation": "pending"
+      "run_record_commit": "7be7e51556ac7a3c2b2e57acd60e23e5190cc268",
+      "run_record_validation": {
+        "seo_validation": "success - GitHub Actions run 37703870731",
+        "pages_deployment": "success - GitHub Actions run 37703870299"
+      }
     },
     "analytics": {
       "ga4_service": "Windsor 연결 정상 - 다함상조 557803440",
