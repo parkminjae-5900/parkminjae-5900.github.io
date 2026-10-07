@@ -12,6 +12,7 @@ STATE=Path("data/official-price-scan-state.json")
 REPORT=Path("data/official-price-scan-report.json")
 BATCH=int(os.environ.get("PRICE_SCAN_BATCH","45"))
 TIMEOUT=6
+PROMOTION_GUARD_VERSION=2
 UA="Mozilla/5.0 (compatible; DahamSangjoPriceVerifier/1.0; +https://www.dahamsangjo.co.kr/)"
 
 KEYWORDS=("장례","빈소","안치","염습","입관","시설","이용","요금","비용","가격","사용료","영결")
@@ -81,14 +82,16 @@ def identity_guard(rec,old,homepage):
             return False,"address_mismatch_with_existing_A"
 
     source_code=query_value(rec.get("sourceUrl",""),"fnrCd")
-    if source_code:
-        home_code=query_value(homepage or "","fnrCd")
-        old_code=query_value((old or {}).get("sourceUrl",""),"fnrCd")
-        expected=home_code or old_code
-        if not expected:
-            return False,"branch_code_unverifiable"
+    home_code=query_value(homepage or "","fnrCd")
+    old_code=query_value((old or {}).get("sourceUrl",""),"fnrCd")
+    expected=home_code or old_code
+    if expected:
+        if not source_code:
+            return False,"branch_code_missing"
         if expected!=source_code:
             return False,"branch_code_mismatch"
+    elif source_code:
+        return False,"branch_code_unverifiable"
 
     if old and old.get("sourceGrade")=="A":
         old_cov=category_coverage(old.get("prices",[]))
@@ -98,7 +101,7 @@ def identity_guard(rec,old,homepage):
         if len(rec.get("prices",[])) < len(old.get("prices",[])):
             return False,"price_record_regression"
 
-    return True,"verified"
+    return True,"guard_passed"
 
 def session():
     s=requests.Session()
@@ -261,6 +264,50 @@ def load_json(path,default):
     try:return json.loads(path.read_text(encoding="utf-8"))
     except:return default
 
+def summarize_promotions(results,merged,record_key):
+    counts={"eligible":0,"rejected":0,"unchecked":0}
+    reasons={}
+    priced_record_keys=set()
+    for v in results.values():
+        if v.get("status")!="priced":
+            continue
+        priced_record_keys.add(record_key(v))
+        promotion=v.get("promotion")
+        if not isinstance(promotion,dict):
+            counts["unchecked"]+=1
+            reason="not_evaluated"
+        elif promotion.get("eligible") is True:
+            counts["eligible"]+=1
+            reason=promotion.get("reason") or "guard_passed"
+        else:
+            counts["rejected"]+=1
+            reason=promotion.get("reason") or "rejected"
+        reasons[reason]=reasons.get(reason,0)+1
+    override_record_keys={record_key(x) for x in merged}
+    return counts,reasons,len(priced_record_keys & override_record_keys)
+
+def reevaluate_saved_promotions(results,byname,record_key,batch):
+    batch_ids={id(x) for x in batch}
+    for res in results.values():
+        if res.get("status")!="priced" or id(res) in batch_ids:
+            continue
+        rec={
+          "facilityName":res.get("facilityName",""),
+          "address":res.get("address",""),
+          "verifiedAt":res.get("verifiedAt",""),
+          "sourceName":"장례식장 공식 홈페이지 공개가격",
+          "sourceUrl":res.get("sourceUrl",""),
+          "sourceGrade":"A",
+          "sourceNote":"공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+          "prices":res.get("prices",[])
+        }
+        old=byname.get(record_key(rec))
+        ok,reason=identity_guard(rec,old,res.get("homepage",""))
+        res["promotion"]={
+          "eligible":ok,"reason":reason,"applied":False,
+          "guardVersion":PROMOTION_GUARD_VERSION,"basis":"stored_scan_recheck"
+        }
+
 def main():
     hall_doc=load_json(HALLS,{})
     halls=hall_doc.get("items",[])
@@ -307,11 +354,21 @@ def main():
             key_rec=record_key(rec)
             old=byname.get(key_rec)
             ok,reason=identity_guard(rec,old,res.get("homepage",""))
-            res["promotion"]={"eligible":ok,"reason":reason}
+            applied=False
             # Never replace a curated A record unless facility identity and data completeness are verified.
             if ok and (not old or old.get("sourceGrade")!="A" or len(rec["prices"])>=len(old.get("prices",[]))):
                 byname[key_rec]=rec
+                applied=True
+            res["promotion"]={
+              "eligible":ok,"reason":reason,"applied":applied,
+              "guardVersion":PROMOTION_GUARD_VERSION,"basis":"live_scan"
+            }
         print(idx,h.get("fcltNm"),res["status"],len(res.get("prices",[])))
+
+    # Re-evaluate every saved priced row on each run. This prevents stale
+    # decisions when the identity guard changes. Legacy rows are report-only:
+    # only a freshly scanned row can write a replacement into the override DB.
+    reevaluate_saved_promotions(results,byname,record_key,batch)
 
     newcursor=(cursor+len(batch))%n
     cycles=int(state.get("completedCycles",0))+(1 if cursor+len(batch)>=n else 0)
@@ -326,6 +383,9 @@ def main():
 
     counts={}
     for v in state["results"].values():counts[v.get("status","unknown")]=counts.get(v.get("status","unknown"),0)+1
+    promotion_counts,promotion_reasons,priced_override_overlap_count=summarize_promotions(
+        state["results"],merged,record_key
+    )
     current_record_keys={record_key({"facilityName":h.get("fcltNm",""),"address":h.get("addr","")}) for h in halls}
     current_name_counts={}
     for h in halls:
@@ -341,6 +401,10 @@ def main():
     report={"updatedAt":now(),"cursor":newcursor,"completedCycles":cycles,"total":n,
             "scannedUnique":len(state["results"]),"statusCounts":counts,
             "staleResultsPruned":stale_results_pruned,
+            "pricedPromotionCounts":promotion_counts,
+            "pricedPromotionReasons":promotion_reasons,
+            "pricedOverrideOverlapCount":priced_override_overlap_count,
+            "pricedMetricNote":"statusCounts.priced is discovery only. eligible means the current identity/completeness guard passed; stored_scan_recheck is report-only and does not write an override.",
             "overrideCount":len(merged),
             "overrideIdentityCounts":{
                 "currentExact":override_current_exact,
