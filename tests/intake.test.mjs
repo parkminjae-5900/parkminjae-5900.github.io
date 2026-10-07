@@ -43,6 +43,26 @@ test('verification and storage failures never report successful intake',async()=
  } finally {globalThis.fetch=originalFetch;db.close();}
 });
 
+test('health checks configuration and operator pagination has no gaps',async()=>{
+ const {db,env}=environment();
+ try {
+  assert.equal((await worker.fetch(new Request('https://intake.example/health'),env)).status,200);
+  assert.equal((await worker.fetch(new Request('https://intake.example/health'),{...env,TURNSTILE_SECRET:''})).status,503);
+  const insert=db.prepare('INSERT INTO requests (id,name,phone,contact_time,consent_version,payload_hash,created_at,expires_at) VALUES (?,?,?,?,?,?,?,?)');
+  const now=Date.now();
+  for(let i=0;i<205;i++){
+   const id=`00000000-0000-4000-8000-${String(i).padStart(12,'0')}`;
+   insert.run(id,'','01000000000','any','2026-10-07','hash',now,now+86400000);
+  }
+  const headers={Authorization:'Bearer '+env.ADMIN_TOKEN};
+  const first=await (await worker.fetch(new Request('https://intake.example/admin/requests',{headers}),env)).json();
+  assert.equal(first.requests.length,200);assert.ok(first.nextCursor);
+  const second=await (await worker.fetch(new Request('https://intake.example/admin/requests?before='+encodeURIComponent(first.nextCursor),{headers}),env)).json();
+  assert.equal(second.requests.length,5);assert.equal(second.nextCursor,null);
+  const ids=new Set([...first.requests,...second.requests].map(x=>x.id));assert.equal(ids.size,205);
+ } finally {db.close();}
+});
+
 import vm from 'node:vm';
 const clientSource=readFileSync(new URL('../consult-request.js',import.meta.url),'utf8');
 function clientHarness(response){
@@ -65,4 +85,23 @@ test('client retains request ID on ambiguous failure and records no false conver
  assert.equal(h.events.length,0);assert.equal(h.form.hidden,undefined);assert.equal(h.elements.get('request-fields').disabled,false);
  h.window.dahamIntakeReady();await h.submit();assert.equal(h.sent.requestId,id);
  const bad=clientHarness(()=>Response.json({ok:true,requestId:'wrong'}));await bad.submit();assert.equal(bad.events.length,0);assert.equal(bad.form.hidden,undefined);
+});
+
+test('shared analytics strips query, referrer path and arbitrary event values',()=>{
+ const source=readFileSync(new URL('../analytics-tracking.js',import.meta.url),'utf8');
+ const values=new Map(),listeners=new Map(),dataLayer=[];
+ const storage={getItem:key=>values.get(key)||null,setItem:(key,value)=>values.set(key,value)};
+ class Form {}
+ const location={origin:'https://www.dahamsangjo.co.kr',href:'https://www.dahamsangjo.co.kr/consult.html?utm_source=naver&utm_term=01012345678&n_query=user%40example.com',pathname:'/consult.html',search:'?utm_source=naver&utm_term=01012345678&n_query=user%40example.com'};
+ const document={title:'상담',referrer:'https://search.example/private/path?phone=01012345678',head:{appendChild(){}},createElement(){return{};},addEventListener(type,fn){listeners.set(type,fn);}};
+ const window={DAHAM_ANALYTICS:{enabled:true,ga4MeasurementId:'G-TEST'},dataLayer};
+ vm.runInNewContext(source,{window,document,location,localStorage:storage,URL,URLSearchParams,Date,Math,Set,HTMLFormElement:Form});
+ const entries=dataLayer.map(args=>Array.from(args));
+ const page=entries.find(x=>x[0]==='event'&&x[1]==='page_view');
+ assert.equal(page[2].page_location,'https://www.dahamsangjo.co.kr/consult.html');
+ assert.equal(page[2].page_referrer,'https://search.example');
+ assert.equal(JSON.stringify(entries).includes('01012345678'),false);
+ assert.equal(JSON.stringify(entries).includes('user@example.com'),false);
+ window.dahamTrack('custom_event',{secret:'01012345678',area:'서울'});
+ const custom=dataLayer.map(args=>Array.from(args)).at(-1);assert.equal(custom[2].secret,undefined);assert.equal(custom[2].area,'서울');
 });
