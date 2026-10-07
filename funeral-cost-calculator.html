@@ -1987,8 +1987,13 @@ function applySeoPrefill(){
    const g=document.getElementById("guestNumber"),r=document.getElementById("guests"),o=document.getElementById("guestOut");
    if(g)g.value=guests;if(r)r.value=Math.min(500,guests);if(o)o.value=guests+"명";
  }
- const hallParam=(p.get("hall")||"").trim();
- const areaParam=(p.get("area")||"").trim();
+ const safeTrackingValue=v=>{
+   v=String(v||"").trim().slice(0,150);
+   if(/[\r\n<>]/.test(v)||/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(v)||/\d{6}-[1-8]\d{6}/.test(v)||/(?:01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(v))return"";
+   return v.replace(/[^0-9A-Za-z가-힣._~\/-]/g,"");
+ };
+ const hallParam=(p.get("hall")||"").trim().slice(0,100);
+ const areaParam=(p.get("area")||"").trim().slice(0,60);
  let found=null;
  if(hallParam){
    Object.entries(hallData).some(([region,subs])=>Object.entries(subs).some(([sub,names])=>{
@@ -2036,7 +2041,7 @@ function applySeoPrefill(){
    box.append(title,document.createElement("br"),conditions,document.createElement("br"),note);
    const panel=document.querySelector(".panel");if(panel)panel.prepend(box);
    window.dataLayer=window.dataLayer||[];
-   window.dataLayer.push({event:"seo_funnel_estimator_prefill",package_key:pkg,area:areaParam,funeral_hall:hallParam,source_page:from});
+   window.dataLayer.push({event:"seo_funnel_estimator_prefill",package_key:pkg,area:safeTrackingValue(areaParam),funeral_hall:safeTrackingValue(hallParam),source_page:safeTrackingValue(from)});
  }
 }
 const mini=document.getElementById("stepsMini");
