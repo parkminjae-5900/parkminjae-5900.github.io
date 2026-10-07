@@ -1,6 +1,17 @@
 import importlib.util
+import sys
+import types
 import unittest
 from pathlib import Path
+
+if importlib.util.find_spec("requests") is None:
+    requests=types.ModuleType("requests")
+    requests.Session=lambda: None
+    sys.modules["requests"]=requests
+if importlib.util.find_spec("bs4") is None:
+    bs4=types.ModuleType("bs4")
+    bs4.BeautifulSoup=object
+    sys.modules["bs4"]=bs4
 
 SCRIPT=Path(__file__).parents[1]/"scripts"/"scan_official_funeral_prices.py"
 spec=importlib.util.spec_from_file_location("price_scan",SCRIPT)
