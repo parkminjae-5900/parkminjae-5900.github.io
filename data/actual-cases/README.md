@@ -10,4 +10,4 @@ Rules:
 - publish=true requires privacy_reviewed=true and costs_verified=true.
 - Published cases also require facility_identity with facilityName, address, officialBranchName, sourceUrl and facilityCode.
 - facilityName must match funeral_hall, and facilityCode must appear as an exact HTTPS sourceUrl query/path value. This prevents same-brand branch cross-matching.
-- Public aggregates count cases by the full facility identity; repeat facilities are grouped instead of summed as separate facilities.
+- Public aggregates count cases by the full facility identity, including sourceUrl; repeat facilities are grouped instead of summed as separate facilities.
