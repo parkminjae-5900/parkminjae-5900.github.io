@@ -57,7 +57,7 @@ def validate_facility_identity(d):
 
 def facility_identity_key(d):
     ident=validate_facility_identity(d)
-    return "|".join(norm_identity(ident[key]) for key in ["facilityName","address","officialBranchName","facilityCode"])
+    return "|".join(norm_identity(ident[key]) for key in ["facilityName","address","officialBranchName","sourceUrl","facilityCode"])
 
 def validate(d):
     req=["id","event_month","region","funeral_hall","funeral_type","publication"]
