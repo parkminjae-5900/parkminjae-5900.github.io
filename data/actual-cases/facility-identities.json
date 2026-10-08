@@ -1,0 +1,26 @@
+{
+  "version": "2026-10-08-v1",
+  "policy": "Only sourceGrade A records verified from the named official facility page may be used for public actual-case aggregation.",
+  "facilities": [
+    {
+      "facilityId": "kyowonyeum-seoseoul-1000",
+      "facilityName": "교원예움 서서울장례식장",
+      "address": "서울 영등포구 선유로 101 (양평동1가)",
+      "officialBranchName": "서서울",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1000",
+      "facilityCode": "1000",
+      "sourceGrade": "A",
+      "verifiedAt": "2026-10-08T11:24:48+09:00"
+    },
+    {
+      "facilityId": "kyowonyeum-hwaseong-1001",
+      "facilityName": "교원예움 화성장례식장",
+      "address": "경기 화성시 만세구 마도면 쌍송북로 111 (두곡리)",
+      "officialBranchName": "화성",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+      "facilityCode": "1001",
+      "sourceGrade": "A",
+      "verifiedAt": "2026-10-08T11:24:48+09:00"
+    }
+  ]
+}
