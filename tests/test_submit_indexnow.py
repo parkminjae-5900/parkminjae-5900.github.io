@@ -1,6 +1,5 @@
 import importlib.util
 import pathlib
-import tempfile
 import unittest
 from unittest import mock
 
@@ -28,33 +27,27 @@ class IndexNowTests(unittest.TestCase):
                 "https://www.dahamsangjo.co.kr/area-incheon-jemulpo-funeral.html",
             ]
         )
-        with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False) as handle:
-            handle.write(seed)
-            seed_path = pathlib.Path(handle.name)
-        try:
-            with mock.patch.object(MODULE, "SEED_FILE", seed_path):
-                urls = MODULE.collect_urls(
-                    [
-                        "M\tarea-incheon-junggu-funeral.html",
-                        f"A\t{seed_path.as_posix()}",
-                    ]
-                )
-            self.assertEqual(
+        with mock.patch("pathlib.Path.read_text", return_value=seed):
+            urls = MODULE.collect_urls(
                 [
-                    "https://www.dahamsangjo.co.kr/area-incheon-jemulpo-funeral.html",
-                    "https://www.dahamsangjo.co.kr/area-incheon-junggu-funeral.html",
-                ],
-                urls,
+                    "M\tarea-incheon-junggu-funeral.html",
+                    "A\t.github/indexnow-seed.txt",
+                ]
             )
-        finally:
-            seed_path.unlink(missing_ok=True)
+        self.assertEqual(
+            [
+                "https://www.dahamsangjo.co.kr/area-incheon-jemulpo-funeral.html",
+                "https://www.dahamsangjo.co.kr/area-incheon-junggu-funeral.html",
+            ],
+            urls,
+        )
 
     def test_external_seed_url_is_rejected(self):
         with self.assertRaises(ValueError):
             MODULE.validate_url("https://example.com/page.html")
 
     def test_payload_uses_public_root_key(self):
-        with mock.patch.object(MODULE.KEY_FILE, "read_text", return_value=MODULE.KEY):
+        with mock.patch("pathlib.Path.read_text", return_value=MODULE.KEY):
             payload = MODULE.build_payload(["https://www.dahamsangjo.co.kr/"])
         self.assertEqual("www.dahamsangjo.co.kr", payload["host"])
         self.assertEqual(
