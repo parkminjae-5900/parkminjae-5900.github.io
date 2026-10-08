@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-import json, pathlib, re, html
+import json, pathlib, re, html, unicodedata
+from collections import Counter
 from datetime import date
+from urllib.parse import parse_qs, unquote, urlparse
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"/"actual-cases"
@@ -17,13 +19,45 @@ def money(v):
 def load_cases():
     CASE_DIR.mkdir(parents=True,exist_ok=True)
     out=[]
+    seen_ids={}
     for p in sorted(CASE_DIR.glob("*.json")):
         d=json.loads(p.read_text(encoding="utf-8"))
         d["_source"]=p.name
         validate(d)
+        case_id=d["id"]
+        if case_id in seen_ids:
+            raise SystemExit(f"{p.name}: duplicate case id {case_id} already used by {seen_ids[case_id]}")
+        seen_ids[case_id]=p.name
         if d["publication"]["publish"]:
             out.append(d)
     return out
+
+def norm_identity(value):
+    return re.sub(r"\s+"," ",unicodedata.normalize("NFC",str(value or "")).strip())
+
+def validate_facility_identity(d):
+    ident=d.get("facility_identity")
+    if not isinstance(ident,dict):
+        raise SystemExit(f"{d['id']}: publish requires facility_identity")
+    required=["facilityName","address","officialBranchName","sourceUrl","facilityCode"]
+    missing=[key for key in required if not norm_identity(ident.get(key))]
+    if missing:
+        raise SystemExit(f"{d['id']}: missing facility identity fields {', '.join(missing)}")
+    if norm_identity(ident["facilityName"]) != norm_identity(d["funeral_hall"]):
+        raise SystemExit(f"{d['id']}: funeral_hall and facilityName mismatch")
+    parsed=urlparse(ident["sourceUrl"])
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise SystemExit(f"{d['id']}: sourceUrl must be an absolute HTTPS URL")
+    code=norm_identity(ident["facilityCode"])
+    query_values={norm_identity(v) for values in parse_qs(parsed.query,keep_blank_values=True).values() for v in values}
+    path_values={norm_identity(unquote(part)) for part in parsed.path.split("/") if part}
+    if code not in query_values and code not in path_values:
+        raise SystemExit(f"{d['id']}: facilityCode is not an exact sourceUrl query/path value")
+    return ident
+
+def facility_identity_key(d):
+    ident=validate_facility_identity(d)
+    return "|".join(norm_identity(ident[key]) for key in ["facilityName","address","officialBranchName","facilityCode"])
 
 def validate(d):
     req=["id","event_month","region","funeral_hall","funeral_type","publication"]
@@ -31,6 +65,7 @@ def validate(d):
         if not d.get(k): raise SystemExit(f"{d.get('_source','case')}: missing {k}")
     pub=d["publication"]
     if pub.get("publish"):
+        validate_facility_identity(d)
         if not pub.get("privacy_reviewed"): raise SystemExit(f"{d['id']}: publish requires privacy_reviewed")
         if not pub.get("costs_verified"): raise SystemExit(f"{d['id']}: publish requires costs_verified")
         if d.get("photos") and not pub.get("explicit_photo_permission"):
@@ -118,10 +153,25 @@ def main():
     for c in cases:
         path=ROOT/f"{CASE_PREFIX}{c['id']}.html"
         path.write_text(build_case(c),encoding="utf-8")
-        public.append({k:c.get(k) for k in ["id","event_month","region","district","funeral_hall","funeral_hall_page","region_page","funeral_type","guest_count","package","costs","photos"]})
-    PUBLIC.write_text(json.dumps({"version":date.today().isoformat(),"cases":public},ensure_ascii=False,indent=2),encoding="utf-8")
+        item={k:c.get(k) for k in ["id","event_month","region","district","funeral_hall","funeral_hall_page","region_page","funeral_type","guest_count","package","costs","photos"]}
+        item["facility_identity"]=c["facility_identity"]
+        item["facility_key"]=facility_identity_key(c)
+        public.append(item)
+    identity_counts=Counter(item["facility_key"] for item in public)
+    identity_rows={}
+    for item in public:
+        key=item["facility_key"]
+        if key not in identity_rows:
+            identity_rows[key]={**item["facility_identity"],"facilityKey":key,"eventCount":identity_counts[key]}
+    summary={
+        "publishedCaseCount":len(public),
+        "uniqueFacilityCount":len(identity_counts),
+        "repeatFacilityCount":sum(1 for count in identity_counts.values() if count > 1),
+        "facilities":list(identity_rows.values()),
+    }
+    PUBLIC.write_text(json.dumps({"version":date.today().isoformat(),"summary":summary,"cases":public},ensure_ascii=False,indent=2),encoding="utf-8")
     if cases: INDEX_PAGE.write_text(build_index(cases),encoding="utf-8")
     update_sitemap(cases)
-    print(json.dumps({"published_cases":len(cases),"generated":[f"{CASE_PREFIX}{c['id']}.html" for c in cases]},ensure_ascii=False))
+    print(json.dumps({"published_cases":len(cases),"unique_facilities":len(identity_counts),"repeat_facilities":summary["repeatFacilityCount"],"generated":[f"{CASE_PREFIX}{c['id']}.html" for c in cases]},ensure_ascii=False))
 
 if __name__=="__main__": main()
