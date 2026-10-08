@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-07T20:38:00.792607+00:00",
+  "updatedAt": "2026-10-08T01:00:12.921779+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -1094,7 +1094,7 @@
     {
       "facilityName": "안양장례식장",
       "address": "경기도 안양시 동안구 엘에스로144번길 190 (호계동)",
-      "verifiedAt": "2026-09-30T05:59:12.920821+00:00",
+      "verifiedAt": "2026-10-08T00:58:20.264448+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.xn--9n2b47q9zbmiv5gca.kr/s2/s2_2.php",
       "sourceGrade": "A",
@@ -1123,7 +1123,7 @@
     {
       "facilityName": "안양메트로병원장례식장",
       "address": "경기도 안양시 만안구 명학로33번길 8 (안양동, 메트로병원)",
-      "verifiedAt": "2026-09-30T05:59:09.095299+00:00",
+      "verifiedAt": "2026-10-08T00:58:17.188432+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.xn--9n2b1b96f31dg5k8ydvoan6f1scca2922a.com/facility/funeral",
       "sourceGrade": "A",
@@ -1182,7 +1182,7 @@
     {
       "facilityName": "연세대학교 용인장례식장",
       "address": "경기도 용인시 기흥구 동백죽전대로 363 (중동)",
-      "verifiedAt": "2026-09-30T06:00:09.652223+00:00",
+      "verifiedAt": "2026-10-08T00:58:52.523764+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://yongin.yonseifuneral.com/bm/bm_3.asp",
       "sourceGrade": "A",
