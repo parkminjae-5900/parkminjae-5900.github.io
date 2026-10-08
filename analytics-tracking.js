@@ -12,10 +12,10 @@
   s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(id);
   document.head.appendChild(s);
   gtag("js",new Date());
+  let memoryLeadId="";
   const initialAttribution=attribution();
   gtag("config",id,Object.assign({send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false},initialAttribution));
 
-  let memoryLeadId="";
   function attribution(){
     try{
       const q=new URLSearchParams(location.search);
@@ -69,7 +69,7 @@
       }catch(e){if(qaMarker==="off")qaMarker="";}
       const out={lead_id:leadId,landing_page:first.landing_page||"",first_referrer:first.referrer||""};
       keys.forEach(function(k){const v=safeValue(k,q.get(k)||first[k]);if(v)out[k]=v;});
-      if(qaMarker) out.qa_marker=qaMarker;
+      out.qa_marker=qaMarker||"";
       return out;
     }catch(e){return {};}
   }
