@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-08T07:24:08.044981+00:00",
+  "updatedAt": "2026-10-08T15:35:56.235380+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -803,7 +803,7 @@
     {
       "facilityName": "김천의료원장례식장",
       "address": "경상북도 김천시 모암길 24 (모암동)",
-      "verifiedAt": "2026-09-30T06:56:08.304580+00:00",
+      "verifiedAt": "2026-10-08T15:35:10.203398+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.gcmc.or.kr/info/info_11.php",
       "sourceGrade": "A",
