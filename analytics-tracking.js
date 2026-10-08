@@ -12,7 +12,9 @@
   s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(id);
   document.head.appendChild(s);
   gtag("js",new Date());
-  gtag("config",id,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});
+  let memoryLeadId="";
+  const initialAttribution=attribution();
+  gtag("config",id,Object.assign({send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false},initialAttribution));
 
   function attribution(){
     try{
@@ -42,20 +44,38 @@
       first.referrer=safeReferrer(first.referrer);
       keys.forEach(function(k){const v=safeValue(k,first[k]);if(v)first[k]=v;else delete first[k];});
       try{localStorage.setItem(firstKey,JSON.stringify(first));}catch(e){}
-      let leadId="";
-      try{leadId=localStorage.getItem("daham_lead_id")||"";}catch(e){}
+      let leadId=memoryLeadId;
+      try{leadId=localStorage.getItem("daham_lead_id")||memoryLeadId;}catch(e){}
       if(!leadId){
         leadId="L-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
         try{localStorage.setItem("daham_lead_id",leadId);}catch(e){}
       }
+      memoryLeadId=leadId;
+      function safeQaMarker(value){
+        const v=String(value||"").trim();
+        if(v==="off") return v;
+        return /^[A-Za-z0-9._-]{1,64}$/.test(v)?v:"";
+      }
+      let qaMarker=safeQaMarker(q.get("daham_qa"));
+      try{
+        if(qaMarker==="off"){
+          sessionStorage.removeItem("daham_qa_marker");
+          qaMarker="";
+        }else{
+          const storedQa=safeQaMarker(sessionStorage.getItem("daham_qa_marker"));
+          if(qaMarker) sessionStorage.setItem("daham_qa_marker",qaMarker);
+          else qaMarker=storedQa;
+        }
+      }catch(e){if(qaMarker==="off")qaMarker="";}
       const out={lead_id:leadId,landing_page:first.landing_page||"",first_referrer:first.referrer||""};
       keys.forEach(function(k){const v=safeValue(k,q.get(k)||first[k]);if(v)out[k]=v;});
+      out.qa_marker=qaMarker||"";
       return out;
     }catch(e){return {};}
   }
 
   function send(name,params){
-    try{gtag("event",name,Object.assign({page_path:location.pathname,page_title:document.title},attribution(),params||{}));}catch(e){}
+    try{gtag("event",name,Object.assign({page_path:location.pathname,page_title:document.title},params||{},attribution()));}catch(e){}
   }
   window.dahamTrack=function(name,params){send(name,params);};
 
