@@ -1,0 +1,51 @@
+name: Daham SEO GEO AEO page enrichment
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/enrich_seo.py'
+      - 'area-*.html'
+      - '*-funeral.html'
+      - '*-cost*.html'
+  schedule:
+    - cron: '17 22 * * *'
+permissions:
+  contents: write
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate generator
+        run: |
+          python3 -m py_compile scripts/enrich_seo.py
+          python3 scripts/enrich_seo.py
+      - name: Update pages automatically
+        run: python3 scripts/enrich_seo.py --write
+      - name: Validate generated metadata and JSON-LD
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,json
+          n=0
+          for p in pathlib.Path('.').rglob('*.html'):
+              s=p.read_text(encoding='utf-8',errors='replace')
+              if 'data-daham-seo-automation="1"' not in s: continue
+              assert s.count('data-daham-seo-automation="1"')==1, p
+              assert 'og:image' in s and 'og:title' in s, p
+              for item in re.findall(r'<script type="application/ld\\+json">(.*?)</script>',s,re.S):
+                  json.loads(item)
+              n+=1
+          print('validated',n,'managed pages')
+          PY
+      - name: Commit verified changes
+        run: |
+          if [ -n "$(git status --porcelain -- '*.html' '**/*.html')" ]; then
+            git config user.name "daham-seo-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -- '*.html' '**/*.html'
+            git commit -m "chore(seo): refresh validated GEO AEO page previews"
+            git push
+          fi
