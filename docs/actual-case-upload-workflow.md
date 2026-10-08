@@ -39,7 +39,17 @@
 유족/조문객/고인 얼굴은 기본적으로 공개하지 않습니다.
 사진 공개에 명시적 허가가 없는 경우, 식별 가능한 사람이 없는 사진만 사용하거나 공개용으로 비식별 처리합니다.
 
-### C. 비용 검증
+### C. 시설 원본 식별자 검증
+공개 사례는 아래 5개 값을 함께 확인합니다.
+- facilityName: 사례의 장례식장명과 일치
+- address: 공식 주소
+- officialBranchName: 공식 지점명
+- sourceUrl: HTTPS 공식·공공 출처
+- facilityCode: sourceUrl의 정확한 query/path 값
+
+브랜드명이 같아도 주소·공식 지점명·지점코드가 다르면 같은 시설로 합치지 않습니다. 이 값이 없거나 서로 맞지 않으면 공개 집계와 운영 승격에서 제외합니다.
+
+### D. 비용 검증
 각 항목은 근거를 표시합니다.
 - receipt: 영수증 확인
 - user_confirmed: 사용자 확인
@@ -47,7 +57,7 @@
 
 추정값은 실제 비용으로 공개하지 않습니다.
 
-### D. 공개 사례 데이터 생성
+### E. 공개 사례 데이터 생성
 경로:
 data/actual-cases/cases/<case-id>.json
 
@@ -59,14 +69,14 @@ data/actual-cases/cases/<case-id>.json
 
 하나라도 충족하지 않으면 공개 페이지를 생성하지 않습니다.
 
-### E. 자동 생성
+### F. 자동 생성
 GitHub Actions가 다음을 자동 생성합니다.
 - actual-case-<case-id>.html
 - actual-cases.html
 - data/actual-cases/public.json
 - sitemap.xml 등록
 
-### F. 검색자산 연결
+### G. 검색자산 연결
 사례 페이지는 다음으로 연결합니다.
 - 해당 장례식장 시설 페이지
 - 해당 지역 장례비용 페이지
