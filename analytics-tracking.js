@@ -12,7 +12,8 @@
   s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(id);
   document.head.appendChild(s);
   gtag("js",new Date());
-  gtag("config",id,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});
+  const initialAttribution=attribution();
+  gtag("config",id,Object.assign({send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false},initialAttribution));
 
   function attribution(){
     try{
@@ -48,8 +49,15 @@
         leadId="L-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
         try{localStorage.setItem("daham_lead_id",leadId);}catch(e){}
       }
+      let qaMarker=safeValue("daham_qa",q.get("daham_qa"));
+      try{
+        const storedQa=safeValue("daham_qa",sessionStorage.getItem("daham_qa_marker"));
+        if(qaMarker) sessionStorage.setItem("daham_qa_marker",qaMarker);
+        else qaMarker=storedQa;
+      }catch(e){}
       const out={lead_id:leadId,landing_page:first.landing_page||"",first_referrer:first.referrer||""};
       keys.forEach(function(k){const v=safeValue(k,q.get(k)||first[k]);if(v)out[k]=v;});
+      if(qaMarker) out.qa_marker=qaMarker;
       return out;
     }catch(e){return {};}
   }
