@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-08T21:19:37.470768+00:00",
+  "updatedAt": "2026-10-09T02:09:13.928671+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -763,22 +763,22 @@
     {
       "facilityName": "기장병원장례식장",
       "address": "부산광역시 기장군 기장읍 대청로72번길 6 (청강리, 기장병원)",
-      "verifiedAt": "2026-09-30",
+      "verifiedAt": "2026-10-09T02:09:10.776118+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.gjhp.kr/location01_05.php",
       "sourceGrade": "A",
-      "sourceNote": "공식 시설사용료 표에서 항목·금액·이용기준이 명확히 대응되는 값만 반영.",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
       "prices": [
         {
           "category": "빈소",
-          "label": "빈소 임대료(접객실 포함) 1호실",
+          "label": "빈소 임대료 (접객실 포함) 1호실",
           "amount": 400000,
           "unit": "1일"
         },
         {
           "category": "안치실",
-          "label": "안치료",
-          "amount": 100000,
+          "label": "안치료 100,000원 / 1일",
+          "amount": 4167,
           "unit": "1일"
         }
       ]
@@ -855,7 +855,7 @@
     {
       "facilityName": "대구시민전문장례식장",
       "address": "대구광역시 북구 호국로 898 (동호동)",
-      "verifiedAt": "2026-09-30T09:22:30.667289+00:00",
+      "verifiedAt": "2026-10-09T02:08:04.524252+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://dgsmfn.com/sub2_1_1.php",
       "sourceGrade": "A",
@@ -884,7 +884,7 @@
     {
       "facilityName": "대전성모병원장례식장",
       "address": "대전광역시 중구 대흥로 64 (대흥동, 가톨릭대학교대전성모병원)",
-      "verifiedAt": "2026-09-30T09:23:12.871972+00:00",
+      "verifiedAt": "2026-10-09T02:08:46.900463+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.cmcdjfuneral.co.kr/funeral-guide.jsp",
       "sourceGrade": "A",
