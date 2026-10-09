@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-09T02:09:13.928671+00:00",
+  "updatedAt": "2026-10-09T09:03:09.046845+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -110,7 +110,7 @@
     {
       "facilityName": "건국대학교병원장례식장",
       "address": "서울특별시 광진구 능동로 120-1 (화양동)",
-      "verifiedAt": "2026-09-30T11:28:26.753676+00:00",
+      "verifiedAt": "2026-10-09T09:01:25.558786+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.kuh.ac.kr/funeral/guide/use.do",
       "sourceGrade": "A",
@@ -1410,7 +1410,7 @@
     {
       "facilityName": "이대서울병원장례식장",
       "address": "서울특별시 강서구 공항대로 260 (마곡동, 이화의대부속서울병원)",
-      "verifiedAt": "2026-09-30T11:28:23.315227+00:00",
+      "verifiedAt": "2026-10-09T09:01:22.934802+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://seoul.eumc.ac.kr/funeral/guide/facility.do",
       "sourceGrade": "A",
@@ -1614,7 +1614,7 @@
     {
       "facilityName": "한중프라임장례식장",
       "address": "부산광역시 북구 낙동대로 1596 (구포동)",
-      "verifiedAt": "2026-09-30T11:27:40.970814+00:00",
+      "verifiedAt": "2026-10-09T09:00:40.721953+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.funein.com/hjprime/room_intro/",
       "sourceGrade": "A",
