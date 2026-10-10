@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-10T13:40:06.815157+00:00",
-  "cursor": 45,
+  "updatedAt": "2026-10-10T18:35:05.541021+00:00",
+  "cursor": 135,
   "completedCycles": 5,
   "total": 1080,
   "scannedUnique": 1080,
@@ -32,232 +32,101 @@
   },
   "lastBatch": [
     {
+      "status": "no_homepage",
+      "facilityName": "예드림장례식장",
+      "address": "경기도 동두천시 강변로 422 (생연동)",
+      "index": 90
+    },
+    {
       "status": "unreachable",
-      "homepage": "https://dong-in.or.kr/saint/index.asp",
-      "facilityName": "강릉동인병원장례식장",
-      "address": "강원도 강릉시 강릉대로419번길 42 (포남동)",
-      "index": 0
+      "homepage": "https://www.aziel.co.kr",
+      "facilityName": "이담장례식장",
+      "address": "경기도 동두천시 삼육사로 747, 이담장례식장 (상패동, 아시엘요양병원)",
+      "index": 91
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.anahospital.kr",
-      "facilityName": "강릉아나병원장례식장",
-      "address": "강원도 강릉시 용지로 129 (옥천동)",
-      "index": 1
+      "homepage": "https://www.dsfh.co.kr",
+      "facilityName": "뉴대성병원장례식장(구 DS병원장례식장)",
+      "address": "경기도 부천시 원미구 부흥로 377뉴대성병원장례식장 (심곡동, DS병원)",
+      "index": 92
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://xn--9i1b2b51uswm7sdb9ccacom/bucheon/",
+      "facilityName": "다니엘병원장례식장(구 늘푸른장례식장)",
+      "address": "경기도 부천시 원미구 중동로 361 (약대동)",
+      "index": 93
     },
     {
       "status": "no_price_found",
-      "homepage": "https://www.gnah.co.kr",
-      "facilityName": "강릉아산병원장례식장",
-      "address": "강원도 강릉시 사천면 방동길 38 (방동리,강릉아산병원)",
-      "index": 2
+      "homepage": "https://bfh.catholic.ac.kr",
+      "facilityName": "부천성모병원장례식장",
+      "address": "경기도 부천시 원미구 소사로 327 (소사동, 가톨릭대부천성모병원)",
+      "index": 94
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.gnmc.or.kr/page/sub2_9.php",
-      "facilityName": "강원도강릉의료원장례식장",
-      "address": "강원도 강릉시 경강로 2007,강릉의료원 (남문동)",
-      "index": 3
+      "homepage": "https://seilbucheon.daum",
+      "facilityName": "부천시민장례식장",
+      "address": "경기도 부천시 원미구 장말로372번길 15 (심곡동)",
+      "index": 95
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.kindhp.com/m2/sub6.php",
-      "facilityName": "더원실업 우란장례식장",
-      "address": "강원도 강릉시 옥가로 30 (옥천동)",
-      "index": 4
+      "homepage": "https://www.부천장례식장.kr",
+      "facilityName": "부천장례식장",
+      "address": "경기도 부천시 원미구 원미로 213 (춘의동)",
+      "index": 96
     },
     {
       "status": "no_homepage",
-      "facilityName": "주문진장례식장",
-      "address": "강원도 강릉시 주문진읍 연주로 448-5 (주문리)",
-      "index": 5
+      "facilityName": "세종병원장례식장",
+      "address": "경기도 부천시 소사구 호현로489번길 28 (소사본동, 세종병원)",
+      "index": 97
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.schmc.ac.kr/bucheon/kor/index.do",
+      "facilityName": "순천향부천장례식장",
+      "address": "경기도 부천시 원미구 조마루로 170 (중동, 순천향대학교부천병원)",
+      "index": 98
     },
     {
       "status": "no_homepage",
-      "facilityName": "고성장례식장",
-      "address": "강원특별자치도 고성군 죽왕면 향목서길 9 (향목리, 고성장례식장)",
-      "index": 6
+      "facilityName": "휴앤유병원장례식장",
+      "address": "경기도 부천시 소사구 심곡로10번길 63 (송내동)",
+      "index": 99
     },
     {
       "status": "no_homepage",
-      "facilityName": "금강병원장례식장",
-      "address": "강원도 동해시 동해대로 5143 (효가동)",
-      "index": 7
+      "facilityName": "분당서울대학교병원 장례식장",
+      "address": "경기도 성남시 분당구 구미로173번길 82 (구미동, 분당서울대병원)",
+      "index": 100
     },
     {
-      "status": "no_homepage",
-      "facilityName": "동해동인병원장례식장",
-      "address": "강원도 동해시 하평로 26 (평릉동, 동인병원)",
-      "index": 8
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "동해병원장례식장",
-      "address": "강원도 동해시 하평로 11 (평릉동, 산재의료관리원동해병원)",
-      "index": 9
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "동해전문장례식장",
-      "address": "강원도 동해시 중앙로 199 (천곡동)",
-      "index": 10
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "중앙장례식장",
-      "address": "강원도 동해시 효자로 748 (송정동)",
-      "index": 11
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "도계장례식장",
-      "address": "강원특별자치도 삼척시 도계읍 도계로3길 16-25 (전두리, 도계장례식장)",
-      "index": 12
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://www.ksmc.or.kr/page/guide/page_08.php",
-      "facilityName": "삼척의료원장례식장",
-      "address": "강원도 삼척시 오십천로 418 (남양동)",
-      "index": 13
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "주식회사하늘정원장례식장",
-      "address": "강원도 삼척시 강원남부로 4539 (등봉동, 하늘정원장례식장)",
-      "index": 14
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://www.sokchomc.co.kr",
-      "facilityName": "강원특별자치도 속초의료원 장례식장",
-      "address": "강원특별자치도 속초시 영랑호반길 3 (영랑동, 속초의료원)",
-      "index": 15
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "속초동해장례식장",
-      "address": "강원특별자치도 속초시 중앙로 7 (교동)",
-      "index": 16
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "속초보광병원장례식장",
-      "address": "강원도 속초시 중앙로 11 (교동, 속초보광병원)",
-      "index": 17
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "양구군장례식장",
-      "address": "강원도 양구군 양구읍 금강산로 518-25 (하리)",
-      "index": 18
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "양양장례문화원",
-      "address": "강원특별자치도 양양군 양양읍 양양로 9-1 (연창리)",
-      "index": 19
+      "status": "no_price_found",
+      "homepage": "https://bundang.chamc.co.kr/funeral",
+      "facilityName": "분당차병원장례식장",
+      "address": "경기도 성남시 분당구 야탑로 59 (야탑동, 분당차병원)",
+      "index": 101
     },
     {
       "status": "priced",
-      "homepage": "https://www.youngwol.org/contents/funeral/funeral_01.php",
-      "sourceUrl": "https://www.youngwol.org/bbs/board.php?bo_table=funeral_01",
+      "homepage": "https://funeral.scmc.kr/",
+      "sourceUrl": "http://funeral.scmc.kr/sub/sub2_2.html",
       "prices": [
         {
           "category": "안치실",
-          "label": "17 안치료",
-          "amount": 3000,
-          "unit": "1시간"
-        },
-        {
-          "category": "안치실",
-          "label": "16 안치료",
-          "amount": 3000,
-          "unit": "1시간"
-        },
-        {
-          "category": "안치실",
-          "label": "15 안치료",
-          "amount": 3000,
-          "unit": "1시간"
-        },
-        {
-          "category": "안치실",
-          "label": "14 안치료",
-          "amount": 3000,
-          "unit": "1시간"
-        },
-        {
-          "category": "안치실",
-          "label": "13 안치료",
-          "amount": 3000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "12 분향실료",
-          "amount": 5000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "11 분향실료",
-          "amount": 5000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "10 분향실료",
-          "amount": 5000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "9 분향실료",
-          "amount": 5000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "8 분향실료",
-          "amount": 5000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "7 접객실료",
-          "amount": 35000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "6 접객실료",
-          "amount": 30000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "5 접객실료",
-          "amount": 20000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "4 접객실료",
-          "amount": 20000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "3 접객실료",
-          "amount": 32000,
-          "unit": "1시간"
+          "label": "안치실 사용료 60,000원",
+          "amount": 2500,
+          "unit": ""
         }
       ],
-      "verifiedAt": "2026-10-10T13:39:49.158080+00:00",
-      "facilityName": "강원특별자치도 영월의료원장례식장",
-      "address": "강원특별자치도 영월군 영월읍 중앙1로 59 (영흥리, 영월의료원)",
-      "index": 20,
+      "verifiedAt": "2026-10-10T18:34:02.779923+00:00",
+      "facilityName": "성남시의료원장례식장",
+      "address": "경기도 성남시 수정구 수정로171번길 10 (태평동, 성남시의료원)",
+      "index": 102,
       "promotion": {
         "eligible": true,
         "reason": "guard_passed",
@@ -267,220 +136,214 @@
       }
     },
     {
-      "status": "no_homepage",
-      "facilityName": "영월장례식장",
-      "address": "강원도 영월군 영월읍 영월로 2360-6 (연하리)",
-      "index": 21
+      "status": "no_price_found",
+      "homepage": "https://www.성남시장례식장.com",
+      "facilityName": "성남시장례협동조합",
+      "address": "경기도 성남시 중원구 순암로 800 (갈현동)",
+      "index": 103
     },
     {
       "status": "no_price_found",
-      "homepage": "https://바른장례식장.kr",
-      "facilityName": "(주)서원 바른장례식장",
-      "address": "강원도 원주시 판부면 치악로 1133 (금대리)",
-      "index": 22
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://minjoong.or.kr/",
-      "facilityName": "고색의료재단 장례식장",
-      "address": "강원도 원주시 북원로 2636 (태장동)",
-      "index": 23
+      "homepage": "https://www.schosp.co.kr/sub/sub0205.php",
+      "facilityName": "성남중앙병원장례식장",
+      "address": "경기도 성남시 중원구 산성대로476번길 12 (금광동)",
+      "index": 104
     },
     {
       "status": "no_homepage",
-      "facilityName": "수장례식장",
-      "address": "강원도 원주시 문막읍 원문로 1419 (동화리, 연세메디하임병원)",
-      "index": 24
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://wjfuneral.yonsei.ac.kr",
-      "facilityName": "연세대학교 원주장례식장",
-      "address": "강원도 원주시 일산로 20,내 (일산동, 연세대학교원주세브란스기독병원)",
-      "index": 25
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.kwmc.or.kr/use_guide/funeral.html",
-      "sourceUrl": "https://www.kwmc.or.kr/use_guide/funeral.html",
-      "prices": [
-        {
-          "category": "안치실",
-          "label": "안치료 ",
-          "amount": 3300,
-          "unit": "1시간"
-        },
-        {
-          "category": "염습/입관",
-          "label": "염습실 사용료 ",
-          "amount": 200000,
-          "unit": "1회"
-        }
-      ],
-      "verifiedAt": "2026-10-10T13:39:56.717557+00:00",
-      "facilityName": "원주의료원장례식장",
-      "address": "강원특별자치도 원주시 서원대로 387 (개운동, 강원도원주의료원)",
-      "index": 26,
-      "promotion": {
-        "eligible": true,
-        "reason": "guard_passed",
-        "applied": true,
-        "guardVersion": 2,
-        "basis": "live_scan"
-      }
-    },
-    {
-      "status": "unreachable",
-      "homepage": "https://hanulwon.com",
-      "facilityName": "하늘원장례예식장",
-      "address": "강원도 원주시 흥업면 사제로 539 (사제리)",
-      "index": 27
+      "facilityName": "성모장례식장",
+      "address": "경기도 성남시 분당구 새나리로 13 (야탑동)",
+      "index": 105
     },
     {
       "status": "no_homepage",
-      "facilityName": "효담삼산병원장례식장",
-      "address": "강원특별자치도 원주시 혁신로 5 (반곡동)",
-      "index": 28
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "인제장례식장",
-      "address": "강원도 인제군 북면 금강로 210 (월학리, 인제장례식장)",
-      "index": 29
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "하늘내린 도리안",
-      "address": "강원특별자치도 인제군 남면 자작나무숲길 444-62 (남전리)",
-      "index": 30
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정선군사북장례식장",
-      "address": "강원도 정선군 사북읍 지장천로 727,정선군사북장례식장 (사북리, 정선군립병원)",
-      "index": 31
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "정선병원장례식장",
-      "address": "강원특별자치도 정선군 정선읍 봉양1길 145 (봉양리)",
-      "index": 32
+      "facilityName": "주식회사 분당제생병원장례식장",
+      "address": "경기도 성남시 분당구 서현로180번길 20 (서현동, 분당제생병원)",
+      "index": 106
     },
     {
       "status": "no_price_found",
-      "homepage": "https://cafe.daum.net/js-fh",
-      "facilityName": "정선장례식장",
-      "address": "강원특별자치도 정선군 정선읍 서동로 1277 (덕송리, 정선장례식장)",
-      "index": 33
+      "homepage": "https://소망장례식장.com",
+      "facilityName": "태평서울병원소망장례식장",
+      "address": "경기도 성남시 수정구 성남대로 1219 B01 (수진동, 새소망병원)",
+      "index": 107
     },
     {
       "status": "no_homepage",
-      "facilityName": "김화장례문화원",
-      "address": "강원특별자치도 철원군 서면 와수로 13 (와수리)",
-      "index": 34
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "철원병원장례식장",
-      "address": "강원도 철원군 갈말읍 명성로 208 (군탄리)",
-      "index": 35
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "철원장례문화원",
-      "address": "강원도 철원군 동송읍 금학로157번길 23-17 (이평리)",
-      "index": 36
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "강원대학교병원장례식장",
-      "address": "강원도 춘천시 백령로 156 (효자동)",
-      "index": 37
-    },
-    {
-      "status": "priced",
-      "homepage": "https://www.kyowonyeum.co.kr",
-      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
-      "prices": [
-        {
-          "category": "빈소",
-          "label": "구분 수용인원 구성 가격 201호 56평/110명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 55,000원 (기준 1시간) 301호 56평/110명",
-          "amount": 55000,
-          "unit": "1시간"
-        },
-        {
-          "category": "빈소",
-          "label": "구분 수용인원 구성 가격 202호 43평/70명 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 45,000원 (기준 1시간) 302호 43평/70명",
-          "amount": 45000,
-          "unit": "1시간"
-        }
-      ],
-      "verifiedAt": "2026-10-10T13:40:01.259466+00:00",
-      "facilityName": "교원예움 강원장례식장",
-      "address": "강원도 춘천시 동내면 순환대로 877 (거두리)",
-      "index": 38,
-      "promotion": {
-        "eligible": false,
-        "reason": "branch_code_mismatch",
-        "applied": false,
-        "guardVersion": 2,
-        "basis": "live_scan"
-      }
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "춘천시민장례식장",
-      "address": "강원특별자치도 춘천시 영서로 2970 (사농동, 강원도새마을회관)",
-      "index": 39
-    },
-    {
-      "status": "no_homepage",
-      "facilityName": "춘천장례식장",
-      "address": "강원특별자치도 춘천시 동면 소양강로 409 (장학리)",
-      "index": 40
+      "facilityName": "(주)중앙병원장례식장",
+      "address": "경기도 수원시 권선구 권선로 654 (권선동)",
+      "index": 108
     },
     {
       "status": "unreachable",
-      "homepage": "https://www.hobanfuneral.co.kr/",
-      "facilityName": "호반병원장례식장",
-      "address": "강원도 춘천시 옛경춘로 663 (삼천동)",
-      "index": 41
+      "homepage": "https://suwon.medical.or.kr/suwon/contentsInfo.do?brd_mgrno=0&menu_no=721",
+      "facilityName": "경기도의료원 수원병원장례식장",
+      "address": "경기도 수원시 장안구 수성로245번길 69 (정자동)",
+      "index": 109
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://dswhosp.co.kr:7468/guide/funeral.php",
+      "facilityName": "동수원장례식장",
+      "address": "경기도 수원시 팔달구 권광로367번길 77, B1층 (우만동, 동수원한방병원)",
+      "index": 110
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.suwonfmc.or.kr/suwonyhj/mainPage.do",
+      "facilityName": "수원시연화장장례식장",
+      "address": "경기도 수원시 영통구 광교호수로 278 (하동)",
+      "index": 111
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.수원요양병원.kr/",
+      "facilityName": "수원요양병원장례식장",
+      "address": "경기도 수원시 영통구 매영로 229 (원천동)",
+      "index": 112
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://hosp.ajoumc.or.kr/funeral/",
+      "facilityName": "아주대학병원장례식장",
+      "address": "경기도 수원시 영통구 광교중앙로49번길 46 (원천동)",
+      "index": 113
     },
     {
       "status": "no_homepage",
-      "facilityName": "근로복지공단 태백병원장례식장",
-      "address": "강원도 태백시 보드미길 8 (장성동, 근로복지공단태백병원)",
-      "index": 42
+      "facilityName": "한독병원장례식장",
+      "address": "경기도 수원시 팔달구 경수대로 487 (인계동)",
+      "index": 114
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://swdeoksanmc.com/funeral/",
+      "facilityName": "수원덕산병원장례식장",
+      "address": "경기도 수원시 권선구 서부로 1670번길 9 B2층 장례식장 (고색동)",
+      "index": 115
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://vfh.catholicfuneral.co.kr/cmm/main/mainPage.do",
+      "facilityName": "성빈센트병원 장례식장",
+      "address": "경기도 수원시 팔달구 중부대로 93 (지동, 성빈센트병원)",
+      "index": 116
     },
     {
       "status": "no_homepage",
-      "facilityName": "태백문화장례식장",
-      "address": "강원도 태백시 고원로 249 (황지동)",
-      "index": 43
+      "facilityName": "센트럴병원장례식장",
+      "address": "경기도 시흥시 공단1대로 237 (정왕동, 센트럴병원)",
+      "index": 117
     },
     {
-      "status": "priced",
-      "homepage": "https://www.pcfmc.or.kr/facilities07",
-      "sourceUrl": "https://www.pcfmc.or.kr/facilities08",
-      "prices": [
-        {
-          "category": "염습/입관",
-          "label": "염습료(1회) 100,000원",
-          "amount": 100000,
-          "unit": "1회"
-        }
-      ],
-      "verifiedAt": "2026-10-10T13:40:06.800553+00:00",
-      "facilityName": "진부장례식장",
-      "address": "강원도 평창군 진부면 오대천로 1958-21 (하진부리)",
-      "index": 44,
-      "promotion": {
-        "eligible": false,
-        "reason": "category_coverage_regression",
-        "applied": false,
-        "guardVersion": 2,
-        "basis": "live_scan"
-      }
+      "status": "no_homepage",
+      "facilityName": "시화병원장례식장",
+      "address": "경기도 시흥시 군자천로 381-1 (정왕동, 시화병원)",
+      "index": 118
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://shnurifuneral.com",
+      "facilityName": "시흥누리병원장례식장",
+      "address": "경기도 시흥시 수인로3325번길 5 (신천동)",
+      "index": 119
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "시흥우리장례식장",
+      "address": "경기도 시흥시 평안상가5길 19 (정왕동)",
+      "index": 120
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.시흥장례식장.kr",
+      "facilityName": "시흥장례원",
+      "address": "경기도 시흥시 서해안로 586 (정왕동)",
+      "index": 121
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.suh.or.kr",
+      "facilityName": "신천연합병원장례식장",
+      "address": "경기도 시흥시 복지로 57 (대야동)",
+      "index": 122
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "신천제일병원장례식장",
+      "address": "경기도 시흥시 호현로10번길 7-1 (신천동)",
+      "index": 123
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "(주)코스모스제일장례식장",
+      "address": "경기도 안산시 상록구 수인로 1222 (일동)",
+      "index": 124
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.funeral.or.kr",
+      "facilityName": "고려대안산병원장례식장",
+      "address": "경기도 안산시 단원구 적금로 123 (고잔동, 고려대학병원)",
+      "index": 125
+    },
+    {
+      "status": "unreachable",
+      "homepage": "https://www.kcomwel.or.kr",
+      "facilityName": "국화향기",
+      "address": "경기도 안산시 상록구 구룡로 87 (일동)",
+      "index": 126
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "동안산병원장례식장",
+      "address": "경기도 안산시 상록구 월피로 88 (월피동)",
+      "index": 127
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "사랑의병원장례식장",
+      "address": "경기도 안산시 상록구 예술광장로 69 (성포동)",
+      "index": 128
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.sehwafuneral.com",
+      "facilityName": "세화병원장례식장",
+      "address": "경기도 안산시 상록구 용신로 355 (본오동)",
+      "index": 129
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://cafe.daum.net/01197374000",
+      "facilityName": "안산시민장례문화원",
+      "address": "경기도 안산시 단원구 원곡공원로 11-9 (원곡동)",
+      "index": 130
+    },
+    {
+      "status": "no_price_found",
+      "homepage": "https://www.onnury.org",
+      "facilityName": "안산온누리병원장례식장",
+      "address": "경기도 안산시 단원구 선부로 201 (선부동)",
+      "index": 131
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "안산장례식장",
+      "address": "경기도 안산시 상록구 선진안길 33 (사동)",
+      "index": 132
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "플러스단원병원장례문화원",
+      "address": "경기도 안산시 단원구 원포공원로 10,지상1.2.3층 (초지동)",
+      "index": 133
+    },
+    {
+      "status": "no_homepage",
+      "facilityName": "한도병원장례식장",
+      "address": "경기도 안산시 단원구 선부광장로 103 (선부동)",
+      "index": 134
     }
   ]
 }
