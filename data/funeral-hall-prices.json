@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-15T20:21:51.347041+00:00",
+  "updatedAt": "2026-10-15T23:42:53.201657+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -1060,7 +1060,7 @@
     {
       "facilityName": "성남시의료원장례식장",
       "address": "경기도 성남시 수정구 수정로171번길 10 (태평동, 성남시의료원)",
-      "verifiedAt": "2026-10-13T19:15:41.503650+00:00",
+      "verifiedAt": "2026-10-15T23:41:59.577687+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://funeral.scmc.kr/sub/sub2_2.html",
       "sourceGrade": "A",
@@ -1562,7 +1562,7 @@
     {
       "facilityName": "평창장례식장",
       "address": "강원도 평창군 평창읍 종부로 61 (종부리, 평창군보건의료원)",
-      "verifiedAt": "2026-10-13T19:14:36.207988+00:00",
+      "verifiedAt": "2026-10-15T23:41:05.233358+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.pcfmc.or.kr/facilities08",
       "sourceGrade": "A",
