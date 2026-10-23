@@ -50,7 +50,7 @@ def changed_lines(from_ref: str, to_ref: str) -> list[str]:
         "--",
         "*.html",
         "**/*.html",
-        str(SEED_FILE.relative_to(ROOT)),
+        SEED_FILE.relative_to(ROOT).as_posix(),
     ]
     result = subprocess.run(command, cwd=ROOT, check=True, text=True, capture_output=True)
     return [line for line in result.stdout.splitlines() if line.strip()]
@@ -69,7 +69,7 @@ def collect_urls(lines: list[str]) -> list[str]:
         else:
             selected = paths[:1]
         for path in selected:
-            if path == str(SEED_FILE.relative_to(ROOT)):
+            if path == SEED_FILE.relative_to(ROOT).as_posix():
                 seed_changed = True
                 continue
             url = path_to_url(path)

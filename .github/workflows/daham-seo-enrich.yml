@@ -21,6 +21,7 @@ jobs:
           persist-credentials: true
       - name: Validate generator
         run: |
+          python3 -m pip install Pillow
           python3 -m py_compile scripts/enrich_seo.py
           python3 scripts/enrich_seo.py
       - name: Update pages automatically
@@ -45,7 +46,7 @@ jobs:
           if [ -n "$(git status --porcelain -- '*.html' '**/*.html')" ]; then
             git config user.name "daham-seo-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -- '*.html' '**/*.html'
+            git add -- '*.html' '**/*.html' sitemap.xml
             git commit -m "chore(seo): refresh validated GEO AEO page previews"
             git push
           fi

@@ -84,4 +84,8 @@ def main():
             print('ERROR',path.relative_to(ROOT),exc);raise
         counts[result]=counts.get(result,0)+1
     print(json.dumps({'mode':'write' if args.write else 'dry-run','scanned':len(files),'results':counts},ensure_ascii=False))
+    if args.write:
+        # Recheck images even for pages whose enrichment marker already exists.
+        import subprocess, sys
+        subprocess.run([sys.executable, str(ROOT/'scripts/repair_search_images.py'), '--write'], check=True)
 if __name__=='__main__':main()

@@ -12,6 +12,9 @@ assert.equal(new Set(locations).size,locations.length,'Duplicate sitemap URLs');
 const titles=new Set(),descriptions=new Set();let faqCount=0;
 for(const file of files){
   const html=fs.readFileSync(file,'utf8');
+  // Private/utility landing pages intentionally excluded from search do not
+  // require a public canonical or sitemap entry. Retired aliases are checked below.
+  if (/<meta\b[^>]*name="robots"[^>]*content="[^"]*\bnoindex\b/i.test(html) && !retiredAliases.has(file)) continue;
   const url=origin+(file==='index.html'?'':file);
   const title=html.match(/<title>(.*?)<\/title>/s)?.[1];
   const description=html.match(/<meta name="description" content="([^"]+)"/)?.[1];
