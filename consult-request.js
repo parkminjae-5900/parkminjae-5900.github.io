@@ -58,7 +58,7 @@
       result.focus();
     } finally {
       busy = false;
-      if (!completed) { fields.disabled = false; submit.textContent = '다시 신청하기'; token = ''; window.turnstile.reset(widget); }
+      if (!completed) { fields.disabled = false; submit.textContent = '다시 신청하기'; token = ''; try { window.turnstile.reset(widget); } catch (_) { fields.disabled = true; availability.textContent = unavailable; } }
     }
   });
 })();

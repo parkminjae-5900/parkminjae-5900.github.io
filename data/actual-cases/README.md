@@ -8,3 +8,8 @@ Rules:
 - Faces are non-public by default. Publish only sanitized derivatives and only when the case publication object confirms review.
 - Historical event costs must be described as the cost of that event, not as today's guaranteed facility price.
 - publish=true requires privacy_reviewed=true and costs_verified=true.
+- Published cases also require facility_identity with facilityName, address, officialBranchName, sourceUrl and facilityCode.
+- facilityName must match funeral_hall, facilityCode must appear as an exact HTTPS sourceUrl query/path value, and all five fields must exactly match a sourceGrade A record in facility-identities.json. Unknown or partial identities are blocked.
+- Public aggregates count cases by the full facility identity, including sourceUrl; repeat facilities are grouped instead of summed as separate facilities.
+
+Trusted registry records are added only after the official facility page verifies the full branch identity. The initial regression pair fixes 교원예움 서서울=1000 and 화성=1001; neither record may be reused for the other branch.

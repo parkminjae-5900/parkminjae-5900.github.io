@@ -64,8 +64,14 @@ export default {
     } catch (_) {return reply(503,{ok:false},origin);}
   },
   async scheduled(_controller,env) {
-    const result=await env.DB.prepare('DELETE FROM requests WHERE expires_at <= ?').bind(Date.now()).run();
-    const deleted=Number(result?.meta?.changes ?? result?.changes ?? 0);
-    console.log(JSON.stringify({event:'expired_requests_cleanup',deleted:Number.isFinite(deleted)?deleted:0}));
+    try {
+      const result=await env.DB.prepare('DELETE FROM requests WHERE expires_at <= ?').bind(Date.now()).run();
+      const deleted=Number(result?.meta?.changes ?? result?.changes ?? 0);
+      console.log(JSON.stringify({event:'expired_requests_cleanup',deleted:Number.isFinite(deleted)?deleted:0}));
+    } catch (_) {
+      console.error(JSON.stringify({event:'expired_requests_cleanup_failed'}));
+      // Keep the scheduled invocation failed without leaking database error details.
+      throw new Error('expired_requests_cleanup_failed');
+    }
   }
 };

@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "scripts/scan_official_funeral_prices.py"
+      - "tests/test_scan_official_funeral_prices.py"
       - ".github/workflows/scan-official-funeral-prices.yml"
   schedule:
     - cron: "17 * * * *"
@@ -30,6 +31,8 @@ jobs:
         run: git pull --rebase origin main
       - name: Install dependencies
         run: pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Test price promotion guard
+        run: python -m unittest tests/test_scan_official_funeral_prices.py
       - name: Validate compressed baseline payload
         run: |
           python - <<'PY'

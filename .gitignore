@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+_seo-preview.html
+reception-worker/wrangler.jsonc
+reception-worker/.dev.vars*
+reception-worker/.env*
+reception-worker/.wrangler/
+node_modules/
+__pycache__/

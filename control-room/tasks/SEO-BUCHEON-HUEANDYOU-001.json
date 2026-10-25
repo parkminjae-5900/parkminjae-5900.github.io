@@ -3,9 +3,9 @@
   "title": "부천 휴앤유 검색점유 클러스터",
   "status": "진행",
   "priority": "P0",
-  "owner_department": "성장마케팅부",
-  "primary_team": "검색최적화팀",
-  "accountable": "정도윤 부장",
+  "owner_department": "대표 별도지시관리팀",
+  "primary_team": "홈페이지 SEO·GEO·AEO",
+  "accountable": "박민재 대표",
   "reviewers": [
     {
       "department": "데이터견적부",
@@ -27,14 +27,8 @@
     }
   ],
   "management_chain": [
-    "검색최적화팀 제작",
-    "정도윤 부장 1차 검토",
-    "데이터견적부 교차검수",
-    "서비스개발부 반영",
-    "운영품질부 독립검수",
-    "이서진 통합운영본부장 통합",
-    "서도현 총괄상무 승인",
-    "박민재 대표 보고"
+    "오유진·김서준 수행",
+    "박민재 대표 직접 지시·보고"
   ],
   "scope": [
     "휴앤유추모관 신명칭 중심 허브 유지",
@@ -66,63 +60,201 @@
     "실제 행사"
   ],
   "completion_rule": "페이지 존재만으로 완료 처리하지 않음. 배포·색인·검색노출·전환 추적 근거를 단계별 기록.",
-  "last_checked_at_kst": "2026-10-07T23:32:00+09:00",
+  "last_checked_at_kst": "2026-10-08T08:41:14+09:00",
   "latest_run": {
-    "status": "보완 필요",
+    "status": "변경 없음",
+    "checked_at_kst": "2026-10-08T08:41:14+09:00",
+    "primary_team": "성장마케팅부 검색최적화팀",
+    "cross_review_team": "데이터견적부 장례견적팀",
+    "deployment_support": "서비스개발부",
+    "target_urls": [
+      "/bucheon-hueandyou-funeral.html",
+      "/incheon-sejong-funeral.html",
+      "/area-incheon-funeral.html",
+      "/area-incheon-jemulpo-funeral.html",
+      "/area-incheon-yeongjong-funeral.html",
+      "/incheon-medical-center-funeral.html",
+      "/inha-funeral.html",
+      "/area-yeongdeungpo-funeral.html",
+      "/area-songpa-funeral.html",
+      "/area-gangnam-funeral.html"
+    ],
     "performed": [
-      "기준 업무카드·키워드 클러스터 일치 확인",
-      "관리 대상 7개 페이지의 canonical·robots·내부링크·구조화데이터·참고견적 고지 점검",
-      "공개 페이지 정상 응답 확인",
-      "공개 검색 경쟁 표현을 기존 비용 의도군에 통합",
-      "최신 GitHub SEO 검증·Pages 배포 성공 확인"
+      "GitHub 업무카드·키워드 클러스터·최신 main 커밋 재확인",
+      "전국 장례식장 데이터 갱신 커밋의 전후 JSON 레코드 비교",
+      "휴앤유·부천 세종·인천세종·인하대 대상 시설 레코드 동일성 확인",
+      "새 데이터 커밋의 GitHub Pages 배포 결과 확인",
+      "Windsor GA4·Search Console 연결 및 유효 필드 재확인",
+      "최근 28일·직전 28일 GSC 검색어·페이지 동일 조건 재조회",
+      "GA4 Organic Search 랜딩페이지, 견적·상담·전화 CTA, 휴앤유 유입 재조회",
+      "공개 검색에서 휴앤유·인천의료원·인하대·제물포구·영종구 노출 재점검"
     ],
     "evidence": {
-      "live_page": "https://www.dahamsangjo.co.kr/bucheon-hueandyou-funeral.html 정상 로드",
-      "public_search": [
-        "https://enosh.or.kr/place/145 - 빈소·위치·비용 및 무빈소 가능 표현",
-        "https://barigil.com/jangnye/hyuaenyubyeongwonjangryesikjang - 빈소료·식대 단가표·공개 단가 표현",
-        "https://15774129.go.kr/portal/esky/fnlfac/fac_list.do?menuId=M0001000100000000 - 공식 장사시설 원천"
+      "repository_head_before_run": "717bbcb9ff1006cb0cf904d61838deb0d4870ea9",
+      "repository_change": {
+        "commit": "717bbcb9ff1006cb0cf904d61838deb0d4870ea9",
+        "summary": "전국 장례식장 데이터 자동 갱신",
+        "changed_file": "data/funeral-halls.json",
+        "record_count_before": 1080,
+        "record_count_after": 1080,
+        "changed_records": 0,
+        "effective_change": "updatedAt만 2026-10-07T12:40:06.564840+00:00에서 2026-10-07T23:09:02.130021+00:00로 변경",
+        "target_facility_change": false,
+        "pages_deployment": "success - GitHub Actions run 37700569465",
+        "seo_validation": "해당 데이터 갱신 커밋에서 별도 SEO 검증 워크플로 미실행"
+      },
+      "target_facility_validation": {
+        "hueandyou": "시설명·주소·전화·주차·시설 수치 전후 동일",
+        "bucheon_sejong": "전후 동일",
+        "incheon_sejong": "전후 동일",
+        "inha_university_hospital": "전후 동일",
+        "price_change": "없음",
+        "customer_facing_estimate_change": "없음"
+      },
+      "search_console_recent_28d": [
+        {
+          "query": "무빈소 가족장",
+          "page": "/nobinso-vs-family.html",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "average_position": 47
+        },
+        {
+          "query": "인천의료원장례식장",
+          "page": "/incheon-medical-center-funeral.html",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "average_position": 45
+        },
+        {
+          "query": "인하대병원장례식장",
+          "page": "/inha-funeral.html",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "average_position": 51
+        }
       ],
-      "repository_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
-      "verified_base_commit": "3992f42a2de2b92b2e207625ff413255cd531337",
-      "seo_validation": "success - GitHub Actions run 37637536560",
-      "pages_deployment": "success - GitHub Actions run 37637536541"
+      "search_console_previous_28d": "반환 행 없음",
+      "ga4_organic_search": {
+        "recent_28d": "반환 행 없음",
+        "previous_28d": "반환 행 없음",
+        "interpretation": "0으로 확정하지 않고 미확인·반환 행 없음으로 기록"
+      },
+      "ga4_hueandyou_recent_28d": [
+        {
+          "page": "/bucheon-hueandyou-funeral.html",
+          "channel": "Direct",
+          "source_medium": "(direct) / (none)",
+          "sessions": 1,
+          "active_users": 1
+        },
+        {
+          "page": "/bucheon-hueandyou-funeral.html",
+          "channel": "Unassigned",
+          "source_medium": "(not set)",
+          "sessions": 1,
+          "active_users": 1
+        }
+      ],
+      "ga4_hueandyou_previous_28d": "반환 행 없음",
+      "ga4_cta_recent_28d": [
+        {
+          "event": "estimate_click",
+          "count": 1,
+          "page": "/family.html",
+          "channel": "Cross-network"
+        },
+        {
+          "event": "estimate_click",
+          "count": 1,
+          "page": "/funeral-cost-calculator.html",
+          "channel": "Cross-network"
+        },
+        {
+          "event": "consult_click",
+          "count": 1,
+          "page": "/funeral-cost-calculator.html",
+          "channel": "Cross-network"
+        },
+        {
+          "event": "seo_funnel_calculator_click",
+          "count": 1,
+          "page": "/postpaid-price.html",
+          "channel": "Cross-network"
+        }
+      ],
+      "ga4_cta_previous_28d": "반환 행 없음",
+      "public_search": [
+        "다함 메인 도메인은 확인되나 휴앤유·제물포구·영종구 전용 URL 신규 노출은 확인되지 않음",
+        "인천의료원 공개 검색은 경쟁사의 비용·가족장 견적형 페이지가 계속 노출",
+        "공개 검색 구조 변화 없음"
+      ],
+      "management_page_changes": "없음",
+      "run_record_commit": "7be7e51556ac7a3c2b2e57acd60e23e5190cc268",
+      "run_record_validation": {
+        "seo_validation": "success - GitHub Actions run 37703870731",
+        "pages_deployment": "success - GitHub Actions run 37703870299"
+      }
     },
     "analytics": {
-      "gsc": "미확인",
-      "ga4": "미확인",
-      "reason": "GSC Wizard 체험 종료로 연결 데이터 조회 불가. 0으로 간주하지 않음."
+      "ga4_service": "Windsor 연결 정상 - 다함상조 557803440",
+      "search_console": "Windsor 연결 정상 - https://www.dahamsangjo.co.kr/ 및 /jangjunmo/",
+      "report_status": "동일 조건 보고서 즉시 반환",
+      "comparison_periods": {
+        "recent": "2026-09-10~2026-10-07",
+        "previous": "2026-08-13~2026-09-09"
+      },
+      "caveat": "GSC 표본은 검색어별 1회이고 GA4 Organic Search는 반환 행 없음. Direct·Unassigned 휴앤유 유입은 자연검색 성과로 분류하지 않음"
     },
     "conversion_change": {
-      "impressions": "미확인",
-      "clicks": "미확인",
-      "ctr": "미확인",
-      "average_position": "미확인",
-      "estimate_entry": "미확인",
-      "consultation_click": "미확인",
+      "impressions": "직전 점검과 동일; 3개 검색어 각 1회",
+      "clicks": "0",
+      "ctr": "0%",
+      "average_position": "45~51위; 직전과 동일",
+      "organic_sessions": "반환 행 없음(0 확정 아님)",
+      "estimate_entry": "Cross-network estimate_click 2회 + seo_funnel_calculator_click 1회, 직전 점검과 동일",
+      "consultation_click": "Cross-network consult_click 1회, 직전 점검과 동일",
+      "phone_click": "반환 행 없음",
       "actual_inquiry": "미확인",
       "actual_event": "미확인"
     },
     "findings": [
-      "신규 얇은 페이지를 만들 필요 없음",
-      "추가 고의도 표현은 기존 비용 페이지와 허브에 흡수",
-      "신명칭 재개관 사실과 최신 시설요금은 독립 공식 근거가 확보될 때까지 운영 시점 재확인 문구 유지"
+      "전국 장례식장 자동 갱신은 레코드 변경 없이 updatedAt만 갱신",
+      "휴앤유·부천 세종·인천세종·인하대 시설 데이터와 가격은 전후 동일",
+      "Pages 배포 성공 확인; 별도 SEO 검증 워크플로는 해당 커밋에서 실행되지 않음",
+      "GSC·GA4 Organic·CTA는 직전 점검 대비 의미 있는 변화 없음",
+      "휴앤유 유입에 Unassigned 1세션이 추가로 반환됐으나 자연검색·전환 근거가 아님",
+      "신규 키워드·얇은 페이지·가격 변경 근거 없음"
     ],
-    "next_actions": [
-      "GSC/GA4 접근 복구 후 휴앤유 쿼리·페이지·전환을 단계별 재확인",
-      "최신 시설요금 공식 원천이 확보되면 /hueandyou-cost.html의 단가표와 참고견적 갱신",
-      "신규 페이지보다 기존 비용·무빈소·가족장 페이지의 고유 근거 보강 우선"
+    "priority_actions": [
+      "Search Console에서 제물포구·영종구 신규 URL 색인 반영 여부 관찰",
+      "인천의료원·인하대 기존 페이지의 비용 구조·인원수 견적·CTA 보강 근거 확보",
+      "Cross-network CTA와 실제 문의·행사 데이터를 분리 대조",
+      "휴앤유 공식 신명칭·최신 시설요금 근거 확보 전 신규 가격 승격 금지",
+      "전국 시설 자동 갱신에서 레코드 무변경 시 불필요 커밋 생성을 방지하는 조건 검토"
     ],
     "blockers": [
-      "GSC Wizard 구독 종료",
-      "공개 검색에서 휴앤유추모관 신명칭의 독립 공식 원천 미확인",
-      "리뉴얼 이후 최신 시설요금 공식표 미확인"
-    ],
-    "control_room_log": {
-      "id": "seo-bucheon-20261007-233200-3992f42a",
-      "status": "기록 실패",
-      "reason": "관제실 /api/maintenance 연결이 실행 환경에서 응답 없이 종료됨",
-      "separation": "SEO 작업·GitHub 검증·Pages 배포는 성공했으며 관제실 기록 실패와 분리"
-    }
+      "휴앤유·제물포구·영종구 신규 검색 노출 미확인",
+      "GSC 표본이 검색어별 노출 1회로 통계적 판단에 부족",
+      "GA4 Organic Search 보고서 반환 행 없음",
+      "실제 문의·실제 행사 연결 데이터 미확인",
+      "휴앤유·부천 세종병원 공식 홈페이지 가격 원천 미확인",
+      "전국 데이터 갱신 커밋에서 SEO 검증 워크플로 미실행"
+    ]
+  },
+  "direct_assignees": [
+    "오유진",
+    "김서준"
+  ],
+  "owner_direct_override": {
+    "effective_at_kst": "2026-10-08T00:00:00+09:00",
+    "recipient_key": "owner-search",
+    "scope": "홈페이지 SEO·GEO·AEO",
+    "reporting": "박민재 대표 직보",
+    "rule": "상무·본부장·부장의 새 지시·재배정을 받지 않으며 대표의 기존 승인 업무와 직접 지시만 수행",
+    "prior_management_chain": "업무 근거·검수 이력 참고용이며 현행 지시·보고 체계로 사용하지 않음"
   }
 }

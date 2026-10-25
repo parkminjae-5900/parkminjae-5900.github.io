@@ -97,6 +97,10 @@ test('shared analytics strips query, referrer path and arbitrary event values',(
  const window={DAHAM_ANALYTICS:{enabled:true,ga4MeasurementId:'G-TEST'},dataLayer};
  vm.runInNewContext(source,{window,document,location,localStorage:storage,URL,URLSearchParams,Date,Math,Set,HTMLFormElement:Form});
  const entries=dataLayer.map(args=>Array.from(args));
+ const config=entries.find(x=>x[0]==='config');
+ assert.equal(config[2].page_location,'https://www.dahamsangjo.co.kr/consult.html');
+ assert.equal(config[2].page_referrer,'https://search.example');
+ assert.equal(config[2].send_page_view,false);
  const page=entries.find(x=>x[0]==='event'&&x[1]==='page_view');
  assert.equal(page[2].page_location,'https://www.dahamsangjo.co.kr/consult.html');
  assert.equal(page[2].page_referrer,'https://search.example');
@@ -104,4 +108,64 @@ test('shared analytics strips query, referrer path and arbitrary event values',(
  assert.equal(JSON.stringify(entries).includes('user@example.com'),false);
  window.dahamTrack('custom_event',{secret:'01012345678',area:'서울'});
  const custom=dataLayer.map(args=>Array.from(args)).at(-1);assert.equal(custom[2].secret,undefined);assert.equal(custom[2].area,'서울');
+});
+
+test('retention is 30 days and retry never extends it; concurrent requests insert once',async()=>{
+ const {db,env}=environment();
+ globalThis.fetch=async()=>Response.json({success:true,hostname:'www.dahamsangjo.co.kr',action:'consultation'});
+ try {
+  const responses=await Promise.all(Array.from({length:8},()=>worker.fetch(request(),env)));
+  assert.ok(responses.every(r=>r.status===200));
+  const row=db.prepare('SELECT * FROM requests').get();
+  assert.equal(row.expires_at-row.created_at,30*86400000);
+  await worker.fetch(request(),env);
+  assert.equal(db.prepare('SELECT expires_at FROM requests').get().expires_at,row.expires_at);
+  assert.equal(db.prepare('SELECT COUNT(*) n FROM requests').get().n,1);
+ } finally {globalThis.fetch=originalFetch;db.close();}
+});
+test('CORS, malformed JSON, wrong media type and admin cursors fail safely',async()=>{
+ const {db,env}=environment();
+ try {
+  const preflight=await worker.fetch(new Request('https://intake.example/requests',{method:'OPTIONS',headers:{Origin:'https://www.dahamsangjo.co.kr'}}),env);
+  assert.equal(preflight.status,204);assert.equal(preflight.headers.get('Access-Control-Allow-Origin'),'https://www.dahamsangjo.co.kr');
+  for(const [body,type,status] of [['{','application/json',400],['{}','text/plain',415]]){
+   assert.equal((await worker.fetch(new Request('https://intake.example/requests',{method:'POST',headers:{Origin:'https://www.dahamsangjo.co.kr','Content-Type':type},body}),env)).status,status);
+  }
+  const headers={Authorization:'Bearer '+env.ADMIN_TOKEN};
+  for(const before of ['bad','null','[1]','[1,"invalid"]'])assert.equal((await worker.fetch(new Request('https://intake.example/admin/requests?before='+encodeURIComponent(before),{headers}),env)).status,400);
+  const privateResponse=await worker.fetch(new Request('https://intake.example/admin/requests',{headers}),env);
+  assert.equal(privateResponse.headers.get('Cache-Control'),'no-store');assert.equal(privateResponse.headers.get('Access-Control-Allow-Origin'),null);
+ } finally {db.close();}
+});
+test('cleanup deletes only expired records and repeat cleanup is harmless',async()=>{
+ const {db,env}=environment();
+ globalThis.fetch=async()=>Response.json({success:true,hostname:'www.dahamsangjo.co.kr',action:'consultation'});
+ try {
+  await worker.fetch(request(),env);
+  await worker.fetch(request({...base,requestId:'22222222-2222-4222-8222-222222222222'}),env);
+  db.prepare('UPDATE requests SET expires_at=1 WHERE id=?').run(base.requestId);
+  await worker.scheduled({},env);await worker.scheduled({},env);
+  assert.equal(db.prepare('SELECT COUNT(*) n FROM requests').get().n,1);
+  assert.notEqual(db.prepare('SELECT id FROM requests').get().id,base.requestId);
+ } finally {globalThis.fetch=originalFetch;db.close();}
+});
+test('cleanup failure stays failed and never exposes the database error',async()=>{
+ const originalError=console.error,logs=[];console.error=value=>logs.push(value);
+ try {
+  await assert.rejects(worker.scheduled({},{DB:{prepare(){throw Error('private contact 01000000000');}}}),/^Error: expired_requests_cleanup_failed$/);
+  assert.deepEqual(logs,['{"event":"expired_requests_cleanup_failed"}']);
+ } finally {console.error=originalError;}
+});
+test('client fails closed for missing or insecure setup',()=>{
+ for(const cfg of [{},{endpoint:'http://unsafe.example/requests',turnstileSiteKey:'key'},{endpoint:'https://safe.example/requests',turnstileSiteKey:''}]){
+  const elements=new Map(['callback-request','request-fields','availability','request-result','request-submit'].map(id=>[id,{disabled:true,textContent:''}]));
+  vm.runInNewContext(clientSource,{window:{DAHAM_INTAKE:cfg},document:{getElementById:id=>elements.get(id)},URL});
+  assert.equal(elements.get('request-fields').disabled,true);
+  assert.match(elements.get('availability').textContent,/1600-6131/);
+ }
+});
+test('analytics failure does not turn a saved request into a failed request',async()=>{
+ const h=clientHarness(sent=>Response.json({ok:true,requestId:sent.requestId}));
+ h.window.gtag=()=>{throw Error('analytics blocked');};
+ await h.submit();assert.equal(h.form.hidden,true);assert.match(h.elements.get('request-result').textContent,/접수되었습니다/);
 });

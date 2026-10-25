@@ -77,7 +77,23 @@
         "reviewed_at":{"type":["string","null"]}
       },
       "additionalProperties":false
+    },
+    "facility_identity":{
+      "type":"object",
+      "required":["facilityName","address","officialBranchName","sourceUrl","facilityCode"],
+      "properties":{
+        "facilityName":{"type":"string","minLength":1},
+        "address":{"type":"string","minLength":1},
+        "officialBranchName":{"type":"string","minLength":1},
+        "sourceUrl":{"type":"string","format":"uri","pattern":"^https://"},
+        "facilityCode":{"type":"string","minLength":1}
+      },
+      "additionalProperties":false
     }
   },
-  "additionalProperties":false
+  "additionalProperties":false,
+  "allOf":[{
+    "if":{"properties":{"publication":{"properties":{"publish":{"const":true}}}}},
+    "then":{"required":["facility_identity"]}
+  }]
 }

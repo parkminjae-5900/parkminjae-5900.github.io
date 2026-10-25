@@ -41,3 +41,16 @@ Read-only independent review returned HOLD for publication. Locally corrected cu
 
 ## Automation continuation — 2026-10-07
 Latest PR check reports mergeable against current main. Shared analytics now disables the automatic unsanitized page view, sends path and referrer origin only, removes search-term fields, drops arbitrary event values and never sends raw link text, telephone values or URL queries. The SEO funnel no longer propagates inbound attribution into the calculator URL. Worker cleanup now emits a PII-free deletion count with observability enabled in the example. Added health, 205-row pagination and analytics leakage tests; all 7 tests pass. Operator alert recipient, D1 recovery/backup retention decision, production resources, desktop/mobile browser rendering and live submission remain external gates.
+
+## 2026-10-25 continuation
+- Re-ran original 7 tests successfully before changes.
+- Fetched current main and resolved conflicts in analytics-tracking.js, consult.html and sitemap.xml. Preserved main search images, new consultation-scenarios sitemap entry, memory lead ID fallback and QA marker support; preserved PR confirmed-only intake conversion and privacy filtering.
+- Set sanitized page_location/page_referrer at GA4 config scope as well as page_view so later conversion events inherit the sanitized defaults.
+- Added privacy-safe cleanup failure logging while preserving failed scheduler status, guarded Turnstile reset failure, and corrected required-consent wording.
+- Added an intake CI job on Node 22.16 and ignored local Worker configuration/secrets.
+- Expanded tests to 13: concurrent identical requests, fixed 30-day retention with no retry extension, malformed payloads/CORS/cursors, selective and repeated cleanup, private cleanup error handling, missing config and blocked analytics.
+- Cloudflare plugin discovery returned no matches; no CF API credentials present in runtime. Cloud browser reached Cloudflare login (no authenticated account). No remote resources created or changed.
+- Browser preview at localhost:8765 failed with ERR_CONNECTION_REFUSED because the available cloud browser cannot reach the local dev server. Desktop/mobile rendered QA remains unverified, not passed.
+- Deployment remains held. Required: operating-account authentication; named operator and private access handover; cleanup alert recipient; approved storage/backup/privacy policy; live Worker/D1/Turnstile and GA4 end-to-end checks; desktop/mobile browser QA.
+- Search-image regression initially failed for the new intake page. Added metadata using the existing official logo unchanged, and its matching sitemap image entry.
+- Final local checks: 13/13 Node tests; syntax checks for four JS modules; SEO conversion PASS (356 funnel pages), search content PASS (387 public pages, 414 sitemap URLs), public security PASS. Image verification result recorded below after execution. No production data used.

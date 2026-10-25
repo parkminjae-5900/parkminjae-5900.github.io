@@ -1,0 +1,47 @@
+name: Submit changed pages to IndexNow
+
+on:
+  pull_request:
+    paths:
+      - "**.html"
+      - "sitemap.xml"
+      - "scripts/submit_indexnow.py"
+      - "tests/test_submit_indexnow.py"
+      - ".github/indexnow-seed.txt"
+      - "9e01cf3d3deaa796b8c16a871bf6820f.txt"
+      - ".github/workflows/indexnow.yml"
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "sitemap.xml"
+      - "scripts/submit_indexnow.py"
+      - "tests/test_submit_indexnow.py"
+      - ".github/indexnow-seed.txt"
+      - "9e01cf3d3deaa796b8c16a871bf6820f.txt"
+      - ".github/workflows/indexnow.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-submit:
+    runs-on: ubuntu-latest
+    env:
+      FROM_REF: ${{ github.event.pull_request.base.sha || github.event.before || format('{0}~1', github.sha) }}
+      TO_REF: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test IndexNow guardrails
+        run: python -m unittest tests.test_submit_indexnow
+      - name: Validate changed URL batch
+        run: python scripts/submit_indexnow.py --from-ref "$FROM_REF" --to-ref "$TO_REF"
+      - name: Submit changed URLs
+        if: github.event_name == 'push'
+        run: python scripts/submit_indexnow.py --from-ref "$FROM_REF" --to-ref "$TO_REF" --submit
