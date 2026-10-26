@@ -1,0 +1,19 @@
+name: Priority official price evidence
+on:
+  pull_request:
+    paths:
+      - 'data/priority-official-price-audit-20261026.json'
+      - 'tests/test_priority_official_price_audit.py'
+      - '.github/workflows/priority-price-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_priority_official_price_audit.py'

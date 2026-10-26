@@ -1,0 +1,1796 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-26T19:27:42+09:00",
+  "baselineCommit": "b741c394906666035b1d54998125765a20d59d6b",
+  "scope": "funeral-halls.json 서울 영등포구·송파구·강남구 및 인천광역시 전체; 전국 실운영시설 전수와 동일하다고 단정하지 않음",
+  "rules": [
+    "시설명·공식지점·도로명/건물번호 대조",
+    "항목·금액·단위 동시 확인",
+    "확인일과 시행일 분리",
+    "타지점·과거가격 대체 금지",
+    "상충·단위불명·조건부 자동산정 위험은 제외대장으로 분리"
+  ],
+  "publicSources": [
+    {
+      "url": "https://www.data.go.kr/data/15021763/fileData.do",
+      "sourceDate": "2023-06-02",
+      "status": "historical_only",
+      "reason": "포털 원문 파일명 20230602, 수시(1회성). 기존 내부 baseline의 2023-06-01과 구분. 현재 요금 입증 불가"
+    }
+  ],
+  "summary": [
+    {
+      "region": "서울 영등포",
+      "totalFacilities": 8,
+      "existingPriceFacilities": 1,
+      "newlyVerifiedFacilities": 0,
+      "reverifiedFacilities": 1,
+      "unverifiedFacilities": 7,
+      "existingAwaitingReverification": 0
+    },
+    {
+      "region": "서울 송파",
+      "totalFacilities": 2,
+      "existingPriceFacilities": 1,
+      "newlyVerifiedFacilities": 0,
+      "reverifiedFacilities": 0,
+      "unverifiedFacilities": 1,
+      "existingAwaitingReverification": 1
+    },
+    {
+      "region": "서울 강남",
+      "totalFacilities": 2,
+      "existingPriceFacilities": 0,
+      "newlyVerifiedFacilities": 1,
+      "reverifiedFacilities": 0,
+      "unverifiedFacilities": 1,
+      "existingAwaitingReverification": 0
+    },
+    {
+      "region": "인천",
+      "totalFacilities": 35,
+      "existingPriceFacilities": 1,
+      "newlyVerifiedFacilities": 3,
+      "reverifiedFacilities": 1,
+      "unverifiedFacilities": 31,
+      "existingAwaitingReverification": 0
+    }
+  ],
+  "facilities": [
+    {
+      "facilityName": "삼성서울병원장례식장",
+      "address": "서울특별시 강남구 일원로 81 (일원동, 삼성의료원)",
+      "region": "서울특별시",
+      "district": "강남구",
+      "telephone": "02-3410-3151",
+      "homepageUrl": "www.samsunghospital.com/funeral",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.samsunghospital.com/funeral",
+        "http://www.samsunghospital.com/home/funerals/main/index.do",
+        "http://www.samsunghospital.com/home/funerals/guide.do",
+        "http://www.samsunghospital.com/home/funerals/guide.do?view=introduce",
+        "http://www.samsunghospital.com/home/funerals/service.do?view=cs_center",
+        "http://www.samsunghospital.com/home/funerals/info/facInfo.do",
+        "http://www.samsunghospital.com/home/funerals/facilities/parlor.do",
+        "http://www.samsunghospital.com/home/funerals/cs/notice/view.do?cPage=1&bno=4"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 빈소안내 원문은 면적·호실·구성만 확인. 장례비 조회는 개별 비용조회여서 공개 단가로 간주하지 않음.",
+      "suggestedSearchQuery": "삼성서울병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "연세대학교 강남장례식장",
+      "address": "서울특별시 강남구 언주로 211 (도곡동, 강남세브란스병원)",
+      "region": "서울특별시",
+      "district": "강남구",
+      "telephone": "02-2019-4000",
+      "homepageUrl": "gangnam.yonseifuneral.com/index.asp",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "newly_verified",
+      "checkedUrls": [
+        "https://gangnam.yonseifuneral.com/index.asp",
+        "https://gangnam.yonseifuneral.com/am/am_2.asp",
+        "https://gangnam.yonseifuneral.com/bm/bm_3.asp",
+        "https://gangnam.yonseifuneral.com",
+        "https://gangnam.yonseifuneral.com/am/am_1.asp",
+        "https://gangnam.yonseifuneral.com/am/am_3.asp",
+        "https://gangnam.yonseifuneral.com/dm/dm_1.asp"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "검증은 게시된 일부 항목 기준. 누락·조건부 항목 및 실제 적용일은 시설 확인 필요.",
+      "verifiedPriceCount": 11
+    },
+    {
+      "facilityName": "경찰병원장례식장",
+      "address": "서울특별시 송파구 송이로 123 (가락동, 국립경찰병원)",
+      "region": "서울특별시",
+      "district": "송파구",
+      "telephone": "02-431-4400",
+      "homepageUrl": "www.nph.go.kr/nph/main/contents.do?menuNo=200030",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "priced",
+      "hadExistingPrice": true,
+      "existingPriceCount": 5,
+      "status": "existing_not_reverified",
+      "checkedUrls": [
+        "https://www.nph.go.kr/nph/main/contents.do?menuNo=200030",
+        "http://www.nph.go.kr/nph/main/contents.do?menuNo=200030",
+        "https://www.nph.go.kr/nph/main/contents.do?menuNo=200120"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "기존 5항목 보존. 공식 원문 접근 실패로 이번 확인일을 갱신하지 않음.",
+      "suggestedSearchQuery": "경찰병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "서울아산병원 장례식장",
+      "address": "서울특별시 송파구 올림픽로43길 88 (풍납동, 서울아산병원)",
+      "region": "서울특별시",
+      "district": "송파구",
+      "telephone": "02-3010-2000",
+      "homepageUrl": "funeral.amc.seoul.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://funeral.amc.seoul.kr",
+        "https://funeral.amc.seoul.kr/asan/depts/D108/K/deptMain.do",
+        "https://funeral.amc.seoul.kr/asan/depts/D108/K/directory.do?menuId=3838",
+        "https://funeral.amc.seoul.kr/asan/depts/D108/K/directory.do?menuId=3840"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "서울아산병원 장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "교원예움 서서울장례식장",
+      "address": "서울특별시 영등포구 선유로 101,교원예움서서울장례식장 (양평동1가)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-2676-4444",
+      "homepageUrl": "www.kyowonyeum.co.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "priced",
+      "hadExistingPrice": true,
+      "existingPriceCount": 8,
+      "status": "reverified",
+      "checkedUrls": [
+        "https://www.kyowonyeum.co.kr",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1000",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1001",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1002",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1003",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1004",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1005",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1006"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "검증은 게시된 일부 항목 기준. 누락·조건부 항목 및 실제 적용일은 시설 확인 필요.",
+      "verifiedPriceCount": 8
+    },
+    {
+      "facilityName": "복지장례문화원",
+      "address": "서울특별시 영등포구 도림로 142 (대림동)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-846-4444",
+      "homepageUrl": "www.e-bokji.com/",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.e-bokji.com/",
+        "http://www.e-bokji.com/"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "복지장례문화원 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "성애장례식장",
+      "address": "서울특별시 영등포구 여의대방로53길 22 (신길동, 성애병원)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-844-4444",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://h.sungae.co.kr/"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "성애장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "신화장례식장",
+      "address": "서울특별시 영등포구 영중로 100 (영등포동7가, 신화요양병원)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-2679-1122",
+      "homepageUrl": "www.shmemory.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.shmemory.com"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "신화장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "여의도성모장례식장",
+      "address": "서울특별시 영등포구 63로 10 (여의도동, 여의도성모병원)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-3779-1526",
+      "homepageUrl": "yfh.catholicfuneral.co.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://yfh.catholicfuneral.co.kr",
+        "http://yfh.catholicfuneral.co.kr",
+        "https://yfh.catholicfuneral.co.kr/phgrp/cnts/CntsFrntView.do?cntsId=CFV_2020000"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 개별 이용요금 페이지 발견, 웹방화벽/접근 오류로 원문 대조 불가.",
+      "suggestedSearchQuery": "여의도성모장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "영등포장례식장",
+      "address": "서울특별시 영등포구 당산로31길 6 (당산동3가, 영등포병원)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-2679-4444",
+      "homepageUrl": "02-2679-4444.font114.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://02-2679-4444.font114.com",
+        "http://02-2679-4444.font114.com"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "영등포장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "한강성심병원장례식장",
+      "address": "서울특별시 영등포구 국회대로56길 18,한강성심병원5별관지하1층 (영등포동7가, 한강성심병원)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-2633-4455",
+      "homepageUrl": "https://hangang.hallym.or.kr/hallymuniv_sub.asp?left_menu=left_mguide&screen=ptm907",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://hangang.hallym.or.kr/hallymuniv_sub.asp?left_menu=left_mguide&screen=ptm907",
+        "https://hangang.hallym.or.kr/hallymuniv_sub.asp?left_menu=left_mguide&screen=ptm313"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "한강성심병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "한림대 강남성심병원장례식장",
+      "address": "서울특별시 영등포구 신길로 1 (대림동, 강남성심병원)",
+      "region": "서울특별시",
+      "district": "영등포구",
+      "telephone": "02-833-3794",
+      "homepageUrl": "kangnam.hallym.or.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://kangnam.hallym.or.kr",
+        "https://kangnam.hallym.or.kr/hallymuniv_sub.asp?left_menu=left_mguide&screen=ptm313",
+        "https://kangnam.hallym.or.kr/hallymuniv_sub.asp?left_menu=left_mguide&screen=ptm907"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 장례식장 안내가 요금을 전화 문의하도록 명시. 다른 한림 지점 가격 사용 금지.",
+      "suggestedSearchQuery": "한림대 강남성심병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "강화병원장례식장",
+      "address": "인천광역시 강화군 강화읍 강화대로312번길 11 (갑곳리, 강화병원)",
+      "region": "인천광역시",
+      "district": "강화군",
+      "telephone": "032-933-0405",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.15774129.go.kr/portal/esky/fnlfac/fac_view.do?facilitycd=1000000040&facilitygroupcd=TBC0700001&loc=price&menuId=M0001000100000000&sanbundiv=N"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "e하늘 시설코드 1000000040 발견. 원문은 가격 행이 비어 반환되어 검색요약의 숫자는 채택하지 않음.",
+      "suggestedSearchQuery": "강화병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "강화장례식장",
+      "address": "인천광역시 강화군 강화읍 중앙로74번길 16 (남산리)",
+      "region": "인천광역시",
+      "district": "강화군",
+      "telephone": "032-933-1024",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "강화장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "비에스종합병원장례식장",
+      "address": "인천광역시 강화군 강화읍 충렬사로 31, 비에스종합병원 별관 (남산리)",
+      "region": "인천광역시",
+      "district": "강화군",
+      "telephone": "032-216-4444",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://bs.ibsh.kr/sub/sub0309.php"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "비에스종합병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "서해장례문화원",
+      "address": "인천광역시 강화군 강화읍 중앙로74번길 10 (남산리)",
+      "region": "인천광역시",
+      "district": "강화군",
+      "telephone": "032-933-4463",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "서해장례문화원 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "참사랑장례식장",
+      "address": "인천광역시 강화군 선원면 중앙로 271 (창리, 참사랑장례식장)",
+      "region": "인천광역시",
+      "district": "강화군",
+      "telephone": "032-932-4200",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.15774129.go.kr/portal/esky/fnlfac/fac_view.do?facilitycd=7000000666&facilitygroupcd=TBC0700001&loc=price&menuId=M0001000100000000&sanbundiv=N"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "e하늘 강화 시설코드 7000000666 발견. 원문 가격 행 미출력. 동명 서천 시설(1000000763) 제외.",
+      "suggestedSearchQuery": "참사랑장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "(주)세종병원장례식장",
+      "address": "인천광역시 계양구 계양문화로 20 (작전동, 인천세종병원)",
+      "region": "인천광역시",
+      "district": "계양구",
+      "telephone": "032-240-8444",
+      "homepageUrl": "http://insejongkr/",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "newly_verified",
+      "checkedUrls": [
+        "http://insejongkr/",
+        "https://incheon.sejongh.co.kr/my_information/user_content?Depth=3&cate1=177&cate2=278&cate3_idx=280&html_mode=html"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "검증은 게시된 일부 항목 기준. 누락·조건부 항목 및 실제 적용일은 시설 확인 필요.",
+      "verifiedPriceCount": 14
+    },
+    {
+      "facilityName": "보람새천년장례식장",
+      "address": "인천광역시 계양구 아나지로 541 (서운동)",
+      "region": "인천광역시",
+      "district": "계양구",
+      "telephone": "032-552-3100",
+      "homepageUrl": "www.boramnewm.com/",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.boramnewm.com/",
+        "http://www.boramnewm.com/"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "보람새천년장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "쉴낙원 인천장례식장",
+      "address": "인천광역시 계양구 아나지로 552 (서운동)",
+      "region": "인천광역시",
+      "district": "계양구",
+      "telephone": "032-548-1009",
+      "homepageUrl": "shillakwon.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://shillakwon.com"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "쉴낙원 인천장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "청기와장례식장(계양점)",
+      "address": "인천광역시 계양구 아나지로 559 (서운동)",
+      "region": "인천광역시",
+      "district": "계양구",
+      "telephone": "032-546-4444",
+      "homepageUrl": "www.gyeyang.org/",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.gyeyang.org/",
+        "http://www.gyeyang.org/",
+        "http://bluefuneral-gyeyang.com/index.php/",
+        "http://bluefuneral-gyeyang.com/s3/s3_1.php"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "송림점에서 연결된 새 계양 지점 도메인·시설 페이지 확인. 금액·단위 원문 미확보.",
+      "suggestedSearchQuery": "청기와장례식장(계양점) 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "한림병원장례식장",
+      "address": "인천광역시 계양구 장제로 722,한림병원 2,3관 지하2층 (작전동)",
+      "region": "인천광역시",
+      "district": "계양구",
+      "telephone": "032-543-2444",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.hallym.net/information_use/facilities.php"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "한림병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "길병원장례식장",
+      "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
+      "region": "인천광역시",
+      "district": "남동구",
+      "telephone": "032-460-3444",
+      "homepageUrl": "funeral.gilhospital.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "priced",
+      "hadExistingPrice": true,
+      "existingPriceCount": 1,
+      "status": "reverified_expanded",
+      "checkedUrls": [
+        "https://funeral.gilhospital.com",
+        "https://funeral.gilhospital.com/-1",
+        "https://funeral.gilhospital.com/-3",
+        "https://funeral.gilhospital.com/-4",
+        "https://funeral.gilhospital.com/web/funeral/-3",
+        "https://funeral.gilhospital.com/-5"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "검증은 게시된 일부 항목 기준. 누락·조건부 항목 및 실제 적용일은 시설 확인 필요.",
+      "verifiedPriceCount": 18
+    },
+    {
+      "facilityName": "남동스카이장례식장",
+      "address": "인천광역시 남동구 앵고개로697번길 41 (고잔동, 남동스카이장례식장)",
+      "region": "인천광역시",
+      "district": "남동구",
+      "telephone": "032-424-1900",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.namdongsky1.com/"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "남동스카이장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천가족공원장례식장",
+      "address": "인천광역시 남동구 만월북로 115 (간석동, 인천가족공원장례식장)",
+      "region": "인천광역시",
+      "district": "남동구",
+      "telephone": "032-501-1925",
+      "homepageUrl": "icfp1925.quv.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://icfp1925.quv.kr",
+        "https://icfp1925.quv.kr/",
+        "https://icfp1925.quv.kr/gallery",
+        "https://icfp1925.quv.kr/8",
+        "https://icfp1925.quv.kr/4"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "인천가족공원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천힘찬종합병원장례식장",
+      "address": "인천광역시 남동구 논현로 72,지하1층 (논현동, 힘찬종합병원)",
+      "region": "인천광역시",
+      "district": "남동구",
+      "telephone": "032-421-3000",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "인천힘찬종합병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천광역시의료원 장례식장",
+      "address": "인천광역시 동구 방축로 217 (송림동, 인천광역시의료원)",
+      "region": "인천광역시",
+      "district": "동구",
+      "telephone": "032-580-6662",
+      "homepageUrl": "www.icmc.or.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "newly_verified",
+      "checkedUrls": [
+        "https://www.icmc.or.kr",
+        "https://www.icmc.or.kr/",
+        "https://www.icmc.or.kr/guide/guide7.php?tsort=4&msort=50",
+        "https://www.icmc.or.kr/guide/guide7.php?tsort=4&msort=50&ssort=51",
+        "https://www.icmc.or.kr/guide/guide9.php?tsort=4&msort=50&ssort=53",
+        "https://www.icmc.or.kr/guide/guide1.php?tsort=4",
+        "https://www.icmc.or.kr/med_info/med_info6.php?tsort=6&msort=78&no=29708&mode=detail",
+        "https://www.icmc.or.kr/common_page/board_page.php?tsort=6&msort=79&ssort=170&board_code=43&board=43&mno=170&bno=43&no=29894&mode=detail",
+        "https://www.icmc.or.kr/guide/guide9.php?msort=50&ssort=53&tsort=4"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "검증은 게시된 일부 항목 기준. 누락·조건부 항목 및 실제 적용일은 시설 확인 필요.",
+      "verifiedPriceCount": 14
+    },
+    {
+      "facilityName": "청기와장례식장(송림점)",
+      "address": "인천광역시 동구 방축로177번길 23 (송림동)",
+      "region": "인천광역시",
+      "district": "동구",
+      "telephone": "032-583-4444",
+      "homepageUrl": "www.bluefuneral.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.bluefuneral.com",
+        "http://www.bluefuneral.com",
+        "http://www.bluefuneral.com/index.php",
+        "http://www.bluefuneral.com/s3/s3_1.php"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 지점 진입·시설 안내 확인. 금액·단위 원문 미확보.",
+      "suggestedSearchQuery": "청기와장례식장(송림점) 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "(유)성인천장례식장",
+      "address": "인천광역시 미추홀구 석정로 6 (숭의동, 인천한방병원)",
+      "region": "인천광역시",
+      "district": "미추홀구",
+      "telephone": "032-891-4444",
+      "homepageUrl": "sungincheon-funeralhall.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://sungincheon-funeralhall.com",
+        "http://sungincheon-funeralhall.com"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "(유)성인천장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "금강장례식장",
+      "address": "인천광역시 미추홀구 인주대로 452 (주안동, 금강요양병원,새한장례식장)",
+      "region": "인천광역시",
+      "district": "미추홀구",
+      "telephone": "032-432-4444",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "금강장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "송도하나장례문화원",
+      "address": "인천광역시 미추홀구 아암대로253번길 36 (학익동 587-78) 송도하나요양병원 - 송도하나장례문화원",
+      "region": "인천광역시",
+      "district": "미추홀구",
+      "telephone": "032-832-4443",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://xn--910b43dw2kz6ectfnubcm037g.kr/funeral-location"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "송도하나장례문화원 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천사랑병원장례식장",
+      "address": "인천광역시 미추홀구 미추홀대로 726 (주안동, 인천사랑병원)",
+      "region": "인천광역시",
+      "district": "미추홀구",
+      "telephone": "032-441-0404",
+      "homepageUrl": "www.saranghospital.com",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "newly_verified",
+      "checkedUrls": [
+        "https://www.saranghospital.com",
+        "https://www.saranghospital.com/About/procedure/wclinic.jsp",
+        "https://www.saranghospital.com/hospabout/funeralhall.jsp",
+        "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1009",
+        "https://www.saranghospital.com/hospabout/funeralhall1.jsp"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "검증은 게시된 일부 항목 기준. 누락·조건부 항목 및 실제 적용일은 시설 확인 필요.",
+      "verifiedPriceCount": 3
+    },
+    {
+      "facilityName": "학교법인영산학원시민장례식장",
+      "address": "인천광역시 미추홀구 석정로64번길 22 (숭의동, 시민장례식장)",
+      "region": "인천광역시",
+      "district": "미추홀구",
+      "telephone": "032-889-4644",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "학교법인영산학원시민장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "근로복지공단 인천병원장례식장",
+      "address": "인천광역시 부평구 무네미로 446 (구산동, 인천중앙병원)",
+      "region": "인천광역시",
+      "district": "부평구",
+      "telephone": "032-524-4444",
+      "homepageUrl": "www.kcomwel.or.kr/incheon/intr/fune.jsp",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.kcomwel.or.kr/incheon/intr/fune.jsp",
+        "http://www.kcomwel.or.kr/incheon/intr/fune.jsp",
+        "https://www.comwel.or.kr/incheon/intr/fune.jsp"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "근로복지공단 인천병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "에스엘 부평지점 세림병원 장례식장",
+      "address": "인천광역시 부평구 부평대로 175 (청천동, 부평세림병원)",
+      "region": "인천광역시",
+      "district": "부평구",
+      "telephone": "032-523-8844",
+      "homepageUrl": "serimfh.com/",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://serimfh.com/",
+        "http://serimfh.com/"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "에스엘 부평지점 세림병원 장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천성모장례식장",
+      "address": "인천광역시 부평구 동수로 56 (부평동, 가톨릭대학교인천성모병원)",
+      "region": "인천광역시",
+      "district": "부평구",
+      "telephone": "032-517-0710",
+      "homepageUrl": "icfh.catholicfuneral.co.kr/cmm/main/mainPage.do",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://icfh.catholicfuneral.co.kr/cmm/main/mainPage.do",
+        "http://icfh.catholicfuneral.co.kr/cmm/main/mainPage.do",
+        "https://icfh.catholicfuneral.co.kr/phgrp/cnts/CntsFrntView.do?cntsId=CFV_2020000"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 개별 이용요금 페이지 발견, 웹방화벽/접근 오류로 원문 대조 불가.",
+      "suggestedSearchQuery": "인천성모장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "검단탑병원장례식장",
+      "address": "인천광역시 서구 청마로19번길 5 (당하동)",
+      "region": "인천광역시",
+      "district": "서구",
+      "telephone": "032-565-4444",
+      "homepageUrl": "www.tophospital.co.kr:33365/home/guide/funeral.asp",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "unreachable",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.tophospital.co.kr:33365/home/guide/funeral.asp",
+        "http://www.tophospital.co.kr:33365/home/guide/funeral.asp",
+        "https://tophospital.co.kr/m/use_guide/funeral.html"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "새 운영기관 모바일 안내 확인. 상세 시설요금 금액·단위는 확인 못함.",
+      "suggestedSearchQuery": "검단탑병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "국제성모장례식장",
+      "address": "인천광역시 서구 심곡로100번길 25 (심곡동, 인천국제성모병원)",
+      "region": "인천광역시",
+      "district": "서구",
+      "telephone": "032-290-3501",
+      "homepageUrl": "kjfh.catholicfuneral.co.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://kjfh.catholicfuneral.co.kr",
+        "http://kjfh.catholicfuneral.co.kr",
+        "https://kjfh.catholicfuneral.co.kr/phgrp/cnts/CntsFrntView.do?cntsId=CFV_2020000"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 지점 홈페이지 접근 차단. 다른 성모 지점 가격 대체 금지.",
+      "suggestedSearchQuery": "국제성모장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "보람인천장례식장",
+      "address": "인천광역시 서구 경명대로 468 (경서동)",
+      "region": "인천광역시",
+      "district": "서구",
+      "telephone": "032-568-4000",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.boramsangjo.com/Cs/Partnership/view/815"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "보람인천장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "온누리장례식장",
+      "address": "인천광역시 서구 완정로 199 지하1층 (왕길동)",
+      "region": "인천광역시",
+      "district": "서구",
+      "telephone": "032-566-1919",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "온누리장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천연세병원장례식장",
+      "address": "인천광역시 서구 승학로 320지하장례식장 (연희동, 연세병원)",
+      "region": "인천광역시",
+      "district": "서구",
+      "telephone": "032-561-1024",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "인천연세병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "더연수장례식장",
+      "address": "인천광역시 연수구 벚꽃로 122 (연수동)",
+      "region": "인천광역시",
+      "district": "연수구",
+      "telephone": "032-819-1024",
+      "homepageUrl": "www.ysf.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.ysf.kr",
+        "https://www.ysf.kr/facility",
+        "https://www.ysf.kr/guide/usage"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "더연수장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천적십자병원장례식장",
+      "address": "인천광역시 연수구 원인재로 263 (연수동,인천적십자병원장례식장)",
+      "region": "인천광역시",
+      "district": "연수구",
+      "telephone": "032-822-1234",
+      "homepageUrl": "www.rchfuneral.co.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.rchfuneral.co.kr",
+        "http://www.rchfuneral.co.kr",
+        "https://www.rch.or.kr/web/rchincheon/main"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "병원이 연결하는 별도 장례식장 도메인 확인. 해당 사이트는 스크립트 확인 화면으로 가격 원문 미확보.",
+      "suggestedSearchQuery": "인천적십자병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "예지장례식장",
+      "address": "인천광역시 중구 개항로 82.2층예지장례식장 (경동, 예지요양병원)",
+      "region": "인천광역시",
+      "district": "중구",
+      "telephone": "032-766-6444",
+      "homepageUrl": "",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_homepage",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "예지장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천기독병원장례식장",
+      "address": "인천광역시 중구 답동로30번길 10 (율목동, 인천기독병원)",
+      "region": "인천광역시",
+      "district": "중구",
+      "telephone": "032-765-4440",
+      "homepageUrl": "www.goich.co.kr",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.goich.co.kr",
+        "https://www.goich.co.kr/bbs_view.html?code=bbs3&bbsid=59",
+        "https://www.goich.co.kr/bbs_view.html?code=bbs3&bbsid=58",
+        "https://www.goich.co.kr/bbs_view.html?code=bbs3&bbsid=57",
+        "https://goich.gabia.io/use_funeral.html"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "병원 홈페이지가 연결하는 별도 안내 페이지 확인. 절차만 있고 검증 가능한 시설 단가표 미확보.",
+      "suggestedSearchQuery": "인천기독병원장례식장 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인천삼성장례문화원",
+      "address": "인천광역시 중구 우현로62번길 34-1 (경동)",
+      "region": "인천광역시",
+      "district": "중구",
+      "telephone": "032-777-4445",
+      "homepageUrl": "yonwwf75.wixsite.com/mysite",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://yonwwf75.wixsite.com/mysite",
+        "https://yonwwf75.wixsite.com/mysite/blank"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "인천삼성장례문화원 공식 홈페이지 이용요금 가격표"
+    },
+    {
+      "facilityName": "인하대병원장례식장",
+      "address": "인천광역시 중구 인항로 27 (신흥동3가, 인하대학병원)",
+      "region": "인천광역시",
+      "district": "중구",
+      "telephone": "032-890-3180",
+      "homepageUrl": "www.inha.com/site/funeral/main",
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "baselineScanStatus": "no_price_found",
+      "hadExistingPrice": false,
+      "existingPriceCount": 0,
+      "status": "unverified",
+      "checkedUrls": [
+        "https://www.inha.com/site/funeral/main",
+        "http://www.inha.com/site/funeral/main"
+      ],
+      "publicSourceReview": "2023-06 공공데이터는 과거 참고자료로만 취급. 현행 가격으로 승격하지 않음.",
+      "nextAction": "공식 페이지 또는 운영기관/공공자료 검색을 점검했으나 시설·항목·금액·단위까지 대조 가능한 최신 가격표를 확보하지 못함. 시설 발행 가격표 확보 필요.",
+      "suggestedSearchQuery": "인하대병원장례식장 공식 홈페이지 이용요금 가격표"
+    }
+  ],
+  "verifiedEvidence": [
+    {
+      "facilityName": "연세대학교 강남장례식장",
+      "address": "서울특별시 강남구 언주로 211 (도곡동, 강남세브란스병원)",
+      "officialFacilityName": "연세대학교 강남장례식장",
+      "officialAddress": "서울 강남구 언주로 211 (도곡동 146-2)",
+      "identityBasis": "동일 시설명/공식 지점 및 도로명·건물번호를 원문에서 대조; 약칭·괄호 상세표기는 기록에 보존",
+      "sourceUrl": "https://gangnam.yonseifuneral.com/bm/bm_3.asp",
+      "additionalSources": [],
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "effectiveDate": null,
+      "verificationStatus": "verified_posted_price",
+      "sourceType": "facility_or_operator_official",
+      "record": {
+        "facilityName": "연세대학교 강남장례식장",
+        "address": "서울특별시 강남구 언주로 211 (도곡동, 강남세브란스병원)",
+        "verifiedAt": "2026-10-26T19:27:42+09:00",
+        "sourceName": "연세대학교 강남장례식장 공식 이용요금",
+        "sourceUrl": "https://gangnam.yonseifuneral.com/bm/bm_3.asp",
+        "sourceGrade": "A",
+        "sourceNote": "안치료는 빈소 사용료 발생 시 50% 차감. 12시간 이상 24시간 미만은 1일, 12시간 미만은 시간 단위. 입관료는 주간·야간·소아·무빈소 조건이 달라 자동 가격목록에서 제외하고 감사대장에 보존. 확인일은 원문 열람일이며 요금 시행일은 미표기. 확인된 일부 항목으로 전체 장례비를 뜻하지 않음.",
+        "prices": [
+          {
+            "category": "빈소",
+            "label": "1호실 빈소임대료",
+            "amount": 39000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "1호실 빈소임대료",
+            "amount": 936000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "2호실 빈소임대료",
+            "amount": 39000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "2호실 빈소임대료",
+            "amount": 936000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "3호실 빈소임대료",
+            "amount": 65000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "3호실 빈소임대료",
+            "amount": 1560000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "5호실 빈소임대료",
+            "amount": 39000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "5호실 빈소임대료",
+            "amount": 936000,
+            "unit": "1일"
+          },
+          {
+            "category": "안치실",
+            "label": "안치료(기본요금; 빈소 사용료 발생 시 50% 차감)",
+            "amount": 9000,
+            "unit": "1시간"
+          },
+          {
+            "category": "안치실",
+            "label": "안치료(기본요금; 빈소 사용료 발생 시 50% 차감)",
+            "amount": 216000,
+            "unit": "1일"
+          },
+          {
+            "category": "청소/관리",
+            "label": "관리비",
+            "amount": 50000,
+            "unit": "1일"
+          }
+        ]
+      },
+      "excludedItems": [
+        {
+          "label": "입관실 사용료",
+          "reason": "조건별 적용 및 추가요금 중복 산정 방지; 견적 UI 조건선택 구현 전 자동계산 제외",
+          "publishedRates": [
+            {
+              "category": "염습/입관",
+              "label": "주간(90분)",
+              "amount": 500000,
+              "unit": "1회"
+            },
+            {
+              "category": "염습/입관",
+              "label": "소아(만10세 미만)",
+              "amount": 150000,
+              "unit": "1회"
+            },
+            {
+              "category": "염습/입관",
+              "label": "야간(18:00~익일08:30)",
+              "amount": 600000,
+              "unit": "1회"
+            },
+            {
+              "category": "염습/입관",
+              "label": "자체(유족;90분)",
+              "amount": 500000,
+              "unit": "1회"
+            },
+            {
+              "category": "염습/입관",
+              "label": "무빈소",
+              "amount": 600000,
+              "unit": "1회"
+            },
+            {
+              "category": "염습/입관",
+              "label": "30분 추가(최대1회)",
+              "amount": 100000,
+              "unit": "1회"
+            }
+          ]
+        }
+      ],
+      "sourcePriceTables": [
+        [
+          "구분 | 형태 | 면적 | 좌석수 | 금액 | 구성 | 비    고",
+          "㎡ | 평형 | 1 시간 | 1 일",
+          "안치료 | 9,000원 | 216,000원 | 빈소 사용료 발생시 50% 차감 적용",
+          "관리비 | 50,000원",
+          "빈소임대료 | 좌식 | 120㎡ | 36평형A | 46 | 39,000원 | 936,000원 | 분향실, 접객실, 가족실, 주방, 욕실 | 1호실",
+          "좌식 | 124㎡ | 38평형 | 48 | 39,000원 | 936,000원 | 분향실, 접객실, 가족실, 주방, 욕실 | 2호실",
+          "좌식 | 182㎡ | 55평형 | 58 | 65,000원 | 1,560,000원 | 분향실, 접객실, 가족실, 주방, 욕실 | 3호실",
+          "좌식 | 120㎡ | 36평형B | 52 | 39,000원 | 936,000원 | 분향실, 접객실, 가족실, 주방, 욕실 | 5호실",
+          "입 | 관 | 실 | 사 | 용 | 료 | 주간 | 500,000원 / 1회 | 1회 90분 기준",
+          "소아 | 150,000원 / 1회 | 만 10세 미만",
+          "야간 | 600,000원 / 1회 | 18:00~익일08:30",
+          "자체(유족) | 500,000원 / 1회 | 1회 90분 기준",
+          "무빈소 | 600,000원 / 1회",
+          "특수/야간 | (추가) 100,000원",
+          "추가(30분) | 100,000원 / 1회 | 최대 1회"
+        ],
+        [
+          "개인정보처리방침 | 관련사이트 | 연세대학교 | 세브란스병원 | 강남세브란스병원 | 용인세브란스병원 | 원주세브란스기독병원 | 연세우유 | 동문회관 | e-하늘장사정보",
+          "06273) 서울 강남구 언주로 211 (도곡동 146-2) ㅣ 대표전화 02-2019-4000 | 연세대학교 강남장례식장"
+        ]
+      ],
+      "retrievedTextSha256": "c130c222f5c8aa7d9cc96dfb3a87cb4faeea43e488a2a12418e4ec4253f8815b"
+    },
+    {
+      "facilityName": "(주)세종병원장례식장",
+      "address": "인천광역시 계양구 계양문화로 20 (작전동, 인천세종병원)",
+      "officialFacilityName": "인천세종병원 장례식장",
+      "officialAddress": "인천광역시 계양구 계양문화로 20 인천세종병원",
+      "identityBasis": "동일 시설명/공식 지점 및 도로명·건물번호를 원문에서 대조; 약칭·괄호 상세표기는 기록에 보존",
+      "sourceUrl": "https://incheon.sejongh.co.kr/my_information/user_content?Depth=3&cate1=177&cate2=278&cate3_idx=280&html_mode=html",
+      "additionalSources": [],
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "effectiveDate": null,
+      "verificationStatus": "verified_posted_price",
+      "sourceType": "facility_or_operator_official",
+      "record": {
+        "facilityName": "(주)세종병원장례식장",
+        "address": "인천광역시 계양구 계양문화로 20 (작전동, 인천세종병원)",
+        "verifiedAt": "2026-10-26T19:27:42+09:00",
+        "sourceName": "인천세종병원 공식 장례식장 안내",
+        "sourceUrl": "https://incheon.sejongh.co.kr/my_information/user_content?Depth=3&cate1=177&cate2=278&cate3_idx=280&html_mode=html",
+        "sourceGrade": "A",
+        "sourceNote": "기존 시설목록의 insejongkr 주소 대신 운영병원의 인천 지점 페이지를 대조. VIP1호는 시간·일 요금 불일치로 제외. 공식 산정 안내의 12시간/24시간 문구가 겹쳐 실제 사용기간별 청구 기준은 시설 재확인 필요. 확인일은 원문 열람일이며 요금 시행일은 미표기. 확인된 일부 항목으로 전체 장례비를 뜻하지 않음.",
+        "prices": [
+          {
+            "category": "빈소",
+            "label": "특실2호 빈소사용료",
+            "amount": 38000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "특실2호 빈소사용료",
+            "amount": 912000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "일반실3호 빈소사용료",
+            "amount": 34000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "일반실3호 빈소사용료",
+            "amount": 816000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "일반실5호 빈소사용료",
+            "amount": 21000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "일반실5호 빈소사용료",
+            "amount": 504000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "특실6호 빈소사용료",
+            "amount": 45000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "특실6호 빈소사용료",
+            "amount": 1080000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "특실7호 빈소사용료",
+            "amount": 45000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "특실7호 빈소사용료",
+            "amount": 1080000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "일반실8호 빈소사용료",
+            "amount": 32000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "일반실8호 빈소사용료",
+            "amount": 768000,
+            "unit": "1일"
+          },
+          {
+            "category": "안치실",
+            "label": "안치실 사용료",
+            "amount": 7000,
+            "unit": "1시간"
+          },
+          {
+            "category": "안치실",
+            "label": "안치실 사용료",
+            "amount": 168000,
+            "unit": "1일"
+          }
+        ]
+      },
+      "excludedItems": [
+        {
+          "label": "VIP1호 빈소사용료",
+          "reason": "원문 80,000원/시간 ×24=1,920,000원이나 일요금 2,040,000원. 어느 값도 임의 수정·환산하지 않고 보류",
+          "publishedRates": [
+            {
+              "category": "빈소",
+              "label": "VIP1호",
+              "amount": 80000,
+              "unit": "1시간"
+            },
+            {
+              "category": "빈소",
+              "label": "VIP1호",
+              "amount": 2040000,
+              "unit": "1일"
+            }
+          ]
+        }
+      ],
+      "sourcePriceTables": [
+        [
+          "안치실 사용료",
+          "안치실 | 1일 | 168,000원",
+          "시간 | 7,000원"
+        ],
+        [
+          "빈소사용료",
+          "빈소 | m2(평형) | 1시간 | 1일 | 편의시설",
+          "VIP1호 | 597m2(180) | 80,000 | 2,040,000 | 유족휴게실, 샤워실, 화장실, 접견실",
+          "특실2호 | 235m2(71) | 38,000 | 912,000 | 유족휴게실, 샤워실, 화장실",
+          "일반실3호 | 218m2(66) | 34,000 | 816,000 | 유족휴게실, 샤워실, 화장실",
+          "일반실5호 | 180m2(60) | 21,000 | 504,000 | 유족휴게실, 샤워실, 화장실",
+          "특실6호 | 245m2(74) | 45,000 | 1,080,000 | 유족휴게실, 샤워실, 화장실",
+          "특실7호 | 245m2(74) | 45,000 | 1,080,000 | 유족휴게실, 샤워실, 화장실",
+          "일반실8호 | 208m2(63) | 32,000 | 768,000 | 유족휴게실, 샤워실, 화장실"
+        ],
+        [
+          "1F | 로비 / 정산실 / 장의용품 전시실 / 발인장",
+          "B1 | 로비 / 사무실 / 상담실 / 빈소 / 공용화장실 / ATM기 / 조리실 / 안치실 / 참관실 / 염습실"
+        ]
+      ],
+      "retrievedTextSha256": "77f07847466496b8bbe763313524f57094af1929af5d22ab87f7905f11a0e38f"
+    },
+    {
+      "facilityName": "인천광역시의료원 장례식장",
+      "address": "인천광역시 동구 방축로 217 (송림동, 인천광역시의료원)",
+      "officialFacilityName": "인천광역시의료원 장례식장",
+      "officialAddress": "인천광역시 제물포구 방축로 217",
+      "identityBasis": "동일 시설명/공식 지점 및 도로명·건물번호를 원문에서 대조; 약칭·괄호 상세표기는 기록에 보존",
+      "sourceUrl": "https://www.icmc.or.kr/guide/guide9.php?msort=50&ssort=53&tsort=4",
+      "additionalSources": [],
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "effectiveDate": null,
+      "verificationStatus": "verified_posted_price",
+      "sourceType": "facility_or_operator_official",
+      "record": {
+        "facilityName": "인천광역시의료원 장례식장",
+        "address": "인천광역시 동구 방축로 217 (송림동, 인천광역시의료원)",
+        "verifiedAt": "2026-10-26T19:27:42+09:00",
+        "sourceName": "인천광역시의료원 공식 장례식장 이용안내",
+        "sourceUrl": "https://www.icmc.or.kr/guide/guide9.php?msort=50&ssort=53&tsort=4",
+        "sourceGrade": "A",
+        "sourceNote": "공식 주소는 제물포구, 기존 목록은 동구로 표기. 방축로217·시설명·운영기관이 일치하여 동일시설로 대조하고 원본 주소키를 유지. 일·시간요금은 원문 그대로이며 일요금을 24로 나눠 보정하지 않음. 관리비는 과금단위 미표기로 제외. 확인일은 원문 열람일이며 요금 시행일은 미표기. 확인된 일부 항목으로 전체 장례비를 뜻하지 않음.",
+        "prices": [
+          {
+            "category": "빈소",
+            "label": "101·102호 분향실",
+            "amount": 33400,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "101·102호 분향실",
+            "amount": 800000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "201호 분향실",
+            "amount": 66700,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "201호 분향실",
+            "amount": 1600000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "301·302호 분향실",
+            "amount": 35500,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "301·302호 분향실",
+            "amount": 850000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "401·403호 분향실",
+            "amount": 20900,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "401·403호 분향실",
+            "amount": 500000,
+            "unit": "1일"
+          },
+          {
+            "category": "빈소",
+            "label": "402호 분향실",
+            "amount": 25000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "402호 분향실",
+            "amount": 600000,
+            "unit": "1일"
+          },
+          {
+            "category": "안치실",
+            "label": "일반 안치료",
+            "amount": 3400,
+            "unit": "1시간"
+          },
+          {
+            "category": "안치실",
+            "label": "일반 안치료",
+            "amount": 80000,
+            "unit": "1일"
+          },
+          {
+            "category": "염습/입관",
+            "label": "일반 염습비",
+            "amount": 400000,
+            "unit": "1회"
+          },
+          {
+            "category": "염습/입관",
+            "label": "입관실사용료(염습비와 구분; 적용 확인)",
+            "amount": 300000,
+            "unit": "1회"
+          }
+        ]
+      },
+      "excludedItems": [
+        {
+          "label": "분향실 관리비",
+          "reason": "금액은 있으나 회/일/장례당 단위 미표기",
+          "publishedAmounts": {
+            "101·102호": 150000,
+            "201호": 200000,
+            "301·302호": 150000,
+            "401·403·402호": 100000
+          }
+        },
+        {
+          "label": "특수·감염 염습 및 감염 안치",
+          "reason": "조건부 항목으로 이번 일반 시설요금 범위에서 제외; 미확인으로 다른 시설가격 대체 없음"
+        }
+      ],
+      "sourcePriceTables": [
+        [
+          "구분 | 기준 | 이용료 | 관리비",
+          "염 습 비 | 일반 | 1회 | 4 | 00,000원 | 없음",
+          "특수 및 대렴 | 450,000 | 원 | ​",
+          "감염 | 500,000 | 원 | ​ | ​",
+          "입관실사용료 | 300,000 | 원 | ​",
+          "안 치 료 | 일반 | 1일/시간 | 8 | 0,000 | 원/3,400원 | ​ | 없음",
+          "감염 | 100,000원/4,200원",
+          "분향실 | 1 | 층 | 101 | 호 | , 102 | 호 | 268.7 | ㎡​ | (80 | 평형 | ) | 1일/시간​ | ​ | 8 | 00,000 | 원/33,400원 | ​ | 150,000원",
+          "2 | 층 | 201 | 호 | 538.8 | ㎡​ | (160 | 평형 | ) | 1일/시간​ | ​ | 1,600,000 | 원/66,700원 | ​ | 200,000원",
+          "3 | 층 | 301, 302 | 호 | 277.6 | ㎡​ | (85 | 평형) | 1일/시간​ | ​ | 8 | 50,000 | 원/35,500원 | ​ | 150,000원",
+          "4 | 층 | 401, 403 | 호 | 165.2 | ㎡​ | (50 | 평형 | ) | 1일/시간​ | ​ | 50 | 0,000 | 원/20,900원 | ​ | 100,000원",
+          "402 | 호 | 198.3 | ㎡​ | (60 | 평형 | ) | ​1일/시간​ | ​ | 600,000 | 원/25,000원 | ​ | 100,000원"
+        ],
+        [
+          "구분 | 감면범위 | 증빙자료 | 감면내용",
+          "국민기초생활수급자 | 본인 | 국민기초생활보장법 | 제2조 2항에 따른 수급자 | 수급자 증명원 | - 빈소사용료, 안치료, 염습(입관)료 20% 감면 | - 상조회 이용시 빈소사용료, 안치료만 20% 감면 | - 장례식장 시설 감면은 발인 전 증명서 및 | 감면의뢰서 제출 시 적용되며 발인 후 감면은 | 적용되지 않습니다. | - 고인을 기준으로 하며, 중복 감면은 되지 않습니다.",
+          "보훈대상자 | (국가유공자) | 본인 및 배우자 | 국가유공자 증명원, | 유공자증, | 국가유공자 유족확인원",
+          "한부모 가족 | 지원 대상자 | 본인 | 한부모가족지원법 | 제5조 및 제5조의2에 따른 지원 대상자 | 한부모가족 증명서, | 가족관계증명서",
+          "장애인 | 본인 | 장애인연금법 | 제2조 제4호에 따른 수급자, 1급~중복3급 | 장애인연금 확인증, | 중증장애인증명서",
+          "북한이탈주민 | 본인 | 북한이탈주민의 보호 및 정착지원에 관한 법률 | 제2조 제2호에 따른 보호 대상자 | 북한이탈주민 | 등록확인서",
+          "인천광역시의료원 | 직원 | 규정 제7조에 의한 범위 | 재직증명서, | 가족관계증명서",
+          "제휴협정(MOU)체결 | 기관, 단체, 기업체 | 규정 제7조에 의한 범위 | 감면의뢰서"
+        ]
+      ],
+      "retrievedTextSha256": "d13f46ccc9639004aa348afcd00971045bf80ec71e675675e1b135cb18628089"
+    },
+    {
+      "facilityName": "인천사랑병원장례식장",
+      "address": "인천광역시 미추홀구 미추홀대로 726 (주안동, 인천사랑병원)",
+      "officialFacilityName": "인천사랑병원장례식장",
+      "officialAddress": "인천 미추홀구 미추홀대로 726 (주안동, 인천사랑병원)",
+      "identityBasis": "동일 시설명/공식 지점 및 도로명·건물번호를 원문에서 대조; 약칭·괄호 상세표기는 기록에 보존",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1009",
+      "additionalSources": [
+        "https://www.saranghospital.com/hospabout/funeralhall1.jsp"
+      ],
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "effectiveDate": null,
+      "verificationStatus": "verified_posted_price",
+      "sourceType": "facility_or_operator_official",
+      "record": {
+        "facilityName": "인천사랑병원장례식장",
+        "address": "인천광역시 미추홀구 미추홀대로 726 (주안동, 인천사랑병원)",
+        "verifiedAt": "2026-10-26T19:27:42+09:00",
+        "sourceName": "교원예움 인천사랑병원 공식 지점 시설정보",
+        "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1009",
+        "sourceGrade": "A",
+        "sourceNote": "지점코드 fnrCd=1009와 주소·연락처를 병원 홈페이지와 대조. 병원 안내와 운영기관 안내의 빈소 호실명이 달라 빈소요금은 보류. 염습료와 입관실료는 별개 항목이며 적용·중복 여부 확인 필요. 확인일은 원문 열람일이며 요금 시행일은 미표기. 확인된 일부 항목으로 전체 장례비를 뜻하지 않음.",
+        "prices": [
+          {
+            "category": "안치실",
+            "label": "안치실",
+            "amount": 120000,
+            "unit": "1일"
+          },
+          {
+            "category": "염습/입관",
+            "label": "염습료(소렴 및 대렴)",
+            "amount": 350000,
+            "unit": "1회"
+          },
+          {
+            "category": "염습/입관",
+            "label": "입관실 사용료",
+            "amount": 400000,
+            "unit": "1회"
+          }
+        ]
+      },
+      "excludedItems": [
+        {
+          "label": "빈소 호실별 요금",
+          "reason": "병원:1호(특)·3,5호·7호 / 운영기관:101·201·특1·특2·특3호. 같은 평수·단가만으로 호실을 연결하지 않음"
+        }
+      ],
+      "sourcePriceTables": [
+        [
+          "구분 | 크기 / 수용인원 | 구성 | 가격",
+          "101호 | 60평 / 75명 | 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 | 28,000원 | (기준 1시간)",
+          "201호 | 55평 / 48명 | 27,000원 | (기준 1시간)",
+          "특1호 | 45평 / 56명 | 22,000원 | (기준 1시간)",
+          "특2호 | 45평 / 40명 | 22,000원 | (기준 1시간)",
+          "특 3호(영결식장) | 25평 / 20명 | 12,000원 | (기준 1시간)"
+        ],
+        [
+          "구분 | 가격 | 기준",
+          "염습료(소렴 및 대렴) | 350,000원 | 1회",
+          "입관실 | 400,000원 | 1회",
+          "안치실 | 120,000원 | 1일",
+          "주차장 | 300대 | 1시간 무료 | (초과 시 10분당 500원)"
+        ]
+      ],
+      "retrievedTextSha256": "b9623ce19fdc892529b635c61acc8fe08fcd5ec5b037b44786c86bd6838c29f1"
+    },
+    {
+      "facilityName": "길병원장례식장",
+      "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
+      "officialFacilityName": "길병원장례식장",
+      "officialAddress": "인천 남동구 인주대로653번길 56",
+      "identityBasis": "동일 시설명/공식 지점 및 도로명·건물번호를 원문에서 대조; 약칭·괄호 상세표기는 기록에 보존",
+      "sourceUrl": "https://funeral.gilhospital.com/-3",
+      "additionalSources": [
+        "https://funeral.gilhospital.com/-5"
+      ],
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "effectiveDate": null,
+      "verificationStatus": "verified_posted_price",
+      "sourceType": "facility_or_operator_official",
+      "record": {
+        "facilityName": "길병원장례식장",
+        "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
+        "verifiedAt": "2026-10-26T19:27:42+09:00",
+        "sourceName": "가천대 길병원 장례식장 공식 이용요금",
+        "sourceUrl": "https://funeral.gilhospital.com/-3",
+        "sourceGrade": "A",
+        "sourceNote": "장례식장 찾아오시는길 주소를 대조(공통 푸터 병원주소와 구분). 청소비는 3일 기준. 접객실 추가 시 빈소임대료 80% 추가. 자체 입관 요금 및 전화료는 조건·단위 확인을 위해 제외. 확인일은 원문 열람일이며 요금 시행일은 미표기. 확인된 일부 항목으로 전체 장례비를 뜻하지 않음.",
+        "prices": [
+          {
+            "category": "빈소",
+            "label": "501호 빈소임대료",
+            "amount": 61000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "501호 빈소임대료",
+            "amount": 1464000,
+            "unit": "1일"
+          },
+          {
+            "category": "청소/관리",
+            "label": "501호 청소/쓰레기 수거료",
+            "amount": 150000,
+            "unit": "3일"
+          },
+          {
+            "category": "빈소",
+            "label": "201·202·301·302호 빈소임대료",
+            "amount": 40000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "201·202·301·302호 빈소임대료",
+            "amount": 960000,
+            "unit": "1일"
+          },
+          {
+            "category": "청소/관리",
+            "label": "201·202·301·302호 청소/쓰레기 수거료",
+            "amount": 100000,
+            "unit": "3일"
+          },
+          {
+            "category": "빈소",
+            "label": "105·106호 빈소임대료",
+            "amount": 35000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "105·106호 빈소임대료",
+            "amount": 840000,
+            "unit": "1일"
+          },
+          {
+            "category": "청소/관리",
+            "label": "105·106호 청소/쓰레기 수거료",
+            "amount": 100000,
+            "unit": "3일"
+          },
+          {
+            "category": "빈소",
+            "label": "601·602호 빈소임대료",
+            "amount": 26000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "601·602호 빈소임대료",
+            "amount": 624000,
+            "unit": "1일"
+          },
+          {
+            "category": "청소/관리",
+            "label": "601·602호 청소/쓰레기 수거료",
+            "amount": 80000,
+            "unit": "3일"
+          },
+          {
+            "category": "빈소",
+            "label": "101·102호 빈소임대료",
+            "amount": 17000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "101·102호 빈소임대료",
+            "amount": 408000,
+            "unit": "1일"
+          },
+          {
+            "category": "청소/관리",
+            "label": "101·102호 청소/쓰레기 수거료",
+            "amount": 50000,
+            "unit": "3일"
+          },
+          {
+            "category": "안치실",
+            "label": "안치료",
+            "amount": 5000,
+            "unit": "1시간"
+          },
+          {
+            "category": "안치실",
+            "label": "안치료",
+            "amount": 120000,
+            "unit": "1일"
+          },
+          {
+            "category": "염습/입관",
+            "label": "염습료(자체 입관 제외)",
+            "amount": 400000,
+            "unit": "1건"
+          }
+        ]
+      },
+      "excludedItems": [],
+      "sourcePriceTables": [
+        [
+          "구분 | 금액(원) | 청소/쓰레기 수거료 | 전화료 | 비고",
+          "빈소 임대료 | 평형 | 호실 | 1일 | 1시간 | 3일기준",
+          "120평 | 501호 | 1,464,000 | 61,000 | 150,000 | 20,000 | 5층",
+          "70평 | 201호,202호,301호,302호 | 960,000 | 40,000 | 100,000 | 10,000 | 2층,3층",
+          "65평 | 105호,106호 | 840,000 | 35,000 | 100,000 | 10,000 | 지하 2층",
+          "50평 | 601호,602호 | 624,000 | 26,000 | 80,000 | 10,000 | 6층",
+          "35평 | 101호,102호 | 408,000 | 17,000 | 50,000 | 10,000 | 지하 1층",
+          "안치료 | 120,000 | 5,000",
+          "염습료 | 400,000 / 1건 | 1자체 입관시 300,000"
+        ]
+      ],
+      "retrievedTextSha256": "e167848f8621871555c8a69bb5b76da14ea18e9e215571f3dc9b6e129f9efc28",
+      "correction": "기존 안치료 120,000원 무단위 레코드를 원문 1일/1시간 열 기준으로 교정; 중복 무단위 항목은 제거."
+    },
+    {
+      "facilityName": "교원예움 서서울장례식장",
+      "address": "서울특별시 영등포구 선유로 101,교원예움서서울장례식장 (양평동1가)",
+      "officialFacilityName": "교원예움 서서울장례식장",
+      "officialAddress": "서울 영등포구 선유로 101 (양평동1가) 교원예움 서서울장례식장",
+      "identityBasis": "동일 시설명/공식 지점 및 도로명·건물번호를 원문에서 대조; 약칭·괄호 상세표기는 기록에 보존",
+      "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1000",
+      "additionalSources": [],
+      "checkedAt": "2026-10-26T19:27:42+09:00",
+      "effectiveDate": null,
+      "verificationStatus": "verified_posted_price",
+      "sourceType": "facility_or_operator_official",
+      "record": {
+        "facilityName": "교원예움 서서울장례식장",
+        "address": "서울특별시 영등포구 선유로 101,교원예움서서울장례식장 (양평동1가)",
+        "verifiedAt": "2026-10-26T19:27:42+09:00",
+        "sourceName": "교원예움 공식 지점 시설정보",
+        "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1000",
+        "sourceGrade": "A",
+        "sourceNote": "지점코드 fnrCd=1000·도로명주소·8개 요금을 재대조. 기존 금액 유지. 확인일은 원문 열람일이며 요금 시행일은 미표기. 확인된 일부 항목으로 전체 장례비를 뜻하지 않음.",
+        "prices": [
+          {
+            "category": "빈소",
+            "label": "301호 빈소",
+            "amount": 75000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "201호 빈소",
+            "amount": 45000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "402호 빈소",
+            "amount": 40000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "401호 빈소",
+            "amount": 35000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "202호 빈소",
+            "amount": 30000,
+            "unit": "1시간"
+          },
+          {
+            "category": "빈소",
+            "label": "501호 빈소",
+            "amount": 25000,
+            "unit": "1시간"
+          },
+          {
+            "category": "염습/입관",
+            "label": "입관실/염습실",
+            "amount": 400000,
+            "unit": "1회"
+          },
+          {
+            "category": "안치실",
+            "label": "안치실",
+            "amount": 6000,
+            "unit": "1시간"
+          }
+        ]
+      },
+      "excludedItems": [],
+      "sourcePriceTables": [
+        [
+          "구분 | 크기 / 수용인원 | 구성 | 가격",
+          "301호 | 130평 / 120명 | 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 | 75,000원 | (기준 1시간)"
+        ],
+        [
+          "구분 | 크기 / 수용인원 | 구성 | 가격",
+          "201호 | 80평 / 70명 | 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 | 45,000원 | (기준 1시간)",
+          "402호 | 70평 / 60명 | 40,000원 | (기준 1시간)",
+          "401호 | 60평 / 50명 | 35,000원 | (기준 1시간)"
+        ],
+        [
+          "구분 | 크기 / 수용인원 | 구성 | 가격",
+          "202호 | 50평 / 40명 | 분향실, 접객실, 유가족 휴게실, 샤워실, 간이 주방 | 30,000원 | (기준 1시간)",
+          "501호 | 40평 / 30명 | 25,000원 | (기준 1시간)"
+        ],
+        [
+          "구분 | 가격 | 기준",
+          "입관실/염습실 | 400,000원 | 1회",
+          "안치실 | 6000원 | 1시간",
+          "주차장 | 무료 | 50대 주차가능"
+        ]
+      ],
+      "retrievedTextSha256": "859f39108377ff195534cdff7dc7c2f9e3c7f5fc3303b4a3796386e071175232"
+    }
+  ]
+}
