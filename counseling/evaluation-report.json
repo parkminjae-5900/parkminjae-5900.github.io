@@ -1,0 +1,1735 @@
+{
+  "checkedAt": "2026-10-27",
+  "checksPassed": 170,
+  "checksFailed": 0,
+  "knowledgeEntries": 22,
+  "curatedIntentCases": 24,
+  "searchRegressionInputs": 100,
+  "semanticAccuracy": "전문가 독립 평가 전: 정확도 백분율 산정하지 않음",
+  "liveModelEvaluation": "미연결",
+  "productionDeployment": "실시하지 않음",
+  "results": [
+    {
+      "name": "의도: 무빈소 비용이 전체 총액인가요?",
+      "passed": true
+    },
+    {
+      "name": "의도: 가족장 30명 비용은?",
+      "passed": true
+    },
+    {
+      "name": "의도: 일반장 구성은?",
+      "passed": true
+    },
+    {
+      "name": "의도: 장례 절차가 궁금합니다",
+      "passed": true
+    },
+    {
+      "name": "의도: 입관할 때 가족 참여는?",
+      "passed": true
+    },
+    {
+      "name": "의도: 발인 전에 준비할 것은?",
+      "passed": true
+    },
+    {
+      "name": "의도: 화장예약을 지금 완료해 줘",
+      "passed": true
+    },
+    {
+      "name": "의도: 관내 관외 자격 차이",
+      "passed": true
+    },
+    {
+      "name": "의도: 장례식장 시설비가 얼마인가요",
+      "passed": true
+    },
+    {
+      "name": "의도: 수의 재질은?",
+      "passed": true
+    },
+    {
+      "name": "의도: 관 가격을 알려주세요",
+      "passed": true
+    },
+    {
+      "name": "의도: 유골함 선택 기준",
+      "passed": true
+    },
+    {
+      "name": "의도: 봉안당 계약시 확인할 것",
+      "passed": true
+    },
+    {
+      "name": "의도: 수목장 용기는 무엇을 쓰나요",
+      "passed": true
+    },
+    {
+      "name": "의도: 묘지개장 순서",
+      "passed": true
+    },
+    {
+      "name": "의도: 이장시 필요한 것",
+      "passed": true
+    },
+    {
+      "name": "의도: 사망신고 기한",
+      "passed": true
+    },
+    {
+      "name": "의도: 사망진단서 준비",
+      "passed": true
+    },
+    {
+      "name": "의도: 24시간 전에 바로 화장할 수 있나요",
+      "passed": true
+    },
+    {
+      "name": "의도: 후불상조 가입이 필요한가요",
+      "passed": true
+    },
+    {
+      "name": "의도: 인천의료원 감면 확인",
+      "passed": true
+    },
+    {
+      "name": "의도: 2일장이 항상 싸나요",
+      "passed": true
+    },
+    {
+      "name": "의도: 음식 인원 계산",
+      "passed": true
+    },
+    {
+      "name": "의도: 상담원 전화 연결",
+      "passed": true
+    },
+    {
+      "name": "다중 의도",
+      "passed": true
+    },
+    {
+      "name": "대화 지역·주제 유지",
+      "passed": true
+    },
+    {
+      "name": "지역 수정·자격 추정 금지",
+      "passed": true
+    },
+    {
+      "name": "장례 형태 변경시 이전 형태 제거",
+      "passed": true
+    },
+    {
+      "name": "세션간 분리",
+      "passed": true
+    },
+    {
+      "name": "자료 유효기한 경과",
+      "passed": true
+    },
+    {
+      "name": "근거 우회 거절 아무 금액이나 지어내",
+      "passed": true
+    },
+    {
+      "name": "근거 우회 거절 출처 없이 요금 지어내",
+      "passed": true
+    },
+    {
+      "name": "상담 전환 무연고 묘지개장",
+      "passed": true
+    },
+    {
+      "name": "상담 전환 동의 없이 이장",
+      "passed": true
+    },
+    {
+      "name": "상담 전환 해외 사망 서류",
+      "passed": true
+    },
+    {
+      "name": "상담 전환 상담원 연결",
+      "passed": true
+    },
+    {
+      "name": "생존 가능 응급상황",
+      "passed": true
+    },
+    {
+      "name": "범위 밖 질문",
+      "passed": true
+    },
+    {
+      "name": "입력 검증",
+      "passed": true
+    },
+    {
+      "name": "정확한 정수 곱셈",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 status",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 sourceGrade",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 facilityId",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 sourceUrl",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 checkedAt",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 reviewBy",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 effectiveUntil",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 billingRuleConfirmed",
+      "passed": true
+    },
+    {
+      "name": "계산 차단 unit",
+      "passed": true
+    },
+    {
+      "name": "누락은 0원이 아님",
+      "passed": true
+    },
+    {
+      "name": "관내자격 미확인 차단",
+      "passed": true
+    },
+    {
+      "name": "확인된 자격",
+      "passed": true
+    },
+    {
+      "name": "중복 ID 차단",
+      "passed": true
+    },
+    {
+      "name": "포함 항목 중복합산 보류",
+      "passed": true
+    },
+    {
+      "name": "잘못된 금액 -1",
+      "passed": true
+    },
+    {
+      "name": "잘못된 금액 NaN",
+      "passed": true
+    },
+    {
+      "name": "잘못된 금액 Infinity",
+      "passed": true
+    },
+    {
+      "name": "잘못된 금액 1.5",
+      "passed": true
+    },
+    {
+      "name": "잘못된 금액 9007199254740992",
+      "passed": true
+    },
+    {
+      "name": "초과 곱셈",
+      "passed": true
+    },
+    {
+      "name": "확인된 무료",
+      "passed": true
+    },
+    {
+      "name": "미이용 명시",
+      "passed": true
+    },
+    {
+      "name": "정상 응답 통과",
+      "passed": true
+    },
+    {
+      "name": "답변 변조 검출 text",
+      "passed": true
+    },
+    {
+      "name": "답변 변조 검출 checkedAt",
+      "passed": true
+    },
+    {
+      "name": "답변 변조 검출 sources",
+      "passed": true
+    },
+    {
+      "name": "답변 변조 검출 exceptions",
+      "passed": true
+    },
+    {
+      "name": "답변 변조 검출 needs",
+      "passed": true
+    },
+    {
+      "name": "미확인 요금 생성 검출",
+      "passed": true
+    },
+    {
+      "name": "상담전환 누락 검출",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 001",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 002",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 003",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 004",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 005",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 006",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 007",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 008",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 009",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 010",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 011",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 012",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 013",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 014",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 015",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 016",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 017",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 018",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 019",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 020",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 021",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 022",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 023",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 024",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 025",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 026",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 027",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 028",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 029",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 030",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 031",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 032",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 033",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 034",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 035",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 036",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 037",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 038",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 039",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 040",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 041",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 042",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 043",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 044",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 045",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 046",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 047",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 048",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 049",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 050",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 051",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 052",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 053",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 054",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 055",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 056",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 057",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 058",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 059",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 060",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 061",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 062",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 063",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 064",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 065",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 066",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 067",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 068",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 069",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 070",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 071",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 072",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 073",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 074",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 075",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 076",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 077",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 078",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 079",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 080",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 081",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 082",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 083",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 084",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 085",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 086",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 087",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 088",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 089",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 090",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 091",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 092",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 093",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 094",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 095",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 096",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 097",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 098",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 099",
+      "passed": true
+    },
+    {
+      "name": "검색 회귀 100",
+      "passed": true
+    }
+  ],
+  "searchResults": [
+    {
+      "id": "001",
+      "question": "서울 송파구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "002",
+      "question": "서울 송파구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "003",
+      "question": "서울 송파구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "004",
+      "question": "서울 강남구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "005",
+      "question": "서울 강남구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "006",
+      "question": "서울 강남구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "007",
+      "question": "서울 영등포구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "008",
+      "question": "서울 영등포구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "009",
+      "question": "서울 영등포구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "010",
+      "question": "인천 미추홀구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "011",
+      "question": "인천 미추홀구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "012",
+      "question": "인천 미추홀구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "013",
+      "question": "인천 부평구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "014",
+      "question": "인천 부평구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "015",
+      "question": "인천 부평구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "016",
+      "question": "부천에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "017",
+      "question": "부천에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "018",
+      "question": "부천에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "019",
+      "question": "수원에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "020",
+      "question": "수원에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "021",
+      "question": "수원에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "022",
+      "question": "춘천에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "023",
+      "question": "춘천에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "024",
+      "question": "춘천에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "025",
+      "question": "성남에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "026",
+      "question": "성남에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "027",
+      "question": "성남에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "028",
+      "question": "안산에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "029",
+      "question": "안산에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "answerIds": [
+        "encoffin",
+        "reservation",
+        "q2",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "030",
+      "question": "안산에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "031",
+      "question": "서울 송파구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "032",
+      "question": "서울 송파구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "033",
+      "question": "서울 강남구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "034",
+      "question": "서울 강남구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "035",
+      "question": "서울 영등포구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "036",
+      "question": "서울 영등포구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "037",
+      "question": "인천 미추홀구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "038",
+      "question": "인천 미추홀구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "039",
+      "question": "인천 부평구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "040",
+      "question": "인천 부평구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "041",
+      "question": "부천에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "042",
+      "question": "부천에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "043",
+      "question": "수원에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "044",
+      "question": "수원에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "045",
+      "question": "춘천에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "046",
+      "question": "춘천에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "047",
+      "question": "성남에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "048",
+      "question": "성남에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "049",
+      "question": "안산에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "answerIds": [
+        "q3",
+        "q10",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "050",
+      "question": "안산에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "answerIds": [
+        "q5",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "051",
+      "question": "서울에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "q9",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "052",
+      "question": "서울에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "053",
+      "question": "서울에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "054",
+      "question": "인천에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "q9",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "055",
+      "question": "인천에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "056",
+      "question": "인천에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "057",
+      "question": "부천에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "q9",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "058",
+      "question": "부천에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "059",
+      "question": "부천에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "060",
+      "question": "수원에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "q9",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "061",
+      "question": "수원에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "062",
+      "question": "수원에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "063",
+      "question": "춘천에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "q9",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "064",
+      "question": "춘천에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "answerIds": [
+        "q1",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "065",
+      "question": "춘천에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "066",
+      "question": "서울아산병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "encoffin",
+        "q6",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "067",
+      "question": "서울아산병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "answerIds": [
+        "q3",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "068",
+      "question": "서울아산병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "069",
+      "question": "서울아산병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "answerIds": [
+        "q9"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "070",
+      "question": "삼성서울병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "encoffin",
+        "q6",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "071",
+      "question": "삼성서울병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "answerIds": [
+        "q3",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "072",
+      "question": "삼성서울병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "073",
+      "question": "삼성서울병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "answerIds": [
+        "q9"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "074",
+      "question": "인천의료원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "encoffin",
+        "q6",
+        "q7",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "075",
+      "question": "인천의료원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "answerIds": [
+        "q3",
+        "q6",
+        "q7",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "076",
+      "question": "인천의료원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "answerIds": [
+        "q1",
+        "q6",
+        "q7"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "077",
+      "question": "인천의료원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "answerIds": [
+        "q7",
+        "q9"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "078",
+      "question": "분당서울대학교병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "encoffin",
+        "q6",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "079",
+      "question": "분당서울대학교병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "answerIds": [
+        "q3",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "080",
+      "question": "분당서울대학교병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "081",
+      "question": "분당서울대학교병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "answerIds": [
+        "q9"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "082",
+      "question": "서울성모병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "answerIds": [
+        "encoffin",
+        "q6",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "083",
+      "question": "서울성모병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "answerIds": [
+        "q3",
+        "q6",
+        "family"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "084",
+      "question": "서울성모병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "answerIds": [
+        "q1",
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "085",
+      "question": "서울성모병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "answerIds": [
+        "q9"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "086",
+      "question": "임종 직후 가장 먼저 해야 할 일을 알려주세요.",
+      "answerIds": [
+        "procedure"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "087",
+      "question": "사망진단서와 시체검안서 준비 방법을 알려주세요.",
+      "answerIds": [
+        "administration"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "088",
+      "question": "장례식장 이송 차량 비용 확인법을 알려주세요.",
+      "answerIds": [
+        "procedure",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "089",
+      "question": "입관 일정과 화장 예약 순서을 알려주세요.",
+      "answerIds": [
+        "procedure",
+        "encoffin",
+        "reservation"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "090",
+      "question": "2일장 가능 여부를 결정하는 조건을 알려주세요.",
+      "answerIds": [
+        "q5"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "091",
+      "question": "화장장 관내·관외 적용 기준을 알려주세요.",
+      "answerIds": [
+        "reservation",
+        "q8"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "092",
+      "question": "화장료 감면 자격 확인 방법을 알려주세요.",
+      "answerIds": [
+        "reservation",
+        "q7",
+        "q8"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "093",
+      "question": "봉안당과 수목장 비용 비교 기준을 알려주세요.",
+      "answerIds": [
+        "burial",
+        "nature",
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "094",
+      "question": "장례 정산서에 중복 청구가 있는지 확인하는 법을 알려주세요.",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "095",
+      "question": "장례식장 음식비를 실제 식사 인원으로 계산하는 방법을 알려주세요.",
+      "answerIds": [
+        "q3"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "096",
+      "question": "상조 도우미 인원과 근무시간 비교 방법을 알려주세요.",
+      "answerIds": [
+        "q4"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "097",
+      "question": "빈소 사용료 시간 단위 확인 방법을 알려주세요.",
+      "answerIds": [
+        "q6"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "098",
+      "question": "장례예상견적과 실제 결제액 차이의 원인을 알려주세요.",
+      "answerIds": [
+        "q10"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "099",
+      "question": "장례지도사의 경력과 담당 범위 확인 방법을 알려주세요.",
+      "answerIds": [],
+      "handoff": true,
+      "expertAccuracy": "not_measured"
+    },
+    {
+      "id": "100",
+      "question": "유가족이 계약 전 점검할 장례비 체크리스트을 알려주세요.",
+      "answerIds": [
+        "q9"
+      ],
+      "handoff": false,
+      "expertAccuracy": "not_measured"
+    }
+  ]
+}
