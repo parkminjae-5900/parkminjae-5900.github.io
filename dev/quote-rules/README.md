@@ -44,4 +44,4 @@ console.assert(legacy.readyForCustomer === false);
 
 ## 개발 비교화면 (2026-10-28)
 
-저장소 루트에서 `python3 -m http.server 8765` 실행 후 `http://127.0.0.1:8765/dev/quote-rules/`를 엽니다. 두 어댑터를 같은 입력으로 실행합니다. 고객용 원본 화면 교체는 아닙니다. 브라우저 검사: `NODE_PATH=<playwright 설치경로> node tests/quote-rules/browser.cjs`. 로컬 브라우저 설치가 실패하여 원격 검사 경로를 추가했습니다.
+저장소 루트에서 `python3 -m http.server 8765` 실행 후 `http://127.0.0.1:8765/dev/quote-rules/`를 엽니다. 두 어댑터를 같은 입력으로 실행합니다. 고객용 원본 화면 교체는 아닙니다. 브라우저 검사: `NODE_PATH=<playwright 설치경로> node tests/quote-rules/browser.cjs`. 로컬 브라우저 설치 실패 후 GitHub 실행 40616509486에서 계산48개·브라우저16 시나리오 검사를 통과했습니다. 모바일390/데스크톱1280 화면과 A4 2페이지 인쇄 결과를 시각 검수했습니다.

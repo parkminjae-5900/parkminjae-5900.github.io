@@ -20,15 +20,15 @@
 - [x] Investigation
 - [x] Implementation
 - [x] Automated verification — 계산48·문법 통과
-- [ ] Desktop verification
-- [ ] Mobile verification
+- [x] Desktop verification
+- [x] Mobile verification
 - [x] Regression check — 운영파일 변경 없음
-- [ ] Final review
+- [x] Final review
 ## Discoveries
 로컬 브라우저 설치가 자동 재시도 후에도 손상된 ZIP으로 실패.
 ## Decisions
 두 원본 화면은 보호하고 개발 비교화면에서 양쪽 어댑터를 연결. 검증 상태 승격 버튼 제공 안 함.
 ## Final verification
-원격 브라우저 검사 결과 대기.
+GitHub 실행 40616509486 성공: 계산48개 + 브라우저16 시나리오 통과. 390/1280px 화면 및 A4 2페이지를 시각 검수함. 콘솔 오류·가로 넘침 없음. 기존 Python15개 통과. 산출물 12785058045에 화면 PNG2개·인쇄 PDF2개 보존.
 ## Remaining limitations
 상세 구성 확정 및 실제 고객 화면 연결은 수행하지 않음.
