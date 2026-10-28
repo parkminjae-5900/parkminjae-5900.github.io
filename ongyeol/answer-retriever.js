@@ -1,3 +1,4 @@
+import {composeOngyeolSalesAnswer} from "./estimate-first-policy.js";
 /**
  * 온결 지식검색 모듈 v1
  * 기존 온결 챗봇에 연결하기 위한 API 비의존 구성요소입니다.
@@ -28,6 +29,7 @@ export function composeGroundedAnswer(bank, question) {
     sources:[],needs_live_confirmation:true
   };
   const top=matches[0].entry;
+  if(top.review_status!=="검증 완료") return {answered:false,answer:"해당 자료는 현재 검증 중입니다. 온결 자동견적 결과를 먼저 확인해 주세요.",sources:top.source_urls,needs_live_confirmation:true,reviewed:false};
   return {
     answered:true,
     answer:top.model_answer,
@@ -46,4 +48,19 @@ export async function loadAnswerBank(fetchImpl=fetch,url=ANSWER_BANK_URL){
   const bank=await response.json();
   if(!Array.isArray(bank.entries)||bank.entries.length!==100) throw new Error("답변 자료 형식이 올바르지 않습니다");
   return bank;
+}
+
+/** 챗봇 통합 진입점: 검증 지식과 온결 견적 결과를 분리하여 처리합니다. */
+export function answerWithOngyeol({bank,question,context={},quoteResult=null}) {
+  const factual=composeGroundedAnswer(bank,question);
+  const sales=composeOngyeolSalesAnswer({question,context,quoteResult});
+  return {
+    answer:(factual.answered?factual.answer+"\\n\\n":"")+sales.answer,
+    sources:[...new Set([...(factual.sources||[]),...sales.sourceUrls])],
+    knowledgeReviewed:!!factual.reviewed,
+    quoteVerified:sales.quoteVerified,
+    recommendation:sales.recommendation,
+    nextAction:sales.nextAction,
+    disclosure:sales.disclosure
+  };
 }
