@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-10-27T07:50:11.088736+00:00",
+  "updatedAt": "2026-10-27T23:48:06.769392+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -110,7 +110,7 @@
     {
       "facilityName": "건국대학교병원장례식장",
       "address": "서울특별시 광진구 능동로 120-1 (화양동)",
-      "verifiedAt": "2026-10-25T11:23:13.007838+00:00",
+      "verifiedAt": "2026-10-27T20:05:26.311722+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.kuh.ac.kr/funeral/guide/use.do",
       "sourceGrade": "A",
@@ -763,7 +763,7 @@
     {
       "facilityName": "기장병원장례식장",
       "address": "부산광역시 기장군 기장읍 대청로72번길 6 (청강리, 기장병원)",
-      "verifiedAt": "2026-10-25T06:06:43.715728+00:00",
+      "verifiedAt": "2026-10-27T14:29:16.015228+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.gjhp.kr/location01_05.php",
       "sourceGrade": "A",
@@ -786,7 +786,7 @@
     {
       "facilityName": "길병원장례식장",
       "address": "인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)",
-      "verifiedAt": "2026-10-25T16:14:57.764665+00:00",
+      "verifiedAt": "2026-10-27T23:47:05.189471+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://funeral.gilhospital.com/-3",
       "sourceGrade": "A",
@@ -855,7 +855,7 @@
     {
       "facilityName": "대구시민전문장례식장",
       "address": "대구광역시 북구 호국로 898 (동호동)",
-      "verifiedAt": "2026-10-25T06:05:31.190062+00:00",
+      "verifiedAt": "2026-10-27T14:28:24.850832+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://dgsmfn.com/sub2_1_1.php",
       "sourceGrade": "A",
@@ -884,7 +884,7 @@
     {
       "facilityName": "대전성모병원장례식장",
       "address": "대전광역시 중구 대흥로 64 (대흥동, 가톨릭대학교대전성모병원)",
-      "verifiedAt": "2026-10-25T06:06:17.453513+00:00",
+      "verifiedAt": "2026-10-27T14:28:54.621889+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.cmcdjfuneral.co.kr/funeral-guide.jsp",
       "sourceGrade": "A",
@@ -1205,7 +1205,7 @@
     {
       "facilityName": "울산국화원장례식장",
       "address": "울산광역시 남구 산업로 88 (상개동)",
-      "verifiedAt": "2026-10-25T16:13:42.178895+00:00",
+      "verifiedAt": "2026-10-27T23:45:59.189083+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.ulsanfh.com/sub/sub02_05.php",
       "sourceGrade": "A",
@@ -1416,7 +1416,7 @@
     {
       "facilityName": "이대서울병원장례식장",
       "address": "서울특별시 강서구 공항대로 260 (마곡동, 이화의대부속서울병원)",
-      "verifiedAt": "2026-10-25T11:23:09.212720+00:00",
+      "verifiedAt": "2026-10-27T20:05:23.322754+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://seoul.eumc.ac.kr/funeral/guide/facility.do",
       "sourceGrade": "A",
@@ -1620,7 +1620,7 @@
     {
       "facilityName": "한중프라임장례식장",
       "address": "부산광역시 북구 낙동대로 1596 (구포동)",
-      "verifiedAt": "2026-10-25T11:22:20.702795+00:00",
+      "verifiedAt": "2026-10-27T20:04:38.603931+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.funein.com/hjprime/room_intro/",
       "sourceGrade": "A",
