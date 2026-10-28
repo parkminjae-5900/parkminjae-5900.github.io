@@ -17,3 +17,7 @@ jobs:
       - run: node --check counseling/engine.mjs
       - run: node --check counseling/cli.mjs
       - run: node tests/counseling/evaluate.mjs
+      - run: node --check counseling/session.mjs
+      - run: node tests/counseling/hardening.mjs
+      - run: node tests/counseling/session.mjs
+      - run: node tests/counseling/prices.mjs

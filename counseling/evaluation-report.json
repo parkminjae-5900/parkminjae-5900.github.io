@@ -1,5 +1,6 @@
 {
-  "checkedAt": "2026-10-27",
+  "checkedAt": "2026-10-28",
+  "fixtureAsOf": "2026-10-27",
   "checksPassed": 170,
   "checksFailed": 0,
   "knowledgeEntries": 22,
@@ -1653,7 +1654,6 @@
       "question": "화장료 감면 자격 확인 방법을 알려주세요.",
       "answerIds": [
         "reservation",
-        "q7",
         "q8"
       ],
       "handoff": false,

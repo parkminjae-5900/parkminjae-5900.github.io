@@ -49,3 +49,32 @@ printf '%s\n' '{"question":"인천 무빈소 비용이 총액인가요?"}' | nod
 ## 알려진 한계
 
 한국어 의미 이해 모델이 아닌 규칙 기반 분류입니다. 표현 변형, 부정·정정, 복잡한 지시어는 충분히 처리하지 못할 수 있습니다. 100개 검색 질문의 맞춤 답변 완결성을 검증한 것이 아닙니다. 지역별 조례·요금·예약 가능 여부는 실시간 연결 전이며 성남의 안내를 전국 자격 기준으로 일반화하지 않습니다. 상담 전화번호는 기존 회사 공개 안내를 사용했습니다.
+
+
+## 2026-10-28 후속 검수 및 연결 계층
+
+`session.mjs`의 `createCounselingSession({knowledge, trustedQuoteProvider, clock})`를 상담별로 하나씩 생성합니다. `reply(question)`는 Promise로 응답하며, `reset()`은 상태를 지우고 진행 중인 이전 요청의 결과를 폐기합니다. `snapshot()`은 복사본만 반환합니다. 원본 입력·전화번호·상담 로그를 저장하지 않습니다. 이 모듈을 가져오는 것만으로 온결 원본의 이벤트와 자동 연결되지는 않습니다.
+
+```js
+import {createCounselingSession} from './counseling/session.mjs';
+const knowledge = await fetch('./counseling/knowledge.json').then(r => r.json());
+const session = createCounselingSession({knowledge});
+const result = await session.reply('인천 무빈소 비용');
+// 실제 화면에서는 answers의 승인된 필드만 textContent로 표시합니다.
+// 새 상담 시작시 session.reset()을 호출합니다.
+```
+
+`trustedQuoteProvider`는 서버가 관리하는 함수로 `{items, options}`를 돌려줍니다. 공식 요금 확인을 마친 자료만 공급하며 사용자·생성 모델이 검증 플래그를 지정하게 해서는 안 됩니다. 지정하지 않으면 금액을 만들어 내지 않고 확인 필요 상태를 유지합니다. 공급자가 실패하거나 자료가 불완전하면 확정 합계는 null입니다. `verified_items_complete`는 서버가 지정한 필수 항목 집합의 계산 완료일 뿐 장례 전체 비용 확정이나 예약 완료가 아닙니다.
+
+추가 검사:
+
+```sh
+node tests/counseling/hardening.mjs
+node tests/counseling/session.mjs
+node tests/counseling/prices.mjs
+node counseling/audit-prices.mjs --write
+```
+
+이번 단계에서 실제 가격을 신규 수집하거나 현행 요금으로 인증하지 않았습니다. `price-readiness-report.json`은 저장소 자료의 연결 적격성 검사입니다. 39개 장례식장의 200개 항목은 식별·유효기간·과금 조건 확인 전이며, 62개 화장시설의 721개 항목은 2023년 참고자료이므로 자동 확정 금액에 사용하지 않습니다. 원래 가격 파일은 변경하지 않았습니다.
+
+이전 작업 기록에 원본 위치가 `%USERPROFILE%\Documents\Codex\2026-10-13\new-chat\outputs\funeral-planner\index.html`, 로컬 주소가 `http://127.0.0.1:4317/#explore`로 남아 있습니다. 현재 실행 환경에 그 Windows 폴더가 연결되어 있지 않아 파일 존재·내용은 직접 검증하지 못했습니다. 이 로컬 주소를 현재 서버의 localhost에 대입하거나 홈페이지 시제품을 온결 원본으로 간주해서는 안 됩니다.
