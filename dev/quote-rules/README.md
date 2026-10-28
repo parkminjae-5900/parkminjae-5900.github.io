@@ -41,3 +41,7 @@ console.assert(legacy.readyForCustomer === false);
 `subtotal`, `rows`, `pending`, `warnings`를 반환합니다. `finalTotal:null`, `readyForCustomer:false`는 의도적인 개발 단계 표시입니다. 포함·미사용·미확인을 화면에서 구분하고 미확인 항목을 생략하지 않는 소비자가 필요합니다.
 
 고객용 두 화면의 연결, 화면·인쇄·모바일 검증, 세 상품의 상세 구성 확정은 아직 수행하지 않았습니다. 이 모듈 통과만으로 고객 배포가 승인되는 것은 아닙니다.
+
+## 개발 비교화면 (2026-10-28)
+
+저장소 루트에서 `python3 -m http.server 8765` 실행 후 `http://127.0.0.1:8765/dev/quote-rules/`를 엽니다. 두 어댑터를 같은 입력으로 실행합니다. 고객용 원본 화면 교체는 아닙니다. 브라우저 검사: `NODE_PATH=<playwright 설치경로> node tests/quote-rules/browser.cjs`. 로컬 브라우저 설치가 실패하여 원격 검사 경로를 추가했습니다.
