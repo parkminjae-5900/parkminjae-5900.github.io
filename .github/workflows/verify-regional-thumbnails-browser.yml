@@ -1,17 +1,6 @@
 name: Verify regional thumbnail browser layouts
 on:
-  pull_request:
-    paths:
-      - 'area-*-funeral.html'
-      - 'assets/**'
-      - 'css/**'
-      - 'js/**'
-      - '*.css'
-      - '*.js'
-      - 'data/regional-image-registry.json'
-      - 'scripts/**'
-      - 'tests/test_regional_browser_contract.py'
-      - '.github/workflows/verify-regional-thumbnails-browser.yml'
+  workflow_call:
 permissions:
   contents: read
 jobs:

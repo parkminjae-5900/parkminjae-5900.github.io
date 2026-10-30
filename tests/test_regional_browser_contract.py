@@ -241,13 +241,17 @@ class BrowserContracts(unittest.TestCase):
 
     def test_workflow_read_only_pr_isolated_and_pinned(self):
         text = (qa.ROOT / '.github/workflows/verify-regional-thumbnails-browser.yml').read_text()
-        for expected in ['pull_request:', 'paths:', 'contents: read', 'persist-credentials: false',
+        for expected in ['workflow_call:', 'contents: read', 'persist-credentials: false',
                          'playwright==1.58.0', '--with-deps chromium', 'if: always()',
                          '--widths 360 390 430 1280', '--minimum-count 269', '--capture 64']:
             self.assertIn(expected, text)
         self.assertNotIn('pull_request_target', text)
         self.assertNotIn('pages: write', text)
         self.assertNotIn('/usr/bin/chromium', text)
+        caller = (qa.ROOT / '.github/workflows/verify-seo-conversion.yml').read_text()
+        self.assertIn('pull_request:', caller)
+        self.assertIn('uses: ./.github/workflows/verify-regional-thumbnails-browser.yml', caller)
+        self.assertNotIn('secrets: inherit', caller)
 
 
 if __name__ == '__main__':
