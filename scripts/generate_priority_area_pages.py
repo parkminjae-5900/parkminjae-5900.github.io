@@ -3,6 +3,9 @@
 import html
 import json
 from pathlib import Path
+from regional_image_registry import existing_or_registered_image
+from repair_search_images import repair
+from regional_administrative_transitions import apply_transition
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://www.dahamsangjo.co.kr/"
@@ -26,6 +29,7 @@ updated = data["updatedAt"][:10]
 items = data["items"]
 
 for sigungu, label, slug in AREAS:
+    image = existing_or_registered_image(f'area-{slug}-funeral.html')
     rows = [item for item in items if sigungu in item.get("sigungu", "") or sigungu in item.get("addr", "")]
     rows.sort(key=lambda item: (-float(item.get("mtaCnt") or 0), item.get("fcltNm", "")))
     cards = []
@@ -55,6 +59,9 @@ for sigungu, label, slug in AREAS:
 <section class="panel"><h2>{label} 가족장과 무빈소 선택</h2><p><strong>가족장</strong>은 가족·친지 중심으로 빈소를 운영하고, <strong>무빈소</strong>는 일반 조문용 빈소 없이 안치·입관·발인·화장 절차 중심으로 진행합니다. 시설마다 무빈소 수용 조건이 다르므로 예약 전에 확인해야 합니다.</p><a class="btn" href="family.html">가족장 249만원 보기</a><a class="btn" href="nobinso.html">무빈소 120만원 보기</a><a class="btn" href="regions.html">다른 지역 보기</a></section>
 <section class="panel"><h2>{label} 장례상담 FAQ</h2><h3>장례식장을 정하지 않아도 상담할 수 있나요?</h3><p>가능합니다. 현재 위치, 예상 조문객 수, 희망 장례 방식과 장지를 알려주시면 비교할 항목을 안내합니다.</p><h3>상품가가 장례 전체 비용인가요?</h3><p>아닙니다. 장례식장 시설·음식·화장·장지 및 추가 선택 비용은 별도입니다.</p><h3>무빈소는 모든 장례식장에서 가능한가요?</h3><p>아닙니다. 빈소 없이 안치·입관을 허용하는지와 최소 이용 조건을 시설에 확인해야 합니다.</p></section></main>
 <footer><div class="wrap">다함상조 · {label} 장례상담 1600-6131 · <a href="/">공식 홈페이지</a></div></footer><div class="sticky"><a href="tel:16006131">전화상담</a><a href="funeral-cost-calculator.html">비용계산</a></div><script src="conversion-funnel.js?v=20261005" defer></script></body></html>'''
+    page = page.replace(BASE + 'assets/daham_logo.jpg', image)
+    page = apply_transition(page, f'area-{slug}-funeral.html')
+    page, _ = repair(page, BASE + f'area-{slug}-funeral.html')
     (ROOT / f"area-{slug}-funeral.html").write_text(page, encoding="utf-8")
 
 sitemap_path = ROOT / "sitemap.xml"

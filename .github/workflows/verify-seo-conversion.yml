@@ -16,6 +16,25 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install Pillow
       - run: python scripts/repair_search_images.py --check
+      - name: Verify every accepted original (partial coverage is explicit)
+        run: python scripts/integrate_regional_thumbnails.py --check
+      - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: node scripts/verify-seo-conversion.mjs
       - run: node scripts/verify-search-content.mjs
       - run: node scripts/verify-public-security.mjs
+  full-regional-coverage:
+    name: Full 269 regional originals
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install Pillow
+      - name: Require all 269 original images
+        run: python scripts/integrate_regional_thumbnails.py --check --require-count 269
+  regional-browser:
+    name: Regional thumbnails — actual mobile and desktop Chromium
+    permissions:
+      contents: read
+    uses: ./.github/workflows/verify-regional-thumbnails-browser.yml

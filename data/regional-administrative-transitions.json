@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "effective_date": "2026-07-01",
+  "verified_on": "2026-10-30",
+  "official_source_url": "https://www.incheon.go.kr/IC01070101",
+  "official_source_title": "인천광역시 행정체제 개편 개요",
+  "excluded_pages": [
+    "area-incheon-junggu-funeral.html"
+  ],
+  "entries": [
+    {
+      "id": "incheon-jung",
+      "page": "area-incheon-jung-funeral.html",
+      "old_district": "중구",
+      "old_label": "인천광역시 중구",
+      "historical_label": "인천 옛 중구 권역",
+      "display_label": "인천 옛 중구 권역",
+      "display_subtitle": "제물포구·영종구 안내",
+      "transition_kind": "split_and_partial_merge",
+      "title": "인천 옛 중구 권역 장례안내 | 제물포구·영종구 개편 | 다함상조",
+      "h1": "인천 옛 중구 권역 장례안내 — 제물포구·영종구",
+      "description": "2026년 7월 1일 개편된 제물포구·영종구와 인천 옛 중구 권역의 장례 안내입니다. 내륙 원자료 시설 {facility_count}곳의 주소·연락처와 가족장·무빈소 비용 확인 항목을 구분합니다.",
+      "explanation": "옛 중구의 내륙 지역은 옛 동구와 합쳐 제물포구를 이루고, 옛 중구의 섬 지역은 영종구로 분리되었습니다. 옛 중구 전체를 제물포구 한 곳으로 바꿔 부를 수는 없습니다.",
+      "intro": "옛 중구라는 지역명으로 찾으신 분을 위한 안내입니다. 내륙과 섬 지역의 현재 관할을 구분하고, 원자료 시설 정보와 상품비·시설비를 나누어 확인하세요.",
+      "current_pages": [
+        {
+          "label": "제물포구",
+          "page": "area-incheon-jemulpo-funeral.html",
+          "scope": "옛 중구 내륙과 옛 동구를 합친 지역"
+        },
+        {
+          "label": "영종구",
+          "page": "area-incheon-yeongjong-funeral.html",
+          "scope": "옛 중구 섬 지역"
+        }
+      ],
+      "facility_note": "아래 원자료 시설 {facility_count}곳은 모두 옛 중구 내륙 주소에 해당하며, 영종구 시설 목록이 아닙니다. 영종구 안내는 별도 페이지에서 확인하세요.",
+      "mainland_snapshot_addresses": [
+        "인천광역시 중구 개항로 82.2층예지장례식장 (경동, 예지요양병원)",
+        "인천광역시 중구 답동로30번길 10 (율목동, 인천기독병원)",
+        "인천광역시 중구 우현로62번길 34-1 (경동)",
+        "인천광역시 중구 인항로 27 (신흥동3가, 인하대학병원)"
+      ]
+    },
+    {
+      "id": "incheon-region-09f17808",
+      "page": "area-incheon-region-09f17808-funeral.html",
+      "old_district": "서구",
+      "old_label": "인천광역시 서구",
+      "historical_label": "인천 옛 서구 권역",
+      "display_label": "서해구·검단구",
+      "display_subtitle": "옛 서구 장례식장 안내",
+      "transition_kind": "split",
+      "title": "서해구·검단구 장례식장 안내 | 인천 옛 서구 원자료 | 다함상조",
+      "h1": "서해구·검단구 장례안내 — 인천 옛 서구 원자료",
+      "description": "2026년 7월 1일 옛 서구에서 나뉜 서해구·검단구 장례 안내입니다. 옛 서구 원자료 시설 {facility_count}곳의 주소·빈소·안치·주차·연락처를 보존하고 현재 관할은 별도로 확인하도록 안내합니다.",
+      "explanation": "옛 서구는 경인 아라뱃길을 기준으로 남쪽의 서해구와 북쪽의 검단구로 나뉘었습니다. 옛 서구 전체가 서해구로 바뀐 것으로 해석하면 안 됩니다.",
+      "intro": "서해구와 검단구로 나뉘기 전 옛 서구 자료를 찾는 분을 위한 안내입니다. 시설별 현재 주소와 관할을 따로 확인하고 상조 상품비와 외부 시설 비용을 구분하세요.",
+      "current_pages": [
+        {
+          "label": "서해구",
+          "page": "area-incheon-seohae-funeral.html",
+          "scope": "아라뱃길 남쪽 옛 서구 지역"
+        },
+        {
+          "label": "검단구",
+          "page": "area-incheon-geomdan-funeral.html",
+          "scope": "아라뱃길 북쪽 옛 서구 지역"
+        }
+      ],
+      "facility_note": "아래 {facility_count}곳은 옛 서구 명칭으로 수록된 원자료 목록입니다. 시설별 현재 관할을 임의로 일괄 변경하지 않았으며, 방문 전 최신 주소·운영 여부를 시설과 공식 주소 안내에서 확인해야 합니다."
+    },
+    {
+      "id": "incheon-region-8fb2ce5a",
+      "page": "area-incheon-region-8fb2ce5a-funeral.html",
+      "old_district": "동구",
+      "old_label": "인천광역시 동구",
+      "historical_label": "제물포구 옛 동구 권역",
+      "display_label": "제물포구 옛 동구 권역",
+      "display_subtitle": "행정구역 개편 후 장례안내",
+      "transition_kind": "merge_into_larger_district",
+      "title": "제물포구 옛 동구 권역 장례식장·비용 안내 | 다함상조",
+      "h1": "제물포구 옛 동구 권역 장례식장·비용 안내",
+      "description": "2026년 7월 1일 옛 동구와 옛 중구 내륙이 합쳐진 제물포구 중 옛 동구 권역 안내입니다. 원자료 시설 {facility_count}곳의 주소·빈소·안치·주차·연락처와 장례비용 확인 항목을 보존합니다.",
+      "explanation": "옛 동구 전역은 옛 중구의 내륙 지역과 합쳐 제물포구가 되었습니다. 이 페이지의 옛 동구 권역은 제물포구의 일부이며, 제물포구 전체 시설 목록을 뜻하지 않습니다.",
+      "intro": "현재 제물포구에 속하는 옛 동구 권역을 안내합니다. 제물포구 전체와 구분해 원자료 시설 정보, 가족장·무빈소 절차와 별도 비용을 확인하세요.",
+      "current_pages": [
+        {
+          "label": "제물포구",
+          "page": "area-incheon-jemulpo-funeral.html",
+          "scope": "옛 동구 전역과 옛 중구 내륙을 합친 지역"
+        }
+      ],
+      "facility_note": "아래 {facility_count}곳은 옛 동구 명칭으로 수록된 원자료 목록이며 제물포구 전체 시설 목록이 아닙니다. 주소의 옛 구명은 출처를 보존하기 위해 그대로 표기합니다."
+    },
+    {
+      "id": "incheon-seogu",
+      "page": "area-incheon-seogu-funeral.html",
+      "old_district": "서구",
+      "old_label": "인천 서구",
+      "historical_label": "인천 옛 서구 권역",
+      "display_label": "인천 옛 서구 권역",
+      "display_subtitle": "서해구·검단구 장례안내",
+      "transition_kind": "split",
+      "title": "인천 옛 서구 권역 장례비용 | 서해구·검단구 안내 | 다함상조",
+      "h1": "인천 옛 서구 권역 장례비용 — 서해구·검단구 안내",
+      "description": "2026년 7월 1일 서해구·검단구로 나뉜 인천 옛 서구 권역의 가족장·무빈소 비용과 시설 선택 순서를 안내합니다. 제물포구 소재 인천의료원은 인접 지역 참고 시설로 구분합니다.",
+      "explanation": "옛 서구는 경인 아라뱃길을 기준으로 남쪽의 서해구와 북쪽의 검단구로 나뉘었습니다. 옛 서구 전체가 서해구로 바뀐 것으로 해석하면 안 됩니다.",
+      "intro": "서해구와 검단구로 나뉘기 전 옛 서구 자료를 찾는 분을 위한 안내입니다. 시설별 현재 주소와 관할을 따로 확인하고 상조 상품비와 외부 시설 비용을 구분하세요.",
+      "current_pages": [
+        {
+          "label": "서해구",
+          "page": "area-incheon-seohae-funeral.html",
+          "scope": "아라뱃길 남쪽 옛 서구 지역"
+        },
+        {
+          "label": "검단구",
+          "page": "area-incheon-geomdan-funeral.html",
+          "scope": "아라뱃길 북쪽 옛 서구 지역"
+        }
+      ],
+      "facility_note": "이 페이지는 옛 서구 권역의 장례 준비 순서를 안내합니다. 현재 관할별 시설 정보는 서해구·검단구 안내에서 확인하고, 인천의료원은 인접 지역 참고 시설로만 보세요.",
+      "adjacent_reference": {
+        "name": "인천의료원",
+        "address": "인천광역시 제물포구 방축로 217",
+        "official_source_url": "https://www.icmc.or.kr/guide/guide1.php?msort=44&tsort=4",
+        "guide_page": "incheon-medical-center-funeral.html"
+      }
+    }
+  ]
+}
