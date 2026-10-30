@@ -6,12 +6,13 @@ CI gate: python scripts/repair_search_images.py --check
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse, unquote, urljoin
-from html import escape
+from html import escape, unescape
 import argparse
 import json
 import re
 import xml.etree.ElementTree as ET
 from PIL import Image
+from regional_image_registry import registered_image, apply_registered_body
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.dahamsangjo.co.kr/'
@@ -52,6 +53,9 @@ def metas(source):
 
 
 def primary_image(source, page_url):
+    original = registered_image(page_url)
+    if original:
+        return BASE + original['asset_path']
     existing = metas(source).get('og:image', '')
     if existing and 'logo' not in existing.lower():
         dimensions(existing)
@@ -71,12 +75,37 @@ def primary_image(source, page_url):
     return DEFAULT
 
 
-def repair(source, page_url):
-    image = primary_image(source, page_url)
-    (width, height), mime = dimensions(image)
+def repair(source, page_url, original_entry=None):
+    original = original_entry if original_entry is not None else registered_image(page_url)
+    source = apply_registered_body(source, page_url, original)
+    image = BASE + original['asset_path'] if original else primary_image(source, page_url)
+    if original_entry is not None:
+        # The integration transaction validates the actual native file before
+        # planning writes; its destination may not exist until atomic commit.
+        width, height, mime = original['width'], original['height'], original['mime_type']
+    else:
+        (width, height), mime = dimensions(image)
     title = re.search(r'<title[^>]*>(.*?)</title>', source, re.I | re.S).group(1)
     alt = '다함상조 장례안내 · AI 연출 이미지' if ('/regional/' in image or 'regional-funeral-base' in image) else re.sub('<[^>]+>', '', title)
+    if original:
+        alt = original['alt']
     head, body = re.split(r'</head>', source, maxsplit=1, flags=re.I)
+    if original:
+        # Generators may rebuild an HTML page before the enrichment task runs.
+        # Keep the accepted representative in accurate WebPage schema even in
+        # that intermediate output, without inventing facility/service facts.
+        schemas = [json.loads(raw) for raw in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', head, re.S)]
+        def has_webpage(node):
+            if isinstance(node, list): return any(has_webpage(item) for item in node)
+            if isinstance(node, dict):
+                kind = node.get('@type')
+                return kind == 'WebPage' or (isinstance(kind, list) and 'WebPage' in kind) or any(has_webpage(value) for value in node.values())
+            return False
+        if not has_webpage(schemas):
+            page_schema = {'@context': 'https://schema.org', '@type': 'WebPage',
+                           '@id': page_url + '#webpage', 'url': page_url,
+                           'name': unescape(re.sub('<[^>]+>', '', title)), 'inLanguage': 'ko-KR'}
+            head += '\n<script type="application/ld+json">' + json.dumps(page_schema, ensure_ascii=False, separators=(',', ':')) + '</script>\n'
 
     def keep_tag(match):
         tag, attrs = Tags(match.group()).tags[0]
@@ -113,7 +142,8 @@ def repair(source, page_url):
                   f'<img src="{escape(image, quote=True)}" alt="{escape(alt, quote=True)}" width="{width}" height="{height}"'
                   ' loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px">')
         if ('/regional/' in image or 'regional-funeral-base' in image):
-            figure += '<figcaption style="font-size:13px;line-height:1.6;color:#665f58">장례 준비를 돕는 AI 연출 이미지입니다.</figcaption>'
+            caption = original['caption'] if original else '장례 준비를 돕는 AI 연출 이미지입니다.'
+            figure += '<figcaption style="font-size:13px;line-height:1.6;color:#665f58">' + escape(caption) + '</figcaption>'
         figure += '</figure>\n'
         body = re.sub(r'</main>|</body>', lambda m: figure + m.group(), body, count=1, flags=re.I)
     # Update existing WebPage metadata rather than creating competing page entities.
@@ -123,7 +153,8 @@ def repair(source, page_url):
             if isinstance(node, list):
                 for item in node: walk(item)
             elif isinstance(node, dict):
-                if node.get('@type') == 'WebPage':
+                kind = node.get('@type')
+                if kind == 'WebPage' or (isinstance(kind, list) and 'WebPage' in kind):
                     node['primaryImageOfPage'] = {'@type': 'ImageObject', 'url': image, 'width': width, 'height': height}
                 for value in node.values(): walk(value)
         walk(data)
