@@ -277,6 +277,7 @@ def metadata_invariants(source):
     body = re.sub(r'<figcaption\b[^>]*>.*?</figcaption>', '', body, flags=re.I | re.S)
     body = re.sub(r'<div class="caption">.*?</div>', '', body, flags=re.S)
     body = re.sub(r'<p data-regional-image-caption="1"[^>]*>.*?</p>', '', body, flags=re.S)
+    body = re.sub(r'<p class="caption"[^>]*>[^<]*AI 연출 이미지[^<]*</p>', '', body, flags=re.S)
     return metadata, prices, links, headings, body, without_primary_image(schemas)
 
 

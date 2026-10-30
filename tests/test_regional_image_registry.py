@@ -2,6 +2,7 @@
 import copy
 import hashlib
 import json
+import re
 import shutil
 import sys
 import tempfile
@@ -110,6 +111,26 @@ class RegistryTests(unittest.TestCase):
         source = '<head><meta name="robots" content="noindex,follow"></head><body></body>'
         with self.assertRaisesRegex(ValueError, 'noindex'):
             registry.apply_registered_body(source, registry.BASE + self.entry['page'], self.entry)
+
+    def test_existing_paragraph_disclosure_reused_without_adjacent_duplicate(self):
+        source = ('<head></head><body><h1>지역</h1><p>120만원</p>'
+                  '<img src="assets/regional/seoul.jpg">'
+                  '<p class="caption" style="font-size:13px;color:#ead7b4">'
+                  'AI 연출 이미지이며 특정 장례식장 실제 사진이 아닙니다.</p></body>')
+        for duplicate in ('', '<p data-regional-image-caption="1">' + self.entry['caption'] + '</p>'):
+            candidate = source.replace('<p class="caption"', duplicate + '<p class="caption"')
+            result = registry.apply_registered_body(candidate, registry.BASE + self.entry['page'], self.entry)
+            self.assertEqual(result.count(self.entry['caption']), 1)
+            self.assertNotIn('data-regional-image-caption', result)
+            self.assertIn('color:#ead7b4', result)
+            self.assertEqual(integration.metadata_invariants(source), integration.metadata_invariants(result))
+            self.assertEqual(result, registry.apply_registered_body(result, registry.BASE + self.entry['page'], self.entry))
+
+    def test_real_registered_pages_have_one_visible_image_disclosure(self):
+        for entry in registry.load_registry().values():
+            source = (registry.ROOT / entry['page']).read_text()
+            notices = re.findall(r'<(?:p|div|figcaption)\b[^>]*>[^<]*AI 연출 이미지[^<]*</(?:p|div|figcaption)>', source)
+            self.assertEqual(len(notices), 1, entry['page'])
 
     def test_noindex_attributes_in_reverse_order_not_mutated(self):
         source = '<head><meta content="noindex,follow" name="robots"></head><body></body>'

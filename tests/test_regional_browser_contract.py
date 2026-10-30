@@ -107,12 +107,44 @@ class BrowserContracts(unittest.TestCase):
         self.assertNotEqual(qa.template_key(a, 'a.jpg'), qa.template_key(b.replace('width:100%', 'width:50%'), 'b.jpg'))
 
     def test_administrative_pages_have_dedicated_capture_slots(self):
-        self.assertEqual(qa.representative_budget(64), 48)
+        self.assertEqual(qa.representative_budget(64), 52)
         self.assertEqual(qa.representative_budget(2), 1)
         keys = {qa.capture_key(name, 'shared-css', width)
                 for name in qa.ADMINISTRATIVE_CAPTURE_PAGES for width in qa.DEFAULT_WIDTHS}
         self.assertEqual(len(keys), 16)
         self.assertNotIn(qa.capture_key('other.html', 'shared-css', 390), keys)
+
+    def test_known_long_facility_names_can_wrap_without_hiding_overflow(self):
+        pages = ['area-daegu-jung-funeral.html', 'area-gyeongbuk-region-9fc406e9-funeral.html',
+                 'area-gyeongbuk-region-b80bacf0-funeral.html', 'area-gyeonggi-region-62824bf1-funeral.html',
+                 'area-jeonnam-region-340c98d2-funeral.html', 'area-seoul-gangdong-funeral.html']
+        for name in pages:
+            with self.subTest(page=name):
+                source = (qa.ROOT / name).read_text()
+                rule = re.search(r'\.facility\{([^}]+)\}', source).group(1)
+                self.assertIn('min-width:0', rule)
+                self.assertIn('overflow-wrap:anywhere', rule)
+                self.assertNotIn('overflow:hidden', rule)
+        generator = (qa.ROOT / 'scripts/generate_sigungu_pages.py').read_text()
+        self.assertIn('min-width:0;overflow-wrap:anywhere', generator)
+
+    def test_actual_progress_counts_are_reported(self):
+        with patch.object(qa, '_playwright_factory', self.factory()), patch('builtins.print') as log:
+            report = qa.run(self.out, root=self.root, capture=0, progress_every=3)
+        rows = [json.loads(call.args[0]) for call in log.call_args_list]
+        self.assertEqual([row['checked_viewports'] for row in rows], [3, 6])
+        self.assertEqual(report['checked_viewports'], 8)
+
+    def test_targeted_facility_capture_is_bounded_and_does_not_click(self):
+        context, page = MagicMock(), fake_page()
+        context.new_page.return_value = page
+        state = {'captured_templates': [], 'capture_count': 0, 'representative_captures': 0}
+        row = qa.check_page(context, 'area-daegu-jung-funeral.html',
+                            {**self.entries[0], '_template': 'fixture'}, 390, self.out, state, 64)
+        self.assertTrue(row['facility_screenshot'].endswith('-390-facilities.jpg'))
+        self.assertEqual(state['capture_count'], 2)
+        self.assertIn(qa.FACILITY_SCROLL, [call.args[0] for call in page.evaluate.call_args_list])
+        page.click.assert_not_called()
 
     def test_empty_registry_fails_without_browser(self):
         self.write_registry([])

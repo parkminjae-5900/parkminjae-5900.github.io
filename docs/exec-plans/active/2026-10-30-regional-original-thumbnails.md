@@ -40,8 +40,8 @@ Static HTML project: Python syntax and unit tests, image/SEO/conversion/security
 - [x] Investigation
 - [x] Implementation of all269 originals and four approved administrative transitions
 - [x] Automated verification
-- [ ] Desktop verification in isolated CI
-- [ ] Mobile verification in isolated CI
+- [x] Desktop verification in first isolated CI run (269 pages at 1280 px)
+- [ ] Mobile release gate: latest exact-head CI must pass at 360/390/430 px
 - [x] Regression check
 - [ ] Final review and authorized production verification
 
@@ -52,7 +52,14 @@ The old regional generator explicitly made crop/tint variants; that fallback is 
 The registry contains only actual accepted assets. Pending assets are never referenced. Compression is solely a website export, not evidence of independent creation. Full269 coverage remains mandatory. Public provenance is neutral and relative-path based; original private generation receipts and unchanged PNGs are retained separately.
 
 ## Final local verification (2026-10-30)
-All93 Python tests passed, including exporter fidelity, atomic recovery, conflict protection, administrative mappings and mocked browser contracts. Syntax,269-original strict coverage,414-page image check,387-page content/414-sitemap check,356-page conversion check, security scan, baseline scope guard and diff whitespace passed. All269 source and export hashes match. Native PNG total766,363,683bytes; website JPEG total179,485,191bytes. Minimum full-resolution luminanceSSIM0.98205, minimumPSNR36.29dB, maximum mean absolute channel error2.735/255. Original logo and pre-existing assets are retained. Mocked browser tests are not a runtime browser pass.
+All 101 Python tests passed, including exporter fidelity, atomic recovery, conflict protection, administrative mappings and mocked browser contracts. Syntax,269-original strict coverage,414-page image check,387-page content/414-sitemap check,356-page conversion check, security scan, baseline scope guard and diff whitespace passed. All269 source and export hashes match. Native PNG total766,363,683bytes; website JPEG total179,485,191bytes. Minimum full-resolution luminanceSSIM0.98205, minimumPSNR36.29dB, maximum mean absolute channel error2.735/255. Original logo and pre-existing assets are retained. Mocked browser tests are not a runtime browser pass.
 
 ## Remaining limitations
-Actual mobile/desktop Chromium results, review-branch publication and deployment verification are pending at this checkpoint. No production-completion claim is made before those results are established.
+Review branch published as [draft PR #33](https://github.com/parkminjae-5900/parkminjae-5900.github.io/pull/33). Runtime status is authoritative in the latest exact-head PR checks, not inferred from this pre-run source checkpoint. Production verification follows successful browser checks and final review; no deployment claim is made here.
+
+## Runtime discovery and focused repair (2026-10-30, 12:32 UTC)
+The first real Chromium run completed all 1,076 page-width checks with no image, console or resource errors. It found 10 narrow-screen overflow cases on six pages with long facility names. Only those six facility-card CSS rules now permit emergency text wrapping and zero minimum width; content, prices, typography size and visible overflow are not hidden or changed. The regional generator retains the same wrap protection. Unit fixtures include the exact affected pages. The next exact-head CI must rerun all 1,076 cases, including bounded captures of every CSS template and all four historical-to-current Incheon guides. Native Korean-capable fonts are installed in CI; page CSS is not overridden.
+
+Affected pages: `area-daegu-jung-funeral.html`, `area-gyeongbuk-region-9fc406e9-funeral.html`, `area-gyeongbuk-region-b80bacf0-funeral.html`, `area-gyeonggi-region-62824bf1-funeral.html`, `area-jeonnam-region-340c98d2-funeral.html`, `area-seoul-gangdong-funeral.html`.
+
+The existing Songpa paragraph caption is reused, removing only a duplicate adjacent AI notice. All 269 pages retain exactly one visible image-specific AI disclosure. Mobile regression captures additionally scroll to the long facility card on the six affected pages at 360/390 px, without clicking links or submitting forms; the total screenshot budget remains 64.

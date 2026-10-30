@@ -123,6 +123,14 @@ def apply_registered_body(source, page_url, entry):
                   lambda m: m[1] + caption + m[2], body)
     body = re.sub(r'(<figcaption\b[^>]*>)장례 준비를 돕는 AI 연출 이미지입니다\.(</figcaption>)',
                   lambda m: m[1] + caption + m[2], body)
+    # Songpa's approved template already has a paragraph caption directly after
+    # the hero. Reuse that styled notice, removing only our adjacent duplicate.
+    paragraph_caption = (r'(<img\b[^>]*src="' + re.escape(current) + r'"[^>]*>)\s*'
+                         r'(?:<p data-regional-image-caption="1"[^>]*>.*?</p>\s*)?'
+                         r'(<p class="caption"[^>]*>)'
+                         r'AI 연출 이미지이며 특정 장례식장 실제 사진이 아닙니다\.(</p>)')
+    body = re.sub(paragraph_caption, lambda m: m[1] + m[2] + caption + m[3],
+                  body, flags=re.S)
     # Some original templates have no adjacent AI notice. Add one to the
     # representative figure/image only, without falsely describing real photos.
     if entry['caption'] not in body and caption not in body:

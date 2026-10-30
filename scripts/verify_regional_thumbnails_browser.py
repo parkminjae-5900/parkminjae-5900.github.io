@@ -26,6 +26,11 @@ ADMINISTRATIVE_CAPTURE_PAGES = {
     'area-incheon-jung-funeral.html', 'area-incheon-seogu-funeral.html',
     'area-incheon-region-09f17808-funeral.html', 'area-incheon-region-8fb2ce5a-funeral.html',
 }
+FACILITY_CAPTURE_PAGES = {
+    'area-daegu-jung-funeral.html', 'area-gyeongbuk-region-9fc406e9-funeral.html',
+    'area-gyeongbuk-region-b80bacf0-funeral.html', 'area-gyeonggi-region-62824bf1-funeral.html',
+    'area-jeonnam-region-340c98d2-funeral.html', 'area-seoul-gangdong-funeral.html',
+}
 ALLOWED_SUFFIXES = {'.html', '.css', '.js', '.mjs', '.json', '.png', '.jpg', '.jpeg',
                     '.gif', '.webp', '.avif', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.txt'}
 
@@ -64,9 +69,9 @@ def capture_key(name, template, width):
 
 
 def representative_budget(capture):
-    # At the production cap of 64: 32 template captures + 16 administrative
-    # captures, leaving 16 slots for failure screenshots. All pages still run.
-    return capture // 2 + min(16, capture // 4)
+    # At the production cap of 64: 36 template + 16 administrative captures;
+    # reserve the other 12 for targeted facility cards (or failure evidence).
+    return max(capture // 2, capture - 12)
 
 
 def measurement_failures(measurement, entry, width):
@@ -163,10 +168,26 @@ MEASURE = r'''async (assetUrl) => {
       imageWidth:rect.width,imageHeight:rect.height,imageLeft:rect.left,imageRight:rect.right,
       imageVisibility:style?.visibility || 'missing',imageOpacity:Number(style?.opacity || 0),
       objectFit:style?.objectFit,decodeTimedOut:timedOut,
+      overflowingElements:[...document.body.querySelectorAll('*')].filter(el => {
+        const r=el.getBoundingClientRect();
+        return r.width>0 && (r.right>innerWidth+1 || r.left < -1);
+      }).slice(0,20).map(el => ({tag:el.tagName, className:el.className,
+        text:(el.textContent||'').trim().slice(0,160),
+        left:el.getBoundingClientRect().left, right:el.getBoundingClientRect().right})),
       brokenImages:images.filter(i=>i.complete&&!i.naturalWidth).map(i=>i.currentSrc||i.src),
       pendingImages:images.filter(i=>!i.complete).map(i=>i.currentSrc||i.src),
       h1Count:document.querySelectorAll('h1').length
     };
+}'''
+
+FACILITY_SCROLL = r'''() => {
+    const cards=[...document.querySelectorAll('.facility')];
+    const score=el=>Math.max(0,...el.innerText.split(/\s+/u).map(word=>word.length));
+    const card=cards.sort((a,b)=>score(b)-score(a))[0];
+    if (!card) throw new Error('Missing targeted facility card');
+    card.scrollIntoView({block:'start',inline:'nearest'});
+    return {heading:card.querySelector('h2')?.textContent || '',
+            longestWordLength:score(card)};
 }'''
 
 
@@ -216,6 +237,20 @@ def check_page(context, name, entry, width, out, report, capture):
                 row['failures'].append('screenshot failed')
         elif should_capture or representative:
             row['screenshot_omitted'] = 'capture budget exhausted or page unavailable'
+        if name in FACILITY_CAPTURE_PAGES and width in (360, 390) and page is not None:
+            if report['capture_count'] < capture:
+                try:
+                    row['facility_capture_context'] = page.evaluate(FACILITY_SCROLL)
+                    filename = f'{Path(name).stem}-{width}-facilities.jpg'
+                    page.screenshot(path=str(out / filename), type='jpeg', quality=80,
+                                    full_page=False, animations='disabled', timeout=10000)
+                    row['facility_screenshot'] = filename
+                    report['capture_count'] += 1
+                except Exception as exc:
+                    row['exceptions'].append(f'Facility screenshot: {type(exc).__name__}: {exc}')
+                    row['failures'].append('targeted facility screenshot failed')
+            else:
+                row['facility_screenshot_omitted'] = 'capture budget exhausted'
         if page is not None:
             try:
                 page.close()
@@ -249,7 +284,7 @@ def configure_context(context, root, report):
     context.route_web_socket('**/*', lambda socket: socket.close())
 
 
-def run(out, executable=None, widths=DEFAULT_WIDTHS, capture=64, minimum_count=1, root=ROOT):
+def run(out, executable=None, widths=DEFAULT_WIDTHS, capture=64, minimum_count=1, root=ROOT, progress_every=0):
     out, root = Path(out), Path(root).resolve()
     out.mkdir(parents=True, exist_ok=True)
     report = {'scope': 'checkout bytes only; all nonlocal HTTP requests stubbed; service workers/WebSockets blocked',
@@ -308,6 +343,10 @@ def run(out, executable=None, widths=DEFAULT_WIDTHS, capture=64, minimum_count=1
                             if row['failures']:
                                 report['failures'].append(row)
                             save_report(out, report, root)
+                            if progress_every and report['checked_viewports'] % progress_every == 0:
+                                print(json.dumps({'checked_viewports': report['checked_viewports'],
+                                                  'expected_viewports': report['expected_viewports'],
+                                                  'failed_viewports': len(report['failures'])}), flush=True)
                     except Exception as exc:
                         report['failures'].append({'width': width, 'stage': 'context', 'error': f'{type(exc).__name__}: {exc}'})
                         save_report(out, report, root)
@@ -339,8 +378,11 @@ if __name__ == '__main__':
     parser.add_argument('--widths', nargs='+', type=int, default=list(DEFAULT_WIDTHS))
     parser.add_argument('--capture', type=int, default=64, help='Total viewport JPEG capture budget; failures stay in JSON even after the cap')
     parser.add_argument('--minimum-count', type=int, default=1)
+    parser.add_argument('--progress-every', type=int, default=50,
+                        help='Print actual completed viewport counts at this interval; 0 disables progress')
     args = parser.parse_args()
-    result = run(args.out, args.chromium, tuple(args.widths), args.capture, args.minimum_count)
+    result = run(args.out, args.chromium, tuple(args.widths), args.capture, args.minimum_count,
+                 progress_every=args.progress_every)
     print(json.dumps({key: result[key] for key in ('result', 'accepted_pages', 'expected_viewports',
                                                 'checked_viewports', 'unchecked_viewports', 'capture_count')}, ensure_ascii=False))
     raise SystemExit(result['result'] != 'PASS')
