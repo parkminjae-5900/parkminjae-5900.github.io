@@ -1,9 +1,12 @@
 """Pure/mocked browser contracts. These tests never launch a browser process."""
 import hashlib
 import json
+import os
 from pathlib import Path
+import re
 import sys
 import tempfile
+import textwrap
 import unittest
 from unittest.mock import MagicMock, patch
 
@@ -252,6 +255,25 @@ class BrowserContracts(unittest.TestCase):
         self.assertIn('pull_request:', caller)
         self.assertIn('uses: ./.github/workflows/verify-regional-thumbnails-browser.yml', caller)
         self.assertNotIn('secrets: inherit', caller)
+
+    def test_workflow_job_environment_avoids_unavailable_runner_context(self):
+        text = (qa.ROOT / '.github/workflows/verify-regional-thumbnails-browser.yml').read_text()
+        job_environment = text.split('    env:\n', 1)[1].split('    steps:', 1)[0]
+        # GitHub jobs.<job_id>.env cannot reference runner or env contexts.
+        self.assertNotIn('${{', job_environment)
+        self.assertIn('QA_OUT: regional-thumbnail-browser-output', job_environment)
+        self.assertIn('fonts-noto-cjk', text)
+        self.assertIn("fc-match ':lang=ko'", text)
+
+    def test_workflow_setup_failure_report_is_valid_json(self):
+        text = (qa.ROOT / '.github/workflows/verify-regional-thumbnails-browser.yml').read_text()
+        match = re.search(r"python - <<'PY'\n(.*?)\n          PY", text, re.S)
+        self.assertIsNotNone(match)
+        with patch.dict(os.environ, {'QA_OUT': str(self.out)}):
+            exec(compile(textwrap.dedent(match.group(1)), '<workflow-setup>', 'exec'), {})
+        report = json.loads((self.out / 'report.json').read_text())
+        self.assertEqual(report['result'], 'FAIL')
+        self.assertEqual(report['checked_viewports'], 0)
 
 
 if __name__ == '__main__':
