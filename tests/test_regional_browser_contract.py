@@ -106,6 +106,14 @@ class BrowserContracts(unittest.TestCase):
         self.assertEqual(qa.template_key(a, 'a.jpg'), qa.template_key(b, 'b.jpg'))
         self.assertNotEqual(qa.template_key(a, 'a.jpg'), qa.template_key(b.replace('width:100%', 'width:50%'), 'b.jpg'))
 
+    def test_administrative_pages_have_dedicated_capture_slots(self):
+        self.assertEqual(qa.representative_budget(64), 48)
+        self.assertEqual(qa.representative_budget(2), 1)
+        keys = {qa.capture_key(name, 'shared-css', width)
+                for name in qa.ADMINISTRATIVE_CAPTURE_PAGES for width in qa.DEFAULT_WIDTHS}
+        self.assertEqual(len(keys), 16)
+        self.assertNotIn(qa.capture_key('other.html', 'shared-css', 390), keys)
+
     def test_empty_registry_fails_without_browser(self):
         self.write_registry([])
         with patch.object(qa, '_playwright_factory') as factory:
@@ -264,6 +272,7 @@ class BrowserContracts(unittest.TestCase):
         self.assertIn('QA_OUT: regional-thumbnail-browser-output', job_environment)
         self.assertIn('fonts-noto-cjk', text)
         self.assertIn("fc-match ':lang=ko'", text)
+        self.assertIn("fc-match 'Noto Sans CJK KR:lang=ko'", text)
 
     def test_workflow_setup_failure_report_is_valid_json(self):
         text = (qa.ROOT / '.github/workflows/verify-regional-thumbnails-browser.yml').read_text()

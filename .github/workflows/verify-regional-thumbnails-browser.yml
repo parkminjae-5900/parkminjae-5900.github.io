@@ -37,7 +37,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y fonts-noto-cjk fontconfig
           fc-match ':lang=ko' | tee "$QA_OUT/korean-font.txt"
-          fc-match ':lang=ko' | grep -qi 'Noto.*CJK'
+          fc-match 'Noto Sans CJK KR:lang=ko' | tee -a "$QA_OUT/korean-font.txt" | grep -qi 'Noto.*CJK'
       - name: Test browser contracts without launching a browser
         run: python -m unittest discover -s tests -p 'test_regional_browser_contract.py'
       - name: Check every accepted page at mobile and desktop widths

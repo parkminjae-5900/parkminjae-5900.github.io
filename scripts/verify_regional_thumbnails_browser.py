@@ -22,6 +22,10 @@ from regional_image_registry import ROOT, BASE, load_registry, registered_image
 
 DEFAULT_WIDTHS = (360, 390, 430, 1280)
 VIEWPORT_HEIGHT = 1000
+ADMINISTRATIVE_CAPTURE_PAGES = {
+    'area-incheon-jung-funeral.html', 'area-incheon-seogu-funeral.html',
+    'area-incheon-region-09f17808-funeral.html', 'area-incheon-region-8fb2ce5a-funeral.html',
+}
 ALLOWED_SUFFIXES = {'.html', '.css', '.js', '.mjs', '.json', '.png', '.jpg', '.jpeg',
                     '.gif', '.webp', '.avif', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.txt'}
 
@@ -50,6 +54,19 @@ def template_key(source, asset_path):
     attributes = re.findall(r'\b(?:class|style)\s*=\s*([\"\'])(.*?)\1', image, re.I | re.S)
     value = '\n'.join(styles + [value for _, value in attributes])
     return hashlib.sha256(re.sub(r'\s+', ' ', value).encode()).hexdigest()[:12]
+
+
+def capture_key(name, template, width):
+    # Long historical-to-current labels need their own pixel review, even when
+    # they share CSS with a previously captured representative page.
+    identity = name if name in ADMINISTRATIVE_CAPTURE_PAGES else template
+    return f'{identity}:{width}'
+
+
+def representative_budget(capture):
+    # At the production cap of 64: 32 template captures + 16 administrative
+    # captures, leaving 16 slots for failure screenshots. All pages still run.
+    return capture // 2 + min(16, capture // 4)
 
 
 def measurement_failures(measurement, entry, width):
@@ -181,10 +198,9 @@ def check_page(context, name, entry, width, out, report, capture):
                            ('missing', 'missing resource'), ('request_failures', 'failed resource request')]:
             if row[key] and label not in row['failures']:
                 row['failures'].append(label)
-        pair = f'{entry["_template"]}:{width}'
+        pair = capture_key(name, entry['_template'], width)
         representative = pair not in report['captured_templates']
-        # Reserve half the total budget for failures; no unbounded full-page PNGs.
-        should_capture = bool(row['failures']) or (representative and report['representative_captures'] < capture // 2)
+        should_capture = bool(row['failures']) or (representative and report['representative_captures'] < representative_budget(capture))
         if should_capture and page is not None and report['capture_count'] < capture:
             try:
                 filename = f'{Path(name).stem}-{width}.jpg'
