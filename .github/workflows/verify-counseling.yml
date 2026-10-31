@@ -1,0 +1,23 @@
+name: 장례상담 근거 및 계산 검수
+on:
+  pull_request:
+    paths: ['counseling/**', 'tests/counseling/**', '.github/workflows/verify-counseling.yml']
+  push:
+    paths: ['counseling/**', 'tests/counseling/**', '.github/workflows/verify-counseling.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check counseling/engine.mjs
+      - run: node --check counseling/cli.mjs
+      - run: node tests/counseling/evaluate.mjs
+      - run: node --check counseling/session.mjs
+      - run: node tests/counseling/hardening.mjs
+      - run: node tests/counseling/session.mjs
+      - run: node tests/counseling/prices.mjs
