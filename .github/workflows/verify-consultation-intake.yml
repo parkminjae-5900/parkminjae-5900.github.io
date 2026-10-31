@@ -1,0 +1,20 @@
+name: Verify consultation intake
+on:
+  pull_request:
+  push:
+    branches: [main, feat/consultation-form]
+permissions:
+  contents: read
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+      - run: node --test tests/intake.test.mjs
+      - run: node --check reception-worker/worker.mjs
+      - run: node --check consult-request.js
+      - run: node --check analytics-tracking.js
+      - run: node --check conversion-funnel.js
