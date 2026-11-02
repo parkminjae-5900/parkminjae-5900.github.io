@@ -286,7 +286,7 @@ class BrowserContracts(unittest.TestCase):
         text = (qa.ROOT / '.github/workflows/verify-regional-thumbnails-browser.yml').read_text()
         for expected in ['workflow_call:', 'contents: read', 'persist-credentials: false',
                          'playwright==1.58.0', '--with-deps chromium', 'if: always()',
-                         '--widths 360 390 430 1280', '--minimum-count 269', '--capture 64']:
+                         '--widths 360 390 430 1280', '--minimum-count 273', '--capture 64']:
             self.assertIn(expected, text)
         self.assertNotIn('pull_request_target', text)
         self.assertNotIn('pages: write', text)

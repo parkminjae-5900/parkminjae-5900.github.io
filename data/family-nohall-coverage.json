@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "regional_canonical_pages": 269,
+  "regional_canonical_pages": 273,
   "existing_facility_pages": 82,
   "primary_facility_pages": 81,
   "directory_source_records": 1080,
@@ -11,7 +11,7 @@
   "accepted_actual_photos": 2,
   "photo_pending_records": 1078,
   "held_records": 7,
-  "curated_content_pages": 18,
+  "curated_content_pages": 22,
   "raw_source_sha256": "df184a8db7048267c4fba32ee48dc4d1f60585eb02125fdad0fd7100547962cd",
   "note": "Regional URL count is not a count of current municipalities. Text quality is reviewed independently of photographs; release requires actual browser CI and visual review. Existing keyword-combination pages remain noindex."
 }

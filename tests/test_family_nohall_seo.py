@@ -36,7 +36,7 @@ class FamilyNoHallTests(unittest.TestCase):
 
     def test_curated_content_is_exact_and_source_backed(self):
         data = json.loads((ROOT/'data/family-nohall-content.json').read_text())
-        self.assertEqual(len(data['entries']), 8)
+        self.assertEqual(len(data['entries']), 12)
         for entry in data['entries']:
             self.assertEqual(entry['canonical'], photos.BASE + entry['page'])
             self.assertTrue(entry['evidence'])
@@ -147,7 +147,7 @@ class FamilyNoHallTests(unittest.TestCase):
         outputs, stats = build.build(ROOT)
         for path, content in outputs.items():
             self.assertEqual((ROOT/path).read_text(), content, path)
-        self.assertEqual(stats['regional_canonical_pages'], 269)
+        self.assertEqual(stats['regional_canonical_pages'], 273)
 
     def test_directory_enrichment_roundtrip(self):
         for path in (ROOT/'funeral-halls').glob('*.html'):

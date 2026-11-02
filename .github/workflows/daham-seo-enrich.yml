@@ -10,6 +10,10 @@ on:
       - '*-cost*.html'
   schedule:
     - cron: '17 22 * * *'
+concurrency:
+  group: daham-validated-content-refresh
+  cancel-in-progress: false
+
 permissions:
   contents: write
 jobs:
@@ -18,6 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           persist-credentials: true
       - name: Validate generator
         run: |
