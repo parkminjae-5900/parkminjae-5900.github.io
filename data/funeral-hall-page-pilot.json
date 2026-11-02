@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "purpose": "First eight source-record individual pages plus two actual-photo cases. Text quality and photo permission are separate; indexing requires meaningful facility-specific sources and exact-commit browser/visual review before publication.",
+  "facility_ids": [
+    "fh-db352dc0dff1cd17",
+    "fh-675bfc3af5dcc006",
+    "fh-86a371ea3b2993d5",
+    "fh-e21bc62b57bc949c",
+    "fh-669b879587b5784e",
+    "fh-20215a1c164f2b64",
+    "fh-8021f44ed23d49dd",
+    "fh-ddcc9770a2b08a61"
+  ],
+  "additional_photo_facility_ids": [
+    "fh-0a587ca685529890",
+    "fh-2a32c8a884fc1574"
+  ]
+}

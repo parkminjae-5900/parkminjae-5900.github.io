@@ -1,0 +1,57 @@
+name: Verify family and no-hall guidance
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  guidance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Initialize durable browser report
+        run: |
+          mkdir -p family-nohall-browser-output
+          echo '{"result":"FAIL","checked_viewports":0,"stage":"Browser verification not completed"}' > family-nohall-browser-output/report.json
+      - name: Install pinned browser client and image decoder
+        run: python -m pip install 'playwright==1.58.0' Pillow
+      - name: Validate deterministic generation, identities, rights and source preservation
+        run: |
+          python -m py_compile scripts/funeral_hall_photos.py scripts/build_family_nohall_seo.py scripts/verify_family_nohall_browser.py
+          python scripts/build_family_nohall_seo.py --check
+          python -m unittest discover -s tests -p 'test_*.py'
+          python scripts/repair_search_images.py --check
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Install Korean fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y fonts-noto-cjk fontconfig
+          fc-match ':lang=ko'
+      - name: Verify real desktop/mobile and no-JavaScript directory
+        run: python scripts/verify_family_nohall_browser.py --out family-nohall-browser-output
+      - name: Verify unchanged calculator flow on mobile and desktop
+        run: |
+          npm install --prefix /tmp/estimate-qa 'playwright@1.58.0'
+          python -m http.server 8765 > /tmp/estimate-http.log 2>&1 &
+          NODE_PATH=/tmp/estimate-qa/node_modules node tests/nationwide-estimate.cjs
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: family-nohall-browser-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            family-nohall-browser-output
+            qa-output
+          if-no-files-found: error
+          retention-days: 14

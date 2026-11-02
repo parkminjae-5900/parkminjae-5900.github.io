@@ -1,0 +1,3413 @@
+{
+  "schema_version": 1,
+  "source_commit": "0e0f2db33d8d75196ccde90897bdf7cb711c5988",
+  "source_dataset_sha256": "597fe70cd8c180f6b2b3f6c53d482d971e520eb89e5f0bd0f84106d2fcdcd664",
+  "note": "Identity mapping and reported-source conflicts are not a guarantee of current operation, prices, partnership, or no-hall availability.",
+  "entries": [
+    {
+      "facility_id": "fh-00495c10c92e9573",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"영등포장례식장\",\"서울특별시 영등포구 당산로31길 6 (당산동3가, 영등포병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeongdeungpo-hospital-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-hospital-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "427267855d6e1bf15e17a21d0ae81a10c67e59cfeaaa75b22552e7d3c74ba634",
+          "source_page_git_blob": "bda81b6b4c9961b0f7f56fd6c80a33e9bdb7fefd"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-0412010235606e54",
+      "identity_key": "[\"대구광역시\",\"달서구\",\"삼일병원장례식장\",\"대구광역시 달서구 월배로 440 (송현동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://31hosp.co.kr/doc/guide7_4.php"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-049c8b40ac0af005",
+      "identity_key": "[\"경기도\",\"안양시\",\"샘안양병원장례식장\",\"경기도 안양시 만안구 삼덕로 9,613-8 (안양동, 안양샘병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "안양샘병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://anyang.samhospital.com/bbs/content.php?co_id=funeral"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official hospital funeral introduction line277 explicitly 안양샘병원 장례식장; footer matches 안양시 만안구 삼덕로9 (613-8),031-467-9114. Funeral inquiry number031-467-9700 separately listed; no phone printed on image."
+      }
+    },
+    {
+      "facility_id": "fh-075f7d4c3fe5abf8",
+      "identity_key": "[\"충청북도\",\"청주시 청원구\",\"초정유진장례식장\",\"충청북도 청주시 청원구 내수읍 우산길 91 (우산리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://cjnoin.or.kr/?page_id=1911",
+          "https://cjnoin.or.kr/?page_id=1476"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-0aab289786b93ebd",
+      "identity_key": "[\"부산광역시\",\"해운대구\",\"해운대백병원장례식장\",\"부산광역시 해운대구 해운대로 875 (좌동, 인제대학교해운대백병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.siminf.co.kr/",
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.busan.go.kr/depart/welgrand030503"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-0b1b14a7285435c9",
+      "identity_key": "[\"충청남도\",\"천안시 동남구\",\"보람상조리더스(주)천안국빈장례식장\",\"충청남도 천안시 동남구 풍세로 835, 천안국빈장례식장 (용곡동, 청담웨딩홀)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "천안국빈장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "KFCPI2025 p21 lines1108-1111; identical 풍세로835 and0415780082. Shared facility descriptor retained; corporate prefixes omitted. Corporate succession/current operator not established."
+      }
+    },
+    {
+      "facility_id": "fh-0b2654f4650b1b35",
+      "identity_key": "[\"인천광역시\",\"남동구\",\"인천가족공원장례식장\",\"인천광역시 남동구 만월북로 115 (간석동, 인천가족공원장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-familypark-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-familypark-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "4284b3ff5ad156b698b19a374530dbfdb23341b59ac363a0b27d565d8a9b00be",
+          "source_page_git_blob": "0582a0bfc8bc77b849c68fab95fb7a7066503022"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-0e783be4e25f5f35",
+      "identity_key": "[\"경기도\",\"고양시 덕양구\",\"주식회사 헤븐앤어스\",\"경기도 고양시 덕양구 화수로14번길 55,명지병원B1층 (화정동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "myongji-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/myongji-funeral.html",
+          "identity_evidence": [
+            "Page 고양 화수로14번길55 and 031-810-5444 match 주식회사 헤븐앤어스 at 명지병원B1층, not 제천 명지병원장례식장"
+          ],
+          "source_page_sha256": "5ec3098fe15869b7cb6b179d402ea6317dfd9c25b6a36fe2ea33dc2de0393957",
+          "source_page_git_blob": "c8665dcc08ac588ee09870e5cd0f43716926b33d"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "명지병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.mjfuneral.co.kr/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official funeral homepage exact public name, Goyang address and telephone match source corporate record; city tourism page describes Deogyangsan/Haengjusanseong above Han River."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-12e92d0115b73a9a",
+      "identity_key": "[\"경상남도\",\"하동군\",\"고전장례식장\",\"경상남도 하동군 고전면 하동읍성로 341 (범아리, 고전면복지회관)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-13e57af455e4644d",
+      "identity_key": "[\"서울특별시\",\"용산구\",\"순천향서울장례식장\",\"서울특별시 용산구 대사관로 59 (한남동, 순천향대학병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "soonchunhyang-seoul-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/soonchunhyang-seoul-funeral.html",
+          "identity_evidence": [
+            "Page 02-797-4444 and official schmc.ac.kr/seoul match raw 순천향서울장례식장 at 순천향대학병원"
+          ],
+          "source_page_sha256": "b7b758a57a73a94e0634e4d65b635074f36c941c7cf1e2f84f9f743c447681c1",
+          "source_page_git_blob": "ca3c9f8edadd5f29f11d7c1ef3e232a88289e7c3"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "순천향대학교 서울병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.schmc.ac.kr/seoul/contents.do?key=355"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official hospital directory has funeral phone02-797-4444; Seoul official release locates Namsan Korean forest garden in Yongsan Itaewon-dong."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-14929e72a5987e7e",
+      "identity_key": "[\"전북특별자치도\",\"완주군\",\"봉동호스피스장례식장\",\"전라북도 완주군 용진읍 완주로 807 (신지리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-14e2a719089f1be1",
+      "identity_key": "[\"경상북도\",\"영주시\",\"명품병원장례문화원\",\"경상북도 영주시 반지미로 260 (가흥동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "영주 명품장례문화원",
+        "status": "resolved",
+        "sources": [
+          "https://www.xn--9n2bn5b91u9qm.com/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "url": "https://www.xn--9n2bn5b91u9qm.com/",
+          "authority": "공식 운영기관 홈페이지",
+          "matched_address": "경상북도 영주시 반지미로 260",
+          "matched_phone": "054-634-1444",
+          "observed_name": "영주 명품장례문화원",
+          "verified_date": "2026-10-31"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-175f57fc9371966a",
+      "identity_key": "[\"인천광역시\",\"계양구\",\"보람새천년장례식장\",\"인천광역시 계양구 아나지로 541 (서운동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-boram-newmillennium-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-boram-newmillennium-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "201a0d0503432915912e58342514202f413b42589f10da9606b38e1cf8707bf3",
+          "source_page_git_blob": "e0c094ef0e13020715b87ebaf3bc2a33dadfb009"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-17e77f374aebe6b3",
+      "identity_key": "[\"서울특별시\",\"강남구\",\"삼성서울병원장례식장\",\"서울특별시 강남구 일원로 81 (일원동, 삼성의료원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "samsung-seoul-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/samsung-seoul-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "905744ca513444b0c5f6853f04b41717c59e20b50445711189c29ce743b6f9f4",
+          "source_page_git_blob": "b4574845bbdcc9a58f536a824b8bf212ba6447b7"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "삼성서울병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.samsunghospital.com/home/funerals/guide.do?view=facilities"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "official funeral page and hospital address map"
+      }
+    },
+    {
+      "facility_id": "fh-1d46a69c6038b6ce",
+      "identity_key": "[\"부산광역시\",\"서구\",\"동아대학교병원장례식장\",\"부산광역시 서구 대신공원로 26 (동대신동3가, 동아대학교병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": true,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://funeral.damc.or.kr/main/main.php",
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-1d5ae328c7273805",
+      "identity_key": "[\"인천광역시\",\"미추홀구\",\"금강장례식장\",\"인천광역시 미추홀구 인주대로 452 (주안동, 금강요양병원,새한장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-geumgang-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-geumgang-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "1061256df4a98a5c006d0942960838b8483e89e9fce700f47224d24ec449d19d",
+          "source_page_git_blob": "8d1e8ee131169636ba5add5150dca5e0c2d235a4"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-1efb891f403a4ab9",
+      "identity_key": "[\"서울특별시\",\"강남구\",\"연세대학교 강남장례식장\",\"서울특별시 강남구 언주로 211 (도곡동, 강남세브란스병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "gangnam-severance-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/gangnam-severance-funeral.html",
+          "identity_evidence": [
+            "Page 강남세브란스병원 at 언주로 211; raw address explicitly names 강남세브란스병원"
+          ],
+          "source_page_sha256": "4921718259a14069c1cc6241b64734a0d22f5ca4f56745fc77afa61799bc5552",
+          "source_page_git_blob": "492be7bb8357cc2a95d0dab60ab24ed3af1b72b4"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-20215a1c164f2b64",
+      "identity_key": "[\"부산광역시\",\"부산진구\",\"(주)수요양병원장례식장\",\"부산광역시 부산진구 동평로 401,지하1층,지하2층 (양정동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "수장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official KFCPI p3 calls same location 수장례식장 with 동평로401 지하1·2층 and051-853-1024, exactly matching raw (주)수요양병원장례식장 identity tuple. Display alias supported by official name+address+phone; raw key preserved. No current operation assertion."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-20caf9b5c2790c1b",
+      "identity_key": "[\"서울특별시\",\"강동구\",\"강동경희대학교병원장례식장\",\"서울특별시 강동구 동남로 892 (상일동, 강동경희대학교병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "gangdong-kyunghee-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/gangdong-kyunghee-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "d015981b61b30b7cc877800642cef4344636ab583daf86575248311d5154d9f4",
+          "source_page_git_blob": "399bdb8ce36eb85be3dd2f7ac780de9ed2c5d20e"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "강동경희대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-225f993fa0bac9d8",
+      "identity_key": "[\"충청북도\",\"제천시\",\"제천노인병원장례식장\",\"충청북도 제천시 북부로13길 94 (천남동, 제천병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-2516500ab31ea337",
+      "identity_key": "[\"인천광역시\",\"계양구\",\"청기와장례식장(계양점)\",\"인천광역시 계양구 아나지로 559 (서운동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-gyeyang-cheonggiwa-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-gyeyang-cheonggiwa-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "e6a5370c2d8fe13ce905a769bcceafcc1817a250c9528c053cfecacb9ed9a55d",
+          "source_page_git_blob": "1069fd301b488b9ddfe860d69bd575f4a8fab4e3"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-273549628d9a8111",
+      "identity_key": "[\"경기도\",\"파주시\",\"쉴낙원 파주운정장례식장\",\"경기도 파주시 하늘채길 35, (하지석동, 쉴낙원 파주운정장례식장)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.paju.go.kr/www/www_02/www_02_01/www_02_01_08/www_02_01_08_02/www_02_01_08_02_06.jsp"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-2ab56d4eb05ac49f",
+      "identity_key": "[\"충청북도\",\"진천군\",\"진천제일장례식장\",\"충청북도 진천군 진천읍 진광로 190 (송두리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-2b49a8572cb50798",
+      "identity_key": "[\"전북특별자치도\",\"익산시\",\"(유)태영장례 익산병원장례식장\",\"전라북도 익산시 무왕로 969익산병원장례식장 (신동, 익산병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "익산병원장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "shared exact core name in raw 태영 and official KFCPI 신광, same 무왕로969 /063-851-9444. Not independently verified standalone registered trade name. Corporate succession/current operator unresolved. Prefix omitted."
+      }
+    },
+    {
+      "facility_id": "fh-2b9afdfceab26e79",
+      "identity_key": "[\"서울특별시\",\"성동구\",\"한양대학병원장례식장\",\"서울특별시 성동구 왕십리로 222-1 (사근동, 한양대학부속병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "public_notice": {
+        "text": "2026-05-26자 공식 공지에 전면 임시 중단이 안내되어 있습니다. 2026-10-31 확인자료 기준 재개 여부는 확인되지 않았으므로 방문 전 병원에 확인하세요.",
+        "source_url": "https://seoul.hyumc.com/international/board/commBoardNoticeView.do?no=502",
+        "checked_at": "2026-10-31",
+        "requires_hold": true
+      },
+      "pages": [
+        {
+          "page": "hanyang-funeral-status.html",
+          "page_kind": "status",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/hanyang-funeral-status.html",
+          "identity_evidence": [
+            "Page 서울 한양대학교병원 and official seoul.hyumc.com suspension notice; raw 서울 성동구 한양대학병원. HOLD, not an operating-facility endorsement"
+          ],
+          "source_page_sha256": "78f99da9cf9d7e036600c9426cea16e3f1e3a4fba330fc679bb68f015183ea47",
+          "source_page_git_blob": "f50ae21236a9ba016a3b043a75e9ee05e0e987c5"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-2d28ddc1d9c33422",
+      "identity_key": "[\"인천광역시\",\"중구\",\"인천삼성장례문화원\",\"인천광역시 중구 우현로62번길 34-1 (경동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-samsung-culture-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-samsung-culture-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "640e43cddf1d17e4128a1139b86c086789afd1a9db69876b7ff10364688e1505",
+          "source_page_git_blob": "b9801a250b93ff9169da8f13501544f0c3e1540a"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-2d5975864e800381",
+      "identity_key": "[\"인천광역시\",\"동구\",\"청기와장례식장(송림점)\",\"인천광역시 동구 방축로177번길 23 (송림동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-songrim-cheonggiwa-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-songrim-cheonggiwa-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "1f99db5c07354569e46c5cb4f1417efe7446703dfc7dabddf26f62ce13100bdd",
+          "source_page_git_blob": "d767213db082d544ee05a6a1b11570bb5ab7a109"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-2dd6a46f67af4dee",
+      "identity_key": "[\"울산광역시\",\"중구\",\"소다미(주)동강병원장례식장\",\"울산광역시 중구 태화로 240지하1,2층 (태화동, 동강병원남관)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.dkmc.or.kr/Mortuary/funeralintro/funeralintro05.php"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-33c452e4ae92dd4d",
+      "identity_key": "[\"경상남도\",\"창원시 성산구\",\"창원경상대학교병원장례식장\",\"경상남도 창원시 성산구 삼정자로 9 (성주동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "창원경상국립대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.khidi.or.kr/board/view?linkId=48889047&menuId=MENU01810"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "식약처 제2022-580호 기관명 변경 공고, KHIDI 재게시 lines141-144 직접 확인. KFCPI 2025 PDF page index36 lines1760-1761 구명칭/삼정자로9/055-214-1900과 원자료 일치. 기관명만 변경 적용, 본관 삼정자로11로 변경하지 않음. 현재 운영이나 새 명칭+주소+전화 한 페이지 동시검증 주장하지 않음."
+      }
+    },
+    {
+      "facility_id": "fh-345b94a819897205",
+      "identity_key": "[\"경상북도\",\"영천시\",\"(주)국화원전문장례식장영대병원영천지점\",\"경상북도 영천시 오수1길 10 (오수동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "영남대학교 영천병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://yumc.ac.kr/PageLink.do?link=yc%2F03%2Flocation_04"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Verified public facility alias: own Yeungnam University Yeongcheon Hospital page lists funeral extension7400 with dialing054+330, addressOsu1-gil10, matching raw(주)국화원전문장례식장영대병원영천지점. Own hospital intro lists 장례식장(외주). Gyeongbuk official table supports full raw legal branch name. Different from nearby 영천국화원 atOsu1-gil18/0543314444. Alias only, raw key unchanged."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-37a78220a239b0aa",
+      "identity_key": "[\"인천광역시\",\"미추홀구\",\"송도하나장례문화원\",\"인천광역시 미추홀구 아암대로253번길 36 (학익동 587-78) 송도하나요양병원 - 송도하나장례문화원\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-songdo-hana-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-songdo-hana-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "cc3cd1b1e74ae1f69706a404a9ceff41a1315a181e753a3cc3e8081b3fc527c6",
+          "source_page_git_blob": "3da85aaffc326086696ae79e736bb0945ca056f6"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-394ee5958639a82f",
+      "identity_key": "[\"경기도\",\"부천시\",\"부천성모병원장례식장\",\"경기도 부천시 원미구 소사로 327 (소사동, 가톨릭대부천성모병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "bucheon-stmary-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/bucheon-stmary-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "88e86828fefb3a6392105f8114a4e650e6a38e5702ed0b08cfa867c735931428",
+          "source_page_git_blob": "f832da1391f99fa13b60041ec79b6ccb57e480c1"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "부천성모병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-39a9eb548fe7b0c6",
+      "identity_key": "[\"인천광역시\",\"서구\",\"국제성모장례식장\",\"인천광역시 서구 심곡로100번길 25 (심곡동, 인천국제성모병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-international-stmary-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-international-stmary-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "c3ad1fc02081fe39052791d889c07e5c2d1a7e84917d0a33835fa07ef1efa843",
+          "source_page_git_blob": "9b65be6ecac72a64ee18a3ad8fe114e0d2fc64c0"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-3d9bb4596c2ed5aa",
+      "identity_key": "[\"서울특별시\",\"성북구\",\"고려대학교안암병원장례식장\",\"서울특별시 성북구 안암동5가  126-1 고대안암병원장례식장\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "korea-anam-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/korea-anam-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "865dc8ea72e9413e7bdeb7b4eec03b1cd11f1c8a54572c48f89d5d96b26befad",
+          "source_page_git_blob": "c15017a1576d6e5657f9a7fa59bc60cdc58cd439"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "고려대학교 안암병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/korea-anam-funeral.html#h1"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "repository_h1_alias_not_operation_verification",
+        "evidence": "Existing exact-identity canonical page heading; not proof of current operation."
+      }
+    },
+    {
+      "facility_id": "fh-3f992103e98900ac",
+      "identity_key": "[\"경기도\",\"성남시\",\"분당서울대학교병원 장례식장\",\"경기도 성남시 분당구 구미로173번길 82 (구미동, 분당서울대병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "snubh-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/snubh-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "1f86a45f44da6838a81b3f9c985031bbfebaf3b38185f2de63b0dd6544d92ae7",
+          "source_page_git_blob": "0e5f62b2e09935864824238b9b35e0308cd13ab6"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-41b28bb85458885c",
+      "identity_key": "[\"경기도\",\"안양시\",\"안양메트로병원장례식장\",\"경기도 안양시 만안구 명학로33번길 8 (안양동, 메트로병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://xn--9n2b1b96f31dg5k8ydvoan6f1scca2922a.com/facility/funeral"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-424278f30b47deec",
+      "identity_key": "[\"인천광역시\",\"중구\",\"인천기독병원장례식장\",\"인천광역시 중구 답동로30번길 10 (율목동, 인천기독병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-christian-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-christian-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "85f6d5ad2c570ba496a25eca70c3502e86221d886a887ad70d2d01d4011ac02b",
+          "source_page_git_blob": "26d26a11c54d4fb76d06368b6a71769c6b7dcc57"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-429f39bcfaed19b5",
+      "identity_key": "[\"인천광역시\",\"강화군\",\"강화장례식장\",\"인천광역시 강화군 강화읍 중앙로74번길 16 (남산리)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-ganghwa-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-ganghwa-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "c96b18d6ab548c590032c9feaf5254bd03e3ed5381cb2313a2cd7d23a4b7aa8d",
+          "source_page_git_blob": "7ad2d608d5cc0bcf375c9ddcc2e85ca46e17780a"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-42aedf3f815e77c8",
+      "identity_key": "[\"경기도\",\"양주시\",\"양주한국병원장례문화원 주식회사\",\"경기도 양주시 화합로 1489, B2층 (고암동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "양주 한국병원 장례문화원",
+        "status": "resolved",
+        "sources": [
+          "https://www.yangju.go.kr/www/contents.do?key=504"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official city funeral hall table updated2026-03-20: facility 양주 한국병원 장례문화원; operator 양주 한국병원 장례문화원(주); 화합로1489(고암동),031-928-7444 exactly matches raw record. Search result provided table; direct open timed out."
+      }
+    },
+    {
+      "facility_id": "fh-437f12bddd2d7f0c",
+      "identity_key": "[\"강원특별자치도\",\"평창군\",\"진부장례식장\",\"강원도 평창군 진부면 오대천로 1958-21 (하진부리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.pcfmc.or.kr/facilities09"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-47b2cac8fbbc17f1",
+      "identity_key": "[\"부산광역시\",\"사상구\",\"(주)비이케이더블유 좋은삼선병원지점\",\"부산광역시 사상구 가야대로 326 (주례동, 좋은삼선병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "좋은삼선병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.samsun.or.kr/samsun/contents/view.do?mId=95"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official hospital funeral page names 좋은삼선병원 장례식장, gives 051-310-9292 and footer 가야대로326; both match raw identity record."
+      }
+    },
+    {
+      "facility_id": "fh-5340a66dcf4cc088",
+      "identity_key": "[\"경기도\",\"수원시\",\"아주대학병원장례식장\",\"경기도 수원시 영통구 광교중앙로49번길 46 (원천동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "ajou-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/ajou-funeral.html",
+          "identity_evidence": [
+            "Page official hosp.ajoumc.or.kr link matches raw homepage; university spelling differs"
+          ],
+          "source_page_sha256": "8b16a69c468ed40bc92daecfe89b6dadd53a9dc2ce3396c857992df92250f88d",
+          "source_page_git_blob": "f39c94605f9f720e50be972f7768d6dd019b9bf5"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "아주대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/ajou-funeral.html#h1"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "repository_h1_alias_not_operation_verification",
+        "evidence": "Existing exact-identity canonical page heading; not proof of current operation."
+      }
+    },
+    {
+      "facility_id": "fh-5426b6ab3a740b8b",
+      "identity_key": "[\"서울특별시\",\"종로구\",\"서울적십자병원장례식장\",\"서울특별시 종로구 새문안로 9 (평동, 적십자병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "redcross-seoul-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/redcross-seoul-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "13399faa1cfaffa7e2f1e2a09ba6d182c4bcaa3dfb8a80b4ab2d73dec3c79b5c",
+          "source_page_git_blob": "98e256419020a03558930255534b1f9da65e0f99"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "서울적십자병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.rch.or.kr/web/rchseoulfn/main",
+          "https://museum.seoul.go.kr/www/guide/vis/GHPShow/GHPIntro.jsp?sso=ok"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-5426b6ab3a740b8b",
+          "official_homepage_status": "Legacy /seoul/funeral returned404; current official funeral homepage read successfully.",
+          "identity_evidence": [
+            {
+              "url": "https://www.rch.or.kr/web/rchseoulfn/main",
+              "authority": "Seoul Red Cross Hospital funeral site",
+              "summary": "Official footer identifies 서울적십자병원 장례식장 at 새문안로9,02-2002-8444. Only facility identity used; no private funeral notices copied."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://museum.seoul.go.kr/www/guide/vis/GHPShow/GHPIntro.jsp?sso=ok",
+              "authority": "Seoul Museum of History",
+              "summary": "Official Gyeonghuigung introduction locates historic palace on Saemunan-ro. Generic traditional materials are symbolic inspiration, not a documentary image of the palace or facility."
+            }
+          ],
+          "photo_reuse": "none"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-547e38a30042b708",
+      "identity_key": "[\"서울특별시\",\"중구\",\"국립중앙의료원 장례식장\",\"서울특별시 중구 을지로 245 (을지로6가, 국립중앙의료원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "nmc-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/nmc-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "7efca681d83eba58a671aaf98b33e0b3556cba6ca20315cd53cecf3839883826",
+          "source_page_git_blob": "68f6b2ebc2e30de97f435d76ae57011182fd9f0d"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-5610b06ff087f8a6",
+      "identity_key": "[\"전라남도\",\"광양시\",\"광양서울병원장례식장\",\"전라남도 광양시 진등길 93 (마동, 광양서울병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://gwangyang.go.kr/boardDownload.es?bid=0207&list_no=160020&seq=1"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-56517ddd34385dff",
+      "identity_key": "[\"경기도\",\"의정부시\",\"의정부을지대학교병원\",\"경기도 의정부시 동일로 712,평온관 (금오동, 을지대학교의정부캠퍼스및부속병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "의정부을지대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://funeral.uemc.ac.kr/info/info_pg02.jsp"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official funeral site page title/footer explicitly 의정부을지대학교병원 장례식장; 동일로712 평온관,031-951-7444 both match source. Raw hospital-only label retained in inventory."
+      }
+    },
+    {
+      "facility_id": "fh-573ee920a320593b",
+      "identity_key": "[\"경기도\",\"하남시\",\"하남시 마루공원(장례식장)\",\"경기도 하남시 하남대로545번길 22-30 (천현동, 종합공설장사시설)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "하남시 마루공원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.huic.co.kr/www/selectMortuaryStatusWebList.do?key=144"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official public operator page hierarchy 하남시 마루공원 > 장례식장, lines258-264 exact 하남대로545번길22-30 and031-795-2222; parentheses normalized only."
+      }
+    },
+    {
+      "facility_id": "fh-583f39feb7e46c4d",
+      "identity_key": "[\"인천광역시\",\"연수구\",\"더연수장례식장\",\"인천광역시 연수구 벚꽃로 122 (연수동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-yeonsu-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-yeonsu-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "267877a28e52904d65c00a3cfe9937ad619a63e1bdf6d50588efc58f641a4322",
+          "source_page_git_blob": "19f24633db2d21296b54d5183fa8f55aca2ddbab"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "연수장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.ysf.kr/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official current title/footer; exact address 벚꽃로122 and phone032-819-1024 match dataset /items/744."
+      }
+    },
+    {
+      "facility_id": "fh-5b6b19987c3ba022",
+      "identity_key": "[\"부산광역시\",\"영도구\",\"주식회사구민장례식장\",\"부산광역시 영도구 절영로 16 (대교동1가)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "구민장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.busan.go.kr/depart/welgrand030503"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Busan municipal official list names 구민장례식장 at 영도구 절영로16 and0514160004, exact raw 주식회사구민장례식장 address/phone. Official public display alias removes legal prefix with direct evidence; key preserved."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-5d47aa05bd85c57d",
+      "identity_key": "[\"서울특별시\",\"중랑구\",\"서울특별시 서울의료원 장례식장\",\"서울특별시 중랑구 신내로 156후문 (장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "seoul-medical-center-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/seoul-medical-center-funeral.html",
+          "identity_evidence": [
+            "Page official as.seoulmc.or.kr/funeral matches raw 서울특별시 서울의료원 장례식장 homepage"
+          ],
+          "source_page_sha256": "8155fa6655523b373fb45e10f9b10d54486817063027d7d4a9c470a2711e7657",
+          "source_page_git_blob": "8d697815cb82ee6deb65ce96d1a9e61c6552a1d1"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "서울의료원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://as.seoulmc.or.kr/funeral/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "verified_display_alias",
+        "evidence": "Official funeral page directly opened2026-10-31. Title identifies 서울의료원 장례식장; lines25/28 show funeral02-2276-7671~2 and 신내로156 matching raw. Administrative prefix omitted only."
+      }
+    },
+    {
+      "facility_id": "fh-5db4e4acb251c327",
+      "identity_key": "[\"전북특별자치도\",\"익산시\",\"원광대학교병원장례문화원(천도장례식장)\",\"전라북도 익산시 무왕로 895 (신동) 원광대학교병원 장례식장\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "원광대학교병원 장례문화원",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "KFCPI2025 exact raw 원광대학교병원장례문화원(천도장례식장),무왕로895,0638551734. Official hospital indexed funeral pages titled 원광대학교병원 장례문화원 with same895address; www.wkuh.org/funeral direct access blocked, not closure. Yonhap2026-02-21 primary report corroborates official display name and0638551734. Use official shorter display alias; raw historicalparenthetical preserved. Supporting official indexed URL https://eirb.wkuh.org/funeral/contents.do?a_num=12303445&b_num=16483&proc_type=view and primary https://www.yna.co.kr/view/AKR20260221028200061 ; no personal obituary details retained."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-5f065330a9727d6f",
+      "identity_key": "[\"인천광역시\",\"서구\",\"인천연세병원장례식장\",\"인천광역시 서구 승학로 320지하장례식장 (연희동, 연세병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-yonsei-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-yonsei-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "9e02af0bdb607a8d664442cb089d1e03906fa63f42773c8f5f45695b342d361f",
+          "source_page_git_blob": "521c6bd8d0ad84b99b647171d7ce7c301f418cd4"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-60067320309eaf47",
+      "identity_key": "[\"전북특별자치도\",\"무주군\",\"무주군보건의료원장례식장\",\"전라북도 무주군 무주읍 한풍루로 413 (당산리, 무주군보건의료원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.jeonbuk.go.kr/board/list.jeonbuk?boardId=BBS_0000036&listCel=1&listRow=10&menuCd=DOM_000000104001006004&paging=ok&startPage=9",
+          "https://www.hira.or.kr/ra/hosp/hospInfoAjax.do?ykiho=JDQ4MTYyMiM2MSMkMSMkNiMkOTIkNDgxNzAyIzExIyQxIyQzIyQ3OSQzNjE0ODEjNDEjJDEjJDQjJDgz",
+          "https://assem.muju.go.kr/minutes/svc/web/cms/mnts/SvcMntsViewer.php?mode=spkr1&schSn=2699&spkrCd=MBR8030"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-62c46f9ed2286b83",
+      "identity_key": "[\"전북특별자치도\",\"전주시 덕진구\",\"시티장례문화원\",\"전라북도 전주시 완산구 콩쥐팥쥐로 1614 (상림동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-63ef6bbb2292c3cf",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"신화장례식장\",\"서울특별시 영등포구 영중로 100 (영등포동7가, 신화요양병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeongdeungpo-shinhwa-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-shinhwa-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "c51030a33ae9d2c8994aa3754514cf7fea771c4c062fb8abf7b98fb5fcc14c34",
+          "source_page_git_blob": "0bb175e51074db2ea8921803078471e2ee9ebf59"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-64006f4c9369161f",
+      "identity_key": "[\"경기도\",\"성남시\",\"주식회사 분당제생병원장례식장\",\"경기도 성남시 분당구 서현로180번길 20 (서현동, 분당제생병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "분당제생병원장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://snvision.seongnam.go.kr/20174"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Seongnam official municipal publication 2024-12-26 names 분당제생병원 장례식장. Daejin Medical Foundation official 2023 board PDF separately names 분당제생병원 장례식장. Public name used without corporate prefix. Name-only scenic image, not operating-status assertion."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-65be8cf68fd6af81",
+      "identity_key": "[\"인천광역시\",\"연수구\",\"인천적십자병원장례식장\",\"인천광역시 연수구 원인재로 263 (연수동,인천적십자병원장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-redcross-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-redcross-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "bcebfa5f9feaba63279748f05744a4774fc54982709d75683769a50f3b028989",
+          "source_page_git_blob": "1e79ef7787c5b0a974e88fece07a472e509d5523"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-669b879587b5784e",
+      "identity_key": "[\"광주광역시\",\"서구\",\"(유)브이아이피장례타운\",\"광주광역시 서구 풍서좌로 237 (매월동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "VIP장례타운",
+        "status": "resolved",
+        "sources": [
+          "https://vipfuneral.kr/index.php"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official own-site indexed page says VIP장례타운, 풍서좌로237,062-521-4444; footer legal (유)브이아이피장례타운 matches raw identity. Public display alias verified. Direct fetch502, indexed official content checked. No administrative name or current-operation claim in image."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-669e4c8232c55198",
+      "identity_key": "[\"부산광역시\",\"부산진구\",\"온종합병원 장례식장\",\"부산광역시 부산진구 가야대로 721 (당감동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "온병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://onhospital.org/page_DMfA19"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Own hospital funeral page explicitly 온병원 장례식장,0516070111; footer 가야대로721 matches raw 온종합병원 장례식장. KFCPI official p3 also uses 온병원 장례식장 same address/phone. Official current display alias adopted; source identity key retained."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-675bfc3af5dcc006",
+      "identity_key": "[\"경기도\",\"부천시\",\"다니엘병원장례식장(구 늘푸른장례식장)\",\"경기도 부천시 원미구 중동로 361 (약대동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "다니엘병원장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "KFCPI official funeral list confirms 다니엘병원장례식장(구 늘푸른장례식장), 중동로361 and032-678-4242. Display uses current-name portion 다니엘병원장례식장; historical parenthetical omitted, raw identity unchanged."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-682c43d6ce7c3ea9",
+      "identity_key": "[\"경기도\",\"평택시\",\"금성장례식장\",\"경기도 평택시 진위면 남부대로 655 (동천리)\"]",
+      "public_notice": {
+        "text": "2025년 공공 현황자료에 휴업 표기가 있어 이미지 제공을 보류합니다. 현재 운영상태는 별도 확인이 필요합니다.",
+        "checked_at": "2026-10-31T10:57:16.549785+00:00",
+        "requires_hold": true,
+        "source_url": "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+      },
+      "pages": []
+    },
+    {
+      "facility_id": "fh-6a78dc9195d042d9",
+      "identity_key": "[\"충청남도\",\"천안시 동남구\",\"로고스요양병원 장례식장\",\"충청남도 천안시 동남구 청수로 123-10 (구성동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": true,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-6bfcdbe6bab68010",
+      "identity_key": "[\"경상남도\",\"김해시\",\"김해한솔병원장례식장\",\"경상남도 김해시 김해대로 2379 (부원동, 김해한솔재활요양병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-6c890facc23c820b",
+      "identity_key": "[\"전라남도\",\"고흥군\",\"녹동농협 장례식장\",\"전라남도 고흥군 도양읍 거금로 80 (봉암리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.goheung.go.kr/welfare/contentsView.do?pageId=welfare76",
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.nhhanaro.co.kr/nahh_70095.do?boardId=1&id=nahh001_010200000000"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-6decce3893393809",
+      "identity_key": "[\"인천광역시\",\"동구\",\"인천광역시의료원 장례식장\",\"인천광역시 동구 방축로 217 (송림동, 인천광역시의료원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-medical-center-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-medical-center-funeral.html",
+          "identity_evidence": [
+            "Visible official-information paragraph names 인천광역시의료원; page official icmc.or.kr matches raw www.icmc.or.kr"
+          ],
+          "source_page_sha256": "def2bbee435df772c6209a76593c9ef90baa306a24bc02932cb1d86579c26634",
+          "source_page_git_blob": "29c999566f55e7c47fb7421d98bddf92c1780b92"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "인천의료원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.dahamsangjo.co.kr/incheon-medical-center-funeral.html",
+          "https://web1.icmc.or.kr/",
+          "https://icmc.or.kr/guide/guide2.php?msort=45&tsort=4"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "reason": "The visible target page H1 and title use the common shorter facility name. Raw dataset keeps full 인천광역시의료원 장례식장. Both source record homepage and target official link point to icmc.or.kr.",
+          "page_url": "https://www.dahamsangjo.co.kr/incheon-medical-center-funeral.html",
+          "official_homepage": "https://web1.icmc.or.kr/",
+          "source_record_row": 729,
+          "page_official_link": "https://icmc.or.kr/guide/guide2.php?msort=45&tsort=4",
+          "page_blob": "29c999566f55e7c47fb7421d98bddf92c1780b92",
+          "repository_commit": "5b72a3647b88318eb295e627505def69cd8524f4",
+          "page_text_evidence": "Page paragraph explicitly says 인천광역시의료원 공식 주차안내; H1 says 인천의료원 장례식장. Common-name display alias; full raw facility name retained."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-6e50c8a0755da315",
+      "identity_key": "[\"강원특별자치도\",\"강릉시\",\"더원실업 우란장례식장\",\"강원도 강릉시 옥가로 30 (옥천동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "강릉우란 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://state.gwd.go.kr/portal/partinfo/senior/funeral/funeralHall"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official provincial row16; 강릉시 옥가로30(옥천동),649-0135 exact match. KFCPI2025 PDF p17 row913 corroborates corporate+hall full label."
+      }
+    },
+    {
+      "facility_id": "fh-717890fd8001ccb0",
+      "identity_key": "[\"서울특별시\",\"은평구\",\"청구성심병원장례식장\",\"서울특별시 은평구 통일로 873 (갈현동, 청구성심병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://cgss.co.kr/funeral"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-73733839697d6a7d",
+      "identity_key": "[\"강원특별자치도\",\"춘천시\",\"호반병원장례식장\",\"강원도 춘천시 옛경춘로 663 (삼천동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "호반요양병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://state.gwd.go.kr/portal/partinfo/senior/funeral/funeralHall"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "source_url": "https://state.gwd.go.kr/portal/partinfo/senior/funeral/funeralHall",
+          "name": "호반요양병원장례식장",
+          "address": "춘천시 옛경춘로 663 (삼천동)",
+          "telephone": "033-252-0046",
+          "source_updated": "2026-08-03"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-780ad246b914ffde",
+      "identity_key": "[\"충청남도\",\"보령시\",\"대천역전장례식장\",\"충청남도 보령시 해안로 45 (내항동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://eminwon.brcn.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&countYn=Y&data_open_yn=1&initValue=Y&jndinm=OfrBcAdvNewsEJB&method=selectOfrNews&methodnm=selectOfrNewsMgt&news_epct_no=15927&subCheck=N"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-793ccff9295f4aae",
+      "identity_key": "[\"인천광역시\",\"강화군\",\"서해장례문화원\",\"인천광역시 강화군 강화읍 중앙로74번길 10 (남산리)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-seohae-funeral-center.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-seohae-funeral-center.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "7bf0d04069d10a69f24e833adc7ae49d4ee0808e4746a7eda563fdec87b5ff9e",
+          "source_page_git_blob": "0c3365aa1442bc5933cf923b33d676bb30b7d8e8"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-79e38f4275bb8d21",
+      "identity_key": "[\"인천광역시\",\"강화군\",\"참사랑장례식장\",\"인천광역시 강화군 선원면 중앙로 271 (창리, 참사랑장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-charmsarang-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-charmsarang-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "7bdb964fe9616a345150235c7318527862555ee4aa2765aae4a1d664c867dc11",
+          "source_page_git_blob": "9a18b99b9163e7b4d1ad147c47632f663262c623"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-7c3f38e328646e82",
+      "identity_key": "[\"서울특별시\",\"동작구\",\"서울특별시보라매병원장례식장\",\"서울특별시 동작구 보라매로5길 20 (신대방동, 서울특별시보라매병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "boramae-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/boramae-funeral.html",
+          "identity_evidence": [
+            "Page phone 02-836-6900, road 보라매로5길 20, official funeral.brmh.org match"
+          ],
+          "source_page_sha256": "f8f500e44a78c6c1ef2c6ce7a7a10f8b91cd9023ca16e756afda519efeace0d2",
+          "source_page_git_blob": "4803bbc1388969b924b435fb8a7f155f3162b32e"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "보라매병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://funeral.brmh.org/cms_manage/view.do?site=035&user_code=019001000",
+          "https://parks.seoul.go.kr/content.do?key=2604300015"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-7c3f38e328646e82",
+          "official_homepage_status": "Official funeral usage guide found/read through current search result.",
+          "identity_evidence": [
+            {
+              "url": "https://funeral.brmh.org/cms_manage/view.do?site=035&user_code=019001000",
+              "authority": "Seoul Metropolitan Boramae Hospital funeral site",
+              "summary": "Official funeral site identifies Seoul National University-operated Seoul Metropolitan Boramae Hospital funeral hall. No prices copied."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://parks.seoul.go.kr/content.do?key=2604300015",
+              "authority": "Seoul City Parks",
+              "summary": "Official Boramae Park entry lists lawn and azalea garden; these are editorial botanical motifs."
+            }
+          ],
+          "photo_reuse": "none"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-7e4ce39fc20b21ff",
+      "identity_key": "[\"전라남도\",\"고흥군\",\"녹동현대병원장례식장\",\"전라남도 고흥군 도양읍 차경구렁목길 209 (용정리, 녹동현대병원장례식장)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": true,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.goheung.go.kr/welfare/contentsView.do?pageId=welfare76"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-7e51d1977cb05ef9",
+      "identity_key": "[\"강원특별자치도\",\"정선군\",\"정선병원장례식장\",\"강원특별자치도 정선군 정선읍 봉양1길 145 (봉양리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://state.gwd.go.kr/portal/partinfo/senior/funeral/funeralHall"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-7ee643f8a49e4ce9",
+      "identity_key": "[\"충청북도\",\"충주시\",\"충주병원장례식장(주)\",\"충청북도 충주시 중심1길 12 (문화동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-7f315c44a080eb24",
+      "identity_key": "[\"경기도\",\"의정부시\",\"경기도의료원 의정부병원장례식장\",\"경기도 의정부시 흥선로 142 (의정부동, 경기도의정부의료원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "gpmc-uijeongbu-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/gpmc-uijeongbu-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "9465d0cfaca6c6efa3b57451c804b41d0fc82b9dac4d033a473957f70e212137",
+          "source_page_git_blob": "42f74e6c222943f6437491f50a4df7c65a062528"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "경기도의료원 의정부병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-7f40f1bc4ebc4978",
+      "identity_key": "[\"경기도\",\"화성시\",\"조암장례식장\",\"경기도 화성시 장안면 사랑길 111 (사랑리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.casuwon.or.kr/info/notice/113558"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-7fb5f4e0252881af",
+      "identity_key": "[\"인천광역시\",\"남동구\",\"길병원장례식장\",\"인천광역시 남동구 인주대로653번길 56 (구월동, 길병원장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-gil-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-gil-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "d89b29394639e981b8a2b062a7f61371d72c4698b63a6f36eac219e6c17c067d",
+          "source_page_git_blob": "ff72e131eb4d46efaf20f3c8df7b9123aa6494ac"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-8021f44ed23d49dd",
+      "identity_key": "[\"서울특별시\",\"강동구\",\"한국보훈복지의료공단중앙보훈병원\",\"서울특별시 강동구 진황도로61길 53 (둔촌동, 중앙보훈병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "중앙보훈병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.bohun.or.kr/seoulfuneral/lm/location/locationMapView.do?mi=35298"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Own official funeral site names 중앙보훈병원 장례식장 and gives 진황도로61길53,0222251004 exactly matching raw 한국보훈복지의료공단중앙보훈병원. Explicit funeral-specific official display name used, raw key retained."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-808a8ccb955c3a56",
+      "identity_key": "[\"경기도\",\"용인시\",\"용인서울병원장례식장\",\"경기도 용인시 처인구 고림로 81 (고림동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-82b4a3a083a0e351",
+      "identity_key": "[\"전북특별자치도\",\"익산시\",\"(유)동이리장례식장\",\"전라북도 익산시 서동로 5 (인화동2가)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "동이리장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.jeonbuk.go.kr/board/list.jeonbuk?boardId=BBS_0000036&menuCd=DOM_000000104001006004&paging=ok&startPage=6"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official Jeonbuk public directory names 동이리장례식장,서동로5,0638434444 exact raw identity. Official display alias omits legal prefix; raw(유)동이리장례식장 preserved in inventory. KFCPI2025 also matches."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-83504c602ef266a8",
+      "identity_key": "[\"강원특별자치도\",\"삼척시\",\"삼척의료원장례식장\",\"강원도 삼척시 오십천로 418 (남양동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": true,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://state.gwd.go.kr/portal/administration/finance/privateinvestment/situation"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-847c0ea8f2a33c9e",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"여의도성모장례식장\",\"서울특별시 영등포구 63로 10 (여의도동, 여의도성모병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeouido-stmary-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeouido-stmary-funeral.html",
+          "identity_evidence": [
+            "Page 63로10 and official yfh.catholicfuneral.co.kr match raw 여의도성모장례식장"
+          ],
+          "source_page_sha256": "e2812cd6152e8e9e948455af6bfe07f3ab0c8bed5910d09b8ada04cd4d1c4b8a",
+          "source_page_git_blob": "68e6bc045444d28945bb7ed5536b7d24c5f88936"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "여의도성모병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Facility source snapshot and mapped display name retained; official funeral homepage returned502, not live operating verification. Seoul parks source documents Saetgang ecological woodland, natural banks and observation decks."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-86960e1fabaa32fc",
+      "identity_key": "[\"서울특별시\",\"송파구\",\"서울아산병원 장례식장\",\"서울특별시 송파구 올림픽로43길 88 (풍납동, 서울아산병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "asan-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/asan-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "1567a6eb9f2191f76f921d53ad0f484873fd15ec7dafee1485bddf9b407bf0e6",
+          "source_page_git_blob": "067809e274ac3ce78634b4e24b70edb3e17cba86"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-86a371ea3b2993d5",
+      "identity_key": "[\"경상남도\",\"양산시\",\"보람상조개발(주)양산부산대병원장례식장\",\"경상남도 양산시 물금읍 금오로 20 (양산부산대학교병원 장례식장)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "양산부산대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.pnuyh.or.kr/pnuyh/hospital/funeral/funeral-information.do"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Hospital own official funeral page uses 양산부산대학교병원 장례식장 and055-372-4447. Yangsan official https://yangsan.go.kr/welfare/contents.do?mid=0502060000 lists same public name,금오로20,phone matching raw 보람상조개발(주)양산부산대병원장례식장 tuple. Official alias verified; no corporate affiliation claim added."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-86f0d1f6af7d19cf",
+      "identity_key": "[\"인천광역시\",\"서구\",\"검단탑병원장례식장\",\"인천광역시 서구 청마로19번길 5 (당하동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-geomdan-top-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-geomdan-top-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "d1f479b7352ba51bfc95a4a84f1016fb0154682be5fa83a9be63b0a6e7f16f8a",
+          "source_page_git_blob": "c03a86032ef038dad7a879966ad94356a4c3cb0b"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-8a62882680bdc491",
+      "identity_key": "[\"인천광역시\",\"중구\",\"인하대병원장례식장\",\"인천광역시 중구 인항로 27 (신흥동3가, 인하대학병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "inha-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/inha-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "fb00b757450e214abdeb38613a58b221ba6b130b405fee414a3f57ccfa7a022d",
+          "source_page_git_blob": "c880e93196d5d19db0d6ce536114ecfe9ea4c979"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "인하대병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/inha-funeral.html#h1"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "repository_h1_alias_not_operation_verification",
+        "evidence": "Existing exact-identity canonical page heading; not proof of current operation."
+      }
+    },
+    {
+      "facility_id": "fh-8c6ead25018e3971",
+      "identity_key": "[\"인천광역시\",\"강화군\",\"강화병원장례식장\",\"인천광역시 강화군 강화읍 강화대로312번길 11 (갑곳리, 강화병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-ganghwa-hospital-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-ganghwa-hospital-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "873f6c2a6197335024f2fe7c70ff8e83b3c1f74c39f803a895d270441ce17371",
+          "source_page_git_blob": "6ab730501b1dc05298a0ab32e496f88efd29e612"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-8d933f73efa7d7bd",
+      "identity_key": "[\"충청남도\",\"예산군\",\"예산명지병원장례식장\",\"충청남도 예산군 예산읍 신례원로 26 (관작리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-8df8f7046e20fb12",
+      "identity_key": "[\"인천광역시\",\"남동구\",\"남동스카이장례식장\",\"인천광역시 남동구 앵고개로697번길 41 (고잔동, 남동스카이장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-namdong-sky-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-namdong-sky-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "299696a5f66df6c1bfb0fb6a3d059b17ffc21bc7b4b9ed36260ba92597ed5512",
+          "source_page_git_blob": "555853febfc5937bc6d7cfe25da3333d55724058"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-90b44015e055d954",
+      "identity_key": "[\"경상남도\",\"창원시 진해구\",\"세명병원장례식장\",\"경상남도 창원시 진해구 용원서로 42지하1층 (용원동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-96b153730e4957c5",
+      "identity_key": "[\"경기도\",\"고양시 일산동구\",\"국민건강보험공단일산병원장례식장\",\"경기도 고양시 일산동구 일산로 100 (백석동, 국민건강보험공단일산병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "nhis-ilsan-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/nhis-ilsan-funeral.html",
+          "identity_evidence": [
+            "Page 031-900-0444 and official nhimc.or.kr/funeral match 국민건강보험공단일산병원장례식장"
+          ],
+          "source_page_sha256": "19565618146e8395b65960945ab709199237b00803b81d4bd8c2f78acb2b921a",
+          "source_page_git_blob": "c518fb55c48753b8acf34c7ba549f9798b901b79"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "국민건강보험 일산병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.nhimc.or.kr/funeral/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "verified_display_alias",
+        "evidence": "Official hospital links funeral subsite; directly opened2026-10-31. Exact display name, funeral031-900-0444/0447 and 일산로100 confirm raw 국민건강보험공단일산병원장례식장 identity. No personal funeral notice data retained."
+      }
+    },
+    {
+      "facility_id": "fh-99066f52b2e91b52",
+      "identity_key": "[\"강원특별자치도\",\"강릉시\",\"강릉아산병원장례식장\",\"강원도 강릉시 사천면 방동길 38 (방동리,강릉아산병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "gangneung-asan-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/gangneung-asan-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "cbc98b0f243611855d76217e19991fedd0fbc59b01f2f96f839fd4d40ac9c2f7",
+          "source_page_git_blob": "abe7f39e0834326c5ea4b4a46ea2fcc755686114"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "강릉아산병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://gnah.co.kr/kor/Main.do",
+          "https://www.gn.go.kr/mu/muColctWebView.do?artistNo=23&colctNo=40&key=6623"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-99066f52b2e91b52",
+          "official_homepage_status": "Official hospital root read successfully; funeral link to https://gnah.co.kr/funeral/Main.do present, but funeral subpage returned cache miss. No operation guarantee.",
+          "identity_evidence": [
+            {
+              "url": "https://gnah.co.kr/kor/Main.do",
+              "authority": "Gangneung Asan Hospital",
+              "summary": "Hospital official page gives 방동길38 and explicit 장례식장 navigation link."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://www.gn.go.kr/mu/muColctWebView.do?artistNo=23&colctNo=40&key=6623",
+              "authority": "Gangneung Municipal Art Museum",
+              "summary": "Official description notes the coastal windbreak pine forest of Gyeongpo; only geographic fact used, not the artist's painting or visual style."
+            }
+          ],
+          "photo_reuse": "none; no downloaded photos or painting references used"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-9e39f6a54fd30928",
+      "identity_key": "[\"서울특별시\",\"동대문구\",\"경희의료원장례식장\",\"서울특별시 동대문구 경희대로 23,경희의료원장례식장 (회기동, 경희의료원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "kyunghee-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/kyunghee-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "39be3b983aaa52f914954b0e352ebf13ad39c8272869332a571e07efe774fe7e",
+          "source_page_git_blob": "fb91d83dd5907982e494c02e9b062909176895da"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "경희의료원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-9f520e9e421f1bba",
+      "identity_key": "[\"경상남도\",\"밀양시\",\"행복한병원장례식장\",\"경상남도 밀양시 하남읍 수산중앙로 56-2 (수산리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-9f6ae5caec2f00c2",
+      "identity_key": "[\"인천광역시\",\"서구\",\"보람인천장례식장\",\"인천광역시 서구 경명대로 468 (경서동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-boram-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-boram-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "eeb2a07335acdba27f059d8c9203ba426a5a9d62f99a1dbd6abd4118715370b4",
+          "source_page_git_blob": "811b6d5726a0f152a29e8668cd76ea20b1e423de"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-a008625215cd7ec1",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"교원예움 서서울장례식장\",\"서울특별시 영등포구 선유로 101,교원예움서서울장례식장 (양평동1가)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeongdeungpo-kyowonyeum-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-kyowonyeum-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "3a26601968a322cd1f650a0a624e5646a1c49cdcd3b9ea71220171180d379a5a",
+          "source_page_git_blob": "46d65693a88b0d175df42f8bbab328433a6b2061"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-a1cdec8ec8c1f991",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"한림대 강남성심병원장례식장\",\"서울특별시 영등포구 신길로 1 (대림동, 강남성심병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeongdeungpo-kangnam-hallym-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-kangnam-hallym-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "e107be34b6f6e6099703b64cb8854955f6d64816e361d8026253111a8df0d7d4",
+          "source_page_git_blob": "39d638a07068bd2cd123290f0a142dc62e4b53e8"
+        }
+      ],
+      "canonical_reconciliation": {
+        "status": "consolidated_to_established_url",
+        "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-kangnam-hallym-funeral.html",
+        "reason": "Existing sitemap lastmod 2026-10-06 and preexisting exact facility mapping precede second URL introduced 2026-11-02. Same facility name, locality and 02-833-3794. Preserve both readable pages, consolidate canonical/internal links; no redirect."
+      }
+    },
+    {
+      "facility_id": "fh-a297e72351496153",
+      "identity_key": "[\"인천광역시\",\"미추홀구\",\"(유)성인천장례식장\",\"인천광역시 미추홀구 석정로 6 (숭의동, 인천한방병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-sungincheon-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-sungincheon-funeral.html",
+          "identity_evidence": [
+            "Page 석정로6 and 032-891-4444 match raw (유)성인천장례식장"
+          ],
+          "source_page_sha256": "35db5ec5a04d64c8008a5334678a783076624b3e81d469654ddeb71f31eea5d6",
+          "source_page_git_blob": "01dff3fbbbdb05b9af94956804c280b1e093833b"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "성인천장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "common_facility_descriptor",
+        "evidence": "KFCPI2025 preserved table line390 gives (유)성인천장례식장 / 미추홀구 석정로6 /032-891-4444, matching raw. Shared exact facility core only, corporate prefix omitted. Does not establish a separate registered trade name/current operator."
+      }
+    },
+    {
+      "facility_id": "fh-abadb10bbd5e7f3e",
+      "identity_key": "[\"강원특별자치도\",\"춘천시\",\"강원대학교병원장례식장\",\"강원도 춘천시 백령로 156 (효자동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "knuh-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/knuh-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "b6c51831834bdaf0744b08c84c7b4ee04d6b2b57d02aa3fc99b57b6c4c7bb458",
+          "source_page_git_blob": "c9f539d0fc04e03f3bf697a4a764fbcd2cd20e7e"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "강원대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-ad825640d8d8cb0e",
+      "identity_key": "[\"서울특별시\",\"서대문구\",\"연세대학교 신촌장례식장\",\"서울특별시 서대문구 연세로 50-1 (신촌동, 연세의료원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "severance-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/severance-funeral.html",
+          "identity_evidence": [
+            "Page 신촌세브란스병원; live raw official yonseifuneral.com names 연세대학교 신촌장례식장, same 신촌 branch. Not 강남/용인/원주"
+          ],
+          "source_page_sha256": "61b5dff6fb11d2f666b16e27f3228976eb05b95f9c672458318858b7eaf07fc6",
+          "source_page_git_blob": "331e6ae1184f6ecd93ae92406b8d4933792e9974"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "신촌세브란스병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.yonseifuneral.com/am/am_3.asp",
+          "https://sev.severance.healthcare/news/news/bid-notice.do?articleNo=123898&mode=view",
+          "https://mirae.yonsei.ac.kr/bgtscntPn/wj/17/1438/download.do"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official Yonsei funeral site identifies 연세대학교 신촌장례식장, and medical-center own2024 procurement notice calls the exact 연세로50-1 building 세브란스병원 장례식장.2025 university handbook separately identifies 신촌 hall at the medical-center complex. Existing source name and phone02-2227-7500 retained. 신촌 distinguishes branch; descriptive institutional alias, not a legal registered-name change."
+      }
+    },
+    {
+      "facility_id": "fh-b28cfebe218f312d",
+      "identity_key": "[\"인천광역시\",\"부평구\",\"에스엘 부평지점 세림병원 장례식장\",\"인천광역시 부평구 부평대로 175 (청천동, 부평세림병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-serim-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-serim-funeral.html",
+          "identity_evidence": [
+            "Page 부평대로175 and 032-523-8844 match 에스엘 부평지점 세림병원 장례식장"
+          ],
+          "source_page_sha256": "81db356b19c19e8ce42a25f7782aa0b4d7eef733f81516bab0b93c325eb4269f",
+          "source_page_git_blob": "acbc1c87fb3485d8c567dd9b40698e973f83c22c"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "세림병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Mapped display name 세림병원 장례식장 and address/phone in source snapshot; candidate serimfh.com timed out; no live-operation assertion. Official Bupyeong release supports Gulpocheon ecological stream recreation motif."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-b3acd1dd47765c78",
+      "identity_key": "[\"서울특별시\",\"송파구\",\"경찰병원장례식장\",\"서울특별시 송파구 송이로 123 (가락동, 국립경찰병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "songpa-police-hospital-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/songpa-police-hospital-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "6dc23b323e2ec36e1dd2dde6b2cd707371519afc3df5454fa4a1eb4888113e78",
+          "source_page_git_blob": "d18831461a3ba91267df2ddea0d6499f83b86e12"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-b4f695b286900658",
+      "identity_key": "[\"경기도\",\"성남시\",\"분당차병원장례식장\",\"경기도 성남시 분당구 야탑로 59 (야탑동, 분당차병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "bundang-cha-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/bundang-cha-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "b607a12665c3dc1c43c1202d5668063e4ae4557925ffdc3c1d8c1e25d73b7293",
+          "source_page_git_blob": "2852bfc770d35d36a66f2caf95237f1c17dbd2ba"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "분당차병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://bundang.chamc.co.kr/funeral/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official hospital funeral page title and telephone match. City tourism page describes Tancheon paths, silver miscanthus and cosmos."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-b699c1e7968ffd4a",
+      "identity_key": "[\"인천광역시\",\"계양구\",\"(주)세종병원장례식장\",\"인천광역시 계양구 계양문화로 20 (작전동, 인천세종병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-sejong-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-sejong-funeral.html",
+          "identity_evidence": [
+            "Page 계양문화로 20 and 032-240-8444 match raw (주)세종병원장례식장; do not use malformed raw homepage"
+          ],
+          "source_page_sha256": "07aa62bcf2e4741eb7a0c1483c0c7ff5dc6af0ebfba6edb8e10be6370f9328dd",
+          "source_page_git_blob": "9cf707f8a1be87da151aeadb7af15b7b354cb670"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "인천세종병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://incheon.sejongh.co.kr/my_information/user_content?Depth=3&cate1=177&cate2=278&cate3_idx=280&html_mode=html",
+          "https://itour.incheon.go.kr/thmtour/cardnews/detail.do?cotId=CAR25091111243853354"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-b699c1e7968ffd4a",
+          "official_homepage_status": "Current official hospital funeral information read successfully; malformed raw homepage not used.",
+          "identity_evidence": [
+            {
+              "url": "https://incheon.sejongh.co.kr/my_information/user_content?Depth=3&cate1=177&cate2=278&cate3_idx=280&html_mode=html",
+              "authority": "Incheon Sejong Hospital",
+              "summary": "Dedicated funeral section gives032-240-8444 and footer계양문화로20, matching corporate raw facility. No price/discount/service claims reused."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://itour.incheon.go.kr/thmtour/cardnews/detail.do?cotId=CAR25091111243853354",
+              "authority": "Incheon Tourism Organization",
+              "summary": "Official tourism entry describes Gyeyang Araon waterway segment and night-light scenery."
+            }
+          ],
+          "photo_reuse": "none"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-b8ae8624c5030670",
+      "identity_key": "[\"대구광역시\",\"동구\",\"현대S바른병원장례식장\",\"대구광역시 동구 해동로 119 (입석동)\"]",
+      "public_notice": {
+        "text": "2025년 공공 현황자료에 휴업 표기가 있어 이미지 제공을 보류합니다. 현재 운영상태는 별도 확인이 필요합니다.",
+        "checked_at": "2026-10-31T12:10:39.170508+00:00",
+        "requires_hold": true,
+        "source_url": "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+      },
+      "pages": []
+    },
+    {
+      "facility_id": "fh-b924b70dfd895c1c",
+      "identity_key": "[\"인천광역시\",\"미추홀구\",\"인천사랑병원장례식장\",\"인천광역시 미추홀구 미추홀대로 726 (주안동, 인천사랑병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-sarang-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-sarang-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "9fb3e276477a22949aee9f6790a4f88889c25bc8c9b2296b2f87682699f421ef",
+          "source_page_git_blob": "fd8654817fc15938c780a890d36dcb54e8a4ac68"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-b970e871f2c9cc90",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"성애장례식장\",\"서울특별시 영등포구 여의대방로53길 22 (신길동, 성애병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeongdeungpo-sungae-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-sungae-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "5a65e8d1450f73c4380c8dec15c96782e0b1f9320ed81221472be855b130e70d",
+          "source_page_git_blob": "84cf187a3489098a6e18b1e855d8f65dd44dc7e0"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-bbc336ac56df2e55",
+      "identity_key": "[\"울산광역시\",\"동구\",\"울산대학교병원장례식장\",\"울산광역시 동구 대학병원로 32 (전하동, 울산대학교병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": true,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-bc33e020709e5ff5",
+      "identity_key": "[\"강원특별자치도\",\"횡성군\",\"횡성삼성병원장례식장\",\"강원특별자치도 횡성군 횡성읍 삼일로81번길 40 (읍하리, 횡성삼성병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-bc65b288aa78c4c6",
+      "identity_key": "[\"경기도\",\"수원시 권선구\",\"수원덕산병원장례식장\",\"경기도 수원시 권선구 서부로 1670번길 9 B2층 장례식장 (고색동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": true,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://swdeoksanmc.com/funeral/"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-bcce1cd4aef0eca0",
+      "identity_key": "[\"부산광역시\",\"수영구\",\"(주)비케이더블유 좋은강안병원지점\",\"부산광역시 수영구 수영로 493 (남천동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "좋은강안병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.gang-an.or.kr/gangan/contents/view.do?mId=91"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official hospital phone page identifies 장례식장/장례사업팀 051-610-9009; footer 수영구 수영로493 matches raw identity record."
+      }
+    },
+    {
+      "facility_id": "fh-bfdf2551998a5159",
+      "identity_key": "[\"부산광역시\",\"영도구\",\"해동병원장례식장\",\"부산광역시 영도구 태종로 133 (봉래동3가)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://funeraloner.co.kr/facilities/?bmode=view&idx=13918297"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-c1487d4c05fbffce",
+      "identity_key": "[\"인천광역시\",\"남동구\",\"인천힘찬종합병원장례식장\",\"인천광역시 남동구 논현로 72,지하1층 (논현동, 힘찬종합병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-himchan-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-himchan-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "8365b1b1397661d118fd08fda35730eedaf011993e567869a11a65c5b83223d6",
+          "source_page_git_blob": "de194cbed2862b6622ecc12381d1ea3b94bfe670"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-c23bfa3d629e176a",
+      "identity_key": "[\"경상북도\",\"구미시\",\"구미강동병원장례식장\",\"경상북도 구미시 인동20길 46 지하1층 (진평동, 구미강동병원)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.hira.or.kr/ra/hosp/hospInfoAjax.do?ykiho=JDQ4MTYyMiM4MSMkMSMkMCMkODkkMzgxMzUxIzExIyQxIyQzIyQ2MiQyNjEyMjIjNjEjJDEjJDAjJDgz"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-c2ab6f39c20bb320",
+      "identity_key": "[\"강원특별자치도\",\"삼척시\",\"주식회사하늘정원장례식장\",\"강원도 삼척시 강원남부로 4539 (등봉동, 하늘정원장례식장)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "하늘정원장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://gwd.go.kr/portal/partinfo/senior/funeral/funeralHall"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "url": "https://gwd.go.kr/portal/partinfo/senior/funeral/funeralHall",
+          "authority": "강원특별자치도청",
+          "matched_address": "삼척시 강원남부로 4539 (등봉동)",
+          "matched_phone": "033-575-4441",
+          "observed_name": "하늘정원장례식장",
+          "verified_date": "2026-10-31"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-c309c3af89e7bbbf",
+      "identity_key": "[\"전라남도\",\"나주시\",\"나주효사랑요양병원장례식장\",\"전라남도 나주시 금천면 영산로 5891-9 (촌곡리)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "나주효사랑병원장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Official KFCPI2025 page index27 line1401 explicit 나주효사랑병원장례식장 /금천면 영산로5891-9 /061-332-4454, address and funeral phone exact raw match. Use list display alias without 요양; raw key and title retained. No current renaming or institutional succession claim. Hospital candidate hyo-sarang.com timed out."
+      }
+    },
+    {
+      "facility_id": "fh-c80331182c5c428b",
+      "identity_key": "[\"대전광역시\",\"대덕구\",\"대전보훈병원장례식장\",\"대전광역시 대덕구 대청로82번길 147 (신탄진동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://newhome.bohun.or.kr/daejeonfuneral/cm/cntnts/cntntsView.do?cntntsId=2214&mi=33696"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-c9023eb7e7654bc4",
+      "identity_key": "[\"경기도\",\"안산시\",\"고려대안산병원장례식장\",\"경기도 안산시 단원구 적금로 123 (고잔동, 고려대학병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "korea-ansan-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/korea-ansan-funeral.html",
+          "identity_evidence": [
+            "Page 고려대학교 안산병원 at 적금로123 matches raw 고려대안산병원장례식장"
+          ],
+          "source_page_sha256": "0adf3abb0e59019649d9dfeea9e4faf673b596dd43c7d5831fe6e281a45356cf",
+          "source_page_git_blob": "118dccc62750d20846d01a4dabd4f97315313938"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "고려대학교 안산병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.funeral.or.kr/54",
+          "https://www.ansan.go.kr/tourinfo/common/cntnts/selectContents.do?cntnts_id=t0002066"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-c9023eb7e7654bc4",
+          "official_homepage_status": "Official funeral location page found/read through current search result; exact address matched.",
+          "identity_evidence": [
+            {
+              "url": "https://www.funeral.or.kr/54",
+              "authority": "Korea University Medicine funeral site",
+              "summary": "Identifies 고려대 안산병원 장례식장 at 적금로123. Inventory verified full title 고려대학교 안산병원 장례식장 against primary page."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://www.ansan.go.kr/tourinfo/common/cntnts/selectContents.do?cntnts_id=t0002066",
+              "authority": "Ansan City Culture & Tourism",
+              "summary": "Official information describes Daebudo tidal flats and marine ecology. Only geographic inspiration used."
+            }
+          ],
+          "photo_reuse": "none"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-cd1665adc25eb318",
+      "identity_key": "[\"경기도\",\"성남시\",\"태평서울병원소망장례식장\",\"경기도 성남시 수정구 성남대로 1219 B01 (수진동, 새소망병원)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "소망장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://xn--9n2bn3auznumb25lca.com/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "url": "https://xn--9n2bn3auznumb25lca.com/",
+          "authority": "공식 운영기관 홈페이지",
+          "matched_address": "경기도 성남시 수정구 성남대로 1219 지하1층",
+          "matched_phone": "031-751-3344",
+          "observed_name": "소망장례식장",
+          "verified_date": "2026-10-31"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-cd6ec8b05c23700f",
+      "identity_key": "[\"인천광역시\",\"미추홀구\",\"학교법인영산학원시민장례식장\",\"인천광역시 미추홀구 석정로64번길 22 (숭의동, 시민장례식장)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-citizen-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-citizen-funeral.html",
+          "identity_evidence": [
+            "Page 석정로64번길 22 and 032-889-4644 match 학교법인영산학원시민장례식장, not other cities 시민장례식장"
+          ],
+          "source_page_sha256": "37eea2a748db57db74a01806b6180dcf426e6f17c8f8f40fcb7b40e730d9fb97",
+          "source_page_git_blob": "047147e53e65964e9e13f6802ba24700fb8ee506"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "시민장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "common_facility_descriptor",
+        "evidence": "KFCPI2025 preserved table line393 gives 영산학원 시민장례식장 / 석정로64번길22 /032-889-4644, matching raw 학교법인영산학원시민장례식장. Shared exact facility core only, corporate prefix omitted. No operator/succession claim."
+      }
+    },
+    {
+      "facility_id": "fh-ce0789176e8588f0",
+      "identity_key": "[\"서울특별시\",\"광진구\",\"건국대학교병원장례식장\",\"서울특별시 광진구 능동로 120-1 (화양동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "konkuk-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/konkuk-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "0eb1033a26e2551a138d6ffa69b4015b2e70dd3311ff8f12a0c8934b6fbf3963",
+          "source_page_git_blob": "8659ad38bcf8fae6ade8c24fd972d2ace2c4785d"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "건국대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-d0284c7c01f475fd",
+      "identity_key": "[\"광주광역시\",\"북구\",\"그린장례문화원주식회사\",\"광주광역시 북구 하서로663번길 97 (용전동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "그린장례문화원",
+        "status": "resolved",
+        "sources": [
+          "https://www.greenfuneral.kr/page/sub001",
+          "https://www.greenfuneral.kr/page/sub006"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "url": "https://www.greenfuneral.kr/page/sub001",
+          "additional_url": "https://www.greenfuneral.kr/page/sub006",
+          "authority": "공식 운영기관 홈페이지",
+          "matched_address": "하서로663번길 97",
+          "matched_phone": "062-250-4455",
+          "observed_name": "그린장례문화원",
+          "verified_date": "2026-10-31",
+          "notes": "PC 소개·절차 페이지의 명칭·주소·전화가 일치. 모바일 footer 060 표기는 별도 source_phone_conflict로 보존."
+        }
+      },
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.greenfuneral.kr/page/sub001",
+          "https://www.greenfuneral.kr/page/sub006",
+          "https://m.greenfuneral.kr/",
+          "https://www.greenfuneral.kr/"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-d09f3886511a80af",
+      "identity_key": "[\"경기도\",\"고양시 일산서구\",\"일산백장례서비스(주)\",\"경기도 고양시 일산서구 주화로 170,일산백병원B2층 (대화동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "ilsan-paik-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/ilsan-paik-funeral.html",
+          "identity_evidence": [
+            "Page 주화로 170 지하2층 and phone 031-910-7444 exactly match raw 일산백장례서비스(주)"
+          ],
+          "source_page_sha256": "5cab71fb5e520e73bf6dd1b7e2917c4fdf1a9f12ac3cd2c95ddc8fa13bb58056",
+          "source_page_git_blob": "fdb447ae491d4a9577be9c0d12a22b462e5ae4d4"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "일산백병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.paik.ac.kr/ilsan/user/contents/view.do?menuNo=900136",
+          "https://www.goyang.go.kr/agr/agr02/agr02_8.jsp",
+          "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00011443"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-d09f3886511a80af",
+          "official_homepage_status": "Official current funeral guide read successfully.",
+          "identity_evidence": [
+            {
+              "url": "https://www.paik.ac.kr/ilsan/user/contents/view.do?menuNo=900136",
+              "authority": "Inje University Ilsan Paik Hospital",
+              "summary": "Official page names 일산백병원 장례식장 and gives 주화로170 B2 plus 031-910-7444 matching raw corporate identity."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://www.goyang.go.kr/agr/agr02/agr02_8.jsp",
+              "authority": "Goyang City Agricultural Technology Center",
+              "summary": "Official Gawaji rice museum page confirms local rice heritage."
+            },
+            {
+              "url": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00011443",
+              "authority": "Korea Tourism Organization",
+              "summary": "Explains rice discovery in Daehwa-dong Gawaji village during Ilsan new-town development."
+            }
+          ],
+          "photo_reuse": "none"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-d11d7e12bdba4c9c",
+      "identity_key": "[\"강원특별자치도\",\"원주시\",\"연세대학교 원주장례식장\",\"강원도 원주시 일산로 20,내 (일산동, 연세대학교원주세브란스기독병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "wonju-severance-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/wonju-severance-funeral.html",
+          "identity_evidence": [
+            "Page 원주 일산로20 matches raw 연세대학교 원주장례식장 address explicitly 원주세브란스기독병원"
+          ],
+          "source_page_sha256": "ac55a386c6a96a29281f751d1f3eb605311306cd70fa839913d15b0e306ce262",
+          "source_page_git_blob": "57f8dda74b612569a21eef157f689c12d6b169b7"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "원주세브란스기독병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://mirae.yonsei.ac.kr/bgtscntPn/wj/17/1438/download.do",
+          "https://medical.yonsei.ac.kr/bbs/medical/30/11315/artclView.do",
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "verified_institutional_descriptor",
+        "evidence": "Directly opened official Yonsei2025 university handbook: page79 names 연세대학교 원주장례식장 at 일산로20; page112 lines3169–3172 expressly places that funeral hall inside 원주세브란스기독병원. Official medical college2026-07-24 notice independently uses 원주세브란스기독병원 장례식장 as departure landmark at same campus. KFCPI exact raw name/address/033-744-3969 preserved. Institutional descriptive alias, no current-service claim."
+      },
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "sources": [
+          "https://wonju.yonseifuneral.com/"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-d14e35a00f4f1a03",
+      "identity_key": "[\"인천광역시\",\"중구\",\"예지장례식장\",\"인천광역시 중구 개항로 82.2층예지장례식장 (경동, 예지요양병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-yeji-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-yeji-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "5f53c329437db7a0ae93d8f04e906ac95eef175a63d0f116a2b8352c7ee5e701",
+          "source_page_git_blob": "172df8e253d5ec169c51f339b57b84ef29866038"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-d1aecbbb229d766f",
+      "identity_key": "[\"서울특별시\",\"동작구\",\"중앙대학교병원장례식장\",\"서울특별시 동작구 흑석로 102 (흑석동, 중앙대학교병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "chungang-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/chungang-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "8b911a4afc7734885e186e465c1893d45a37cf8957839d5baa3789e148b5d7ac",
+          "source_page_git_blob": "34e8627090d36a42984e21d8d54aca0e01b15e78"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "중앙대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-d479fff6fa301403",
+      "identity_key": "[\"경상북도\",\"경산시\",\"자인전문장례식장\",\"경상북도 경산시 자인면 설총로 820 (동부리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-d6bb0ae6d901d98b",
+      "identity_key": "[\"경기도\",\"부천시\",\"휴앤유병원장례식장\",\"경기도 부천시 소사구 심곡로10번길 63 (송내동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "bucheon-hueandyou-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/bucheon-hueandyou-funeral.html",
+          "identity_evidence": [
+            "Page explicitly states old name 휴앤유병원장례식장; 심곡로10번길 63 and phone match"
+          ],
+          "source_page_sha256": "c47695a3e5e04da0ec254e03cb71375e93f08fb18d3be0b63f50df4db2d085db",
+          "source_page_git_blob": "1d890d100738d35243a18804126cccf550e19b30"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "휴앤유추모관",
+        "status": "resolved",
+        "sources": [
+          "https://m.sentv.co.kr/article/view/sentv202610060027",
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reported_facility_announcement",
+        "evidence": "서울경제TV article2026-10-06 09:04 by 박수열 explicitly reports the Bucheon 휴앤유장례식장 facility announcing its new 휴앤유추모관 name and reopening; facility representative is quoted. Actual indexed full article body with six narrative paragraphs read2026-10-31, not title/snippet alone. Mobile and desktop direct fetch returned502. Article does not supply exact address/phone. KFCPI2025 preserved table line702 ties old name 휴앤유병원장례식장 to 심곡로10번길63/032-662-1024 exactly matching raw. Displayed name is based only on the reported facility announcement; no independently verified operator/operation/official same-page address-phone claim."
+      }
+    },
+    {
+      "facility_id": "fh-da37206b6c9c2161",
+      "identity_key": "[\"전라남도\",\"장흥군\",\"장흥병원장례식장\",\"전라남도 장흥군 장흥읍 흥성로 74 (건산리)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": true,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.hira.or.kr/ra/hosp/hospInfoAjax.do?ykiho=JDQ4MTYyMiM3MSMkMSMkMCMkODkkMzgxMzUxIzExIyQxIyQzIyQwMyQzNjE0ODEjNjEjJDEjJDgjJDgz"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-da530045db4cd30b",
+      "identity_key": "[\"경기도\",\"용인시\",\"(주)기흥장례식장\",\"경기도 용인시 기흥구 하갈로 17 (하갈동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "기흥장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.yongin.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1020&q_bbscttSn=20260128111654955"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Yongin official2026-01-28 municipal release names 기흥장례식장. KFCPI official list (주)기흥장례식장 at 하갈로17,031-275-4444 matches raw tuple. Corporate prefix omitted using confirmed public display name."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-db352dc0dff1cd17",
+      "identity_key": "[\"강원특별자치도\",\"강릉시\",\"강원도강릉의료원장례식장\",\"강원도 강릉시 경강로 2007,강릉의료원 (남문동)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "강원특별자치도 강릉의료원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.gnmc.or.kr/page/s0203.php"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "official_hospital_name_change_history_and_funeral_page_name_address_verified"
+      }
+    },
+    {
+      "facility_id": "fh-dba9c2dd23967962",
+      "identity_key": "[\"서울특별시\",\"구로구\",\"고려대구로병원장례식장\",\"서울특별시 구로구 구로동로 148 (구로동, 고려대부속구로병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "korea-guro-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/korea-guro-funeral.html",
+          "identity_evidence": [
+            "Page official guro.kumc.or.kr; live raw official funeral.or.kr identifies 고려대 구로병원 branch separately from 안암/안산"
+          ],
+          "source_page_sha256": "1ac28d397ecab878a95308df232cf78fe9fcc03d6da1281f14ee451b8a0355ea",
+          "source_page_git_blob": "4100fd42c3ea63c689bb387603a217f9d3f4891d"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "고려대학교 구로병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.funeral.or.kr/53"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "checked_at": "2026-10-31",
+          "evidence": "Official funeral site identifies 고려대 구로병원 장례식장 at 구로동로148, phone02-857-0444. District source documents Hangdong rail/metasequoia fields; historic scenic motif not contemporary access claim."
+        }
+      }
+    },
+    {
+      "facility_id": "fh-dbe16269b48d8b9c",
+      "identity_key": "[\"서울특별시\",\"서초구\",\"서울성모장례식장\",\"서울특별시 서초구 반포대로 222 (반포동, 가톨릭대학교성의교정)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "seoul-stmary-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/seoul-stmary-funeral.html",
+          "identity_evidence": [
+            "Page 서울 서초구 반포대로222 and 02-2258-5940 match raw 서울성모장례식장"
+          ],
+          "source_page_sha256": "951fc289ab30b6f3d76af3b61bea44db4c802994cd968c06b302793a8549a94c",
+          "source_page_git_blob": "15d3cebe188dd5f39270d6a03d57f667596f476b"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "서울성모병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/seoul-stmary-funeral.html#h1"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "repository_h1_alias_not_operation_verification",
+        "evidence": "Existing exact-identity canonical page heading; not proof of current operation."
+      }
+    },
+    {
+      "facility_id": "fh-dc9c8695da53b3c0",
+      "identity_key": "[\"인천광역시\",\"부평구\",\"근로복지공단 인천병원장례식장\",\"인천광역시 부평구 무네미로 446 (구산동, 인천중앙병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-kcomwel-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-kcomwel-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "69d8d1dc1319316407720e400c0c06f924a0d177d5f803fa6aad09758dd901bf",
+          "source_page_git_blob": "007af9b73fcdb635a81486f5ba6c56527474cb21"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-ddcc9770a2b08a61",
+      "identity_key": "[\"전라남도\",\"고흥군\",\"유한회사보람\",\"전라남도 고흥군 고흥읍 고흥로 1935 (남계리)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "고흥종합병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.goheung.go.kr/welfare/contentsView.do?pageId=welfare76"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "Goheung municipality funeral-hall list names 고흥종합병원 장례식장 at 고흥읍 고흥로1935 with 061-830-3300; exact address/phone match raw 유한회사보람 record. Search result returned official page text; separate open request timed out."
+      }
+    },
+    {
+      "facility_id": "fh-dfab7ba1795e4f27",
+      "identity_key": "[\"부산광역시\",\"금정구\",\"금사장례식장\",\"부산광역시 금정구 반송로 470 (금사동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf",
+          "https://www.busan.go.kr/depart/welgrand030503"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-e21bc62b57bc949c",
+      "identity_key": "[\"경상북도\",\"성주군\",\"명경채요양병원부설예지원\",\"경상북도 성주군 성주읍 성주순환로 277 (성산리)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "예지원장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.sj.go.kr/page.do?mnu_uid=1275"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": "성주군청 장례식장 현황 line581 예지원장례식장 /성주읍 성주순환로277 /931-3300 직접 확인. 2026-01-20 갱신. 원자료 주소와 지역번호 제외 전화 일치. 공식자료의 표시명을 사용하며 원자료 식별값은 보존합니다. 빈소수 및 현재 운영 광고 주장 없음."
+      }
+    },
+    {
+      "facility_id": "fh-e6aa5e3209929b1b",
+      "identity_key": "[\"서울특별시\",\"종로구\",\"서울대학교병원장례식장\",\"서울특별시 종로구 대학로 101,서울대학교병원 (연건동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "snuh-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/snuh-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "d08642e9e3bde93d2819ace2c882cfcf5e642c3d7c7e99e268267acdcf3658e5",
+          "source_page_git_blob": "a217daa992f3e9bce660f47fd8f573289bfead55"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "서울대학교병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/snuh-funeral.html#h1"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "repository_h1_alias_not_operation_verification",
+        "evidence": "Existing exact-identity canonical page heading; not proof of current operation."
+      }
+    },
+    {
+      "facility_id": "fh-e6b3214474042646",
+      "identity_key": "[\"전라남도\",\"나주시\",\"나주중앙요양병원장례식장\",\"전라남도 나주시 영산로 5406 (성북동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_note",
+        "checked_at": "2026-10-31",
+        "suppress_phone": false,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": true,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-eb52772156d4202d",
+      "identity_key": "[\"인천광역시\",\"계양구\",\"한림병원장례식장\",\"인천광역시 계양구 장제로 722,한림병원 2,3관 지하2층 (작전동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-hanlim-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-hanlim-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "a507dbb86001357bc039d07e74b92595b69c4de7a9dfb84b2f47d316df6afd40",
+          "source_page_git_blob": "c1c2450c9de35129f8a9bf954b57a17d0b452cf2"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-ebfc5d006dfdde79",
+      "identity_key": "[\"충청북도\",\"청주시 청원구\",\"효성병원 장례식장\",\"충청북도 청주시 청원구 2순환로94번길 21 (율량동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.kfcpi.or.kr/link/2025/09/29/831da0f4-5acd-43d4-b0ae-60e6111f33f7.pdf"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-ec43f37132f58834",
+      "identity_key": "[\"인천광역시\",\"강화군\",\"비에스종합병원장례식장\",\"인천광역시 강화군 강화읍 충렬사로 31, 비에스종합병원 별관 (남산리)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-bs-hospital-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-bs-hospital-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "bf44c386f7fc7ab54342c7ab78eadd39553835f90a751e5773bcd19766cb25db",
+          "source_page_git_blob": "a958ceb7a5b89d1d13a0766b9ee84f5fbeb68dae"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-f21500c4295599cb",
+      "identity_key": "[\"인천광역시\",\"서구\",\"온누리장례식장\",\"인천광역시 서구 완정로 199 지하1층 (왕길동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-onnuri-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-onnuri-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "0254d66cdb0f0bb80a54967cfc2923e27d88c78330d53bba5a6924d244d74d4f",
+          "source_page_git_blob": "98a775581f02aaae718f33271fd111543102632f"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-f84c046811305b0d",
+      "identity_key": "[\"인천광역시\",\"부평구\",\"인천성모장례식장\",\"인천광역시 부평구 동수로 56 (부평동, 가톨릭대학교인천성모병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-stmary-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-stmary-funeral.html",
+          "identity_evidence": [
+            "Page 동수로56 and 인천성모병원 match raw 인천성모장례식장 address"
+          ],
+          "source_page_sha256": "a7e5dbc53828d4c09b58b47d1a46d5b749b3d4d33990eb365c728a8326333350",
+          "source_page_git_blob": "82c27e606b33e88e79d4a43a66bcf52a670788a8"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "인천성모병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://www.cmcism.or.kr/",
+          "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=23ba08a0-bcba-4f39-8cb8-349f06e66c66"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "facility_id": "fh-f84c046811305b0d",
+          "official_homepage_status": "Official hospital confirms funeral link; linked funeral subdomain returned 502",
+          "identity_evidence": [
+            {
+              "url": "https://www.cmcism.or.kr/",
+              "authority": "official operator or institutional source",
+              "summary": "인천성모병원 동수로56 및 장례식장 안내 링크. Inventory verified page alias 인천성모병원 장례식장."
+            }
+          ],
+          "locality_evidence": [
+            {
+              "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=23ba08a0-bcba-4f39-8cb8-349f06e66c66",
+              "authority": "공공기관·지자체·공식 관광/박물관",
+              "summary": "한국관광공사 굴포천 생태하천의 부평 소재 확인. 기하학적 물길 연출만 사용."
+            }
+          ],
+          "photo_reuse": "None. Original AI scene; no source photograph downloaded or reused. No current operation guarantee.",
+          "flags": []
+        }
+      }
+    },
+    {
+      "facility_id": "fh-f8513299fd2dbcaa",
+      "identity_key": "[\"강원특별자치도\",\"원주시\",\"(주)서원 바른장례식장\",\"강원도 원주시 판부면 치악로 1133 (금대리)\"]",
+      "pages": [],
+      "display_name_review": {
+        "display_name": "바른장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://xn--9n2b9vi1dusk2mgca.kr/"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "url": "https://xn--9n2b9vi1dusk2mgca.kr/",
+          "authority": "공식 운영기관 홈페이지",
+          "matched_address": "강원도 원주시 판부면 치악로 1133",
+          "matched_phone": "033-735-4444",
+          "observed_name": "상호: 바른장례식장",
+          "verified_date": "2026-10-31"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-f94c6a28fda02d59",
+      "identity_key": "[\"서울특별시\",\"강서구\",\"이대서울병원장례식장\",\"서울특별시 강서구 공항대로 260 (마곡동, 이화의대부속서울병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "ewha-seoul-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/ewha-seoul-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "7ff93745dc238755fb720dd77cc0e9be0bc41448363161a56f71eb27c2e0b826",
+          "source_page_git_blob": "90bdd620950263fb175e538aca454b29c68ea2f4"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "이대서울병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-fa0c76ae34aab0cb",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"한강성심병원장례식장\",\"서울특별시 영등포구 국회대로56길 18,한강성심병원5별관지하1층 (영등포동7가, 한강성심병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "hangang-hallym-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/hangang-hallym-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "41b64bf04a34615bc556e947c1664d4c061f01441a1f8e4fde645578fd534605",
+          "source_page_git_blob": "48c371a6ffb7cda8c50c4f151317c8e8286291b8"
+        }
+      ],
+      "display_name_review": {
+        "display_name": "한강성심병원 장례식장",
+        "status": "resolved",
+        "sources": [
+          "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        ],
+        "checked_at": "2026-10-31",
+        "evidence_level": "reviewed_facility_identity",
+        "evidence": {
+          "evidence": "Whitespace-only display formatting of the exact raw facility name; no changed identity or operator claim.",
+          "source": "https://github.com/parkminjae-5900/parkminjae-5900.github.io/blob/5b72a3647b88318eb295e627505def69cd8524f4/data/funeral-halls.json"
+        }
+      }
+    },
+    {
+      "facility_id": "fh-fcc301fb6afe7ad0",
+      "identity_key": "[\"인천광역시\",\"계양구\",\"쉴낙원 인천장례식장\",\"인천광역시 계양구 아나지로 552 (서운동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "incheon-shillakwon-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/incheon-shillakwon-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "1c6fcb62cce441e86f19635ef3e2a7a1060450d0e330b8c18eb8d1ce36f21f14",
+          "source_page_git_blob": "78cd9db7f86a3f70a26199072c1fae749418b7f1"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-fd6586f9db784395",
+      "identity_key": "[\"서울특별시\",\"영등포구\",\"복지장례문화원\",\"서울특별시 영등포구 도림로 142 (대림동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "yeongdeungpo-bokji-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/yeongdeungpo-bokji-funeral.html",
+          "identity_evidence": [
+            "Unique exact H1 facility name after whitespace normalization; Incheon scope applied where page says Incheon"
+          ],
+          "source_page_sha256": "61c08ce613ed7bbf08b49521bd0e952d8faaf1cc681f8119df232d507fcf1c27",
+          "source_page_git_blob": "cfb346e024f0595344ee457a6c5ea51284cf1ffb"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-fde8be0d021dbd6b",
+      "identity_key": "[\"경기도\",\"수원시\",\"수원시연화장장례식장\",\"경기도 수원시 영통구 광교호수로 278 (하동)\"]",
+      "pages": [],
+      "current_info_review": {
+        "status": "reviewed_source_conflict",
+        "checked_at": "2026-10-31",
+        "suppress_phone": true,
+        "address_unconfirmed": false,
+        "homepage_invalid": false,
+        "secondary_source_variance": false,
+        "sources": [
+          "https://www.suwonudc.co.kr/suwonyhj/mainPage.do"
+        ]
+      }
+    },
+    {
+      "facility_id": "fh-842c6575330da628",
+      "identity_key": "[\"경기도\",\"고양시 일산동구\",\"동국대학교일산장례식장\",\"경기도 고양시 일산동구 동국로 27 (식사동, 동국대학교일산병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "dongguk-ilsan-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/dongguk-ilsan-funeral.html",
+          "identity_evidence": [
+            "Main snapshot 7271f5b233b521f9c536efe3b3079bbfe0bdd543: matching facility name/locality and address or telephone in page against exact source identity; preserves existing main canonical, not independent operational verification."
+          ],
+          "source_page_sha256": "506a1d8c35ee1665f6a5cbe762ccccfcf05ccf2ff83c119522d4e65a384d4da4",
+          "source_page_git_blob": "32d7c077d7249136304b1e117783e01dc228e7ff"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-1ef78e9fc79e34e7",
+      "identity_key": "[\"서울특별시\",\"은평구\",\"가톨릭대학교 은평성모장례식장\",\"서울특별시 은평구 통일로 1021,은평성모장례식장 (진관동)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "eunpyeong-stmary-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/eunpyeong-stmary-funeral.html",
+          "identity_evidence": [
+            "Main snapshot 7271f5b233b521f9c536efe3b3079bbfe0bdd543: matching facility name/locality and address or telephone in page against exact source identity; preserves existing main canonical, not independent operational verification."
+          ],
+          "source_page_sha256": "4ef0274f5e5d94d677c09d2a8670dfd3a1890cd39b2027940a0711f6aeb6c0b5",
+          "source_page_git_blob": "797b8e637bf4d8d3d2f5238b570012d7993215bc"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-4bab68742e01e354",
+      "identity_key": "[\"경기도\",\"안양시\",\"한림대성심병원장례식장\",\"경기도 안양시 동안구 관평로170번길 22 (평촌동, 한림대성심병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "hallym-sacredheart-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/hallym-sacredheart-funeral.html",
+          "identity_evidence": [
+            "Main snapshot 7271f5b233b521f9c536efe3b3079bbfe0bdd543: matching facility name/locality and address or telephone in page against exact source identity; preserves existing main canonical, not independent operational verification."
+          ],
+          "source_page_sha256": "deb7a8262d32efc4eb77d9fb54ccb12b2450c7c7f1fc838520f107998d95ceb1",
+          "source_page_git_blob": "897ea75ff2541082b673eb22ded144a76f8c067b"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-a1e6c51a270952db",
+      "identity_key": "[\"서울특별시\",\"노원구\",\"노원을지대학교병원장례식장\",\"서울특별시 노원구 한글비석로 68 (하계동, 을지병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "nowon-eulji-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/nowon-eulji-funeral.html",
+          "identity_evidence": [
+            "Main snapshot 7271f5b233b521f9c536efe3b3079bbfe0bdd543: matching facility name/locality and address or telephone in page against exact source identity; preserves existing main canonical, not independent operational verification."
+          ],
+          "source_page_sha256": "a775ebbd98cb647e0c1daaacdd462e589c24c4530003fd6174c257a62d630558",
+          "source_page_git_blob": "4fed528d130564b4e821ceb98bf941bc8ec5fbbe"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-8fcd0a8635bb3ba6",
+      "identity_key": "[\"서울특별시\",\"노원구\",\"인제대학교상계백병원장례식장\",\"서울특별시 노원구 동일로 1342 (상계동, 상계백병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "sanggye-paik-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/sanggye-paik-funeral.html",
+          "identity_evidence": [
+            "Main snapshot 7271f5b233b521f9c536efe3b3079bbfe0bdd543: matching facility name/locality and address or telephone in page against exact source identity; preserves existing main canonical, not independent operational verification."
+          ],
+          "source_page_sha256": "ec032252e5fb817e827f389d1e310bf6317dfc6c1c7ad38b7ecb4b81b1a8eb31",
+          "source_page_git_blob": "1ec71b1224ee2d1a74c2dcf0db6ae9d1b08de964"
+        }
+      ]
+    },
+    {
+      "facility_id": "fh-5d1d44b1509bd8c9",
+      "identity_key": "[\"경기도\",\"수원시 팔달구\",\"성빈센트병원 장례식장\",\"경기도 수원시 팔달구 중부대로 93 (지동, 성빈센트병원)\"]",
+      "mapping_status": "verified_repository_identity_not_independent_operation_verification",
+      "pages": [
+        {
+          "page": "st-vincent-funeral.html",
+          "page_kind": "primary",
+          "indexable": true,
+          "canonical": "https://www.dahamsangjo.co.kr/st-vincent-funeral.html",
+          "identity_evidence": [
+            "Main snapshot 7271f5b233b521f9c536efe3b3079bbfe0bdd543: matching facility name/locality and address or telephone in page against exact source identity; preserves existing main canonical, not independent operational verification."
+          ],
+          "source_page_sha256": "27442a60b45ae723be80529e3102503dda603d3cea52df9969cebcdfe99f53e6",
+          "source_page_git_blob": "a0675d26d9581724bcc65dcc8c28d55646220223"
+        }
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "facility_id": "fh-02e8bfd87aa2dc1d",
+      "identity_key": "[\"전북특별자치도\",\"익산시\",\"(유)우석개발\",\"전라북도 익산시 목천로 118 (목천동)\"]",
+      "hall_name": "(유)우석개발",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    },
+    {
+      "facility_id": "fh-2b9afdfceab26e79",
+      "identity_key": "[\"서울특별시\",\"성동구\",\"한양대학병원장례식장\",\"서울특별시 성동구 왕십리로 222-1 (사근동, 한양대학부속병원)\"]",
+      "hall_name": "한양대학병원장례식장",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    },
+    {
+      "facility_id": "fh-682c43d6ce7c3ea9",
+      "identity_key": "[\"경기도\",\"평택시\",\"금성장례식장\",\"경기도 평택시 진위면 남부대로 655 (동천리)\"]",
+      "hall_name": "금성장례식장",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    },
+    {
+      "facility_id": "fh-9b6f296fbac4eaa0",
+      "identity_key": "[\"전라남도\",\"화순군\",\"(주)제이엔에이실업\",\"전라남도 화순군 화순읍 중앙로 8 (교리)\"]",
+      "hall_name": "(주)제이엔에이실업",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    },
+    {
+      "facility_id": "fh-a898588664a163fc",
+      "identity_key": "[\"서울특별시\",\"금천구\",\"나눔길사회적협동조합\",\"서울특별시 금천구 가산디지털2로 165 (가산동, 백상스타타워2차)\"]",
+      "hall_name": "나눔길사회적협동조합",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    },
+    {
+      "facility_id": "fh-b8ae8624c5030670",
+      "identity_key": "[\"대구광역시\",\"동구\",\"현대S바른병원장례식장\",\"대구광역시 동구 해동로 119 (입석동)\"]",
+      "hall_name": "현대S바른병원장례식장",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    },
+    {
+      "facility_id": "fh-bd42323a0619e425",
+      "identity_key": "[\"경상남도\",\"사천시\",\"사천시농협장례식장\",\"경상남도 사천시 사천읍 구암두문로 146-12 (구암리)\"]",
+      "hall_name": "사천시농협장례식장",
+      "reason": "운영 상태 또는 시설 식별정보의 추가 확인이 필요한 원자료 기록입니다. 현재 이용 가능한 시설로 추천하지 않습니다.",
+      "checked_at": "2026-10-31",
+      "status": "verification_hold"
+    }
+  ],
+  "aliases": [
+    {
+      "page": "gangnam-sacredheart-funeral.html",
+      "facility_id": "fh-a1cdec8ec8c1f991",
+      "canonical_page": "yeongdeungpo-kangnam-hallym-funeral.html",
+      "reason": "Later duplicate facility URL; content retained, canonical points to established URL."
+    }
+  ]
+}

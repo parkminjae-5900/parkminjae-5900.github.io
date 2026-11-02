@@ -22,6 +22,9 @@ def title_of(s):
     m = re.search(r'<title[^>]*>(.*?)</title>',s,re.I|re.S)
     return unescape(re.sub(r'<[^>]+>','',m.group(1)).strip()) if m else ""
 def image_for(s, path):
+    # An absent verified facility photo is intentional, never an AI fallback.
+    if 'name="daham-facility-id"' in s or 'name="daham-directory"' in s:
+        return attr_meta(s, 'property', 'og:image')
     existing = attr_meta(s, 'property', 'og:image')
     if existing: return existing
     # Prefer proven local editorial image only; never mislabel generated assets as a real facility.

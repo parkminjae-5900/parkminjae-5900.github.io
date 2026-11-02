@@ -1,11 +1,19 @@
 const fs=require('node:fs'), assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const base=process.env.QA_BASE_URL||'http://127.0.0.1:8765';
+// QA must not count as live analytics traffic or load another deployment.
+async function localOnly(page){await page.route('**/*',async route=>{
+ const url=new URL(route.request().url());
+ if(route.request().url().startsWith(base)||url.protocol==='data:')return route.continue();
+ if(url.hostname==='www.dahamsangjo.co.kr')return route.fulfill({response:await route.fetch({url:base+url.pathname+url.search})});
+ return route.fulfill({status:204,body:''});
+});}
 (async()=>{
  const browser=await chromium.launch({headless:true});
  fs.mkdirSync('qa-output',{recursive:true});
  for(const width of [390,1440]){
   const page=await browser.newPage({viewport:{width,height:900}});
+  await localOnly(page);
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+'/funeral-cost-calculator.html');
   await page.waitForFunction(()=>document.querySelector('#nationwide-status').textContent.includes('가격은'));
@@ -70,6 +78,7 @@ const base=process.env.QA_BASE_URL||'http://127.0.0.1:8765';
   await page.close();
  }
  const page=await browser.newPage();
+ await localOnly(page);
  await page.route('**/data/*.json',r=>r.abort());
  await page.goto(base+'/funeral-cost-calculator.html');
  await page.waitForFunction(()=>document.querySelector('#nationwide-status').textContent.includes('실패'));

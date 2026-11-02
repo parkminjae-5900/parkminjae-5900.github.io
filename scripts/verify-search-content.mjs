@@ -8,6 +8,15 @@ const files=fs.readdirSync(root).filter(f=>f.endsWith('.html')&&!f.startsWith('g
 const sitemap=fs.readFileSync('sitemap.xml','utf8');
 const locations=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 const retiredAliases=new Map([['area-incheon-junggu-funeral.html','area-incheon-jemulpo-funeral.html']]);
+const facilityEvidence=JSON.parse(fs.readFileSync('data/funeral-hall-evidence.json','utf8'));
+const facilityAliases=new Map();
+for(const alias of facilityEvidence.aliases||[]){
+  assert.match(alias.page,/^[a-z0-9-]+\.html$/,'Unsafe facility alias');
+  assert.ok(!facilityAliases.has(alias.page),'Duplicate facility alias');
+  const identity=facilityEvidence.entries.find(e=>e.facility_id===alias.facility_id);
+  assert.ok(identity?.pages.some(p=>p.page===alias.canonical_page&&p.canonical===origin+p.page),'Alias target must be reviewed canonical of same facility');
+  facilityAliases.set(alias.page,alias);
+}
 assert.equal(new Set(locations).size,locations.length,'Duplicate sitemap URLs');
 const titles=new Set(),descriptions=new Set();let faqCount=0;
 for(const file of files){
@@ -24,7 +33,14 @@ for(const file of files){
   const canonicals=[...html.matchAll(/<link rel="canonical" href="([^"]+)"/g)];
   assert.equal(canonicals.length,1,file+': canonical count');
   const retiredTarget=retiredAliases.get(file);
-  if(retiredTarget){
+  if(facilityAliases.has(file)){
+    const alias=facilityAliases.get(file),target=alias.canonical_page;
+    assert.equal(canonicals[0][1],origin+target,file+': reviewed facility alias canonical');
+    assert.ok(html.includes('name="daham-facility-id" content="'+alias.facility_id+'"'),file+': alias identity');
+    assert.ok(!locations.includes(url),file+': duplicate alias must not be in sitemap');
+    assert.ok(locations.includes(origin+target),file+': primary canonical must be in sitemap');
+    assert.ok(fs.existsSync(path.join(root,target)),file+': primary target missing');
+  }else if(retiredTarget){
     assert.equal(canonicals[0][1],origin+retiredTarget,file+': retired canonical URL');
     const robots=html.match(/<meta name="robots" content="([^"]+)"/)?.[1]||'';
     const robotTokens=robots.split(',').map(x=>x.trim());
