@@ -14,8 +14,8 @@ NEW = ('major-hospital-funeral-guide.html','st-vincent-funeral.html','hallym-sac
 class MainReconciliationTests(unittest.TestCase):
     def test_main_urls_and_candidate_urls_preserved(self):
         urls=[n.find('{*}loc').text for n in ET.parse(ROOT/'sitemap.xml').getroot()]
-        self.assertEqual(len(urls),448)
-        self.assertEqual(len(set(urls)),448)
+        self.assertEqual(len(urls),452)
+        self.assertEqual(len(set(urls)),452)
         for name in NEW:
             self.assertTrue((ROOT/name).exists())
             self.assertEqual(photos.BASE+name in urls, name != 'gangnam-sacredheart-funeral.html')

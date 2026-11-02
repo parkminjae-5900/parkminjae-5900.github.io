@@ -343,8 +343,20 @@ def build(root=ROOT):
     for page in ('funeral-hospital-guide.html', 'area-funeral-seo-hub.html'):
         source = outputs.get(page, (root / page).read_text())
         content = '<section class="family-nohall-guide"><h2>가족장·무빈소, 시설별로 확인하세요</h2><p>지역별 준비 안내와 실제 장례식장 기록을 구분했습니다. 시설명·주소·운영 상태를 확인하고, 해당 시설에서 무빈소 또는 작은 빈소 이용이 가능한지 직접 확인하세요.</p><div class="intent-links"><a href="/funeral-halls/">전국 장례식장 원자료 목록</a><a href="/family.html">가족장 준비</a><a href="/nobinso.html">무빈소 준비</a></div></section>'
+        if page == 'area-funeral-seo-hub.html':
+            regional_links = ''.join('<a href="/'+d['page']+'">'+escape(d['label'])+' 가족장·무빈소</a>' for d in drafts['entries'] if d.get('kind') == 'regional')
+            content += '<section class="family-nohall-guide"><h2>지역별 가족장·무빈소 준비</h2><div class="intent-links">'+regional_links+'</div></section>'
         outputs[page] = css(put_block(source, content))
     tree = ET.parse(root / 'sitemap.xml'); uris = {u.find('{*}loc').text: u for u in tree.getroot().findall('{*}url')}
+    for entry in regions:
+        url = BASE + entry['page']
+        if url not in uris:
+            node = ET.SubElement(tree.getroot(), '{'+SM+'}url')
+            ET.SubElement(node, '{'+SM+'}loc').text = url
+            uris[url] = node
+        node = uris[url]
+        for image in node.findall('{'+IM+'}image'): node.remove(image)
+        ET.SubElement(ET.SubElement(node, '{'+IM+'}image'), '{'+IM+'}loc').text = BASE + entry['asset_path']
     for number in range(1, len(chunks)+1):
         url = dir_url(number)
         if url not in uris:

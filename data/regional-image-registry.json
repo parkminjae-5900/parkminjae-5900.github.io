@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_repository": "parkminjae-5900/parkminjae-5900.github.io",
   "source_commit": "ab9f8dfedb823ef6848d05207c62f55ca862b59e",
-  "expected_originals": 269,
+  "expected_originals": 273,
   "production_encoding": "JPEG quality 92, 4:4:4, progressive; native PNG originals preserved separately",
   "purpose": "Accepted separate original images; pending requests are never published",
   "entries": [
@@ -25367,6 +25367,384 @@
       },
       "local_feature": "한국민속촌 전통가옥·물레방아",
       "source_url": "https://www.koreanfolk.co.kr/mobile/down/koreanfolk_map.pdf"
+    },
+    {
+      "id": "seoul-mapo",
+      "page": "area-seoul-mapo-funeral.html",
+      "region_label": "서울특별시 마포구",
+      "page_label": "마포구 가족장·무빈소, 사는 곳과 장례식장 주소를 나눠 확인하세요",
+      "asset_path": "assets/regional/originals/seoul-mapo-family-nohall-guide-20261101.jpg",
+      "alt": "서울특별시 마포구 가족장·무빈소 안내용 AI 지역 풍경 이미지 · 실제 시설 사진 아님",
+      "caption": "서울특별시 마포구의 지역 경관을 소재로 만든 AI 연출 이미지입니다. 실제 촬영 사진이나 장례식장 모습이 아닙니다.",
+      "sha256": "af1e2459be25f203e41998872fd20b8cfe7a7133a403328e1cbb83b6473102f3",
+      "pixel_sha256": "b5b0bb87ee9f57f6cf13f2345887d56d481c50fae0f81de462feba35f7e60018",
+      "bytes": 523816,
+      "width": 1254,
+      "height": 1254,
+      "mime_type": "image/jpeg",
+      "status": "accepted",
+      "generator": "image_gen",
+      "independent_generation": true,
+      "local_feature": "마포구 하늘공원 억새와 한강을 소재로 한 AI 경관 연출",
+      "source_url": "https://www.seoul.go.kr/story/sunrise/html/2025/sub_mapo.html",
+      "source_facts": [
+        {
+          "url": "https://www.seoul.go.kr/story/sunrise/html/2025/sub_mapo.html",
+          "title": "서울특별시 하늘공원 지역 안내",
+          "checked_at": "2026-11-01T06:42:00+09:00",
+          "supported_facts": [
+            "마포구 월드컵공원(하늘공원), 주소 마포구 하늘공원로 95."
+          ]
+        },
+        {
+          "url": "https://parks.seoul.go.kr/maps/worldcuppark_map.pdf",
+          "title": "서울특별시 월드컵공원 공식 안내지도",
+          "checked_at": "2026-11-01T06:42:00+09:00",
+          "supported_facts": [
+            "월드컵공원은 마포구에 있으며 한강변 난지도에 조성된 공원."
+          ]
+        }
+      ],
+      "source_sha256": "e91357cd3318e509d052b682e577fccc29eebbd92b8abaf1c829bfa28cbb27f4",
+      "source_pixel_sha256": "255d49bb243b8c1296e7f5ec55ff63a5d535180595e03d7f38ff6ba929a7e865",
+      "source_bytes": 2366259,
+      "encoding": {
+        "source_sha256": "e91357cd3318e509d052b682e577fccc29eebbd92b8abaf1c829bfa28cbb27f4",
+        "source_bytes": 2366259,
+        "source_pixel_sha256": "255d49bb243b8c1296e7f5ec55ff63a5d535180595e03d7f38ff6ba929a7e865",
+        "source_pixel_hash_format": "decoded RGB bytes, row-major; dimensions recorded separately",
+        "sha256": "af1e2459be25f203e41998872fd20b8cfe7a7133a403328e1cbb83b6473102f3",
+        "bytes": 523816,
+        "pixel_sha256": "2c46053ee2e3be586f20e8b47183348bed1fd2f2e9824c4568be2ece10d9476f",
+        "width": 1254,
+        "height": 1254,
+        "mime_type": "image/jpeg",
+        "encoder": {
+          "name": "ImageMagick",
+          "version": "Version: ImageMagick 7.1.1-43 Q16 x86_64 22550 https://imagemagick.org",
+          "executable": "magick",
+          "arguments": [
+            "-sampling-factor",
+            "4:4:4",
+            "-interlace",
+            "Plane",
+            "-quality",
+            "92"
+          ],
+          "quality": 92,
+          "chroma_sampling": "4:4:4",
+          "progressive": true,
+          "resize": false,
+          "crop": false
+        },
+        "metrics": {
+          "mean_absolute_channel_error_0_255": 1.5063111175551367,
+          "rmse_0_255": 2.3682797721068947,
+          "psnr_db": 40.64214349643558,
+          "decoded_pixel_identical": false,
+          "luminance_ssim_7x7": 0.9927640754583867,
+          "ssim_status": "measured: full-resolution luminance, 7x7 uniform, sample covariance"
+        },
+        "fidelity_thresholds": {
+          "minimum_ssim": 0.97,
+          "minimum_psnr_db": 35.0,
+          "maximum_mae_0_255": 4.0
+        },
+        "reused_existing": false,
+        "id": "seoul-mapo",
+        "asset_path": "assets/regional/originals/seoul-mapo-family-nohall-guide-20261101.jpg"
+      },
+      "visual_review": {
+        "passed": true,
+        "status": "completed",
+        "notes": "Actual image pixels, readable Korean labels, regional context, and visible AI disclosure reviewed."
+      },
+      "previous_image": "https://www.dahamsangjo.co.kr/assets/regional/originals/seoul-mapo-family-nohall-guide-20261101.jpg",
+      "source_page_sha256": "f8d86a04e42b919caf7876f125923a56a06dd4580f66b56fa3500020894cac74",
+      "phash": "f85cf36980ae170d",
+      "dhash": "c5f406c00c4b8606",
+      "scene_phash": "22a973787388b71d",
+      "scene_dhash": "c0180c4b4b868600"
+    },
+    {
+      "id": "incheon-ongjin",
+      "page": "area-incheon-ongjin-funeral.html",
+      "region_label": "인천광역시 옹진군",
+      "page_label": "옹진군 가족장·무빈소, 섬별 이동 조건부터 확인하세요",
+      "asset_path": "assets/regional/originals/incheon-ongjin-family-nohall-guide-20261101.jpg",
+      "alt": "인천광역시 옹진군 가족장·무빈소 안내용 AI 지역 풍경 이미지 · 실제 시설 사진 아님",
+      "caption": "인천광역시 옹진군의 지역 경관을 소재로 만든 AI 연출 이미지입니다. 실제 촬영 사진이나 장례식장 모습이 아닙니다.",
+      "sha256": "c33db905e7bc7d7d7bc9d658f21286dc41314ace730df58fb5979184a106fd96",
+      "pixel_sha256": "19768d292700f13a3b8c1aad28c3bb08789e484f8f4c156cb6f57cc1db5104db",
+      "bytes": 655867,
+      "width": 1254,
+      "height": 1254,
+      "mime_type": "image/jpeg",
+      "status": "accepted",
+      "generator": "image_gen",
+      "independent_generation": true,
+      "local_feature": "옹진군 백령도 두무진 기암과 바다를 소재로 한 AI 경관 연출",
+      "source_url": "https://www.incheon.go.kr/en/EN030115/view?contentid=3100424&curPage=7",
+      "source_facts": [
+        {
+          "url": "https://www.incheon.go.kr/en/EN030115/view?contentid=3100424&curPage=7",
+          "title": "인천광역시 옹진 백령도 두무진 소개",
+          "checked_at": "2026-11-01T06:42:00+09:00",
+          "supported_facts": [
+            "두무진은 옹진군 백령면 백령도 북서쪽 해안의 절벽과 기암 경관."
+          ]
+        }
+      ],
+      "source_sha256": "612cd5fca00a224c0fc574d079c09a9c3fb46d12c86352ed5118f0dad00ecf39",
+      "source_pixel_sha256": "4b730df2feed9198d5f57d82edb23d1c34fbc6573de9b7e1704650e8e351b6c5",
+      "source_bytes": 2971444,
+      "encoding": {
+        "source_sha256": "612cd5fca00a224c0fc574d079c09a9c3fb46d12c86352ed5118f0dad00ecf39",
+        "source_bytes": 2971444,
+        "source_pixel_sha256": "4b730df2feed9198d5f57d82edb23d1c34fbc6573de9b7e1704650e8e351b6c5",
+        "source_pixel_hash_format": "decoded RGB bytes, row-major; dimensions recorded separately",
+        "sha256": "c33db905e7bc7d7d7bc9d658f21286dc41314ace730df58fb5979184a106fd96",
+        "bytes": 655867,
+        "pixel_sha256": "1d71bcba48a45540389d5804efcbea0b48a0c22440797e408407f004282ec7a5",
+        "width": 1254,
+        "height": 1254,
+        "mime_type": "image/jpeg",
+        "encoder": {
+          "name": "ImageMagick",
+          "version": "Version: ImageMagick 7.1.1-43 Q16 x86_64 22550 https://imagemagick.org",
+          "executable": "magick",
+          "arguments": [
+            "-sampling-factor",
+            "4:4:4",
+            "-interlace",
+            "Plane",
+            "-quality",
+            "92"
+          ],
+          "quality": 92,
+          "chroma_sampling": "4:4:4",
+          "progressive": true,
+          "resize": false,
+          "crop": false
+        },
+        "metrics": {
+          "mean_absolute_channel_error_0_255": 1.956862760060947,
+          "rmse_0_255": 2.874667653119645,
+          "psnr_db": 38.95905076562299,
+          "decoded_pixel_identical": false,
+          "luminance_ssim_7x7": 0.9904946617851981,
+          "ssim_status": "measured: full-resolution luminance, 7x7 uniform, sample covariance"
+        },
+        "fidelity_thresholds": {
+          "minimum_ssim": 0.97,
+          "minimum_psnr_db": 35.0,
+          "maximum_mae_0_255": 4.0
+        },
+        "reused_existing": false,
+        "id": "incheon-ongjin",
+        "asset_path": "assets/regional/originals/incheon-ongjin-family-nohall-guide-20261101.jpg"
+      },
+      "visual_review": {
+        "passed": true,
+        "status": "completed",
+        "notes": "Actual image pixels, readable Korean labels, regional context, and visible AI disclosure reviewed."
+      },
+      "previous_image": "https://www.dahamsangjo.co.kr/assets/regional/originals/incheon-ongjin-family-nohall-guide-20261101.jpg",
+      "source_page_sha256": "29360d181250c91120ad126e2e03fb1f34cad87aebb311273a90376fbb45eea8",
+      "phash": "9379a12ad425699f",
+      "dhash": "97372b2ff7cb1fd4",
+      "scene_phash": "8b589371aa5621bf",
+      "scene_dhash": "6b37d7c72b0fd6d4"
+    },
+    {
+      "id": "gyeonggi-gwacheon",
+      "page": "area-gyeonggi-gwacheon-funeral.html",
+      "region_label": "경기도 과천시",
+      "page_label": "과천시 가족장·무빈소, 관외 시설의 실제 호실과 이동을 비교하세요",
+      "asset_path": "assets/regional/originals/gyeonggi-gwacheon-family-nohall-guide-20261101.jpg",
+      "alt": "경기도 과천시 가족장·무빈소 안내용 AI 지역 풍경 이미지 · 실제 시설 사진 아님",
+      "caption": "경기도 과천시의 지역 경관을 소재로 만든 AI 연출 이미지입니다. 실제 촬영 사진이나 장례식장 모습이 아닙니다.",
+      "sha256": "31f674d8eee6c3897c778854f64b53cb7c68fda41ad26497b657e44c42af65b7",
+      "pixel_sha256": "ddfc9ed91c3af4d3ba4725b69d691bec71caf86decd2aae999d77854cacb5ee2",
+      "bytes": 665427,
+      "width": 1254,
+      "height": 1254,
+      "mime_type": "image/jpeg",
+      "status": "accepted",
+      "generator": "image_gen",
+      "independent_generation": true,
+      "local_feature": "과천시 서울대공원 호수와 청계산 자락을 소재로 한 AI 경관 연출",
+      "source_url": "https://www.gccity.go.kr/dept/contents.do?mId=0803030100",
+      "source_facts": [
+        {
+          "url": "https://www.gccity.go.kr/dept/contents.do?mId=0803030100",
+          "title": "과천시 서울대공원 안내",
+          "checked_at": "2026-11-01T06:42:00+09:00",
+          "supported_facts": [
+            "서울대공원 주소는 과천시 대공원광장로 102(막계동).",
+            "공식 안내는 청계산 자락 및 숲을 설명."
+          ]
+        },
+        {
+          "url": "https://mas.smc.seoul.kr/attach/record/SEOUL/appendix/a11/A0068527.pdf?time=20260418050115",
+          "title": "서울대공원 공식 업무자료 공원현황",
+          "checked_at": "2026-11-01T06:42:00+09:00",
+          "supported_facts": [
+            "서울대공원 위치 과천시 대공원광장로 102.",
+            "공원 내 청계저수지 등 호수지구와 청계산 임야지역 구분."
+          ]
+        }
+      ],
+      "source_sha256": "963dbe80923d5060d64e100ed6ecf15fa26e083de5712706dcba9c9de8d0b062",
+      "source_pixel_sha256": "347916b3888d6f078019709bcd1dca661560ab3bb42b2ca5dd3d34b5a49fa28a",
+      "source_bytes": 2658656,
+      "encoding": {
+        "source_sha256": "963dbe80923d5060d64e100ed6ecf15fa26e083de5712706dcba9c9de8d0b062",
+        "source_bytes": 2658656,
+        "source_pixel_sha256": "347916b3888d6f078019709bcd1dca661560ab3bb42b2ca5dd3d34b5a49fa28a",
+        "source_pixel_hash_format": "decoded RGB bytes, row-major; dimensions recorded separately",
+        "sha256": "31f674d8eee6c3897c778854f64b53cb7c68fda41ad26497b657e44c42af65b7",
+        "bytes": 665427,
+        "pixel_sha256": "b1c7163b45ba42cea8f7fbeee27715986c91bf3d4b8fa8ac809c05ce543e610b",
+        "width": 1254,
+        "height": 1254,
+        "mime_type": "image/jpeg",
+        "encoder": {
+          "name": "ImageMagick",
+          "version": "Version: ImageMagick 7.1.1-43 Q16 x86_64 22550 https://imagemagick.org",
+          "executable": "magick",
+          "arguments": [
+            "-sampling-factor",
+            "4:4:4",
+            "-interlace",
+            "Plane",
+            "-quality",
+            "92"
+          ],
+          "quality": 92,
+          "chroma_sampling": "4:4:4",
+          "progressive": true,
+          "resize": false,
+          "crop": false
+        },
+        "metrics": {
+          "mean_absolute_channel_error_0_255": 1.9402912275614366,
+          "rmse_0_255": 3.022786678402812,
+          "psnr_db": 38.52265361690221,
+          "decoded_pixel_identical": false,
+          "luminance_ssim_7x7": 0.9905619531648828,
+          "ssim_status": "measured: full-resolution luminance, 7x7 uniform, sample covariance"
+        },
+        "fidelity_thresholds": {
+          "minimum_ssim": 0.97,
+          "minimum_psnr_db": 35.0,
+          "maximum_mae_0_255": 4.0
+        },
+        "reused_existing": false,
+        "id": "gyeonggi-gwacheon",
+        "asset_path": "assets/regional/originals/gyeonggi-gwacheon-family-nohall-guide-20261101.jpg"
+      },
+      "visual_review": {
+        "passed": true,
+        "status": "completed",
+        "notes": "Actual image pixels, readable Korean labels, regional context, and visible AI disclosure reviewed."
+      },
+      "previous_image": "https://www.dahamsangjo.co.kr/assets/regional/originals/gyeonggi-gwacheon-family-nohall-guide-20261101.jpg",
+      "source_page_sha256": "fbf346ad607cc715880df09d1d95c30d5f1240611ac839130fbd3ecba3f7ea7e",
+      "phash": "7b2cf141e2fc0783",
+      "dhash": "6371847c7c2a26fc",
+      "scene_phash": "0ef1fa78c1e29d03",
+      "scene_dhash": "9e7c7c0e2a8636fc"
+    },
+    {
+      "id": "chungnam-gyeryong",
+      "page": "area-chungnam-gyeryong-funeral.html",
+      "region_label": "충청남도 계룡시",
+      "page_label": "계룡시 가족장·무빈소, 시설 이름보다 시·군 주소부터 확인하세요",
+      "asset_path": "assets/regional/originals/chungnam-gyeryong-family-nohall-guide-20261101.jpg",
+      "alt": "충청남도 계룡시 가족장·무빈소 안내용 AI 지역 풍경 이미지 · 실제 시설 사진 아님",
+      "caption": "충청남도 계룡시의 지역 경관을 소재로 만든 AI 연출 이미지입니다. 실제 촬영 사진이나 장례식장 모습이 아닙니다.",
+      "sha256": "b65f7572e7df195884b2daaf160fb717bcbfce9e6ea276e14a4aaad9aec38f30",
+      "pixel_sha256": "32105c33bc1cdf9cfc6bfc035e75c95804d83ea2c33ad6584cdaa7f697f06dd7",
+      "bytes": 735467,
+      "width": 1254,
+      "height": 1254,
+      "mime_type": "image/jpeg",
+      "status": "accepted",
+      "generator": "image_gen",
+      "independent_generation": true,
+      "local_feature": "계룡시 향적산 숲과 산길을 소재로 한 AI 경관 연출",
+      "source_url": "https://www.gyeryong.go.kr/tour/",
+      "source_facts": [
+        {
+          "url": "https://www.gyeryong.go.kr/tour/",
+          "title": "계룡시 문화관광 향적산 안내",
+          "checked_at": "2026-11-01T06:42:00+09:00",
+          "supported_facts": [
+            "계룡시 공식 관광 안내에 향적산 치유의 숲·향적산 국사봉 소개."
+          ]
+        }
+      ],
+      "source_sha256": "f48190f09d4262b115278ec910574f15a9aaa6a223ac8e6a179a8aaf36b37e90",
+      "source_pixel_sha256": "07686d07d8b821898cd1fe6b56697bf6f7afb672076c4452e490aefc68d5e509",
+      "source_bytes": 3146197,
+      "encoding": {
+        "source_sha256": "f48190f09d4262b115278ec910574f15a9aaa6a223ac8e6a179a8aaf36b37e90",
+        "source_bytes": 3146197,
+        "source_pixel_sha256": "07686d07d8b821898cd1fe6b56697bf6f7afb672076c4452e490aefc68d5e509",
+        "source_pixel_hash_format": "decoded RGB bytes, row-major; dimensions recorded separately",
+        "sha256": "b65f7572e7df195884b2daaf160fb717bcbfce9e6ea276e14a4aaad9aec38f30",
+        "bytes": 735467,
+        "pixel_sha256": "73c5976b3450bc6395503e9302d2064d3340c30fe10fc8b95f036d2459d27497",
+        "width": 1254,
+        "height": 1254,
+        "mime_type": "image/jpeg",
+        "encoder": {
+          "name": "ImageMagick",
+          "version": "Version: ImageMagick 7.1.1-43 Q16 x86_64 22550 https://imagemagick.org",
+          "executable": "magick",
+          "arguments": [
+            "-sampling-factor",
+            "4:4:4",
+            "-interlace",
+            "Plane",
+            "-quality",
+            "92"
+          ],
+          "quality": 92,
+          "chroma_sampling": "4:4:4",
+          "progressive": true,
+          "resize": false,
+          "crop": false
+        },
+        "metrics": {
+          "mean_absolute_channel_error_0_255": 2.1418368186184855,
+          "rmse_0_255": 3.188808859450595,
+          "psnr_db": 38.058233849556615,
+          "decoded_pixel_identical": false,
+          "luminance_ssim_7x7": 0.992183115570072,
+          "ssim_status": "measured: full-resolution luminance, 7x7 uniform, sample covariance"
+        },
+        "fidelity_thresholds": {
+          "minimum_ssim": 0.97,
+          "minimum_psnr_db": 35.0,
+          "maximum_mae_0_255": 4.0
+        },
+        "reused_existing": false,
+        "id": "chungnam-gyeryong",
+        "asset_path": "assets/regional/originals/chungnam-gyeryong-family-nohall-guide-20261101.jpg"
+      },
+      "visual_review": {
+        "passed": true,
+        "status": "completed",
+        "notes": "Actual image pixels, readable Korean labels, regional context, and visible AI disclosure reviewed."
+      },
+      "previous_image": "https://www.dahamsangjo.co.kr/assets/regional/originals/chungnam-gyeryong-family-nohall-guide-20261101.jpg",
+      "source_page_sha256": "63fab4812b1de556cbde27458664e20cdb02ae41f6a394a8475ae1df2f288596",
+      "phash": "d170b978b6cee181",
+      "dhash": "c626928890500c8c",
+      "scene_phash": "611871f179fec381",
+      "scene_dhash": "0988b080540c8ce8"
     }
   ]
 }
