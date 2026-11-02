@@ -136,6 +136,15 @@ def main():
                 assert page.locator('[data-facility-id]:visible').count() == expected, 'Records require JavaScript'
                 assert page.locator('.pagination a').count() == 44, 'Static pagination missing'
                 report['no_javascript_pages'] += 1; page.close()
+            for rel in curated:
+                page = context.new_page()
+                page.goto(origin+'/'+rel, wait_until='load')
+                assert page.locator('h1:visible').count() == 1, 'Curated title requires JavaScript'
+                assert page.locator('.family-nohall-guide:visible').count() >= 1, 'Curated guide requires JavaScript'
+                assert page.locator('a[href="tel:16006131"]:visible').count() >= 1, 'Static contact missing'
+                assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'), 'No-JS horizontal overflow'
+                report['no_javascript_pages'] += 1
+                page.close()
             page = context.new_page()
             page.goto(origin+'/funeral-halls/', wait_until='load')
             page.locator('.pagination a', has_text=re.compile('^2$')).first.click()
@@ -157,7 +166,7 @@ def main():
             page.close()
             context.close(); browser.close()
         assert report['checked_viewports'] >= 220, 'Insufficient actual browser coverage'
-        assert report['no_javascript_pages'] == 22, 'Incomplete no-JavaScript coverage'
+        assert report['no_javascript_pages'] == len(directories) + len(curated), 'Incomplete no-JavaScript coverage'
         if not report['failures']: report['result'] = 'PASS'
     except Exception as exc:
         report['failures'].append({'stage':'browser execution','error':str(exc)})
