@@ -51,3 +51,8 @@ class FourRegions(unittest.TestCase):
             self.assertIn('cancel-in-progress: false',workflow)
             self.assertIn('ref: main',workflow)
             self.assertNotIn('git push --force',workflow)
+
+    def test_existing_jemulpo_contact_is_static(self):
+        page=(ROOT/'area-incheon-jemulpo-funeral.html').read_text()
+        self.assertIn('href="tel:16006131"',page)
+        self.assertIn('aria-label="장례 상담"',page)
