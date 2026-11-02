@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "facility_id": "fh-0a587ca685529890",
+      "identity_key": "[\"경기도\",\"용인시\",\"용인평온의숲 장례식장\",\"경기도 용인시 처인구 이동면 평온의숲로 77 (어비리, 용인평온의숲)\"]",
+      "status": "accepted",
+      "content_kind": "actual_facility_photo",
+      "asset_path": "assets/funeral-halls/photos/fh-0a587ca685529890-yongin-archive-20190924-original.jpg",
+      "sha256": "354043fb09832aa9be44c104ae784c2085edf10abdf5a1d025d8748d9349ffe2",
+      "width": 630,
+      "height": 354,
+      "mime_type": "image/jpeg",
+      "alt": "용인평온의숲 장례식장 외관 자료사진 — 용인시 2019년 게시",
+      "caption": "용인평온의숲 장례식장 외관 자료사진. 용인시 2019-09-24 게시(촬영일 미상)로, 현재 모습과 다를 수 있습니다. 사진: 용인시 공보관 / 공공누리 제1유형.",
+      "source_url": "https://www.yongin.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1020&q_bbscttSn=20190924095038549",
+      "publication_date": "2019-09-24",
+      "photo_date": null,
+      "author": "용인시 공보관 (기관/게시부서; 촬영자 이름 미표기)",
+      "source_sha256": "354043fb09832aa9be44c104ae784c2085edf10abdf5a1d025d8748d9349ffe2",
+      "modifications": [],
+      "license": {
+        "name": "공공누리 제1유형 (KOGL Type 1: Attribution)",
+        "url": "https://www.kogl.or.kr/info/license.do",
+        "attribution": "사진: 용인시 공보관 · 2019-09-24 게시 · 공공누리 제1유형",
+        "commercial_use": true,
+        "derivatives": true,
+        "evidence_url": "https://www.yongin.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1020&q_bbscttSn=20190924095038549",
+        "policy_url": "https://www.yongin.go.kr/home/yonginInfo/yonginInfo_05.jsp"
+      },
+      "depiction": {
+        "kind": "funeral_hall_exterior",
+        "evidence_url": "https://www.yongin.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1020&q_bbscttSn=20190924095038549",
+        "notes": "공식 게시물에서 용인평온의숲 장례식장으로 소개한 건물 외관 자료사진."
+      },
+      "visual_review": {
+        "passed": true,
+        "exact_facility": true,
+        "privacy_clear": true,
+        "reviewed_at": "2026-10-31T20:42:43.578074+00:00"
+      }
+    },
+    {
+      "facility_id": "fh-2a32c8a884fc1574",
+      "identity_key": "[\"서울특별시\",\"중랑구\",\"면목녹색병원 장례식장\",\"서울특별시 중랑구 사가정로49길 53장례식장 (면목동, 원진재단부설녹색병원)\"]",
+      "content_kind": "actual_facility_photo",
+      "sha256": "dfef826107815c881541a8c551000f853444a639abca5ac666ffeeed6a3220a8",
+      "width": 1536,
+      "height": 659,
+      "mime_type": "image/jpeg",
+      "alt": "면목녹색병원 장례식장 입구와 병원 외관 자료사진",
+      "caption": "면목녹색병원 장례식장 입구가 보이는 자료사진. 촬영일 미상이며 현재 모습과 다를 수 있습니다. 출처: 다함상조 기존 홈페이지.",
+      "source_url": "https://www.dahamsangjo.co.kr/gallery9.jpg",
+      "photo_date": null,
+      "status": "accepted",
+      "asset_path": "gallery9.jpg",
+      "source_sha256": "dfef826107815c881541a8c551000f853444a639abca5ac666ffeeed6a3220a8",
+      "modifications": [],
+      "license": {
+        "kind": "existing_site_authorization",
+        "name": "동일 사이트·해당 시설 안내용 재사용",
+        "url": null,
+        "attribution": "출처: 다함상조 기존 홈페이지 사진 · 촬영일 미상",
+        "commercial_use": true,
+        "derivatives": false
+      },
+      "depiction": {
+        "kind": "funeral_hall_exterior",
+        "evidence_url": "https://www.dahamsangjo.co.kr/gallery9.jpg",
+        "notes": "면목녹색병원 장례식장 입구와 병원 외관이 함께 보이는 기존 현장사진."
+      },
+      "reuse_scope": {
+        "site": "https://www.dahamsangjo.co.kr/",
+        "facility_id": "fh-2a32c8a884fc1574",
+        "sha256": "dfef826107815c881541a8c551000f853444a639abca5ac666ffeeed6a3220a8",
+        "source_asset_path": "gallery9.jpg"
+      },
+      "visual_review": {
+        "passed": true,
+        "exact_facility": true,
+        "privacy_clear": false,
+        "privacy_reviewed_for_authorized_existing_site_reuse": true,
+        "reviewed_at": "2026-10-31T21:01:11Z"
+      }
+    }
+  ]
+}

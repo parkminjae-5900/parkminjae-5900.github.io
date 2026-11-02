@@ -13,6 +13,7 @@ import re
 import xml.etree.ElementTree as ET
 from PIL import Image
 from regional_image_registry import registered_image, apply_registered_body
+from funeral_hall_photos import photo_policy, repair_photo_page
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.dahamsangjo.co.kr/'
@@ -76,6 +77,9 @@ def primary_image(source, page_url):
 
 
 def repair(source, page_url, original_entry=None):
+    policy = photo_policy(source, page_url)
+    if policy is not None:
+        return repair_photo_page(source, page_url, policy)
     original = original_entry if original_entry is not None else registered_image(page_url)
     source = apply_registered_body(source, page_url, original)
     image = BASE + original['asset_path'] if original else primary_image(source, page_url)
@@ -190,10 +194,20 @@ def main():
                 changed += 1
             source = updated
             for old in entry.findall('{' + IMAGE_NS + '}image'): entry.remove(old)
-            ET.SubElement(ET.SubElement(entry, '{' + IMAGE_NS + '}image'), '{' + IMAGE_NS + '}loc').text = image
+            if image:
+                ET.SubElement(ET.SubElement(entry, '{' + IMAGE_NS + '}image'), '{' + IMAGE_NS + '}loc').text = image
         metadata = metas(source)
         try:
+            policy = photo_policy(source, page_url)
+            if policy is not None and policy['photo'] is None:
+                assert not any(k and (k.startswith('og:image') or k.startswith('twitter:image')) for k in metadata)
+                assert metadata.get('twitter:card') == 'summary'
+                assert not entry.findall('{' + IMAGE_NS + '}image')
+                assert policy['directory'] or 'data-facility-photo-pending="1"' in source
+                continue
             image = metadata['og:image']
+            if policy is not None:
+                assert image == BASE + policy['photo']['asset_path']
             images.add(image)
             (width, height), mime = dimensions(image)
             assert metadata['og:image:width'] == str(width)
