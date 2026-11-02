@@ -34,6 +34,7 @@ def main():
         reviews = {r['page']:r for r in json.loads((ROOT/'data/funeral-hall-content-reviews.json').read_text())['entries']}
         photo_pages = {f'funeral-halls/{ident}.html' for ident in photos}
         index_candidates = {rel for rel,review in reviews.items() if review['index_candidate']}
+        regression_pages = {'gangnam-sacredheart-funeral.html', 'incheon-bs-hospital-funeral.html', 'incheon-himchan-funeral.html', 'incheon-redcross-funeral.html'}
         pages = sorted(set(inputs[3]) | set(curated) | set(directories) | set(provisional) | {a['page'] for a in load_aliases(ROOT, inputs)})
         server = ThreadingHTTPServer(('127.0.0.1', 0), partial(Quiet, directory=str(ROOT)))
         threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -56,7 +57,7 @@ def main():
                 context = browser.new_context(viewport={'width':width,'height':900}, device_scale_factor=1)
                 context.route('**/*', local_route)
                 for rel in pages:
-                    if width in (390, 430) and rel not in curated and rel not in photo_pages and rel != 'funeral-halls/index.html': continue
+                    if width in (390, 430) and rel not in curated and rel not in photo_pages and rel not in regression_pages and rel != 'funeral-halls/index.html': continue
                     page = context.new_page(); errors = []; failed_local = []
                     page.on('pageerror', lambda error: errors.append(str(error)))
                     page.on('console', lambda message: errors.append(message.text) if message.type == 'error' else None)
@@ -103,13 +104,13 @@ def main():
                             assert page.locator('[data-facility-id]:visible').count() == 0
                             field.fill('')
                             assert page.locator('[data-facility-id]:visible').count() == 50
-                        if width in (360, 1280) and (rel in curated or rel in index_candidates or rel in photo_pages or rel == 'funeral-halls/index.html'):
+                        if width in (360, 1280) and (rel in curated or rel in index_candidates or rel in photo_pages or rel in regression_pages or rel == 'funeral-halls/index.html'):
                             filename = rel.replace('/','-')+f'-{width}.png'
                             page.screenshot(path=str(out/filename), full_page=True)
                             report['screenshots'].append(filename)
-                        sample_pages = {'area-seoul-songpa-funeral.html','incheon-medical-center-funeral.html','funeral-halls/index.html',provisional[0]} | photo_pages | index_candidates
+                        sample_pages = {'area-seoul-songpa-funeral.html','incheon-medical-center-funeral.html','funeral-halls/index.html',provisional[0]} | photo_pages | index_candidates | regression_pages
                         if width in (360,1280) and rel in sample_pages:
-                            selector = '[data-facility-photo="1"]' if rel in photo_pages else ('.family-nohall-guide' if rel in index_candidates else ('.hall-card' if rel.startswith('funeral-halls/') else '.family-nohall-guide'))
+                            selector = '.hero h1' if rel in regression_pages else ('[data-facility-photo="1"]' if rel in photo_pages else ('.family-nohall-guide' if rel in index_candidates else ('.hall-card' if rel.startswith('funeral-halls/') else '.family-nohall-guide')))
                             page.locator(selector).first.evaluate("el => el.scrollIntoView({block:'start'})")
                             filename = rel.replace('/','-')+f'-{width}-detail.jpg'
                             page.screenshot(path=str(out/filename),type='jpeg',quality=55)
@@ -117,6 +118,13 @@ def main():
                         report['checked_viewports'] += 1
                     except Exception as exc:
                         report['failures'].append({'page':rel,'width':width,'error':str(exc)})
+                        try:
+                            report['failures'][-1]['overflow_elements'] = page.evaluate("[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+1||r.left< -1}).slice(0,12).map(e=>({tag:e.tagName,class:e.className,width:e.getBoundingClientRect().width}))")
+                            filename = 'failure-'+rel.replace('/','-')+f'-{width}.png'
+                            page.screenshot(path=str(out/filename), full_page=True)
+                            report['screenshots'].append(filename)
+                        except Exception:
+                            pass  # Original failure remains authoritative.
                     finally: page.close()
                 context.close()
             context = browser.new_context(java_script_enabled=False, viewport={'width':390,'height':900})

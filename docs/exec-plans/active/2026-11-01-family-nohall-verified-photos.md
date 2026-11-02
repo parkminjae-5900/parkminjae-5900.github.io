@@ -65,3 +65,12 @@ Remote objects are uploaded as small individually SHA-verified blobs with durabl
 
 ## Remaining limitations
 Only2 actual photos are accepted;1,078 remain pending. Source-specific content expansion is ongoing. Local Chromium restrictions are not a browser pass. Exact-commit real CI, screenshot review, deployment status and live source hashes remain mandatory before a publication/completion claim.
+
+
+## Reconciliation checkpoint — 2026-11-02
+- Current source draft preserves main `e4766adb31d3f38b20bc6a66f8cda799f1446dff`, including eight added hospital-guide pages and latest source/price timestamps.
+- There are 82 distinct established facility mappings (81 primary plus Hanyang status) and one preserved accessible Gangnam alias. The alias canonicals to the established October 6 URL; no redirect. The new page's official factual section is retained on the established page.
+- Directory/pilot sitemap has 448 unique URLs. Ten pilot pages remain: five index candidates and five noindex; 988 other facility paths are planned, not published. Two scoped actual photos are accepted; this is not complete facility-photo coverage.
+- Hanyang operating/reopening status remains unverified; historical closure notice is distinguished from location/contact directory listings.
+- Local 125 tests, image audit, conversion, canonical/search-content and public-security checks are required. Exact-commit CI includes real Chromium and screenshots.
+- Existing automatic refresh now reconciles family guidance after enrichment and validates deterministic generation, exact photo policy, canonical/search content and unit tests before its existing commit step. Source-data refresh stages generated root HTML along with directory/sitemap. Existing schedules and permission scopes remain unchanged. Production requires green final CI; never restore artificial facility imagery to satisfy old universal-image validation.

@@ -26,6 +26,13 @@ jobs:
           python3 scripts/enrich_seo.py
       - name: Update pages automatically
         run: python3 scripts/enrich_seo.py --write
+      - name: Reconcile family guidance and validate before publication
+        run: |
+          python3 scripts/build_family_nohall_seo.py --write
+          python3 scripts/build_family_nohall_seo.py --check
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          python3 scripts/repair_search_images.py --check
+          node scripts/verify-search-content.mjs
       - name: Validate generated metadata and JSON-LD
         run: |
           python3 - <<'PY'
@@ -35,7 +42,9 @@ jobs:
               s=p.read_text(encoding='utf-8',errors='replace')
               if 'data-daham-seo-automation="1"' not in s: continue
               assert s.count('data-daham-seo-automation="1"')==1, p
-              assert 'og:image' in s and 'og:title' in s, p
+              assert 'og:title' in s, p
+              if 'name="daham-facility-id"' not in s and 'name="daham-directory"' not in s:
+                  assert 'og:image' in s, p
               for item in re.findall(r'<script type="application/ld\\+json">(.*?)</script>',s,re.S):
                   json.loads(item)
               n+=1
