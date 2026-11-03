@@ -12,6 +12,6 @@
   "photo_pending_records": 1078,
   "held_records": 7,
   "curated_content_pages": 22,
-  "raw_source_sha256": "f84cc7d153ef70bb07cecd5376cee4818881d3eb1fad12eacb5d123303f555b6",
+  "raw_source_sha256": "1d70a3ecccf3805e5f8a0eb1a7c41d080828d2e8fef0354d47e537b33cb37ee9",
   "note": "Regional URL count is not a count of current municipalities. Text quality is reviewed independently of photographs; release requires actual browser CI and visual review. Existing keyword-combination pages remain noindex."
 }
