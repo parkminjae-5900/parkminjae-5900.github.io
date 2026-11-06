@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-06T06:39:36.620236+00:00",
+  "updatedAt": "2026-11-06T15:00:04.698039+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -911,6 +911,29 @@
           "category": "안치실",
           "label": "안치료 3,000원",
           "amount": 3000,
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "facilityName": "목포시의료원장례식장",
+      "address": "전라남도 목포시 이로로 18 (용해동, 목포시의료원)",
+      "verifiedAt": "2026-11-06T14:59:23.180224+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.mokpomc.or.kr/bbs/content.php?co_id=2_8",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치료 안치료",
+          "amount": 50000,
+          "unit": ""
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 사용료 1호실(55평)",
+          "amount": 480000,
           "unit": ""
         }
       ]
