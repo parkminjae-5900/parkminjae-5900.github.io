@@ -227,16 +227,32 @@ def dedupe(prices):
     # cap pathological pages
     return out[:80]
 
-def scan_hall(h):
+def branch_scan_start(h,old,home):
+    """Reuse only an exact-identity, same-site curated branch URL."""
+    if query_value(home,"fnrCd"):
+        return home
+    if (old and old.get("sourceGrade")=="A"
+        and norm(h.get("fcltNm",""))==norm(old.get("facilityName",""))
+        and same_address(h.get("addr",""),old.get("address",""))
+        and same_host(home,old.get("sourceUrl",""))
+        and query_value(old.get("sourceUrl",""),"fnrCd")):
+        return old["sourceUrl"]
+    return home
+
+def scan_hall(h,old=None):
     home=normalize_url(h.get("homepageUrl",""))
     if not home:return {"status":"no_homepage"}
+    start=branch_scan_start(h,old,home)
+    expected_code=query_value(start,"fnrCd")
     s=session()
-    html,final=get_html(s,home)
+    html,final=get_html(s,start)
     if not html:
         # retry http if https failed
-        if home.startswith("https://"):
-            html,final=get_html(s,"http://"+home[8:])
+        if start.startswith("https://"):
+            html,final=get_html(s,"http://"+start[8:])
     if not html:return {"status":"unreachable","homepage":home}
+    if expected_code and (not same_host(start,final) or query_value(final,"fnrCd")!=expected_code):
+        return {"status":"no_price_found","homepage":home}
     pages=[final]
     pages+=candidate_links(html,final)
     best=[];besturl=final
@@ -244,15 +260,17 @@ def scan_hall(h):
     for i,u in enumerate(pages):
         if u in visited:continue
         visited.add(u)
-        ph=html if i==0 else get_html(s,u)[0]
+        if expected_code and query_value(u,"fnrCd")!=expected_code:continue
+        ph,pageurl=(html,final) if i==0 else get_html(s,u)
         if not ph:continue
+        if expected_code and (not same_host(start,pageurl) or query_value(pageurl,"fnrCd")!=expected_code):continue
         soup=BeautifulSoup(ph,"html.parser")
         prices=dedupe(table_prices(soup)+text_prices(soup))
         # facility-price page must contain at least one core category;
         # parking-only pages are not accepted as facility-price override.
         core=sum(1 for x in prices if x["category"] in ("빈소","안치실","염습/입관","영결식장","청소/관리"))
         if core and len(prices)>len(best):
-            best,besturl=prices,u
+            best,besturl=prices,pageurl
         time.sleep(.08)
     if not best:return {"status":"no_price_found","homepage":home}
     return {
@@ -336,7 +354,8 @@ def main():
         idx=(cursor+j)%n
         h=halls[idx]
         key=source_identity(h.get("fcltNm",""),h.get("addr",""))
-        res=scan_hall(h)
+        old=byname.get(record_key({"facilityName":h.get("fcltNm",""),"address":h.get("addr","")}))
+        res=scan_hall(h,old)
         res.update({"facilityName":h.get("fcltNm",""),"address":h.get("addr",""),"index":idx})
         results[key]=res
         batch.append(res)
