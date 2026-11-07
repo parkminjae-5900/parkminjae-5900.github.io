@@ -199,6 +199,74 @@ def table_prices(soup):
             out.append({"category":cat,"label":label[:160],"amount":amt,"unit":unit})
     return out
 
+def expanded_table_rows(table):
+    """Expand HTML rowspans without inferring missing values or column spans."""
+    rows=[]; pending={}
+    for tr in table.find_all("tr"):
+        cells=tr.find_all(["th","td"],recursive=False)
+        row={col:text for col,(text,left) in pending.items()}
+        pending={col:(text,left-1) for col,(text,left) in pending.items() if left>1}
+        col=0
+        for cell in cells:
+            if cell.get("colspan","1")!="1":return []
+            while col in row:col+=1
+            text=clean(cell.get_text(" ",strip=True))
+            try:span=int(cell.get("rowspan","1"))
+            except ValueError:return []
+            if not 1<=span<=50:return []
+            row[col]=text
+            if span>1:pending[col]=(text,span-1)
+            col+=1
+        if row:rows.append([row.get(i,"") for i in range(max(row)+1)])
+    if pending:return []
+    return rows
+
+def pyeongtaek_prices(soup,url):
+    """Strict adapter for the verified Pyeongtaek facility tables only.
+
+    None means not this source; [] means its evidence was incomplete. Never
+    fall back to prose extraction on this source after a structural failure.
+    """
+    if (host(url)!="kyowonyeum.co.kr" or urlparse(url).path.lower()!="/site/funeral"
+        or query_value(url,"fnrCd")!="1002"):
+        return None
+    heading=soup.find("h1")
+    if not heading or clean(heading.get_text())!="평택장례식장":return []
+    if "평택시 신평로 205" not in clean(soup.get_text(" ",strip=True)):return []
+    out=[]; sections=set()
+    for table in soup.find_all("table"):
+        title=table.find_previous(["h1","h2","h3","h4","p"])
+        title=clean(title.get_text(" ",strip=True)) if title else ""
+        room=title in ("· 빈소 - VIP실","· 빈소 - 특실","· 빈소 - 일반실")
+        if not room and title!="· 부대시설":continue
+        if title in sections:return []
+        sections.add(title)
+        rows=expanded_table_rows(table)
+        expected=["구분","크기 / 수용인원","구성","가격"] if room else ["구분","가격","기준"]
+        if not rows or rows[0]!=expected:return []
+        for cells in rows[1:]:
+            if len(cells)!=len(expected):return []
+            label=cells[0]
+            if room:
+                if not re.fullmatch(r"\d+호(?:\s*,\s*\d+호)*",label):return []
+                category="빈소"; label=label.replace(", ","·")+" 빈소"
+                money=cells[3]; unit="1시간"
+                if not re.fullmatch(r"[\d,]+원\s*\(기준 1시간\)",money):return []
+            else:
+                if label=="주차장":continue
+                category={"입관실/염습실":"염습/입관","안치실":"안치실"}.get(label)
+                if not category:return []
+                money=cells[1]; unit=cells[2]
+                if not re.fullmatch(r"[\d,]+원",money):return []
+                if unit not in ("1시간","1일","1회"):return []
+            amount=amount_from_cell(money,require_won=True)
+            if not amount:return []
+            out.append({"category":category,"label":label,"amount":amount,"unit":unit})
+    if sections!={"· 빈소 - VIP실","· 빈소 - 특실","· 빈소 - 일반실","· 부대시설"}:return []
+    if category_coverage(out)!={"빈소","안치실","염습/입관"}:return []
+    if len({x["label"] for x in out})!=len(out):return []
+    return out
+
 def text_prices(soup):
     out=[]
     for el in soup.find_all(["li","p","div","span"]):
@@ -265,7 +333,8 @@ def scan_hall(h,old=None):
         if not ph:continue
         if expected_code and (not same_host(start,pageurl) or query_value(pageurl,"fnrCd")!=expected_code):continue
         soup=BeautifulSoup(ph,"html.parser")
-        prices=dedupe(table_prices(soup)+text_prices(soup))
+        adapted=pyeongtaek_prices(soup,pageurl)
+        prices=dedupe(adapted if adapted is not None else table_prices(soup)+text_prices(soup))
         # facility-price page must contain at least one core category;
         # parking-only pages are not accepted as facility-price override.
         core=sum(1 for x in prices if x["category"] in ("빈소","안치실","염습/입관","영결식장","청소/관리"))

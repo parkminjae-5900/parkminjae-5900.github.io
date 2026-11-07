@@ -9,7 +9,8 @@ if importlib.util.find_spec("requests") is None:
     requests=types.ModuleType("requests")
     requests.Session=lambda: None
     sys.modules["requests"]=requests
-if importlib.util.find_spec("bs4") is None:
+HAS_BS4=importlib.util.find_spec("bs4") is not None
+if not HAS_BS4:
     bs4=types.ModuleType("bs4")
     bs4.BeautifulSoup=object
     sys.modules["bs4"]=bs4
@@ -121,7 +122,7 @@ class BranchRoutingTests(unittest.TestCase):
 
     def run_scan(self,responses,links=None):
         with patch.object(scan,"get_html",side_effect=responses) as get_html, \
-             patch.object(scan,"session"), patch.object(scan,"BeautifulSoup"), \
+             patch.object(scan,"session"), patch.object(scan,"BeautifulSoup"), patch.object(scan,"pyeongtaek_prices",return_value=None), \
              patch.object(scan,"candidate_links",return_value=links or []), \
              patch.object(scan,"table_prices",return_value=[price()]), \
              patch.object(scan,"text_prices",return_value=[]), patch.object(scan.time,"sleep"):
@@ -146,7 +147,7 @@ class BranchRoutingTests(unittest.TestCase):
     def test_secondary_redirect_cannot_masquerade_as_requested_branch(self):
         link=self.BRANCH+"&view=prices"
         with patch.object(scan,"get_html",side_effect=[("html",self.BRANCH),("wrong branch",self.OTHER)]), \
-             patch.object(scan,"session"), patch.object(scan,"BeautifulSoup"), \
+             patch.object(scan,"session"), patch.object(scan,"BeautifulSoup"), patch.object(scan,"pyeongtaek_prices",return_value=None), \
              patch.object(scan,"candidate_links",return_value=[link]), \
              patch.object(scan,"table_prices",return_value=[]), \
              patch.object(scan,"text_prices",return_value=[]), patch.object(scan.time,"sleep"):
@@ -161,7 +162,7 @@ class BranchRoutingTests(unittest.TestCase):
     def test_non_branch_site_still_selects_richer_page_and_records_final_url(self):
         h={"homepageUrl":"https://example.test"}
         with patch.object(scan,"get_html",side_effect=[("home","https://example.test"),("prices","https://example.test/current-prices")]), \
-             patch.object(scan,"session"), patch.object(scan,"BeautifulSoup"), \
+             patch.object(scan,"session"), patch.object(scan,"BeautifulSoup"), patch.object(scan,"pyeongtaek_prices",return_value=None), \
              patch.object(scan,"candidate_links",return_value=["https://example.test/prices"]), \
              patch.object(scan,"table_prices",side_effect=[[],[price()]]), \
              patch.object(scan,"text_prices",return_value=[]), patch.object(scan.time,"sleep"):
@@ -181,6 +182,65 @@ class BranchRoutingTests(unittest.TestCase):
         candidate={**result,"facilityName":self.h["fcltNm"],"address":self.h["addr"]}
         self.assertEqual(scan.identity_guard(candidate,self.old,self.HOME),(False,"category_coverage_regression"))
         self.assertEqual(len(self.old["prices"]),3)
+
+@unittest.skipUnless(HAS_BS4,"beautifulsoup4 required for source HTML adapter")
+class PyeongtaekParserTests(unittest.TestCase):
+    URL="https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1002"
+
+    def setUp(self):
+        self.html=(Path(__file__).parent/"fixtures"/"kyowon_pyeongtaek_prices.html").read_text(encoding="utf-8")
+
+    def parse(self,html=None,url=None):
+        return scan.pyeongtaek_prices(scan.BeautifulSoup(html or self.html,"html.parser"),url or self.URL)
+
+    def test_all_official_rows_and_shared_price_are_explicit(self):
+        rows=self.parse()
+        self.assertEqual([(r["label"],r["amount"],r["unit"]) for r in rows],[
+            ("202호 빈소",50000,"1시간"),("203호 빈소",41000,"1시간"),
+            ("101호·102호 빈소",36000,"1시간"),("201호·204호 빈소",28000,"1시간"),
+            ("301호·302호 빈소",23000,"1시간"),("303호 빈소",23000,"1시간"),
+            ("입관실/염습실",400000,"1회"),("안치실",120000,"1일")])
+        self.assertEqual(scan.category_coverage(rows),{"빈소","안치실","염습/입관"})
+
+    def test_other_branches_and_domains_keep_generic_parser(self):
+        for url in (self.URL.replace("1002","1001"),self.URL.replace("kyowonyeum.co.kr","other.test")):
+            self.assertIsNone(self.parse(url=url))
+
+    def test_wrong_identity_missing_price_unit_or_structure_fails_closed(self):
+        changes=[("<h1 class=\"C\">평택장례식장</h1>","<h1>화성장례식장</h1>"),
+                 ("평택시 신평로 205","평택시 신평로 999"),
+                 ("50,000원","상담문의"),("41,000원","41,000원 또는 45,000원"),
+                 ("기준 1시간","기준 미정"),("rowspan=\"2\"","rowspan=\"99\""),
+                 ("· 부대시설","· 다른 시설")]
+        for before,after in changes:
+            with self.subTest(before=before):
+                self.assertIn(before,self.html)
+                self.assertEqual(self.parse(self.html.replace(before,after)),[])
+
+    def test_shared_price_is_not_guessed_if_rowspan_removed(self):
+        # Remove only the shared price span: 303호 then has no price cell.
+        html=self.html.replace('<td rowspan="2">23,000원','<td>23,000원')
+        self.assertNotEqual(html,self.html)
+        self.assertEqual(self.parse(html),[])
+
+    def test_scan_uses_adapter_without_prose_duplicates(self):
+        h={"fcltNm":"교원예움 평택장례식장","addr":"경기도 평택시 신평로 205","homepageUrl":self.URL}
+        with patch.object(scan,"session"),patch.object(scan,"get_html",return_value=(self.html,self.URL)), \
+             patch.object(scan,"candidate_links",return_value=[]),patch.object(scan.time,"sleep"):
+            result=scan.scan_hall(h)
+        self.assertEqual(len(result["prices"]),8)
+        self.assertEqual(result["sourceUrl"],self.URL)
+        old=record(name=h["fcltNm"],address=h["addr"],source_url=self.URL,prices=self.parse())
+        self.assertEqual(scan.identity_guard({**result,"address":h["addr"]},old,self.URL),(True,"guard_passed"))
+
+    def test_invalid_adapter_page_does_not_fall_back_to_prose(self):
+        html=self.html.replace("기준 1시간","기준 미정")
+        with patch.object(scan,"session"),patch.object(scan,"get_html",return_value=(html,self.URL)), \
+             patch.object(scan,"candidate_links",return_value=[]),patch.object(scan.time,"sleep"), \
+             patch.object(scan,"text_prices") as prose:
+            result=scan.scan_hall({"homepageUrl":self.URL})
+        self.assertEqual(result["status"],"no_price_found")
+        prose.assert_not_called()
 
 if __name__=="__main__":
     unittest.main()

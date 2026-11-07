@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-07T19:08:51.671888+00:00",
+  "updatedAt": "2026-11-07T19:10:33.493764+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -627,7 +627,7 @@
     {
       "facilityName": "교원예움 평택장례식장",
       "address": "경기도 평택시 신평로 205, (구)평택장례문화원  (군문동)",
-      "verifiedAt": "2026-09-30",
+      "verifiedAt": "2026-11-07T19:10:33.493764+00:00",
       "sourceName": "교원예움 공식 지점 시설정보",
       "sourceUrl": "https://www.kyowonyeum.co.kr/Site/Funeral?fnrCd=1002",
       "sourceGrade": "A",
@@ -660,6 +660,12 @@
         {
           "category": "빈소",
           "label": "301호·302호 빈소",
+          "amount": 23000,
+          "unit": "1시간"
+        },
+        {
+          "category": "빈소",
+          "label": "303호 빈소",
           "amount": 23000,
           "unit": "1시간"
         },
