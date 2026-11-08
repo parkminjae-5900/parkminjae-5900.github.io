@@ -267,6 +267,59 @@ def pyeongtaek_prices(soup,url):
     if len({x["label"] for x in out})!=len(out):return []
     return out
 
+def gijang_prices(soup,url):
+    """Read the official daily/one-use price column, never the hourly notes.
+
+    Fail closed on this hospital's other pages or changed table structure.
+    Expanding the two-column fee cells preserves header/amount alignment.
+    """
+    if host(url)!="gjhp.kr":return None
+    if urlparse(url).path!="/location01_05.php":return []
+    if not soup.title or clean(soup.title.get_text())!="기장병원":return []
+    tables=[]
+    for table in soup.find_all("table"):
+        first=table.find("tr")
+        if first and [clean(c.get_text(" ",strip=True)) for c in first.find_all(["th","td"])]==["구분","호실","요금","비고"]:
+            tables.append(table)
+    if len(tables)!=1:return []
+    table=BeautifulSoup(str(tables[0]),"html.parser").table
+    for tr in list(table.find_all("tr"))[1:]:
+        cells=tr.find_all(["th","td"],recursive=False)
+        if not cells:return []
+        label=clean(cells[0].get_text(" ",strip=True))
+        if label=="도우미":
+            tr.decompose();continue
+        for c in cells:
+            if c.get("colspan","1")=="1":continue
+            if label not in ("안치료","염습실 사용료") or c is not cells[1] or c.get("colspan")!="2":return []
+            c.attrs.pop("colspan")
+            empty=soup.new_tag("td")
+            c.insert_before(empty)
+    rows=expanded_table_rows(table)
+    if not rows:return []
+    out=[]
+    for cells in rows[1:]:
+        if len(cells)!=4:return []
+        kind,room,money,notes=cells
+        if kind=="빈소 임대료 (접객실 포함)":
+            if not re.fullmatch(r"(?:특 )?\d+호실",room):return []
+            category="빈소"; label=kind+" "+room; unit="1일"
+        elif kind in ("안치료","염습실 사용료"):
+            if room:return []
+            category="안치실" if kind=="안치료" else "염습/입관"
+            label=kind; unit="1일" if kind=="안치료" else "1회"
+        elif kind=="청소, 쓰레기 처리비용":
+            if not re.fullmatch(r"(?:특 )?\d+(?:,\d+)*호실",room):return []
+            category="청소/관리";label=kind+" "+room;unit="1일"
+        else:return []
+        if not re.fullmatch(r"[\d,]+원\s*/\s*"+unit,money):return []
+        amount=amount_from_cell(money,require_won=True)
+        if not amount:return []
+        out.append({"category":category,"label":label,"amount":amount,"unit":unit})
+    if category_coverage(out)!={"빈소","안치실","염습/입관","청소/관리"}:return []
+    if len({x["label"] for x in out})!=len(out):return []
+    return out
+
 def text_prices(soup):
     out=[]
     for el in soup.find_all(["li","p","div","span"]):
@@ -333,7 +386,8 @@ def scan_hall(h,old=None):
         if not ph:continue
         if expected_code and (not same_host(start,pageurl) or query_value(pageurl,"fnrCd")!=expected_code):continue
         soup=BeautifulSoup(ph,"html.parser")
-        adapted=pyeongtaek_prices(soup,pageurl)
+        adapted=gijang_prices(soup,pageurl)
+        if adapted is None:adapted=pyeongtaek_prices(soup,pageurl)
         prices=dedupe(adapted if adapted is not None else table_prices(soup)+text_prices(soup))
         # facility-price page must contain at least one core category;
         # parking-only pages are not accepted as facility-price override.

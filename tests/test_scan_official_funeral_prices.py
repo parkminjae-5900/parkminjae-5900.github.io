@@ -242,5 +242,52 @@ class PyeongtaekParserTests(unittest.TestCase):
         self.assertEqual(result["status"],"no_price_found")
         prose.assert_not_called()
 
+
+@unittest.skipUnless(HAS_BS4,"beautifulsoup4 required")
+class GijangPricesTests(unittest.TestCase):
+    url="http://www.gjhp.kr/location01_05.php"
+
+    def setUp(self):
+        self.html=(Path(__file__).parent/"fixtures/gijang_prices.html").read_text(encoding="utf-8")
+
+    def parse(self,html=None,url=None):
+        return scan.gijang_prices(scan.BeautifulSoup(html or self.html,"html.parser"),url or self.url)
+
+    def test_daily_amount_not_hourly_note(self):
+        prices=self.parse()
+        self.assertEqual(len(prices),9)
+        self.assertEqual([p for p in prices if p["category"]=="안치실"],
+            [{"category":"안치실","label":"안치료","amount":100000,"unit":"1일"}])
+        self.assertEqual([p["amount"] for p in prices if p["category"]=="빈소"],[400000,400000,400000,500000,500000])
+        self.assertEqual([p["unit"] for p in prices if p["category"]=="염습/입관"],["1회"])
+
+    def test_changed_prices_are_read_not_hardcoded(self):
+        prices=self.parse(self.html.replace("100,000원 / 1일","120,000원 / 1일"))
+        self.assertEqual([p["amount"] for p in prices if p["category"]=="안치실"],[120000])
+
+    def test_fail_closed_on_changed_or_missing_evidence(self):
+        for old,new in [("<title>기장병원</title>","<title>다른 병원</title>"),
+                        ("colspan=\"2\"","colspan=\"3\""),
+                        ("100,000원 / 1일","100,000원 / 시간"),
+                        ("100,000원 / 1일","문의"),
+                        ("<th class=\"left-division\">요금</th>","<th>비고</th>")]:
+            with self.subTest(old=old):self.assertEqual(self.parse(self.html.replace(old,new)),[])
+        self.assertEqual(self.parse(self.html+self.html),[])
+        self.assertEqual(self.parse(url="http://www.gjhp.kr/other.php"),[])
+        self.assertIsNone(self.parse(url="http://other.example/location01_05.php"))
+
+    def test_scan_does_not_fall_back_on_malformed_table(self):
+        html=self.html.replace("100,000원 / 1일","문의")
+        with patch.object(scan,"session"), patch.object(scan,"get_html",return_value=(html,self.url)), patch.object(scan,"candidate_links",return_value=[]), patch.object(scan,"text_prices",side_effect=AssertionError("unsafe fallback")), patch.object(scan.time,"sleep"):
+            self.assertEqual(scan.scan_hall({"homepageUrl":self.url})["status"],"no_price_found")
+
+    def test_scan_and_promotion_preserve_existing_categories(self):
+        with patch.object(scan,"session"), patch.object(scan,"get_html",return_value=(self.html,self.url)), patch.object(scan,"candidate_links",return_value=[]), patch.object(scan.time,"sleep"):
+            result=scan.scan_hall({"homepageUrl":self.url})
+        self.assertEqual(result["status"],"priced")
+        old={"sourceGrade":"A","address":"기장","prices":[price("빈소"),price("안치실")]}
+        result["address"]="기장"
+        self.assertTrue(scan.identity_guard(result,old,self.url)[0])
+
 if __name__=="__main__":
     unittest.main()
