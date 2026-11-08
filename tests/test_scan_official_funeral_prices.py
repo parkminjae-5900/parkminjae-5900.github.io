@@ -291,3 +291,42 @@ class GijangPricesTests(unittest.TestCase):
 
 if __name__=="__main__":
     unittest.main()
+
+
+@unittest.skipUnless(HAS_BS4,"BeautifulSoup required")
+class YoungwolTests(unittest.TestCase):
+    def fixture(self,n):
+        return (Path(__file__).parent/'fixtures'/f'youngwol-{n}.html').read_text()
+
+    def run_scan(self,second=None):
+        def fetch(session,url):
+            if 'page=2' in url:
+                return (second,url) if second is not None else (self.fixture(2),url)
+            return self.fixture(1),url
+        with patch.object(scan,'get_html',side_effect=fetch), patch.object(scan,'session'):
+            return scan.scan_hall({'homepageUrl':'https://www.youngwol.org'})
+
+    def test_complete_inventory_and_exact_units(self):
+        result=self.run_scan()
+        self.assertEqual(result['status'],'priced')
+        self.assertEqual(len(result['prices']),17)
+        self.assertEqual(result['prices'][0],{'category':'안치실','label':'안치료 특실1(40평)','amount':3000,'unit':'1시간당'})
+        self.assertEqual(result['prices'][-2:],[
+            {'category':'염습/입관','label':'염습료','amount':200000,'unit':'1구당'},
+            {'category':'염습/입관','label':'염습실사용료','amount':250000,'unit':'1구당'}])
+
+    def test_missing_page_fails_closed(self):
+        self.assertEqual(self.run_scan('')['status'],'no_price_found')
+
+    def test_duplicate_page_fails_closed(self):
+        self.assertEqual(self.run_scan(self.fixture(1))['status'],'no_price_found')
+
+    def test_changed_header_fails_closed(self):
+        self.assertEqual(self.run_scan(self.fixture(2).replace('규격','번호'))['status'],'no_price_found')
+
+    def test_changed_total_fails_closed(self):
+        self.assertEqual(self.run_scan(self.fixture(2).replace('Total 17건','Total 18건'))['status'],'no_price_found')
+
+    def test_foreign_source_rejected(self):
+        soup=scan.BeautifulSoup(self.fixture(1),'html.parser')
+        self.assertIsNone(scan.youngwol_page(soup,'https://example.com/bbs/board.php?bo_table=funeral_01'))

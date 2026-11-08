@@ -320,6 +320,68 @@ def gijang_prices(soup,url):
     if len({x["label"] for x in out})!=len(out):return []
     return out
 
+def youngwol_page(soup,url):
+    """Read named columns, never the bulletin number as a room specification."""
+    if (host(url)!="youngwol.org" or urlparse(url).path!="/bbs/board.php"
+        or query_value(url,"bo_table")!="funeral_01" or query_value(url,"wr_id")):
+        return None
+    if not soup.title or "영월의료원" not in soup.title.get_text():return None
+    total_el=soup.select_one("#bo_list_total")
+    total=re.search(r"Total\s+([\d,]+)건",clean(total_el.get_text())) if total_el else None
+    current=soup.select_one(".pg_current")
+    if not total or not current:return None
+    page=query_value(url,"page") or "1"
+    if clean(current.get_text())!=page:return None
+    tables=[t for t in soup.find_all("table") if t.find("tr") and
+            [clean(c.get_text(" ",strip=True)) for c in t.find("tr").find_all(["th","td"])]
+            ==["번호","품목","규격","단위","금액","비고"]]
+    if len(tables)!=1:return None
+    rows=expanded_table_rows(tables[0]); out=[]; numbers=[]
+    categories={"안치료":"안치실","분향실료":"빈소","접객실료":"빈소",
+                "염습료":"염습/입관","염습실사용료":"염습/입관"}
+    for cells in rows[1:]:
+        if len(cells)!=6:return None
+        number,kind,size,unit,money,notes=cells
+        if not number.isdigit() or kind not in categories:return None
+        if unit not in ("1시간당","1구당") or not re.fullmatch(r"[\d,]+",money):return None
+        amount=amount_from_cell(money)
+        if not amount:return None
+        label=" ".join(x for x in (kind,size,notes) if x)
+        out.append({"category":categories[kind],"label":label,"amount":amount,"unit":unit})
+        numbers.append(int(number))
+    pages={1}
+    for a in soup.select(".pg a[href]"):
+        u=urljoin(url,a["href"])
+        if not same_host(url,u) or urlparse(u).path!="/bbs/board.php" or query_value(u,"bo_table")!="funeral_01":return None
+        n=query_value(u,"page")
+        if not n.isdigit() or not 1<=int(n)<=10:return None
+        pages.add(int(n))
+    pages.add(int(page))
+    return int(total.group(1).replace(",","")),pages,numbers,out
+
+
+def scan_youngwol(s,home):
+    """Require all linked pages and the complete numbered inventory atomically."""
+    base="https://youngwol.org/bbs/board.php?bo_table=funeral_01"
+    pending=[1]; visited=set(); numbers=[]; prices=[]; total=None
+    while pending:
+        page=pending.pop(0)
+        if page in visited:continue
+        visited.add(page)
+        url=base+("&page="+str(page) if page!=1 else "")
+        html,final=get_html(s,url)
+        parsed=youngwol_page(BeautifulSoup(html,"html.parser"),final) if html and final else None
+        if not parsed:return {"status":"no_price_found","homepage":home}
+        count,pages,ids,rows=parsed
+        if total is not None and total!=count:return {"status":"no_price_found","homepage":home}
+        total=count; numbers+=ids; prices+=rows
+        pending+=sorted(pages-visited)
+    if (not total or len(numbers)!=total or set(numbers)!=set(range(1,total+1))
+        or len(dedupe(prices))!=total):
+        return {"status":"no_price_found","homepage":home}
+    return {"status":"priced","homepage":home,"sourceUrl":base,"prices":prices,"verifiedAt":now()}
+
+
 def text_prices(soup):
     out=[]
     for el in soup.find_all(["li","p","div","span"]):
@@ -366,6 +428,7 @@ def scan_hall(h,old=None):
     start=branch_scan_start(h,old,home)
     expected_code=query_value(start,"fnrCd")
     s=session()
+    if host(home)=="youngwol.org":return scan_youngwol(s,home)
     html,final=get_html(s,start)
     if not html:
         # retry http if https failed
