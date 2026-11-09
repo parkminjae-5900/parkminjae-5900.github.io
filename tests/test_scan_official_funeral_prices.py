@@ -397,5 +397,8 @@ class EwhaSeoulTests(unittest.TestCase):
         self.assertEqual(result["status"],"priced")
         data=json.loads((SCRIPT.parents[1]/"data/funeral-hall-prices.json").read_text())
         published=next(x for x in data["items"] if x["facilityName"]=="이대서울병원장례식장")
-        self.assertEqual(result["prices"],published["prices"])
+        self.assertEqual(len(published["prices"]),6)
+        # Published amounts may legitimately change after a later official scan.
+        identity=lambda rows: [(r["category"],r["label"],r["unit"]) for r in rows]
+        self.assertEqual(identity(result["prices"]),identity(published["prices"]))
         self.assertEqual(scan.identity_guard(published,published,self.URL),(True,"guard_passed"))
