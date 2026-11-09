@@ -12,7 +12,7 @@ STATE=Path("data/official-price-scan-state.json")
 REPORT=Path("data/official-price-scan-report.json")
 BATCH=int(os.environ.get("PRICE_SCAN_BATCH","45"))
 TIMEOUT=6
-PROMOTION_GUARD_VERSION=2
+PROMOTION_GUARD_VERSION=3
 UA="Mozilla/5.0 (compatible; DahamSangjoPriceVerifier/1.0; +https://www.dahamsangjo.co.kr/)"
 
 KEYWORDS=("장례","빈소","안치","염습","입관","시설","이용","요금","비용","가격","사용료","영결")
@@ -81,6 +81,10 @@ def identity_guard(rec,old,homepage):
     # produced it. Keep the reviewed display until official rows are verified.
     if old and old.get("priceReviewRequired"):
         return False,"price_unit_review_required"
+
+    if host(rec.get("sourceUrl","")) in ("nw4444.co.kr","dgsmfn.com"):
+        if not rec.get("prices") or any(x.get("sourceParser")!="reviewed_room_rows_v1" for x in rec["prices"]):
+            return False,"room_row_review_required"
 
     if old and old.get("sourceGrade")=="A":
         if not same_address(rec.get("address",""),old.get("address","")):
@@ -423,6 +427,66 @@ def ewha_seoul_prices(soup,url):
     return out
 
 
+def reviewed_room_prices(soup,url):
+    """Fail closed for these hosts: never interpret navigation/ancestor prose as prices."""
+    h=host(url)
+    if h not in ("nw4444.co.kr","dgsmfn.com"):return None
+    out=[]
+    def add(category,label,amount,unit):
+        out.append({"category":category,"label":label,"amount":amount,"unit":unit,
+                    "sourceParser":"reviewed_room_rows_v1"})
+    if h=="dgsmfn.com":
+        if urlparse(url).path!="/sub2_1_1.php":return []
+        boxes=soup.select(".facility_info_box .facility_top")
+        if len(boxes)!=1:return []
+        box=boxes[0];title=box.find("h2");cells=box.select("li.price")
+        if not title or clean(title.get_text())!="VIP 501호" or len(cells)!=1:return []
+        cell=cells[0];money=cell.find("b")
+        if not money or "3일장 기준" not in clean(cell.get_text(" ",strip=True)):return []
+        value=clean(money.get_text())
+        if not re.fullmatch(r"[\d,]+원",value):return []
+        amount=amount_from_cell(value,require_won=True)
+        if not amount:return []
+        add("빈소","빈소 VIP 501호 · 장례 3일장 기준",amount,"3일장")
+        return out
+    if urlparse(url).path!="/sub/sub_13.php":return []
+    tables=[]
+    for table in soup.find_all("table"):
+        rows=[r for r in table.find_all("tr") if r.find_parent("table") is table]
+        if not rows:continue
+        header=[clean(c.get_text(" ",strip=True)) for c in rows[0].find_all(["th","td"],recursive=False)]
+        if header==["호 실","정상가","할인가","면 적(坪)","비 고"]:tables.append(rows)
+    if len(tables)!=1:return []
+    seen=set()
+    extra={"안치실":("안치실","1일"),"폐기물 처리비":("청소/관리",""),
+           "입관비":("염습/입관",""),"추가 입관실 사용료":("염습/입관",""),"일반 관리비":("청소/관리","")}
+    for row in tables[0][1:]:
+        cells=[clean(c.get_text(" ",strip=True)) for c in row.find_all(["th","td"],recursive=False)]
+        if cells and re.fullmatch(r"\d+층",cells[0]):cells=cells[1:]
+        if not cells:continue
+        name=cells[0]
+        if re.fullmatch(r"\d+호실",name):
+            if len(cells)!=5 or name in seen:return []
+            seen.add(name)
+            for index,kind in [(1,"정상가"),(2,"할인가 · 적용 조건 확인 필요")]:
+                m=re.fullmatch(r"([\d,]+)원 / 시간",cells[index])
+                if not m:return []
+                amount=amount_from_cell(m[1]+"원",require_won=True)
+                if not amount:return []
+                add("빈소",f"빈소 {name} · {kind}",amount,"1시간")
+        elif name in extra:
+            if len(cells)!=5:return []
+            category,unit=extra[name]
+            pattern=r"([\d,]+)원 / 일" if unit else r"([\d,]+)원"
+            m=re.fullmatch(pattern,cells[1])
+            if not m:return []
+            amount=amount_from_cell(m[1]+"원",require_won=True)
+            if not amount:return []
+            add(category,name+(" · 부과 기준 확인 필요" if not unit else ""),amount,unit)
+    if seen!={"1호실","2호실","3호실","5호실","6호실"} or len(out)!=15:return []
+    return out
+
+
 def text_prices(soup):
     out=[]
     for el in soup.find_all(["li","p","div","span"]):
@@ -490,7 +554,8 @@ def scan_hall(h,old=None):
         if not ph:continue
         if expected_code and (not same_host(start,pageurl) or query_value(pageurl,"fnrCd")!=expected_code):continue
         soup=BeautifulSoup(ph,"html.parser")
-        adapted=ewha_seoul_prices(soup,pageurl)
+        adapted=reviewed_room_prices(soup,pageurl)
+        if adapted is None:adapted=ewha_seoul_prices(soup,pageurl)
         if adapted is None:adapted=gijang_prices(soup,pageurl)
         if adapted is None:adapted=pyeongtaek_prices(soup,pageurl)
         prices=dedupe(adapted if adapted is not None else table_prices(soup)+text_prices(soup))
@@ -664,5 +729,6 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
 

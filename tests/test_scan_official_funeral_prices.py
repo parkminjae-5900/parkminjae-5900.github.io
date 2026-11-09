@@ -402,3 +402,48 @@ class EwhaSeoulTests(unittest.TestCase):
         identity=lambda rows: [(r["category"],r["label"],r["unit"]) for r in rows]
         self.assertEqual(identity(result["prices"]),identity(published["prices"]))
         self.assertEqual(scan.identity_guard(published,published,self.URL),(True,"guard_passed"))
+
+
+@unittest.skipUnless(HAS_BS4,"BeautifulSoup required")
+class ReviewedRoomRowsTests(unittest.TestCase):
+    def html(self,name):
+        return (SCRIPT.parents[1]/f"tests/fixtures/{name}-prices.html").read_text()
+    def parse(self,name,html=None):
+        url={"namwon":"http://www.nw4444.co.kr/sub/sub_13.php","daegu":"http://dgsmfn.com/sub2_1_1.php"}[name]
+        return scan.reviewed_room_prices(scan.BeautifulSoup(html or self.html(name),"html.parser"),url)
+    def test_namwon_separates_room_rate_types_and_units(self):
+        rows=self.parse('namwon')
+        self.assertEqual(len(rows),15)
+        room=rows[:10]
+        self.assertEqual([r['amount'] for r in room],[28000,14000,20000,10000,16000,8000,16000,8000,12000,6000])
+        self.assertTrue(all(r['category']=='빈소' and r['unit']=='1시간' for r in room))
+        self.assertEqual(rows[10]['amount'],40000)
+        self.assertEqual(rows[10]['unit'],'1일')
+        self.assertTrue(all('부과 기준 확인 필요' in r['label'] and r['unit']=='' for r in rows[11:]))
+    def test_daegu_has_one_501_room_and_three_day_unit(self):
+        html='<nav>VIP 501호 VIP 301호 특101호 특201호 102호 103호 202호</nav>'+self.html('daegu')
+        rows=self.parse('daegu',html)
+        self.assertEqual(len(rows),1)
+        self.assertEqual((rows[0]['label'],rows[0]['amount'],rows[0]['unit']),('빈소 VIP 501호 · 장례 3일장 기준',1794000,'3일장'))
+    def test_changed_structures_fail_closed(self):
+        for name,old,new in [('namwon','정상가','변경'),('namwon','14,000원 / 시간','14,000원'),('namwon','6호실','7호실'),('daegu','3일장 기준','1일 기준'),('daegu','VIP 501호','VIP 301호')]:
+            with self.subTest(name=name,old=old):self.assertEqual(self.parse(name,self.html(name).replace(old,new)),[])
+    def test_other_pages_on_reviewed_hosts_never_use_prose_fallback(self):
+        for host in ['www.nw4444.co.kr','dgsmfn.com']:
+            self.assertEqual(scan.reviewed_room_prices(scan.BeautifulSoup('<p>빈소 500,000원</p>','html.parser'),'http://'+host+'/other.php'),[])
+    def test_old_saved_prose_rejected_and_reviewed_rows_accepted(self):
+        for name,url in [('namwon','http://www.nw4444.co.kr/sub/sub_13.php'),('daegu','http://dgsmfn.com/sub2_1_1.php')]:
+            old=record(source_url=url,prices=self.parse(name))
+            stale=record(source_url=url,prices=[price()]*20)
+            self.assertEqual(scan.identity_guard(stale,old,url),(False,'room_row_review_required'))
+            self.assertEqual(scan.identity_guard(old,old,url),(True,'guard_passed'))
+    def test_scan_and_published_records_match(self):
+        import json
+        data=json.loads((SCRIPT.parents[1]/'data/funeral-hall-prices.json').read_text())
+        for name,facility,url in [('namwon','남원장례식장','http://www.nw4444.co.kr/sub/sub_13.php'),('daegu','대구시민전문장례식장','http://dgsmfn.com/sub2_1_1.php')]:
+            with patch.object(scan,'session',return_value=None),patch.object(scan,'get_html',return_value=(self.html(name),url)),patch.object(scan,'candidate_links',return_value=[]),patch.object(scan.time,'sleep'):
+                result=scan.scan_hall({'homepageUrl':url})
+            self.assertEqual(result['status'],'priced')
+            published=next(r for r in data['items'] if r['facilityName']==facility)
+            identity=lambda rows:[(r['label'],r['category'],r['unit'],r.get('sourceParser')) for r in rows]
+            self.assertEqual(identity(published['prices']),identity(result['prices']))

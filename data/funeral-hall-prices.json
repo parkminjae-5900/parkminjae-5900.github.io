@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-09T07:57:12.109021+00:00",
+  "updatedAt": "2026-11-09T12:59:15.157587+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -899,64 +899,134 @@
     {
       "facilityName": "남원장례식장",
       "address": "전라북도 남원시 충정로 265-7 (월락동)",
-      "verifiedAt": "2026-11-08T19:05:33.694735+00:00",
+      "verifiedAt": "2026-11-09T12:59:15.059157+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.nw4444.co.kr/sub/sub_13.php",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 홈페이지 게시 가격 대조. 시행일 미표기: 실제 이용 전 최종 확인 필요. 정상가와 할인가를 구분했으며 할인 적용 조건은 장례식장 확인 필요. 단위 미표기 항목은 부과 기준 확인 필요.",
       "prices": [
         {
-          "category": "염습/입관",
-          "label": "☞ 식장 이용요금표 호 실 정상가 할인가 면 적(坪) 비 고 1층 1호실 28,000원 / 시간 14,000원 / 시간 330m² (100坪) 방2, 욕실1 2호실 20,000원 / 시간 10,000원 / 시간 264㎡ (80坪) 방1, 욕실1 3호실 16,000원 / 시간 8,000원",
+          "category": "빈소",
+          "label": "빈소 1호실 · 정상가",
           "amount": 28000,
-          "unit": ""
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
         },
         {
-          "category": "염습/입관",
-          "label": "☞ 식장 이용요금표 호 실 정상가 할인가 면 적(坪) 비 고 1층 1호실 28,000원 / 시간 14,000원 / 시간 330m² (100坪) 방2, 욕실1 2호실 20,000원 / 시간 10,000원 / 시간 264㎡ (80坪) 방1, 욕실1 3호실 16,000원 / 시간 8,000원",
+          "category": "빈소",
+          "label": "빈소 1호실 · 할인가 · 적용 조건 확인 필요",
+          "amount": 14000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 2호실 · 정상가",
           "amount": 20000,
-          "unit": ""
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
         },
         {
-          "category": "염습/입관",
-          "label": "추가 입관실 사용료 300,000원",
-          "amount": 300000,
-          "unit": ""
+          "category": "빈소",
+          "label": "빈소 2호실 · 할인가 · 적용 조건 확인 필요",
+          "amount": 10000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 3호실 · 정상가",
+          "amount": 16000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 3호실 · 할인가 · 적용 조건 확인 필요",
+          "amount": 8000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 5호실 · 정상가",
+          "amount": 16000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 5호실 · 할인가 · 적용 조건 확인 필요",
+          "amount": 8000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 6호실 · 정상가",
+          "amount": 12000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 6호실 · 할인가 · 적용 조건 확인 필요",
+          "amount": 6000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실",
+          "amount": 40000,
+          "unit": "1일",
+          "sourceParser": "reviewed_room_rows_v1"
         },
         {
           "category": "청소/관리",
-          "label": "일반 관리비 300,000원",
+          "label": "폐기물 처리비 · 부과 기준 확인 필요",
+          "amount": 80000,
+          "unit": "",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "입관비 · 부과 기준 확인 필요",
+          "amount": 200000,
+          "unit": "",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "추가 입관실 사용료 · 부과 기준 확인 필요",
           "amount": 300000,
-          "unit": ""
+          "unit": "",
+          "sourceParser": "reviewed_room_rows_v1"
+        },
+        {
+          "category": "청소/관리",
+          "label": "일반 관리비 · 부과 기준 확인 필요",
+          "amount": 300000,
+          "unit": "",
+          "sourceParser": "reviewed_room_rows_v1"
         }
       ]
     },
     {
       "facilityName": "대구시민전문장례식장",
       "address": "대구광역시 북구 호국로 898 (동호동)",
-      "verifiedAt": "2026-11-08T02:27:10.208124+00:00",
+      "verifiedAt": "2026-11-09T12:59:15.157455+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://dgsmfn.com/sub2_1_1.php",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 홈페이지 게시 가격 대조. 시행일 미표기: 실제 이용 전 최종 확인 필요. VIP 501호 이용료만 확인. 3일장 기준이며 1일 요금이나 전체 장례비가 아님. 다른 호실 요금은 이 페이지로 확인할 수 없음.",
       "prices": [
         {
           "category": "빈소",
-          "label": "시설안내 VIP 501호 VIP 301호 특101호 특201호 102호 103호 202호 부대시설 VIP 501호 위치 지상 5층 면적 175평 수용인원 166석 이용료 1,794,000원 (장례 3일장 기준 금액입니다.) 최고급 시설과 넓은 공간을 제공하여 고품격 장례 서비스를 경험하",
+          "label": "빈소 VIP 501호 · 장례 3일장 기준",
           "amount": 1794000,
-          "unit": ""
-        },
-        {
-          "category": "빈소",
-          "label": "VIP 501호 VIP 301호 특101호 특201호 102호 103호 202호 부대시설 VIP 501호 위치 지상 5층 면적 175평 수용인원 166석 이용료 1,794,000원 (장례 3일장 기준 금액입니다.) 최고급 시설과 넓은 공간을 제공하여 고품격 장례 서비스를 경험하실 수 있",
-          "amount": 1794000,
-          "unit": ""
-        },
-        {
-          "category": "빈소",
-          "label": "VIP 501호 위치 지상 5층 면적 175평 수용인원 166석 이용료 1,794,000원 (장례 3일장 기준 금액입니다.) 최고급 시설과 넓은 공간을 제공하여 고품격 장례 서비스를 경험하실 수 있는 VIP 전용 빈소입니다.",
-          "amount": 1794000,
-          "unit": ""
+          "unit": "3일장",
+          "sourceParser": "reviewed_room_rows_v1"
         }
       ]
     },
