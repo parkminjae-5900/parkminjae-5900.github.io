@@ -362,3 +362,40 @@ class PriceUnitReviewTests(unittest.TestCase):
             self.assertEqual(storage[0]["unit"],"")
             self.assertEqual(len(rec["prices"])-1,targets[rec["facilityName"]])
         self.assertEqual(set(found),set(targets))
+
+
+@unittest.skipUnless(HAS_BS4,"BeautifulSoup required")
+class EwhaSeoulTests(unittest.TestCase):
+    URL="https://seoul.eumc.ac.kr/funeral/guide/facility.do"
+    def setUp(self):
+        self.html=(SCRIPT.parents[1]/"tests/fixtures/ewha-seoul-facility.html").read_text()
+        self.soup=scan.BeautifulSoup(self.html,"html.parser")
+    def test_six_types_preserve_equal_price_special_rooms(self):
+        rows=scan.ewha_seoul_prices(self.soup,self.URL)
+        self.assertEqual(len(rows),6)
+        self.assertEqual([r["amount"] for r in rows],[1080000,1296000,2400000,2592000,2592000,4080000])
+        self.assertTrue(all(r["unit"]=="1일" for r in rows))
+        self.assertIn("특실5 · 305.7㎡",rows[3]["label"])
+        self.assertIn("특실3 · 306.2㎡",rows[4]["label"])
+    def test_other_branch_does_not_use_adapter(self):
+        self.assertIsNone(scan.ewha_seoul_prices(self.soup,self.URL.replace("seoul.","mokdong.")))
+    def test_exact_duplicate_card_is_removed(self):
+        doubled=scan.BeautifulSoup(self.html+self.html,"html.parser")
+        self.assertEqual(len(scan.ewha_seoul_prices(doubled,self.URL)),6)
+    def test_changed_price_read_from_source(self):
+        soup=scan.BeautifulSoup(self.html.replace("1,080,000","1,100,000"),"html.parser")
+        self.assertEqual(scan.ewha_seoul_prices(soup,self.URL)[0]["amount"],1100000)
+    def test_missing_unit_does_not_fall_back_to_nested_prose(self):
+        broken=self.html.replace("빈소 임대료(1일)","빈소 임대료")
+        with patch.object(scan,"session",return_value=None),patch.object(scan,"get_html",return_value=(broken,self.URL)),patch.object(scan,"candidate_links",return_value=[]),patch.object(scan.time,"sleep"):
+            result=scan.scan_hall({"homepageUrl":self.URL})
+        self.assertEqual(result["status"],"no_price_found")
+    def test_scanner_and_published_data_agree(self):
+        import json
+        with patch.object(scan,"session",return_value=None),patch.object(scan,"get_html",return_value=(self.html,self.URL)),patch.object(scan,"candidate_links",return_value=[]),patch.object(scan.time,"sleep"):
+            result=scan.scan_hall({"homepageUrl":self.URL})
+        self.assertEqual(result["status"],"priced")
+        data=json.loads((SCRIPT.parents[1]/"data/funeral-hall-prices.json").read_text())
+        published=next(x for x in data["items"] if x["facilityName"]=="이대서울병원장례식장")
+        self.assertEqual(result["prices"],published["prices"])
+        self.assertEqual(scan.identity_guard(published,published,self.URL),(True,"guard_passed"))

@@ -387,6 +387,42 @@ def scan_youngwol(s,home):
     return {"status":"priced","homepage":home,"sourceUrl":base,"prices":prices,"verifiedAt":now()}
 
 
+
+def ewha_seoul_prices(soup,url):
+    """Read each official room card once, excluding nested photo captions.
+
+    Room identity includes both its name and area; equal prices (notably
+    special rooms 3 and 5) are not evidence of duplicate rooms.
+    """
+    if host(url)!="seoul.eumc.ac.kr" or urlparse(url).path!="/funeral/guide/facility.do":
+        return None
+    cards=soup.select(".mortuary-info > .right")
+    if not cards:return []
+    out=[]; seen={}
+    for card in cards:
+        fields={}
+        for title in card.select(".title"):
+            value=title.find_next_sibling()
+            if value is None or "txt" not in value.get("class",[]):return []
+            name=clean(title.get_text(" ",strip=True)).rstrip(" :")
+            if name in fields:return []
+            fields[name]=clean(value.get_text(" ",strip=True))
+        area=fields.get("평형",""); room=fields.get("빈소","")
+        money=fields.get("빈소 임대료(1일)","")
+        if not re.fullmatch(r"[0-9.]+㎡\s*\([0-9.]+평형\)",area):return []
+        if not re.fullmatch(r"(?:특실\s*\d+|\d+호)(?:\s*,\s*(?:특실\s*\d+|\d+호))*",room):return []
+        if not re.fullmatch(r"[\d,]+\s*원",money):return []
+        amount=amount_from_cell(money,require_won=True)
+        if not amount:return []
+        identity=(clean(room),area)
+        if identity in seen:
+            if seen[identity]!=amount:return []
+            continue
+        seen[identity]=amount
+        out.append({"category":"빈소","label":f"빈소 임대료 {room} · {area}","amount":amount,"unit":"1일"})
+    return out
+
+
 def text_prices(soup):
     out=[]
     for el in soup.find_all(["li","p","div","span"]):
@@ -454,7 +490,8 @@ def scan_hall(h,old=None):
         if not ph:continue
         if expected_code and (not same_host(start,pageurl) or query_value(pageurl,"fnrCd")!=expected_code):continue
         soup=BeautifulSoup(ph,"html.parser")
-        adapted=gijang_prices(soup,pageurl)
+        adapted=ewha_seoul_prices(soup,pageurl)
+        if adapted is None:adapted=gijang_prices(soup,pageurl)
         if adapted is None:adapted=pyeongtaek_prices(soup,pageurl)
         prices=dedupe(adapted if adapted is not None else table_prices(soup)+text_prices(soup))
         # facility-price page must contain at least one core category;
@@ -627,4 +664,5 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
