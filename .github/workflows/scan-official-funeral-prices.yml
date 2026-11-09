@@ -7,6 +7,8 @@ on:
     paths:
       - "scripts/scan_official_funeral_prices.py"
       - "tests/test_scan_official_funeral_prices.py"
+      - "tests/test_reviewed_units.py"
+      - "tests/fixtures/*-units.html"
       - ".github/workflows/scan-official-funeral-prices.yml"
   schedule:
     - cron: "17 * * * *"
@@ -32,7 +34,9 @@ jobs:
       - name: Install dependencies
         run: pip install --disable-pip-version-check requests beautifulsoup4
       - name: Test price promotion guard
-        run: python -m unittest tests/test_scan_official_funeral_prices.py
+        run: python -m unittest discover -s tests -p 'test*prices.py'
+      - name: Test explicit facility units
+        run: python -m unittest discover -s tests -p 'test_reviewed_units.py'
       - name: Validate compressed baseline payload
         run: |
           python - <<'PY'
@@ -65,6 +69,14 @@ jobs:
                       and x.get("category")=="안치실"
                       and x.get("unit")==""
                       and x.get("label")=="안치료 · 금액/단위 재확인 중"):
+                      continue
+                  # Only the explicitly verified free chapel may be zero.
+                  if (rec.get("facilityName")=="대전성모병원장례식장"
+                      and rec.get("sourceUrl")=="https://www.cmcdjfuneral.co.kr/funeral-guide.jsp"
+                      and x.get("category")=="영결식장"
+                      and x.get("label")=="경당(영결식장) · 무료"
+                      and x.get("sourceParser")=="reviewed_units_v1"
+                      and x.get("amount")==0 and x.get("unit")==""):
                       continue
                   a=int(x.get("amount",0))
                   if a < 1000 or a > 20000000:
