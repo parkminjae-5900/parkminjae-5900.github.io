@@ -59,6 +59,13 @@ jobs:
           with open("data/funeral-hall-prices.json",encoding="utf-8") as f:d=json.load(f)
           for rec in d.get("items",[]):
               for x in rec.get("prices",[]):
+                  # Explicit review placeholders are unknown, never zero-cost.
+                  if (rec.get("priceReviewRequired") is True
+                      and x.get("amount") is None
+                      and x.get("category")=="안치실"
+                      and x.get("unit")==""
+                      and x.get("label")=="안치료 · 금액/단위 재확인 중"):
+                      continue
                   a=int(x.get("amount",0))
                   if a < 1000 or a > 20000000:
                       raise SystemExit(f"invalid amount {a}: {rec.get('facilityName')}")
@@ -76,3 +83,4 @@ jobs:
           git commit -m "chore: scan official funeral hall prices"
           git pull --rebase origin main
           git push
+
