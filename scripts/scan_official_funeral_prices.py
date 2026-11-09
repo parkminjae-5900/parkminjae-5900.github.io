@@ -12,7 +12,7 @@ STATE=Path("data/official-price-scan-state.json")
 REPORT=Path("data/official-price-scan-report.json")
 BATCH=int(os.environ.get("PRICE_SCAN_BATCH","45"))
 TIMEOUT=6
-PROMOTION_GUARD_VERSION=3
+PROMOTION_GUARD_VERSION=4
 UA="Mozilla/5.0 (compatible; DahamSangjoPriceVerifier/1.0; +https://www.dahamsangjo.co.kr/)"
 
 KEYWORDS=("장례","빈소","안치","염습","입관","시설","이용","요금","비용","가격","사용료","영결")
@@ -85,6 +85,14 @@ def identity_guard(rec,old,homepage):
     if host(rec.get("sourceUrl","")) in ("nw4444.co.kr","dgsmfn.com"):
         if not rec.get("prices") or any(x.get("sourceParser")!="reviewed_room_rows_v1" for x in rec["prices"]):
             return False,"room_row_review_required"
+
+    if any(host(u) in REVIEWED_UNIT_HOSTS for u in (rec.get("sourceUrl",""),homepage,(old or {}).get("sourceUrl",""))):
+        if not rec.get("prices") or any(x.get("sourceParser")!="reviewed_units_v1" for x in rec["prices"]):
+            return False,"explicit_unit_review_required"
+        if old and any(x.get("sourceParser")=="reviewed_units_v1" for x in old.get("prices",[])):
+            signature=lambda x:(x.get("category"),x.get("label"),x.get("unit"))
+            if {signature(x) for x in rec["prices"]}!={signature(x) for x in old["prices"]}:
+                return False,"reviewed_price_rows_changed"
 
     if old and old.get("sourceGrade")=="A":
         if not same_address(rec.get("address",""),old.get("address","")):
@@ -427,6 +435,112 @@ def ewha_seoul_prices(soup,url):
     return out
 
 
+REVIEWED_UNIT_NOTES={'xn--9n2b47q9zbmiv5gca.kr': '공식 일/시간 요금을 각각 보존했습니다. 1일 기준: 12시간 초과~24시간 이하. 12시간 초과 시 1일, 36시간 이상 시 2일 요금. 특2호 일/시간 금액이 단순 24배와 달라 최종 확인 필요. 염습실/입관실 400,000원, 18시~08시 입관 500,000원은 부과 기준 확인 필요.', 'mokpomc.or.kr': '공식 일/시간 요금을 각각 보존했습니다. 24시간을 1일로 산정하며 12시간 이상은 1일, 미만은 시간으로 산정합니다. 안치료 일/시간 요금은 단순 24배가 아닙니다. 감면 대상 및 적용 여부는 공식 감면기준과 의료원에 확인하세요.', 'cmcdjfuneral.co.kr': '안치일시 기준 24시간을 1일로 산정합니다. 24시간 미만 사용 시 12시간 이상은 1일, 12시간 미만은 시간단위, 1시간 미만은 1시간입니다. 사산아 안치료는 12시간 미만 조건만 게시되어 있습니다. 염습료의 회당 등 부과 단위와 추가요금 여부는 확인이 필요합니다.'}
+
+REVIEWED_UNIT_HOSTS={
+    "xn--9n2b47q9zbmiv5gca.kr":"/s2/s2_2.php",
+    "mokpomc.or.kr":"/bbs/content.php?co_id=2_8",
+    "cmcdjfuneral.co.kr":"/funeral-guide.jsp",
+}
+
+def reviewed_unit_prices(soup,url):
+    """Read explicit price columns, preserving independent day/hour values.
+
+    These hosts never fall back to prose extraction. Changed structure or
+    conditions require review rather than silently replacing curated prices.
+    """
+    h=host(url)
+    if h not in REVIEWED_UNIT_HOSTS:return None
+    target=REVIEWED_UNIT_HOSTS[h]
+    if urlparse(url).path!=target.split("?")[0]:return []
+    if h=="mokpomc.or.kr" and query_value(url,"co_id")!="2_8":return []
+    out=[]
+    def add(category,label,amount,unit=""):
+        out.append(dict(category=category,label=label,amount=amount,unit=unit,
+                        sourceParser="reviewed_units_v1"))
+    def money(text,suffix="원"):
+        m=re.fullmatch(r"([\d,]+)"+re.escape(suffix),clean(text))
+        if not m:raise ValueError("price format changed")
+        value=int(m[1].replace(",",""))
+        if value<=0:raise ValueError("invalid price")
+        return value
+    def rows(table):
+        return [[clean(c.get_text(" ",strip=True)) for c in r.find_all(["th","td"],recursive=False)]
+                for r in table.find_all("tr")]
+    text=clean(soup.get_text(" ",strip=True))
+    try:
+        if h=="xn--9n2b47q9zbmiv5gca.kr":
+            conditions=["1일 이용 기준은 12시간 초과 ~ 24시간 이하입니다.",
+                        "12시간을 초과하여 이용할 경우 1일 요금이 부과됩니다.",
+                        "이용시간이 36시간 이상인 경우에는 2일 요금이 부과됩니다."]
+            if not all(c in text for c in conditions):return []
+            tables=[t for t in soup.find_all("table") if rows(t)[0]==["","호실","좌석","평형","이용 요금(1일)","이용 요금(1시간)"]]
+            if len(tables)!=1:return []
+            rr=expanded_table_rows(tables[0])
+            expected=["VIP실","특1호","특2호","3호","5호","6호","특7호","8호","9호","10호"]
+            if len(rr)!=13 or [r[1] for r in rr[1:11]]!=expected:return []
+            for r in rr[1:12]:
+                if len(r)!=6 or r[0] not in ("빈소 임대료","안치료"):return []
+                cat="빈소" if r[0]=="빈소 임대료" else "안치실"
+                label=("빈소 "+r[1]) if cat=="빈소" else "안치료"
+                if r[1]=="특2호":label+=" · 일/시간 요금 원문 상이, 최종 확인 필요"
+                add(cat,label,money(r[4]),"1일")
+                add(cat,label,money(r[5]),"1시간")
+            r=rr[12]
+            if len(r)!=6 or r[:2]!=["염습실 사용료","염습실/입관실"] or r[5]:return []
+            m=re.fullmatch(r"18시~08시 입관시 ([\d,]+)",r[3])
+            if not m:return []
+            add("염습/입관","염습실/입관실 사용료 · 부과 기준 확인 필요",money(r[4]))
+            add("염습/입관","염습실/입관실 · 18시~08시 입관 · 부과 기준 확인 필요",money(m[1],""))
+        elif h=="mokpomc.or.kr":
+            if "24시간 1일 산정(12시간 이상은 1일, 미만일 경우는 시간으로 산정 합니다.)" not in text:return []
+            tables=[t for t in soup.find_all("table") if rows(t)[0]==["품명","규격","1일","시간당"]]
+            if len(tables)!=1:return []
+            rr=rows(tables[0])
+            if len(rr)!=6 or rr[1][:2]!=["안치료","안치료"]:return []
+            add("안치실","안치료",money(rr[1][2]),"1일")
+            add("안치실","안치료",money(rr[1][3]),"1시간")
+            expected=["1호실(55평)","2호실(55평)","3호실","1+2호실(110평)"]
+            for i,r in enumerate(rr[2:]):
+                if i==0:
+                    if r[0]!="빈소 및 접객실 사용료":return []
+                    r=r[1:]
+                if len(r)!=4 or r[0]!=expected[i]:return []
+                label="빈소 및 접객실 "+r[0]
+                add("빈소",label,money(r[2]),"1일")
+                add("빈소",label,money(r[3]),"1시간")
+        else:
+            if not all(c in text for c in ["안치일시 기준으로 24시간을 1일로 산정", "12시간 이상 = 1일", "12시간 미만 = 시간단위", "1시간 미만 = 1시간"]):return []
+            expected=["VIP실","특1호실","특2호실","특3호실","5호실","6호실","7호실","8호실"]
+            tables=[t for t in soup.find_all("table") if rows(t)[0]==expected]
+            if len(tables)!=1:return []
+            rr=rows(tables[0])
+            if len(rr)!=5 or any(len(r)!=8 for r in rr):return []
+            for i,name in enumerate(expected):
+                add("빈소","빈소 및 접객실 "+name,money(rr[2][i],"원/시간"),"1시간")
+                add("빈소","빈소 및 접객실 "+name,money(rr[3][i],"원/일"),"1일")
+            matches=[]
+            for li in soup.find_all("li"):
+                m=re.fullmatch(r"안치료 : 1시간 기준 ([\d,]+)원\(1일 ([\d,]+)원\) / 사산아 \(12시간 미만 ([\d,]+)원\)",clean(li.get_text(" ",strip=True)))
+                if m:matches.append(m)
+            if len(matches)!=1:return []
+            m=matches[0]
+            add("안치실","안치료",money(m[1],""),"1시간")
+            add("안치실","안치료",money(m[2],""),"1일")
+            add("안치실","안치료 · 사산아",money(m[3],""),"12시간 미만")
+            if "경당(영결식장) 사용료 무료" not in text:return []
+            add("영결식장","경당(영결식장) · 무료",0)
+            expected=["일반","자가입관","야간 및 사고사","사고사","소아","수시"]
+            tables=[t for t in soup.find_all("table") if rows(t)[0]==expected]
+            if len(tables)!=1:return []
+            rr=rows(tables[0])
+            if len(rr)!=3 or any(len(r)!=6 for r in rr) or rr[2]!=["","","18:00~06:00","","8세 미만","물품포함"]:return []
+            for i,name in enumerate(expected):
+                label="염습료 · "+name+(" · "+rr[2][i] if rr[2][i] else "")+" · 부과 기준 확인 필요"
+                add("염습/입관",label,money(rr[1][i]))
+    except (ValueError,IndexError,TypeError):return []
+    return out
+
 def reviewed_room_prices(soup,url):
     """Fail closed for these hosts: never interpret navigation/ancestor prose as prices."""
     h=host(url)
@@ -531,6 +645,8 @@ def scan_hall(h,old=None):
     home=normalize_url(h.get("homepageUrl",""))
     if not home:return {"status":"no_homepage"}
     start=branch_scan_start(h,old,home)
+    if host(home) in REVIEWED_UNIT_HOSTS:
+        start=urljoin(home,REVIEWED_UNIT_HOSTS[host(home)])
     expected_code=query_value(start,"fnrCd")
     s=session()
     if host(home)=="youngwol.org":return scan_youngwol(s,home)
@@ -540,10 +656,12 @@ def scan_hall(h,old=None):
         if start.startswith("https://"):
             html,final=get_html(s,"http://"+start[8:])
     if not html:return {"status":"unreachable","homepage":home}
+    if host(home) in REVIEWED_UNIT_HOSTS and host(final)!=host(home):
+        return {"status":"no_price_found","homepage":home}
     if expected_code and (not same_host(start,final) or query_value(final,"fnrCd")!=expected_code):
         return {"status":"no_price_found","homepage":home}
     pages=[final]
-    pages+=candidate_links(html,final)
+    if host(home) not in REVIEWED_UNIT_HOSTS:pages+=candidate_links(html,final)
     best=[];besturl=final
     visited=set()
     for i,u in enumerate(pages):
@@ -554,7 +672,8 @@ def scan_hall(h,old=None):
         if not ph:continue
         if expected_code and (not same_host(start,pageurl) or query_value(pageurl,"fnrCd")!=expected_code):continue
         soup=BeautifulSoup(ph,"html.parser")
-        adapted=reviewed_room_prices(soup,pageurl)
+        adapted=reviewed_unit_prices(soup,pageurl)
+        if adapted is None:adapted=reviewed_room_prices(soup,pageurl)
         if adapted is None:adapted=ewha_seoul_prices(soup,pageurl)
         if adapted is None:adapted=gijang_prices(soup,pageurl)
         if adapted is None:adapted=pyeongtaek_prices(soup,pageurl)
@@ -568,7 +687,8 @@ def scan_hall(h,old=None):
     if not best:return {"status":"no_price_found","homepage":home}
     return {
       "status":"priced","homepage":home,"sourceUrl":besturl,
-      "prices":best,"verifiedAt":now()
+      "prices":best,"verifiedAt":now(),
+      "sourceNote":REVIEWED_UNIT_NOTES.get(host(besturl),"")
     }
 
 def load_json(path,default):
@@ -609,7 +729,7 @@ def reevaluate_saved_promotions(results,byname,record_key,batch):
           "sourceName":"장례식장 공식 홈페이지 공개가격",
           "sourceUrl":res.get("sourceUrl",""),
           "sourceGrade":"A",
-          "sourceNote":"공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+          "sourceNote":res.get("sourceNote") or "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
           "prices":res.get("prices",[])
         }
         old=byname.get(record_key(rec))
@@ -660,7 +780,7 @@ def main():
               "sourceName":"장례식장 공식 홈페이지 공개가격",
               "sourceUrl":res["sourceUrl"],
               "sourceGrade":"A",
-              "sourceNote":"공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+              "sourceNote":res.get("sourceNote") or "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
               "prices":res["prices"]
             }
             key_rec=record_key(rec)
@@ -729,6 +849,7 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
 
 

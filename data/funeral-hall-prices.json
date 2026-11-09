@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-09T18:46:31.640727+00:00",
+  "updatedAt": "2026-11-09T19:05:27.307900+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -1033,40 +1033,274 @@
     {
       "facilityName": "대전성모병원장례식장",
       "address": "대전광역시 중구 대흥로 64 (대흥동, 가톨릭대학교대전성모병원)",
-      "verifiedAt": "2026-11-09T18:46:03.833905+00:00",
+      "verifiedAt": "2026-11-09T19:05:27.290896+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.cmcdjfuneral.co.kr/funeral-guide.jsp",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "안치일시 기준 24시간을 1일로 산정합니다. 24시간 미만 사용 시 12시간 이상은 1일, 12시간 미만은 시간단위, 1시간 미만은 1시간입니다. 사산아 안치료는 12시간 미만 조건만 게시되어 있습니다. 염습료의 회당 등 부과 단위와 추가요금 여부는 확인이 필요합니다.",
       "prices": [
         {
+          "category": "빈소",
+          "label": "빈소 및 접객실 VIP실",
+          "amount": 54000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 VIP실",
+          "amount": 1296000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 특1호실",
+          "amount": 48000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 특1호실",
+          "amount": 1152000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 특2호실",
+          "amount": 52000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 특2호실",
+          "amount": 1248000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 특3호실",
+          "amount": 34000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 특3호실",
+          "amount": 816000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 5호실",
+          "amount": 23000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 5호실",
+          "amount": 552000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 6호실",
+          "amount": 23000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 6호실",
+          "amount": 552000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 7호실",
+          "amount": 34000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 7호실",
+          "amount": 816000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 8호실",
+          "amount": 20000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 8호실",
+          "amount": 480000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
           "category": "안치실",
-          "label": "안치료 3,000원",
+          "label": "안치료",
           "amount": 3000,
-          "unit": ""
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료",
+          "amount": 72000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료 · 사산아",
+          "amount": 30000,
+          "unit": "12시간 미만",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "영결식장",
+          "label": "경당(영결식장) · 무료",
+          "amount": 0,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 일반 · 부과 기준 확인 필요",
+          "amount": 300000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 자가입관 · 부과 기준 확인 필요",
+          "amount": 150000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 야간 및 사고사 · 18:00~06:00 · 부과 기준 확인 필요",
+          "amount": 300000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 사고사 · 부과 기준 확인 필요",
+          "amount": 300000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 소아 · 8세 미만 · 부과 기준 확인 필요",
+          "amount": 100000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 수시 · 물품포함 · 부과 기준 확인 필요",
+          "amount": 100000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
         }
       ]
     },
     {
       "facilityName": "목포시의료원장례식장",
       "address": "전라남도 목포시 이로로 18 (용해동, 목포시의료원)",
-      "verifiedAt": "2026-11-08T16:40:40.964297+00:00",
+      "verifiedAt": "2026-11-09T19:05:27.251188+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.mokpomc.or.kr/bbs/content.php?co_id=2_8",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 일/시간 요금을 각각 보존했습니다. 24시간을 1일로 산정하며 12시간 이상은 1일, 미만은 시간으로 산정합니다. 안치료 일/시간 요금은 단순 24배가 아닙니다. 감면 대상 및 적용 여부는 공식 감면기준과 의료원에 확인하세요.",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 안치료",
+          "label": "안치료",
           "amount": 50000,
-          "unit": ""
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료",
+          "amount": 2100,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
         },
         {
           "category": "빈소",
-          "label": "빈소 및 접객실 사용료 1호실(55평)",
+          "label": "빈소 및 접객실 1호실(55평)",
           "amount": 480000,
-          "unit": ""
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 1호실(55평)",
+          "amount": 20000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 2호실(55평)",
+          "amount": 480000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 2호실(55평)",
+          "amount": 20000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 3호실",
+          "amount": 120000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 3호실",
+          "amount": 5000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 1+2호실(110평)",
+          "amount": 720000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 및 접객실 1+2호실(110평)",
+          "amount": 30000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
         }
       ]
     },
@@ -1272,29 +1506,179 @@
     {
       "facilityName": "안양장례식장",
       "address": "경기도 안양시 동안구 엘에스로144번길 190 (호계동)",
-      "verifiedAt": "2026-11-09T07:06:53.197173+00:00",
+      "verifiedAt": "2026-11-09T19:05:27.227128+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.xn--9n2b47q9zbmiv5gca.kr/s2/s2_2.php",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공식 일/시간 요금을 각각 보존했습니다. 1일 기준: 12시간 초과~24시간 이하. 12시간 초과 시 1일, 36시간 이상 시 2일 요금. 특2호 일/시간 금액이 단순 24배와 달라 최종 확인 필요. 염습실/입관실 400,000원, 18시~08시 입관 500,000원은 부과 기준 확인 필요.",
       "prices": [
         {
           "category": "빈소",
-          "label": "빈소 임대료 VIP실",
+          "label": "빈소 VIP실",
           "amount": 2352000,
-          "unit": ""
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 VIP실",
+          "amount": 98000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 특1호",
+          "amount": 1608000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 특1호",
+          "amount": 67000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 특2호 · 일/시간 요금 원문 상이, 최종 확인 필요",
+          "amount": 1872000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 특2호 · 일/시간 요금 원문 상이, 최종 확인 필요",
+          "amount": 75000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 3호",
+          "amount": 864000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 3호",
+          "amount": 36000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 5호",
+          "amount": 1368000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 5호",
+          "amount": 57000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 6호",
+          "amount": 816000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 6호",
+          "amount": 34000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 특7호",
+          "amount": 1512000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 특7호",
+          "amount": 63000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 8호",
+          "amount": 864000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 8호",
+          "amount": 36000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 9호",
+          "amount": 1200000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 9호",
+          "amount": 50000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 10호",
+          "amount": 720000,
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "빈소 10호",
+          "amount": 30000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
         },
         {
           "category": "안치실",
-          "label": "안치료 안치실",
+          "label": "안치료",
           "amount": 144000,
-          "unit": ""
+          "unit": "1일",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치료",
+          "amount": 6000,
+          "unit": "1시간",
+          "sourceParser": "reviewed_units_v1"
         },
         {
           "category": "염습/입관",
-          "label": "염습실 사용료 염습실/입관실",
+          "label": "염습실/입관실 사용료 · 부과 기준 확인 필요",
           "amount": 400000,
-          "unit": ""
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실/입관실 · 18시~08시 입관 · 부과 기준 확인 필요",
+          "amount": 500000,
+          "unit": "",
+          "sourceParser": "reviewed_units_v1"
         }
       ]
     },
