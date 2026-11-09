@@ -314,15 +314,17 @@
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.gnuh.co.kr/funeral/contents/contentsView.do?rbsIdx=42",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "안치료 금액과 시간·일 단위의 연결이 불명확하여 안치료 표시를 보류했습니다. 공식 원문 재확인이 필요하며 이용 전 장례식장에 문의해 주세요. 다른 표시 가격의 확인일은 기존 수집일입니다.",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 80,000 / 1일(7,000원 / 1시간)",
-          "amount": 7000,
-          "unit": "1일"
+          "label": "안치료 · 금액/단위 재확인 중",
+          "amount": null,
+          "unit": ""
         }
-      ]
+      ],
+      "priceReviewRequired": true,
+      "priceReviewedAt": "2026-11-09"
     },
     {
       "facilityName": "경찰병원장례식장",
@@ -1338,13 +1340,13 @@
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://ufh.uuh.ulsan.kr/ufh/?pCode=MN0000012",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "안치료 금액과 시간·일 단위의 연결이 불명확하여 안치료 표시를 보류했습니다. 공식 원문 재확인이 필요하며 이용 전 장례식장에 문의해 주세요. 다른 표시 가격의 확인일은 기존 수집일입니다.",
       "prices": [
         {
           "category": "안치실",
-          "label": "안치료 230,000원",
-          "amount": 230000,
-          "unit": "시간당"
+          "label": "안치료 · 금액/단위 재확인 중",
+          "amount": null,
+          "unit": ""
         },
         {
           "category": "영결식장",
@@ -1359,12 +1361,6 @@
           "unit": "1회"
         },
         {
-          "category": "안치실",
-          "label": "안치료 240,000원",
-          "amount": 240000,
-          "unit": "시간당"
-        },
-        {
           "category": "영결식장",
           "label": "영결식장 사용료 100,000원",
           "amount": 100000,
@@ -1376,7 +1372,9 @@
           "amount": 300000,
           "unit": "1회"
         }
-      ]
+      ],
+      "priceReviewRequired": true,
+      "priceReviewedAt": "2026-11-09"
     },
     {
       "facilityName": "울산영락원",

@@ -330,3 +330,35 @@ class YoungwolTests(unittest.TestCase):
     def test_foreign_source_rejected(self):
         soup=scan.BeautifulSoup(self.fixture(1),'html.parser')
         self.assertIsNone(scan.youngwol_page(soup,'https://example.com/bbs/board.php?bo_table=funeral_01'))
+
+
+
+class PriceUnitReviewTests(unittest.TestCase):
+    def test_review_hold_blocks_live_and_saved_promotion(self):
+        old=record(prices=[price("안치실")])
+        old["priceReviewRequired"]=True
+        for amount,unit in [(230000,"시간당"),(240000,"시간당"),(7000,"1일"),(9600,"1시간")]:
+            candidate=record(prices=[dict(price("안치실",amount),unit=unit)])
+            self.assertEqual(scan.identity_guard(candidate,old,""),
+                             (False,"price_unit_review_required"))
+
+    def test_review_hold_does_not_change_other_records(self):
+        old=record(prices=[price()])
+        self.assertEqual(scan.identity_guard(record(prices=[price()]),old,""),
+                         (True,"guard_passed"))
+
+    def test_reviewed_data_never_displays_suspect_amounts(self):
+        import json
+        data=json.loads((SCRIPT.parents[1]/"data/funeral-hall-prices.json").read_text())
+        targets={"울산대학교병원장례식장":4,"경상국립대학교병원장례식장":0}
+        found=[]
+        for rec in data["items"]:
+            if rec["facilityName"] not in targets:continue
+            found.append(rec["facilityName"])
+            self.assertTrue(rec["priceReviewRequired"])
+            storage=[p for p in rec["prices"] if p["category"]=="안치실"]
+            self.assertEqual(len(storage),1)
+            self.assertIsNone(storage[0]["amount"])
+            self.assertEqual(storage[0]["unit"],"")
+            self.assertEqual(len(rec["prices"])-1,targets[rec["facilityName"]])
+        self.assertEqual(set(found),set(targets))

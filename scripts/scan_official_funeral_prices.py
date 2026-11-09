@@ -77,6 +77,11 @@ def category_coverage(prices):
 
 def identity_guard(rec,old,homepage):
     """Return (ok, reason). Protect curated A records and multi-branch official sites."""
+    # A unit conflict cannot be resolved by the same generic extractor that
+    # produced it. Keep the reviewed display until official rows are verified.
+    if old and old.get("priceReviewRequired"):
+        return False,"price_unit_review_required"
+
     if old and old.get("sourceGrade")=="A":
         if not same_address(rec.get("address",""),old.get("address","")):
             return False,"address_mismatch_with_existing_A"
@@ -622,3 +627,4 @@ def main():
 
 if __name__=="__main__":
     main()
+
