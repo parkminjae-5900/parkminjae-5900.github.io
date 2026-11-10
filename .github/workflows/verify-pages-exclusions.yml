@@ -1,0 +1,51 @@
+name: Verify public Pages output
+
+on:
+  pull_request:
+    paths:
+      - '_config.yml'
+      - '**/*.html'
+      - 'scripts/public_page_paths.py'
+      - 'scripts/enrich_seo.py'
+      - 'scripts/submit_indexnow.py'
+      - 'scripts/repair_search_images.py'
+      - 'scripts/verify_pages_output.py'
+      - 'tests/test_public_page_paths.py'
+      - '.github/workflows/verify-pages-exclusions.yml'
+  push:
+    branches: [main]
+    paths:
+      - '_config.yml'
+      - '**/*.html'
+      - 'scripts/public_page_paths.py'
+      - 'scripts/enrich_seo.py'
+      - 'scripts/submit_indexnow.py'
+      - 'scripts/repair_search_images.py'
+      - 'scripts/verify_pages_output.py'
+      - 'tests/test_public_page_paths.py'
+      - '.github/workflows/verify-pages-exclusions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow
+      - name: Check source and search submission guardrails
+        run: |
+          python -m unittest discover -s tests -p 'test_public_page_paths.py'
+          python -m unittest discover -s tests -p 'test_submit_indexnow.py'
+      - name: Build the actual GitHub Pages artifact
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Verify test inputs are absent and public pages remain intact
+        run: python scripts/verify_pages_output.py _site

@@ -6,6 +6,7 @@ from pathlib import Path
 from html import escape, unescape
 from urllib.parse import quote
 import re, json, argparse
+from public_page_paths import is_enrichment_path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://www.dahamsangjo.co.kr"
@@ -38,6 +39,12 @@ def add_meta(out, name, value, attr='property'):
     if not value or attr_meta(out,attr,name): return out
     return out + '<meta '+attr+'="'+name+'" content="'+escape(value,quote=True)+'">\n'
 def process(path, write=False):
+    # Check here as well as in main: direct callers must not mutate fixtures.
+    try:
+        relative = path.resolve().relative_to(ROOT.resolve())
+    except ValueError:
+        return 'skip-non-public'
+    if not is_enrichment_path(relative.as_posix()): return 'skip-non-public'
     raw=path.read_text(encoding='utf-8')
     if not re.search(r'</head>',raw,re.I): return 'skip-no-head'
     if 'data-daham-seo-automation="1"' in raw: return 'unchanged'
@@ -76,10 +83,7 @@ def main():
     args=parser.parse_args()
     counts={}
     files=sorted(ROOT.rglob('*.html'))
-    # Exclude vendor and build output; only public SEO-relevant HTML documents.
-    files=[x for x in files if not any(p.startswith('.') or p in ('node_modules','vendor','dist','build') for p in x.relative_to(ROOT).parts)]
-    # Avoid touching interactive apps, private reports, or authenticated flows.
-    files=[x for x in files if not any(p in x.relative_to(ROOT).parts for p in ('quote-app','event-report','app','admin','staff','report'))]
+    files=[x for x in files if is_enrichment_path(x.relative_to(ROOT).as_posix())]
     if args.limit:files=files[:args.limit]
     for path in files:
         try: result=process(path,args.write)

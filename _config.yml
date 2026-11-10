@@ -1,0 +1,7 @@
+# Keep parser regression inputs in Git, but never publish them with GitHub Pages.
+# scripts/public_page_paths.py applies the same guard to SEO and IndexNow.
+exclude:
+  - tests
+  - test
+  - fixtures
+  - __tests__

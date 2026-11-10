@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image
 from regional_image_registry import registered_image, apply_registered_body
 from funeral_hall_photos import photo_policy, repair_photo_page
+from public_page_paths import is_public_html_path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.dahamsangjo.co.kr/'
@@ -186,6 +187,9 @@ def main():
         page_url = entry.find('{*}loc').text
         path = local(page_url)
         if path.is_dir(): path /= 'index.html'
+        if not is_public_html_path(path.relative_to(ROOT).as_posix()):
+            failures.append('Non-public sitemap page: ' + page_url)
+            continue
         source = path.read_text(encoding='utf-8-sig')
         if args.write:
             updated, image = repair(source, page_url)

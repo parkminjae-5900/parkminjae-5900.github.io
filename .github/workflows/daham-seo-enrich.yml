@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/enrich_seo.py'
+      - 'scripts/public_page_paths.py'
+      - 'tests/test_public_page_paths.py'
       - 'area-*.html'
       - '*-funeral.html'
       - '*-cost*.html'
@@ -28,6 +30,7 @@ jobs:
         run: |
           python3 -m pip install Pillow
           python3 -m py_compile scripts/enrich_seo.py
+          python3 -m unittest discover -s tests -p 'test_public_page_paths.py'
           python3 scripts/enrich_seo.py
       - name: Update pages automatically
         run: python3 scripts/enrich_seo.py --write
@@ -42,10 +45,14 @@ jobs:
         run: |
           python3 - <<'PY'
           import pathlib,re,json
+          import sys
+          sys.path.insert(0, 'scripts')
+          from public_page_paths import is_enrichment_path
           n=0
           for p in pathlib.Path('.').rglob('*.html'):
               s=p.read_text(encoding='utf-8',errors='replace')
               if 'data-daham-seo-automation="1"' not in s: continue
+              assert is_enrichment_path(p.as_posix()), p
               assert s.count('data-daham-seo-automation="1"')==1, p
               assert 'og:title' in s, p
               if 'name="daham-facility-id"' not in s and 'name="daham-directory"' not in s:

@@ -11,6 +11,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from public_page_paths import is_public_html_path
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 HOST = "www.dahamsangjo.co.kr"
@@ -24,7 +25,7 @@ MAX_URLS = 10_000
 
 def path_to_url(path: str) -> str | None:
     clean = pathlib.PurePosixPath(path.strip())
-    if clean.is_absolute() or ".." in clean.parts or clean.suffix.lower() != ".html":
+    if not is_public_html_path(path.strip()):
         return None
     value = clean.as_posix()
     if value == "index.html":
@@ -36,6 +37,11 @@ def validate_url(value: str) -> str:
     parsed = urllib.parse.urlparse(value.strip())
     if parsed.scheme != "https" or parsed.netloc != HOST or parsed.fragment:
         raise ValueError(f"URL must be an HTTPS URL on {HOST}: {value}")
+    path = urllib.parse.unquote(parsed.path).lstrip('/')
+    if not path or path.endswith('/'):
+        path += 'index.html'
+    if not is_public_html_path(path):
+        raise ValueError(f"URL is not a public HTML page: {value}")
     return urllib.parse.urlunparse(parsed)
 
 
@@ -89,6 +95,8 @@ def collect_urls(lines: list[str]) -> list[str]:
 
 
 def build_payload(urls: list[str]) -> dict[str, object]:
+    # Also protect direct callers, not just the git-diff and seed collectors.
+    urls = [validate_url(url) for url in urls]
     if KEY_FILE.read_text(encoding="utf-8").strip() != KEY:
         raise ValueError("IndexNow key file content mismatch")
     return {

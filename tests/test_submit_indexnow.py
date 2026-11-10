@@ -1,9 +1,11 @@
 import importlib.util
 import pathlib
+import sys
 import unittest
 from unittest import mock
 
 SCRIPT = pathlib.Path(__file__).resolve().parents[1] / "scripts" / "submit_indexnow.py"
+sys.path.insert(0, str(SCRIPT.parent))
 SPEC = importlib.util.spec_from_file_location("submit_indexnow", SCRIPT)
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
