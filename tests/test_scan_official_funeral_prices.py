@@ -447,3 +447,44 @@ class ReviewedRoomRowsTests(unittest.TestCase):
             published=next(r for r in data['items'] if r['facilityName']==facility)
             identity=lambda rows:[(r['label'],r['category'],r['unit'],r.get('sourceParser')) for r in rows]
             self.assertEqual(identity(published['prices']),identity(result['prices']))
+
+
+@unittest.skipUnless(HAS_BS4,"BeautifulSoup required")
+class ReviewedRoomNotesTests(unittest.TestCase):
+    CASES=[('namwon','남원장례식장','http://www.nw4444.co.kr/sub/sub_13.php',('할인 적용 조건','단위 미표기 항목','부과 기준 확인 필요')),
+           ('daegu','대구시민전문장례식장','http://dgsmfn.com/sub2_1_1.php',('3일장 기준','전체 장례비가 아님','다른 호실 요금'))]
+    def live_result(self,name,url):
+        html=(SCRIPT.parents[1]/f'tests/fixtures/{name}-prices.html').read_text()
+        with patch.object(scan,'session',return_value=None),patch.object(scan,'get_html',return_value=(html,url)),patch.object(scan,'candidate_links',return_value=[]),patch.object(scan.time,'sleep'):
+            return scan.scan_hall({'homepageUrl':url})
+    def test_live_scans_include_verified_room_caveats(self):
+        for name,facility,url,phrases in self.CASES:
+            result=self.live_result(name,url)
+            self.assertEqual(result['status'],'priced')
+            for phrase in phrases:self.assertIn(phrase,result['sourceNote'])
+    def test_two_automatic_override_rebuilds_preserve_notes_and_prices(self):
+        import json,tempfile,contextlib,io,copy
+        records=json.loads((SCRIPT.parents[1]/'data/funeral-hall-prices.json').read_text())['items']
+        initial=[copy.deepcopy(next(r for r in records if r['facilityName']==facility)) for _,facility,_,_ in self.CASES]
+        halls=[{'fcltNm':r['facilityName'],'addr':r['address'],'homepageUrl':r['sourceUrl']} for r in initial]
+        halls += [{'fcltNm':f'test hall {i}','addr':f'test address {i}','homepageUrl':''} for i in range(998)]
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); hp=root/'halls.json';op=root/'overrides.json';sp=root/'state.json';rp=root/'report.json'
+            hp.write_text(json.dumps({'items':halls,'regions':{str(i):{} for i in range(17)},'count':len(halls)}))
+            op.write_text(json.dumps({'items':initial}))
+            with patch.object(scan,'HALLS',hp),patch.object(scan,'OVERRIDES',op),patch.object(scan,'STATE',sp),patch.object(scan,'REPORT',rp),patch.object(scan,'BATCH',2):
+                original_scan=scan.scan_hall
+                # Keep the real page parser active within the fixture scanner.
+                def scan_fixture(h,old=None):
+                    case=next(c for c in self.CASES if c[1]==h['fcltNm'])
+                    html=(SCRIPT.parents[1]/f'tests/fixtures/{case[0]}-prices.html').read_text()
+                    with patch.object(scan,'session',return_value=None),patch.object(scan,'get_html',return_value=(html,case[2])),patch.object(scan,'candidate_links',return_value=[]),patch.object(scan.time,'sleep'):
+                        return original_scan(h,old)
+                for _ in range(2):
+                    sp.write_text(json.dumps({'cursor':0,'results':{}}))
+                    with patch.object(scan,'scan_hall',side_effect=scan_fixture),contextlib.redirect_stdout(io.StringIO()):scan.main()
+                    output=json.loads(op.read_text())['items']
+                    for before in initial:
+                        after=next(r for r in output if r['facilityName']==before['facilityName'])
+                        self.assertEqual(after['prices'],before['prices'])
+                        self.assertEqual(after['sourceNote'],before['sourceNote'])
