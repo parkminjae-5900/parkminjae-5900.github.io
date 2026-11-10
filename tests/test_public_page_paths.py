@@ -1,5 +1,6 @@
 import contextlib
 import io
+import shutil
 from pathlib import Path
 import sys
 import tempfile
@@ -140,6 +141,22 @@ class PublicPagePathTests(unittest.TestCase):
             leak.write_text(HTML)
             with self.assertRaisesRegex(ValueError, 'Test inputs leaked'):
                 verify_pages_output.verify_output(root)
+
+    def test_artifact_verifier_preserves_nested_public_pages_too(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source, destination = Path(tmp) / 'source', Path(tmp) / 'output'
+            names = ['index.html', 'staff/profiles/01.html', 'seo-combos/example.html',
+                     'sitemap.xml', 'robots.txt', 'CNAME', 'assets/regional-funeral-base.png',
+                     'data/funeral-hall-prices.json']
+            for name in names:
+                path = source / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'original')
+            shutil.copytree(source, destination)
+            self.assertEqual(verify_pages_output.verify_output(destination, source), len(names))
+            (destination / 'staff/profiles/01.html').write_text('changed')
+            with self.assertRaisesRegex(ValueError, 'Public file changed'):
+                verify_pages_output.verify_output(destination, source)
 
 
 if __name__ == '__main__':

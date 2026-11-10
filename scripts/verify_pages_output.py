@@ -2,7 +2,7 @@
 import argparse
 from pathlib import Path
 
-from public_page_paths import FIXTURE_DIRECTORIES
+from public_page_paths import FIXTURE_DIRECTORIES, is_public_html_path
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,11 +17,12 @@ def verify_output(destination, source=ROOT):
     if leaked:
         raise ValueError('Test inputs leaked into Pages output: ' + ', '.join(leaked[:10]))
     # Removing source fixtures must not remove or change actual public documents.
-    public_files = list(source.glob('*.html')) + [source / name for name in (
+    public_files = [p for p in source.rglob('*.html')
+                    if is_public_html_path(p.relative_to(source).as_posix())]
+    public_files += [source / name for name in (
         'sitemap.xml', 'robots.txt', 'CNAME', 'assets/regional-funeral-base.png',
         'data/funeral-hall-prices.json',
     )]
-    public_files += list((source / 'funeral-halls').glob('*.html'))
     for original in public_files:
         published = destination / original.relative_to(source)
         if not published.is_file():

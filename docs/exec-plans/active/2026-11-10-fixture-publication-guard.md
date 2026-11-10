@@ -46,8 +46,8 @@ Live sitemap and 1,514 non-test source HTML pages contained no fixture links. Se
 Keep fixture source HTML pristine rather than inserting noindex into parser inputs. Exclude it with Jekyll and search-pipeline guards. Do not add robots disallow that could obstruct a crawler from observing the removed route's 404.
 
 ## Final verification
-- All 194 Python tests passed with requests and BeautifulSoup installed (zero skips).
-- New 12 path/fixture/IndexNow/artifact regression tests passed; existing four IndexNow tests passed.
+- All 195 Python tests passed with requests and BeautifulSoup installed (zero skips).
+- New 13 path/fixture/IndexNow/artifact regression tests passed; existing four IndexNow tests passed.
 - Python compilation, YAML parsing and git diff --check passed.
 - SEO dry run scanned 1,480 eligible HTML files: no changes; 457 managed public pages validated.
 - Image verification passed for 452 sitemap pages and 279 images. All 273 registered regional originals passed full coverage.
@@ -55,7 +55,7 @@ Keep fixture source HTML pristine rather than inserting noindex into parser inpu
 - Target commit IndexNow dry run produced zero URLs after the guard was applied.
 - Two enrichment writes left every fixture unchanged and the second write made no changes. The existing final family-guidance reconciliation restored the eight FAQ block-order changes from image repair; the full scheduled sequence preserved all 1,525 HTML/sitemap file hashes.
 - Restored Git blob hashes match parent f6e3cb0 exactly: Anyang 66d447d10dbac08eff7011e063e1dcf3c1b22766; Mokpo e0ebaf9bcd328b674bb9ede16251b6d26a8cc07e.
-- Local Ruby/Jekyll runtime is unavailable. Exact-commit Jekyll artifact CI and live deployment checks remain pending publication.
+- Local Ruby/Jekyll runtime is unavailable. The first published correction passed real Jekyll artifact CI (run 42772912422, 437 key public files intact and no test files). The verifier now also checks nested staff, community and noindex HTML; expanded exact-commit CI and live deployment verification remain pending.
 
 ## Remaining limitations
 No Search Console URL inspection was performed. Actual indexing and any past search impact are unknown.
