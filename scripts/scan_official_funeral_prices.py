@@ -12,7 +12,7 @@ STATE=Path("data/official-price-scan-state.json")
 REPORT=Path("data/official-price-scan-report.json")
 BATCH=int(os.environ.get("PRICE_SCAN_BATCH","45"))
 TIMEOUT=6
-PROMOTION_GUARD_VERSION=4
+PROMOTION_GUARD_VERSION=5
 UA="Mozilla/5.0 (compatible; DahamSangjoPriceVerifier/1.0; +https://www.dahamsangjo.co.kr/)"
 
 KEYWORDS=("장례","빈소","안치","염습","입관","시설","이용","요금","비용","가격","사용료","영결")
@@ -77,6 +77,21 @@ def category_coverage(prices):
 
 def identity_guard(rec,old,homepage):
     """Return (ok, reason). Protect curated A records and multi-branch official sites."""
+    if old and old.get("sourceReviewRequired"):
+        return False,"facility_source_review_required"
+
+    if any(host(u)=="pcfmc.or.kr" for u in (rec.get("sourceUrl",""),homepage,(old or {}).get("sourceUrl",""))):
+        target=pcfmc_target(rec.get("facilityName",""),rec.get("address",""))
+        if not target:return False,"facility_identity_unverifiable"
+        if not pcfmc_url_matches(rec.get("sourceUrl",""),target["path"]):
+            return False,"facility_source_path_mismatch"
+        prices=rec.get("prices",[])
+        if not prices or any(x.get("sourceParser")!="pcfmc_facility_rows_v1" for x in prices):
+            return False,"facility_price_table_review_required"
+        expected={(category,label+" · "+area,unit) for label,category,unit in PCFMC_ROWS for area in ("관내","관외")}
+        if len(prices)!=len(expected) or {(x.get("category"),x.get("label"),x.get("unit")) for x in prices}!=expected:
+            return False,"reviewed_price_rows_changed"
+
     # A unit conflict cannot be resolved by the same generic extractor that
     # produced it. Keep the reviewed display until official rows are verified.
     if old and old.get("priceReviewRequired"):
@@ -644,6 +659,82 @@ def branch_scan_start(h,old,home):
         return old["sourceUrl"]
     return home
 
+# The public facility feed still carries obsolete PCFMC paths. Pin both
+# identity and path, then verify the page itself; navigation links are not
+# evidence that another facility's price table belongs to the requested hall.
+PCFMC_TARGETS={
+    "진부장례식장":{"path":"/facilities09","address":"평창군 진부면 오대천로 1958-21","pageAddress":"평창군 진부면 오대천로 1958-21"},
+    "평창장례식장":{"path":"/facilities08","address":"평창군 평창읍 종부로 61","pageAddress":"평창군 종부로 61"},
+}
+PCFMC_ROWS=[("분향실","빈소","1일"),("접객실(일반)","빈소","1일"),
+            ("안치실","안치실","1일"),("염습료(1회)","염습/입관","1회")]
+
+def pcfmc_address(address):
+    # Only the province rename and trailing parenthetical building name vary.
+    address=re.sub(r"^(강원특별자치도|강원도)\s*","",clean(address))
+    return norm(address.split("(",1)[0])
+
+def pcfmc_target(name,address):
+    target=PCFMC_TARGETS.get(norm(name))
+    return target if target and pcfmc_address(address)==norm(target["address"]) else None
+
+def pcfmc_url_matches(url,path):
+    parsed=urlparse(url)
+    return (host(url)=="pcfmc.or.kr" and parsed.path.rstrip("/")==path
+            and not parsed.query and parsed.scheme in ("http","https"))
+
+def pcfmc_prices(soup,name,target):
+    heading=soup.select_one("h3.ctit")
+    content=soup.select_one(".facilities_c2")
+    if heading is None or content is None or norm(heading.get_text())!=norm(name):
+        return [],"facility_page_name_mismatch"
+    locations=[]
+    for row in content.select("table tr"):
+        cells=row.find_all(["th","td"],recursive=False)
+        if cells and clean(cells[0].get_text())=="위치":
+            locations.append(clean(cells[1].get_text()) if len(cells)==2 else "")
+    if len(locations)!=1 or pcfmc_address(locations[0])!=norm(target["pageAddress"]):
+        return [],"facility_page_address_mismatch"
+    captions=[x for x in content.select(".num_tit strong") if "사용료" in x.get_text()]
+    if len(captions)!=1 or norm(captions[0].get_text())!=norm(name+" 사용료(2023년)"):
+        return [],"facility_price_table_name_mismatch"
+    table=captions[0].parent.find_next_sibling("table")
+    if table is None:return [],"facility_price_table_structure_changed"
+    headers=[[clean(c.get_text()) for c in row.find_all(["th","td"],recursive=False)] for row in table.select("thead tr")]
+    if headers!=[["구분","금액(1일 사용료)","비고"],["관내","관외"]]:
+        return [],"facility_price_table_structure_changed"
+    if "오전12시부터다음날오전12시까지를1일로계산" not in norm(table.get_text()):
+        return [],"facility_price_table_unit_changed"
+    rows=table.select("tbody tr")
+    if len(rows)!=len(PCFMC_ROWS):return [],"facility_price_table_structure_changed"
+    out=[]
+    for index,(row,(label,category,unit)) in enumerate(zip(rows,PCFMC_ROWS)):
+        cells=row.find_all(["th","td"],recursive=False)
+        if len(cells)!=(4 if index==0 else 3) or clean(cells[0].get_text())!=label:
+            return [],"facility_price_table_structure_changed"
+        for column,area in [(1,"관내"),(2,"관외")]:
+            text=clean(cells[column].get_text())
+            if not re.fullmatch(r"[\d,]+원",text):return [],"facility_price_table_amount_invalid"
+            amount=amount_from_cell(text,require_won=True)
+            if not amount:return [],"facility_price_table_amount_invalid"
+            out.append({"category":category,"label":label+" · "+area,"amount":amount,
+                        "unit":unit,"sourceParser":"pcfmc_facility_rows_v1"})
+    return out,"guard_passed"
+
+def scan_pcfmc(s,h,home):
+    target=pcfmc_target(h.get("fcltNm",""),h.get("addr",""))
+    result={"status":"no_price_found","homepage":home}
+    if not target:return {**result,"reviewReason":"facility_identity_unverifiable"}
+    start="https://www.pcfmc.or.kr"+target["path"]
+    html,final=get_html(s,start)
+    if not html:return {"status":"unreachable","homepage":home,"sourceUrl":start}
+    if not pcfmc_url_matches(final,target["path"]):
+        return {**result,"sourceUrl":final,"reviewReason":"facility_source_path_mismatch"}
+    prices,reason=pcfmc_prices(BeautifulSoup(html,"html.parser"),h["fcltNm"],target)
+    if not prices:return {**result,"sourceUrl":final,"reviewReason":reason}
+    return {"status":"priced","homepage":home,"sourceUrl":final,"prices":prices,"verifiedAt":now(),
+            "sourceNote":"공단 시설별 페이지의 2023년 사용료 표. 관내·관외 구분과 1일/1회 단위를 분리했으며 현행 적용 여부·감면 자격은 이용 전 시설 확인 필요."}
+
 def scan_hall(h,old=None):
     home=normalize_url(h.get("homepageUrl",""))
     if not home:return {"status":"no_homepage"}
@@ -653,6 +744,7 @@ def scan_hall(h,old=None):
     expected_code=query_value(start,"fnrCd")
     s=session()
     if host(home)=="youngwol.org":return scan_youngwol(s,home)
+    if host(home)=="pcfmc.or.kr":return scan_pcfmc(s,h,home)
     html,final=get_html(s,start)
     if not html:
         # retry http if https failed
@@ -852,6 +944,7 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
 
 

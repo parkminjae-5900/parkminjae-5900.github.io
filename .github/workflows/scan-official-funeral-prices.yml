@@ -8,6 +8,10 @@ on:
       - "scripts/scan_official_funeral_prices.py"
       - "tests/test_scan_official_funeral_prices.py"
       - "tests/test_reviewed_units.py"
+      - "tests/test_pcfmc_prices.py"
+      - "tests/test_pcfmc_ui.cjs"
+      - "tests/fixtures/pcfmc-*.html"
+      - "funeral-hall-cost.html"
       - "tests/fixtures/*-units.html"
       - ".github/workflows/scan-official-funeral-prices.yml"
   schedule:
@@ -37,6 +41,8 @@ jobs:
         run: python -m unittest discover -s tests -p 'test*prices.py'
       - name: Test explicit facility units
         run: python -m unittest discover -s tests -p 'test_reviewed_units.py'
+      - name: Test facility-source display safety
+        run: node tests/test_pcfmc_ui.cjs
       - name: Validate compressed baseline payload
         run: |
           python - <<'PY'
@@ -95,4 +101,5 @@ jobs:
           git commit -m "chore: scan official funeral hall prices"
           git pull --rebase origin main
           git push
+
 

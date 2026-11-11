@@ -1,0 +1,27 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync('funeral-hall-cost.html','utf8').match(/<script>\s*([\s\S]*?)<\/script>/)[1];
+const fields=new Map();
+const document={querySelector(s){if(!fields.has(s))fields.set(s,{value:'',innerHTML:'',addEventListener(){}});return fields.get(s);}};
+const ctx=vm.createContext({document,console,fetch:()=>new Promise(()=>{}),Date,Number,String,Array,Object,Set,Promise});
+vm.runInContext(source,ctx);
+const halls=JSON.parse(fs.readFileSync('data/funeral-halls.json','utf8')).items;
+const db=JSON.parse(fs.readFileSync('data/funeral-hall-prices.json','utf8'));
+ctx.testHalls=halls.filter(x=>['진부장례식장','평창장례식장'].includes(x.fcltNm));
+ctx.testPrices=db.items.filter(x=>['진부장례식장','평창장례식장'].includes(x.facilityName));
+vm.runInContext("halls=testHalls;testPrices.forEach(x=>priceMap['name:'+norm(x.facilityName)]=x)",ctx);
+fields.get('#q').value='진부';vm.runInContext('render()',ctx);
+let html=fields.get('#results').innerHTML;
+assert.match(html,/시설별 요금 확인 필요/);assert.match(html,/facilities09/);
+assert.doesNotMatch(html,/40,000원|100,000원|출처등급 A|priceitem/);
+// Even accidental stale numeric rows on a held record must never render.
+vm.runInContext("priceMap['name:'+norm('진부장례식장')].prices=[{category:'안치실',amount:40000}]",ctx);
+vm.runInContext('render()',ctx);assert.doesNotMatch(fields.get('#results').innerHTML,/40,000원|priceitem/);
+fields.get('#q').value='평창장례식장';vm.runInContext('render()',ctx);
+html=fields.get('#results').innerHTML;
+assert.equal((html.match(/class="priceitem"/g)||[]).length,8);
+assert.match(html,/안치실 · 관외<\/b>53,000원 \/ 1일/);
+assert.match(html,/염습료\(1회\) · 관외<\/b>130,000원 \/ 1회/);
+assert.match(html,/2023년 사용료 표/);
+fields.get('#q').value='진부';vm.runInContext('render()',ctx);
+assert.doesNotMatch(fields.get('#results').innerHTML,/53,000원|130,000원/);
+console.log('PCFMC display contract passed: held source, stale-row suppression, area/unit rows, repeated searches.');

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-10T23:18:01.655782+00:00",
+  "updatedAt": "2026-11-11T01:08:47.593815+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -2015,25 +2015,14 @@
     {
       "facilityName": "진부장례식장",
       "address": "강원도 평창군 진부면 오대천로 1958-21 (하진부리)",
-      "verifiedAt": "2026-09-30T05:53:58.925679+00:00",
-      "sourceName": "장례식장 공식 홈페이지 공개가격",
-      "sourceUrl": "https://www.pcfmc.or.kr/facilities08",
+      "verifiedAt": "2026-11-11T01:08:47.473949+00:00",
+      "sourceName": "평창군시설관리공단 시설 안내",
+      "sourceUrl": "https://www.pcfmc.or.kr/facilities09",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
-      "prices": [
-        {
-          "category": "안치실",
-          "label": "안치실 40,000원",
-          "amount": 40000,
-          "unit": ""
-        },
-        {
-          "category": "염습/입관",
-          "label": "염습료(1회) 100,000원",
-          "amount": 100000,
-          "unit": "1회"
-        }
-      ]
+      "sourceNote": "진부장례식장 시설명·주소는 확인했으나 요금표 제목이 평창장례식장으로 기재되어 시설별 적용 금액 확인이 필요합니다. 다른 시설의 가격을 진부 가격으로 표시하지 않습니다.",
+      "prices": [],
+      "sourceReviewRequired": true,
+      "sourceReviewReason": "facility_price_table_name_mismatch"
     },
     {
       "facilityName": "청주시장례식장",
@@ -2078,17 +2067,67 @@
     {
       "facilityName": "평창장례식장",
       "address": "강원도 평창군 평창읍 종부로 61 (종부리, 평창군보건의료원)",
-      "verifiedAt": "2026-11-10T23:16:18.720968+00:00",
+      "verifiedAt": "2026-11-11T01:08:47.593725+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.pcfmc.or.kr/facilities08",
       "sourceGrade": "A",
-      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "sourceNote": "공단 시설별 페이지의 2023년 사용료 표. 관내·관외 구분과 1일/1회 단위를 분리했으며 현행 적용 여부·감면 자격은 이용 전 시설 확인 필요.",
       "prices": [
         {
+          "category": "빈소",
+          "label": "분향실 · 관내",
+          "amount": 40000,
+          "unit": "1일",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "분향실 · 관외",
+          "amount": 53000,
+          "unit": "1일",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "접객실(일반) · 관내",
+          "amount": 120000,
+          "unit": "1일",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
+          "category": "빈소",
+          "label": "접객실(일반) · 관외",
+          "amount": 160000,
+          "unit": "1일",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 · 관내",
+          "amount": 40000,
+          "unit": "1일",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 · 관외",
+          "amount": 53000,
+          "unit": "1일",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
           "category": "염습/입관",
-          "label": "염습료(1회) 100,000원",
+          "label": "염습료(1회) · 관내",
           "amount": 100000,
-          "unit": "1회"
+          "unit": "1회",
+          "sourceParser": "pcfmc_facility_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료(1회) · 관외",
+          "amount": 130000,
+          "unit": "1회",
+          "sourceParser": "pcfmc_facility_rows_v1"
         }
       ]
     },

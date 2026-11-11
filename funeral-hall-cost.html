@@ -128,7 +128,9 @@ function render(){
   const chips=[h.gubun,h.diningFclt==='설치'?'식당':null,h.store==='설치'?'매점':null,h.pklt==='설치'?'주차장':null,h.bereavedWaitRm==='설치'?'유족대기실':null].filter(Boolean);
   const official='https://www.15774129.go.kr/portal/esky/fnlfac/fac_list.do?facilitygroupcd=TBC0700001&menuId=M0001000100000000';
   let priceHtml='';
-  if(prices.length){
+  if(p&&p.sourceReviewRequired){
+    priceHtml='<div class="unknown"><strong>시설별 요금 확인 필요</strong><p>'+esc(p.sourceNote||'시설명과 가격 출처를 재확인 중입니다. 확인되지 않은 금액은 표시하지 않습니다.')+'</p></div>'+(p.sourceUrl?'<a class="official" target="_blank" rel="noopener" href="'+esc(p.sourceUrl)+'">시설 안내 원문 확인 →</a>':'');
+  }else if(prices.length){
     priceHtml='<div class="pricegrid">'+prices.map(x=>'<div class="priceitem"><b>'+esc(x.label||x.category||'시설비')+'</b>'+money(x.amount)+(x.unit?' / '+esc(x.unit):'')+'</div>').join('')+'</div><div class="source">확인일 '+esc(p.verifiedAt||'미기재')+' · '+esc(p.sourceName||'e하늘 장사정보서비스')+(p.sourceGrade?' · 출처등급 '+esc(p.sourceGrade):'')+(p.sourceNote?' · '+esc(p.sourceNote):'')+'</div>'+(p.sourceUrl?'<a class="official" target="_blank" rel="noopener" href="'+esc(p.sourceUrl)+'">가격 출처 확인 →</a>':'');
   }else if(cats){
     const keys=['R','A','E','M','F','S','P'].filter(k=>cats[k]);
