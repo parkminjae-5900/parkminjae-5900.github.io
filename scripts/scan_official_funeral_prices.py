@@ -12,7 +12,7 @@ STATE=Path("data/official-price-scan-state.json")
 REPORT=Path("data/official-price-scan-report.json")
 BATCH=int(os.environ.get("PRICE_SCAN_BATCH","45"))
 TIMEOUT=6
-PROMOTION_GUARD_VERSION=5
+PROMOTION_GUARD_VERSION=6
 UA="Mozilla/5.0 (compatible; DahamSangjoPriceVerifier/1.0; +https://www.dahamsangjo.co.kr/)"
 
 KEYWORDS=("장례","빈소","안치","염습","입관","시설","이용","요금","비용","가격","사용료","영결")
@@ -79,6 +79,23 @@ def identity_guard(rec,old,homepage):
     """Return (ok, reason). Protect curated A records and multi-branch official sites."""
     if old and old.get("sourceReviewRequired"):
         return False,"facility_source_review_required"
+
+    if sangbok_identity(rec.get("facilityName",""),rec.get("address","")) or any(
+        host(u) in SANGBOK_HOSTS for u in (rec.get("sourceUrl",""),homepage)
+    ):
+        if not sangbok_identity(rec.get("facilityName",""),rec.get("address","")):
+            return False,"facility_identity_unverifiable"
+        if not sangbok_url_matches(rec.get("sourceUrl","")):
+            return False,"facility_source_path_mismatch"
+        prices=rec.get("prices",[])
+        expected={(cat,label+" · "+area,unit) for label,cat,unit in SANGBOK_ROWS for area in ("관내","관외")}
+        expected.update({("염습/입관","염습료 · 일반사",""),("염습/입관","염습료 · 사고사 (수습·봉합 별도)","")})
+        if len(prices)!=8 or {(x.get("category"),x.get("label"),x.get("unit")) for x in prices}!=expected:
+            return False,"reviewed_price_rows_changed"
+        if any(x.get("sourceParser")!="sangbok_rows_v1" for x in prices):
+            return False,"facility_price_table_review_required"
+        if any(x.get("category")=="빈소" and x.get("requiresManualQuantity") is not True for x in prices):
+            return False,"area_unit_review_required"
 
     if any(host(u)=="pcfmc.or.kr" for u in (rec.get("sourceUrl",""),homepage,(old or {}).get("sourceUrl",""))):
         target=pcfmc_target(rec.get("facilityName",""),rec.get("address",""))
@@ -735,6 +752,78 @@ def scan_pcfmc(s,h,home):
     return {"status":"priced","homepage":home,"sourceUrl":final,"prices":prices,"verifiedAt":now(),
             "sourceNote":"공단 시설별 페이지의 2023년 사용료 표. 관내·관외 구분과 1일/1회 단위를 분리했으며 현행 적용 여부·감면 자격은 이용 전 시설 확인 필요."}
 
+SANGBOK_URL="https://www.cwsisul.or.kr/_sangbok/_sub02/sub02_01_02.html"
+SANGBOK_HOSTS={"cwsisul.or.kr","wwwcwsisulorkr"}
+SANGBOK_ROWS=[("빈소·접객실","빈소","1㎡당(1일)"),("안치실","안치실","1구당(1일)"),("염습실","염습/입관","1회")]
+SANGBOK_NOTE=("빈소·접객실은 1㎡당 1일 요금으로 빈소 총액이 아닙니다. 관내·관외 적용 자격을 확인하세요. "
+              "공식 안내: 사망일 기준 1개월 전부터 계속 창원시에 주소를 둔 경우 등. "
+              "1일은 오전 12시부터 다음 날 오전 12시까지이며 12시간 미만은 0.5일입니다. "
+              "염습료와 염습실 사용료는 별도이고 사고사 수습·봉합비는 추가됩니다. "
+              "염습료의 부과 단위와 현행 적용 여부는 시설 확인이 필요합니다.")
+
+def sangbok_identity(name,address):
+    return (norm(name)==norm("창원시립상복공원장례식장") and
+            norm(clean(address).split("(",1)[0])==norm("경상남도 창원시 성산구 공단로474번길 160"))
+
+def sangbok_url_matches(url):
+    p=urlparse(url)
+    return host(url)=="cwsisul.or.kr" and p.path==urlparse(SANGBOK_URL).path and not p.query and p.scheme in ("http","https")
+
+def sangbok_prices(soup):
+    heading=soup.select_one("h2.displayhidden")
+    section=soup.select_one("h3.sub_title")
+    content=soup.select_one(".finance1")
+    if (heading is None or norm(heading.get_text())!=norm("창원시립상복공원") or section is None
+        or clean(section.get_text())!="장례식장안내" or content is None):
+        return [],"facility_page_name_mismatch"
+    text=clean(content.get_text(" ",strip=True))
+    if "055-712-0930" not in text:return [],"facility_page_phone_mismatch"
+    # Reject altered qualification/charging conditions rather than reuse stale notes.
+    required=("1일은 오전 12시부터 다음 날 오전 12시까지로 하며, 12시간 미만은 0.5일로 본다",
+              "사망한 날을 기준으로 1개월 전부터 계속해서 창원시에 주소를 둔 경우",
+              "염습료 : 염습실 사용료 별도금액")
+    if any(norm(x) not in norm(text) for x in required):return [],"facility_price_conditions_changed"
+    tables=[t for t in content.select("table") if t.caption and clean(t.caption.get_text())=="이용요금에 대한 구분, 이용료(관내, 관외), 비고"]
+    if len(tables)!=1:return [],"facility_price_table_structure_changed"
+    table=tables[0]
+    headers=[[clean(c.get_text()) for c in r.find_all(["th","td"],recursive=False)] for r in table.select("thead tr")]
+    if headers!=[["구분","이용료","비고"],["관내","관외"]]:return [],"facility_price_table_structure_changed"
+    rows=table.select("tbody tr")
+    if len(rows)!=5:return [],"facility_price_table_structure_changed"
+    out=[]
+    def add(category,label,value,unit,manual=False):
+        if not re.fullmatch(r"[\d,]+원",value):return False
+        amount=amount_from_cell(value,require_won=True)
+        if not amount:return False
+        record={"category":category,"label":label,"amount":amount,"unit":unit,"sourceParser":"sangbok_rows_v1"}
+        if manual:record["requiresManualQuantity"]=True
+        out.append(record)
+        return True
+    for i,(label,cat,unit) in enumerate(SANGBOK_ROWS):
+        cells=[clean(c.get_text()) for c in rows[i].find_all("td",recursive=False)]
+        if len(cells)!=(5 if i==0 else 4) or cells[:2]!=[label,unit]:return [],"facility_price_table_structure_changed"
+        for col,area in [(2,"관내"),(3,"관외")]:
+            if not add(cat,label+" · "+area,cells[col],unit,i==0):return [],"facility_price_table_amount_invalid"
+    normal=[clean(c.get_text()) for c in rows[3].find_all("td",recursive=False)]
+    accident=[clean(c.get_text()) for c in rows[4].find_all("td",recursive=False)]
+    if len(normal)!=3 or normal[:2]!=["염습료","일반사"] or len(accident)!=2 or accident[0]!="사고사":
+        return [],"facility_price_table_structure_changed"
+    if not accident[1].endswith("(수습,봉합은 별도)"):return [],"facility_price_conditions_changed"
+    if not add("염습/입관","염습료 · 일반사",normal[2],"") or not add("염습/입관","염습료 · 사고사 (수습·봉합 별도)",accident[1].replace("(수습,봉합은 별도)",""),""):
+        return [],"facility_price_table_amount_invalid"
+    return out,"guard_passed"
+
+def scan_sangbok(s,h,home):
+    result={"status":"no_price_found","homepage":home,"sourceUrl":SANGBOK_URL}
+    if not sangbok_identity(h.get("fcltNm",""),h.get("addr","")):
+        return {**result,"reviewReason":"facility_identity_unverifiable"}
+    html,final=get_html(s,SANGBOK_URL)
+    if not html:return {**result,"status":"unreachable"}
+    if not sangbok_url_matches(final):return {**result,"reviewReason":"facility_source_path_mismatch"}
+    prices,reason=sangbok_prices(BeautifulSoup(html,"html.parser"))
+    if not prices:return {**result,"reviewReason":reason}
+    return {**result,"status":"priced","sourceUrl":final,"prices":prices,"verifiedAt":now(),"sourceNote":SANGBOK_NOTE}
+
 def scan_hall(h,old=None):
     home=normalize_url(h.get("homepageUrl",""))
     if not home:return {"status":"no_homepage"}
@@ -743,6 +832,9 @@ def scan_hall(h,old=None):
         start=urljoin(home,REVIEWED_UNIT_HOSTS[host(home)])
     expected_code=query_value(start,"fnrCd")
     s=session()
+    # Preserve the public feed's raw URL. Correct only this verified identity,
+    # never repair arbitrary dotless domains or follow another facility's links.
+    if host(home) in SANGBOK_HOSTS:return scan_sangbok(s,h,home)
     if host(home)=="youngwol.org":return scan_youngwol(s,home)
     if host(home)=="pcfmc.or.kr":return scan_pcfmc(s,h,home)
     html,final=get_html(s,start)

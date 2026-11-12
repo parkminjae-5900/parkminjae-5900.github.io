@@ -10,6 +10,10 @@ on:
       - "tests/test_reviewed_units.py"
       - "tests/test_pcfmc_prices.py"
       - "tests/test_pcfmc_ui.cjs"
+      - "tests/test_sangbok_prices.py"
+      - "tests/test_sangbok_ui.cjs"
+      - "tests/fixtures/sangbok-prices.html"
+      - "assets/estimate/nationwide-prices.js"
       - "tests/fixtures/pcfmc-*.html"
       - "funeral-hall-cost.html"
       - "tests/fixtures/*-units.html"
@@ -42,7 +46,9 @@ jobs:
       - name: Test explicit facility units
         run: python -m unittest discover -s tests -p 'test_reviewed_units.py'
       - name: Test facility-source display safety
-        run: node tests/test_pcfmc_ui.cjs
+        run: |
+          node tests/test_pcfmc_ui.cjs
+          node tests/test_sangbok_ui.cjs
       - name: Validate compressed baseline payload
         run: |
           python - <<'PY'

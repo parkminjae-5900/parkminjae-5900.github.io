@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-12T01:32:19.024470+00:00",
+  "updatedAt": "2026-11-12T06:58:31.313772+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -2023,6 +2023,75 @@
       "prices": [],
       "sourceReviewRequired": true,
       "sourceReviewReason": "facility_price_table_name_mismatch"
+    },
+    {
+      "facilityName": "창원시립상복공원장례식장",
+      "address": "경상남도 창원시 성산구 공단로474번길 160 (상복동)",
+      "verifiedAt": "2026-11-12T06:57:52.656456+00:00",
+      "sourceUrl": "https://www.cwsisul.or.kr/_sangbok/_sub02/sub02_01_02.html",
+      "sourceNote": "빈소·접객실은 1㎡당 1일 요금으로 빈소 총액이 아닙니다. 관내·관외 적용 자격을 확인하세요. 공식 안내: 사망일 기준 1개월 전부터 계속 창원시에 주소를 둔 경우 등. 1일은 오전 12시부터 다음 날 오전 12시까지이며 12시간 미만은 0.5일입니다. 염습료와 염습실 사용료는 별도이고 사고사 수습·봉합비는 추가됩니다. 염습료의 부과 단위와 현행 적용 여부는 시설 확인이 필요합니다.",
+      "prices": [
+        {
+          "category": "빈소",
+          "label": "빈소·접객실 · 관내",
+          "amount": 1800,
+          "unit": "1㎡당(1일)",
+          "sourceParser": "sangbok_rows_v1",
+          "requiresManualQuantity": true
+        },
+        {
+          "category": "빈소",
+          "label": "빈소·접객실 · 관외",
+          "amount": 2500,
+          "unit": "1㎡당(1일)",
+          "sourceParser": "sangbok_rows_v1",
+          "requiresManualQuantity": true
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 · 관내",
+          "amount": 40000,
+          "unit": "1구당(1일)",
+          "sourceParser": "sangbok_rows_v1"
+        },
+        {
+          "category": "안치실",
+          "label": "안치실 · 관외",
+          "amount": 70000,
+          "unit": "1구당(1일)",
+          "sourceParser": "sangbok_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 · 관내",
+          "amount": 80000,
+          "unit": "1회",
+          "sourceParser": "sangbok_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 · 관외",
+          "amount": 140000,
+          "unit": "1회",
+          "sourceParser": "sangbok_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 일반사",
+          "amount": 300000,
+          "unit": "",
+          "sourceParser": "sangbok_rows_v1"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습료 · 사고사 (수습·봉합 별도)",
+          "amount": 400000,
+          "unit": "",
+          "sourceParser": "sangbok_rows_v1"
+        }
+      ],
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceGrade": "A"
     },
     {
       "facilityName": "청주시장례식장",

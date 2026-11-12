@@ -12,6 +12,7 @@
   function group(r){const t=r.category||"";if(/빈소|접객|분향/.test(t))return "room";if(/안치/.test(t))return "morgue";if(/입관|염습/.test(t))return "preparation";return t;}
   function qtyFor(r) {
     const t=(r.unit||"")+" "+(r.detail||"");
+    if(r.requiresManualQuantity||/㎡|m²|m2/i.test(t))return {qty:0,unit:"㎡·일 (면적×적용일수 확인)"};
     if(/1일|일당|24시간/.test(t))return {qty:number($("facility-days").value),unit:"일"};
     if(/1시간|시간당/.test(t))return {qty:number($("facility-hours").value),unit:"시간"};
     if(/1회|회당/.test(t))return {qty:1,unit:"회"};
@@ -43,6 +44,7 @@
     if(!manualHall&&selectedRows().some(r=>r.sourceGrade==="A"))w.push("공식 홈페이지 게시 자료 기준: 시행일·과금 단위·추가 비용·현행 적용 여부 확인 필요");
     if(!manualHall&&selectedRows().some(r=>r.sourceGrade!=="A"))w.push("과거 공시 또는 2차 자료: 현재 시설 요금·시행일·자격을 해당 시설에 재확인 필요");
     if(!manualHall&&selectedRows().some(r=>qtyFor(r).unit==="단위 확인 필요"))w.push("원문에 없는 과금 단위: 시설 확인 후 수량·단위 입력");
+    if(!manualHall&&selectedRows().some(r=>r.requiresManualQuantity||/㎡|m²|m2/i.test(r.unit||"")))w.push("면적당 요금: 빈소 전체 금액이 아닙니다. 시설에 면적·적용일수·관내외 자격을 확인하고 면적×적용일수를 입력하세요.");
     if(manualHall&&!number($("hallCost").value))w.push("장례식장 직접 입력 금액 미확인: 빈 값·0원은 무료 확정 아님");
     if(manualHall&&!$("hall-manual-source").value.trim())w.push("장례식장 직접 입력 요금의 확인 근거 미입력");
     if(state.burialType!=="매장") {
