@@ -11,7 +11,7 @@ HALL={'fcltNm':'창원시립상복공원장례식장','addr':'경상남도 창�
 
 class SangbokTest(unittest.TestCase):
  def scan(self,html=HTML,final=None,h=None):
-  with patch.object(scan,'get_html',return_value=(html,final or scan.SANGBOK_URL)) as get:
+  with patch.object(scan,'session',return_value=object()), patch.object(scan,'get_html',return_value=(html,final or scan.SANGBOK_URL)) as get:
    result=scan.scan_hall(h or HALL)
    return result,get
  def test_broken_raw_url_routes_only_to_verified_page(self):
