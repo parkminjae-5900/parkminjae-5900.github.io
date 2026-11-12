@@ -1,14 +1,13 @@
 import copy
-import importlib.util
 from pathlib import Path
 import unittest
 from unittest.mock import patch
 
-spec=importlib.util.spec_from_file_location('scan',Path('scripts/scan_official_funeral_prices.py'))
-scan=importlib.util.module_from_spec(spec);spec.loader.exec_module(scan)
+from test_scan_official_funeral_prices import scan,HAS_BS4
 HTML=Path('tests/fixtures/sangbok-prices.html').read_text()
 HALL={'fcltNm':'창원시립상복공원장례식장','addr':'경상남도 창원시 성산구 공단로474번길 160 (상복동)','homepageUrl':'https://wwwcwsisulorkr/_sangbok/indexphp'}
 
+@unittest.skipUnless(HAS_BS4,'BeautifulSoup required')
 class SangbokTest(unittest.TestCase):
  def scan(self,html=HTML,final=None,h=None):
   with patch.object(scan,'session',return_value=object()), patch.object(scan,'get_html',return_value=(html,final or scan.SANGBOK_URL)) as get:
