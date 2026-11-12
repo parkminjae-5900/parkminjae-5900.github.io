@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-12T07:10:22.229650+00:00",
+  "updatedAt": "2026-11-12T09:47:02.919471+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -1226,7 +1226,7 @@
     {
       "facilityName": "목포시의료원장례식장",
       "address": "전라남도 목포시 이로로 18 (용해동, 목포시의료원)",
-      "verifiedAt": "2026-11-10T07:06:09.393181+00:00",
+      "verifiedAt": "2026-11-12T09:46:26.444176+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.mokpomc.or.kr/bbs/content.php?co_id=2_8",
       "sourceGrade": "A",
