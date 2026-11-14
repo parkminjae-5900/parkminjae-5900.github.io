@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-28",
+  "scope": "저장소 가격자료의 상담 자동계산 연결 적격성; 공식 요금의 실제 진위 검수 아님",
+  "hallFacilities": 39,
+  "hallPriceItems": 200,
+  "eligibleHallItems": 0,
+  "blockedHallItems": 200,
+  "missingFields": [
+    "facilityId",
+    "reviewBy",
+    "effectiveFrom",
+    "effectiveUntil",
+    "billingRuleConfirmed"
+  ],
+  "cremationSourceDate": "2023-06-01",
+  "cremationFacilities": 62,
+  "historicalCremationItemsBlocked": 721,
+  "readyForProduction": false
+}
