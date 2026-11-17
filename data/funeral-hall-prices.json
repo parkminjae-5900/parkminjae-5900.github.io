@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-17T03:50:56.642625+00:00",
+  "updatedAt": "2026-11-17T13:20:35.822333+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -2027,7 +2027,7 @@
     {
       "facilityName": "창원시립상복공원장례식장",
       "address": "경상남도 창원시 성산구 공단로474번길 160 (상복동)",
-      "verifiedAt": "2026-11-14T02:26:45.508544+00:00",
+      "verifiedAt": "2026-11-17T13:20:34.140579+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.cwsisul.or.kr/_sangbok/_sub02/sub02_01_02.html",
       "sourceGrade": "A",
