@@ -11,11 +11,17 @@ ctx.testPrices=db.items.filter(x=>['진부장례식장','평창장례식장'].in
 vm.runInContext("halls=testHalls;testPrices.forEach(x=>priceMap['name:'+norm(x.facilityName)]=x)",ctx);
 fields.get('#q').value='진부';vm.runInContext('render()',ctx);
 let html=fields.get('#results').innerHTML;
-assert.match(html,/시설별 요금 확인 필요/);assert.match(html,/facilities09/);
-assert.doesNotMatch(html,/40,000원|100,000원|출처등급 A|priceitem/);
+assert.match(html,/시설별 요금 확인 필요/);assert.match(html,/ordinSeq=2033869/);
+assert.match(html,/분향실 40,000원\(관외 53,000원\)\/1일/);
+assert.match(html,/접객실 120,000원\(관외 160,000원\)\/1일/);
+assert.match(html,/안치실 40,000원\(관외 53,000원\)\/1일/);
+assert.match(html,/염습료 100,000원\(관외 130,000원\)\/1회·1구/);
+assert.match(html,/특실 요금.*시설 확인이 필요/);
+assert.match(html,/시간당 환산하거나 자동견적에 합산하지 않습니다/);
+assert.doesNotMatch(html,/출처등급 A|priceitem/);
 // Even accidental stale numeric rows on a held record must never render.
 vm.runInContext("priceMap['name:'+norm('진부장례식장')].prices=[{category:'안치실',amount:40000}]",ctx);
-vm.runInContext('render()',ctx);assert.doesNotMatch(fields.get('#results').innerHTML,/40,000원|priceitem/);
+vm.runInContext('render()',ctx);assert.doesNotMatch(fields.get('#results').innerHTML,/priceitem/);
 fields.get('#q').value='평창장례식장';vm.runInContext('render()',ctx);
 html=fields.get('#results').innerHTML;
 assert.equal((html.match(/class="priceitem"/g)||[]).length,8);
@@ -23,5 +29,5 @@ assert.match(html,/안치실 · 관외<\/b>53,000원 \/ 1일/);
 assert.match(html,/염습료\(1회\) · 관외<\/b>130,000원 \/ 1회/);
 assert.match(html,/2023년 사용료 표/);
 fields.get('#q').value='진부';vm.runInContext('render()',ctx);
-assert.doesNotMatch(fields.get('#results').innerHTML,/53,000원|130,000원/);
+assert.doesNotMatch(fields.get('#results').innerHTML,/priceitem/);
 console.log('PCFMC display contract passed: held source, stale-row suppression, area/unit rows, repeated searches.');

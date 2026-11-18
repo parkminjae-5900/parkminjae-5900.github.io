@@ -2015,14 +2015,17 @@
     {
       "facilityName": "진부장례식장",
       "address": "강원도 평창군 진부면 오대천로 1958-21 (하진부리)",
-      "verifiedAt": "2026-11-11T01:08:47.473949+00:00",
-      "sourceName": "평창군시설관리공단 시설 안내",
-      "sourceUrl": "https://www.pcfmc.or.kr/facilities09",
+      "verifiedAt": "2026-11-18",
+      "sourceName": "국가법령정보센터 · 평창군 장례식장 설치 및 운영 조례 별표",
+      "sourceUrl": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2033869",
       "sourceGrade": "A",
-      "sourceNote": "진부장례식장 시설명·주소는 확인했으나 요금표 제목이 평창장례식장으로 기재되어 시설별 적용 금액 확인이 필요합니다. 다른 시설의 가격을 진부 가격으로 표시하지 않습니다.",
+      "sourceNote": "2025년 5월 2일 시행 조례 별표의 진부장례식장 공시 참고요금입니다. 분향실 40,000원(관외 53,000원)/1일, 접객실 120,000원(관외 160,000원)/1일, 안치실 40,000원(관외 53,000원)/1일, 염습료 100,000원(관외 130,000원)/1회·1구. 특실 요금, 관내·관외 적용 자격, 부분일 계산 및 실제 청구 조건은 시설 확인이 필요합니다. 시간당 환산하거나 자동견적에 합산하지 않습니다. 공단 시설 안내 요금표의 시설명 불일치는 해소되지 않았으며, 위 금액은 공단 표가 아닌 조례 별표의 진부 행에서 확인했습니다.",
       "prices": [],
       "sourceReviewRequired": true,
-      "sourceReviewReason": "facility_price_table_name_mismatch"
+      "sourceReviewReason": "application_conditions_confirmation_required",
+      "referenceOnly": true,
+      "referenceSourceUrl": "https://www.law.go.kr/LSW/flDownload.do?gubun=ELIS&flSeq=151598719&flNm=annex",
+      "facilityInfoUrl": "https://www.pcfmc.or.kr/facilities09"
     },
     {
       "facilityName": "창원시립상복공원장례식장",
