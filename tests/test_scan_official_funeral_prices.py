@@ -342,6 +342,18 @@ class PriceUnitReviewTests(unittest.TestCase):
             self.assertEqual(scan.identity_guard(candidate,old,""),
                              (False,"price_unit_review_required"))
 
+    def test_gnuh_reference_remains_out_of_automatic_estimates(self):
+        import json
+        data=json.loads((SCRIPT.parents[1]/"data/funeral-hall-prices.json").read_text())
+        rec=next(x for x in data["items"] if x["facilityName"]=="경상국립대학교병원장례식장")
+        self.assertTrue(rec["estimateBlocked"])
+        self.assertTrue(rec["sourceReviewRequired"])
+        self.assertTrue(rec["priceReviewRequired"])
+        self.assertTrue(rec["referenceOnly"])
+        self.assertEqual(scan.identity_guard(record(),rec,""),(False,"facility_source_review_required"))
+        for phrase in ["80,000원/1일", "7,000원/1시간", "12시간 이상", "1시간 미만", "상한·조정", "최근 갱신일·시행일", "직원·직원 가족", "증빙 제출", "중복 감면은 불가"]:
+            self.assertIn(phrase,rec["sourceNote"])
+
     def test_review_hold_does_not_change_other_records(self):
         old=record(prices=[price()])
         self.assertEqual(scan.identity_guard(record(prices=[price()]),old,""),

@@ -37,6 +37,15 @@ const fs=require('node:fs');
    fs.mkdirSync('qa-output',{recursive:true});
    await page.screenshot({path:`qa-output/jinbu-reference-${width}.png`,fullPage:true});
    console.log('JINBU_VISUAL:'+width+':'+fs.readFileSync(`qa-output/jinbu-reference-${width}.png`).toString('base64'));
+   await page.locator('#q').fill('경상국립대학교병원장례식장');await page.locator('#searchBtn').click();
+   const gnuh=page.locator('#results .result');assert.equal(await gnuh.count(),1);
+   const gnuhText=await gnuh.innerText();
+   for(const text of ['80,000원/1일','7,000원/1시간','12시간 이상','상한·조정','직원·직원 가족','자동견적과 과거 공시가격 대체 합산은 보류'])assert.ok(gnuhText.includes(text),text);
+   assert.equal(await gnuh.locator('.priceitem').count(),0);
+   assert.ok((await gnuh.locator('a.official').getAttribute('href')).includes('rbsIdx=42'));
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   await gnuh.screenshot({path:`qa-output/gnuh-reference-${width}.jpg`,type:'jpeg',quality:80});
+   console.log('GNUH_VISUAL:'+width+':'+fs.readFileSync(`qa-output/gnuh-reference-${width}.jpg`).toString('base64'));
    reports.push({width,result:'PASS',repeatedSearch:true,referenceOnly:true});await page.close();
   }
   fs.writeFileSync('qa-output/jinbu-reference-report.json',JSON.stringify(reports,null,2));

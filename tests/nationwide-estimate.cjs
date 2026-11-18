@@ -74,6 +74,22 @@ async function localOnly(page){await page.route('**/*',async route=>{
   await page.locator('#hall-manual').check();
   await page.locator('#hallCost').fill('-9999');
   assert.equal(await page.evaluate(()=>calcData().external),0,'negative cost is clamped');
+  await page.evaluate(()=>chooseHall('경상국립대학교병원장례식장'));
+  await page.waitForFunction(()=>document.querySelector('#facility-prices').textContent.includes('자동견적 보류'));
+  assert.equal(await page.locator('[id^="facility-row-"]').count(),0,'no current or baseline rates on held reference');
+  assert.equal(await page.inputValue('#hallCost'),'','prior facility/manual price cleared');
+  assert.equal(await page.evaluate(()=>calcData().external),0,'no automatic reference estimate');
+  const held=await page.locator('#facility-prices').innerText();
+  for(const text of ['80,000원/1일','7,000원/1시간','상한·조정','최근 갱신일·시행일','직원·직원 가족'])assert.ok(held.includes(text),text);
+  await page.locator('#facility-days').fill('3');
+  assert.equal(await page.evaluate(()=>calcData().external),0,'changing days cannot calculate held reference');
+  await page.locator('#hall-manual').check();
+  await page.locator('#hallCost').fill('91000');
+  await page.locator('#hall-manual-source').fill('시설에서 확인한 검수용 금액');
+  assert.equal(await page.evaluate(()=>calcData().external),91000,'explicit manual confirmed amount remains available');
+  await page.locator('#hall-manual').uncheck();
+  assert.equal(await page.evaluate(()=>calcData().external),0,'leaving manual mode does not promote reference');
+  await page.locator('#facility-prices').screenshot({path:`qa-output/gnuh-estimate-hold-${width}.png`});
   assert.deepEqual(errors,[],'no browser runtime errors');
   await page.close();
  }
