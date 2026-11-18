@@ -13,7 +13,7 @@ const fs=require('node:fs');
     const url=route.request().url();
     if(url.startsWith('http://127.0.0.1:8765/'))return route.continue();
     // Test the checked-out asset when markup uses the production absolute URL.
-    if(url.startsWith('https://www.dahamsangjo.co.kr/'))return route.continue({url:url.replace('https://www.dahamsangjo.co.kr/','http://127.0.0.1:8765/')});
+    if(url==='https://www.dahamsangjo.co.kr/assets/regional-funeral-base.png')return route.fulfill({status:200,contentType:'image/png',body:fs.readFileSync('assets/regional-funeral-base.png')});
     return route.abort();
    });
    await page.goto('http://127.0.0.1:8765/funeral-hall-cost.html');
