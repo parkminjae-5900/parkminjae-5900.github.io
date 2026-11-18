@@ -45,6 +45,7 @@ jobs:
           npm install --prefix /tmp/estimate-qa 'playwright@1.58.0'
           python -m http.server 8765 > /tmp/estimate-http.log 2>&1 &
           NODE_PATH=/tmp/estimate-qa/node_modules node tests/nationwide-estimate.cjs
+          NODE_PATH=/tmp/estimate-qa/node_modules node tests/test_pcfmc_browser.cjs
       - name: Upload browser evidence
         if: always()
         uses: actions/upload-artifact@v4
