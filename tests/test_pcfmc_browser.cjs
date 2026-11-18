@@ -9,7 +9,13 @@ const fs=require('node:fs');
   for(const width of [390,1280]){
    const page=await browser.newPage({viewport:{width,height:900}});
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
-   await page.route('**/*',route=>route.request().url().startsWith('http://127.0.0.1:8765/')?route.continue():route.abort());
+   await page.route('**/*',route=>{
+    const url=route.request().url();
+    if(url.startsWith('http://127.0.0.1:8765/'))return route.continue();
+    // Test the checked-out asset when markup uses the production absolute URL.
+    if(url.startsWith('https://www.dahamsangjo.co.kr/'))return route.continue({url:url.replace('https://www.dahamsangjo.co.kr/','http://127.0.0.1:8765/')});
+    return route.abort();
+   });
    await page.goto('http://127.0.0.1:8765/funeral-hall-cost.html');
    await page.waitForFunction(()=>document.querySelector('#results .result'));
    for(const name of ['진부','평창장례식장','진부']){
@@ -24,6 +30,8 @@ const fs=require('node:fs');
     }else assert.equal(await cards.locator('.priceitem').count(),8);
    }
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'horizontal overflow');
+   for(const img of await page.locator('img').all())await img.scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>[...document.images].every(i=>i.complete));
    assert.equal(await page.locator('img').evaluateAll(images=>images.filter(i=>!i.complete||i.naturalWidth===0).length),0,'broken images');
    assert.deepEqual(errors,[]);
    fs.mkdirSync('qa-output',{recursive:true});
