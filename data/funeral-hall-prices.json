@@ -310,11 +310,11 @@
     {
       "facilityName": "경상국립대학교병원장례식장",
       "address": "경상남도 진주시 강남로 79 (칠암동, 경상대학교병원)",
-      "verifiedAt": "2026-11-07T19:07:42.122495+00:00",
+      "verifiedAt": "2026-11-18",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.gnuh.co.kr/funeral/contents/contentsView.do?rbsIdx=42",
       "sourceGrade": "A",
-      "sourceNote": "안치료 금액과 시간·일 단위의 연결이 불명확하여 안치료 표시를 보류했습니다. 공식 원문 재확인이 필요하며 이용 전 장례식장에 문의해 주세요. 다른 표시 가격의 확인일은 기존 수집일입니다.",
+      "sourceNote": "2026년 11월 18일 공식 이용요금 페이지에서 확인한 안치료 참고정보: 80,000원/1일, 7,000원/1시간. 안치일시부터 24시간을 1일로 산정하고, 24시간에 미달하는 시간은 12시간 이상이면 1일, 12시간 미만이면 시간단위로 산정하며 1시간 미만은 1시간으로 산정한다고 안내합니다. 11시간 초과~12시간 미만 구간에서 시간단위 금액이 일요금을 넘을 때의 상한·조정 여부는 명시되어 있지 않아 시설 확인이 필요합니다. 게시 요금의 최근 갱신일·시행일은 확인되지 않았으며 최종 청구액과 감면 적용은 병원에 확인해야 합니다. 직원·직원 가족 감면은 상조회사 또는 장의사가 해당 장례를 진행하면 적용하지 않는다고 명시되어 있습니다. 사회적 배려자 감면은 증빙 제출이 필요하고 중복 감면은 불가합니다. 자동견적과 과거 공시가격 대체 합산은 보류하며, 확인한 최종 금액만 직접 입력하세요. 문의 055-750-8448.",
       "prices": [
         {
           "category": "안치실",
@@ -324,7 +324,11 @@
         }
       ],
       "priceReviewRequired": true,
-      "priceReviewedAt": "2026-11-09"
+      "priceReviewedAt": "2026-11-18",
+      "referenceOnly": true,
+      "estimateBlocked": true,
+      "sourceReviewRequired": true,
+      "sourceReviewReason": "morgue_billing_conditions_confirmation_required"
     },
     {
       "facilityName": "경찰병원장례식장",

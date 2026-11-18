@@ -72,14 +72,15 @@
     const actual=(latest?.items||[]).filter(i=>norm(i.facilityName)===norm(n)&&matches.length===1&&street(i.address)===street(matches[0].addr));
     const sharedUrl=actual.length===1&&(latest?.items||[]).filter(i=>i.sourceUrl===actual[0].sourceUrl&&norm(i.facilityName)!==norm(n)).length>0;
     const oldNames=Object.keys(catalog?.halls||{}).filter(k=>norm(k)===norm(n));
+    const estimateBlocked=actual.length===1&&actual[0].estimateBlocked===true;
     rows=[];
     // Duplicate names remain unresolved rather than silently combining different facilities.
-    if(actual.length===1&&!sharedUrl)rows=actual[0].prices.filter(r=>(r.category!=="염습/입관"||/입관실/.test(r.label))&&!(state.funeralType==="무빈소"&&group(r)==="room")&&(r.label.match(/\d{1,3}(?:,\d{3})+\s*원/g)||[]).length<2).map(r=>({...r,sourceGrade:actual[0].sourceGrade,sourceName:actual[0].sourceName,sourceDate:"시행일 확인 필요",verifiedAt:actual[0].verifiedAt,sourceUrl:actual[0].sourceUrl}));
-    if(oldNames.length===1&&matches.length===1){
+    if(actual.length===1&&!sharedUrl&&!estimateBlocked)rows=actual[0].prices.filter(r=>(r.category!=="염습/입관"||/입관실/.test(r.label))&&!(state.funeralType==="무빈소"&&group(r)==="room")&&(r.label.match(/\d{1,3}(?:,\d{3})+\s*원/g)||[]).length<2).map(r=>({...r,sourceGrade:actual[0].sourceGrade,sourceName:actual[0].sourceName,sourceDate:"시행일 확인 필요",verifiedAt:actual[0].verifiedAt,sourceUrl:actual[0].sourceUrl}));
+    if(oldNames.length===1&&matches.length===1&&!estimateBlocked){
       const categories=new Set(rows.map(group));
       for(const r of catalog.halls[oldNames[0]])if(!(state.funeralType==="무빈소"&&group(r)==="room")&&!categories.has(group(r)))rows.push({...r,sourceGrade:"C",sourceName:catalog.sourceName,sourceDate:catalog.sourceDate,sourceUrl:catalog.sourceUrl});
     }
-    $("facility-prices").innerHTML=rows.length?rows.map((r,i)=>{
+    $("facility-prices").innerHTML=estimateBlocked?'<p><strong>자동견적 보류 · 시설 확인 필요</strong></p><p>'+safe(actual[0].sourceNote)+'</p><p><a href="'+safe(/^https?:\/\//.test(actual[0].sourceUrl||"")?actual[0].sourceUrl:"#")+'" target="_blank" rel="noopener">공식 이용요금 원문</a></p>':rows.length?rows.map((r,i)=>{
       const q=qtyFor(r);
       return '<div class="facility-price"><label><input type="checkbox" id="facility-row-'+i+'"> <strong>'+safe(r.category+' · '+r.label)+'</strong><br>'+safe(r.detail||r.unit||"과금 단위 확인 필요")+' · '+money(r.amount)+'</label><p>'+safe(r.sourceName)+' · '+safe(r.sourceDate)+' · 조회 '+safe(r.verifiedAt||"현재 미확인")+' <a href="'+safe(/^https?:\/\//.test(r.sourceUrl||"")?r.sourceUrl:"#")+'" target="_blank" rel="noopener">원문</a></p><div class="formGrid"><div class="field"><label for="facility-qty-'+i+'">사용 수량</label><input id="facility-qty-'+i+'" type="number" min="0" step="0.5" value="'+q.qty+'"></div><div class="field"><label for="facility-unit-'+i+'">과금 단위</label><input id="facility-unit-'+i+'" value="'+q.unit+'"></div></div></div>';
     }).join(""):'<p>해당 시설의 정확한 가격 연결이 없습니다. 시설에 확인한 금액을 직접 입력해주세요.</p>';
