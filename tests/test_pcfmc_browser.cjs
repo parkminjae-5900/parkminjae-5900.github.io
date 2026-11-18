@@ -9,7 +9,7 @@ const fs=require('node:fs');
   for(const width of [390,1280]){
    const page=await browser.newPage({viewport:{width,height:900}});
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
-   await page.route('**/*',route=>route.request().url().startsWith('http://127.0.0.1:8765/')?route.continue_():route.abort());
+   await page.route('**/*',route=>route.request().url().startsWith('http://127.0.0.1:8765/')?route.continue():route.abort());
    await page.goto('http://127.0.0.1:8765/funeral-hall-cost.html');
    await page.waitForFunction(()=>document.querySelector('#results .result'));
    for(const name of ['진부','평창장례식장','진부']){
@@ -28,6 +28,7 @@ const fs=require('node:fs');
    assert.deepEqual(errors,[]);
    fs.mkdirSync('qa-output',{recursive:true});
    await page.screenshot({path:`qa-output/jinbu-reference-${width}.png`,fullPage:true});
+   console.log('JINBU_VISUAL:'+width+':'+fs.readFileSync(`qa-output/jinbu-reference-${width}.png`).toString('base64'));
    reports.push({width,result:'PASS',repeatedSearch:true,referenceOnly:true});await page.close();
   }
   fs.writeFileSync('qa-output/jinbu-reference-report.json',JSON.stringify(reports,null,2));
