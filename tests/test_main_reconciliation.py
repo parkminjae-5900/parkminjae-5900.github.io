@@ -38,7 +38,7 @@ class MainReconciliationTests(unittest.TestCase):
             self.assertIn(phrase,source)
         self.assertIn('fh-2b9afdfceab26e79',photos.load_inputs(ROOT)[4])
         self.assertNotIn('다시 안내되고', source)
-        self.assertIn('현재 신규 접수 가능 여부·이용 가능한 빈소·공식 요금과 정확한 운영 재개일은 확인되지 않았습니다', source)
+        self.assertIn('실시간 빈소 접수·가동 호실·시설 직접 적용 요금과 정확한 운영 재개일은 확인되지 않았습니다', source)
         self.assertIn('오늘의 신규 접수나 빈소 제공을 보장하지 않습니다', source)
         self.assertIn('wr_id=940361', source)
         self.assertIn('2026103016144805186', source)
