@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-21T09:46:19.054530+00:00",
+  "updatedAt": "2026-11-21T17:29:40.524260+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -804,7 +804,7 @@
     {
       "facilityName": "기장병원장례식장",
       "address": "부산광역시 기장군 기장읍 대청로72번길 6 (청강리, 기장병원)",
-      "verifiedAt": "2026-11-18T08:30:55.105099+00:00",
+      "verifiedAt": "2026-11-21T17:29:39.253625+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.gjhp.kr/location01_05.php",
       "sourceGrade": "A",
@@ -1019,7 +1019,7 @@
     {
       "facilityName": "대구시민전문장례식장",
       "address": "대구광역시 북구 호국로 898 (동호동)",
-      "verifiedAt": "2026-11-18T08:29:47.189984+00:00",
+      "verifiedAt": "2026-11-21T17:28:39.730569+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://dgsmfn.com/sub2_1_1.php",
       "sourceGrade": "A",
@@ -1037,7 +1037,7 @@
     {
       "facilityName": "대전성모병원장례식장",
       "address": "대전광역시 중구 대흥로 64 (대흥동, 가톨릭대학교대전성모병원)",
-      "verifiedAt": "2026-11-18T08:30:27.661181+00:00",
+      "verifiedAt": "2026-11-21T17:29:14.884624+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "https://www.cmcdjfuneral.co.kr/funeral-guide.jsp",
       "sourceGrade": "A",
