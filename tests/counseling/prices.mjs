@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {auditRecord,auditDataset} from '../../counseling/audit-prices.mjs';
+const today='2026-10-28';
+const h=JSON.parse(fs.readFileSync(new URL('../../data/funeral-hall-prices.json',import.meta.url)));
+const c=JSON.parse(fs.readFileSync(new URL('../../data/cremation-prices.json',import.meta.url)));
+const report=auditDataset(h,c,today);
+assert.equal(report.hallPriceItems,report.eligibleHallItems+report.blockedHallItems);
+assert.equal(report.historicalCremationItemsBlocked,c.facilities.reduce((n,f)=>n+f.prices.length,0));
+assert.equal(report.readyForProduction,false);
+assert.equal(auditRecord({sourceGrade:'A',verifiedAt:today,sourceUrl:'https://example.org'}, {amount:1000,unit:'1시간'},today).eligible,false);
+console.log(JSON.stringify({priceAuditChecksPassed:4,blockedHallItems:report.blockedHallItems,historicalCremationItemsBlocked:report.historicalCremationItemsBlocked}));

@@ -1,0 +1,705 @@
+{
+  "purpose": "원문 보존 검색·안전 회귀 입력. 정답 데이터 아님.",
+  "items": [
+    {
+      "id": "001",
+      "category": "무빈소",
+      "question": "서울 송파구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "002",
+      "category": "무빈소",
+      "question": "서울 송파구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "003",
+      "category": "무빈소",
+      "question": "서울 송파구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "004",
+      "category": "무빈소",
+      "question": "서울 강남구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "005",
+      "category": "무빈소",
+      "question": "서울 강남구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "006",
+      "category": "무빈소",
+      "question": "서울 강남구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "007",
+      "category": "무빈소",
+      "question": "서울 영등포구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "008",
+      "category": "무빈소",
+      "question": "서울 영등포구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "009",
+      "category": "무빈소",
+      "question": "서울 영등포구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "010",
+      "category": "무빈소",
+      "question": "인천 미추홀구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "011",
+      "category": "무빈소",
+      "question": "인천 미추홀구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "012",
+      "category": "무빈소",
+      "question": "인천 미추홀구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "013",
+      "category": "무빈소",
+      "question": "인천 부평구에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "014",
+      "category": "무빈소",
+      "question": "인천 부평구에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "015",
+      "category": "무빈소",
+      "question": "인천 부평구에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "016",
+      "category": "무빈소",
+      "question": "부천에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "017",
+      "category": "무빈소",
+      "question": "부천에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "018",
+      "category": "무빈소",
+      "question": "부천에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "019",
+      "category": "무빈소",
+      "question": "수원에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "020",
+      "category": "무빈소",
+      "question": "수원에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "021",
+      "category": "무빈소",
+      "question": "수원에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "022",
+      "category": "무빈소",
+      "question": "춘천에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "023",
+      "category": "무빈소",
+      "question": "춘천에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "024",
+      "category": "무빈소",
+      "question": "춘천에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "025",
+      "category": "무빈소",
+      "question": "성남에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "026",
+      "category": "무빈소",
+      "question": "성남에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "027",
+      "category": "무빈소",
+      "question": "성남에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "028",
+      "category": "무빈소",
+      "question": "안산에서 무빈소 장례를 준비할 때 상품비와 별도 시설비를 어떻게 나누나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "029",
+      "category": "무빈소",
+      "question": "안산에서 빈소 없이 입관과 화장을 진행하려면 무엇을 확인해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "030",
+      "category": "무빈소",
+      "question": "안산에서 무빈소 장례와 2일 가족장 중 어떤 조건을 비교해야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "031",
+      "category": "가족장",
+      "question": "서울 송파구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "032",
+      "category": "가족장",
+      "question": "서울 송파구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "033",
+      "category": "가족장",
+      "question": "서울 강남구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "034",
+      "category": "가족장",
+      "question": "서울 강남구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "035",
+      "category": "가족장",
+      "question": "서울 영등포구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "036",
+      "category": "가족장",
+      "question": "서울 영등포구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "037",
+      "category": "가족장",
+      "question": "인천 미추홀구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "038",
+      "category": "가족장",
+      "question": "인천 미추홀구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "039",
+      "category": "가족장",
+      "question": "인천 부평구에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "040",
+      "category": "가족장",
+      "question": "인천 부평구에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "041",
+      "category": "가족장",
+      "question": "부천에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "042",
+      "category": "가족장",
+      "question": "부천에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "043",
+      "category": "가족장",
+      "question": "수원에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "044",
+      "category": "가족장",
+      "question": "수원에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "045",
+      "category": "가족장",
+      "question": "춘천에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "046",
+      "category": "가족장",
+      "question": "춘천에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "047",
+      "category": "가족장",
+      "question": "성남에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "048",
+      "category": "가족장",
+      "question": "성남에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "049",
+      "category": "가족장",
+      "question": "안산에서 조문객 30명 가족장 비용을 계산할 때 어떤 항목을 넣어야 하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "050",
+      "category": "가족장",
+      "question": "안산에서 소규모 가족장 2일장과 3일장의 차이점은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "051",
+      "category": "후불상조",
+      "question": "서울에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "052",
+      "category": "후불상조",
+      "question": "서울에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "053",
+      "category": "후불상조",
+      "question": "서울에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "054",
+      "category": "후불상조",
+      "question": "인천에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "055",
+      "category": "후불상조",
+      "question": "인천에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "056",
+      "category": "후불상조",
+      "question": "인천에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "057",
+      "category": "후불상조",
+      "question": "부천에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "058",
+      "category": "후불상조",
+      "question": "부천에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "059",
+      "category": "후불상조",
+      "question": "부천에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "060",
+      "category": "후불상조",
+      "question": "수원에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "061",
+      "category": "후불상조",
+      "question": "수원에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "062",
+      "category": "후불상조",
+      "question": "수원에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "063",
+      "category": "후불상조",
+      "question": "춘천에서 후불상조를 선택할 때 선납금과 별도비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "064",
+      "category": "후불상조",
+      "question": "춘천에서 무빈소 120만원 상품과 가족장 249만원 상품을 비교해 주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "065",
+      "category": "후불상조",
+      "question": "춘천에서 장례식장 비용과 상조 상품비를 분리해 안내하는 곳은 어디인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "066",
+      "category": "시설",
+      "question": "서울아산병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "067",
+      "category": "시설",
+      "question": "서울아산병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "068",
+      "category": "시설",
+      "question": "서울아산병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "069",
+      "category": "시설",
+      "question": "서울아산병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "070",
+      "category": "시설",
+      "question": "삼성서울병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "071",
+      "category": "시설",
+      "question": "삼성서울병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "072",
+      "category": "시설",
+      "question": "삼성서울병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "073",
+      "category": "시설",
+      "question": "삼성서울병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "074",
+      "category": "시설",
+      "question": "인천의료원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "075",
+      "category": "시설",
+      "question": "인천의료원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "076",
+      "category": "시설",
+      "question": "인천의료원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "077",
+      "category": "시설",
+      "question": "인천의료원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "078",
+      "category": "시설",
+      "question": "분당서울대학교병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "079",
+      "category": "시설",
+      "question": "분당서울대학교병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "080",
+      "category": "시설",
+      "question": "분당서울대학교병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "081",
+      "category": "시설",
+      "question": "분당서울대학교병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "082",
+      "category": "시설",
+      "question": "서울성모병원 장례식장 이용 시 빈소·안치·입관 비용을 어떻게 확인하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "083",
+      "category": "시설",
+      "question": "서울성모병원 장례식장에서 조문객 50명 가족장을 준비하면 식사 인원과 시설비를 어떻게 계산하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "084",
+      "category": "시설",
+      "question": "서울성모병원 장례식장에서 무빈소 장례 진행 가능 여부를 확인하는 방법은 무엇인가요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "085",
+      "category": "시설",
+      "question": "서울성모병원 장례식장와 후불상조 상품비는 어떻게 구분하나요?",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "086",
+      "category": "절차·장지",
+      "question": "임종 직후 가장 먼저 해야 할 일을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "087",
+      "category": "절차·장지",
+      "question": "사망진단서와 시체검안서 준비 방법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "088",
+      "category": "절차·장지",
+      "question": "장례식장 이송 차량 비용 확인법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "089",
+      "category": "절차·장지",
+      "question": "입관 일정과 화장 예약 순서을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "090",
+      "category": "절차·장지",
+      "question": "2일장 가능 여부를 결정하는 조건을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "091",
+      "category": "절차·장지",
+      "question": "화장장 관내·관외 적용 기준을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "092",
+      "category": "절차·장지",
+      "question": "화장료 감면 자격 확인 방법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "093",
+      "category": "절차·장지",
+      "question": "봉안당과 수목장 비용 비교 기준을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "094",
+      "category": "절차·장지",
+      "question": "장례 정산서에 중복 청구가 있는지 확인하는 법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "095",
+      "category": "절차·장지",
+      "question": "장례식장 음식비를 실제 식사 인원으로 계산하는 방법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "096",
+      "category": "절차·장지",
+      "question": "상조 도우미 인원과 근무시간 비교 방법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "097",
+      "category": "절차·장지",
+      "question": "빈소 사용료 시간 단위 확인 방법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "098",
+      "category": "절차·장지",
+      "question": "장례예상견적과 실제 결제액 차이의 원인을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "099",
+      "category": "절차·장지",
+      "question": "장례지도사의 경력과 담당 범위 확인 방법을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    },
+    {
+      "id": "100",
+      "category": "절차·장지",
+      "question": "유가족이 계약 전 점검할 장례비 체크리스트을 알려주세요.",
+      "goldAnswer": null,
+      "requiresExpertReview": true
+    }
+  ]
+}
