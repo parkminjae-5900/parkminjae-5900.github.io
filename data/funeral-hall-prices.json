@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "updatedAt": "2026-11-25T00:41:35.137663+00:00",
+  "updatedAt": "2026-11-25T09:51:47.325850+00:00",
   "source": {
     "name": "최신 공식 홈페이지 가격 우선 DB",
     "note": "A=장례식장 공식 홈페이지, B=검증된 2차 가격 미러. 미확인 시설은 2023 공시 기준값 사용."
@@ -1380,6 +1380,29 @@
       ]
     },
     {
+      "facilityName": "서안동농협장례식장",
+      "address": "경상북도 안동시 풍산읍 본마을길 36-22 (노리)",
+      "verifiedAt": "2026-11-25T09:50:03.074641+00:00",
+      "sourceName": "장례식장 공식 홈페이지 공개가격",
+      "sourceUrl": "https://www.s-andong.com/board/index.php?doc=program/doc.php&do_id=86",
+      "sourceGrade": "A",
+      "sourceNote": "공식 홈페이지에서 확인된 게시 가격. 시행일이 별도 표기되지 않은 경우 실제 이용 전 최종 확인 필요.",
+      "prices": [
+        {
+          "category": "안치실",
+          "label": "안치실 사용료 1일당",
+          "amount": 70000,
+          "unit": "1일"
+        },
+        {
+          "category": "염습/입관",
+          "label": "염습실 사용료 1건",
+          "amount": 250000,
+          "unit": ""
+        }
+      ]
+    },
+    {
       "facilityName": "서울대학교병원장례식장",
       "verifiedAt": "2026-09-30",
       "sourceName": "서울대학교병원 장례식장 공식 이용요금",
@@ -1493,7 +1516,7 @@
     {
       "facilityName": "안동전문장례식장",
       "address": "경상북도 안동시 강남로 5 안동전문장례식장 (수상동)",
-      "verifiedAt": "2026-11-21T09:44:33.943430+00:00",
+      "verifiedAt": "2026-11-25T09:50:08.565564+00:00",
       "sourceName": "장례식장 공식 홈페이지 공개가격",
       "sourceUrl": "http://www.8210101.com/price.html",
       "sourceGrade": "A",
